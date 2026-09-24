@@ -10,6 +10,8 @@ export interface MobileNavProps {
   navLabel: string;
   openLabel: string;
   closeLabel: string;
+  /** Matches the header it sits in. The open panel is dark either way. */
+  tone?: "light" | "dark";
 }
 
 /**
@@ -17,7 +19,13 @@ export interface MobileNavProps {
  * server-rendered, which keeps the JS on a Nigerian mobile connection to a
  * disclosure toggle and nothing more.
  */
-export function MobileNav({ links, navLabel, openLabel, closeLabel }: MobileNavProps) {
+export function MobileNav({
+  links,
+  navLabel,
+  openLabel,
+  closeLabel,
+  tone = "light",
+}: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -43,7 +51,9 @@ export function MobileNav({ links, navLabel, openLabel, closeLabel }: MobileNavP
         aria-expanded={isOpen}
         aria-controls="mobile-nav-panel"
         onClick={() => setIsOpen((open) => !open)}
-        className="-mr-2 flex size-11 items-center justify-center text-asphalt"
+        className={`-mr-2 flex size-11 items-center justify-center ${
+          tone === "dark" ? "text-concrete" : "text-asphalt"
+        }`}
       >
         <span className="sr-only">
           <RichText text={isOpen ? closeLabel : openLabel} />

@@ -3,8 +3,14 @@ import { RichText } from "./RichText";
 import { cn } from "@/lib/cn";
 
 const BASE =
-  "inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-semibold " +
+  "inline-flex items-center justify-center gap-2 font-semibold " +
   "wdth-body no-underline transition-colors duration-150 ease-out";
+
+const SIZES = {
+  default: "px-6 py-3 text-base",
+  /** Microtype with a hairline border — the hero's secondary action. */
+  compact: "px-4 py-2.5 text-2xs uppercase tracking-[0.08em]",
+} as const;
 
 const VARIANTS = {
   /** Brand green fill. White on green is 5.4:1. */
@@ -21,6 +27,7 @@ export interface ButtonProps {
   href?: string;
   variant?: keyof typeof VARIANTS;
   type?: "button" | "submit";
+  size?: keyof typeof SIZES;
   /** Stretches to the container — used for the primary CTA at 360px. */
   block?: boolean;
   className?: string;
@@ -31,11 +38,12 @@ export function Button({
   label,
   href,
   variant = "primary",
+  size = "default",
   type = "button",
   block = false,
   className,
 }: ButtonProps) {
-  const classes = cn(BASE, VARIANTS[variant], block && "w-full", className);
+  const classes = cn(BASE, SIZES[size], VARIANTS[variant], block && "w-full", className);
   const content = <RichText text={label} />;
 
   if (href) {

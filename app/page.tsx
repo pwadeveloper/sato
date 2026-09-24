@@ -56,7 +56,7 @@ export default function HomePage() {
         headline={page.title}
         subhead={hero.subhead}
         ctas={hero.ctas}
-        image={site.heroImages[0]}
+        image={hero.image ?? site.heroImages[0]}
       />
 
       {/* 2. What we do */}

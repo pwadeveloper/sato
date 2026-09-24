@@ -47,7 +47,14 @@ export default function RootLayout({
           // Built from content JSON at build time; no user input reaches it.
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
-        <SiteHeader site={site} />
+        <SiteHeader
+          logoAlt={site.logoAlt}
+          navLabel={site.navLabel}
+          nav={site.nav}
+          skipLinkLabel={site.skipLinkLabel}
+          menuOpenLabel={site.menuOpenLabel}
+          menuCloseLabel={site.menuCloseLabel}
+        />
         <main id="main">{children}</main>
         <SiteFooter site={site} year={new Date().getFullYear()} />
       </body>

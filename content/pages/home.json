@@ -10,14 +10,20 @@
       "subhead": "Sato Engineering and Infrastructure Limited is an indigenous Nigerian engineering firm. For nearly three decades we have designed and built roads, dams, water schemes and buildings for federal and state governments, universities and international development partners, and we now deliver {{CONFIRM: energy division name}} services.",
       "ctas": [
         {
-          "label": "Contact us",
-          "href": "/contact"
+          "label": "Explore our work",
+          "href": "/projects"
         },
         {
-          "label": "View our projects",
-          "href": "/projects"
+          "label": "Contact us",
+          "href": "/contact"
         }
-      ]
+      ],
+      "image": {
+        "src": "/images/services/roadworks-completed-carriageway.webp",
+        "alt": "Newly laid asphalt carriageway with kerbed median, a roller working in the distance",
+        "width": 1920,
+        "height": 1440
+      }
     },
     {
       "type": "collection",

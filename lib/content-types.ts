@@ -152,6 +152,8 @@ export interface HeroSection {
   heading?: ConfirmableText;
   subhead?: ConfirmableText;
   ctas?: Link[];
+  /** The wide shot under the headline. Falls back to `site.heroImages[0]`. */
+  image?: ImageRef;
 }
 
 export interface ProseSection {

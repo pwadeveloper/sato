@@ -9,7 +9,7 @@ export interface HeroProps {
   /** The page's `h1`. */
   headline: string;
   subhead?: string;
-  /** First is the primary button; the second reads as a text link beside it. */
+  /** First reads as the bordered button; any others follow as text links. */
   ctas?: LinkContent[];
   image?: ImageRef;
 }
@@ -17,66 +17,94 @@ export interface HeroProps {
 /**
  * Home hero.
  *
- * Text sits on the page measure; the photograph bleeds off the right edge on
- * large screens and drops below the copy, still full-bleed, at narrow widths.
- * Nothing is centred and nothing animates in — the headline is readable in the
- * first frame.
+ * A single dark field running from under the header down to a wide band of
+ * photography. The headline sits at the bottom left with the supporting
+ * paragraph set small at the right, their baselines close together, so the
+ * eye reads the claim first and the qualification second.
+ *
+ * `data-hero="dark"` tells the sticky header to switch to its dark tone, so
+ * the nav reads as part of this field rather than a bar sitting on top of it.
  */
 export function Hero({ headline, subhead, ctas = [], image }: HeroProps) {
   const [primary, ...rest] = ctas;
 
   return (
-    <section aria-labelledby="hero-heading" className="relative border-b border-rule">
-      <Container className="relative z-10 py-12 md:py-16 lg:py-24">
-        <div className="lg:max-w-[52%]">
+    <section
+      aria-labelledby="hero-heading"
+      data-hero="dark"
+      className="bg-asphalt text-concrete"
+    >
+      <Container>
+        <div
+          className="
+            flex flex-col gap-8
+            pt-14 pb-10
+            md:pt-24
+            lg:flex-row lg:items-end lg:justify-between lg:gap-16 lg:pt-44 lg:pb-14
+          "
+        >
           <h1
             id="hero-heading"
-            className="text-display wdth-display text-balance text-asphalt"
+            className="text-display wdth-display max-w-[18ch] text-balance"
           >
             <RichText text={headline} />
           </h1>
 
-          {subhead ? (
-            <p className="mt-6 max-w-(--container-measure) text-lg text-steel-ink wdth-body md:mt-8">
-              <RichText text={subhead} />
-            </p>
-          ) : null}
-
-          {ctas.length ? (
-            <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8 md:mt-10">
-              {primary ? (
-                <Button
-                  label={primary.label}
-                  href={primary.href}
-                  className="w-full sm:w-auto"
-                />
+          {subhead || ctas.length ? (
+            <div className="flex flex-col items-start gap-5 lg:max-w-[38ch] lg:shrink-0 lg:pb-2">
+              {subhead ? (
+                <p className="text-sm text-steel-light wdth-body text-pretty">
+                  <RichText text={subhead} />
+                </p>
               ) : null}
-              {rest.map((cta) => (
-                <TextLink key={cta.href} label={cta.label} href={cta.href} />
-              ))}
+
+              {ctas.length ? (
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                  {primary ? (
+                    <Button
+                      label={primary.label}
+                      href={primary.href}
+                      variant="inverse"
+                      size="compact"
+                    />
+                  ) : null}
+                  {rest.map((cta) => (
+                    <TextLink
+                      key={cta.href}
+                      label={cta.label}
+                      href={cta.href}
+                      tone="dark"
+                    />
+                  ))}
+                </div>
+              ) : null}
             </div>
           ) : null}
         </div>
       </Container>
 
       {image ? (
-        <div
-          className="
-            relative aspect-16/9 w-full overflow-hidden bg-steel/10
-            sm:aspect-21/9
-            lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:w-[42%]
-          "
-        >
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            priority
-            sizes="(min-width: 1024px) 42vw, 100vw"
-            className="object-cover"
-          />
-        </div>
+        <Container>
+          <div
+            className="
+              relative w-full overflow-hidden bg-asphalt-raised
+              aspect-4/3 sm:aspect-16/9 lg:aspect-[64/21]
+            "
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              priority
+              sizes="(min-width: 1280px) 1184px, 100vw"
+              className="object-cover"
+            />
+          </div>
+        </Container>
       ) : null}
+
+      {/* The dark field ends flush with the foot of the photograph. */}
+      <div aria-hidden="true" className="h-0" />
     </section>
   );
 }
