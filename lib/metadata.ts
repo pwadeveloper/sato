@@ -9,6 +9,12 @@ import { stripPlaceholders } from "./placeholders";
  * file holds no copy of its own. The OG image defaults to the first cleared
  * hero in `site.json`, which a page may override with its own `ogImage`.
  */
+/** Absolute canonical for a page slug. "" is the home page. */
+export function canonicalPath(slug: string): string {
+  if (!slug || slug === "home") return "/";
+  return `/${slug.replace(/^\/+|\/+$/g, "")}`;
+}
+
 export function buildPageMetadata(page: Page, site: Site): Metadata {
   // Metadata is published to search results and link previews, so an
   // unresolved placeholder must never reach it — it is stripped here rather
@@ -16,7 +22,8 @@ export function buildPageMetadata(page: Page, site: Site): Metadata {
   const title = stripPlaceholders(page.metaTitle ?? page.title) || site.name;
   const description =
     stripPlaceholders(page.metaDescription ?? site.description) || site.description;
-  const image = page.ogImage ?? site.heroImages[0];
+  const image = page.ogImage ?? site.ogImage;
+  const path = canonicalPath(page.slug);
   // Home's own title is already the full company name.
   const cardTitle = title === site.name ? title : `${title} — ${site.name}`;
 
@@ -26,9 +33,12 @@ export function buildPageMetadata(page: Page, site: Site): Metadata {
     // opts out of the template rather than saying it twice.
     title: title === site.name ? { absolute: title } : title,
     description,
+    // One canonical per page, absolute against `metadataBase` in the layout.
+    alternates: { canonical: path },
     openGraph: {
       type: "website",
       siteName: site.name,
+      url: path,
       title: cardTitle,
       description,
       locale: "en_NG",

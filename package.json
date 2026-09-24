@@ -5,10 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:prod": "npm run check:placeholders && next build",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "images": "node scripts/optimise-images.mjs"
+    "check:placeholders": "node scripts/check-placeholders.mjs --report",
+    "images": "node scripts/optimise-images.mjs",
+    "og": "node scripts/generate-og-image.mjs"
   },
   "dependencies": {
     "next": "16.3.6",

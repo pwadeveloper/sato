@@ -167,5 +167,11 @@
       "width": 1920,
       "height": 1440
     }
-  ]
+  ],
+  "ogImage": {
+    "src": "/images/og/default.png",
+    "alt": "Sato Engineering and Infrastructure Limited — engineering Nigeria's infrastructure since 1997",
+    "width": 1200,
+    "height": 630
+  }
 }

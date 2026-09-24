@@ -113,6 +113,11 @@ export interface Site {
    */
   heroImages: ImageRef[];
   /**
+   * Default Open Graph card — the branded one from `npm run og`, not a site
+   * photograph. Pages with a better image of their own override it.
+   */
+  ogImage: ImageRef;
+  /**
    * Where the contact form POSTs. The site is a static export with no server,
    * so this is a third-party form endpoint. An empty string falls the form
    * back to composing a mailto: in the visitor's own mail client.

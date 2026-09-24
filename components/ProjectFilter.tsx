@@ -141,6 +141,7 @@ export function ProjectFilter({
             <ProjectCard
               project={project}
               sectorLabel={sectorLabels.get(project.sector) ?? project.sector}
+              headingLevel={2}
             />
           </li>
         ))}

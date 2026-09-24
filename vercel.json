@@ -1,0 +1,600 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/707",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/719",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/723",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/740",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/752",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/755",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/780",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/783",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/794",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/810",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/848",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/850",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/856",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/862",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/863",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/869",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/870",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/875",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/876",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/administrative-block",
+      "destination": "/projects/funaab-administrative-block",
+      "permanent": true
+    },
+    {
+      "source": "/administrative-block-2",
+      "destination": "/projects/funaab-administrative-block",
+      "permanent": true
+    },
+    {
+      "source": "/april-2012sato-engineering-completes-and-handover-the-rehabilitation-of-ogere-water-scheme-in-ogun-state-nigeria",
+      "destination": "/projects/ogere-water-supply-scheme-rehabilitation",
+      "permanent": true
+    },
+    {
+      "source": "/awards",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/best-engineering-company-in-ogun-state-2010",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/best-erosion-control-and-construction-engineering-company-awards-2012",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/blocks-of-shops",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/building-and-construction",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/building1",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/building11",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/building2",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/building3",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/building4",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/building5",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/building6-2",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/building7",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/building8",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/civil-eng-road-projects",
+      "destination": "/projects?sector=roads",
+      "permanent": true
+    },
+    {
+      "source": "/civil2",
+      "destination": "/projects?sector=roads",
+      "permanent": true
+    },
+    {
+      "source": "/civil5",
+      "destination": "/projects?sector=roads",
+      "permanent": true
+    },
+    {
+      "source": "/civil6",
+      "destination": "/projects?sector=roads",
+      "permanent": true
+    },
+    {
+      "source": "/civil7",
+      "destination": "/projects?sector=roads",
+      "permanent": true
+    },
+    {
+      "source": "/civil8",
+      "destination": "/projects?sector=roads",
+      "permanent": true
+    },
+    {
+      "source": "/college-of-plant-science-and-crop-production-colplant",
+      "destination": "/projects/funaab-colplant-building-phase-ii",
+      "permanent": true
+    },
+    {
+      "source": "/college-of-plant-science-and-crop-production-colplant-2",
+      "destination": "/projects/funaab-colplant-building-phase-ii",
+      "permanent": true
+    },
+    {
+      "source": "/college-of-plant-science-and-crop-production-colplant-3",
+      "destination": "/projects/funaab-colplant-building-phase-ii",
+      "permanent": true
+    },
+    {
+      "source": "/college-of-plant-science-and-crop-production-colplant-4",
+      "destination": "/projects/funaab-colplant-building-phase-ii",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contributing-immensely-to-the-progress-of-the-community-through-rotary-service-2011",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/core-services",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/electrical-engineering",
+      "destination": "/services/electrical-mechanical",
+      "permanent": true
+    },
+    {
+      "source": "/equipments",
+      "destination": "/equipment",
+      "permanent": true
+    },
+    {
+      "source": "/excellent-service-towards-contribution-to-the-youth-and-humanity-2010",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/filling-2-at-fce-osiele",
+      "destination": "/projects/fce-osiele-campus-roads-and-walkways",
+      "permanent": true
+    },
+    {
+      "source": "/future-plans",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/horizon-suites",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/horizon-suites-2",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/installed-high-lift-pump-panel",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/january-2012-sato-engineering-opens-new-branches-sato-engineering-has-opened-branches-in-lagos",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/july-2012-sato-engineering-receives-west-africas-dynamic-and-outstanding-engineering-company-award-2012",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/july2012-sato-engineering-has-been-awarded-the-contract-for-the-conversion-and-total-rehabilitation-of-convention-centre-to-temporary-staff-quarters-by-the-mcphersons-university",
+      "destination": "/projects/mcpherson-convention-centre-conversion",
+      "permanent": true
+    },
+    {
+      "source": "/june-2012-sato-engineering-complete-works-on-the-dredging-of-ogungbade-river-in-ibadan-2",
+      "destination": "/projects/ogungbade-river-dredging",
+      "permanent": true
+    },
+    {
+      "source": "/laterite-filling-at-fce-osiele",
+      "destination": "/projects/fce-osiele-campus-roads-and-walkways",
+      "permanent": true
+    },
+    {
+      "source": "/laying-of-upvc-pipes",
+      "destination": "/projects/ogere-water-supply-scheme-rehabilitation",
+      "permanent": true
+    },
+    {
+      "source": "/may-2012sato-engineering-has-been-awarded-contract-for-the-channelization-of-the-lower-awba-stream-at-the-university-of-ibadan-the-scope-of-work-includes",
+      "destination": "/projects/lower-awba-stream-channelization",
+      "permanent": true
+    },
+    {
+      "source": "/mechanical-engineering",
+      "destination": "/services/electrical-mechanical",
+      "permanent": true
+    },
+    {
+      "source": "/most-supportive-indigenous-company-2012-by-egba-youths-awards-eya",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/news-events",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/news-events/page/2",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/november2011-sato-engineering-completes-and-hand-over-the-administrative-blocks-and-laboratory-building-at-mcpherson-university",
+      "destination": "/projects/mcpherson-administrative-block-and-laboratory",
+      "permanent": true
+    },
+    {
+      "source": "/november2011sato-engineering-is-helping-to-make-the-dream-of-affordable-housing-a-reality-in-ogun-state-by-working-with-choice-investors-to-provide-5-blocks-4-nos-of-4-bedroom-flats",
+      "destination": "/projects/ogun-state-affordable-housing",
+      "permanent": true
+    },
+    {
+      "source": "/ongoing-projects",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/our-team",
+      "destination": "/leadership",
+      "permanent": true
+    },
+    {
+      "source": "/project-1",
+      "destination": "/projects/funaab-academic-building-complex-block-b",
+      "permanent": true
+    },
+    {
+      "source": "/project-2",
+      "destination": "/projects/funaab-colplant-building-phase-ii",
+      "permanent": true
+    },
+    {
+      "source": "/project-3",
+      "destination": "/projects/fiditi-earth-dam",
+      "permanent": true
+    },
+    {
+      "source": "/project-4",
+      "destination": "/projects/mcpherson-convention-centre-conversion",
+      "permanent": true
+    },
+    {
+      "source": "/road-at-fce-osiele",
+      "destination": "/projects/fce-osiele-campus-roads-and-walkways",
+      "permanent": true
+    },
+    {
+      "source": "/safety-policies",
+      "destination": "/hse",
+      "permanent": true
+    },
+    {
+      "source": "/sato-engineering-has-been-awarded-contract-for-the-construction-of-an-earth-dam-at-fiditi-dam",
+      "destination": "/projects/fiditi-earth-dam",
+      "permanent": true
+    },
+    {
+      "source": "/sato-engineering-received-the-best-erosion-control-and-construction-engineering-company-awards-2012",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/stalked-ductile-iron-pipes",
+      "destination": "/projects/ogere-water-supply-scheme-rehabilitation",
+      "permanent": true
+    },
+    {
+      "source": "/strategy-session",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/unparralled-social-responsibility-in-ogun-state-2012",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/water-meter-installation",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water-meter-installation-2",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water-meter-installation-training",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water-supply-and-water-resources",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water1",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water10",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water11",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water12",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water14",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water15",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water16",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water18",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water2",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water5",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water5-2",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/water9",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/west-africas-dynamic-and-outstanding-engineering-company-award-2012",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/work-in-progress",
+      "destination": "/projects?sector=buildings",
+      "permanent": true
+    },
+    {
+      "source": "/world-bank-team-inspection",
+      "destination": "/projects?sector=water",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-includes/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/comments/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p"
+        }
+      ],
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/images/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/:path*",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
+      ]
+    }
+  ]
+}

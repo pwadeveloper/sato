@@ -3,6 +3,7 @@ import { Archivo } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getSite } from "@/lib/content";
+import { buildOrganizationSchema, buildWebsiteSchema } from "@/lib/structured-data";
 import "./globals.css";
 
 /**
@@ -18,6 +19,12 @@ const archivo = Archivo({
 });
 
 const site = getSite();
+
+/**
+ * Emitted once, in the root layout, so every page carries it. Fields the
+ * company has not confirmed are omitted — see `buildOrganizationSchema`.
+ */
+const schema = [buildOrganizationSchema(site), buildWebsiteSchema(site)];
 
 export const metadata: Metadata = {
   // Relative image paths in page metadata resolve against this.
@@ -35,6 +42,11 @@ export default function RootLayout({
   return (
     <html lang="en-NG" className={archivo.variable}>
       <body className="min-h-dvh bg-concrete text-asphalt antialiased">
+        <script
+          type="application/ld+json"
+          // Built from content JSON at build time; no user input reaches it.
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
         <SiteHeader site={site} />
         <main id="main">{children}</main>
         <SiteFooter site={site} year={new Date().getFullYear()} />

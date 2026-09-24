@@ -1,0 +1,46 @@
+{
+  "slug": "not-found",
+  "title": "We cannot find that page",
+  "metaTitle": "Page not found",
+  "metaDescription": "The page you asked for is not on this site. Links to the main sections of satoengineering.com.",
+  "labels": {
+    "code": "404"
+  },
+  "sections": [
+    {
+      "type": "prose",
+      "id": "intro",
+      "body": [
+        "The address you followed is not on this site. Our website was rebuilt in 2026, and a few old links did not survive the move.",
+        "If you arrived from a letter or a document that quoted a web address, these are the pages you are most likely looking for."
+      ]
+    },
+    {
+      "type": "linkCards",
+      "id": "destinations",
+      "heading": "Where to go instead",
+      "items": [
+        {
+          "label": "Home",
+          "body": "Who we are, what we build and how long we have been doing it.",
+          "href": "/"
+        },
+        {
+          "label": "Services",
+          "body": "Our four divisions: civil and infrastructure, water resources, electrical and mechanical, and energy.",
+          "href": "/services"
+        },
+        {
+          "label": "Projects",
+          "body": "Buildings, roads and water schemes delivered for government, university and private clients.",
+          "href": "/projects"
+        },
+        {
+          "label": "Contact",
+          "body": "Our offices, telephone number and how to reach us.",
+          "href": "/contact"
+        }
+      ]
+    }
+  ]
+}

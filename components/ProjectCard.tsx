@@ -75,7 +75,7 @@ export function ProjectCard({
           )}
         >
           <span className="absolute inset-x-0 top-0 h-[3px] bg-laterite" />
-          <span className="text-h2 wdth-display leading-none text-steel/35">
+          <span className="text-h2 wdth-display leading-none text-steel/80">
             <RichText text={sectorLabel} />
           </span>
         </div>

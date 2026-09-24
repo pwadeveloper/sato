@@ -32,7 +32,7 @@ export function Logo({ surface = "light", alt, className, priority = false }: Lo
       width={width}
       height={height}
       priority={priority}
-      className={cn("h-7 w-auto md:h-9", className)}
+      className={cn("h-7 w-auto max-w-full self-start md:h-9", className)}
     />
   );
 }

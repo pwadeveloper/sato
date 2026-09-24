@@ -17,6 +17,7 @@ import clientsPageJson from "@/content/pages/clients.json";
 import contactPageJson from "@/content/pages/contact.json";
 import equipmentPageJson from "@/content/pages/equipment.json";
 import homePageJson from "@/content/pages/home.json";
+import notFoundPageJson from "@/content/pages/not-found.json";
 import hsePageJson from "@/content/pages/hse.json";
 import leadershipPageJson from "@/content/pages/leadership.json";
 import projectsPageJson from "@/content/pages/projects.json";
@@ -69,6 +70,7 @@ const pages: Record<string, Page> = {
   hse: typed<Page>(hsePageJson),
   equipment: typed<Page>(equipmentPageJson),
   contact: typed<Page>(contactPageJson),
+  "not-found": typed<Page>(notFoundPageJson),
 };
 
 /* ------------------------------------------------------------------ site */
