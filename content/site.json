@@ -17,6 +17,7 @@
       "city": "Abeokuta",
       "state": "Ogun State",
       "address": "Abeokuta, Ogun State {{CONFIRM: full street address}}",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Abeokuta%2C+Ogun+State%2C+Nigeria",
       "isPrimary": true
     },
     {
@@ -25,6 +26,7 @@
       "city": "Lagos",
       "state": "Lagos State",
       "address": "Lagos {{CONFIRM: still active, full address}}",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lagos%2C+Nigeria",
       "note": "Opened January 2012",
       "isPrimary": false
     }
@@ -45,6 +47,7 @@
       "value": "{{CONFIRM: general enquiries email}}"
     }
   ],
+  "contactFormEndpoint": "",
   "registrations": [
     {
       "id": "professional",
@@ -53,7 +56,7 @@
         "COREN-registered engineers on staff",
         "Nigerian Society of Engineers (NSE)",
         "Nigerian Institute of Management (NIM)",
-        "Royal Institution of Chartered Surveyors (RICS) \u2014 founder"
+        "Royal Institution of Chartered Surveyors (RICS) — founder"
       ]
     },
     {
@@ -113,7 +116,7 @@
     }
   ],
   "footer": {
-    "legal": "Sato Engineering and Infrastructure Limited \u2014 formerly Sato Engineering Nigeria Limited. RC {{CONFIRM: CAC RC number}}. Incorporated 1997.",
+    "legal": "Sato Engineering and Infrastructure Limited — formerly Sato Engineering Nigeria Limited. RC {{CONFIRM: CAC RC number}}. Incorporated 1997.",
     "navLabel": "Footer navigation",
     "links": [
       {
@@ -137,7 +140,7 @@
         "href": "/contact"
       }
     ],
-    "copyright": "\u00a9 {year} Sato Engineering and Infrastructure Limited."
+    "copyright": "© {year} Sato Engineering and Infrastructure Limited."
   },
   "heroImages": [
     {

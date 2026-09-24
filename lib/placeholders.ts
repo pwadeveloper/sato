@@ -55,3 +55,31 @@ export function parseConfirmable(text: string): Segment[] {
 export function hasPlaceholder(text: string): boolean {
   return new RegExp(CONFIRM_SOURCE).test(text);
 }
+
+/**
+ * True when the text says something once its placeholders are taken out.
+ *
+ * `"2012"` is known; `"{{CONFIRM: year}}"` is not; `"2012 {{CONFIRM: month}}"`
+ * is, and renders with the placeholder still highlighted. Fields that are only
+ * a placeholder are omitted from project meta rather than printed, so a card
+ * shows what is established and nothing else.
+ */
+export function isKnown(text: string | undefined | null): boolean {
+  if (!text) return false;
+  return text.replace(new RegExp(CONFIRM_SOURCE, "g"), "").trim().length > 0;
+}
+
+/**
+ * The text with every placeholder removed and whitespace tidied.
+ *
+ * For anything that leaves the page as data rather than as reading copy — a
+ * `<title>`, a meta description, an Open Graph card — where a raw
+ * `{{CONFIRM: ...}}` would be published to a search result or a shared link.
+ */
+export function stripPlaceholders(text: string): string {
+  return text
+    .replace(new RegExp(CONFIRM_SOURCE, "g"), "")
+    .replace(/\s+/g, " ")
+    .replace(/\s+([.,;:])/g, "$1")
+    .trim();
+}

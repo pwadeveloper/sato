@@ -24,6 +24,7 @@ import servicesPageJson from "@/content/pages/services.json";
 
 import type {
   Client,
+  CollectionFacet,
   CompanyFact,
   Equipment,
   Page,
@@ -175,6 +176,17 @@ export function getProjects(): Project[] {
   return projects;
 }
 
+/**
+ * True only for a project the company has confirmed as finished.
+ *
+ * The site never labels work "ongoing" or "in progress" (docs/site-content.md),
+ * and an unresolved `{{CONFIRM: status}}` is not a claim, so both render no
+ * badge at all rather than a hedge.
+ */
+export function isCompleted(status: string): boolean {
+  return status.trim().toLowerCase() === "completed";
+}
+
 /** Projects flagged for the Home strip, in `projects.json` order. */
 export function getFeaturedProjects(): Project[] {
   return projects.filter((project) => project.featured);
@@ -186,6 +198,26 @@ export function getProject(slug: string): Project {
     throw new Error(`No project with slug "${slug}" in /content/projects.json.`);
   }
   return project;
+}
+
+/**
+ * The division a project belongs to.
+ *
+ * A service claiming the project in `relatedProjectSlugs` wins; otherwise the
+ * project's sector facet names the owning division. Returns `undefined` when
+ * neither is set, and the detail page then shows no division link.
+ */
+export function getServiceForProject(
+  project: Project,
+  facets: CollectionFacet[] = [],
+): Service | undefined {
+  const claimed = services.find((service) =>
+    service.relatedProjectSlugs.includes(project.slug),
+  );
+  if (claimed) return claimed;
+
+  const slug = facets.find((facet) => facet.value === project.sector)?.serviceSlug;
+  return slug ? services.find((service) => service.slug === slug) : undefined;
 }
 
 /* --------------------------------------------------------------- clients */

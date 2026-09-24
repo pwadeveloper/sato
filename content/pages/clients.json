@@ -17,11 +17,44 @@
       "collection": "clients",
       "facetMode": "group",
       "facets": [
-        { "value": "federal", "label": "Federal government" },
-        { "value": "state", "label": "State government" },
-        { "value": "international", "label": "International development partners" },
-        { "value": "education", "label": "Education" },
-        { "value": "private", "label": "Private sector" }
+        {
+          "value": "federal",
+          "label": "Federal government"
+        },
+        {
+          "value": "state",
+          "label": "State government"
+        },
+        {
+          "value": "international",
+          "label": "International development partners"
+        },
+        {
+          "value": "education",
+          "label": "Education"
+        },
+        {
+          "value": "private",
+          "label": "Private sector"
+        }
+      ],
+      "heading": "Who we have delivered for",
+      "note": "Agencies listed under a government are the units Sato has been engaged by directly."
+    },
+    {
+      "type": "cta",
+      "id": "cta-default",
+      "heading": "Check us out",
+      "body": "We are happy to put you in touch with clients we have delivered for, and to send registration documents on request.",
+      "ctas": [
+        {
+          "label": "Contact us",
+          "href": "/contact"
+        },
+        {
+          "label": "See the projects",
+          "href": "/projects"
+        }
       ]
     }
   ]

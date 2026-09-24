@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { Page, Service, Site } from "./content-types";
-import { hasPlaceholder } from "./placeholders";
+import { stripPlaceholders } from "./placeholders";
 
 /**
  * Page metadata, assembled from content JSON.
@@ -10,14 +10,21 @@ import { hasPlaceholder } from "./placeholders";
  * hero in `site.json`, which a page may override with its own `ogImage`.
  */
 export function buildPageMetadata(page: Page, site: Site): Metadata {
-  const title = page.metaTitle ?? page.title;
-  const description = page.metaDescription ?? site.description;
+  // Metadata is published to search results and link previews, so an
+  // unresolved placeholder must never reach it — it is stripped here rather
+  // than at each call site. The page body still shows it, highlighted.
+  const title = stripPlaceholders(page.metaTitle ?? page.title) || site.name;
+  const description =
+    stripPlaceholders(page.metaDescription ?? site.description) || site.description;
   const image = page.ogImage ?? site.heroImages[0];
   // Home's own title is already the full company name.
   const cardTitle = title === site.name ? title : `${title} — ${site.name}`;
 
   return {
-    title,
+    // The root layout appends "— <company>", so a title that already IS the
+    // company name (a page whose own title was nothing but a placeholder)
+    // opts out of the template rather than saying it twice.
+    title: title === site.name ? { absolute: title } : title,
     description,
     openGraph: {
       type: "website",
@@ -47,14 +54,12 @@ export function buildPageMetadata(page: Page, site: Site): Metadata {
  * to a search engine or a link preview.
  */
 export function buildServiceMetadata(service: Service, site: Site): Metadata {
-  const description = hasPlaceholder(service.summary) ? site.description : service.summary;
-
   return buildPageMetadata(
     {
       slug: `services/${service.slug}`,
       title: service.name,
       metaTitle: service.name,
-      metaDescription: description,
+      metaDescription: service.summary,
       ogImage: service.image ?? undefined,
       sections: [],
     },

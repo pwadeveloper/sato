@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { PersonInitials } from "./PersonInitials";
 import { RichText } from "./RichText";
 import type { TeamMember } from "@/lib/content-types";
 import { cn } from "@/lib/cn";
@@ -33,7 +34,9 @@ export function PersonCard({
             className="object-cover"
           />
         </div>
-      ) : null}
+      ) : (
+        <PersonInitials name={member.name} className="mb-5" />
+      )}
 
       <NameTag className="text-xl font-bold wdth-heading text-balance">
         <RichText text={member.name} />

@@ -3,17 +3,31 @@
   "title": "Leadership and project teams",
   "metaTitle": "Leadership",
   "metaDescription": "Sato is led by a core team of engineers and managers, and assembles a dedicated project team for each job from its network of engineers, technicians, foremen and specialists.",
+  "labels": {
+    "qualifications": "Qualifications",
+    "memberships": "Memberships",
+    "experience": "Experience"
+  },
   "sections": [
     {
       "type": "prose",
       "id": "intro",
       "body": [
-        "Sato is led by a core team of engineers and managers with decades of combined experience. For each project, we assemble a dedicated team from our network of engineers, technicians, foremen and specialists, matched to the scope and location of the work."
+        "Sato is led by a core team of engineers and managers with decades of combined experience. For each project, we assemble a dedicated team from our network of engineers, technicians, foremen and specialists, matched to the scope and location of the work.",
+        "That means a client gets the right expertise for the job rather than whoever is free, led by people who have delivered with Sato for years."
       ]
     },
     {
       "type": "collection",
-      "id": "team",
+      "id": "leadership",
+      "heading": "Leadership",
+      "collection": "team"
+    },
+    {
+      "type": "collection",
+      "id": "wider-team",
+      "heading": "Project team",
+      "intro": "The engineers, managers and specialists we draw on to staff a project.",
       "collection": "team",
       "note": "{{CONFIRM: current roster and which members are leadership}}"
     }

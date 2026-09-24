@@ -33,6 +33,8 @@ export interface Office {
   state: ConfirmableText;
   address: ConfirmableText;
   note?: ConfirmableText;
+  /** Google Maps link. Opened in a new tab; never embedded as an iframe. */
+  mapUrl?: string;
   isPrimary: boolean;
 }
 
@@ -110,6 +112,12 @@ export interface Site {
    * person, so a hero can be cropped freely without a consent question.
    */
   heroImages: ImageRef[];
+  /**
+   * Where the contact form POSTs. The site is a static export with no server,
+   * so this is a third-party form endpoint. An empty string falls the form
+   * back to composing a mailto: in the visitor's own mail client.
+   */
+  contactFormEndpoint: string;
 }
 
 /* ----------------------------------------------------------------- pages */
@@ -125,6 +133,11 @@ export type CollectionName =
 export interface CollectionFacet {
   value: string;
   label: ConfirmableText;
+  /**
+   * The division this sector belongs to. A project detail page links on to it
+   * when no service claims the project explicitly in `relatedProjectSlugs`.
+   */
+  serviceSlug?: string;
 }
 
 export interface HeroSection {
@@ -198,6 +211,22 @@ export interface FormSection {
   heading?: ConfirmableText;
   fields: FormField[];
   submitLabel: ConfirmableText;
+  sendingLabel: ConfirmableText;
+  /** Shown after a successful send. Says what happens next. */
+  successHeading: ConfirmableText;
+  successBody: ConfirmableText;
+  /** Shown when the endpoint rejects or is unreachable. */
+  errorMessage: ConfirmableText;
+  /** Inline validation copy. */
+  requiredMessage: ConfirmableText;
+  emailMessage: ConfirmableText;
+  /** Shown after the mailto: composer opens. Not the same as "sent". */
+  mailtoHeading: ConfirmableText;
+  mailtoBody: ConfirmableText;
+  /** Shown when neither an endpoint nor a usable address is configured. */
+  unavailableMessage: ConfirmableText;
+  /** Explains the mailto: fallback when no endpoint is configured. */
+  fallbackNote: ConfirmableText;
   note?: ConfirmableText;
 }
 

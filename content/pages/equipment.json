@@ -3,6 +3,10 @@
   "title": "Equipment and capabilities",
   "metaTitle": "Equipment & capabilities",
   "metaDescription": "Sato owns and operates its own plant and equipment, which lets us mobilise quickly and control quality and schedule on site.",
+  "labels": {
+    "quantity": "Qty",
+    "location": "Location"
+  },
   "sections": [
     {
       "type": "prose",
@@ -29,6 +33,24 @@
         { "value": "site-support", "label": "Site support" }
       ],
       "note": "{{CONFIRM: current fleet and quantities — this schedule is transferred from the 2012 equipment register}}"
+    },
+    {
+      "type": "linkCards",
+      "id": "put-to-work",
+      "heading": "How the fleet is used",
+      "intro": "Owning the plant is what lets each division control its own programme instead of waiting on a hired-in machine.",
+      "items": [
+        {
+          "label": "Civil & Infrastructure",
+          "body": "Earthmoving, roadworks and concrete plant for roads, drainage, earthworks and buildings.",
+          "href": "/services/civil-infrastructure"
+        },
+        {
+          "label": "Water Resources",
+          "body": "Drilling rigs, pumps and dredging plant for dams, boreholes, water schemes and river works.",
+          "href": "/services/water-resources"
+        }
+      ]
     }
   ]
 }
