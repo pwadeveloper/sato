@@ -154,6 +154,12 @@ export interface HeroSection {
   ctas?: Link[];
   /** The wide shot under the headline. Falls back to `site.heroImages[0]`. */
   image?: ImageRef;
+  /**
+   * Full-bleed background photographs, crossfaded behind the copy. Their
+   * exposure is already pulled down at build time (see image-map.json), and
+   * the hero lays a scrim over them on top of that.
+   */
+  backgroundImages?: ImageRef[];
 }
 
 export interface ProseSection {

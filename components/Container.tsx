@@ -8,6 +8,8 @@ const WIDTHS = {
   narrow: "max-w-(--container-measure)",
   /** No cap; the gutters still apply. */
   wide: "max-w-none",
+  /** Edge to edge with a hairline gutter — the full-bleed hero. */
+  bleed: "max-w-none",
 } as const;
 
 export interface ContainerProps {
@@ -22,8 +24,11 @@ export function Container({
   width = "default",
   className,
 }: ContainerProps) {
+  const gutters =
+    width === "bleed" ? "px-5 md:px-6 lg:px-8" : "px-5 md:px-8 lg:px-12";
+
   return (
-    <div className={cn("mx-auto w-full px-5 md:px-8 lg:px-12", WIDTHS[width], className)}>
+    <div className={cn("mx-auto w-full", gutters, WIDTHS[width], className)}>
       {children}
     </div>
   );

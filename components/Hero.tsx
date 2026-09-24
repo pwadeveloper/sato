@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { Button } from "./Button";
 import { Container } from "./Container";
+import { HeroCarousel } from "./HeroCarousel";
 import { RichText } from "./RichText";
 import { TextLink } from "./TextLink";
 import type { ImageRef, Link as LinkContent } from "@/lib/content-types";
@@ -11,38 +11,54 @@ export interface HeroProps {
   subhead?: string;
   /** First reads as the bordered button; any others follow as text links. */
   ctas?: LinkContent[];
-  image?: ImageRef;
+  /** Crossfaded full-bleed background. */
+  backgroundImages?: ImageRef[];
 }
 
 /**
- * Home hero.
+ * Home hero — a full-bleed photograph with the copy set over it.
  *
- * A single dark field running from under the header down to a wide band of
- * photography. The headline sits at the bottom left with the supporting
- * paragraph set small at the right, their baselines close together, so the
- * eye reads the claim first and the qualification second.
+ * Legibility is handled twice over, because a single measure would have to be
+ * tuned to the brightest frame in the set and would flatten the rest: the
+ * photographs are darkened at build time (`exposure` in image-map.json), and
+ * a scrim sits over them here, weighted to the bottom where the copy sits.
+ * Together they hold white text above 4.5:1 on every frame.
  *
- * `data-hero="dark"` tells the sticky header to switch to its dark tone, so
- * the nav reads as part of this field rather than a bar sitting on top of it.
+ * `data-hero="bleed"` tells the sticky header to sit transparently over this
+ * section and take a solid background once it is scrolled past. The section
+ * is pulled up by the header's height so the picture runs to the very top of
+ * the window and the nav reads as part of it.
  */
-export function Hero({ headline, subhead, ctas = [], image }: HeroProps) {
+export function Hero({ headline, subhead, ctas = [], backgroundImages = [] }: HeroProps) {
   const [primary, ...rest] = ctas;
 
   return (
     <section
       aria-labelledby="hero-heading"
-      data-hero="dark"
-      className="bg-asphalt text-concrete"
+      data-hero="bleed"
+      className="
+        relative isolate flex min-h-svh flex-col justify-end overflow-hidden
+        bg-asphalt text-concrete
+        -mt-[var(--header-height)]
+      "
     >
-      <Container>
-        <div
-          className="
-            flex flex-col gap-8
-            pt-14 pb-10
-            md:pt-24
-            lg:flex-row lg:items-end lg:justify-between lg:gap-16 lg:pt-44 lg:pb-14
-          "
-        >
+      {backgroundImages.length ? <HeroCarousel images={backgroundImages} /> : null}
+
+      {/* Scrim. Heavier at the foot, where the headline and paragraph sit. */}
+      <div
+        aria-hidden="true"
+        className="
+          absolute inset-0
+          bg-asphalt/25
+          [background-image:linear-gradient(to_top,var(--color-asphalt)_0%,color-mix(in_srgb,var(--color-asphalt)_70%,transparent)_28%,color-mix(in_srgb,var(--color-asphalt)_18%,transparent)_62%,color-mix(in_srgb,var(--color-asphalt)_48%,transparent)_100%)]
+        "
+      />
+
+      <Container
+        width="bleed"
+        className="relative z-10 pb-12 pt-[calc(var(--header-height)+6rem)] md:pb-16 lg:pb-20"
+      >
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
           <h1
             id="hero-heading"
             className="text-display wdth-display max-w-[18ch] text-balance"
@@ -53,7 +69,7 @@ export function Hero({ headline, subhead, ctas = [], image }: HeroProps) {
           {subhead || ctas.length ? (
             <div className="flex flex-col items-start gap-5 lg:max-w-[38ch] lg:shrink-0 lg:pb-2">
               {subhead ? (
-                <p className="text-sm text-steel-light wdth-body text-pretty">
+                <p className="text-sm text-concrete/90 wdth-body text-pretty">
                   <RichText text={subhead} />
                 </p>
               ) : null}
@@ -82,29 +98,6 @@ export function Hero({ headline, subhead, ctas = [], image }: HeroProps) {
           ) : null}
         </div>
       </Container>
-
-      {image ? (
-        <Container>
-          <div
-            className="
-              relative w-full overflow-hidden bg-asphalt-raised
-              aspect-4/3 sm:aspect-16/9 lg:aspect-[64/21]
-            "
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              priority
-              sizes="(min-width: 1280px) 1184px, 100vw"
-              className="object-cover"
-            />
-          </div>
-        </Container>
-      ) : null}
-
-      {/* The dark field ends flush with the foot of the photograph. */}
-      <div aria-hidden="true" className="h-0" />
     </section>
   );
 }

@@ -18,12 +18,26 @@
           "href": "/contact"
         }
       ],
-      "image": {
-        "src": "/images/services/roadworks-completed-carriageway.webp",
-        "alt": "Newly laid asphalt carriageway with kerbed median, a roller working in the distance",
-        "width": 1920,
-        "height": 1440
-      }
+      "backgroundImages": [
+        {
+          "src": "/images/hero/dam-site-engineer.webp",
+          "alt": "Sato engineer with drawings on a dam construction site, with an excavator and survey crew behind",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "/images/hero/dam-site-drawings.webp",
+          "alt": "Sato engineer reading a drawing at a dam site, tower crane and formwork behind",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "/images/hero/building-site-drawings.webp",
+          "alt": "Sato engineer reading a drawing at a multi-storey building under construction",
+          "width": 1536,
+          "height": 1024
+        }
+      ]
     },
     {
       "type": "collection",

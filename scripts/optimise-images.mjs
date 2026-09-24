@@ -21,7 +21,12 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const RAW = join(ROOT, 'raw-assets', 'old-site');
+/**
+ * Where a map entry's `source` may live. Tried in order.
+ *  - raw-assets/old-site: the 2012 site, not committed
+ *  - hero: client-supplied hero photography, committed
+ */
+const SOURCE_ROOTS = [join(ROOT, 'raw-assets', 'old-site'), ROOT];
 const OUT = join(ROOT, 'public', 'images');
 const MAX_WIDTH = 1920;
 const SMALL_WIDTH = 800;
@@ -31,20 +36,32 @@ const force = process.argv.includes('--force');
 
 const exists = (p) => stat(p).then(() => true, () => false);
 
-if (!(await exists(RAW))) {
-  console.log(`No originals at ${RAW} — nothing to do.`);
-  console.log('raw-assets/ is not committed; re-download it if you need to regenerate.');
-  process.exit(0);
+/** First root that actually holds this source, or null. */
+async function resolveSource(rel) {
+  for (const root of SOURCE_ROOTS) {
+    const candidate = join(root, rel);
+    if (await exists(candidate)) return candidate;
+  }
+  return null;
 }
 
 const { images } = JSON.parse(await readFile(join(ROOT, 'scripts', 'image-map.json'), 'utf8'));
 
 /** Write one variant, downscaling only. Both variants are always written. */
-async function variant(src, srcMtime, absOut, width, sourceWidth) {
+async function variant(src, srcMtime, absOut, width, sourceWidth, exposure) {
   if (!force && (await exists(absOut)) && (await stat(absOut)).mtimeMs > srcMtime) return 'cached';
   await mkdir(dirname(absOut), { recursive: true });
   const pipeline = sharp(src).rotate();                           // honour EXIF orientation
   if (sourceWidth > width) pipeline.resize({ width, withoutEnlargement: true });
+  /**
+   * Hero photographs are bright, high-key and carry white text over them, so
+   * their exposure is pulled down at build time. Doing it here rather than
+   * with an overlay means the shipped file is already calm — a CSS scrim
+   * alone would have to be heavy enough for the brightest image in the set.
+   */
+  if (exposure && exposure !== 1) {
+    pipeline.modulate({ brightness: exposure, saturation: 0.92 });
+  }
   const info = await pipeline.webp({ quality: QUALITY, effort: 5 }).toFile(absOut);
   return info;
 }
@@ -54,8 +71,8 @@ const missing = [];
 const results = [];
 
 for (const entry of images) {
-  const src = join(RAW, entry.source);
-  if (!(await exists(src))) { missing.push(entry.source); continue; }
+  const src = await resolveSource(entry.source);
+  if (!src) { missing.push(entry.source); continue; }
 
   const srcMtime = (await stat(src)).mtimeMs;
   let meta;
@@ -72,7 +89,7 @@ for (const entry of images) {
   const made = [];
   for (const [suffix, width] of [['', MAX_WIDTH], ['-800', SMALL_WIDTH]]) {
     const rel = `${entry.out}${suffix}.webp`;
-    const res = await variant(src, srcMtime, join(OUT, rel), width, sourceWidth);
+    const res = await variant(src, srcMtime, join(OUT, rel), width, sourceWidth, entry.exposure);
     if (!res) continue;
     if (res === 'cached') { cached++; made.push(rel); continue; }
     written++; bytes += res.size;

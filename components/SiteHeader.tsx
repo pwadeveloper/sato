@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
@@ -19,15 +20,14 @@ export interface SiteHeaderProps {
 }
 
 /**
- * Routes whose hero is a dark field. The header takes the same tone there so
- * the nav reads as part of the hero rather than a bar laid over it, and stays
- * dark once scrolled — a header that changed colour mid-scroll would need to
- * watch the scroll position, which is more machinery than this earns.
+ * Routes that open with a full-bleed photographic hero. There the header sits
+ * transparently over the picture, and takes a solid background once the hero
+ * has been scrolled past so the nav never sits unreadably on pale content.
  *
  * Only the pathname crosses to the client; the rest of `site.json` stays on
  * the server.
  */
-const DARK_ROUTES = new Set(["/"]);
+const BLEED_ROUTES = new Set(["/"]);
 
 export function SiteHeader({
   logoAlt,
@@ -37,13 +37,42 @@ export function SiteHeader({
   menuOpenLabel,
   menuCloseLabel,
 }: SiteHeaderProps) {
-  const isDark = DARK_ROUTES.has(usePathname());
+  const pathname = usePathname();
+  const overHero = BLEED_ROUTES.has(pathname);
+  const [scrolledPast, setScrolledPast] = useState(false);
+
+  useEffect(() => {
+    if (!overHero) return;
+    const hero = document.querySelector('[data-hero="bleed"]');
+    if (!hero) return;
+
+    // Watching the hero itself beats a scroll handler: the browser does the
+    // work, and the switch lands exactly when the picture leaves the bar.
+    // rootMargin only understands px and %, never rem — hence offsetHeight
+    // rather than the --header-height custom property.
+    const bar = document.querySelector("header")?.offsetHeight ?? 64;
+    const observer = new IntersectionObserver(
+      ([entry]) => setScrolledPast(!entry.isIntersecting),
+      { rootMargin: `-${bar}px 0px 0px 0px`, threshold: 0 },
+    );
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, [overHero, pathname]);
+
+  // Light ink whenever the bar is over the photograph or on the dark fill.
+  const isDark = overHero;
+  const isTransparent = overHero && !scrolledPast;
 
   return (
     <header
       className={cn(
         "sticky top-0 z-40 h-[var(--header-height)] border-b",
-        isDark ? "border-rule-dark bg-asphalt" : "border-rule bg-concrete",
+        "transition-[background-color,border-color] duration-300 motion-reduce:transition-none",
+        isTransparent
+          ? "border-transparent bg-transparent"
+          : isDark
+            ? "border-rule-dark bg-asphalt"
+            : "border-rule bg-concrete",
       )}
     >
       <a
