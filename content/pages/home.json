@@ -1,0 +1,89 @@
+{
+  "slug": "home",
+  "title": "Engineering Nigeria's infrastructure since 1997.",
+  "metaTitle": "Sato Engineering and Infrastructure Limited",
+  "metaDescription": "Indigenous Nigerian engineering firm incorporated in 1997. Roads, dams, water schemes and buildings for federal and state governments, universities and international development partners.",
+  "sections": [
+    {
+      "type": "hero",
+      "id": "hero",
+      "subhead": "Sato Engineering and Infrastructure Limited is an indigenous Nigerian engineering firm. For nearly three decades we have designed and built roads, dams, water schemes and buildings for federal and state governments, universities and international development partners, and we now deliver {{CONFIRM: energy division name}} services.",
+      "ctas": [
+        {
+          "label": "Contact us",
+          "href": "/contact"
+        },
+        {
+          "label": "View our projects",
+          "href": "/projects"
+        }
+      ]
+    },
+    {
+      "type": "collection",
+      "id": "divisions",
+      "heading": "What we do",
+      "collection": "services",
+      "ctas": [
+        {
+          "label": "All services",
+          "href": "/services"
+        }
+      ]
+    },
+    {
+      "type": "facts",
+      "id": "company-at-a-glance",
+      "heading": "Company at a glance"
+    },
+    {
+      "type": "collection",
+      "id": "clients",
+      "heading": "Trusted by",
+      "collection": "clients",
+      "ctas": [
+        {
+          "label": "All clients",
+          "href": "/clients"
+        }
+      ]
+    },
+    {
+      "type": "collection",
+      "id": "selected-projects",
+      "heading": "Selected projects",
+      "collection": "projects",
+      "ctas": [
+        {
+          "label": "View all projects",
+          "href": "/projects"
+        }
+      ],
+      "facets": [
+        {
+          "value": "buildings",
+          "label": "Buildings"
+        },
+        {
+          "value": "roads",
+          "label": "Roads"
+        },
+        {
+          "value": "water",
+          "label": "Water"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "id": "closing",
+      "body": "Working on a project in civil, water or energy infrastructure? Talk to our team.",
+      "ctas": [
+        {
+          "label": "Contact us",
+          "href": "/contact"
+        }
+      ]
+    }
+  ]
+}

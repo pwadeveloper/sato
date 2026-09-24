@@ -1,0 +1,20 @@
+{
+  "slug": "projects",
+  "title": "Projects",
+  "metaTitle": "Projects",
+  "metaDescription": "Selected buildings, roads and water projects delivered by Sato Engineering and Infrastructure Limited for government, university and private clients.",
+  "sections": [
+    {
+      "type": "collection",
+      "id": "all-projects",
+      "collection": "projects",
+      "facetMode": "filter",
+      "facets": [
+        { "value": "buildings", "label": "Buildings" },
+        { "value": "roads", "label": "Roads" },
+        { "value": "water", "label": "Water" }
+      ],
+      "note": "{{CONFIRM: add Energy when projects exist}} {{CONFIRM: projects delivered since 2012 — this is the biggest content gap on the site}}"
+    }
+  ]
+}

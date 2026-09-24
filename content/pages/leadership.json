@@ -1,0 +1,21 @@
+{
+  "slug": "leadership",
+  "title": "Leadership and project teams",
+  "metaTitle": "Leadership",
+  "metaDescription": "Sato is led by a core team of engineers and managers, and assembles a dedicated project team for each job from its network of engineers, technicians, foremen and specialists.",
+  "sections": [
+    {
+      "type": "prose",
+      "id": "intro",
+      "body": [
+        "Sato is led by a core team of engineers and managers with decades of combined experience. For each project, we assemble a dedicated team from our network of engineers, technicians, foremen and specialists, matched to the scope and location of the work."
+      ]
+    },
+    {
+      "type": "collection",
+      "id": "team",
+      "collection": "team",
+      "note": "{{CONFIRM: current roster and which members are leadership}}"
+    }
+  ]
+}

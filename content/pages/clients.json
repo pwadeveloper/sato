@@ -1,0 +1,28 @@
+{
+  "slug": "clients",
+  "title": "Clients",
+  "metaTitle": "Clients",
+  "metaDescription": "Sato has delivered for federal and state government, international development partners, universities and private organisations.",
+  "sections": [
+    {
+      "type": "prose",
+      "id": "intro",
+      "body": [
+        "For nearly three decades, Sato has delivered for federal and state government, international development partners, universities and private organisations."
+      ]
+    },
+    {
+      "type": "collection",
+      "id": "all-clients",
+      "collection": "clients",
+      "facetMode": "group",
+      "facets": [
+        { "value": "federal", "label": "Federal government" },
+        { "value": "state", "label": "State government" },
+        { "value": "international", "label": "International development partners" },
+        { "value": "education", "label": "Education" },
+        { "value": "private", "label": "Private sector" }
+      ]
+    }
+  ]
+}

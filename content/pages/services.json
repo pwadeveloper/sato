@@ -1,0 +1,69 @@
+{
+  "slug": "services",
+  "title": "Services",
+  "metaTitle": "Services",
+  "metaDescription": "Four divisions: civil and infrastructure, water resources, electrical and mechanical, and energy. Each draws on Sato's shared project management, equipment fleet and HSE systems.",
+  "labels": {
+    "breadcrumb": "Breadcrumb",
+    "capabilities": "Capabilities",
+    "relatedProjects": "Projects in this division"
+  },
+  "sections": [
+    {
+      "type": "prose",
+      "id": "intro",
+      "body": [
+        "Four divisions, one standard of delivery. Each division draws on Sato's shared project management, equipment fleet and HSE systems."
+      ]
+    },
+    {
+      "type": "collection",
+      "id": "divisions-primary",
+      "collection": "services",
+      "slugs": ["civil-infrastructure", "water-resources"]
+    },
+    {
+      "type": "collection",
+      "id": "divisions-secondary",
+      "collection": "services",
+      "slugs": ["electrical-mechanical", "energy"]
+    },
+    {
+      "type": "linkCards",
+      "id": "backed-by",
+      "heading": "Backed by Sato",
+      "intro": "Whichever division delivers your project, the same plant, people and systems stand behind it.",
+      "items": [
+        {
+          "label": "Equipment and capabilities",
+          "body": "Sato owns and operates its own plant and equipment, which lets us mobilise quickly and control quality and schedule on site.",
+          "href": "/equipment"
+        },
+        {
+          "label": "Health, safety, environment and quality",
+          "body": "Sato operates its own safety management system. It is implemented on every project and audited internally every three months.",
+          "href": "/hse"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "id": "cta-default",
+      "body": "Working on a project in civil, water or energy infrastructure? Talk to our team.",
+      "ctas": [
+        { "label": "Contact us", "href": "/contact" },
+        { "label": "View our projects", "href": "/projects" }
+      ]
+    },
+    {
+      "type": "cta",
+      "id": "cta-energy",
+      "heading": "For procurement and vendor verification",
+      "body": "If you are registering Sato as a vendor or assessing us for an oil and gas tender, contact our head office for company documentation, registrations and project references.",
+      "ctas": [
+        { "label": "Contact us", "href": "/contact" },
+        { "label": "Company information", "href": "/about" }
+      ]
+    }
+  ]
+}

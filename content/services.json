@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "civil-infrastructure",
+    "name": "Civil & Infrastructure",
+    "shortSummary": "Roads, buildings, earthworks, drainage and erosion control.",
+    "summary": "Design and construction of roads, buildings and civil works, from earthworks to finished surfaces.",
+    "body": [
+      "Civil engineering is where Sato began. We design and build the infrastructure that institutions and communities depend on, and we manage every stage, from site preparation to handover."
+    ],
+    "capabilities": [
+      "Civil engineering design",
+      "Asphaltic concrete road construction and road rehabilitation",
+      "Earthworks: grading, laterite filling, sub-base compaction",
+      "Drainage systems and walkways",
+      "Building construction: academic, administrative, laboratory, residential and office buildings",
+      "Renovation and conversion of existing buildings",
+      "Erosion control"
+    ],
+    "relatedProjectSlugs": [
+      "funaab-colplant-building-phase-ii",
+      "funaab-academic-building-complex-block-b",
+      "mcpherson-administrative-block-and-laboratory",
+      "lagos-state-road-rehabilitation",
+      "fce-osiele-campus-roads-and-walkways"
+    ],
+    "image": {
+      "src": "/images/services/roadworks-completed-carriageway.webp",
+      "alt": "Completed asphalt carriageway with kerbed median",
+      "width": 1920,
+      "height": 1440
+    },
+    "order": 1
+  },
+  {
+    "slug": "water-resources",
+    "name": "Water Resources",
+    "shortSummary": "Earth dams, irrigation, water supply schemes, boreholes and river works.",
+    "summary": "Dams, irrigation, water supply and river works for government and institutional clients.",
+    "body": [
+      "Water infrastructure has been central to Sato's work for decades, with clients including the Ogun-Osun River Basin Development Authority, state water corporations and the Federal Ministry of Water Resources."
+    ],
+    "capabilities": [
+      "Earth dam construction",
+      "Irrigation development",
+      "Water supply scheme construction and rehabilitation, including pump houses",
+      "Water treatment facilities",
+      "Sewage systems",
+      "Borehole drilling, including solar-powered boreholes, with our own drilling rig",
+      "River dredging and stream channelization"
+    ],
+    "relatedProjectSlugs": [
+      "fiditi-earth-dam",
+      "ogere-water-supply-scheme-rehabilitation",
+      "lower-awba-stream-channelization",
+      "ogungbade-river-dredging",
+      "solar-powered-boreholes"
+    ],
+    "image": {
+      "src": "/images/services/water-ductile-iron-pipes.webp",
+      "alt": "Stacked ductile iron pipes for water distribution",
+      "width": 1600,
+      "height": 1200
+    },
+    "order": 2
+  },
+  {
+    "slug": "electrical-mechanical",
+    "name": "Electrical & Mechanical",
+    "shortSummary": "{{CONFIRM: one-line summary from client}}",
+    "summary": "{{CONFIRM: client to provide}}",
+    "body": [
+      "Sato was founded by an electrical engineer, and electrical and mechanical engineering services have been part of our offering alongside our civil and water work. {{CONFIRM: client to provide detail — scope, typical projects}}"
+    ],
+    "capabilities": [
+      "{{CONFIRM: list from client}}"
+    ],
+    "relatedProjectSlugs": [],
+    "image": {
+      "src": "/images/services/water-high-lift-pump-panel.webp",
+      "alt": "Installed high lift pump control panel at Sagamu intake",
+      "width": 1600,
+      "height": 1200
+    },
+    "order": 3
+  },
+  {
+    "slug": "energy",
+    "name": "{{CONFIRM: energy division name — e.g. \"Energy\", \"Oil & Gas\", \"Energy & Petroleum Services\"}}",
+    "shortSummary": "{{CONFIRM: one-line summary from client}}",
+    "summary": "{{CONFIRM: client to provide}}",
+    "body": [
+      "{{CONFIRM: client's detailed services list, reviewed by Engr. Wale Osamiluyi. May be adapted from partner reference sites (OGAP Engineering via Wayback Machine, Sunrise Engineering) once links are provided.}}"
+    ],
+    "capabilities": [
+      "{{CONFIRM: list}}"
+    ],
+    "relatedProjectSlugs": [],
+    "registrations": [
+      "{{CONFIRM: NOGICJQS / NCDMB, NipeX, NUPRC permits}}"
+    ],
+    "image": null,
+    "order": 4
+  }
+]

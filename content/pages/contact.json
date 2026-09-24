@@ -1,0 +1,45 @@
+{
+  "slug": "contact",
+  "title": "Contact us",
+  "metaTitle": "Contact",
+  "metaDescription": "For project enquiries, tenders and vendor verification, contact Sato Engineering and Infrastructure Limited.",
+  "sections": [
+    {
+      "type": "prose",
+      "id": "intro",
+      "body": [
+        "For project enquiries, tenders and vendor verification, contact our head office."
+      ]
+    },
+    {
+      "type": "offices",
+      "id": "offices",
+      "heading": "Offices"
+    },
+    {
+      "type": "form",
+      "id": "enquiry-form",
+      "heading": "Send an enquiry",
+      "submitLabel": "Send enquiry",
+      "fields": [
+        { "name": "name", "label": "Name", "type": "text", "required": true },
+        { "name": "organisation", "label": "Organisation", "type": "text", "required": false },
+        { "name": "email", "label": "Email", "type": "email", "required": true },
+        { "name": "phone", "label": "Phone", "type": "tel", "required": false },
+        {
+          "name": "subject",
+          "label": "Subject",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Project enquiry",
+            "Tender or vendor registration",
+            "General"
+          ]
+        },
+        { "name": "message", "label": "Message", "type": "textarea", "required": true }
+      ],
+      "note": "{{CONFIRM: where form submissions go}}"
+    }
+  ]
+}

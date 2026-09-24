@@ -1,0 +1,34 @@
+{
+  "slug": "equipment",
+  "title": "Equipment and capabilities",
+  "metaTitle": "Equipment & capabilities",
+  "metaDescription": "Sato owns and operates its own plant and equipment, which lets us mobilise quickly and control quality and schedule on site.",
+  "sections": [
+    {
+      "type": "prose",
+      "id": "intro",
+      "body": [
+        "Sato owns and operates its own plant and equipment, which lets us mobilise quickly and control quality and schedule on site.",
+        "The schedule below covers earthmoving and roadworks plant, concrete production, drilling and piling, haulage and lifting, and workshop and site support, held across our Abeokuta, Lagos and Oyo yards."
+      ]
+    },
+    {
+      "type": "collection",
+      "id": "fleet",
+      "collection": "equipment",
+      "facetMode": "group",
+      "facets": [
+        { "value": "earthmoving", "label": "Earthmoving" },
+        { "value": "roadworks", "label": "Roadworks" },
+        { "value": "concrete", "label": "Concrete production" },
+        { "value": "drilling-and-piling", "label": "Drilling and piling" },
+        { "value": "haulage-and-lifting", "label": "Haulage and lifting" },
+        { "value": "power-and-air", "label": "Power and compressed air" },
+        { "value": "pumps", "label": "Pumps" },
+        { "value": "workshop", "label": "Workshop" },
+        { "value": "site-support", "label": "Site support" }
+      ],
+      "note": "{{CONFIRM: current fleet and quantities — this schedule is transferred from the 2012 equipment register}}"
+    }
+  ]
+}

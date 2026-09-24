@@ -1,0 +1,107 @@
+{
+  "$comment": [
+    "Curated selection of images recovered from the old WordPress site.",
+    "source  — path under raw-assets/old-site/ (see raw-assets/manifest.json)",
+    "out     — output stem under public/images/; the optimiser writes <out>.webp (max 1920px wide)",
+    "          and <out>-800.webp, skipping any variant that would upscale the source.",
+    "alt     — alt text, taken from the old site's caption and edited to sentence case.",
+    "Anything in the manifest but absent here was judged not worth shipping; docs/image-report.md says why."
+  ],
+  "images": [
+    { "source": "2019/10/IMG_20190430_1230211.jpg", "out": "projects/funaab-administrative-block-1", "alt": "Three-storey administrative block under construction at the Federal University of Agriculture, Abeokuta" },
+    { "source": "2019/10/IMG_20190430_124146.jpg", "out": "projects/funaab-administrative-block-2", "alt": "External walkway and balustrade on the administrative block at the Federal University of Agriculture, Abeokuta" },
+
+    { "source": "2019/10/IMG-20191011-WA0030.jpg", "out": "projects/funaab-colplant-1", "alt": "COLPLANT building at the Federal University of Agriculture, Abeokuta, at completion stage" },
+    { "source": "2019/10/IMG-20191011-WA0023-1.jpg", "out": "projects/funaab-colplant-2", "alt": "COLPLANT building under construction, with a backhoe loader on site" },
+    { "source": "2019/10/IMG-20191011-WA0029-1.jpg", "out": "projects/funaab-colplant-3", "alt": "First-floor walkway and railings in the COLPLANT building" },
+    { "source": "2019/10/IMG-20191011-WA0019-1.jpg", "out": "projects/funaab-colplant-4", "alt": "Internal corridor in the COLPLANT building" },
+
+    { "source": "2019/10/IMG-20191011-WA0045-2.jpg", "out": "projects/fce-osiele-1", "alt": "Completed road at the Federal College of Education, Osiele" },
+    { "source": "2019/10/IMG-20191011-WA0047.jpg", "out": "projects/fce-osiele-2", "alt": "Compacted laterite filling with walkway at the Federal College of Education, Osiele" },
+    { "source": "2019/10/IMG-20191011-WA0049-1.jpg", "out": "projects/fce-osiele-3", "alt": "Compacted laterite filling at the Federal College of Education, Osiele" },
+    { "source": "2019/10/IMG-20191011-WA0046.jpg", "out": "projects/fce-osiele-4", "alt": "Asphalt being laid at the Federal College of Education, Osiele" },
+
+    { "source": "2012/07/1.jpg", "out": "projects/ogere-1", "alt": "Reinforcement and formwork during construction at the Ogere water supply scheme" },
+    { "source": "2012/07/22.jpg", "out": "projects/ogere-2", "alt": "Construction work in progress at the Ogere water supply scheme" },
+    { "source": "2012/07/211.jpg", "out": "projects/ogere-3", "alt": "Ductile iron pipes being offloaded at the Ogere water supply scheme" },
+    { "source": "2019/10/SAM_7309.jpg", "out": "projects/ogere-4", "alt": "Trench excavated for UPVC pipes at Ositelu, Ogere" },
+    { "source": "2019/10/SAM_7331.jpg", "out": "projects/ogere-5", "alt": "UPVC pipes being laid at Ositelu, Ogere" },
+    { "source": "2012/07/nhj.jpg", "out": "projects/ogere-6", "alt": "Filter bed rehabilitation in progress at the Ogere water supply scheme" },
+    { "source": "2012/07/62.jpg", "out": "projects/ogere-7", "alt": "High lift pump being installed at Ogere" },
+    { "source": "2012/07/71.jpg", "out": "projects/ogere-8", "alt": "High lift pump building under construction at the Ogere water supply scheme" },
+    { "source": "2012/07/saas2.jpg", "out": "projects/ogere-9", "alt": "Foundation work for 253 cubic metre overhead tanks at Ogere, Ogun State" },
+    { "source": "2012/07/ds2.jpg", "out": "projects/ogere-10", "alt": "Completed overhead tank at Oshitelu Memorial Grammar School, Ogere" },
+    { "source": "2012/07/23.jpg", "out": "projects/ogere-11", "alt": "Stone pitching for flood control at the Ogere water supply scheme" },
+    { "source": "2012/07/92.jpg", "out": "projects/ogere-12", "alt": "Trench excavation for pipe laying at Ogere" },
+
+    { "source": "2019/10/22_page-0001.jpg", "out": "projects/fiditi-1", "alt": "Excavation in progress on the earth dam at Fiditi" },
+    { "source": "2012/07/24.jpg", "out": "projects/fiditi-2", "alt": "Clay compaction for the cut-off trench at Fiditi dam" },
+    { "source": "2012/07/c22.jpg", "out": "projects/fiditi-3", "alt": "Clearing the river course downstream of Fiditi dam" },
+
+    { "source": "2012/06/Awba-Stream-Project.png", "out": "projects/awba-1", "alt": "Excavator working in the Awba stream channel" },
+
+    { "source": "2012/07/4.jpg", "out": "projects/mcpherson-admin-1", "alt": "Work in progress on the administrative block at McPherson University, Ajebo" },
+    { "source": "2012/08/IMG-20120912-00066.jpg", "out": "projects/mcpherson-convention-1", "alt": "Internal corridor during conversion of the convention centre to staff quarters at McPherson University, Ajebo" },
+
+    { "source": "2012/07/2.jpg", "out": "projects/ajebo-road-1", "alt": "Asphaltic concrete road under construction at Ajebo, Ogun State" },
+    { "source": "2012/07/cl002.jpg", "out": "projects/ajebo-road-2", "alt": "Asphaltic concrete road and drainage system under construction at Ajebo, Ogun State" },
+    { "source": "2012/07/clip_image0028.jpg", "out": "projects/ajebo-road-3", "alt": "Asphaltic concrete road under construction" },
+
+    { "source": "2012/07/clip_image0027.jpg", "out": "projects/lagos-road-1", "alt": "Road rehabilitation work in progress" },
+
+    { "source": "2012/07/6.jpg", "out": "projects/laderin-1", "alt": "Six flats under construction at Laderin Estate, Abeokuta" },
+    { "source": "2012/07/21.gif", "out": "projects/iperu-1", "alt": "Iperu area office under construction" },
+
+    { "source": "2012/07/w1.jpg", "out": "projects/boreholes-1", "alt": "Completed solar-powered borehole at the primary health centre, Ota" },
+    { "source": "2012/07/w3.jpg", "out": "projects/boreholes-2", "alt": "Completed solar-powered borehole at a primary health centre in Ogun State" },
+    { "source": "2012/07/w4.jpg", "out": "projects/boreholes-3", "alt": "Completed solar-powered borehole at a primary health centre in Ogun State" },
+    { "source": "2012/07/5.jpg", "out": "projects/boreholes-4", "alt": "Completed solar-powered borehole at a primary health centre in Ogun State" },
+
+    { "source": "2019/10/DSC00391.jpg", "out": "services/roadworks-completed-carriageway", "alt": "Completed asphalt carriageway with kerbed median" },
+    { "source": "2012/07/clip_image0011.jpg", "out": "services/roadworks-asphalt-laying", "alt": "Asphalt being laid by a paver" },
+    { "source": "2012/07/clip_image0013.jpg", "out": "services/roadworks-asphalt-compaction", "alt": "Asphalt being compacted by a roller" },
+    { "source": "2012/07/clip_image0021.jpg", "out": "services/roadworks-box-culvert", "alt": "Box culvert under construction" },
+    { "source": "2012/07/clip_image0022.jpg", "out": "services/roadworks-priming", "alt": "MC1 prime coat applied before asphalt is laid" },
+    { "source": "2012/07/clip_image0023.jpg", "out": "services/roadworks-sub-base-compaction", "alt": "Sub-base material being compacted" },
+    { "source": "2012/07/clip_image0024.jpg", "out": "services/roadworks-wearing-course", "alt": "Wearing course being laid" },
+    { "source": "2012/07/clip_image00ds1.jpg", "out": "services/roadworks-sandfill-grading", "alt": "Sandfill being spread and graded" },
+    { "source": "2012/07/clip_image001.jpg", "out": "services/roadworks-sandfill-graded", "alt": "Graded sandfill before compaction" },
+
+    { "source": "2019/10/IMG_0085.jpg", "out": "services/water-ductile-iron-pipes", "alt": "Stacked ductile iron pipes for water distribution" },
+    { "source": "2019/10/IMG_0237.jpg", "out": "services/water-high-lift-pump-panel", "alt": "Installed high lift pump control panel at Sagamu intake" },
+    { "source": "2019/10/P1030872.jpg", "out": "services/water-sagamu-intake-inspection", "alt": "World Bank team inspecting the Sagamu intake water supply project" },
+    { "source": "2019/10/P1050544.jpg", "out": "services/water-meter-installation", "alt": "Water meter being installed for Ogun State Water Corporation" },
+    { "source": "2019/10/P1050419.jpg", "out": "services/water-meter-training", "alt": "Ogun State Water Corporation staff being trained on water meter installation" },
+    { "source": "2012/07/e02.jpg", "out": "services/water-erosion-control", "alt": "Excavation for erosion control at Mabunmi junction, Ijebu" },
+
+    { "source": "2019/10/DSC00166.jpg", "out": "projects-unassigned/owode-yewa-blocks-of-shops", "alt": "Completed blocks of shops at Owode Yewa International Market" },
+    { "source": "2019/10/Doc2-1_page-0001.jpg", "out": "projects-unassigned/horizon-suites-1", "alt": "Entrance to Horizon Suites, Ibadan, Oyo State" },
+    { "source": "2019/10/Doc2-1_page-0002.jpg", "out": "projects-unassigned/horizon-suites-2", "alt": "Driveway and chalets at Horizon Suites, Ibadan, Oyo State" },
+    { "source": "2019/10/11_page-0001.jpg", "out": "projects-unassigned/obstetrics-care-facility-mowe", "alt": "Obstetrics care facility under construction at Mowe" },
+    { "source": "2012/07/10.jpg", "out": "projects-unassigned/primary-health-centre-alabi-oloro", "alt": "Completed national primary health centre at Alabi-Oloro" },
+    { "source": "2012/07/9.jpg", "out": "projects-unassigned/omololu-residence", "alt": "Residential development under construction in Abeokuta" },
+    { "source": "2012/07/1.gif", "out": "projects-unassigned/sato-office-abeokuta", "alt": "Sato Engineering office in Abeokuta" },
+
+    { "source": "gallery/equipments/backhoeloaderc.jpg", "out": "equipment/backhoe-loader", "alt": "Backhoe loader" },
+    { "source": "gallery/equipments/d8bulldozerc.jpg", "out": "equipment/bulldozer-d8", "alt": "D8 bulldozer" },
+    { "source": "gallery/equipments/drillingrigc.jpg", "out": "equipment/drilling-rig", "alt": "Truck-mounted drilling rig" },
+    { "source": "gallery/equipments/dumptruckc.jpg", "out": "equipment/dump-truck", "alt": "Mack dump truck" },
+    { "source": "gallery/equipments/excavatorc.jpg", "out": "equipment/wheel-loader", "alt": "CAT 950H wheel loader" },
+    { "source": "gallery/equipments/ingersollcompressorc.jpg", "out": "equipment/compressor-825cfm", "alt": "Ingersoll Rand 825 CFM compressor" },
+    { "source": "gallery/equipments/ivecotippingtrailerc.jpg", "out": "equipment/tipping-trailer", "alt": "Iveco 30-tonne tipping trailer" },
+    { "source": "gallery/equipments/lowloaderc.jpg", "out": "equipment/low-loader", "alt": "Mack low loader truck" },
+    { "source": "gallery/equipments/dafhiabtruckc.jpg", "out": "equipment/hiab-truck", "alt": "DAF truck with Hiab crane" },
+
+    { "source": "2012/08/DSC00741-e1345298741956.jpg", "out": "awards/best-engineering-company-ogun-2010", "alt": "Award plaque presented to Sato Engineering" },
+    { "source": "2012/08/DSC00755-e1345298264338.jpg", "out": "awards/rotaract-2010", "alt": "Rotaract Club award presented to Sato Engineering" },
+    { "source": "2012/08/DSC00752-e1345298664918.jpg", "out": "awards/rotaract-2011", "alt": "Rotaract Club award presented to Sato Engineering" },
+    { "source": "2012/08/P1000076-e1345298408269.jpg", "out": "awards/rotary-2012", "alt": "Rotary Club award presented to Sato Engineering" },
+    { "source": "2012/08/P1000093.jpg", "out": "awards/egba-youth-2012", "alt": "Egba Youth Award 2012 plaque presented to Sato Engineering" }
+  ],
+  "heroCandidates": [
+    "services/roadworks-completed-carriageway",
+    "projects-unassigned/owode-yewa-blocks-of-shops",
+    "projects/funaab-administrative-block-1",
+    "projects/ogere-4"
+  ]
+}

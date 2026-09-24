@@ -1,0 +1,65 @@
+{
+  "slug": "hse",
+  "title": "Health, safety, environment and quality",
+  "metaTitle": "HSE & Quality",
+  "metaDescription": "Sato operates its own safety management system, implemented on every project and audited internally every three months.",
+  "sections": [
+    {
+      "type": "prose",
+      "id": "intro",
+      "body": [
+        "Safe sites and quality work are how we have kept clients for nearly three decades. Our HSE and quality management is led by a dedicated HSE & Quality Manager and applies to every project, in every division."
+      ]
+    },
+    {
+      "type": "prose",
+      "id": "policy-statement",
+      "heading": "Policy statement",
+      "body": [
+        "Sato Engineering and Infrastructure Limited is committed to managing safety, quality and environmental matters across our operations in a professional manner. Our employees are our most valuable asset, and our first aim is to prevent them from sustaining work-related injuries."
+      ]
+    },
+    {
+      "type": "prose",
+      "id": "safety-management-system",
+      "heading": "Safety management system",
+      "body": [
+        "Sato operates its own safety management system. It sets out corporate safety standards, safety management plans and implementation guidelines. The system is implemented on every project and audited internally every three months."
+      ]
+    },
+    {
+      "type": "prose",
+      "id": "training",
+      "heading": "Training and induction",
+      "body": [
+        "All employees attend monthly safety inductions, covering both standard safety procedures and the procedures specific to the project they are working on."
+      ]
+    },
+    {
+      "type": "prose",
+      "id": "protective-equipment",
+      "heading": "Personal protective equipment",
+      "body": [
+        "Personal protective equipment is provided to every employee as the work requires. The minimum standard on any Sato site is a safety helmet and safety boots."
+      ]
+    },
+    {
+      "type": "prose",
+      "id": "incident-reporting",
+      "heading": "Incident reporting",
+      "body": ["{{CONFIRM: incident reporting and investigation procedure — not covered on the old site}}"]
+    },
+    {
+      "type": "prose",
+      "id": "quality-assurance",
+      "heading": "Quality assurance",
+      "body": ["{{CONFIRM: quality assurance process — the old site covers quality only as part of the safety management system}}"]
+    },
+    {
+      "type": "list",
+      "id": "certifications",
+      "heading": "Certifications",
+      "items": ["{{CONFIRM: ISO 9001 / ISO 45001 / ISO 14001 or other certifications, if held}}"]
+    }
+  ]
+}

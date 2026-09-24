@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+@layer base {
+  :root {
+    /* Sticky header height. The mobile nav panel hangs off it. */
+    --header-height: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --header-height: 5rem;
+    }
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    /* Keep anchor targets clear of the sticky header. */
+    scroll-padding-top: calc(var(--header-height) + 1rem);
+  }
+
+  body {
+    background-color: var(--color-concrete);
+    color: var(--color-asphalt);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    font-variation-settings: "wdth" 100;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* One ring, everywhere, on every focusable thing. */
+  :focus-visible {
+    outline: 3px solid var(--color-survey);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--color-asphalt);
+  }
+
+  /* Numbers line up in the data plate, project meta and equipment schedule. */
+  :where(dd, td, time, .tabular) {
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    background-color: var(--color-survey);
+    color: var(--color-asphalt);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,430 @@
+[
+  {
+    "slug": "concrete-mixer",
+    "name": "Concrete mixer",
+    "category": "concrete",
+    "quantity": "3",
+    "notes": "Winget",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "poker-vibrator",
+    "name": "Poker vibrator",
+    "category": "concrete",
+    "quantity": "2",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "excavator",
+    "name": "Excavator",
+    "category": "earthmoving",
+    "quantity": "2",
+    "notes": "Caterpillar",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "water-tanker",
+    "name": "Water tanker",
+    "category": "haulage-and-lifting",
+    "quantity": "2",
+    "notes": "Mack",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "pick-up-nissan-frontier",
+    "name": "Pick-up (Nissan Frontier)",
+    "category": "haulage-and-lifting",
+    "quantity": "5",
+    "notes": "Nissan Frontier",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "pick-up-toyota-hilux",
+    "name": "Pick-up (Toyota Hilux)",
+    "category": "haulage-and-lifting",
+    "quantity": "2",
+    "notes": "Toyota Hilux",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "saloon-cars",
+    "name": "Saloon cars",
+    "category": "haulage-and-lifting",
+    "quantity": "10",
+    "notes": "Toyota, Nissan",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "tipping-trailer",
+    "name": "Tipping trailer",
+    "category": "haulage-and-lifting",
+    "quantity": "5",
+    "notes": "Mack and Iveco, 30 tonnes",
+    "location": "Abeokuta",
+    "image": {
+      "src": "/images/equipment/tipping-trailer.webp",
+      "alt": "Iveco 30-tonne tipping trailer",
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "slug": "block-making-machine",
+    "name": "Block making machine",
+    "category": "concrete",
+    "quantity": "2",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "theodolite",
+    "name": "Theodolite",
+    "category": "site-support",
+    "quantity": "1",
+    "notes": "Leica total station",
+    "location": "Lagos"
+  },
+  {
+    "slug": "truck-sand-tipper",
+    "name": "Truck (sand tipper)",
+    "category": "haulage-and-lifting",
+    "quantity": "2",
+    "notes": "MAN Diesel, 15 tonnes",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "generating-sets",
+    "name": "Generating sets",
+    "category": "power-and-air",
+    "quantity": "4",
+    "notes": "Perkins — 27KVA, 40KVA, 10KVA, 7.5KVA",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "toyota-dyna-pick-up",
+    "name": "Toyota Dyna pick-up",
+    "category": "haulage-and-lifting",
+    "quantity": "4",
+    "notes": "Toyota Dyna",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "pumping-machine",
+    "name": "Pumping machine",
+    "category": "pumps",
+    "quantity": "4",
+    "notes": "Honda",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "mobile-welding-machine",
+    "name": "Mobile welding machine",
+    "category": "workshop",
+    "quantity": "3",
+    "notes": "Miller",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "bulldozer-d8",
+    "name": "Bulldozer D8",
+    "category": "earthmoving",
+    "quantity": "2",
+    "notes": "Caterpillar",
+    "location": "Abeokuta",
+    "image": {
+      "src": "/images/equipment/bulldozer-d8.webp",
+      "alt": "D8 bulldozer",
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "slug": "grader",
+    "name": "Grader",
+    "category": "earthmoving",
+    "quantity": "2",
+    "notes": "Caterpillar",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "paver",
+    "name": "Paver",
+    "category": "roadworks",
+    "quantity": "2",
+    "notes": "Ingersoll Rand",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "payloader",
+    "name": "Payloader",
+    "category": "earthmoving",
+    "quantity": "3",
+    "notes": "Caterpillar",
+    "location": "Abeokuta",
+    "image": {
+      "src": "/images/equipment/wheel-loader.webp",
+      "alt": "CAT 950H wheel loader",
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "slug": "roller-single-drum",
+    "name": "Roller, single drum",
+    "category": "roadworks",
+    "quantity": "1",
+    "notes": "Bomag",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "roller-double-drum",
+    "name": "Roller, double drum",
+    "category": "roadworks",
+    "quantity": "1",
+    "notes": "Bomag",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "hand-roller",
+    "name": "Hand roller",
+    "category": "roadworks",
+    "quantity": "2",
+    "notes": "Bomag",
+    "location": "Lagos"
+  },
+  {
+    "slug": "roller-pad-foot",
+    "name": "Roller, pad foot",
+    "category": "roadworks",
+    "quantity": "2",
+    "notes": "Bomag",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "asphalt-cutter",
+    "name": "Asphalt cutter",
+    "category": "roadworks",
+    "quantity": "1",
+    "location": "Lagos"
+  },
+  {
+    "slug": "hiab-truck-crane",
+    "name": "Hiab truck crane",
+    "category": "haulage-and-lifting",
+    "quantity": "2",
+    "notes": "DAF",
+    "location": "Abeokuta",
+    "image": {
+      "src": "/images/equipment/hiab-truck.webp",
+      "alt": "DAF truck with Hiab crane",
+      "width": 640,
+      "height": 404
+    }
+  },
+  {
+    "slug": "backhoe-loader",
+    "name": "Backhoe loader",
+    "category": "earthmoving",
+    "quantity": "2",
+    "notes": "Caterpillar",
+    "location": "Abeokuta",
+    "image": {
+      "src": "/images/equipment/backhoe-loader.webp",
+      "alt": "Backhoe loader",
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "slug": "motor-grader",
+    "name": "Motor grader",
+    "category": "earthmoving",
+    "quantity": "1",
+    "notes": "Caterpillar",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "tar-distributor",
+    "name": "Tar distributor",
+    "category": "roadworks",
+    "quantity": "1",
+    "notes": "Ford",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "chipping-spreader",
+    "name": "Chipping spreader",
+    "category": "roadworks",
+    "quantity": "1",
+    "notes": "Rosco",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "compressor-825-cfm",
+    "name": "Compressor, 825 CFM",
+    "category": "power-and-air",
+    "quantity": "2",
+    "notes": "Ingersoll Rand",
+    "location": "Abeokuta",
+    "image": {
+      "src": "/images/equipment/compressor-825cfm.webp",
+      "alt": "Ingersoll Rand 825 CFM compressor",
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "slug": "compressor-450-cfm",
+    "name": "Compressor, 450 CFM",
+    "category": "power-and-air",
+    "quantity": "1",
+    "notes": "Ingersoll Rand",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "forklift-5-ton-capacity",
+    "name": "Forklift, 5-ton capacity",
+    "category": "haulage-and-lifting",
+    "quantity": "1",
+    "notes": "Caterpillar",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "truck-with-flat-bed-low-loader",
+    "name": "Truck with flat bed / low loader",
+    "category": "haulage-and-lifting",
+    "quantity": "1",
+    "notes": "Mack",
+    "location": "Abeokuta",
+    "image": {
+      "src": "/images/equipment/low-loader.webp",
+      "alt": "Mack low loader truck",
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "slug": "oxy-acetylene-gas-set",
+    "name": "Oxy-acetylene gas set",
+    "category": "workshop",
+    "quantity": "3",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "portakabin-office",
+    "name": "Portakabin office",
+    "category": "site-support",
+    "quantity": "5",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "20ft-container-store",
+    "name": "20ft container store",
+    "category": "site-support",
+    "quantity": "2",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "mobile-flood-light",
+    "name": "Mobile flood light",
+    "category": "power-and-air",
+    "quantity": "{{CONFIRM: quantity}}",
+    "location": "{{CONFIRM: location}}"
+  },
+  {
+    "slug": "lister-petter-diesel-water-pump",
+    "name": "Lister Petter diesel water pump",
+    "category": "pumps",
+    "quantity": "2",
+    "notes": "Lister",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "chain-blocks-5-ton-capacity",
+    "name": "Chain blocks, 5-ton capacity",
+    "category": "workshop",
+    "quantity": "3",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "mechanical-jacks-20-ton-capacity",
+    "name": "Mechanical jacks, 20-ton capacity",
+    "category": "workshop",
+    "quantity": "5",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "work-benches",
+    "name": "Work benches",
+    "category": "workshop",
+    "quantity": "2",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "engineer-vices",
+    "name": "Engineer vices",
+    "category": "workshop",
+    "quantity": "2",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "lifting-belts-10-to-36-tons",
+    "name": "Lifting belts, 10 to 36 tons",
+    "category": "workshop",
+    "quantity": "2",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "motorola-gp340-radios",
+    "name": "Motorola GP340 radios",
+    "category": "site-support",
+    "quantity": "2",
+    "notes": "Motorola",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "dumper-2-ton-capacity",
+    "name": "Dumper, 2-ton capacity",
+    "category": "earthmoving",
+    "quantity": "4",
+    "notes": "Ausa",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "pile-driving-equipment-set",
+    "name": "Pile driving equipment set",
+    "category": "drilling-and-piling",
+    "quantity": "2",
+    "notes": "Delmag",
+    "location": "Oyo"
+  },
+  {
+    "slug": "batching-plant",
+    "name": "Batching plant",
+    "category": "concrete",
+    "quantity": "2",
+    "notes": "Rock System",
+    "location": "Abeokuta"
+  },
+  {
+    "slug": "truck-mixer",
+    "name": "Truck mixer",
+    "category": "concrete",
+    "quantity": "2",
+    "notes": "DAF",
+    "location": "Oyo"
+  },
+  {
+    "slug": "drilling-rig",
+    "name": "Drilling rig",
+    "category": "drilling-and-piling",
+    "quantity": "2",
+    "notes": "KLR",
+    "location": "Abeokuta",
+    "image": {
+      "src": "/images/equipment/drilling-rig.webp",
+      "alt": "Truck-mounted drilling rig",
+      "width": 800,
+      "height": 600
+    }
+  }
+]

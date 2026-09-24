@@ -1,0 +1,136 @@
+[
+  {
+    "slug": "federal-ministry-of-environment",
+    "name": "Federal Ministry of Environment",
+    "category": "federal",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "federal-ministry-of-agriculture",
+    "name": "Federal Ministry of Agriculture",
+    "category": "federal",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "federal-ministry-of-water-resources",
+    "name": "Federal Ministry of Water Resources",
+    "category": "federal",
+    "units": ["Ogun-Osun River Basin Development Authority"],
+    "logo": null,
+    "featured": true
+  },
+  {
+    "slug": "federal-ministry-of-health",
+    "name": "Federal Ministry of Health",
+    "category": "federal",
+    "units": ["National Primary Health Care Development Agency"],
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "ogun-state-government",
+    "name": "Ogun State Government",
+    "category": "state",
+    "units": [
+      "Ministry of Special Duties",
+      "Bureau of Management and Budget",
+      "Ministry of Water Resources",
+      "Ogun State Water Corporation",
+      "Ministry of Environment",
+      "State Universal Basic Education Board"
+    ],
+    "logo": null,
+    "featured": true
+  },
+  {
+    "slug": "oyo-state-government",
+    "name": "Oyo State Government",
+    "category": "state",
+    "units": [
+      "Ministry of Environment and Habitat",
+      "State Universal Basic Education Board"
+    ],
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "lagos-state-public-works-corporation",
+    "name": "Lagos State Public Works Corporation",
+    "category": "state",
+    "parent": "Lagos State Government",
+    "logo": null,
+    "featured": true
+  },
+  {
+    "slug": "world-bank",
+    "name": "World Bank",
+    "category": "international",
+    "logo": null,
+    "featured": true
+  },
+  {
+    "slug": "undp",
+    "name": "United Nations Development Programme (UNDP)",
+    "category": "international",
+    "logo": null,
+    "featured": true
+  },
+  {
+    "slug": "university-of-ibadan",
+    "name": "University of Ibadan",
+    "category": "education",
+    "logo": null,
+    "featured": true
+  },
+  {
+    "slug": "university-of-lagos",
+    "name": "University of Lagos",
+    "category": "education",
+    "logo": null,
+    "featured": true
+  },
+  {
+    "slug": "federal-university-of-agriculture-abeokuta",
+    "name": "Federal University of Agriculture, Abeokuta",
+    "category": "education",
+    "logo": null,
+    "featured": true
+  },
+  {
+    "slug": "mcpherson-university",
+    "name": "McPherson University",
+    "category": "education",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "joseph-ayo-babalola-university",
+    "name": "Joseph Ayo Babalola University {{CONFIRM: old site spells \"Joseph Ayodele Babalola\"}}",
+    "category": "education",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "horizon-suites-ibadan",
+    "name": "Horizon Suites, Ibadan",
+    "category": "private",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "golden-tusk-limited",
+    "name": "Golden Tusk Limited",
+    "category": "private",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "private-individuals-and-organisations",
+    "name": "Private individuals and organisations",
+    "category": "private",
+    "logo": null,
+    "featured": false
+  }
+]
