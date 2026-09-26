@@ -30,7 +30,7 @@ const ASPHALT = "#22272b";
 const CONCRETE = "#e9e6e1";
 const STEEL_LIGHT = "#9aa2a4";
 const SURVEY = "#e2b236";
-const BRAND_DEEP = "#2e7229";
+const BRAND = "#2e7229";
 
 const W = 1200;
 const H = 630;
@@ -44,7 +44,7 @@ const clean = (text) =>
   text.replace(/\{\{CONFIRM(?::\s*[\s\S]*?)?\}\}/g, "").replace(/\s+/g, " ").trim();
 
 const name = clean(site.name);
-const former = clean(site.formerNameLabel);
+const tagline = clean(site.tagline);
 const founded = String(site.foundedYear);
 
 const logo = await sharp(LOGO).resize({ height: 64 }).toBuffer();
@@ -53,11 +53,11 @@ const logoMeta = await sharp(logo).metadata();
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="${ASPHALT}"/>
   <rect x="0" y="0" width="${W}" height="6" fill="${SURVEY}"/>
-  <rect x="${PAD}" y="${PAD + 132}" width="64" height="3" fill="${BRAND_DEEP}"/>
+  <rect x="${PAD}" y="${PAD + 132}" width="64" height="3" fill="${BRAND}"/>
   <text x="${PAD}" y="${PAD + 250}"
         font-family="Archivo, Helvetica Neue, Arial, sans-serif"
         font-size="68" font-weight="800" letter-spacing="-1.4" fill="${CONCRETE}">
-    Engineering Nigeria's
+    Engineering
   </text>
   <text x="${PAD}" y="${PAD + 330}"
         font-family="Archivo, Helvetica Neue, Arial, sans-serif"
@@ -72,7 +72,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <text x="${PAD}" y="${H - PAD + 4}"
         font-family="Archivo, Helvetica Neue, Arial, sans-serif"
         font-size="21" font-weight="400" fill="${STEEL_LIGHT}">
-    ${escape(former)}
+    ${escape(tagline)}
   </text>
 </svg>`;
 

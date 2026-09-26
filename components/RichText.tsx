@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { parseConfirmable } from "@/lib/placeholders";
+import { showPlaceholders } from "@/lib/review-mode";
 
 /** Tags `RichText` is allowed to render into. */
 type TextTag =
@@ -16,17 +17,16 @@ type TextTag =
   | "strong"
   | "figcaption";
 
-const isDevelopment = process.env.NODE_ENV !== "production";
-
 /**
  * An unresolved `{{CONFIRM: ...}}` placeholder.
  *
- * In development it is highlighted and carries the note as a tooltip. In
- * production it renders the raw text, so anything that slips through is still
- * literal and greppable rather than silently blank.
+ * Highlighted in development and on a review deployment, with the note as a
+ * tooltip. In a real production build it renders the raw text, so anything
+ * that slips through is still literal and greppable rather than silently
+ * blank — but the placeholder gate means nothing should get that far.
  */
 export function Placeholder({ raw, note }: { raw: string; note: string }) {
-  if (!isDevelopment) {
+  if (!showPlaceholders) {
     return <>{raw}</>;
   }
 

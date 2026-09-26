@@ -138,7 +138,7 @@ export function ContactForm({
 
   if (!canSubmit) {
     return (
-      <p className="border-l-[3px] border-brand-deep bg-white p-6 text-base text-asphalt wdth-body md:p-8">
+      <p className="border-l-[3px] border-brand bg-white p-6 text-base text-asphalt wdth-body md:p-8">
         <RichText text={form.unavailableMessage} />
       </p>
     );

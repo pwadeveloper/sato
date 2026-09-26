@@ -16,7 +16,7 @@ export interface MobileNavProps {
 
 /**
  * The only client component in the chrome. Everything else in the header is
- * server-rendered, which keeps the JS on a Nigerian mobile connection to a
+ * server-rendered, which keeps the JS on a slow mobile connection down to a
  * disclosure toggle and nothing more.
  */
 export function MobileNav({

@@ -26,6 +26,11 @@ export interface ImageRef {
 
 /* ------------------------------------------------------------------ site */
 
+/**
+ * One office. There is no "head office" — every location is just an Office,
+ * and display order is the order of the array, so adding a branch is a content
+ * edit. The first entry is the one structured data publishes as the address.
+ */
 export interface Office {
   id: string;
   label: ConfirmableText;
@@ -35,7 +40,6 @@ export interface Office {
   note?: ConfirmableText;
   /** Google Maps link. Opened in a new tab; never embedded as an iframe. */
   mapUrl?: string;
-  isPrimary: boolean;
 }
 
 /** A phone number or email address, with the label it is shown under. */
@@ -78,16 +82,17 @@ export interface Site {
   shortName: ConfirmableText;
   /** Registered name as it should appear on the company facts panel. */
   registeredName: ConfirmableText;
-  formerName: ConfirmableText;
-  /** When the change of name took effect. Empty hides the row. */
-  nameChangeDate: ConfirmableText;
-  /** Ready-made "Formerly ..." line for Home, About and the footer. */
-  formerNameLabel: ConfirmableText;
   tagline: ConfirmableText;
   description: ConfirmableText;
   foundedYear: number;
   anniversaryNote: ConfirmableText;
   rcNumber: ConfirmableText;
+  /**
+   * The RC number is held so it can be restored, but it is off the site: the
+   * company is registering internationally and a single national registration
+   * number on every page reads against that. Nothing renders it while false.
+   */
+  showRcNumber: boolean;
   offices: Office[];
   phones: ContactChannel[];
   emails: ContactChannel[];
@@ -95,12 +100,10 @@ export interface Site {
   /** Labels for the rows `getCompanyFacts()` assembles. */
   factLabels: {
     registeredName: ConfirmableText;
-    formerName: ConfirmableText;
-    nameChanged: ConfirmableText;
     incorporated: ConfirmableText;
     yearsInOperation: ConfirmableText;
     rcNumber: ConfirmableText;
-    headOffice: ConfirmableText;
+    offices: ConfirmableText;
     registrations: ConfirmableText;
   };
   skipLinkLabel: ConfirmableText;
@@ -147,6 +150,14 @@ export interface CollectionFacet {
    * when no service claims the project explicitly in `relatedProjectSlugs`.
    */
   serviceSlug?: string;
+  /**
+   * Sub-filters, so the project index can mirror the service structure: the
+   * top row is the service category and the second row narrows within it.
+   * A parent facet matches a project whose sector is the parent's own value
+   * OR any child's, which is what lets "Infrastructure Services" show
+   * buildings, roads and water together.
+   */
+  children?: CollectionFacet[];
 }
 
 export interface HeroSection {
@@ -297,8 +308,26 @@ export interface Page {
 
 /* -------------------------------------------------------------- services */
 
-/** Which band a division sits in on the services overview and Home. */
-export type ServiceGroup = "engineering" | "energy" | "technology";
+/**
+ * Which top-level category a service sits in, in display order.
+ *
+ * These are the categories a visitor navigates by, not an internal taxonomy:
+ * "Infrastructure Services" is the established practice and has a landing
+ * page of its own; Energy and Oil & Gas each stand alone; Technology holds
+ * the two newer digital services.
+ */
+export type ServiceGroup = "infrastructure" | "energy" | "oil-gas" | "technology";
+
+/** A category with its resolved copy, assembled by `getServiceBands()`. */
+export interface ServiceBand {
+  group: ServiceGroup;
+  label: ConfirmableText;
+  /** One line under the category heading. Empty hides it. */
+  intro: ConfirmableText;
+  /** Landing page for the category, where it has one. */
+  href?: string;
+  services: Service[];
+}
 
 /**
  * `draft` copy was written from partner reference material and has not been
@@ -306,6 +335,95 @@ export type ServiceGroup = "engineering" | "energy" | "technology";
  * division is still draft — see scripts/check-placeholders.mjs.
  */
 export type ReviewStatus = "approved" | "draft";
+
+/** A named group of capabilities, where one flat list would be unreadable. */
+export interface CapabilityBlock {
+  id: string;
+  heading: ConfirmableText;
+  items: ConfirmableText[];
+}
+
+/** A heading over a plain list. Used for solutions and "also covered". */
+export interface ServiceList {
+  heading: ConfirmableText;
+  intro?: ConfirmableText;
+  items: ConfirmableText[];
+}
+
+/** One class of equipment Sato sources, and the makes offered in it. */
+export interface ProcurementCategory {
+  id: string;
+  label: ConfirmableText;
+  /** Manufacturer names, set in lighter text after the category. */
+  brands: ConfirmableText[];
+}
+
+export interface ProcurementBlock {
+  heading: ConfirmableText;
+  intro: ConfirmableText;
+  categories: ProcurementCategory[];
+  /** Caveat under the block. Carries the `{{CONFIRM}}` about brand naming. */
+  note?: ConfirmableText;
+}
+
+/** One row of the partner track record. Never a Sato project. */
+export interface PartnerProject {
+  client: ConfirmableText;
+  project: ConfirmableText;
+  year: ConfirmableText;
+}
+
+/** A headline number. Published only once the figure is settled. */
+export interface PartnerFigure {
+  value: ConfirmableText;
+  label: ConfirmableText;
+}
+
+export interface PartnerCaseStudy {
+  heading: ConfirmableText;
+  /** Marks the whole block as the partner team's work, not Sato's. */
+  attribution: ConfirmableText;
+  challengeHeading: ConfirmableText;
+  challenge: ConfirmableText;
+  solutionHeading: ConfirmableText;
+  solution: ConfirmableText;
+  resultsHeading: ConfirmableText;
+  resultsIntro: ConfirmableText;
+  results: ConfirmableText[];
+  note?: ConfirmableText;
+}
+
+/**
+ * Work delivered by a technical partner, not by Sato.
+ *
+ * This block exists to keep the two records apart. Everything inside it is
+ * rendered under an explicit attribution line, and none of it reaches the
+ * projects index, the project count or Sato's structured data. Presenting a
+ * partner's track record as Sato's own would not survive the first
+ * vendor-verification call.
+ */
+export interface PartnerBlock {
+  heading: ConfirmableText;
+  intro: ConfirmableText;
+  /** The collaborator's name. Empty until Sato confirms we may print it. */
+  name: ConfirmableText;
+  /** Label for the name, e.g. "Technical partner". */
+  nameLabel: ConfirmableText;
+  /** Empty while the source figures disagree — the strip is then hidden. */
+  figures: PartnerFigure[];
+  projectsHeading: ConfirmableText;
+  projectColumns: { client: ConfirmableText; project: ConfirmableText; year: ConfirmableText };
+  projects: PartnerProject[];
+  /** Rows shown before the "Show all" disclosure opens. */
+  projectsInitialCount: number;
+  projectsShowAllLabel: ConfirmableText;
+  projectsShowLessLabel: ConfirmableText;
+  /** Read out inside the disclosure, whose rows appear above the control. */
+  projectsDisclosureNote: ConfirmableText;
+  engagements?: ServiceList;
+  caseStudy?: PartnerCaseStudy;
+  recognition?: ServiceList;
+}
 
 export interface Service {
   slug: string;
@@ -318,7 +436,20 @@ export interface Service {
   summary: ConfirmableText;
   body: ConfirmableText[];
   capabilities: ConfirmableText[];
+  /**
+   * Grouped capabilities, for a service whose offer is too broad for one
+   * list. When present the flat `capabilities` sidebar is not rendered.
+   */
+  capabilityBlocks?: CapabilityBlock[];
+  /** Named solutions, set as a dense two-column list. */
+  solutions?: ServiceList;
+  /** Shorter secondary scope list under the solutions. */
+  alsoCovered?: ServiceList;
+  procurement?: ProcurementBlock;
+  partner?: PartnerBlock;
   relatedProjectSlugs: string[];
+  /** Other services to link on to, e.g. oil and gas -> digital twin. */
+  relatedServiceSlugs?: string[];
   registrations?: ConfirmableText[];
   image: ImageRef | null;
   order: number;

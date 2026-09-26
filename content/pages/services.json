@@ -2,25 +2,30 @@
   "slug": "services",
   "title": "Services",
   "metaTitle": "Services",
-  "metaDescription": "Four divisions: civil and infrastructure, water resources, electrical and mechanical, and energy. Each draws on Sato's shared project management, equipment fleet and HSE systems.",
+  "metaDescription": "Infrastructure, energy, oil and gas and technology services. Every one draws on the project management, plant and delivery systems Sato has built since 1997.",
   "labels": {
     "breadcrumb": "Breadcrumb",
     "capabilities": "Capabilities",
-    "relatedProjects": "Projects in this division",
-    "groupEngineering": "Engineering",
-    "groupEnergy": "Energy",
+    "relatedProjects": "Projects in this service",
+    "relatedServices": "Related services",
+    "groupInfrastructure": "Infrastructure Services",
+    "groupInfrastructureIntro": "Our established infrastructure practice, delivering since 1997.",
+    "groupInfrastructureHref": "/services/infrastructure",
+    "groupEnergy": "Energy Services",
+    "groupEnergyIntro": "Engineering for power and process assets, delivered with technical partners.",
+    "groupOilGas": "Oil & Gas Services",
+    "groupOilGasIntro": "Consulting, engineering and digital technology for the upstream sector.",
     "groupTechnology": "Technology",
-    "groupEngineeringIntro": "The disciplines Sato has delivered with since 1997, in-house and with its own plant.",
-    "groupEnergyIntro": "Engineering for power and hydrocarbon assets, delivered with technical partners.",
     "groupTechnologyIntro": "Asset data, digital models and applied engineering research.",
-    "servicesMenu": "Services menu"
+    "servicesMenu": "Services menu",
+    "viewService": "View this service"
   },
   "sections": [
     {
       "type": "prose",
       "id": "intro",
       "body": [
-        "Eight services across three groups, one standard of delivery. Every service draws on the same project management, plant and HSE systems Sato has built since 1997."
+        "Four service categories, one standard of delivery. Every one draws on the same project management, plant and delivery systems Sato has built since 1997."
       ]
     },
     {
@@ -30,12 +35,16 @@
       "facetMode": "group",
       "facets": [
         {
-          "value": "engineering",
-          "label": "Engineering"
+          "value": "infrastructure",
+          "label": "Infrastructure Services"
         },
         {
           "value": "energy",
-          "label": "Energy"
+          "label": "Energy Services"
+        },
+        {
+          "value": "oil-gas",
+          "label": "Oil & Gas Services"
         },
         {
           "value": "technology",
@@ -47,24 +56,24 @@
       "type": "linkCards",
       "id": "backed-by",
       "heading": "Backed by Sato",
-      "intro": "Whichever division delivers your project, the same plant, people and systems stand behind it.",
+      "intro": "Whichever service delivers your project, the same plant, people and systems stand behind it.",
       "items": [
         {
           "label": "Projects",
-          "body": "Forty years of delivered work for federal and state government, universities, the World Bank and private clients.",
+          "body": "Nearly three decades of delivered work for government ministries, universities, the World Bank, UNDP and private clients.",
           "href": "/projects"
         },
         {
-          "label": "Health, safety, environment and quality",
-          "body": "Sato operates its own safety management system. It is implemented on every project and audited internally every three months.",
-          "href": "/hse"
+          "label": "Clients",
+          "body": "Federal and state ministries, water corporations, universities and international development partners, some of them for over twenty years.",
+          "href": "/clients"
         }
       ]
     },
     {
       "type": "cta",
       "id": "cta-default",
-      "body": "Working on a project in civil, water or energy infrastructure? Talk to our team.",
+      "body": "Working on a project in infrastructure, energy or oil and gas? Talk to our team.",
       "ctas": [
         {
           "label": "Contact us",
@@ -80,7 +89,23 @@
       "type": "cta",
       "id": "cta-energy",
       "heading": "For procurement and vendor verification",
-      "body": "Sato is registered with the Corporate Affairs Commission as RC 317208 and its engineers are COREN-registered. We will supply registration documents, referees and a capability statement on request.",
+      "body": "We will supply registration documents, referees and a capability statement on request.",
+      "ctas": [
+        {
+          "label": "Contact us",
+          "href": "/contact"
+        },
+        {
+          "label": "Company information",
+          "href": "/about"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "id": "cta-oil-gas",
+      "heading": "For operators and procurement teams",
+      "body": "Discuss your field, asset or procurement requirement with our team.",
       "ctas": [
         {
           "label": "Contact us",

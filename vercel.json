@@ -3,6 +3,22 @@
   "framework": "nextjs",
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p"
+        }
+      ],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/707",
       "destination": "/projects",
       "permanent": true
@@ -95,11 +111,6 @@
     {
       "source": "/876",
       "destination": "/projects",
-      "permanent": true
-    },
-    {
-      "source": "/:path*/feed",
-      "destination": "/",
       "permanent": true
     },
     {
@@ -308,6 +319,11 @@
       "permanent": true
     },
     {
+      "source": "/hse",
+      "destination": "/about",
+      "permanent": false
+    },
+    {
       "source": "/installed-high-lift-pump-panel",
       "destination": "/projects?sector=water",
       "permanent": true
@@ -414,7 +430,7 @@
     },
     {
       "source": "/safety-policies",
-      "destination": "/hse",
+      "destination": "/about",
       "permanent": true
     },
     {
@@ -435,6 +451,11 @@
     {
       "source": "/services/electrical-mechanical",
       "destination": "/services/electrical-engineering",
+      "permanent": true
+    },
+    {
+      "source": "/services/engineering",
+      "destination": "/services/infrastructure",
       "permanent": true
     },
     {
@@ -553,12 +574,7 @@
       "permanent": true
     },
     {
-      "source": "/wp-login.php",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/xmlrpc.php",
+      "source": "/wp-admin/:path*",
       "destination": "/",
       "permanent": true
     },
@@ -568,23 +584,17 @@
       "permanent": true
     },
     {
-      "source": "/wp-admin/:path*",
-      "destination": "/",
-      "permanent": true
-    },
-    {
       "source": "/wp-includes/:path*",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/",
-      "has": [
-        {
-          "type": "query",
-          "key": "p"
-        }
-      ],
+      "source": "/wp-login.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/xmlrpc.php",
       "destination": "/",
       "permanent": true
     }

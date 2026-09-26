@@ -5,7 +5,7 @@
   "metaDescription": "Selected buildings, roads and water projects delivered by Sato Engineering & Infrastructure Limited for government, university and private clients.",
   "labels": {
     "breadcrumb": "Breadcrumb",
-    "filterLabel": "Filter projects by sector",
+    "filterLabel": "Filter projects by service",
     "allFilter": "All",
     "countOne": "1 project",
     "countMany": "{n} projects",
@@ -18,7 +18,8 @@
     "scope": "Scope of work",
     "gallery": "Project photographs",
     "galleryThumbs": "Choose a photograph to enlarge",
-    "relatedService": "Division"
+    "relatedService": "Service",
+    "subFilterLabel": "Filter within Infrastructure Services"
   },
   "sections": [
     {
@@ -28,24 +29,36 @@
       "facetMode": "filter",
       "facets": [
         {
-          "value": "buildings",
-          "label": "Buildings",
-          "serviceSlug": "construction-civil-engineering"
-        },
-        {
-          "value": "roads",
-          "label": "Roads & Pavements",
-          "serviceSlug": "construction-civil-engineering"
-        },
-        {
-          "value": "water",
-          "label": "Water",
-          "serviceSlug": "water-resources-environmental"
+          "value": "infrastructure",
+          "label": "Infrastructure Services",
+          "serviceSlug": "construction-civil-engineering",
+          "children": [
+            {
+              "value": "buildings",
+              "label": "Buildings",
+              "serviceSlug": "construction-civil-engineering"
+            },
+            {
+              "value": "roads",
+              "label": "Roads & Pavements",
+              "serviceSlug": "construction-civil-engineering"
+            },
+            {
+              "value": "water",
+              "label": "Water",
+              "serviceSlug": "water-resources-environmental"
+            }
+          ]
         },
         {
           "value": "energy",
-          "label": "Energy",
+          "label": "Energy Services",
           "serviceSlug": "energy"
+        },
+        {
+          "value": "oil-gas",
+          "label": "Oil & Gas Services",
+          "serviceSlug": "oil-gas"
         }
       ],
       "note": ""
@@ -61,7 +74,7 @@
           "href": "/contact"
         },
         {
-          "label": "Our divisions",
+          "label": "Our services",
           "href": "/services"
         }
       ]

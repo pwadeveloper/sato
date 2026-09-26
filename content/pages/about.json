@@ -2,21 +2,13 @@
   "slug": "about",
   "title": "About Sato",
   "metaTitle": "About",
-  "metaDescription": "Sato Engineering & Infrastructure Limited was incorporated in 1997 as Sato Engineering Nigeria Limited, a fully indigenous Nigerian engineering firm based in Abeokuta.",
+  "metaDescription": "Sato Engineering & Infrastructure Limited was established in 1997. Nearly three decades of civil engineering design and construction across roads, dams, irrigation, buildings and water resources.",
   "sections": [
     {
       "type": "prose",
       "id": "intro",
       "body": [
-        "Sato Engineering & Infrastructure Limited was incorporated in 1997 as Sato Engineering Nigeria Limited, a fully indigenous Nigerian engineering firm. From our base in Abeokuta, we have delivered civil engineering design and construction across roads, dams, irrigation, buildings and water resources, for clients ranging from federal ministries to international development partners."
-      ]
-    },
-    {
-      "type": "prose",
-      "id": "new-name",
-      "heading": "Our new name",
-      "body": [
-        "In August 2026 the company became Sato Engineering & Infrastructure Limited. The new name reflects how our work has grown: beyond construction into the full infrastructure lifecycle, including energy, oil and gas, and digital engineering services. Our ownership, leadership and commitments are unchanged."
+        "Sato Engineering & Infrastructure Limited was established in 1997. For nearly three decades we have delivered civil engineering design and construction across roads, dams, irrigation, buildings and water resources, for clients ranging from government ministries to international development partners. Today our work spans infrastructure, energy, and oil and gas."
       ]
     },
     {
@@ -25,7 +17,15 @@
       "heading": "How we work",
       "body": [
         "We build a dedicated team for each project, drawing on a core leadership group and a pool of experienced engineers, technicians, foremen and specialists matched to the project's scope. Clients get the right expertise for the job, led by people who have delivered with Sato for years.",
-        "Sato owns and operates its own plant and equipment, including a borehole drilling rig, which lets us mobilise quickly and control quality on site."
+        "Sato owns and operates a large fleet of plant, machinery and tools, including its own borehole drilling rig. That lets us mobilise quickly, control quality on site and take on work that would otherwise wait on hired equipment."
+      ]
+    },
+    {
+      "type": "prose",
+      "id": "where-were-going",
+      "heading": "Where we're going",
+      "body": [
+        "We are extending the same capability across Africa and beyond, and intend to register internationally as we do. Alongside the roads, dams and buildings that built the company, we are working towards highway, airport, railway and hydro-electric power projects."
       ]
     },
     {
@@ -51,9 +51,8 @@
       "items": [
         "Best Erosion Control and Construction Engineering Company Award, 2012 — Institute of Government Research and Leadership Technology",
         "West Africa's Most Dynamic and Outstanding Engineering Company Award, 2012 — West African Nobles and Top Entrepreneur Forum, and Aspire West Africa",
-        "Most Supportive Indigenous Company, 2012 — Egba Youths Awards",
         "Award for Unparalleled Social Responsibility in Ogun State, 2012 — Rotary Club Oke-Ona Egba",
-        "Distinguished Corporate Award, Best Engineering Company in Ogun State, 2010 — Nigerian Society of Engineers",
+        "Distinguished Corporate Award, Best Engineering Company in Ogun State, 2010 — NSE",
         "Award of Excellent Service towards contribution to the youth and humanity, 2010 — MKO Abiola Polytechnic Rotaract Club",
         "Award for contributing immensely to the progress of the community through Rotary Service, 2011 — Rotaract Club of Osiele"
       ]

@@ -16,7 +16,7 @@ import {
   getFeaturedProjects,
   getPage,
   getSection,
-  getServiceGroups,
+  getServiceBands,
   getSite,
 } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/metadata";
@@ -31,7 +31,7 @@ const clients = getSection(page, "clients", "collection");
 const selected = getSection(page, "selected-projects", "collection");
 const closing = getSection(page, "closing", "cta");
 
-const serviceBands = getServiceGroups();
+const serviceBands = getServiceBands();
 const featuredClients = getFeaturedClients();
 const featuredProjects = getFeaturedProjects();
 const companyFacts = getCompanyFacts();
@@ -71,11 +71,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <ServiceGroupList
-            bands={serviceBands}
-            labels={page.labels ?? {}}
-            className="mt-10 md:mt-12"
-          />
+          <ServiceGroupList bands={serviceBands} className="mt-10 md:mt-12" />
         </Container>
       </Section>
 

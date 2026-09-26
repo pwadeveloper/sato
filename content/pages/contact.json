@@ -12,7 +12,7 @@
       "type": "prose",
       "id": "intro",
       "body": [
-        "For project enquiries, tenders and vendor verification, contact our head office."
+        "For project enquiries, tenders and vendor verification, contact our team."
       ]
     },
     {
@@ -27,10 +27,10 @@
       "submitLabel": "Send enquiry",
       "sendingLabel": "Sending…",
       "successHeading": "Thank you — your enquiry has been sent.",
-      "successBody": "A member of our team will reply from our head office, normally within two working days. If your enquiry concerns a tender deadline, please also call the number above so we can respond faster.",
+      "successBody": "A member of our team will reply, normally within two working days. If your enquiry concerns a tender deadline, please also call the number above so we can respond faster.",
       "mailtoHeading": "Your email application is opening.",
-      "mailtoBody": "We have not received anything yet — your enquiry is a draft in your own mail application. Check the details and press send there, and our head office will reply, normally within two working days.",
-      "unavailableMessage": "The enquiry form is not accepting submissions yet. Please call the number above, or email our head office directly.",
+      "mailtoBody": "We have not received anything yet — your enquiry is a draft in your own mail application. Check the details and press send there, and our team will reply, normally within two working days.",
+      "unavailableMessage": "The enquiry form is not accepting submissions yet. Please call the number above, or email us directly.",
       "errorMessage": "Your enquiry could not be sent. Please try again, or email us directly using the address above.",
       "requiredMessage": "This field is required.",
       "emailMessage": "Enter a valid email address.",

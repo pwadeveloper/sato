@@ -219,7 +219,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                be, the record itself becomes the page: the facts run across the
                full width as a plate, with the scope beneath. Clean, and it
                never looks like an image failed to load. */
-            <div className="border-t-[3px] border-brand-deep bg-white px-6 py-10 md:px-10 md:py-12">
+            <div className="border-t-[3px] border-brand bg-white px-6 py-10 md:px-10 md:py-12">
               <ProjectFacts
                 facts={facts}
                 heading={labels.details ?? ""}

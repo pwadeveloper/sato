@@ -8,7 +8,8 @@ export const dynamic = "force-static";
  * so a new project or division appears here the moment its JSON does.
  *
  * `/styleguide` is deliberately absent — it is a development reference, not a
- * page anyone should find in search.
+ * page anyone should find in search. So is `/hse`, which is unpublished while
+ * Sato reviews it with its oil and gas collaborator.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const site = getSite();
@@ -25,12 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/", 1, "monthly"),
     entry("/about", 0.8, "yearly"),
     entry("/services", 0.9, "yearly"),
+    entry("/services/infrastructure", 0.85, "yearly"),
     ...getServices().map((service) => entry(`/services/${service.slug}`, 0.8, "yearly")),
     entry("/projects", 0.9, "monthly"),
     ...getProjects().map((project) => entry(`/projects/${project.slug}`, 0.6, "yearly")),
     entry("/clients", 0.7, "yearly"),
     entry("/leadership", 0.7, "yearly"),
-    entry("/hse", 0.7, "yearly"),
     entry("/contact", 0.8, "yearly"),
   ];
 }

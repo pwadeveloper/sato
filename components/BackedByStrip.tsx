@@ -17,9 +17,9 @@ export interface BackedByStripProps {
 }
 
 /**
- * Shared capability that applies to every division — plant fleet, HSE systems,
- * project management. Rendered on each service page so a reader who lands
- * directly on one division still sees what stands behind it.
+ * Shared capability that applies to every service — plant fleet, delivered
+ * projects, long-standing clients. Rendered on each service page so a reader
+ * who lands directly on one service still sees what stands behind it.
  */
 export function BackedByStrip({
   heading,

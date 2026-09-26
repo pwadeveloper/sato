@@ -133,17 +133,60 @@ These must be done, in this order:
    of copy, generated from the content itself. `npm run build:prod` refuses to
    build while any remain. Regenerate the list at any time with
    `npm run check:placeholders`.
-3. **Check `site.json` is right.** In particular `url`, `rcNumber`, the office
-   addresses, the telephone number and the general enquiries email. These feed
+3. **Check `site.json` is right.** In particular `url`, the office addresses
+   in order, the telephone number and the general enquiries email. These feed
    the footer legal line, the company facts panel and the Organization
-   structured data.
-4. **Decide where the contact form posts.** `contactFormEndpoint` in
+   structured data. Leave `showRcNumber` false unless the client asks for the
+   registration number back.
+4. **Run the banned-terms check.** `npm run check:banned` scans the exported
+   `/out` and fails on "Nigeria"/"Nigerian", "formerly", the RC number, any
+   email other than `info@satoengineering.com` and any telephone number other
+   than `+234 803 330 3278`. It runs as the last step of `npm run build:prod`,
+   but run it on its own after any content edit.
+5. **Confirm `NEXT_PUBLIC_REVIEW_MODE` is not set** on the production
+   environment in Vercel. It is what marks drafts and placeholders on the
+   review URL, and it must never be on in production.
+6. **Decide where the contact form posts.** `contactFormEndpoint` in
    `site.json` is empty, so the contact page currently shows "the enquiry form is
    not accepting submissions yet" instead of a form. The site is static and
    cannot receive a POST itself, so this needs a third-party endpoint (Formspree,
    Basin, Web3Forms or similar). Until it is set, the only route to the company
    from the website is the telephone number.
-5. **Run the checks locally**: `npm run typecheck && npm run lint && npm run build:prod`.
+7. **Run the checks locally**: `npm run typecheck && npm run lint && npm run build:prod`.
+
+---
+
+## The review deployment
+
+The client and his oil and gas collaborator need to read the unapproved
+pages — Oil & Gas especially — in context, on a real URL, before they can
+approve them. `npm run build:prod` will not build them, by design.
+
+`npm run build:review` produces a full production build with
+`NEXT_PUBLIC_REVIEW_MODE=1`, which keeps the gates' subject matter visible:
+
+- a **"Review deployment"** strip above the header on every page,
+- a **"Not yet approved"** banner on every service still marked draft,
+- unresolved `{{CONFIRM: ...}}` placeholders highlighted in yellow.
+
+To put it on a preview URL:
+
+```sh
+vercel link                      # first time only
+vercel env add NEXT_PUBLIC_REVIEW_MODE preview   # value: 1
+vercel deploy                    # preview, not --prod
+```
+
+Two things to get right:
+
+1. **Set the variable on the Preview environment only.** If it reaches
+   Production, the live site tells procurement officers it is a draft.
+2. **Protect the URL.** Vercel Deployment Protection should stay on for
+   previews. This build contains a partner's client list and an unapproved
+   page; it should not be indexable or publicly guessable.
+
+Send the reviewers `docs/services-for-review.md` alongside the URL — the page
+shows the copy, the document asks the questions.
 
 ---
 
@@ -185,7 +228,7 @@ Spot-check these by hand. They cover the things that break silently.
 | `/about-us` | 301 to `/about` |
 | `/our-team` | 301 to `/leadership` |
 | `/equipments` | 301 to `/about` |
-| `/safety-policies` | 301 to `/hse` |
+| `/safety-policies` | 301 to `/about` (the HSE page is on hold) |
 | `/contact-us` | 301 to `/contact` |
 | `/building-and-construction` | 301 to `/projects?sector=buildings` |
 | `/project-3` | 301 to `/projects/fiditi-earth-dam` |
@@ -193,6 +236,8 @@ Spot-check these by hand. They cover the things that break silently.
 | `/services/civil-infrastructure` | 301 to `/services/construction-civil-engineering` |
 | `/services/water-resources` | 301 to `/services/water-resources-environmental` |
 | `/services/electrical-mechanical` | 301 to `/services/electrical-engineering` |
+| `/services/engineering` | 301 to `/services/infrastructure` |
+| `/hse` | 302 to `/about` while the page is on hold |
 | `/wp-admin/` | 301 to `/` |
 | `/robots.txt` | Allows everything except `/styleguide`, names the sitemap |
 | `/sitemap.xml` | All routes on the `www` hostname; no `/equipment` |

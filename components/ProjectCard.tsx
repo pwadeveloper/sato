@@ -74,7 +74,7 @@ export function ProjectCard({
             isWide ? "aspect-3/2 md:aspect-auto md:h-full" : "aspect-3/2",
           )}
         >
-          <span className="absolute inset-x-0 top-0 h-[3px] bg-brand-deep" />
+          <span className="absolute inset-x-0 top-0 h-[3px] bg-brand" />
           <span className="text-h2 wdth-display leading-none text-steel/80">
             <RichText text={sectorLabel} />
           </span>

@@ -1,0 +1,49 @@
+{
+  "slug": "services/infrastructure",
+  "title": "Infrastructure Services",
+  "metaTitle": "Infrastructure Services",
+  "metaDescription": "Sato's established infrastructure practice: construction and civil, electrical, mechanical, and water resources and environmental engineering, delivering since 1997.",
+  "labels": {
+    "breadcrumb": "Breadcrumb",
+    "capabilities": "Selected capabilities",
+    "viewService": "Full capability"
+  },
+  "sections": [
+    {
+      "type": "prose",
+      "id": "intro",
+      "body": [
+        "Our established infrastructure practice, delivering since 1997.",
+        "Our scope covers all aspects of civil engineering design and construction: roads, dams, irrigation development, buildings and water resources development. We own and operate our own plant, including a borehole drilling rig, so we mobilise without waiting on hired equipment and keep control of quality and programme on site.",
+        "The four disciplines below are delivered by the same teams and under the same project management. Most Sato contracts draw on more than one of them."
+      ]
+    },
+    {
+      "type": "collection",
+      "id": "disciplines",
+      "collection": "services",
+      "slugs": [
+        "construction-civil-engineering",
+        "electrical-engineering",
+        "mechanical-engineering",
+        "water-resources-environmental"
+      ]
+    },
+    {
+      "type": "cta",
+      "id": "cta",
+      "heading": "Planning infrastructure work?",
+      "body": "Tell us the scope and we will show you comparable work and the team that would deliver it.",
+      "ctas": [
+        {
+          "label": "Contact us",
+          "href": "/contact"
+        },
+        {
+          "label": "View our projects",
+          "href": "/projects"
+        }
+      ]
+    }
+  ]
+}

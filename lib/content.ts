@@ -17,7 +17,7 @@ import clientsPageJson from "@/content/pages/clients.json";
 import contactPageJson from "@/content/pages/contact.json";
 import homePageJson from "@/content/pages/home.json";
 import notFoundPageJson from "@/content/pages/not-found.json";
-import hsePageJson from "@/content/pages/hse.json";
+import infrastructurePageJson from "@/content/pages/infrastructure.json";
 import leadershipPageJson from "@/content/pages/leadership.json";
 import projectsPageJson from "@/content/pages/projects.json";
 import servicesPageJson from "@/content/pages/services.json";
@@ -31,6 +31,7 @@ import type {
   PageSection,
   Project,
   Service,
+  ServiceBand,
   ServiceGroup,
   Site,
   TeamMember,
@@ -65,14 +66,23 @@ const team = typed<TeamMember[]>(teamJson)
 
 const equipment = typed<Equipment[]>(equipmentJson);
 
+/**
+ * Every routed page's content.
+ *
+ * `pages/hse.json` is deliberately absent: HSE is on hold until Sato and its
+ * oil and gas collaborator have reviewed it, so the page is not built, not
+ * linked and not in the sitemap. The content file stays on disk, rewritten and
+ * ready — restoring the page means re-registering it here, adding the route
+ * back and dropping the /hse redirect.
+ */
 const pages: Record<string, Page> = {
   home: typed<Page>(homePageJson),
   about: typed<Page>(aboutPageJson),
   services: typed<Page>(servicesPageJson),
+  infrastructure: typed<Page>(infrastructurePageJson),
   projects: typed<Page>(projectsPageJson),
   clients: typed<Page>(clientsPageJson),
   leadership: typed<Page>(leadershipPageJson),
-  hse: typed<Page>(hsePageJson),
   contact: typed<Page>(contactPageJson),
   "not-found": typed<Page>(notFoundPageJson),
 };
@@ -88,20 +98,23 @@ export function getYearsInOperation(): number {
   return new Date().getFullYear() - site.foundedYear;
 }
 
-/** The "Company at a glance" rows, assembled from site.json. */
+/**
+ * The "Company at a glance" rows, assembled from site.json.
+ *
+ * This panel is what a procurement officer came to check, so a row appears
+ * only when there is something confirmed to put in it. The RC number is held
+ * back behind `showRcNumber` rather than deleted: the company is registering
+ * outside its first market, and a single national registration number on
+ * every page works against that.
+ */
 export function getCompanyFacts(): CompanyFact[] {
   const labels = site.factLabels;
-  const headOffice = site.offices.find((office) => office.isPrimary);
   const professional = site.registrations.find(
     (group) => group.id === "professional",
   );
 
   const facts: CompanyFact[] = [
     { id: "registeredName", label: labels.registeredName, value: site.registeredName },
-    { id: "formerName", label: labels.formerName, value: site.formerName },
-    ...(site.nameChangeDate
-      ? [{ id: "nameChanged", label: labels.nameChanged, value: site.nameChangeDate }]
-      : []),
     { id: "incorporated", label: labels.incorporated, value: String(site.foundedYear) },
     {
       id: "yearsInOperation",
@@ -109,14 +122,21 @@ export function getCompanyFacts(): CompanyFact[] {
       value: String(getYearsInOperation()),
       note: site.anniversaryNote,
     },
-    { id: "rcNumber", label: labels.rcNumber, value: site.rcNumber },
   ];
 
-  if (headOffice) {
-    facts.push({ id: "headOffice", label: labels.headOffice, value: headOffice.address });
+  if (site.showRcNumber && site.rcNumber) {
+    facts.push({ id: "rcNumber", label: labels.rcNumber, value: site.rcNumber });
   }
 
-  if (professional) {
+  if (site.offices.length) {
+    facts.push({
+      id: "offices",
+      label: labels.offices,
+      value: site.offices.map((office) => office.city).join(" · "),
+    });
+  }
+
+  if (professional?.items.length) {
     facts.push({
       id: "registrations",
       label: labels.registrations,
@@ -171,12 +191,37 @@ export function getServices(): Service[] {
   return services;
 }
 
-/** Divisions in their display bands, in order, skipping any empty band. */
-export function getServiceGroups(): Array<{ group: ServiceGroup; services: Service[] }> {
-  const order: ServiceGroup[] = ["engineering", "energy", "technology"];
-  return order
-    .map((group) => ({ group, services: services.filter((s) => s.group === group) }))
-    .filter((band) => band.services.length > 0);
+/** The order categories are presented in, everywhere on the site. */
+const BAND_ORDER: ServiceGroup[] = ["infrastructure", "energy", "oil-gas", "technology"];
+
+/** `oil-gas` -> `groupOilGas`, so a category's copy is found by its value. */
+function bandKey(group: ServiceGroup): string {
+  const camel = group.replace(/-(.)/g, (_, char: string) => char.toUpperCase());
+  return `group${camel[0].toUpperCase()}${camel.slice(1)}`;
+}
+
+/**
+ * The service categories, with their copy resolved, in display order.
+ *
+ * The header, Home and the services overview all render the same four
+ * categories, so the label, intro and landing-page link are resolved once
+ * here from `pages/services.json` rather than re-derived at each call site.
+ * A category with no services is dropped, which is what lets a future split
+ * of Technology be a content edit.
+ */
+export function getServiceBands(): ServiceBand[] {
+  const labels = pages.services.labels ?? {};
+
+  return BAND_ORDER.map((group) => {
+    const key = bandKey(group);
+    return {
+      group,
+      label: labels[key] ?? group,
+      intro: labels[`${key}Intro`] ?? "",
+      href: labels[`${key}Href`] || undefined,
+      services: services.filter((service) => service.group === group),
+    };
+  }).filter((band) => band.services.length > 0);
 }
 
 /** Divisions whose copy Sato has not yet approved. Blocks a production build. */
@@ -238,8 +283,26 @@ export function getServiceForProject(
   );
   if (claimed) return claimed;
 
-  const slug = facets.find((facet) => facet.value === project.sector)?.serviceSlug;
+  const slug = flattenFacets(facets).find(
+    (facet) => facet.value === project.sector,
+  )?.serviceSlug;
   return slug ? services.find((service) => service.slug === slug) : undefined;
+}
+
+/**
+ * Facets and their sub-filters as one flat list.
+ *
+ * The project index nests sectors under a service category, but sector
+ * lookups — a project's own label, the division it links on to — care only
+ * about the leaves.
+ */
+export function flattenFacets(facets: CollectionFacet[]): CollectionFacet[] {
+  return facets.flatMap((facet) => [facet, ...flattenFacets(facet.children ?? [])]);
+}
+
+/** True when the project's sector is this facet's own, or one of its children. */
+export function facetMatches(facet: CollectionFacet, sector: string): boolean {
+  return flattenFacets([facet]).some((leaf) => leaf.value === sector);
 }
 
 /* --------------------------------------------------------------- clients */

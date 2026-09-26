@@ -27,7 +27,7 @@ export function DivisionList({
     <ul className={cn("relative border-t border-rule", className)}>
       <span
         aria-hidden="true"
-        className="absolute -top-px left-0 h-px w-16 bg-brand-deep"
+        className="absolute -top-px left-0 h-px w-16 bg-brand"
       />
 
       {services.map((service) => (

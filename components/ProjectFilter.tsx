@@ -9,10 +9,11 @@ import { cn } from "@/lib/cn";
 
 export interface ProjectFilterProps {
   projects: Project[];
-  /** Sectors that actually have projects, in display order. */
+  /** Service categories that have projects, each with its own sub-filters. */
   facets: CollectionFacet[];
   labels: {
     filterLabel: string;
+    subFilterLabel: string;
     all: string;
     countOne: string;
     /** `{n}` is replaced with the count. */
@@ -51,8 +52,19 @@ function pushSearch(url: string) {
   listeners.forEach((listener) => listener());
 }
 
+/** A facet's own value plus every descendant's. */
+function facetValues(facet: CollectionFacet): string[] {
+  return [facet.value, ...(facet.children ?? []).flatMap(facetValues)];
+}
+
 /**
- * Sector filter for the project index.
+ * Project filter for the project index.
+ *
+ * Two levels, mirroring the service structure: the top row is the service
+ * category and, where that category has sub-filters, a second row narrows
+ * within it. Selecting "Infrastructure Services" shows buildings, roads and
+ * water together and reveals the sub-filters; selecting one of those keeps
+ * the parent highlighted.
  *
  * The tabs are real links, so `?sector=water` is shareable and the page works
  * with scripting off — every project is server-rendered and the links are
@@ -69,10 +81,15 @@ export function ProjectFilter({
   const search = useSyncExternalStore(subscribe, getSearch, getServerSearch);
 
   const requested = new URLSearchParams(search).get(param);
-  // An unknown sector falls back to showing everything.
-  const active = facets.some((facet) => facet.value === requested)
-    ? requested
-    : null;
+  const known = facets.flatMap(facetValues);
+  // An unknown value falls back to showing everything.
+  const active = requested && known.includes(requested) ? requested : null;
+
+  // The category the active value sits in — the parent stays lit while one of
+  // its sub-filters is selected, and its sub-filter row stays open.
+  const activeParent = active
+    ? facets.find((facet) => facetValues(facet).includes(active))
+    : undefined;
 
   const href = (value: string | null) =>
     value ? `${basePath}?${param}=${value}` : basePath;
@@ -84,8 +101,16 @@ export function ProjectFilter({
     pushSearch(href(value));
   };
 
-  const shown = active
-    ? projects.filter((project) => project.sector === active)
+  const matching = active
+    ? new Set(
+        activeParent && active === activeParent.value
+          ? facetValues(activeParent)
+          : [active],
+      )
+    : null;
+
+  const shown = matching
+    ? projects.filter((project) => matching.has(project.sector))
     : projects;
 
   const count =
@@ -93,36 +118,52 @@ export function ProjectFilter({
       ? labels.countOne
       : labels.countMany.replace("{n}", String(shown.length));
 
-  const tabs: Array<{ value: string | null; label: string }> = [
-    { value: null, label: labels.all },
-    ...facets.map((facet) => ({ value: facet.value, label: facet.label })),
-  ];
+  const subFacets = activeParent?.children ?? [];
 
-  const sectorLabels = new Map(facets.map((facet) => [facet.value, facet.label]));
+  // Sector -> label, from the leaves, for the badge on each card.
+  const sectorLabels = new Map(
+    facets
+      .flatMap((facet) => [facet, ...(facet.children ?? [])])
+      .map((facet) => [facet.value, facet.label]),
+  );
+
+  const tab = (isActive: boolean) =>
+    cn(
+      "inline-flex items-center px-4 py-2 text-sm font-bold no-underline wdth-body",
+      "transition-colors duration-150",
+      isActive
+        ? "bg-asphalt text-concrete"
+        : "text-steel-ink hover:bg-white hover:text-asphalt",
+    );
 
   return (
     <>
       <div className="flex flex-col gap-4 border-b border-rule pb-5 md:flex-row md:items-center md:justify-between">
         <nav aria-label={labels.filterLabel}>
           <ul className="flex flex-wrap gap-x-1 gap-y-2">
-            {tabs.map((tab) => {
-              const isActive = tab.value === active;
+            <li>
+              <Link
+                href={href(null)}
+                scroll={false}
+                onClick={select(null)}
+                aria-current={active === null ? "true" : undefined}
+                className={tab(active === null)}
+              >
+                <RichText text={labels.all} />
+              </Link>
+            </li>
+            {facets.map((facet) => {
+              const isActive = activeParent?.value === facet.value;
               return (
-                <li key={tab.value ?? "all"}>
+                <li key={facet.value}>
                   <Link
-                    href={href(tab.value)}
+                    href={href(facet.value)}
                     scroll={false}
-                    onClick={select(tab.value)}
+                    onClick={select(facet.value)}
                     aria-current={isActive ? "true" : undefined}
-                    className={cn(
-                      "inline-flex items-center px-4 py-2 text-sm font-semibold no-underline wdth-body",
-                      "transition-colors duration-150",
-                      isActive
-                        ? "bg-asphalt text-concrete"
-                        : "text-steel-ink hover:bg-white hover:text-asphalt",
-                    )}
+                    className={tab(isActive)}
                   >
-                    <RichText text={tab.label} />
+                    <RichText text={facet.label} />
                   </Link>
                 </li>
               );
@@ -134,6 +175,37 @@ export function ProjectFilter({
           <RichText text={count} />
         </p>
       </div>
+
+      {subFacets.length ? (
+        <nav aria-label={labels.subFilterLabel} className="mt-4">
+          <ul className="flex flex-wrap items-center gap-x-1 gap-y-2">
+            {[{ value: activeParent!.value, label: labels.all }, ...subFacets].map(
+              (facet) => {
+                const isActive = active === facet.value;
+                return (
+                  <li key={facet.value}>
+                    <Link
+                      href={href(facet.value)}
+                      scroll={false}
+                      onClick={select(facet.value)}
+                      aria-current={isActive ? "true" : undefined}
+                      className={cn(
+                        "inline-flex items-center px-3 py-1.5 text-xs font-semibold no-underline wdth-body",
+                        "border transition-colors duration-150",
+                        isActive
+                          ? "border-asphalt bg-asphalt text-concrete"
+                          : "border-rule text-steel-ink hover:border-steel hover:text-asphalt",
+                      )}
+                    >
+                      <RichText text={facet.label} />
+                    </Link>
+                  </li>
+                );
+              },
+            )}
+          </ul>
+        </nav>
+      ) : null}
 
       <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {shown.map((project) => (

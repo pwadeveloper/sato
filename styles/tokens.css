@@ -3,32 +3,42 @@
  *
  * Tailwind v4 is CSS-first: this `@theme` block both declares the tokens as
  * plain CSS custom properties on `:root` AND generates the matching utilities
- * (`bg-asphalt`, `text-green-ink`, `text-h1`, ...). Swapping the palette means
+ * (`bg-asphalt`, `text-brand-ink`, `text-h1`, ...). Swapping the palette means
  * editing this file only — nothing else hardcodes a colour.
  *
- * Palette is reconciled against the supplied logo (see /docs/design-plan.md).
- * Sampled brand greens: #177B0B (upper lozenge tone), #2E7229 (lower tone).
- * There is no second hue: the laterite accent was retired in favour of a
- * single green family, so tonal separation comes from `brand` vs `brand-deep`.
+ * Palette is sampled from the supplied logo (see /docs/design-plan.md).
+ * The client's second feedback batch fixes the two greens:
+ *   #2E7229  primary brand — buttons, fills, rules
+ *   #177B0B  the brighter lozenge tone — sparing highlight only
+ * There is no second hue, so tonal separation comes from `brand` vs
+ * `brand-deep`, never from a second colour.
  *
- * Contrast is verified to WCAG 2.1 AA. Three text colours are darkened
- * derivatives of the brief values, because the brief values do not clear 4.5:1
- * at body size:
- *   green-ink  <- green   (#177B0B is 4.36:1 on concrete — fails)
- *   steel-ink  <- steel   (#5A6A73 is 4.50:1 on concrete — no margin)
- *   *-light    <- new     (the brief specified no text colours for dark bands)
+ * Contrast is verified to WCAG 2.1 AA. Two text colours are darkened
+ * derivatives of the sampled values, because the sampled values do not clear
+ * 4.5:1 at body size against the concrete page background:
+ *   brand-ink    <- brand-bright (#177B0B is 4.4:1 on concrete — fails)
+ *   steel-ink    <- steel        (#5A6A73 is 4.50:1 on concrete — no margin)
+ *   *-light      <- new          (no text colour was specified for dark bands)
  */
 
 @theme {
   /* Clear Tailwind's stock green scale so `green` is unambiguously Sato's. */
   --color-green-*: initial;
 
-  /* Brand — sampled from the logo lozenge. One family, one swap. */
-  --color-brand: #177b0b; /* upper lozenge tone; button fill, white on it 5.4:1 */
-  --color-brand-deep: #2e7229; /* lower lozenge tone; rules, accents, pressed    */
-  --color-brand-ink: #136509; /* link text on light; 5.8:1 on concrete          */
-  --color-brand-light: #80b076; /* link text on dark;  6.0:1 on asphalt           */
-  --color-brand-tint: #e3ede6; /* subtle wash; asphalt on it 12.6:1              */
+  /*
+   * Brand — one family, one swap.
+   *
+   * `brand` is the primary: button fills, rules, pills. White on it is 5.9:1,
+   * and it clears 4.5:1 on concrete, so it is also safe as large-text ink.
+   * Body-size link and label text uses `brand-ink` instead, which carries a
+   * real margin (5.8:1) rather than a bare pass.
+   */
+  --color-brand: #2e7229; /* primary; white on it 5.9:1, 4.7:1 on concrete */
+  --color-brand-bright: #177b0b; /* highlight fills and rules ONLY — 4.4:1, never text */
+  --color-brand-deep: #1c5718; /* hover and pressed fills; 7.0:1 on concrete  */
+  --color-brand-ink: #136509; /* link and label text on light; 5.8:1          */
+  --color-brand-light: #80b076; /* link text on dark;  6.0:1 on asphalt         */
+  --color-brand-tint: #e3ede6; /* subtle wash; asphalt on it 12.6:1            */
 
   /* Neutrals — site work */
   --color-asphalt: #22272b; /* body text, dark sections, the data plate */
@@ -48,7 +58,7 @@
    */
   --color-error: #9a2218;
 
-  /* Type — Archivo, variable, wdth 62-125. One family. */
+  /* Type — Archivo, variable, wdth 62-125, wght 100-900. One family. */
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
 
   /* Scale: 1.25 ratio, body 17px. Display steps are fluid 360px -> 1280px. */
@@ -72,26 +82,40 @@
   --text-4xl--line-height: 1.05;
   --text-5xl: 4.0625rem;
   --text-5xl--line-height: 1.02;
+  --text-6xl: 5.0625rem;
+  --text-6xl--line-height: 1;
 
+  /*
+   * Display steps. The client asked for bolder, more prominent headings, so
+   * display / h1 / h2 each moved up one step of the 1.25 scale at the desktop
+   * end and gained weight. The 360px end is unchanged: a 33px h1 on a phone is
+   * already at the limit of a sensible measure, and growing it there would
+   * cost line breaks rather than buy presence.
+   */
   --text-h3: clamp(1.3125rem, 1.19rem + 0.543vw, 1.625rem);
   --text-h3--line-height: 1.25;
   --text-h3--letter-spacing: -0.01em;
   --text-h3--font-weight: 700;
 
-  --text-h2: clamp(1.625rem, 1.258rem + 1.63vw, 2.5625rem);
-  --text-h2--line-height: 1.12;
-  --text-h2--letter-spacing: -0.015em;
-  --text-h2--font-weight: 700;
+  --text-h2: clamp(1.625rem, 0.989rem + 2.826vw, 3.25rem);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.018em;
+  --text-h2--font-weight: 800;
 
-  --text-h1: clamp(2.0625rem, 1.598rem + 2.065vw, 3.25rem);
-  --text-h1--line-height: 1.05;
-  --text-h1--letter-spacing: -0.015em;
-  --text-h1--font-weight: 800;
+  --text-h1: clamp(2.0625rem, 1.28rem + 3.478vw, 4.0625rem);
+  --text-h1--line-height: 1.03;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h1--font-weight: 900;
 
-  --text-display: clamp(2.5625rem, 1.976rem + 2.609vw, 4.0625rem);
-  --text-display--line-height: 1.02;
-  --text-display--letter-spacing: -0.02em;
-  --text-display--font-weight: 800;
+  /*
+   * The 360px floor is set by the longest word the hero has to carry
+   * ("infrastructure"), not by the scale: at 41px it overflowed the 320px
+   * measure and the hero clipped it. 37px fits with room to spare.
+   */
+  --text-display: clamp(2.3125rem, 1.236rem + 4.783vw, 5.0625rem);
+  --text-display--line-height: 1;
+  --text-display--letter-spacing: -0.025em;
+  --text-display--font-weight: 900;
 
   /* Layout */
   --container-page: 80rem; /* 1280px */

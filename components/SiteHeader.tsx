@@ -91,11 +91,11 @@ export function SiteHeader({
           <Logo surface={isDark ? "dark" : "light"} alt={logoAlt} priority />
         </Link>
 
-        <nav aria-label={navLabel} className="hidden lg:block">
-          <ul className="flex items-center gap-x-7">
+        <nav aria-label={navLabel} className="hidden h-full lg:block">
+          <ul className="flex h-full items-center gap-x-5 xl:gap-x-7">
             {nav.map((link) =>
               link.href === "/services" && serviceBands.length ? (
-                <li key={link.href}>
+                <li key={link.href} className="h-full">
                   <ServicesMenu
                     label={link.label}
                     href={link.href}
@@ -108,7 +108,7 @@ export function SiteHeader({
                   <Link
                     href={link.href}
                     className={cn(
-                      "text-sm font-medium no-underline wdth-body transition-colors duration-150",
+                      "text-sm font-semibold no-underline wdth-body transition-colors duration-150",
                       isDark
                         ? "text-concrete hover:text-brand-light"
                         : "text-asphalt hover:text-brand-ink",

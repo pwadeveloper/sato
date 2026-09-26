@@ -11,10 +11,14 @@
  *  1. `{{CONFIRM: note}}` markers in /content. These are for copy the site
  *     cannot launch without. Optional content is stored empty ("" or []) and
  *     its section is hidden, so it never appears here.
- *  2. Divisions still marked `"reviewStatus": "draft"` in services.json. Those
- *     were drafted from partner reference material and describe capabilities
- *     Sato has not yet approved. Unreviewed capability claims must not reach an
- *     oil company's procurement team.
+ *  2. Services still marked `"reviewStatus": "draft"` in services.json. Those
+ *     describe capabilities Sato has not yet approved. Unreviewed capability
+ *     claims must not reach an oil company's procurement team.
+ *
+ * The report is grouped by *who has to answer*, not by which file the question
+ * came from. Anything touching the oil and gas service needs both Sato and its
+ * technical collaborator, and sending the client a single flat list would hide
+ * that half of it is not his to answer alone.
  */
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, relative, resolve } from "node:path";
@@ -25,6 +29,39 @@ const CONTENT = join(ROOT, "content");
 const REPORT = join(ROOT, "docs", "open-items.md");
 
 const PATTERN = /\{\{CONFIRM(?::\s*([\s\S]*?))?\}\}/g;
+
+/**
+ * Services whose copy Sato cannot sign off alone.
+ *
+ * The oil and gas page describes a joint offer and quotes a partner's track
+ * record, so both parties have to approve it before it can be published.
+ */
+const COLLABORATOR_SLUGS = new Set(["oil-gas"]);
+
+const GROUPS = [
+  {
+    id: "client",
+    heading: "Client to confirm",
+    blurb:
+      "Questions for Sato. Everything here is either visible on the site as a" +
+      " placeholder, or a service whose copy is written but not yet approved.",
+  },
+  {
+    id: "collaborator",
+    heading: "Client and collaborator to confirm",
+    blurb:
+      "The oil and gas service describes a joint offer and quotes the partner" +
+      " team's track record, so both Sato and its technical collaborator have" +
+      " to approve these before the page can be published.",
+  },
+  {
+    id: "on-hold",
+    heading: "On hold",
+    blurb:
+      "Decided, but deliberately parked. Nothing here blocks the build —" +
+      " it is recorded so it is not lost.",
+  },
+];
 
 /** Every .json under /content, deepest last, sorted for stable output. */
 async function jsonFiles(dir) {
@@ -97,6 +134,9 @@ function groupRank(file) {
  */
 function context(value, raw) {
   const marked = value.split(raw).join(" [ ? ] ").replace(/\s+/g, " ").trim();
+  // A field that is nothing but the placeholder has no sentence to quote, and
+  // "[ ? ]" on its own tells the reader nothing.
+  if (marked === "[ ? ]") return "_(the whole field is this question)_";
   if (marked.length <= 180) return marked;
   const at = marked.indexOf("[ ? ]");
   const from = Math.max(0, at - 80);
@@ -104,12 +144,39 @@ function context(value, raw) {
 }
 
 const files = await jsonFiles(CONTENT);
+const servicesFile = join(CONTENT, "services.json");
+const services = JSON.parse(await readFile(servicesFile, "utf8"));
+
+/**
+ * Which service a placeholder inside services.json belongs to.
+ *
+ * The walker reports a path like `[5].partner.caseStudy.note`; the leading
+ * index is the position in the array, which is how a question gets routed to
+ * the people who can answer it.
+ */
+function serviceForPath(path) {
+  const index = Number(/^\[(\d+)\]/.exec(path)?.[1]);
+  return Number.isInteger(index) ? services[index] : undefined;
+}
+
+/** Who has to answer this placeholder. */
+function ownerOf(file, path) {
+  if (file !== servicesFile) return "client";
+  const service = serviceForPath(path);
+  return service && COLLABORATOR_SLUGS.has(service.slug)
+    ? "collaborator"
+    : "client";
+}
+
 const groups = new Map();
 let total = 0;
 
 for (const file of files) {
   const parsed = JSON.parse(await readFile(file, "utf8"));
-  const items = [...walk(parsed)];
+  const items = [...walk(parsed)].map((item) => ({
+    ...item,
+    owner: ownerOf(file, item.path),
+  }));
   if (!items.length) continue;
   total += items.length;
   groups.set(groupName(file), {
@@ -119,12 +186,15 @@ for (const file of files) {
   });
 }
 
-/* ------------------------------------------------- unapproved divisions */
+/* -------------------------------------------------- unapproved services */
 
-const servicesFile = join(CONTENT, "services.json");
-const drafts = JSON.parse(await readFile(servicesFile, "utf8"))
+const drafts = services
   .filter((service) => service.reviewStatus === "draft")
-  .map((service) => ({ slug: service.slug, name: service.name }));
+  .map((service) => ({
+    slug: service.slug,
+    name: service.name,
+    owner: COLLABORATOR_SLUGS.has(service.slug) ? "collaborator" : "client",
+  }));
 
 /* ------------------------------------------------------------ terminal */
 
@@ -158,46 +228,85 @@ if (drafts.length) {
 
 if (process.argv.includes("--report")) {
   const today = new Date().toISOString().slice(0, 10);
+
+  /**
+   * The hand-kept half of the report.
+   *
+   * `docs/open-items-extra.md` holds one `## <group heading>` section per
+   * group, for the things the build cannot detect — a missing logo file, a
+   * photograph, a decision. Its sections are merged into the matching
+   * generated group rather than dumped at the end, so the client reads one
+   * list per audience instead of two.
+   */
+  const extraPath = join(ROOT, "docs", "open-items-extra.md");
+  const extraRaw = await readFile(extraPath, "utf8").catch(() => "");
+  const extra = new Map();
+  for (const block of extraRaw.split(/^## /m).slice(1)) {
+    const newline = block.indexOf("\n");
+    const heading = block.slice(0, newline).trim();
+    const group = GROUPS.find((entry) => entry.heading === heading);
+    if (group) extra.set(group.id, block.slice(newline + 1).trim());
+  }
+
   const lines = [
-    "# Open items — information we still need from Sato",
+    "# Open items",
     "",
-    "Everything below is a gap in the website copy. Each one is a real question,",
-    "not a formatting problem: the site cannot go live with any of them showing,",
-    "because the placeholder text would be visible to anyone who visited.",
+    "Everything the website still needs, grouped by who has to answer it.",
     "",
     `**${total} placeholder${total === 1 ? "" : "s"} outstanding** and ` +
-      `**${drafts.length} division${drafts.length === 1 ? "" : "s"} awaiting approval.** ` +
-      `Generated ${today} from the site content by \`npm run check:placeholders\`, ` +
-      "so this file is always current.",
+      `**${drafts.length} service${drafts.length === 1 ? "" : "s"} awaiting approval.** ` +
+      `Generated ${today} by \`npm run check:placeholders\`, so the detected ` +
+      "items are always current. The rest is kept by hand in " +
+      "`docs/open-items-extra.md`.",
     "",
-    "---",
+    "A placeholder is text that is visible on the site right now. The " +
+      "production build is blocked until every one is resolved and every " +
+      "service is approved.",
     "",
   ];
 
-  for (const [name, group] of ordered) {
-    lines.push(`## ${name}`, "");
-    for (const item of group.items) {
-      lines.push(`- **${item.note || "Needs confirming"}**`);
-      lines.push("");
-      lines.push(`  > ${context(item.value, item.raw)}`);
-      lines.push("");
-      lines.push(`  <sub>${group.file} → \`${item.path}\`</sub>`);
+  for (const group of GROUPS) {
+    const placeholders = ordered
+      .map(([name, entry]) => [
+        name,
+        entry,
+        entry.items.filter((item) => item.owner === group.id),
+      ])
+      .filter(([, , items]) => items.length > 0);
+
+    const groupDrafts = drafts.filter((draft) => draft.owner === group.id);
+    const handKept = extra.get(group.id);
+
+    if (!placeholders.length && !groupDrafts.length && !handKept) continue;
+
+    lines.push("---", "", `## ${group.heading}`, "", group.blurb, "");
+
+    for (const [name, entry, items] of placeholders) {
+      lines.push(`### ${name}`, "");
+      for (const item of items) {
+        lines.push(`- **${item.note || "Needs confirming"}**`);
+        lines.push("");
+        lines.push(`  > ${context(item.value, item.raw)}`);
+        lines.push("");
+        lines.push(`  <sub>${entry.file} → \`${item.path}\`</sub>`);
+        lines.push("");
+      }
+    }
+
+    if (groupDrafts.length) {
+      lines.push(
+        "### Services awaiting approval",
+        "",
+        "These describe what each service offers. They are capability " +
+          "descriptions, not claims of work already delivered. The full text " +
+          "is in `docs/services-for-review.md`.",
+        "",
+      );
+      groupDrafts.forEach((draft) => lines.push(`- **${draft.name}**`));
       lines.push("");
     }
-  }
 
-  if (drafts.length) {
-    lines.push(
-      "## Divisions awaiting your approval",
-      "",
-      "These were drafted from the partner reference sites and describe what the",
-      "service offers. They are capability descriptions, not claims of work Sato",
-      "has already delivered. **The site cannot go live until you approve them** —",
-      "the full text is in `docs/services-for-review.md`.",
-      "",
-    );
-    drafts.forEach((d) => lines.push(`- **${d.name}**`));
-    lines.push("");
+    if (handKept) lines.push(handKept, "");
   }
 
   lines.push(
@@ -205,20 +314,15 @@ if (process.argv.includes("--report")) {
     "",
     "## How to answer",
     "",
-    "Each item shows the question in bold and, underneath it, the sentence it",
-    "appears in — `[ ? ]` marks the exact spot. Reply against the bold question;",
-    "the small grey line is only there so we can find the right field.",
+    "Each placeholder shows the question in bold and, underneath it, the " +
+      "sentence it appears in — `[ ? ]` marks the exact spot. Reply against " +
+      "the bold question; the small grey line is only there so we can find " +
+      "the right field.",
     "",
-    "Anything you cannot answer yet, say so and we will decide together whether to",
-    "cut the sentence or hold the page back.",
+    "Anything you cannot answer yet, say so and we will decide together " +
+      "whether to cut the sentence or hold the page back.",
     "",
   );
-
-  // Items that are not `{{CONFIRM}}` markers — missing files, sign-offs,
-  // photography — are kept by hand in this partial and appended verbatim.
-  const extraPath = join(ROOT, "docs", "open-items-extra.md");
-  const extra = await readFile(extraPath, "utf8").catch(() => "");
-  if (extra.trim()) lines.push(extra.trim(), "");
 
   await writeFile(REPORT, lines.join("\n"));
   console.log(`Wrote ${relative(ROOT, REPORT)}`);

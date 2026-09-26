@@ -41,7 +41,6 @@ export function buildPageMetadata(page: Page, site: Site): Metadata {
       url: path,
       title: cardTitle,
       description,
-      locale: "en_NG",
       images: image
         ? [{ url: image.src, width: image.width, height: image.height, alt: image.alt }]
         : undefined,

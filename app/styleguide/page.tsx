@@ -39,8 +39,9 @@ export const metadata: Metadata = {
 };
 
 const COLOURS = [
-  { name: "brand", hex: "#177B0B", note: "Brand. Button fill. White on it 5.4:1", cls: "bg-brand" },
-  { name: "brand-deep", hex: "#2E7229", note: "Lower lozenge tone. Dark band", cls: "bg-brand-deep" },
+  { name: "brand", hex: "#2E7229", note: "Primary. Button fill, rules. White on it 5.9:1", cls: "bg-brand" },
+  { name: "brand-bright", hex: "#177B0B", note: "Highlight fills only. 4.4:1 — never text", cls: "bg-brand-bright" },
+  { name: "brand-deep", hex: "#1C5718", note: "Hover and pressed fills. 7.0:1", cls: "bg-brand-deep" },
   { name: "brand-ink", hex: "#136509", note: "Link text on light. 5.8:1", cls: "bg-brand-ink" },
   { name: "brand-light", hex: "#80B076", note: "Link text on dark. 6.0:1", cls: "bg-brand-light" },
   { name: "asphalt", hex: "#22272B", note: "Body text, dark sections, the plate", cls: "bg-asphalt" },
@@ -52,16 +53,15 @@ const COLOURS = [
   { name: "steel-light", hex: "#9AA2A4", note: "Secondary text on dark. 5.8:1", cls: "bg-steel-light" },
   { name: "rule", hex: "#CACBC9", note: "Hairline on light", cls: "bg-rule" },
   { name: "rule-dark", hex: "#3E4244", note: "Hairline on dark", cls: "bg-rule-dark" },
-  { name: "brand-deep", hex: "#2E7229", note: "Lower lozenge tone. Rules, pills. 4.8:1", cls: "bg-brand-deep" },
   { name: "brand-tint", hex: "#E3EDE6", note: "Subtle wash. Asphalt on it 12.6:1", cls: "bg-brand-tint" },
   { name: "error", hex: "#9A2218", note: "Validation only, never brand. 8.0:1 on white", cls: "bg-error" },
   { name: "survey", hex: "#E2B236", note: "Fill / rule / focus. Never text on light", cls: "bg-survey" },
 ];
 
 const TYPE_STEPS = [
-  { cls: "text-display wdth-display", label: "display", spec: "41 → 65px · wdth 118 · 800" },
-  { cls: "text-h1 wdth-heading", label: "h1", spec: "33 → 52px · wdth 112 · 800" },
-  { cls: "text-h2 wdth-heading", label: "h2", spec: "26 → 41px · wdth 112 · 700" },
+  { cls: "text-display wdth-display", label: "display", spec: "41 → 81px · wdth 118 · 900" },
+  { cls: "text-h1 wdth-heading", label: "h1", spec: "33 → 65px · wdth 112 · 900" },
+  { cls: "text-h2 wdth-heading", label: "h2", spec: "26 → 52px · wdth 112 · 800" },
   { cls: "text-h3 wdth-heading", label: "h3", spec: "21 → 26px · wdth 112 · 700" },
   { cls: "text-xl wdth-heading font-semibold", label: "xl", spec: "26px" },
   { cls: "text-lg wdth-body", label: "lg", spec: "21px · lead" },
@@ -159,13 +159,13 @@ export default function StyleguidePage() {
                     <p className="text-2xs uppercase tracking-[0.08em] text-steel-ink">
                       {step.label} · {step.spec}
                     </p>
-                    <p className={`mt-2 ${step.cls}`}>Engineering Nigeria&rsquo;s infrastructure</p>
+                    <p className={`mt-2 ${step.cls}`}>Engineering infrastructure</p>
                   </li>
                 ))}
               </ul>
             </Entry>
 
-            <Entry title="Buttons" note="Square corners. Primary is brand brand; secondary is the brand-deep outline; inverse is for asphalt sections.">
+            <Entry title="Buttons" note="Square corners. Primary is a brand fill; secondary is the brand outline; inverse is for asphalt sections.">
               <div className="flex flex-col gap-6">
                 <div className="flex flex-wrap items-center gap-4">
                   <Button label="Contact us" href="/contact" />

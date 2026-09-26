@@ -3,24 +3,33 @@ import Image from "next/image";
 
 import { BackedByStrip } from "@/components/BackedByStrip";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { CapabilityBlocks } from "@/components/CapabilityBlocks";
 import { CapabilityList } from "@/components/CapabilityList";
 import { Container } from "@/components/Container";
+import { DraftNotice } from "@/components/DraftNotice";
 import { CtaBand } from "@/components/CtaBand";
 import { Heading } from "@/components/Heading";
+import { PartnerExperience } from "@/components/PartnerExperience";
+import { ProcurementList } from "@/components/ProcurementList";
 import { ProjectCard } from "@/components/ProjectCard";
 import { RegistrationsBlock } from "@/components/RegistrationsBlock";
+import { RelatedServices } from "@/components/RelatedServices";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
+import { ServiceListBlock } from "@/components/ServiceListBlock";
 
 import {
+  flattenFacets,
   getPage,
   getProject,
   getSection,
   getService,
+  getServiceBands,
   getServices,
   getSite,
 } from "@/lib/content";
 import { buildServiceMetadata } from "@/lib/metadata";
+import { isReviewMode } from "@/lib/review-mode";
 import type { CtaSection } from "@/lib/content-types";
 
 type ServicePageProps = { params: Promise<{ slug: string }> };
@@ -39,13 +48,13 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 }
 
 /**
- * One template for all four divisions.
+ * One template for every service.
  *
- * Every division renders the same structure, so the energy page is complete
- * the moment its copy is confirmed — nothing is conditional on which division
- * this is. The only per-division branches are data-driven: a division shows a
- * photograph if it has one, a related-projects grid if it lists any, and a
- * registrations block if it declares registrations.
+ * Nothing branches on which service this is. The richer blocks — grouped
+ * capabilities, named solutions, equipment procurement, a partner's track
+ * record — are all optional fields on the service, so the oil and gas page is
+ * long because its content is long, and the water page is short for the same
+ * reason. Adding any of those blocks to another service is a content edit.
  */
 export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
@@ -54,9 +63,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const labels = servicesPage.labels ?? {};
   const backedBy = getSection(servicesPage, "backed-by", "linkCards");
 
-  // A division may supply its own CTA by id; otherwise it uses the shared one.
-  // This is how the energy page is addressed to procurement without the
-  // template knowing anything about energy.
+  // A service may supply its own CTA by id; otherwise it uses the shared one.
+  // This is how the oil and gas page is addressed to operators without the
+  // template knowing anything about oil and gas.
   const cta: CtaSection = servicesPage.sections.some(
     (section) => section.id === `cta-${service.slug}`,
   )
@@ -64,31 +73,47 @@ export default async function ServicePage({ params }: ServicePageProps) {
     : getSection(servicesPage, "cta-default", "cta");
 
   const sectorLabels = new Map(
-    (getSection(projectsPage, "all-projects", "collection").facets ?? []).map((facet) => [
-      facet.value,
-      facet.label,
-    ]),
+    flattenFacets(
+      getSection(projectsPage, "all-projects", "collection").facets ?? [],
+    ).map((facet) => [facet.value, facet.label]),
   );
 
   const relatedProjects = service.relatedProjectSlugs.map((projectSlug) =>
     getProject(projectSlug),
   );
 
-  // Registrations are declared per division but held canonically in site.json.
+  const relatedServices = (service.relatedServiceSlugs ?? []).map((related) =>
+    getService(related),
+  );
+
+  // Registrations are declared per service but held canonically in site.json.
   const oilAndGas = site.registrations.find((group) => group.id === "oil-and-gas");
   const showRegistrations = Boolean(service.registrations?.length && oilAndGas);
+
+  // Grouped capabilities replace the flat sidebar list rather than joining it.
+  const blocks = service.capabilityBlocks ?? [];
+  const hasBlocks = blocks.length > 0;
+
+  // The service's own category, for the breadcrumb trail.
+  const band = getServiceBands().find((entry) => entry.group === service.group);
+  const trail = [{ label: servicesPage.title, href: "/services" }];
+  if (band?.href) trail.push({ label: band.label, href: band.href });
 
   return (
     <>
       <Section tone="concrete">
         <Container>
           <Breadcrumbs
-            trail={[{ label: servicesPage.title, href: "/services" }]}
+            trail={trail}
             current={service.name}
             label={labels.breadcrumb ?? servicesPage.title}
           />
 
           <Heading level={1} text={service.name} className="mt-6" />
+
+          {isReviewMode && service.reviewStatus === "draft" ? (
+            <DraftNotice className="mt-6" />
+          ) : null}
 
           <p className="mt-5 max-w-(--container-measure) text-lg text-steel-ink wdth-body">
             <RichText text={service.summary} />
@@ -112,12 +137,21 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <Section tone="concrete">
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-            <div className="lg:col-span-7">
+            <div className={hasBlocks ? "lg:col-span-8" : "lg:col-span-7"}>
               {service.body.map((paragraph, index) => (
                 <p key={index} className="mt-5 text-base wdth-body first:mt-0">
                   <RichText text={paragraph} />
                 </p>
               ))}
+
+              {hasBlocks ? (
+                <CapabilityBlocks
+                  blocks={blocks}
+                  heading={labels.capabilities}
+                  headingId="capabilities"
+                  className="mt-12"
+                />
+              ) : null}
 
               {showRegistrations && oilAndGas ? (
                 <RegistrationsBlock
@@ -129,17 +163,66 @@ export default async function ServicePage({ params }: ServicePageProps) {
               ) : null}
             </div>
 
-            <div className="lg:col-span-4 lg:col-start-9">
-              <CapabilityList
-                items={service.capabilities}
-                heading={labels.capabilities}
-                headingId="capabilities"
-                className="lg:sticky lg:top-[calc(var(--header-height)+2rem)]"
-              />
-            </div>
+            {hasBlocks ? null : (
+              <div className="lg:col-span-4 lg:col-start-9">
+                <CapabilityList
+                  items={service.capabilities}
+                  heading={labels.capabilities}
+                  headingId="capabilities"
+                  className="lg:sticky lg:top-[calc(var(--header-height)+2rem)]"
+                />
+              </div>
+            )}
           </div>
+
+          {service.solutions || service.alsoCovered ? (
+            <div className="mt-14 grid gap-12 lg:grid-cols-12 lg:gap-8">
+              {service.solutions ? (
+                <div className="lg:col-span-7">
+                  <ServiceListBlock
+                    list={service.solutions}
+                    headingId="solutions"
+                    variant="dense"
+                  />
+                </div>
+              ) : null}
+              {service.alsoCovered ? (
+                <div className="lg:col-span-4 lg:col-start-9">
+                  <ServiceListBlock list={service.alsoCovered} headingId="also-covered" />
+                </div>
+              ) : null}
+            </div>
+          ) : null}
+
+          {relatedServices.length ? (
+            <RelatedServices
+              heading={labels.relatedServices ?? ""}
+              headingId="related-services"
+              services={relatedServices}
+              className="mt-14"
+            />
+          ) : null}
         </Container>
       </Section>
+
+      {service.procurement ? (
+        <Section tone="white" labelledBy="procurement">
+          <Container>
+            <ProcurementList block={service.procurement} headingId="procurement" />
+          </Container>
+        </Section>
+      ) : null}
+
+      {service.partner ? (
+        <Section tone="concrete" labelledBy="partner-experience">
+          <Container>
+            <PartnerExperience
+              partner={service.partner}
+              headingId="partner-experience"
+            />
+          </Container>
+        </Section>
+      ) : null}
 
       {relatedProjects.length ? (
         <Section tone="white" labelledBy="related-projects">
@@ -176,7 +259,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </Container>
       </Section>
 
-      <CtaBand heading={cta.heading} body={cta.body} ctas={cta.ctas} headingId={`cta-${slug}`} />
+      <CtaBand
+        heading={cta.heading}
+        body={cta.body}
+        ctas={cta.ctas}
+        headingId={`cta-${slug}`}
+      />
     </>
   );
 }

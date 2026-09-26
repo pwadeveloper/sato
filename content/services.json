@@ -2,7 +2,7 @@
   {
     "slug": "construction-civil-engineering",
     "name": "Construction & Civil Engineering",
-    "group": "engineering",
+    "group": "infrastructure",
     "order": 1,
     "reviewStatus": "approved",
     "shortSummary": "Roads, buildings, earthworks, drainage and erosion control.",
@@ -28,7 +28,7 @@
   {
     "slug": "electrical-engineering",
     "name": "Electrical Engineering",
-    "group": "engineering",
+    "group": "infrastructure",
     "order": 2,
     "reviewStatus": "draft",
     "shortSummary": "Power, instrumentation, metering and electrical installations.",
@@ -54,7 +54,7 @@
   {
     "slug": "mechanical-engineering",
     "name": "Mechanical Engineering",
-    "group": "engineering",
+    "group": "infrastructure",
     "order": 3,
     "reviewStatus": "draft",
     "shortSummary": "Pumps, pipework, plant installation and mechanical maintenance.",
@@ -79,7 +79,7 @@
   {
     "slug": "water-resources-environmental",
     "name": "Water Resources & Environmental Engineering",
-    "group": "engineering",
+    "group": "infrastructure",
     "order": 4,
     "reviewStatus": "approved",
     "shortSummary": "Dams, water supply, boreholes, river works, drainage and erosion control.",
@@ -132,28 +132,342 @@
   {
     "slug": "oil-gas",
     "name": "Oil & Gas Services",
-    "group": "energy",
+    "group": "oil-gas",
     "order": 6,
     "reviewStatus": "draft",
-    "shortSummary": "Subsurface studies, field development planning and pipeline engineering.",
-    "summary": "Subsurface, field development and pipeline engineering support for upstream operators.",
+    "shortSummary": "Consulting, engineering and digital technology for upstream oil and gas.",
+    "summary": "Consulting, engineering and digital technology services for the upstream oil and gas sector, delivered with our technical partners.",
     "body": [
-      "Sato offers upstream engineering support through its technical partners, covering the subsurface and field development work that sits behind an investment decision, and the pipeline and facilities engineering that follows it.",
-      "This division is addressed to operators and their procurement and vendor-verification teams. Sato's own record is in civil, water and electrical infrastructure; the oil and gas capability below is delivered with partners and is described as capability, not as completed Sato projects."
+      "We help operators, national and international oil companies, and service companies get more value from their reservoirs and assets. Working with a partner team of internationally recognised subject-matter experts, we support the full field lifecycle: from field development planning and reservoir management to production optimization, digital twins, asset integrity and the procurement of production and surface processing equipment.",
+      "We apply innovative technologies and proven best practice to improve performance and efficiency, optimise costs, and manage risk and uncertainty."
     ],
-    "capabilities": [
-      "Integrated subsurface studies",
-      "Geological studies and formation evaluation",
-      "Seismic data processing, interpretation and inversion",
-      "Reservoir planning and optimisation",
-      "Field development planning and conceptualisation",
-      "Production and reservoir management",
-      "Dynamic pipeline simulation and pipeline integrity monitoring",
-      "Integrated asset modelling and optimisation",
-      "Hydrocarbon accounting",
-      "Civil, structural and electrical works for onshore facilities"
+    "capabilities": [],
+    "capabilityBlocks": [
+      {
+        "id": "ai-digital",
+        "heading": "Artificial intelligence, digitalization and digital twins, automation and autonomy",
+        "items": [
+          "Project assessment, benchmarking and technology roadmaps",
+          "Real-time production optimization, from definition to implementation",
+          "Automation of petroleum engineering standards and business workflows",
+          "AI-assisted reservoir and production digital twins",
+          "Information management standards, workflows and solutions"
+        ]
+      },
+      {
+        "id": "asset-management",
+        "heading": "Integrated asset management and production optimization",
+        "items": [
+          "Reservoir, well and facility production proxy modelling, multi-sensor data assimilation and uncertainty quantification",
+          "Well operating envelopes and well integrity",
+          "Production monitoring and management of reservoirs, wells and facilities",
+          "Production capacity forecasting, production loss management and production enhancement"
+        ]
+      },
+      {
+        "id": "field-development",
+        "heading": "Field development planning and reservoir management",
+        "items": [
+          "Field development planning, review, evaluation and optimization",
+          "Reservoir characterization and geo-modelling",
+          "Reservoir simulation and production forecasting",
+          "Integrated reservoir management standards"
+        ]
+      }
     ],
+    "solutions": {
+      "heading": "Technology solutions",
+      "items": [
+        "Seismic inversion",
+        "Time-lapse seismic analysis",
+        "Simulation-to-seismic analysis",
+        "Integrated reservoir characterization",
+        "Field development planning",
+        "Mature field potential analysis",
+        "Reservoir surveillance, monitoring and management",
+        "Production optimization and enhancement",
+        "Completions and wellbore interventions",
+        "Topside facilities management",
+        "Produced water management",
+        "Multiphase flow metrology",
+        "Process instrumentation, control and optimization"
+      ]
+    },
+    "alsoCovered": {
+      "heading": "Also covered",
+      "items": [
+        "Drilling services optimization",
+        "Asset integrity management",
+        "Mature field management",
+        "Virtual asset management for integrated energy systems"
+      ]
+    },
+    "procurement": {
+      "heading": "Equipment sourcing and procurement",
+      "intro": "We source and procure production and surface processing equipment from leading original equipment manufacturers.",
+      "categories": [
+        {
+          "id": "pumps",
+          "label": "Pumps",
+          "brands": [
+            "Centrifugal and reciprocating pumps: Ruhrpumpen, Dean, D-Pump, NOV, Viking",
+            "Chemical injection pumps: Wilden, Texsteam"
+          ]
+        },
+        {
+          "id": "metering",
+          "label": "Metering and flow",
+          "brands": [
+            "Meters: Brodie, Smith",
+            "Turbine meters: Dresser",
+            "LACT and prover units",
+            "Orifice fittings and plates: Daniel",
+            "Flow monitoring and control systems",
+            "NUFLO MC-III EXP flow analyzers"
+          ]
+        },
+        {
+          "id": "valves",
+          "label": "Valves and actuation",
+          "brands": [
+            "Valves: KTM, CWT, Warren, Versa",
+            "Control valves: Fisher, Masoneilan, Maskot",
+            "Actuators: Valtek, Emerson Bettis",
+            "Fisher regulators",
+            "Solenoid valves: ASCO, Norgren",
+            "Swagelok valves and fittings",
+            "Positioners: Siemens PS2"
+          ]
+        },
+        {
+          "id": "instrumentation",
+          "label": "Instrumentation",
+          "brands": [
+            "Pressure, flow and temperature transmitters: Rosemount, Endress+Hauser, ABB",
+            "Pressure and temperature gauges and switches: Wika, Ashcroft, Bourdon Haenni, Axelson",
+            "Chart recorders: Barton",
+            "Allen-Bradley instruments",
+            "Budenberg calibration equipment"
+          ]
+        },
+        {
+          "id": "process-control",
+          "label": "Process control and automation",
+          "brands": [
+            "ABB process control and automation: DCS, ECS and HIS systems"
+          ]
+        },
+        {
+          "id": "compression",
+          "label": "Compression and safety",
+          "brands": [
+            "Instrument air compressor packages: Quincy, Ingersoll Rand",
+            "Gas sensors and detection"
+          ]
+        },
+        {
+          "id": "mechanical",
+          "label": "Mechanical components",
+          "brands": [
+            "SKF bearings"
+          ]
+        }
+      ],
+      "note": "{{CONFIRM: brand names may be listed publicly; confirm whether Sato or its partner holds any authorised distributor status}}"
+    },
+    "partner": {
+      "heading": "Experience of our partner team",
+      "intro": "Our technical partners have delivered projects for national oil companies, international oil companies, governments and service companies across the Middle East, the Americas, Africa and Australia.",
+      "name": "",
+      "nameLabel": "Technical partner",
+      "figures": [],
+      "projectsHeading": "Selected projects delivered by our partner team",
+      "projectColumns": {
+        "client": "Client",
+        "project": "Project",
+        "year": "Year"
+      },
+      "projectsInitialCount": 8,
+      "projectsShowAllLabel": "Show all projects",
+      "projects": [
+        {
+          "client": "ADNOC",
+          "project": "Integrated Reservoir Management process standardization",
+          "year": "2018"
+        },
+        {
+          "client": "ADNOC",
+          "project": "Integrated Asset Model standard operating process",
+          "year": "2019"
+        },
+        {
+          "client": "ADNOC",
+          "project": "Reservoir performance review process automation",
+          "year": "2020"
+        },
+        {
+          "client": "ADNOC",
+          "project": "Well multiphase virtual flow metering and short-term forecast",
+          "year": "2019"
+        },
+        {
+          "client": "ADNOC Gas",
+          "project": "Gas storage strategic planning and economic modelling",
+          "year": "2019"
+        },
+        {
+          "client": "Al Dhafra",
+          "project": "Area 2 field development plan with uncertainty and risk modelling",
+          "year": "2019"
+        },
+        {
+          "client": "ADNOC",
+          "project": "ABK field development plan with uncertainty and risk modelling",
+          "year": "2021"
+        },
+        {
+          "client": "ADNOC",
+          "project": "Underbalanced drilling feasibility planning for tight gas reservoirs",
+          "year": "2021"
+        },
+        {
+          "client": "ADNOC",
+          "project": "Production loss system with business process management",
+          "year": "2021"
+        },
+        {
+          "client": "ADNOC",
+          "project": "Thamama Center data wall design, configuration and maintenance",
+          "year": "2021"
+        },
+        {
+          "client": "ADNOC",
+          "project": "Corporate annual reservoir performance review automation system",
+          "year": "2022"
+        },
+        {
+          "client": "ADNOC",
+          "project": "Country-wide integrated production capacity model",
+          "year": "2024"
+        },
+        {
+          "client": "ADNOC",
+          "project": "Well flow test frequency optimization: AI-based recommender system",
+          "year": "2024"
+        },
+        {
+          "client": "ADNOC",
+          "project": "Thamama Center digitization and artificial intelligence strategy",
+          "year": "2024"
+        },
+        {
+          "client": "Kuwait Oil Company",
+          "project": "Kuwait Intelligent Digital Oilfield: North Sabriyah, Southeast and Burgan fields",
+          "year": "2015"
+        },
+        {
+          "client": "RPSEA / Chevron",
+          "project": "Gulf of Mexico estimated ultimate recovery prediction system",
+          "year": "2018"
+        },
+        {
+          "client": "Pacific Rubiales",
+          "project": "Guatiquía field development planning",
+          "year": "2017"
+        },
+        {
+          "client": "Ecopetrol",
+          "project": "Rubiales field in-situ combustion facility design",
+          "year": "2013"
+        },
+        {
+          "client": "Santos",
+          "project": "Coal bed methane integrated production model: training and SOPs",
+          "year": "2016"
+        },
+        {
+          "client": "Enrema",
+          "project": "Unconventional fracture operations design",
+          "year": "2019"
+        },
+        {
+          "client": "US Bureau of Land Management",
+          "project": "Helium gas storage",
+          "year": "2022"
+        },
+        {
+          "client": "Vaalco",
+          "project": "Integrated nodal analysis of Equatorial Guinea subsea wells and FPSO",
+          "year": "2025"
+        },
+        {
+          "client": "E3 Lithium",
+          "project": "Data-driven permeability prediction model with training and transfer",
+          "year": "2025"
+        },
+        {
+          "client": "Halliburton",
+          "project": "Patents: enhanced oil recovery (2013), fast history matching (2015), ESP predictive analytics with University of Houston (2019)",
+          "year": "2013–2019"
+        },
+        {
+          "client": "Stoic",
+          "project": "Digital oilfield “petroleum engineering in a box” software solution",
+          "year": "Ongoing"
+        },
+        {
+          "client": "Cradle",
+          "project": "Exploration and production training",
+          "year": "Ongoing"
+        }
+      ],
+      "engagements": {
+        "heading": "Wide-scope engagements",
+        "items": [
+          "Integrated reservoir management (ADNOC, UAE)",
+          "Area 2 FDP review (Al Dhafra, UAE)",
+          "Kuwait Intelligent Digital Oilfield (KOC, Kuwait)",
+          "Santos GLNG IPM standards (Australia)",
+          "Multiple FDPs (Pemex, Mexico)",
+          "Multiple IAM and FDP projects (PDVSA, Venezuela)",
+          "Khurais and Shaybah field development (Aramco, Saudi Arabia)",
+          "Manantiales and Maurek fields (Repsol, Argentina)",
+          "Digital asset for Uganda (Halliburton)",
+          "In-situ combustion facilities and DOF strategy (Pacific, Colombia)",
+          "Al Hosn Gas upstream IT strategy (UAE)"
+        ]
+      },
+      "caseStudy": {
+        "heading": "Well intervention strategies for production enhancement",
+        "attribution": "A project delivered by our partner team.",
+        "challengeHeading": "Challenge",
+        "challenge": "A national oil company needed to increase production from mature brownfields at a profitable cost, but conventional workflows could not identify and rank intervention candidates across thousands of wells quickly, or predict post-job performance reliably.",
+        "solutionHeading": "Solution",
+        "solution": "An automated production enhancement system covering candidate identification and ranking, AI-driven prediction of post-job well performance, and closed-loop evaluation of job outcomes.",
+        "resultsHeading": "Results",
+        "resultsIntro": "Validated in two giant brownfields with more than 3,000 active well strings and over 1,400 workovers a year.",
+        "results": [
+          "Over 80% predictive accuracy in blind tests",
+          "5–20× more feasible high-value opportunities than manual review",
+          "250,000 barrels of oil per day of incremental production",
+          "17% less CAPEX to achieve the production uplift"
+        ],
+        "note": "{{CONFIRM: can the case study client (ADNOC) be named?}}"
+      },
+      "recognition": {
+        "heading": "Recognition",
+        "items": [
+          "2015 SPE International Projects, Facilities and Construction Award",
+          "Strategic partnerships with leading universities in the USA and Canada"
+        ]
+      },
+      "projectsShowLessLabel": "Show fewer projects",
+      "projectsDisclosureNote": "The remaining projects are added to the table above."
+    },
     "relatedProjectSlugs": [],
+    "relatedServiceSlugs": [
+      "digital-twin"
+    ],
     "registrations": [],
     "image": null
   },
@@ -191,7 +505,7 @@
     "shortSummary": "Applied studies, technical training and new engineering methods.",
     "summary": "Applied research, technical training and the evaluation of new methods and technologies.",
     "body": [
-      "Sato invests in the technical development of its own people and, with partners, in applied studies that test whether a method or technology is worth adopting on Nigerian projects.",
+      "Sato invests in the technical development of its own people and, with partners, in applied studies that test whether a method or technology is worth adopting on the projects we deliver.",
       "This division is new. It is offered as a capability rather than a record of delivered research, and its scope will be described more precisely as work is completed."
     ],
     "capabilities": [

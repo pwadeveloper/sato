@@ -3,13 +3,31 @@
 
 @layer base {
   :root {
-    /* Sticky header height. The mobile nav panel hangs off it. */
-    --header-height: 4rem;
+    /*
+     * Sticky header height. The mobile nav panel hangs off it.
+     *
+     * Each step is the logo height for that breakpoint (40 / 52 / 56 / 64px)
+     * plus its clearance, so raising the mark is a single edit here and in
+     * `Logo`.
+     */
+    --header-height: 4.5rem;
   }
 
   @media (min-width: 768px) {
     :root {
-      --header-height: 5rem;
+      --header-height: 5.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --header-height: 6rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    :root {
+      --header-height: 6.5rem;
     }
   }
 
@@ -55,5 +73,44 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * Row disclosure with no JavaScript.
+ *
+ * The overflow rows are visible by default and hidden only while the
+ * disclosure is closed, so a browser without `:has()` renders the whole table
+ * rather than stranding rows behind a control it cannot honour. The summary
+ * carries both labels and shows one.
+ */
+[data-disclosure="rows"]:has(details:not([open])) [data-overflow] {
+  display: none;
+}
+
+[data-disclosure="rows"] details:not([open]) [data-when="open"],
+[data-disclosure="rows"] details[open] [data-when="closed"] {
+  display: none;
+}
+
+[data-disclosure="rows"] summary::-webkit-details-marker {
+  display: none;
+}
+
+/* A caret that turns, so the control reads as a toggle rather than a link. */
+[data-disclosure="rows"] summary::after {
+  content: "\25BC";
+  font-size: 0.6em;
+  line-height: 1;
+  transition: transform 150ms var(--ease-out-quiet);
+}
+
+[data-disclosure="rows"] details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-disclosure="rows"] summary::after {
+    transition: none;
   }
 }

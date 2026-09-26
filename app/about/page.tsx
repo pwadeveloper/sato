@@ -12,8 +12,8 @@ const page = getPage("about");
 const site = getSite();
 
 const intro = getSection(page, "intro", "prose");
-const newName = getSection(page, "new-name", "prose");
 const howWeWork = getSection(page, "how-we-work", "prose");
+const whereWereGoing = getSection(page, "where-were-going", "prose");
 const mission = getSection(page, "mission", "prose");
 const vision = getSection(page, "vision", "prose");
 const recognition = getSection(page, "recognition", "list");
@@ -92,26 +92,20 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      {/* 2. Our new name, and 3. How we work */}
+      {/* 2. How we work, and 3. Where we're going */}
       <Section tone="concrete">
         <Container>
           <div className="flex flex-col gap-14 md:gap-20">
             <ProseBlock
-              heading={newName.heading}
-              headingId="new-name-heading"
-              body={newName.body}
-            >
-              {/* The former name, pulled out of the paragraph and stated on its
-                  own — this is the line a visitor checks against their records. */}
-              <p className="border-l-[3px] border-brand-deep py-1 pl-5 text-base font-medium text-asphalt wdth-body">
-                <RichText text={site.formerNameLabel} />
-              </p>
-            </ProseBlock>
-
-            <ProseBlock
               heading={howWeWork.heading}
               headingId="how-we-work-heading"
               body={howWeWork.body}
+            />
+
+            <ProseBlock
+              heading={whereWereGoing.heading}
+              headingId="where-were-going-heading"
+              body={whereWereGoing.body}
             />
           </div>
         </Container>

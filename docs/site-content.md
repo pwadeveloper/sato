@@ -1,62 +1,86 @@
 # Site content — Sato Engineering & Infrastructure Limited
 
-> **Superseded in part.** The client returned the website information form on
-> 25 September 2026. Where this file disagrees with
-> `docs/decisions/client-answers-v1.md`, that file wins. In particular: the
-> company name now takes an ampersand, there are eight services rather than
-> four, the project list is rebuilt from the current website, the Equipment page
-> is gone, leadership is the founder only, and the mission and vision below are
-> replaced by the client's own wording.
+**Last reconciled:** 26 September 2026, against the client's second feedback
+batch (`docs/decisions/client-feedback-batch-2.md`) and a fresh pass over the
+live site at satoengineering.com.
 
+## How to use this file
 
-Source: satoengineering.com (live site and search-indexed versions, September 2026). Copy has been rewritten for clarity and credibility; facts are preserved as stated on the old site. Anything unverified is marked `{{CONFIRM: ...}}`.
+`/content/*.json` is what the site renders. This file is the plain-language
+record of **what the copy says and why**, so a change can be argued about
+before it is typed into JSON.
 
-Note on dates: most of the old site's content dates from 2011–2012. Years-of-experience figures in bios have been recalculated to 2026 by adding 14 years to the figures on the old site (2012 → 2026). This assumes each bio was written in 2012; the call notes say personnel profiles were edited after 2012, so these figures are marked for the person or client to confirm.
+Where the two disagree, the JSON is what shipped and this file is stale —
+fix it. Where this file disagrees with a decision record in
+`/docs/decisions/`, the newest decision record wins.
+
+The detailed body copy for the six services still under review is **not
+duplicated here**. It lives in `docs/services-for-review.md`, which is the
+document the client and his collaborator are marking up.
+
+## Rules that constrain every line below
+
+1. **No country.** "Nigeria", "Nigerian" and "indigenous" appear nowhere. The
+   company is extending beyond its first market and will register
+   internationally. `npm run check:banned` fails the build on the first two.
+2. **No former name, no change of name, no RC number.** Also enforced.
+3. **One email and one telephone number** anywhere on the site:
+   `info@satoengineering.com` and `+234 803 330 3278`. Also enforced.
+4. **No superlative the company cannot prove.** The one exception is the
+   mission and vision, which are the client's own approved wording and are
+   used verbatim.
+5. **Partner work is always attributed.** See "Oil & Gas" below.
 
 ---
 
-## Company facts (site.json)
+## Company facts (`site.json`)
 
-- Registered name: Sato Engineering & Infrastructure Limited {{CONFIRM: exact registered name and effective date of change}}
-- Former name: Sato Engineering Nigeria Limited
+- Registered name: Sato Engineering & Infrastructure Limited
 - Incorporated: 1997
 - Years in operation: 29 (30th anniversary in 2027)
-- RC number: {{CONFIRM: CAC RC number}}
-- Head office: Abeokuta, Ogun State {{CONFIRM: full street address}}
-- Branch office: Lagos (opened January 2012) {{CONFIRM: still active, full address}}
-- Phone: +234 803 330 3278 {{CONFIRM: from a third-party directory listing, verify before use}}
-- Email: {{CONFIRM: general enquiries email}}
-- Professional registrations: COREN-registered engineers on staff; memberships in NSE, NIM, RICS (founder)
-- Oil & gas registrations: {{CONFIRM: NOGICJQS / NCDMB, NipeX, NUPRC permits, if held}}
-- Tagline: Quality engineering since 1997 (adapted from the old motto "Quality Construction Since 1997") {{CONFIRM: client happy with the adapted motto}}
+- Offices, in order: **Lagos Office** — No. 14 Agbaoku Street, Opebi, Ikeja,
+  Lagos (near Awosika bus stop); **Abeokuta Office** — Abeokuta, Ogun State
+  (city and state only; street address awaited, shown without a placeholder)
+- Phone: +234 803 330 3278
+- Email: info@satoengineering.com
+- Professional registrations: COREN-registered engineers on staff; NSE; NIM;
+  RICS (founder). Abbreviations only — the full names carry the banned word.
+- Oil and gas registrations: empty, section hidden
+- Tagline: Quality engineering since 1997
+
+There is **no "head office"**. Every location is an Office, and the display
+order is the order of the `offices` array. Adding one is a content edit.
+
+The RC number is held in `site.json` behind `"showRcNumber": false`. Turning
+it back on also restores it to the JSON-LD `identifier`.
+
+**Company at a glance** panel renders: registered name, incorporated, years in
+operation, offices ("Lagos · Abeokuta"), professional registrations.
 
 ---
 
 ## Home
 
-**Hero headline:** Engineering Nigeria's infrastructure since 1997.
+**Hero headline:** Engineering infrastructure since 1997.
 
-**Hero subhead:** Sato Engineering & Infrastructure Limited is an indigenous Nigerian engineering firm. For nearly three decades we have designed and built roads, dams, water schemes and buildings for federal and state governments, universities and international development partners, and we now deliver {{CONFIRM: energy division name}} services.
+**Hero subhead:** Sato Engineering & Infrastructure Limited designs and
+delivers infrastructure, energy, and oil and gas engineering services. Since
+1997 we have built roads, dams, water schemes and buildings for governments,
+universities, international development partners and private clients.
 
-**Primary CTA:** Contact us
-**Secondary CTA:** View our projects
+**CTAs:** Explore our work → /projects; Contact us → /contact
 
-**Divisions section heading:** What we do
-- Civil & Infrastructure — roads, buildings, earthworks, drainage and erosion control.
-- Water Resources — earth dams, irrigation, water supply schemes, boreholes and river works.
-- Electrical & Mechanical — {{CONFIRM: one-line summary from client}}
-- {{CONFIRM: energy division name}} — {{CONFIRM: one-line summary from client}}
+**What we do** — the four service categories, in order: Infrastructure
+Services (four disciplines listed), Energy Services, Oil & Gas Services,
+Technology (two listed). A category holding one service shows that service's
+one-liner rather than a list repeating its own name.
 
-**Clients strip heading:** Trusted by
-Show: Federal Ministry of Water Resources, World Bank, UNDP, Lagos State Public Works Corporation, Ogun State Government, University of Ibadan, Federal University of Agriculture Abeokuta, University of Lagos.
+**Trusted by:** the featured clients from `clients.json`.
 
-**Selected projects heading:** Selected projects
-Feature 4: Fiditi Earth Dam; Ogere Water Supply Scheme rehabilitation; Lower Awba Stream channelization; COLPLANT Building Phase II (FUNAAB).
+**Selected projects:** the `featured: true` projects, lead card first.
 
-**Company facts panel heading:** Company at a glance
-(Render from site.json: registered name, former name, incorporated 1997, RC number, head office, registrations.) This panel is for the verifying visitor; keep it factual and easy to scan.
-
-**Closing CTA:** Working on a project in civil, water or energy infrastructure? Talk to our team. → Contact us
+**Closing CTA:** Working on a project in infrastructure, energy or oil and
+gas? Talk to our team.
 
 ---
 
@@ -64,224 +88,191 @@ Feature 4: Fiditi Earth Dam; Ogere Water Supply Scheme rehabilitation; Lower Awb
 
 **H1:** About Sato
 
-**Intro:**
-Sato Engineering & Infrastructure Limited was incorporated in 1997 as Sato Engineering Nigeria Limited, a fully indigenous Nigerian engineering firm. From our base in Abeokuta, we have delivered civil engineering design and construction across roads, dams, irrigation, buildings and water resources, for clients ranging from federal ministries to international development partners.
+**Intro:** Sato Engineering & Infrastructure Limited was established in 1997.
+For nearly three decades we have delivered civil engineering design and
+construction across roads, dams, irrigation, buildings and water resources,
+for clients ranging from government ministries to international development
+partners. Today our work spans infrastructure, energy, and oil and gas.
 
-**Our new name:**
-In {{CONFIRM: year}} the company became Sato Engineering & Infrastructure Limited. The new name reflects how our work has grown: beyond construction into the full infrastructure lifecycle, including energy {{CONFIRM: wording}}. Our ownership, leadership and commitments are unchanged.
+**"Our new name" has been deleted.** The change of name is not mentioned
+anywhere on the site.
 
-**How we work:**
-We build a dedicated team for each project, drawing on a core leadership group and a pool of experienced engineers, technicians, foremen and specialists matched to the project's scope. Clients get the right expertise for the job, led by people who have delivered with Sato for years.
+**How we work:** dedicated team per project drawn from a core leadership group
+and a pool of engineers, technicians, foremen and specialists. Sato owns and
+operates a large fleet of plant, machinery and tools, including its own
+borehole drilling rig, so it mobilises quickly and controls quality on site.
+*(Fleet wording taken from the live Future Plans page.)*
 
-**Mission:** (client's approved wording, 25 September 2026)
-To deliver innovative, sustainable and value-driven engineering and infrastructure solutions that meet the highest standards, exceed client expectations and create lasting value.
+**Where we're going:** extending the same capability across Africa and
+beyond, with the intention of registering internationally; working towards
+highway, airport, railway and hydro-electric power projects. Two sentences,
+no countries named — the first registration outside the current market is not
+in place and the site must not get ahead of it. *(From the live Future Plans
+page, with "Nigeria" and the expansion-city list removed.)*
 
-**Vision:** (client's approved wording, 25 September 2026)
-To be a globally recognized engineering and infrastructure company, renowned for excellence, innovation and world-class project delivery.
+**Mission and vision:** the client's approved wording, verbatim, superlatives
+included.
 
-**Recognition:**
-- Best Erosion Control and Construction Engineering Company Award, 2012 {{CONFIRM: awarding body}}
-- West Africa's Dynamic and Outstanding Engineering Company Award, 2012 {{CONFIRM: awarding body}}
-- {{CONFIRM: any awards or recognition since 2012}}
+**Recognition — six awards.** The awarding bodies for the two 2012 awards were
+recovered from the live site. The "Nigerian Society of Engineers" is written
+as "NSE".
+
+> **One award was removed.** "Most Supportive Indigenous Company (2012), Egba
+> Youths Awards" is dropped, because its official title contains a word the
+> company no longer uses and paraphrasing it would misquote the award. Flagged
+> in `docs/open-items.md` for the client to overrule.
 
 ---
 
-## Services overview
+## Services
 
 **H1:** Services
 
-**Intro:** Four divisions, one standard of delivery. Each division draws on Sato's shared project management, equipment fleet and HSE systems.
+**Intro:** Four service categories, one standard of delivery. Every one draws
+on the same project management, plant and delivery systems Sato has built
+since 1997.
 
----
+### The four categories, in order
 
-### Civil & Infrastructure
+| # | Category | Route | Contains |
+|---|---|---|---|
+| 1 | Infrastructure Services | `/services/infrastructure` | Construction & Civil; Electrical; Mechanical; Water Resources & Environmental |
+| 2 | Energy Services | `/services/energy` | — |
+| 3 | Oil & Gas Services | `/services/oil-gas` | — |
+| 4 | Technology | — | Digitalization & Digital Twin; Research, Technology & Innovation |
 
-**Summary:** Design and construction of roads, buildings and civil works, from earthworks to finished surfaces.
+The group formerly called "Engineering" is now **Infrastructure Services**
+everywhere. Technology is unchanged and may be split later.
 
-**Body:**
-Civil engineering is where Sato began. We design and build the infrastructure that institutions and communities depend on, and we manage every stage, from site preparation to handover.
+### Infrastructure Services landing page
 
-**Capabilities:**
-- Civil engineering design
-- Asphaltic concrete road construction and road rehabilitation
-- Earthworks: grading, laterite filling, sub-base compaction
-- Drainage systems and walkways
-- Building construction: academic, administrative, laboratory, residential and office buildings
-- Renovation and conversion of existing buildings
-- Erosion control
+**Intro:** "Our established infrastructure practice, delivering since 1997."
+Then: our scope covers all aspects of civil engineering design and
+construction — roads, dams, irrigation development, buildings and water
+resources development. *(Taken from the live site's welcome text.)* Then a
+note that the four disciplines are delivered by the same teams, and most
+contracts draw on more than one.
 
-**Related projects:** COLPLANT Building Phase II; FUNAAB Academic Building Complex Block B; McPherson University Administrative Block and Laboratory; Lagos State road rehabilitation; Federal College of Education Osiele roads.
+Each discipline shows its summary, a "Full capability" link to its own page,
+and its first five capabilities. The four detail pages and routes are
+unchanged.
 
----
+### Oil & Gas Services
 
-### Water Resources
+**Draft. Needs Sato's approval and his collaborator's.** Full text in
+`docs/services-for-review.md`.
 
-**Summary:** Dams, irrigation, water supply and river works for government and institutional clients.
+The one thing to hold onto: **the page keeps two track records apart.**
+Capabilities, solutions and procurement are written as what Sato offers.
+Every past project, figure, patent, case study and award belongs to the
+technical partner, sits inside a section headed "Experience of our partner
+team", and is attributed on the page. None of it appears on the Projects
+page, in Sato's project counts or in the structured data.
 
-**Body:**
-Water infrastructure has been central to Sato's work for decades, with clients including the Ogun-Osun River Basin Development Authority, state water corporations and the Federal Ministry of Water Resources.
+Not published, deliberately:
 
-**Capabilities:**
-- Earth dam construction
-- Irrigation development
-- Water supply scheme construction and rehabilitation, including pump houses
-- Water treatment facilities
-- Sewage systems
-- Borehole drilling, including solar-powered boreholes, with our own drilling rig
-- River dredging and stream channelization
+- **The partner's name** — `partner.name` empty, line hidden.
+- **The headline figures** — the source contradicts itself (170 / 250+ / 280+
+  projects; 6 / 8 patents; 13 / 15 countries). `partner.figures` empty, strip
+  hidden.
+- **"100% on budget / on schedule"** and **"+10–200% profit, 1000% ROI"** —
+  unverifiable, and a procurement team discounts them on sight. Recorded in
+  `docs/services-for-review.md` as omitted, restorable on request.
 
-**Related projects:** Fiditi Earth Dam; Ogere Water Supply Scheme; Lower Awba Stream channelization; Ogungbade River dredging; solar-powered boreholes.
+The page cross-links to Digitalization & Digital Twin, since much of the
+work is digital.
 
----
-
-### Electrical & Mechanical
-
-**Summary:** {{CONFIRM: client to provide}}
-
-**Body:** Sato was founded by an electrical engineer, and electrical and mechanical engineering services have been part of our offering alongside our civil and water work. {{CONFIRM: client to provide detail — scope, typical projects}}
-
-**Capabilities:** {{CONFIRM: list from client}}
-
----
-
-### {{CONFIRM: energy division name — e.g. "Energy", "Oil & Gas", "Energy & Petroleum Services"}}
-
-**Summary:** {{CONFIRM: client to provide}}
-
-**Body:**
-{{CONFIRM: client's detailed services list, reviewed by Engr. Wale Osamiluyi. May be adapted from partner reference sites (OGAP Engineering via Wayback Machine, Sunrise Engineering) once links are provided.}}
-
-**Capabilities:** {{CONFIRM: list}}
-
-**Registrations:** {{CONFIRM: NOGICJQS / NCDMB, NipeX, NUPRC permits}}
-
-**Structure for this page (build it now, fill later):** overview paragraph; capabilities list; how this division uses Sato's existing strengths (project management, plant fleet, HSE); registrations/certifications block; contact CTA addressed to oil & gas procurement teams.
+**CTA:** Discuss your field, asset or procurement requirement with our team.
 
 ---
 
 ## Projects
 
-Sectors: Buildings, Roads, Water. {{CONFIRM: add Energy when projects exist}}
-Status: default to "Completed" only where the old site says completed/handed over. Everything else is `{{CONFIRM: status}}`. Do not show anything as "ongoing".
+Filters mirror the service structure: **All · Infrastructure Services**
+(sub-filters Buildings, Roads & Pavements, Water) **· Energy Services · Oil &
+Gas Services**. A category appears only once it has at least one Sato project,
+so only Infrastructure Services shows today.
 
-1. **Administrative Block and Laboratory Building** — McPherson University, Ajebo, Ogun State. Sector: Buildings. Completed and handed over November 2011. Administrative building and laboratory for a private university.
-2. **Convention Centre Conversion to Staff Quarters** — McPherson University, Ajebo, Ogun State. Sector: Buildings. Contract awarded July 2012. Conversion and total rehabilitation of the convention centre into temporary staff quarters. {{CONFIRM: status}}
-3. **Fiditi Earth Dam** — Ogun-Osun River Basin Development Authority. Sector: Water. Contract awarded January 2012. Construction of an earth dam. {{CONFIRM: status}}
-4. **Lower Awba Stream Channelization** — University of Ibadan. Sector: Water. Contract awarded May 2012. {{CONFIRM: status}}
-5. **Ogungbade River Dredging** — Ibadan, Oyo State. Sector: Water. Completed June 2012.
-6. **Ogere Water Supply Scheme Rehabilitation** — Ogun State. Sector: Water. Completed and handed over April 2012. Included construction of the high lift pump building.
-7. **Road Rehabilitation** — Lagos State Public Works Corporation. Sector: Roads. {{CONFIRM: location, year, status}}
-8. **Campus Roads and Walkways** — Federal College of Education, Osiele. Sector: Roads. Compacted laterite filling, walkways and asphalt laying. {{CONFIRM: year}}
-9. **Asphaltic Concrete Road and Drainage** — {{CONFIRM: "Life University, Ajebo" as written on old site, verify institution name}}, Ogun State. Sector: Roads.
-10. **COLPLANT Building Phase II** — Federal University of Agriculture, Abeokuta. Sector: Buildings. College of Plant Science and Crop Production building. {{CONFIRM: status}}
-11. **Academic Building Complex Block B** — Federal University of Agriculture, Abeokuta. Sector: Buildings. Two-storey multipurpose building with offices. {{CONFIRM: status}}
-12. **Administrative Block** — Federal University of Agriculture, Abeokuta. Sector: Buildings. {{CONFIRM: status}}
-13. **Affordable Housing, Ogun State** — with Choice Investors. Sector: Buildings. Five blocks of four 4-bedroom flats. November 2011. {{CONFIRM: status}}
-14. **Six Flats, Laderin Estate** — Abeokuta. Sector: Buildings.
-15. **Iperu Area Office** — Iperu, Ogun State. Sector: Buildings. {{CONFIRM: client}}
-16. **Solar-Powered Boreholes** — Federal Government, state governments, corporate and private clients. Sector: Water. Drilled and commissioned using Sato's own drilling rig.
+**Partner projects never appear here.**
 
-{{CONFIRM: projects delivered since 2012 — this is the biggest content gap on the site}}
+41 projects, reconciled against the live site's three project tables on
+26 September 2026 — no additions were needed. Status is only ever
+"Completed" or empty; the site never labels work as ongoing. `client`,
+`location` and `year` are hidden when empty, never placeheld.
+
+Four projects still have no year: APM Terminals Reefer Pavement, the E-WASH
+bulk meters, the FUNAAB Administrative Block and the Ajebo asphaltic concrete
+road. The live site does not have them either.
 
 ---
 
 ## Clients
 
-**H1:** Clients
-**Intro:** For nearly three decades, Sato has delivered for federal and state government, international development partners, universities and private organisations.
-
-**Federal government**
-- Federal Ministry of Environment
-- Federal Ministry of Agriculture
-- Federal Ministry of Water Resources — Ogun-Osun River Basin Development Authority
-- Federal Ministry of Health — National Primary Health Care Development Agency
-
-**State government**
-- Ogun State Government: Ministry of Special Duties; Bureau of Management and Budget; Ministry of Water Resources; Ogun State Water Corporation; Ministry of Environment; State Universal Basic Education Board
-- Oyo State Government: Ministry of Environment and Habitat; State Universal Basic Education Board
-- Lagos State Government: Lagos State Public Works Corporation
-
-**International development partners**
-- World Bank
-- United Nations Development Programme (UNDP)
-
-**Education**
-- University of Ibadan
-- University of Lagos
-- Federal University of Agriculture, Abeokuta
-- McPherson University
-- Joseph Ayo Babalola University {{CONFIRM: old site spells "Joseph Ayodele Babalola"}}
-
-**Private sector**
-- Horizon Suites, Ibadan
-- Golden Tusk Limited
-- Private individuals and organisations
+Unchanged from the previous pass, and complete against the live site's list.
+19 entries across federal, state, international, education and private, with
+sub-units named where a ministry engaged Sato through an agency.
 
 ---
 
 ## Leadership
 
-**H1:** Leadership and project teams
+**Engr. Wale Osamiluyi, FNSE, FNIEE, FNIWE** — Founder & Managing Director.
+The only published person. The 2012 bio is kept, with professional bodies
+written as abbreviations, until he sends updated details.
 
-**Intro:** Sato is led by a core team of engineers and managers with decades of combined experience. For each project, we assemble a dedicated team from our network of engineers, technicians, foremen and specialists, matched to the scope and location of the work.
+> **Unresolved:** the display name says Fellow (FNSE), the carried-over bio
+> says Member (MNSE, MNIM), and FNIEE and FNIWE are not in the memberships
+> list. The two contradict each other on the same page. Flagged in
+> `docs/open-items.md`.
 
-**Roster note for Claude Code:** the old team page has changed over time and search-indexed versions list different people. Fetch https://www.satoengineering.com/our-team/ at build time and use the live roster as the base, then mark the whole roster `{{CONFIRM: current roster and which members are leadership}}`. Default: founder is leadership; others go into the team list.
+No contact details on this page.
 
-**Engr. Wale Osamiluyi — Founder** (leadership)
-Wale founded Sato in 1997 and leads the company. An electrical engineer, he holds a BEng in Electrical Engineering from the University of Ilorin, an MSc in Project Management from the University of Cape Town, an MBA in Global Business from the Rotman School of Management, University of Toronto, and a Global Executive MBA from the University of St. Gallen. He is a registered member of the Council for the Regulation of Engineering in Nigeria (COREN), a member of the Nigerian Society of Engineers, the Nigerian Institute of Management and the Royal Institution of Chartered Surveyors, and a Fellow of the Institute for Government Research and Leadership Technology. He brings over 39 years of engineering experience. {{CONFIRM: current title, e.g. Managing Director / CEO; 39 years recalculated from "over 25 years" on the 2012 site}}
-
-**Team (bios rewritten from the live page; all marked for confirmation):**
-
-- **Engr. Adeoniye Adekunte — Civil Engineer.** HND in Civil Engineering and a master's degree in Civil Engineering from the Federal University of Technology, Akure. Over 36 years of experience in planning, supervising and evaluating building and civil engineering projects. COREN-registered; member, NSE. {{CONFIRM: 36 years recalculated from "over 22 years" on the 2012 site}}
-- **Olubunmi Ajileye — Project Manager.** First-class BSc in Civil Engineering from the Technical University of Cluj-Napoca, Romania (1982). Over 34 years of experience in the construction industry, managing projects to meet and exceed client requirements. {{CONFIRM: title; 34 years recalculated from "over 20 years" on the 2012 site (graduated 1982, so may be higher)}}
-- **Lekan Omololu — Administrator.** BSc in Surveying from the University of Lagos. Handles project administration. {{CONFIRM: title}}
-- **Bidemi Adeleke — Engineer.** Postgraduate degree in Civil Engineering. Over 19 years of industry experience; supervises the technical aspects of projects. {{CONFIRM: title; 19 years recalculated from "over 5 years" on the 2012 site}}
-- **Engr. Olushola Oladejo — HSE & Quality Manager.** Degree in Chemical Engineering from Lagos State University. Manages instrumentation and borehole drilling, including the drilling rig. COREN-registered; member, NSE; holds quality management certifications.
-- **Faronbi Gbemi — Plant & Equipment Manager.** Manages the company's vehicles, plant and equipment, including trucks, bulldozers, wheel loaders, excavators and backhoe loaders.
-- **Tella Sunday — Finance & Administration.** Qualified accountant; manages financial and administrative matters.
-- **Olalekan Ajayi — Civil Engineer.** Experience on projects in Nigeria and Ghana.
-- **Alausa Azeez — Civil Engineer.** HND in Civil Engineering, Moshood Abiola Polytechnic, Abeokuta.
-- **Stephen Aloko — Building Technologist.** HND in Building, Kwara State Polytechnic, Ilorin.
-
-Names appearing only in older indexed versions (verify with client whether current): Olatunde Opeyemi (project manager, contracts administration; "over 21 years" on the old site, over 35 years if recalculated to 2026), Femi John (civil engineer, borehole drilling), Samuel Kolawole (plant & equipment), Taiwo Adekola (civil engineer, MSc).
+Below the founder: how project teams are assembled. Everyone else in
+`team.json` is `published: false` — off the site, the sitemap and the
+structured data.
 
 ---
 
-## HSE & Quality
+## HSE & Quality — on hold
 
-**H1:** Health, safety, environment and quality
+**Not built, not linked, not in the sitemap.** `/hse` and the old
+`/safety-policies/` redirect to `/about`. Held until Sato reviews it with his
+oil and gas collaborator.
 
-**Intro:** Safe sites and quality work are how we have kept clients for nearly three decades. Our HSE and quality management is led by a dedicated HSE & Quality Manager and applies to every project, in every division.
-
-**Claude Code:** fetch https://www.satoengineering.com/safety-policies/ and rewrite its policy content into clear sections (policy statement, site practices, training, incident reporting, quality assurance). Keep the substance, fix the language. If the page can't be fetched, leave `{{CONFIRM: HSE policy content}}`.
-
-**Certifications:** {{CONFIRM: ISO 9001 / ISO 45001 / ISO 14001 or other certifications, if held}}
-
----
-
-## Equipment & capabilities
-
-**H1:** Equipment and capabilities
-
-**Intro:** Sato owns and operates its own plant and equipment, which lets us mobilise quickly and control quality and schedule on site.
-
-**Fleet (from the old site):** trucks, bulldozers, wheel loaders, excavators, backhoe loaders, borehole drilling rig.
-
-**Claude Code:** fetch https://www.satoengineering.com/equipments/ and add any additional equipment listed there. Then mark `{{CONFIRM: current fleet and quantities}}`.
+The content is kept, rewritten from the live safety policy, in
+`content/pages/hse.json`: committed to managing safety, quality and
+environmental matters professionally; people are the most valuable asset and
+the first aim is preventing work-related injuries; its own safety management
+system (corporate standards, management plans, implementation guidelines),
+implemented on every project and audited internally every three months;
+monthly general and project-specific inductions; PPE provided as required,
+minimum safety helmet and safety boots.
 
 ---
 
 ## Contact
 
 **H1:** Contact us
-**Intro:** For project enquiries, tenders and vendor verification, contact our head office.
+**Intro:** For project enquiries, tenders and vendor verification, contact our
+team. *(No longer "our head office".)*
 
-Offices, phone and email from site.json. Contact form fields: name, organisation, email, phone, subject (Project enquiry / Tender or vendor registration / General), message. {{CONFIRM: where form submissions go}}
+Offices, phone and email render from `site.json`. Form fields: name,
+organisation, email, phone, subject (Project enquiry / Tender or vendor
+registration / General), message. `contactFormEndpoint` is empty, so the form
+falls back to composing a `mailto:` in the visitor's own client.
 
 ---
 
 ## Footer
 
-Sato Engineering & Infrastructure Limited — formerly Sato Engineering Nigeria Limited. RC {{CONFIRM}}. Incorporated 1997.
-Links: About, Services, Projects, HSE, Contact.
+Sato Engineering & Infrastructure Limited. Incorporated 1997.
+Links: About, Services, Projects, Clients, Contact.
 © {current year} Sato Engineering & Infrastructure Limited.
+
+---
+
+## Equipment
+
+There is no Equipment page — removed on the client's instruction.
+`equipment.json` stays in the repo, and `/equipment` and `/equipments`
+redirect to `/about`. The fleet is described in prose on About instead.

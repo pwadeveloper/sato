@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
+import { ReviewBanner } from "@/components/DraftNotice";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { getPage, getServiceGroups, getSite } from "@/lib/content";
+import { getServiceBands, getSite } from "@/lib/content";
+import { isReviewMode } from "@/lib/review-mode";
 import { buildOrganizationSchema, buildWebsiteSchema } from "@/lib/structured-data";
 import "./globals.css";
 
@@ -19,14 +21,17 @@ const archivo = Archivo({
 });
 
 const site = getSite();
-const servicesPage = getPage("services");
 
 /** Only what the header needs crosses to the client. */
-const serviceBands = getServiceGroups().map(({ group, services }) => ({
-  group,
-  label:
-    servicesPage.labels?.[`group${group[0].toUpperCase()}${group.slice(1)}`] ?? group,
-  services: services.map((s) => ({ slug: s.slug, name: s.name })),
+const serviceBands = getServiceBands().map((band) => ({
+  group: band.group,
+  label: band.label,
+  href: band.href,
+  services: band.services.map((service) => ({
+    slug: service.slug,
+    name: service.name,
+    shortSummary: service.shortSummary,
+  })),
 }));
 
 /**
@@ -49,13 +54,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-NG" className={archivo.variable}>
+    <html lang="en" className={archivo.variable}>
       <body className="min-h-dvh bg-concrete text-asphalt antialiased">
         <script
           type="application/ld+json"
           // Built from content JSON at build time; no user input reaches it.
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
+        {isReviewMode ? <ReviewBanner /> : null}
         <SiteHeader
           logoAlt={site.logoAlt}
           navLabel={site.navLabel}

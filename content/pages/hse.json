@@ -3,6 +3,8 @@
   "title": "Health, safety, environment and quality",
   "metaTitle": "HSE & Quality",
   "metaDescription": "Sato operates its own safety management system, implemented on every project and audited internally every three months.",
+  "status": "on-hold",
+  "statusNote": "This page is not built and not linked. It is held here, rewritten from the company's own safety policy, until Sato and its oil and gas collaborator have reviewed it. Restoring it means adding app/hse/page.tsx back, putting HSE into site.json nav and footer, and removing the /hse redirect in vercel.json.",
   "labels": {
     "leadHeading": "Who leads this"
   },
@@ -11,7 +13,7 @@
       "type": "prose",
       "id": "intro",
       "body": [
-        "Safe sites and quality work are how we have kept clients for nearly three decades. Our HSE and quality management is led by a dedicated HSE & Quality Manager and applies to every project, in every division."
+        "Safe sites and quality work are how we have kept clients for nearly three decades. Our HSE and quality management applies to every project, in every service."
       ]
     },
     {
@@ -35,7 +37,7 @@
       "id": "training",
       "heading": "Training and induction",
       "body": [
-        "All employees attend monthly safety inductions, covering both standard safety procedures and the procedures specific to the project they are working on."
+        "All employees attend monthly safety inductions, covering both general safety procedures and the procedures specific to the project they are working on."
       ]
     },
     {

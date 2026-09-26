@@ -8,13 +8,13 @@ import { hasPlaceholder, stripPlaceholders } from "./placeholders";
  * is only emitted when the company has actually confirmed it. Anything still
  * carrying a `{{CONFIRM: ...}}` is left out entirely rather than published with
  * the placeholder stripped out — a half-written street address or an invented
- * RC number is worse than no address and no RC number, because a verifying
- * reader may act on it.
+ * registration number is worse than none at all, because a verifying reader
+ * may act on it.
  *
- * The exception is text where the placeholder is an aside rather than the
- * substance (`"Abeokuta, Ogun State {{CONFIRM: full street address}}"` is a
- * real locality plus a request for more detail), and those fields are built
- * from their own confirmed parts instead — `city` and `state` here.
+ * No country is published. The company is extending outside its first market
+ * and registering internationally, and `addressCountry` / `areaServed` would
+ * pin it to one country in exactly the machine-readable place that is hardest
+ * to correct later. Locality and region still identify the offices.
  */
 
 /** The value if it is fully confirmed, otherwise undefined. */
@@ -32,14 +32,15 @@ function compact<T extends Record<string, unknown>>(input: T): Partial<T> {
 
 export function buildOrganizationSchema(site: Site): Record<string, unknown> {
   const base = site.url.replace(/\/+$/, "");
-  const head = site.offices.find((office) => office.isPrimary) ?? site.offices[0];
+  // Offices are an ordered list with no "head office"; the first is the one
+  // published as the organisation's address.
+  const [head] = site.offices;
 
   const address = head
     ? compact({
         "@type": "PostalAddress",
         addressLocality: confirmed(head.city),
         addressRegion: confirmed(head.state),
-        addressCountry: "NG",
       })
     : undefined;
 
@@ -53,7 +54,6 @@ export function buildOrganizationSchema(site: Site): Record<string, unknown> {
           contactType: "sales",
           telephone,
           email,
-          areaServed: "NG",
           availableLanguage: "en",
         })
       : undefined;
@@ -63,10 +63,7 @@ export function buildOrganizationSchema(site: Site): Record<string, unknown> {
     "@type": "Organization",
     "@id": `${base}/#organization`,
     name: site.name,
-    // The registered name still carries a placeholder about its exact wording,
-    // so only the confirmed trading name is published as `legalName`.
     legalName: confirmed(site.registeredName),
-    alternateName: confirmed(site.formerName),
     description: stripPlaceholders(site.description) || undefined,
     url: base,
     logo: `${base}/images/sato-logo-dark-text.png`,
@@ -75,9 +72,8 @@ export function buildOrganizationSchema(site: Site): Record<string, unknown> {
     telephone,
     email,
     contactPoint: contactPoint ? [contactPoint] : undefined,
-    // Only emitted once the CAC number is confirmed.
-    identifier: confirmed(site.rcNumber),
-    areaServed: { "@type": "Country", name: "Nigeria" },
+    // Held back with the rest of the registration number — see `showRcNumber`.
+    identifier: site.showRcNumber ? confirmed(site.rcNumber) : undefined,
   });
 }
 
@@ -92,6 +88,6 @@ export function buildWebsiteSchema(site: Site): Record<string, unknown> {
     name: site.name,
     url: base,
     publisher: { "@id": `${base}/#organization` },
-    inLanguage: "en-NG",
+    inLanguage: "en",
   };
 }

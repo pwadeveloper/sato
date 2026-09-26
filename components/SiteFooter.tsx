@@ -17,7 +17,7 @@ export function SiteFooter({ site, year }: SiteFooterProps) {
     <footer className="bg-asphalt text-concrete">
       <Container className="section-y">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-          <Logo surface="dark" alt={site.logoAlt} className="h-8 w-auto md:h-10" />
+          <Logo surface="dark" alt={site.logoAlt} sizeClassName="h-11 md:h-12" />
 
           <nav aria-label={site.footer.navLabel}>
             <ul className="flex flex-wrap gap-x-8 gap-y-3">
@@ -25,7 +25,7 @@ export function SiteFooter({ site, year }: SiteFooterProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm font-medium text-concrete no-underline wdth-body transition-colors duration-150 hover:text-brand-light"
+                    className="text-sm font-semibold text-concrete no-underline wdth-body transition-colors duration-150 hover:text-brand-light"
                   >
                     <RichText text={link.label} />
                   </Link>

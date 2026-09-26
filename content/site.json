@@ -3,22 +3,29 @@
   "url": "https://www.satoengineering.com",
   "shortName": "Sato",
   "registeredName": "Sato Engineering & Infrastructure Limited",
-  "formerName": "Sato Engineering Nigeria Limited",
-  "formerNameLabel": "Formerly Sato Engineering Nigeria Limited",
   "tagline": "Quality engineering since 1997",
-  "description": "Sato Engineering & Infrastructure Limited, formerly Sato Engineering Nigeria Limited, is an indigenous Nigerian engineering firm incorporated in 1997, delivering construction and civil, electrical, mechanical, water resources, energy, oil and gas and digital engineering for federal and state governments, universities and international development partners.",
+  "description": "Sato Engineering & Infrastructure Limited is an engineering and infrastructure company incorporated in 1997, delivering construction and civil, electrical, mechanical, water resources, energy, oil and gas and digital engineering for governments, universities, international development partners and private clients.",
   "foundedYear": 1997,
   "anniversaryNote": "30th anniversary in 2027",
   "rcNumber": "317208",
+  "showRcNumber": false,
   "offices": [
     {
-      "id": "head-office",
-      "label": "Head office",
+      "id": "lagos",
+      "label": "Lagos Office",
+      "city": "Lagos",
+      "state": "Lagos State",
+      "address": "No. 14 Agbaoku Street, Opebi, Ikeja, Lagos",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=14+Agbaoku+Street%2C+Opebi%2C+Ikeja%2C+Lagos",
+      "note": "Near Awosika bus stop."
+    },
+    {
+      "id": "abeokuta",
+      "label": "Abeokuta Office",
       "city": "Abeokuta",
       "state": "Ogun State",
-      "address": "Abeokuta, Ogun State {{CONFIRM: full street address}}",
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Abeokuta%2C+Ogun+State%2C+Nigeria",
-      "isPrimary": true,
+      "address": "Abeokuta, Ogun State",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Abeokuta%2C+Ogun+State",
       "note": ""
     }
   ],
@@ -46,9 +53,9 @@
       "label": "Professional registrations",
       "items": [
         "COREN-registered engineers on staff",
-        "Nigerian Society of Engineers (NSE)",
-        "Nigerian Institute of Management (NIM)",
-        "Royal Institution of Chartered Surveyors (RICS) — founder"
+        "NSE",
+        "NIM",
+        "RICS — founder"
       ]
     },
     {
@@ -59,13 +66,11 @@
   ],
   "factLabels": {
     "registeredName": "Registered name",
-    "formerName": "Formerly",
     "incorporated": "Incorporated",
     "yearsInOperation": "Years in operation",
     "rcNumber": "RC number",
-    "headOffice": "Head office",
-    "registrations": "Professional registrations",
-    "nameChanged": "Name changed"
+    "offices": "Offices",
+    "registrations": "Professional registrations"
   },
   "skipLinkLabel": "Skip to content",
   "navLabel": "Main navigation",
@@ -94,16 +99,12 @@
       "href": "/leadership"
     },
     {
-      "label": "HSE",
-      "href": "/hse"
-    },
-    {
       "label": "Contact",
       "href": "/contact"
     }
   ],
   "footer": {
-    "legal": "Sato Engineering & Infrastructure Limited — formerly Sato Engineering Nigeria Limited. RC 317208. Incorporated 1997.",
+    "legal": "Sato Engineering & Infrastructure Limited. Incorporated 1997.",
     "navLabel": "Footer navigation",
     "links": [
       {
@@ -119,8 +120,8 @@
         "href": "/projects"
       },
       {
-        "label": "HSE",
-        "href": "/hse"
+        "label": "Clients",
+        "href": "/clients"
       },
       {
         "label": "Contact",
@@ -161,7 +162,6 @@
     "width": 1200,
     "height": 630
   },
-  "nameChangeDate": "3 August 2026",
   "contactFormRecipient": "info@satoengineering.com",
   "social": []
 }

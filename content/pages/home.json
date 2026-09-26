@@ -1,13 +1,13 @@
 {
   "slug": "home",
-  "title": "Engineering Nigeria's infrastructure since 1997.",
+  "title": "Engineering infrastructure since 1997.",
   "metaTitle": "Sato Engineering & Infrastructure Limited",
-  "metaDescription": "Indigenous Nigerian engineering firm incorporated in 1997. Roads, dams, water schemes and buildings for federal and state governments, universities and international development partners.",
+  "metaDescription": "Engineering and infrastructure company incorporated in 1997. Roads, dams, water schemes and buildings for governments, universities and international development partners.",
   "sections": [
     {
       "type": "hero",
       "id": "hero",
-      "subhead": "Sato Engineering & Infrastructure Limited is an indigenous Nigerian engineering firm incorporated in 1997. We design and build roads, buildings, dams and water schemes for federal and state governments, universities and international development partners, and we now deliver energy, oil and gas and digital engineering services.",
+      "subhead": "Sato Engineering & Infrastructure Limited designs and delivers infrastructure, energy, and oil and gas engineering services. Since 1997 we have built roads, dams, water schemes and buildings for governments, universities, international development partners and private clients.",
       "ctas": [
         {
           "label": "Explore our work",
@@ -53,12 +53,16 @@
       "facetMode": "group",
       "facets": [
         {
-          "value": "engineering",
-          "label": "Engineering"
+          "value": "infrastructure",
+          "label": "Infrastructure Services"
         },
         {
           "value": "energy",
-          "label": "Energy"
+          "label": "Energy Services"
+        },
+        {
+          "value": "oil-gas",
+          "label": "Oil & Gas Services"
         },
         {
           "value": "technology",
@@ -112,7 +116,7 @@
     {
       "type": "cta",
       "id": "closing",
-      "body": "Working on a project in civil, water or energy infrastructure? Talk to our team.",
+      "body": "Working on a project in infrastructure, energy or oil and gas? Talk to our team.",
       "ctas": [
         {
           "label": "Contact us",
@@ -120,10 +124,5 @@
         }
       ]
     }
-  ],
-  "labels": {
-    "groupEngineering": "Engineering",
-    "groupEnergy": "Energy",
-    "groupTechnology": "Technology"
-  }
+  ]
 }

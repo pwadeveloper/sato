@@ -3,7 +3,7 @@ import { cn } from "@/lib/cn";
 
 const TONES = {
   /** Sector pills. The deeper lozenge tone, so a pill never reads as a button. */
-  deep: "bg-brand-deep text-white",
+  deep: "bg-brand text-white",
   brand: "bg-brand text-white",
   survey: "bg-survey text-asphalt",
   outline: "border border-steel text-steel-ink",

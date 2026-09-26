@@ -3,23 +3,25 @@ import { RichText } from "./RichText";
 import { cn } from "@/lib/cn";
 
 const BASE =
-  "inline-flex items-center justify-center gap-2 font-semibold " +
+  "inline-flex items-center justify-center gap-2 font-bold " +
   "wdth-body no-underline transition-colors duration-150 ease-out";
 
 const SIZES = {
-  default: "px-6 py-3 text-base",
+  /** The primary action. Deliberately chunky — the client asked for weight. */
+  default: "px-7 py-4 text-base",
   /** Microtype with a hairline border — the hero's secondary action. */
-  compact: "px-4 py-2.5 text-2xs uppercase tracking-[0.08em]",
+  compact: "px-5 py-3 text-2xs uppercase tracking-[0.08em]",
 } as const;
 
 const VARIANTS = {
-  /** Brand brand fill. White on brand is 5.4:1. */
+  /** Brand fill. White on brand is 5.9:1. */
   primary: "bg-brand text-white hover:bg-brand-deep active:bg-brand-ink",
-  /** Laterite outline — the warm secondary accent. */
+  /** Outlined brand — the quieter secondary action on a light surface. */
   secondary:
-    "border border-brand-deep text-brand-deep bg-transparent hover:bg-brand-deep hover:text-white",
+    "border-2 border-brand text-brand-ink bg-transparent hover:bg-brand hover:text-white",
   /** For use on asphalt sections, where an outline needs light ink. */
-  inverse: "border border-concrete text-concrete bg-transparent hover:bg-concrete hover:text-asphalt",
+  inverse:
+    "border-2 border-concrete text-concrete bg-transparent hover:bg-concrete hover:text-asphalt",
 } as const;
 
 export interface ButtonProps {
