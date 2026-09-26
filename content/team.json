@@ -2,7 +2,7 @@
   {
     "slug": "wale-osamiluyi",
     "name": "Engr. Wale Osamiluyi",
-    "title": "Founder",
+    "title": "Founder & Managing Director",
     "isLeadership": true,
     "bio": [
       "Wale founded Sato in 1997 and is responsible for the overall running of the company. He is an electrical engineer by training and has grown the firm from a start-up into a fully indigenous Nigerian engineering business."
@@ -21,38 +21,17 @@
       "Fellow, Institute for Government Research and Leadership Technology",
       "Rotarian"
     ],
-    "yearsExperience": "Over 39 years of engineering experience {{CONFIRM: 39 years recalculated from \"over 25 years\" on the 2012 site}}",
+    "yearsExperience": "",
     "photo": null,
     "status": "current",
-    "order": 1
-  },
-  {
-    "slug": "adeoniye-adekunte",
-    "name": "Engr. Adeoniye Adekunte",
-    "title": "Executive Director, Operations",
-    "isLeadership": true,
-    "bio": [
-      "Adeoniye is a civil engineer who plans, supervises and evaluates Sato's building and civil engineering projects."
-    ],
-    "qualifications": [
-      "HND Civil Engineering",
-      "Master's degree in Civil Engineering, Federal University of Technology, Akure, Nigeria"
-    ],
-    "memberships": [
-      "Registered member, Council for the Regulation of Engineering in Nigeria (COREN)",
-      "Member, Nigerian Society of Engineers (MNSE)",
-      "Rotarian"
-    ],
-    "yearsExperience": "Over 36 years of experience {{CONFIRM: 36 years recalculated from \"over 22 years\" on the 2012 site}}",
-    "photo": null,
-    "status": "current",
-    "order": 2
+    "order": 1,
+    "published": true
   },
   {
     "slug": "popoola-oyenola",
     "name": "Engr. Popoola Oyenola",
     "title": "Executive Director, Projects & Development",
-    "isLeadership": true,
+    "isLeadership": false,
     "bio": [
       "Popoola is a civil engineer with a particular interest in design, and oversees the delivery of Sato's projects."
     ],
@@ -65,10 +44,11 @@
       "Registered member, Council for the Regulation of Engineering in Nigeria (COREN)",
       "Member, Nigerian Society of Engineers"
     ],
-    "yearsExperience": "Over 36 years in the construction industry {{CONFIRM: 36 years recalculated from \"over 22 years\" on the 2012 site}}",
+    "yearsExperience": "Over 36 years in the construction industry",
     "photo": null,
     "status": "current",
-    "order": 3
+    "order": 3,
+    "published": false
   },
   {
     "slug": "olubunmi-ajileye",
@@ -82,27 +62,11 @@
       "First-class BSc Civil Engineering, Technical University of Cluj-Napoca, Romania (1982)"
     ],
     "memberships": [],
-    "yearsExperience": "Over 34 years in the construction industry {{CONFIRM: 34 years recalculated from \"over 20 years\" on the 2012 site (graduated 1982, so may be higher)}}",
+    "yearsExperience": "Over 34 years in the construction industry",
     "photo": null,
     "status": "current",
-    "order": 4
-  },
-  {
-    "slug": "bidemi-adeleke",
-    "name": "Bidemi Adeleke",
-    "title": "Manager, Engineering",
-    "isLeadership": false,
-    "bio": [
-      "Bidemi supervises the technical aspects of Sato's projects."
-    ],
-    "qualifications": [
-      "Postgraduate degree in Civil Engineering"
-    ],
-    "memberships": [],
-    "yearsExperience": "Over 19 years of industry experience {{CONFIRM: 19 years recalculated from \"over 5 years\" on the 2012 site}}",
-    "photo": null,
-    "status": "current",
-    "order": 5
+    "order": 4,
+    "published": false
   },
   {
     "slug": "olatunde-opeyemi",
@@ -117,10 +81,11 @@
       "MSc Computing Information Engineering with Project Management, Robert Gordon University, Aberdeen, Scotland"
     ],
     "memberships": [],
-    "yearsExperience": "Over 35 years of experience {{CONFIRM: 35 years recalculated from \"over 21 years\" on the 2012 site}}",
+    "yearsExperience": "Over 35 years of experience",
     "photo": null,
     "status": "current",
-    "order": 6
+    "order": 6,
+    "published": false
   },
   {
     "slug": "samuel-kolawole",
@@ -134,23 +99,8 @@
     "memberships": [],
     "photo": null,
     "status": "current",
-    "order": 7
-  },
-  {
-    "slug": "tella-sunday",
-    "name": "Tella Sunday",
-    "title": "Manager, Finance & Administration",
-    "isLeadership": false,
-    "bio": [
-      "Tella manages the financial and administrative matters of the company."
-    ],
-    "qualifications": [
-      "Graduate in Accountancy and a professionally qualified accountant"
-    ],
-    "memberships": [],
-    "photo": null,
-    "status": "current",
-    "order": 8
+    "order": 7,
+    "published": false
   },
   {
     "slug": "taiwo-adekola",
@@ -166,26 +116,13 @@
     "memberships": [],
     "photo": null,
     "status": "current",
-    "order": 9
-  },
-  {
-    "slug": "femi-john",
-    "name": "Femi John",
-    "title": "Project Engineer",
-    "isLeadership": false,
-    "bio": [
-      "Femi is a civil engineer and manages the borehole drilling department, including the company's drilling rig."
-    ],
-    "qualifications": [],
-    "memberships": [],
-    "photo": null,
-    "status": "current",
-    "order": 10
+    "order": 9,
+    "published": false
   },
   {
     "slug": "lekan-omololu",
     "name": "Lekan Omololu",
-    "title": "Administrator {{CONFIRM: not on the current live team page — verify with client}}",
+    "title": "Administrator",
     "isLeadership": false,
     "bio": [
       "Handles project administration."
@@ -196,82 +133,7 @@
     "memberships": [],
     "photo": null,
     "status": "unverified",
-    "order": 11
-  },
-  {
-    "slug": "olushola-oladejo",
-    "name": "Engr. Olushola Oladejo",
-    "title": "HSE & Quality Manager {{CONFIRM: not on the current live team page — verify with client}}",
-    "isLeadership": false,
-    "bio": [
-      "Manages instrumentation and borehole drilling, including the drilling rig."
-    ],
-    "qualifications": [
-      "Degree in Chemical Engineering, Lagos State University",
-      "Quality management certifications"
-    ],
-    "memberships": [
-      "COREN-registered",
-      "Member, Nigerian Society of Engineers"
-    ],
-    "photo": null,
-    "status": "unverified",
-    "order": 12
-  },
-  {
-    "slug": "faronbi-gbemi",
-    "name": "Faronbi Gbemi",
-    "title": "Plant & Equipment Manager {{CONFIRM: not on the current live team page — verify with client}}",
-    "isLeadership": false,
-    "bio": [
-      "Manages the company's vehicles, plant and equipment, including trucks, bulldozers, wheel loaders, excavators and backhoe loaders."
-    ],
-    "qualifications": [],
-    "memberships": [],
-    "photo": null,
-    "status": "unverified",
-    "order": 13
-  },
-  {
-    "slug": "olalekan-ajayi",
-    "name": "Olalekan Ajayi",
-    "title": "Civil Engineer {{CONFIRM: not on the current live team page — verify with client}}",
-    "isLeadership": false,
-    "bio": [
-      "Experience on projects in Nigeria and Ghana."
-    ],
-    "qualifications": [],
-    "memberships": [],
-    "photo": null,
-    "status": "unverified",
-    "order": 14
-  },
-  {
-    "slug": "alausa-azeez",
-    "name": "Alausa Azeez",
-    "title": "Civil Engineer {{CONFIRM: not on the current live team page — verify with client}}",
-    "isLeadership": false,
-    "bio": [],
-    "qualifications": [
-      "HND Civil Engineering, Moshood Abiola Polytechnic, Abeokuta"
-    ],
-    "memberships": [],
-    "photo": null,
-    "status": "unverified",
-    "order": 15
-  },
-  {
-    "slug": "stephen-aloko",
-    "name": "Stephen Aloko",
-    "title": "Building Technologist {{CONFIRM: not on the current live team page — verify with client}}",
-    "isLeadership": false,
-    "bio": [],
-    "qualifications": [
-      "HND Building, Kwara State Polytechnic, Ilorin"
-    ],
-    "memberships": [],
-    "photo": null,
-    "status": "unverified",
-    "order": 16
+    "order": 11,
+    "published": false
   }
 ]

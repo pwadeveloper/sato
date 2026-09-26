@@ -17,7 +17,7 @@ export function Breadcrumbs({ trail, current, label }: BreadcrumbsProps) {
           <li key={crumb.href} className="flex items-center gap-x-2">
             <Link
               href={crumb.href}
-              className="underline underline-offset-[0.2em] decoration-1 decoration-steel hover:text-green-ink"
+              className="underline underline-offset-[0.2em] decoration-1 decoration-steel hover:text-brand-ink"
             >
               <RichText text={crumb.label} />
             </Link>

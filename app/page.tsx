@@ -3,7 +3,7 @@ import { ClientStrip } from "@/components/ClientStrip";
 import { CompanyFactsPanel } from "@/components/CompanyFactsPanel";
 import { Container } from "@/components/Container";
 import { CtaBand } from "@/components/CtaBand";
-import { DivisionList } from "@/components/DivisionList";
+import { ServiceGroupList } from "@/components/ServiceGroupList";
 import { Heading } from "@/components/Heading";
 import { Hero } from "@/components/Hero";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -16,7 +16,7 @@ import {
   getFeaturedProjects,
   getPage,
   getSection,
-  getServices,
+  getServiceGroups,
   getSite,
 } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/metadata";
@@ -31,7 +31,7 @@ const clients = getSection(page, "clients", "collection");
 const selected = getSection(page, "selected-projects", "collection");
 const closing = getSection(page, "closing", "cta");
 
-const services = getServices();
+const serviceBands = getServiceGroups();
 const featuredClients = getFeaturedClients();
 const featuredProjects = getFeaturedProjects();
 const companyFacts = getCompanyFacts();
@@ -71,7 +71,11 @@ export default function HomePage() {
             ))}
           </div>
 
-          <DivisionList services={services} className="mt-10 md:mt-12" />
+          <ServiceGroupList
+            bands={serviceBands}
+            labels={page.labels ?? {}}
+            className="mt-10 md:mt-12"
+          />
         </Container>
       </Section>
 

@@ -33,7 +33,7 @@ export function TeamList({ members, headingLevel = 3, className }: TeamListProps
               <RichText text={member.name} />
             </NameTag>
 
-            <p className="mt-0.5 text-sm font-medium text-laterite wdth-body">
+            <p className="mt-0.5 text-sm font-medium text-brand-deep wdth-body">
               <RichText text={member.title} />
             </p>
 

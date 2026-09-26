@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { getSite } from "@/lib/content";
+import { getPage, getServiceGroups, getSite } from "@/lib/content";
 import { buildOrganizationSchema, buildWebsiteSchema } from "@/lib/structured-data";
 import "./globals.css";
 
@@ -19,6 +19,15 @@ const archivo = Archivo({
 });
 
 const site = getSite();
+const servicesPage = getPage("services");
+
+/** Only what the header needs crosses to the client. */
+const serviceBands = getServiceGroups().map(({ group, services }) => ({
+  group,
+  label:
+    servicesPage.labels?.[`group${group[0].toUpperCase()}${group.slice(1)}`] ?? group,
+  services: services.map((s) => ({ slug: s.slug, name: s.name })),
+}));
 
 /**
  * Emitted once, in the root layout, so every page carries it. Fields the
@@ -54,6 +63,7 @@ export default function RootLayout({
           skipLinkLabel={site.skipLinkLabel}
           menuOpenLabel={site.menuOpenLabel}
           menuCloseLabel={site.menuCloseLabel}
+          serviceBands={serviceBands}
         />
         <main id="main">{children}</main>
         <SiteFooter site={site} year={new Date().getFullYear()} />

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { cn } from "@/lib/cn";
 
 /**
- * The supplied wordmark. Both files carry the green lozenge; they differ in the
+ * The supplied wordmark. Both files carry the brand lozenge; they differ in the
  * colour of the "Engineering & Infrastructure Limited" lockup, so the variant
  * is chosen by the surface behind it.
  *

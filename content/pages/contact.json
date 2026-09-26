@@ -2,7 +2,7 @@
   "slug": "contact",
   "title": "Contact us",
   "metaTitle": "Contact",
-  "metaDescription": "For project enquiries, tenders and vendor verification, contact Sato Engineering and Infrastructure Limited.",
+  "metaDescription": "For project enquiries, tenders and vendor verification, contact Sato Engineering & Infrastructure Limited.",
   "labels": {
     "mapLink": "View on map",
     "optional": "optional"
@@ -78,7 +78,7 @@
           "required": true
         }
       ],
-      "note": "{{CONFIRM: where form submissions go — set contactFormEndpoint in site.json}}"
+      "note": ""
     }
   ]
 }

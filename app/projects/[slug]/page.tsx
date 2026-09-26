@@ -120,7 +120,7 @@ function ProjectFacts({
           </h2>
           <Link
             href={`/services/${service.slug}`}
-            className="mt-3 inline-block text-h3 wdth-heading text-balance text-green-ink underline underline-offset-[0.2em] decoration-1 decoration-green-ink/40 transition-colors duration-150 hover:text-laterite hover:decoration-laterite"
+            className="mt-3 inline-block text-h3 wdth-heading text-balance text-brand-ink underline underline-offset-[0.2em] decoration-1 decoration-brand-ink/40 transition-colors duration-150 hover:text-brand-deep hover:decoration-brand-deep"
           >
             <RichText text={service.name} />
           </Link>
@@ -165,8 +165,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <Tag label={sectorLabel} />
             {isCompleted(project.status) ? (
-              <span className="inline-flex items-center gap-1.5 text-2xs font-semibold uppercase tracking-[0.06em] text-green-ink wdth-body">
-                <span aria-hidden="true" className="size-1.5 rounded-full bg-green" />
+              <span className="inline-flex items-center gap-1.5 text-2xs font-semibold uppercase tracking-[0.06em] text-brand-ink wdth-body">
+                <span aria-hidden="true" className="size-1.5 rounded-full bg-brand" />
                 <RichText text={project.status} />
               </span>
             ) : null}
@@ -219,7 +219,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                be, the record itself becomes the page: the facts run across the
                full width as a plate, with the scope beneath. Clean, and it
                never looks like an image failed to load. */
-            <div className="border-t-[3px] border-laterite bg-white px-6 py-10 md:px-10 md:py-12">
+            <div className="border-t-[3px] border-brand-deep bg-white px-6 py-10 md:px-10 md:py-12">
               <ProjectFacts
                 facts={facts}
                 heading={labels.details ?? ""}

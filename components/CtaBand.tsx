@@ -13,7 +13,7 @@ export interface CtaBandProps {
 }
 
 /**
- * Left-aligned on asphalt with a laterite rule down the left edge. Centred
+ * Left-aligned on asphalt with a brand-deep rule down the left edge. Centred
  * white text on a coloured band is the most generic module on the web, and the
  * rest of the site is left-aligned — this matches it.
  */
@@ -21,7 +21,7 @@ export function CtaBand({ heading, body, ctas, headingId }: CtaBandProps) {
   return (
     <Section tone="asphalt" labelledBy={heading ? headingId : undefined}>
       <Container>
-        <div className="border-l-[3px] border-laterite pl-6 md:pl-10">
+        <div className="border-l-[3px] border-brand-deep pl-6 md:pl-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
             <div className="max-w-(--container-measure)">
               {heading ? (

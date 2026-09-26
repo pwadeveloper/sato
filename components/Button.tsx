@@ -13,11 +13,11 @@ const SIZES = {
 } as const;
 
 const VARIANTS = {
-  /** Brand green fill. White on green is 5.4:1. */
-  primary: "bg-green text-white hover:bg-green-deep active:bg-green-ink",
+  /** Brand brand fill. White on brand is 5.4:1. */
+  primary: "bg-brand text-white hover:bg-brand-deep active:bg-brand-ink",
   /** Laterite outline — the warm secondary accent. */
   secondary:
-    "border border-laterite text-laterite bg-transparent hover:bg-laterite hover:text-white",
+    "border border-brand-deep text-brand-deep bg-transparent hover:bg-brand-deep hover:text-white",
   /** For use on asphalt sections, where an outline needs light ink. */
   inverse: "border border-concrete text-concrete bg-transparent hover:bg-concrete hover:text-asphalt",
 } as const;

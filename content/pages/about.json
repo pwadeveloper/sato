@@ -2,13 +2,13 @@
   "slug": "about",
   "title": "About Sato",
   "metaTitle": "About",
-  "metaDescription": "Sato Engineering and Infrastructure Limited was incorporated in 1997 as Sato Engineering Nigeria Limited, a fully indigenous Nigerian engineering firm based in Abeokuta.",
+  "metaDescription": "Sato Engineering & Infrastructure Limited was incorporated in 1997 as Sato Engineering Nigeria Limited, a fully indigenous Nigerian engineering firm based in Abeokuta.",
   "sections": [
     {
       "type": "prose",
       "id": "intro",
       "body": [
-        "Sato Engineering and Infrastructure Limited was incorporated in 1997 as Sato Engineering Nigeria Limited, a fully indigenous Nigerian engineering firm. From our base in Abeokuta, we have delivered civil engineering design and construction across roads, dams, irrigation, buildings and water resources, for clients ranging from federal ministries to international development partners."
+        "Sato Engineering & Infrastructure Limited was incorporated in 1997 as Sato Engineering Nigeria Limited, a fully indigenous Nigerian engineering firm. From our base in Abeokuta, we have delivered civil engineering design and construction across roads, dams, irrigation, buildings and water resources, for clients ranging from federal ministries to international development partners."
       ]
     },
     {
@@ -16,7 +16,7 @@
       "id": "new-name",
       "heading": "Our new name",
       "body": [
-        "In {{CONFIRM: year}} the company became Sato Engineering and Infrastructure Limited. The new name reflects how our work has grown: beyond construction into the full infrastructure lifecycle, including energy {{CONFIRM: wording}}. Our ownership, leadership and commitments are unchanged."
+        "In August 2026 the company became Sato Engineering & Infrastructure Limited. The new name reflects how our work has grown: beyond construction into the full infrastructure lifecycle, including energy, oil and gas, and digital engineering services. Our ownership, leadership and commitments are unchanged."
       ]
     },
     {
@@ -24,7 +24,8 @@
       "id": "how-we-work",
       "heading": "How we work",
       "body": [
-        "We build a dedicated team for each project, drawing on a core leadership group and a pool of experienced engineers, technicians, foremen and specialists matched to the project's scope. Clients get the right expertise for the job, led by people who have delivered with Sato for years."
+        "We build a dedicated team for each project, drawing on a core leadership group and a pool of experienced engineers, technicians, foremen and specialists matched to the project's scope. Clients get the right expertise for the job, led by people who have delivered with Sato for years.",
+        "Sato owns and operates its own plant and equipment, including a borehole drilling rig, which lets us mobilise quickly and control quality on site."
       ]
     },
     {
@@ -32,7 +33,7 @@
       "id": "mission",
       "heading": "Mission",
       "body": [
-        "To deliver value-added engineering and construction services that meet and exceed our clients' requirements, through the performance of every member of our team, and to build relationships that last."
+        "To deliver innovative, sustainable and value-driven engineering and infrastructure solutions that meet the highest standards, exceed client expectations and create lasting value."
       ]
     },
     {
@@ -40,7 +41,7 @@
       "id": "vision",
       "heading": "Vision",
       "body": [
-        "To be the leading indigenous engineering company in Nigeria and, in time, Africa, delivering projects that consistently meet international standards."
+        "To be a globally recognized engineering and infrastructure company, renowned for excellence, innovation and world-class project delivery."
       ]
     },
     {
@@ -48,9 +49,13 @@
       "id": "recognition",
       "heading": "Recognition",
       "items": [
-        "Best Erosion Control and Construction Engineering Company Award, 2012 {{CONFIRM: awarding body}}",
-        "West Africa's Dynamic and Outstanding Engineering Company Award, 2012 {{CONFIRM: awarding body}}",
-        "{{CONFIRM: any awards or recognition since 2012}}"
+        "Best Erosion Control and Construction Engineering Company Award, 2012 — Institute of Government Research and Leadership Technology",
+        "West Africa's Most Dynamic and Outstanding Engineering Company Award, 2012 — West African Nobles and Top Entrepreneur Forum, and Aspire West Africa",
+        "Most Supportive Indigenous Company, 2012 — Egba Youths Awards",
+        "Award for Unparalleled Social Responsibility in Ogun State, 2012 — Rotary Club Oke-Ona Egba",
+        "Distinguished Corporate Award, Best Engineering Company in Ogun State, 2010 — Nigerian Society of Engineers",
+        "Award of Excellent Service towards contribution to the youth and humanity, 2010 — MKO Abiola Polytechnic Rotaract Club",
+        "Award for contributing immensely to the progress of the community through Rotary Service, 2011 — Rotaract Club of Osiele"
       ]
     },
     {

@@ -6,27 +6,42 @@
   "labels": {
     "breadcrumb": "Breadcrumb",
     "capabilities": "Capabilities",
-    "relatedProjects": "Projects in this division"
+    "relatedProjects": "Projects in this division",
+    "groupEngineering": "Engineering",
+    "groupEnergy": "Energy",
+    "groupTechnology": "Technology",
+    "groupEngineeringIntro": "The disciplines Sato has delivered with since 1997, in-house and with its own plant.",
+    "groupEnergyIntro": "Engineering for power and hydrocarbon assets, delivered with technical partners.",
+    "groupTechnologyIntro": "Asset data, digital models and applied engineering research.",
+    "servicesMenu": "Services menu"
   },
   "sections": [
     {
       "type": "prose",
       "id": "intro",
       "body": [
-        "Four divisions, one standard of delivery. Each division draws on Sato's shared project management, equipment fleet and HSE systems."
+        "Eight services across three groups, one standard of delivery. Every service draws on the same project management, plant and HSE systems Sato has built since 1997."
       ]
     },
     {
       "type": "collection",
-      "id": "divisions-primary",
-      "collection": "services",
-      "slugs": ["civil-infrastructure", "water-resources"]
-    },
-    {
-      "type": "collection",
-      "id": "divisions-secondary",
-      "collection": "services",
-      "slugs": ["electrical-mechanical", "energy"]
+      "id": "divisions",
+      "collection": "serviceGroups",
+      "facetMode": "group",
+      "facets": [
+        {
+          "value": "engineering",
+          "label": "Engineering"
+        },
+        {
+          "value": "energy",
+          "label": "Energy"
+        },
+        {
+          "value": "technology",
+          "label": "Technology"
+        }
+      ]
     },
     {
       "type": "linkCards",
@@ -35,9 +50,9 @@
       "intro": "Whichever division delivers your project, the same plant, people and systems stand behind it.",
       "items": [
         {
-          "label": "Equipment and capabilities",
-          "body": "Sato owns and operates its own plant and equipment, which lets us mobilise quickly and control quality and schedule on site.",
-          "href": "/equipment"
+          "label": "Projects",
+          "body": "Forty years of delivered work for federal and state government, universities, the World Bank and private clients.",
+          "href": "/projects"
         },
         {
           "label": "Health, safety, environment and quality",
@@ -51,18 +66,30 @@
       "id": "cta-default",
       "body": "Working on a project in civil, water or energy infrastructure? Talk to our team.",
       "ctas": [
-        { "label": "Contact us", "href": "/contact" },
-        { "label": "View our projects", "href": "/projects" }
+        {
+          "label": "Contact us",
+          "href": "/contact"
+        },
+        {
+          "label": "View our projects",
+          "href": "/projects"
+        }
       ]
     },
     {
       "type": "cta",
       "id": "cta-energy",
       "heading": "For procurement and vendor verification",
-      "body": "If you are registering Sato as a vendor or assessing us for an oil and gas tender, contact our head office for company documentation, registrations and project references.",
+      "body": "Sato is registered with the Corporate Affairs Commission as RC 317208 and its engineers are COREN-registered. We will supply registration documents, referees and a capability statement on request.",
       "ctas": [
-        { "label": "Contact us", "href": "/contact" },
-        { "label": "Company information", "href": "/about" }
+        {
+          "label": "Contact us",
+          "href": "/contact"
+        },
+        {
+          "label": "Company information",
+          "href": "/about"
+        }
       ]
     }
   ]

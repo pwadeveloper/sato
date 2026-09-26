@@ -8,6 +8,8 @@
  *
  * Palette is reconciled against the supplied logo (see /docs/design-plan.md).
  * Sampled brand greens: #177B0B (upper lozenge tone), #2E7229 (lower tone).
+ * There is no second hue: the laterite accent was retired in favour of a
+ * single green family, so tonal separation comes from `brand` vs `brand-deep`.
  *
  * Contrast is verified to WCAG 2.1 AA. Three text colours are darkened
  * derivatives of the brief values, because the brief values do not clear 4.5:1
@@ -21,11 +23,12 @@
   /* Clear Tailwind's stock green scale so `green` is unambiguously Sato's. */
   --color-green-*: initial;
 
-  /* Brand — from the logo */
-  --color-green: #177b0b; /* button fill; white on it 5.4:1        */
-  --color-green-deep: #2e7229; /* lower lozenge tone; pressed, dark band */
-  --color-green-ink: #136509; /* link text on light; 5.8:1 on concrete */
-  --color-green-light: #80b076; /* link text on dark;  6.0:1 on asphalt  */
+  /* Brand — sampled from the logo lozenge. One family, one swap. */
+  --color-brand: #177b0b; /* upper lozenge tone; button fill, white on it 5.4:1 */
+  --color-brand-deep: #2e7229; /* lower lozenge tone; rules, accents, pressed    */
+  --color-brand-ink: #136509; /* link text on light; 5.8:1 on concrete          */
+  --color-brand-light: #80b076; /* link text on dark;  6.0:1 on asphalt           */
+  --color-brand-tint: #e3ede6; /* subtle wash; asphalt on it 12.6:1              */
 
   /* Neutrals — site work */
   --color-asphalt: #22272b; /* body text, dark sections, the data plate */
@@ -38,8 +41,12 @@
   --color-rule-dark: #3e4244; /* hairline on dark                         */
 
   /* Accents */
-  --color-laterite: #8f3f1e; /* secondary accent; 5.8:1 on concrete      */
   --color-survey: #e2b236; /* fill / rule / focus only. NEVER text on light. */
+  /*
+   * State, not brand. Validation errors must never wear the brand colour —
+   * green reads as success. 8.0:1 on white, 6.5:1 on concrete.
+   */
+  --color-error: #9a2218;
 
   /* Type — Archivo, variable, wdth 62-125. One family. */
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;

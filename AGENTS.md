@@ -2,7 +2,7 @@
 
 ## What this project is
 
-A rebuild of satoengineering.com, the company website of **Sato Engineering and Infrastructure Limited** (formerly **Sato Engineering Nigeria Limited**), an indigenous Nigerian engineering firm incorporated in 1997. The current site is WordPress 3.3.2, last meaningfully updated in 2012. We are replacing it with a fast, static, custom-built site. A light CMS comes later (Phase 2).
+A rebuild of satoengineering.com, the company website of **Sato Engineering & Infrastructure Limited** (formerly **Sato Engineering Nigeria Limited**), an indigenous Nigerian engineering firm incorporated in 1997. The current site is WordPress 3.3.2, last meaningfully updated in 2012. We are replacing it with a fast, static, custom-built site. A light CMS comes later (Phase 2).
 
 ## Why it's being built now
 
@@ -24,7 +24,7 @@ What that visitor looks for, in order: the company is real and registered (name,
 1. **No hardcoded copy in components.** Every heading, paragraph, list item, team member, project and client comes from `/content`. Components receive content as props. This is what makes Phase 2 (CMS) a plug-in rather than a rewrite.
 2. **Source of truth for copy is `/docs/site-content.md`.** Transfer it into the JSON files faithfully. Don't invent facts, figures, clients, projects, certifications or years of experience.
 3. **Placeholders:** anything marked `{{CONFIRM: ...}}` stays as-is in the JSON. The `<Placeholder>` component / text renderer highlights these in development (yellow background, dashed outline) and they must be resolved before production.
-4. **Names:** use "Sato Engineering and Infrastructure Limited" in full on first mention per page, "Sato" after. Show "Formerly Sato Engineering Nigeria Limited" on Home (company facts), About and in the footer.
+4. **Names:** use "Sato Engineering & Infrastructure Limited" in full on first mention per page, "Sato" after. Show "Formerly Sato Engineering Nigeria Limited" on Home (company facts), About and in the footer.
 5. **Tone:** plain, factual, confident. Sentence case headings. No superlatives the company can't prove ("foremost", "best", "world class"). Let clients, projects and years speak.
 6. **Accessibility and quality floor:** responsive to 360px, visible focus states, alt text on every image, reduced-motion respected, colour contrast AA, semantic HTML, one `h1` per page.
 7. **Performance:** the site should load fast on Nigerian mobile networks. Keep JS minimal, lazy-load below-the-fold images, no heavy animation libraries.

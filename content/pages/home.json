@@ -1,13 +1,13 @@
 {
   "slug": "home",
   "title": "Engineering Nigeria's infrastructure since 1997.",
-  "metaTitle": "Sato Engineering and Infrastructure Limited",
+  "metaTitle": "Sato Engineering & Infrastructure Limited",
   "metaDescription": "Indigenous Nigerian engineering firm incorporated in 1997. Roads, dams, water schemes and buildings for federal and state governments, universities and international development partners.",
   "sections": [
     {
       "type": "hero",
       "id": "hero",
-      "subhead": "Sato Engineering and Infrastructure Limited is an indigenous Nigerian engineering firm. For nearly three decades we have designed and built roads, dams, water schemes and buildings for federal and state governments, universities and international development partners, and we now deliver {{CONFIRM: energy division name}} services.",
+      "subhead": "Sato Engineering & Infrastructure Limited is an indigenous Nigerian engineering firm incorporated in 1997. We design and build roads, buildings, dams and water schemes for federal and state governments, universities and international development partners, and we now deliver energy, oil and gas and digital engineering services.",
       "ctas": [
         {
           "label": "Explore our work",
@@ -43,11 +43,26 @@
       "type": "collection",
       "id": "divisions",
       "heading": "What we do",
-      "collection": "services",
+      "collection": "serviceGroups",
       "ctas": [
         {
           "label": "All services",
           "href": "/services"
+        }
+      ],
+      "facetMode": "group",
+      "facets": [
+        {
+          "value": "engineering",
+          "label": "Engineering"
+        },
+        {
+          "value": "energy",
+          "label": "Energy"
+        },
+        {
+          "value": "technology",
+          "label": "Technology"
         }
       ]
     },
@@ -105,5 +120,10 @@
         }
       ]
     }
-  ]
+  ],
+  "labels": {
+    "groupEngineering": "Engineering",
+    "groupEnergy": "Energy",
+    "groupTechnology": "Technology"
+  }
 }

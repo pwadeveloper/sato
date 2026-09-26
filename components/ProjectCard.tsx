@@ -74,7 +74,7 @@ export function ProjectCard({
             isWide ? "aspect-3/2 md:aspect-auto md:h-full" : "aspect-3/2",
           )}
         >
-          <span className="absolute inset-x-0 top-0 h-[3px] bg-laterite" />
+          <span className="absolute inset-x-0 top-0 h-[3px] bg-brand-deep" />
           <span className="text-h2 wdth-display leading-none text-steel/80">
             <RichText text={sectorLabel} />
           </span>
@@ -121,8 +121,8 @@ export function ProjectCard({
           <p className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-2 pt-2 text-xs text-steel-ink tabular wdth-body">
             {showYear ? <RichText text={project.year} /> : null}
             {showStatus ? (
-              <span className="inline-flex items-center gap-1.5 font-semibold uppercase tracking-[0.06em] text-green-ink">
-                <span aria-hidden="true" className="size-1.5 rounded-full bg-green" />
+              <span className="inline-flex items-center gap-1.5 font-semibold uppercase tracking-[0.06em] text-brand-ink">
+                <span aria-hidden="true" className="size-1.5 rounded-full bg-brand" />
                 <RichText text={project.status} />
               </span>
             ) : null}

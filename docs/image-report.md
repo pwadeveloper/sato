@@ -1,6 +1,6 @@
 # Image report — what we recovered from the old site, and what we still need
 
-**Prepared for:** Sato Engineering and Infrastructure Limited
+**Prepared for:** Sato Engineering & Infrastructure Limited
 **Date:** 24 September 2026
 **Purpose:** to agree which existing photographs can be used on the new website, and to commission
 the new photography needed before the letters go out to the oil and gas companies.

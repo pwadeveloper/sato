@@ -30,7 +30,7 @@ const ASPHALT = "#22272b";
 const CONCRETE = "#e9e6e1";
 const STEEL_LIGHT = "#9aa2a4";
 const SURVEY = "#e2b236";
-const LATERITE = "#8f3f1e";
+const BRAND_DEEP = "#2e7229";
 
 const W = 1200;
 const H = 630;
@@ -53,7 +53,7 @@ const logoMeta = await sharp(logo).metadata();
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="${ASPHALT}"/>
   <rect x="0" y="0" width="${W}" height="6" fill="${SURVEY}"/>
-  <rect x="${PAD}" y="${PAD + 132}" width="64" height="3" fill="${LATERITE}"/>
+  <rect x="${PAD}" y="${PAD + 132}" width="64" height="3" fill="${BRAND_DEEP}"/>
   <text x="${PAD}" y="${PAD + 250}"
         font-family="Archivo, Helvetica Neue, Arial, sans-serif"
         font-size="68" font-weight="800" letter-spacing="-1.4" fill="${CONCRETE}">

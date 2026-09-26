@@ -74,7 +74,7 @@ export default function ContactPage() {
                           href={office.mapUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-sm font-medium text-green-ink underline underline-offset-[0.2em] decoration-1 hover:text-laterite"
+                          className="text-sm font-medium text-brand-ink underline underline-offset-[0.2em] decoration-1 hover:text-brand-deep"
                         >
                           <RichText text={labels.mapLink ?? ""} />
                           <span className="sr-only">
@@ -103,7 +103,7 @@ export default function ContactPage() {
                         {href && !isPlaceholder ? (
                           <a
                             href={href}
-                            className="text-green-ink underline underline-offset-[0.2em] decoration-1 hover:text-laterite"
+                            className="text-brand-ink underline underline-offset-[0.2em] decoration-1 hover:text-brand-deep"
                           >
                             <RichText text={channel.value} />
                           </a>

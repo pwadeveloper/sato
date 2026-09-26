@@ -126,21 +126,24 @@ not depend on the new site working.
 
 These must be done, in this order:
 
-1. **Resolve the open items.** `docs/open-items.md` lists every unconfirmed piece
+1. **Get the six drafted divisions approved.** `docs/services-for-review.md`
+   goes to Engr. Wale Osamiluyi. `npm run build:prod` refuses to build while any
+   division is still `"reviewStatus": "draft"`.
+2. **Resolve the open items.** `docs/open-items.md` lists every unconfirmed piece
    of copy, generated from the content itself. `npm run build:prod` refuses to
    build while any remain. Regenerate the list at any time with
    `npm run check:placeholders`.
-2. **Check `site.json` is right.** In particular `url`, `rcNumber`, the office
+3. **Check `site.json` is right.** In particular `url`, `rcNumber`, the office
    addresses, the telephone number and the general enquiries email. These feed
    the footer legal line, the company facts panel and the Organization
    structured data.
-3. **Decide where the contact form posts.** `contactFormEndpoint` in
+4. **Decide where the contact form posts.** `contactFormEndpoint` in
    `site.json` is empty, so the contact page currently shows "the enquiry form is
    not accepting submissions yet" instead of a form. The site is static and
    cannot receive a POST itself, so this needs a third-party endpoint (Formspree,
    Basin, Web3Forms or similar). Until it is set, the only route to the company
    from the website is the telephone number.
-4. **Run the checks locally**: `npm run typecheck && npm run lint && npm run build:prod`.
+5. **Run the checks locally**: `npm run typecheck && npm run lint && npm run build:prod`.
 
 ---
 
@@ -181,18 +184,22 @@ Spot-check these by hand. They cover the things that break silently.
 | `http://www.satoengineering.com` | Redirects to `https` |
 | `/about-us` | 301 to `/about` |
 | `/our-team` | 301 to `/leadership` |
-| `/equipments` | 301 to `/equipment` |
+| `/equipments` | 301 to `/about` |
 | `/safety-policies` | 301 to `/hse` |
 | `/contact-us` | 301 to `/contact` |
 | `/building-and-construction` | 301 to `/projects?sector=buildings` |
 | `/project-3` | 301 to `/projects/fiditi-earth-dam` |
+| `/equipment` and `/equipments` | 301 to `/about` (the page was removed) |
+| `/services/civil-infrastructure` | 301 to `/services/construction-civil-engineering` |
+| `/services/water-resources` | 301 to `/services/water-resources-environmental` |
+| `/services/electrical-mechanical` | 301 to `/services/electrical-engineering` |
 | `/wp-admin/` | 301 to `/` |
 | `/robots.txt` | Allows everything except `/styleguide`, names the sitemap |
-| `/sitemap.xml` | 29 URLs, all on the `www` hostname |
+| `/sitemap.xml` | All routes on the `www` hostname; no `/equipment` |
 | Any unknown URL | The site's own 404 page, not a Vercel error page |
 | Paste the home URL into WhatsApp or LinkedIn | Branded Open Graph card appears |
 
-`vercel.json` holds 112 redirects covering every URL found on the old site. To
+`vercel.json` holds 116 redirects covering every URL found on the old site, plus the routes retired by the client's decisions of 25 September 2026. To
 re-check them in bulk after cutover:
 
 ```bash

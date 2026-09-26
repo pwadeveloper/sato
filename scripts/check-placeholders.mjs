@@ -6,10 +6,15 @@
  *   node scripts/check-placeholders.mjs --report   # also rewrite docs/open-items.md
  *   node scripts/check-placeholders.mjs --allow-empty-exit   # never exit non-zero
  *
- * Unconfirmed copy is authored inline as `{{CONFIRM: note}}`. That is fine
- * while the site is being built — development highlights them — but shipping
- * one to satoengineering.com puts a note-to-self in front of a procurement
- * officer, so the production build refuses to run until they are resolved.
+ * Two things block a production build:
+ *
+ *  1. `{{CONFIRM: note}}` markers in /content. These are for copy the site
+ *     cannot launch without. Optional content is stored empty ("" or []) and
+ *     its section is hidden, so it never appears here.
+ *  2. Divisions still marked `"reviewStatus": "draft"` in services.json. Those
+ *     were drafted from partner reference material and describe capabilities
+ *     Sato has not yet approved. Unreviewed capability claims must not reach an
+ *     oil company's procurement team.
  */
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, relative, resolve } from "node:path";
@@ -114,13 +119,22 @@ for (const file of files) {
   });
 }
 
+/* ------------------------------------------------- unapproved divisions */
+
+const servicesFile = join(CONTENT, "services.json");
+const drafts = JSON.parse(await readFile(servicesFile, "utf8"))
+  .filter((service) => service.reviewStatus === "draft")
+  .map((service) => ({ slug: service.slug, name: service.name }));
+
 /* ------------------------------------------------------------ terminal */
 
 const ordered = [...groups.entries()].sort(([, a], [, b]) =>
   a.rank[0] - b.rank[0] || String(a.rank[1]).localeCompare(String(b.rank[1])),
 );
 
-if (!total) {
+if (!total && !drafts.length) {
+  console.log("No unresolved placeholders, and every division is approved.");
+} else if (!total) {
   console.log("No unresolved placeholders in /content.");
 } else {
   console.log(`${total} unresolved placeholder(s) in /content:\n`);
@@ -134,6 +148,12 @@ if (!total) {
   }
 }
 
+if (drafts.length) {
+  console.log(`${drafts.length} division(s) awaiting Sato's approval:`);
+  drafts.forEach((d) => console.log(`    ${d.slug} — ${d.name}`));
+  console.log("  See docs/services-for-review.md\n");
+}
+
 /* -------------------------------------------------------------- report */
 
 if (process.argv.includes("--report")) {
@@ -145,8 +165,10 @@ if (process.argv.includes("--report")) {
     "not a formatting problem: the site cannot go live with any of them showing,",
     "because the placeholder text would be visible to anyone who visited.",
     "",
-    `**${total} item${total === 1 ? "" : "s"} outstanding.** Generated ${today} from the site content` +
-      " by `npm run check:placeholders`, so this file is always current.",
+    `**${total} placeholder${total === 1 ? "" : "s"} outstanding** and ` +
+      `**${drafts.length} division${drafts.length === 1 ? "" : "s"} awaiting approval.** ` +
+      `Generated ${today} from the site content by \`npm run check:placeholders\`, ` +
+      "so this file is always current.",
     "",
     "---",
     "",
@@ -164,6 +186,20 @@ if (process.argv.includes("--report")) {
     }
   }
 
+  if (drafts.length) {
+    lines.push(
+      "## Divisions awaiting your approval",
+      "",
+      "These were drafted from the partner reference sites and describe what the",
+      "service offers. They are capability descriptions, not claims of work Sato",
+      "has already delivered. **The site cannot go live until you approve them** —",
+      "the full text is in `docs/services-for-review.md`.",
+      "",
+    );
+    drafts.forEach((d) => lines.push(`- **${d.name}**`));
+    lines.push("");
+  }
+
   lines.push(
     "---",
     "",
@@ -178,16 +214,23 @@ if (process.argv.includes("--report")) {
     "",
   );
 
+  // Items that are not `{{CONFIRM}}` markers — missing files, sign-offs,
+  // photography — are kept by hand in this partial and appended verbatim.
+  const extraPath = join(ROOT, "docs", "open-items-extra.md");
+  const extra = await readFile(extraPath, "utf8").catch(() => "");
+  if (extra.trim()) lines.push(extra.trim(), "");
+
   await writeFile(REPORT, lines.join("\n"));
   console.log(`Wrote ${relative(ROOT, REPORT)}`);
 }
 
 /* ---------------------------------------------------------------- gate */
 
-if (total && !process.argv.includes("--allow-empty-exit")) {
+if ((total || drafts.length) && !process.argv.includes("--allow-empty-exit")) {
   console.error(
-    "\nProduction build blocked: resolve the placeholders above, or run" +
-      " `npm run build` for a development build that allows them.",
+    "\nProduction build blocked: resolve the placeholders and get the drafted" +
+      " divisions approved, or run `npm run build` for a development build that" +
+      " allows them.",
   );
   process.exit(1);
 }

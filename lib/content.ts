@@ -15,7 +15,6 @@ import equipmentJson from "@/content/equipment.json";
 import aboutPageJson from "@/content/pages/about.json";
 import clientsPageJson from "@/content/pages/clients.json";
 import contactPageJson from "@/content/pages/contact.json";
-import equipmentPageJson from "@/content/pages/equipment.json";
 import homePageJson from "@/content/pages/home.json";
 import notFoundPageJson from "@/content/pages/not-found.json";
 import hsePageJson from "@/content/pages/hse.json";
@@ -32,6 +31,7 @@ import type {
   PageSection,
   Project,
   Service,
+  ServiceGroup,
   Site,
   TeamMember,
 } from "./content-types";
@@ -54,7 +54,12 @@ const services = typed<Service[]>(servicesJson)
 const projects = typed<Project[]>(projectsJson);
 const clients = typed<Client[]>(clientsJson);
 
+/**
+ * Unpublished people are dropped at the loader, so nothing downstream — page,
+ * sitemap or structured data — can render someone Sato has not confirmed.
+ */
 const team = typed<TeamMember[]>(teamJson)
+  .filter((member) => member.published)
   .slice()
   .sort((a, b) => a.order - b.order);
 
@@ -68,7 +73,6 @@ const pages: Record<string, Page> = {
   clients: typed<Page>(clientsPageJson),
   leadership: typed<Page>(leadershipPageJson),
   hse: typed<Page>(hsePageJson),
-  equipment: typed<Page>(equipmentPageJson),
   contact: typed<Page>(contactPageJson),
   "not-found": typed<Page>(notFoundPageJson),
 };
@@ -95,6 +99,9 @@ export function getCompanyFacts(): CompanyFact[] {
   const facts: CompanyFact[] = [
     { id: "registeredName", label: labels.registeredName, value: site.registeredName },
     { id: "formerName", label: labels.formerName, value: site.formerName },
+    ...(site.nameChangeDate
+      ? [{ id: "nameChanged", label: labels.nameChanged, value: site.nameChangeDate }]
+      : []),
     { id: "incorporated", label: labels.incorporated, value: String(site.foundedYear) },
     {
       id: "yearsInOperation",
@@ -162,6 +169,19 @@ export function getSection<T extends PageSection["type"]>(
 
 export function getServices(): Service[] {
   return services;
+}
+
+/** Divisions in their display bands, in order, skipping any empty band. */
+export function getServiceGroups(): Array<{ group: ServiceGroup; services: Service[] }> {
+  const order: ServiceGroup[] = ["engineering", "energy", "technology"];
+  return order
+    .map((group) => ({ group, services: services.filter((s) => s.group === group) }))
+    .filter((band) => band.services.length > 0);
+}
+
+/** Divisions whose copy Sato has not yet approved. Blocks a production build. */
+export function getDraftServices(): Service[] {
+  return services.filter((service) => service.reviewStatus === "draft");
 }
 
 export function getService(slug: string): Service {

@@ -98,6 +98,11 @@
       "permanent": true
     },
     {
+      "source": "/:path*/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/about-us",
       "destination": "/about",
       "permanent": true
@@ -238,6 +243,11 @@
       "permanent": true
     },
     {
+      "source": "/comments/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/contact-us",
       "destination": "/contact",
       "permanent": true
@@ -254,17 +264,27 @@
     },
     {
       "source": "/electrical-engineering",
-      "destination": "/services/electrical-mechanical",
+      "destination": "/services/electrical-engineering",
+      "permanent": true
+    },
+    {
+      "source": "/equipment",
+      "destination": "/about",
       "permanent": true
     },
     {
       "source": "/equipments",
-      "destination": "/equipment",
+      "destination": "/about",
       "permanent": true
     },
     {
       "source": "/excellent-service-towards-contribution-to-the-youth-and-humanity-2010",
       "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/feed",
+      "destination": "/",
       "permanent": true
     },
     {
@@ -329,7 +349,7 @@
     },
     {
       "source": "/mechanical-engineering",
-      "destination": "/services/electrical-mechanical",
+      "destination": "/services/mechanical-engineering",
       "permanent": true
     },
     {
@@ -405,6 +425,21 @@
     {
       "source": "/sato-engineering-received-the-best-erosion-control-and-construction-engineering-company-awards-2012",
       "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/services/civil-infrastructure",
+      "destination": "/services/construction-civil-engineering",
+      "permanent": true
+    },
+    {
+      "source": "/services/electrical-mechanical",
+      "destination": "/services/electrical-engineering",
+      "permanent": true
+    },
+    {
+      "source": "/services/water-resources",
+      "destination": "/services/water-resources-environmental",
       "permanent": true
     },
     {
@@ -518,6 +553,16 @@
       "permanent": true
     },
     {
+      "source": "/wp-login.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/wp-content/:path*",
       "destination": "/",
       "permanent": true
@@ -529,31 +574,6 @@
     },
     {
       "source": "/wp-includes/:path*",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/wp-login.php",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/xmlrpc.php",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/feed",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/:path*/feed",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/comments/feed",
       "destination": "/",
       "permanent": true
     },

@@ -79,6 +79,8 @@ export interface Site {
   /** Registered name as it should appear on the company facts panel. */
   registeredName: ConfirmableText;
   formerName: ConfirmableText;
+  /** When the change of name took effect. Empty hides the row. */
+  nameChangeDate: ConfirmableText;
   /** Ready-made "Formerly ..." line for Home, About and the footer. */
   formerNameLabel: ConfirmableText;
   tagline: ConfirmableText;
@@ -94,6 +96,7 @@ export interface Site {
   factLabels: {
     registeredName: ConfirmableText;
     formerName: ConfirmableText;
+    nameChanged: ConfirmableText;
     incorporated: ConfirmableText;
     yearsInOperation: ConfirmableText;
     rcNumber: ConfirmableText;
@@ -128,6 +131,7 @@ export interface Site {
 /* ----------------------------------------------------------------- pages */
 
 export type CollectionName =
+  | "serviceGroups"
   | "services"
   | "projects"
   | "clients"
@@ -293,9 +297,21 @@ export interface Page {
 
 /* -------------------------------------------------------------- services */
 
+/** Which band a division sits in on the services overview and Home. */
+export type ServiceGroup = "engineering" | "energy" | "technology";
+
+/**
+ * `draft` copy was written from partner reference material and has not been
+ * approved by Sato. The placeholder gate fails a production build while any
+ * division is still draft — see scripts/check-placeholders.mjs.
+ */
+export type ReviewStatus = "approved" | "draft";
+
 export interface Service {
   slug: string;
   name: ConfirmableText;
+  group: ServiceGroup;
+  reviewStatus: ReviewStatus;
   /** One-line version used in the Home divisions strip. */
   shortSummary: ConfirmableText;
   /** Fuller summary used on the services overview and division pages. */
@@ -315,10 +331,14 @@ export type ProjectSector = "buildings" | "roads" | "water" | "energy";
 export interface Project {
   slug: string;
   title: ConfirmableText;
+  /** Optional. Empty means unknown — the field is hidden, never placeheld. */
   client: ConfirmableText;
+  /** Optional, as `client`. */
   location: ConfirmableText;
   sector: ProjectSector;
+  /** Optional. Either a year, or "Awarded 2012" where only the award is known. */
   year: ConfirmableText;
+  /** Only ever "Completed" or empty. The site never labels work in progress. */
   status: ConfirmableText;
   summary: ConfirmableText;
   scope: ConfirmableText[];
@@ -359,6 +379,11 @@ export interface TeamMember {
   memberships: ConfirmableText[];
   yearsExperience?: ConfirmableText;
   photo: ImageRef | null;
+  /**
+   * Off the site entirely when false — not rendered, not in the sitemap, not
+   * in structured data. Used for people whose status Sato has not confirmed.
+   */
+  published: boolean;
   /** `unverified` members appear only in older indexed versions of the site. */
   status: "current" | "unverified";
   order: number;

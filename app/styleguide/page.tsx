@@ -39,10 +39,10 @@ export const metadata: Metadata = {
 };
 
 const COLOURS = [
-  { name: "green", hex: "#177B0B", note: "Brand. Button fill. White on it 5.4:1", cls: "bg-green" },
-  { name: "green-deep", hex: "#2E7229", note: "Lower lozenge tone. Dark band", cls: "bg-green-deep" },
-  { name: "green-ink", hex: "#136509", note: "Link text on light. 5.8:1", cls: "bg-green-ink" },
-  { name: "green-light", hex: "#80B076", note: "Link text on dark. 6.0:1", cls: "bg-green-light" },
+  { name: "brand", hex: "#177B0B", note: "Brand. Button fill. White on it 5.4:1", cls: "bg-brand" },
+  { name: "brand-deep", hex: "#2E7229", note: "Lower lozenge tone. Dark band", cls: "bg-brand-deep" },
+  { name: "brand-ink", hex: "#136509", note: "Link text on light. 5.8:1", cls: "bg-brand-ink" },
+  { name: "brand-light", hex: "#80B076", note: "Link text on dark. 6.0:1", cls: "bg-brand-light" },
   { name: "asphalt", hex: "#22272B", note: "Body text, dark sections, the plate", cls: "bg-asphalt" },
   { name: "asphalt-raised", hex: "#2E3236", note: "Card surface on dark", cls: "bg-asphalt-raised" },
   { name: "concrete", hex: "#E9E6E1", note: "Page background", cls: "bg-concrete" },
@@ -52,7 +52,9 @@ const COLOURS = [
   { name: "steel-light", hex: "#9AA2A4", note: "Secondary text on dark. 5.8:1", cls: "bg-steel-light" },
   { name: "rule", hex: "#CACBC9", note: "Hairline on light", cls: "bg-rule" },
   { name: "rule-dark", hex: "#3E4244", note: "Hairline on dark", cls: "bg-rule-dark" },
-  { name: "laterite", hex: "#8F3F1E", note: "Secondary accent. 5.8:1", cls: "bg-laterite" },
+  { name: "brand-deep", hex: "#2E7229", note: "Lower lozenge tone. Rules, pills. 4.8:1", cls: "bg-brand-deep" },
+  { name: "brand-tint", hex: "#E3EDE6", note: "Subtle wash. Asphalt on it 12.6:1", cls: "bg-brand-tint" },
+  { name: "error", hex: "#9A2218", note: "Validation only, never brand. 8.0:1 on white", cls: "bg-error" },
   { name: "survey", hex: "#E2B236", note: "Fill / rule / focus. Never text on light", cls: "bg-survey" },
 ];
 
@@ -94,7 +96,7 @@ export default function StyleguidePage() {
   const clients = getClients();
   const team = getTeam();
   const facts = getCompanyFacts();
-  const waterResources = getService("water-resources");
+  const waterResources = getService("water-resources-environmental");
 
   const projectsPage = getPage("projects");
   const sectorLabels = new Map(
@@ -163,7 +165,7 @@ export default function StyleguidePage() {
               </ul>
             </Entry>
 
-            <Entry title="Buttons" note="Square corners. Primary is brand green; secondary is the laterite outline; inverse is for asphalt sections.">
+            <Entry title="Buttons" note="Square corners. Primary is brand brand; secondary is the brand-deep outline; inverse is for asphalt sections.">
               <div className="flex flex-col gap-6">
                 <div className="flex flex-wrap items-center gap-4">
                   <Button label="Contact us" href="/contact" />
@@ -197,7 +199,7 @@ export default function StyleguidePage() {
             <Entry title="Tags" note="The only rounded shape in the system. Quotes the logo's lozenge.">
               <div className="flex flex-wrap gap-3">
                 <Tag label="Water" />
-                <Tag label="Buildings" tone="green" />
+                <Tag label="Buildings" tone="brand" />
                 <Tag label="HSE" tone="survey" />
                 <Tag label="Completed" tone="outline" />
               </div>
@@ -231,7 +233,7 @@ export default function StyleguidePage() {
               </div>
             </Entry>
 
-            <Entry title="Project cards" note="Square, hairline border, no shadow. With no photography yet the image slot is replaced by a laterite rule, which reads as deliberate where an empty grey box would read as broken.">
+            <Entry title="Project cards" note="Square, hairline border, no shadow. With no photography yet the image slot is replaced by a brand-deep rule, which reads as deliberate where an empty grey box would read as broken.">
               <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {projects.slice(0, 3).map((project) => (
                   <li key={project.slug} className="contents">
@@ -285,12 +287,12 @@ export default function StyleguidePage() {
           <Heading level={2} text="Section tones" />
           <p className="mt-3 max-w-(--container-measure) text-base text-steel-ink wdth-body">
             This band is the white surface. The page default is concrete; asphalt carries the plate
-            and the CTA; green-deep is reserved for a single emphasis band.
+            and the CTA; brand-deep is reserved for a single emphasis band.
           </p>
         </Container>
       </Section>
 
-      <Section tone="green">
+      <Section tone="brand">
         <Container>
           <Heading level={2} text="Green band" className="text-white" />
           <p className="mt-3 max-w-(--container-measure) text-base wdth-body">

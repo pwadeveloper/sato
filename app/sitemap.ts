@@ -31,7 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/clients", 0.7, "yearly"),
     entry("/leadership", 0.7, "yearly"),
     entry("/hse", 0.7, "yearly"),
-    entry("/equipment", 0.6, "yearly"),
     entry("/contact", 0.8, "yearly"),
   ];
 }

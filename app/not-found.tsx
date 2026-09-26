@@ -35,7 +35,7 @@ export default function NotFound() {
           <div className="lg:col-span-4">
             <p
               aria-hidden="true"
-              className="text-2xs font-semibold uppercase tracking-[0.08em] text-laterite wdth-body"
+              className="text-2xs font-semibold uppercase tracking-[0.08em] text-brand-deep wdth-body"
             >
               <RichText text={page.labels?.code ?? ""} />
             </p>

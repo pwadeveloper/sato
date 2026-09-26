@@ -1,8 +1,8 @@
 {
   "slug": "leadership",
-  "title": "Leadership and project teams",
+  "title": "Leadership",
   "metaTitle": "Leadership",
-  "metaDescription": "Sato is led by a core team of engineers and managers, and assembles a dedicated project team for each job from its network of engineers, technicians, foremen and specialists.",
+  "metaDescription": "Sato Engineering & Infrastructure Limited is led by its founder, Engr. Wale Osamiluyi, and assembles a dedicated project team for each job from its network of engineers, technicians, foremen and specialists.",
   "labels": {
     "qualifications": "Qualifications",
     "memberships": "Memberships",
@@ -10,26 +10,18 @@
   },
   "sections": [
     {
-      "type": "prose",
-      "id": "intro",
-      "body": [
-        "Sato is led by a core team of engineers and managers with decades of combined experience. For each project, we assemble a dedicated team from our network of engineers, technicians, foremen and specialists, matched to the scope and location of the work.",
-        "That means a client gets the right expertise for the job rather than whoever is free, led by people who have delivered with Sato for years."
-      ]
-    },
-    {
       "type": "collection",
       "id": "leadership",
-      "heading": "Leadership",
       "collection": "team"
     },
     {
-      "type": "collection",
-      "id": "wider-team",
-      "heading": "Project team",
-      "intro": "The engineers, managers and specialists we draw on to staff a project.",
-      "collection": "team",
-      "note": "{{CONFIRM: current roster and which members are leadership}}"
+      "type": "prose",
+      "id": "how-we-build-teams",
+      "heading": "How we build project teams",
+      "body": [
+        "Sato runs a small core leadership team and assembles a dedicated project team for each job. The core group carries responsibility for the contract, the programme and the client relationship from award through to handover.",
+        "Around that core we draw engineers, technicians, foremen and specialists from Sato's network, matched to the scope and location of the work. A client gets the expertise the job actually needs rather than whoever happens to be free, and the same people stay with the project to completion."
+      ]
     }
   ]
 }

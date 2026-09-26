@@ -25,7 +25,7 @@ export function SiteFooter({ site, year }: SiteFooterProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm font-medium text-concrete no-underline wdth-body transition-colors duration-150 hover:text-green-light"
+                    className="text-sm font-medium text-concrete no-underline wdth-body transition-colors duration-150 hover:text-brand-light"
                   >
                     <RichText text={link.label} />
                   </Link>

@@ -42,7 +42,7 @@ export function PersonCard({
         <RichText text={member.name} />
       </NameTag>
 
-      <p className="mt-1 text-sm font-medium text-laterite wdth-body">
+      <p className="mt-1 text-sm font-medium text-brand-deep wdth-body">
         <RichText text={member.title} />
       </p>
 

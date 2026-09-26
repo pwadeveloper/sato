@@ -125,7 +125,7 @@ export function ContactForm({
     const isMailto = status === "mailto";
 
     return (
-      <div className="border-l-[3px] border-green bg-white p-6 md:p-8" role="status">
+      <div className="border-l-[3px] border-brand bg-white p-6 md:p-8" role="status">
         <h3 className="text-h3 wdth-heading">
           <RichText text={isMailto ? form.mailtoHeading : form.successHeading} />
         </h3>
@@ -138,7 +138,7 @@ export function ContactForm({
 
   if (!canSubmit) {
     return (
-      <p className="border-l-[3px] border-laterite bg-white p-6 text-base text-asphalt wdth-body md:p-8">
+      <p className="border-l-[3px] border-brand-deep bg-white p-6 text-base text-asphalt wdth-body md:p-8">
         <RichText text={form.unavailableMessage} />
       </p>
     );
@@ -155,7 +155,7 @@ export function ContactForm({
         className={cn(errorList.length || status === "error" ? "mb-6" : "sr-only")}
       >
         {status === "error" ? (
-          <p className="border-l-[3px] border-laterite bg-white p-4 text-base text-asphalt wdth-body">
+          <p className="border-l-[3px] border-error bg-white p-4 text-base text-asphalt wdth-body">
             <RichText text={form.errorMessage} />
           </p>
         ) : null}
@@ -181,7 +181,7 @@ export function ContactForm({
           disabled={status === "sending"}
           className={cn(
             "inline-flex items-center justify-center px-6 py-3 text-base font-semibold wdth-body",
-            "bg-green text-white transition-colors duration-150 hover:bg-green-deep",
+            "bg-brand text-white transition-colors duration-150 hover:bg-brand-deep",
             "disabled:cursor-not-allowed disabled:opacity-70",
           )}
         >
@@ -223,7 +223,7 @@ function Field({
     required: field.required,
     "aria-invalid": error ? true : undefined,
     "aria-describedby": error ? errorId : undefined,
-    className: cn(CONTROL, error && "border-laterite"),
+    className: cn(CONTROL, error && "border-error"),
   };
 
   return (
@@ -257,7 +257,7 @@ function Field({
       )}
 
       {error ? (
-        <p id={errorId} className="text-sm font-medium text-laterite wdth-body">
+        <p id={errorId} className="text-sm font-medium text-error wdth-body">
           <RichText text={error} />
         </p>
       ) : null}

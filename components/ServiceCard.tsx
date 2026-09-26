@@ -48,7 +48,7 @@ export function ServiceCard({
           />
         </div>
       ) : (
-        <div aria-hidden="true" className="h-[3px] w-full bg-laterite" />
+        <div aria-hidden="true" className="h-[3px] w-full bg-brand-deep" />
       )}
 
       <div className="flex flex-1 flex-col gap-3 p-6 md:p-8">

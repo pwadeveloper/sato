@@ -38,7 +38,7 @@ export function StatementPair({
         >
           <Label
             id={`${statement.id}-label`}
-            className="text-2xs font-semibold uppercase tracking-[0.08em] text-laterite wdth-body"
+            className="text-2xs font-semibold uppercase tracking-[0.08em] text-brand-deep wdth-body"
           >
             <RichText text={statement.label} />
           </Label>

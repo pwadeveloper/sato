@@ -7,6 +7,7 @@ import { Container } from "./Container";
 import { Logo } from "./Logo";
 import { MobileNav } from "./MobileNav";
 import { RichText } from "./RichText";
+import { ServicesMenu, type ServicesMenuBand } from "./ServicesMenu";
 import type { Link as LinkContent } from "@/lib/content-types";
 import { cn } from "@/lib/cn";
 
@@ -17,6 +18,8 @@ export interface SiteHeaderProps {
   skipLinkLabel: string;
   menuOpenLabel: string;
   menuCloseLabel: string;
+  /** Divisions grouped for the Services panel. */
+  serviceBands: ServicesMenuBand[];
 }
 
 /**
@@ -36,6 +39,7 @@ export function SiteHeader({
   skipLinkLabel,
   menuOpenLabel,
   menuCloseLabel,
+  serviceBands,
 }: SiteHeaderProps) {
   const pathname = usePathname();
   const overHero = BLEED_ROUTES.has(pathname);
@@ -89,21 +93,32 @@ export function SiteHeader({
 
         <nav aria-label={navLabel} className="hidden lg:block">
           <ul className="flex items-center gap-x-7">
-            {nav.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={cn(
-                    "text-sm font-medium no-underline wdth-body transition-colors duration-150",
-                    isDark
-                      ? "text-concrete hover:text-green-light"
-                      : "text-asphalt hover:text-green-ink",
-                  )}
-                >
-                  <RichText text={link.label} />
-                </Link>
-              </li>
-            ))}
+            {nav.map((link) =>
+              link.href === "/services" && serviceBands.length ? (
+                <li key={link.href}>
+                  <ServicesMenu
+                    label={link.label}
+                    href={link.href}
+                    bands={serviceBands}
+                    tone={isDark ? "dark" : "light"}
+                  />
+                </li>
+              ) : (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      "text-sm font-medium no-underline wdth-body transition-colors duration-150",
+                      isDark
+                        ? "text-concrete hover:text-brand-light"
+                        : "text-asphalt hover:text-brand-ink",
+                    )}
+                  >
+                    <RichText text={link.label} />
+                  </Link>
+                </li>
+              ),
+            )}
           </ul>
         </nav>
 

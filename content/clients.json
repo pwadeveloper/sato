@@ -17,7 +17,9 @@
     "slug": "federal-ministry-of-water-resources",
     "name": "Federal Ministry of Water Resources",
     "category": "federal",
-    "units": ["Ogun-Osun River Basin Development Authority"],
+    "units": [
+      "Ogun-Osun River Basin Development Authority"
+    ],
     "logo": null,
     "featured": true
   },
@@ -25,7 +27,9 @@
     "slug": "federal-ministry-of-health",
     "name": "Federal Ministry of Health",
     "category": "federal",
-    "units": ["National Primary Health Care Development Agency"],
+    "units": [
+      "National Primary Health Care Development Agency"
+    ],
     "logo": null,
     "featured": false
   },
@@ -78,6 +82,13 @@
     "featured": true
   },
   {
+    "slug": "usaid-e-wash",
+    "name": "USAID — Effective Water, Sanitation and Hygiene Services (E-WASH) Programme",
+    "category": "international",
+    "logo": null,
+    "featured": true
+  },
+  {
     "slug": "university-of-ibadan",
     "name": "University of Ibadan",
     "category": "education",
@@ -107,7 +118,7 @@
   },
   {
     "slug": "joseph-ayo-babalola-university",
-    "name": "Joseph Ayo Babalola University {{CONFIRM: old site spells \"Joseph Ayodele Babalola\"}}",
+    "name": "Joseph Ayo Babalola University",
     "category": "education",
     "logo": null,
     "featured": false
@@ -132,5 +143,12 @@
     "category": "private",
     "logo": null,
     "featured": false
+  },
+  {
+    "slug": "apm-terminals-apapa",
+    "name": "APM Terminals Apapa Limited",
+    "category": "private",
+    "logo": null,
+    "featured": true
   }
 ]

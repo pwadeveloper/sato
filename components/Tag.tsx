@@ -2,8 +2,9 @@ import { RichText } from "./RichText";
 import { cn } from "@/lib/cn";
 
 const TONES = {
-  laterite: "bg-laterite text-white",
-  green: "bg-green text-white",
+  /** Sector pills. The deeper lozenge tone, so a pill never reads as a button. */
+  deep: "bg-brand-deep text-white",
+  brand: "bg-brand text-white",
   survey: "bg-survey text-asphalt",
   outline: "border border-steel text-steel-ink",
 } as const;
@@ -18,7 +19,7 @@ export interface TagProps {
  * The only rounded shape in the system. The pill deliberately quotes the logo's
  * lozenge, so roundness reads as a reference to the mark rather than a default.
  */
-export function Tag({ label, tone = "laterite", className }: TagProps) {
+export function Tag({ label, tone = "deep", className }: TagProps) {
   return (
     <span
       className={cn(

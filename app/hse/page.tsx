@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 import { Container } from "@/components/Container";
 import { CtaBand } from "@/components/CtaBand";
 import { Heading } from "@/components/Heading";
-import { PersonInitials } from "@/components/PersonInitials";
 import { RegistrationsBlock } from "@/components/RegistrationsBlock";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
 
-import { getPage, getSection, getSite, getTeam } from "@/lib/content";
+import { getPage, getSection, getSite } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/metadata";
 import type { ProseSection } from "@/lib/content-types";
 
@@ -24,22 +22,15 @@ const POLICY_IDS = [
   "safety-management-system",
   "training",
   "protective-equipment",
-  "incident-reporting",
-  "quality-assurance",
 ];
 
 export default function HsePage() {
   const intro = getSection(page, "intro", "prose");
-  const lead = getSection(page, "hse-lead", "collection");
   const certifications = getSection(page, "certifications", "list");
   const cta = getSection(page, "cta", "cta");
 
   const policies: ProseSection[] = POLICY_IDS.map((id) => getSection(page, id, "prose"));
 
-  const team = getTeam();
-  const leadMembers = (lead.slugs ?? [])
-    .map((slug) => team.find((member) => member.slug === slug))
-    .filter((member): member is NonNullable<typeof member> => !!member);
 
   return (
     <>
@@ -74,34 +65,6 @@ export default function HsePage() {
             </div>
 
             <div className="flex flex-col gap-8 lg:col-span-4 lg:col-start-9">
-              {leadMembers.length ? (
-                <div className="border border-rule bg-concrete p-6">
-                  <h2 className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
-                    <RichText text={lead.heading ?? ""} />
-                  </h2>
-
-                  {leadMembers.map((member) => (
-                    <div key={member.slug} className="mt-4 flex items-start gap-4">
-                      {member.photo ? null : (
-                        <PersonInitials name={member.name} size="sm" />
-                      )}
-                      <div className="min-w-0">
-                        <p className="text-base font-bold wdth-heading">
-                          <Link
-                            href={`/leadership#${member.slug}`}
-                            className="text-green-ink underline underline-offset-[0.2em] decoration-1 hover:text-laterite"
-                          >
-                            <RichText text={member.name} />
-                          </Link>
-                        </p>
-                        <p className="mt-0.5 text-sm font-medium text-laterite wdth-body">
-                          <RichText text={member.title} />
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : null}
 
               {/* Withheld in production while the only entry is a placeholder. */}
               <RegistrationsBlock

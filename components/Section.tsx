@@ -5,7 +5,7 @@ const TONES = {
   concrete: "bg-concrete text-asphalt",
   white: "bg-white text-asphalt",
   asphalt: "bg-asphalt text-concrete",
-  green: "bg-green-deep text-white",
+  brand: "bg-brand-deep text-white",
 } as const;
 
 export type SectionTone = keyof typeof TONES;

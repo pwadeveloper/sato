@@ -19,7 +19,7 @@
       "id": "policy-statement",
       "heading": "Policy statement",
       "body": [
-        "Sato Engineering and Infrastructure Limited is committed to managing safety, quality and environmental matters across our operations in a professional manner. Our employees are our most valuable asset, and our first aim is to prevent them from sustaining work-related injuries."
+        "Sato Engineering & Infrastructure Limited is committed to managing safety, quality and environmental matters across our operations in a professional manner. Our employees are our most valuable asset, and our first aim is to prevent them from sustaining work-related injuries."
       ]
     },
     {
@@ -47,35 +47,10 @@
       ]
     },
     {
-      "type": "prose",
-      "id": "incident-reporting",
-      "heading": "Incident reporting",
-      "body": [
-        "{{CONFIRM: incident reporting and investigation procedure — not covered on the old site}}"
-      ]
-    },
-    {
-      "type": "prose",
-      "id": "quality-assurance",
-      "heading": "Quality assurance",
-      "body": [
-        "{{CONFIRM: quality assurance process — the old site covers quality only as part of the safety management system}}"
-      ]
-    },
-    {
-      "type": "collection",
-      "id": "hse-lead",
-      "heading": "Who leads this",
-      "collection": "team",
-      "slugs": ["olushola-oladejo"]
-    },
-    {
       "type": "list",
       "id": "certifications",
       "heading": "Certifications",
-      "items": [
-        "{{CONFIRM: ISO 9001 / ISO 45001 / ISO 14001 or other certifications, if held}}"
-      ]
+      "items": []
     },
     {
       "type": "cta",
@@ -83,8 +58,10 @@
       "heading": "Assessing us for a tender?",
       "body": "We can provide our safety management system documentation, training records and project HSE history on request.",
       "ctas": [
-        { "label": "Contact us", "href": "/contact" },
-        { "label": "Equipment and capabilities", "href": "/equipment" }
+        {
+          "label": "Contact us",
+          "href": "/contact"
+        }
       ]
     }
   ]

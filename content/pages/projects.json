@@ -2,7 +2,7 @@
   "slug": "projects",
   "title": "Projects",
   "metaTitle": "Projects",
-  "metaDescription": "Selected buildings, roads and water projects delivered by Sato Engineering and Infrastructure Limited for government, university and private clients.",
+  "metaDescription": "Selected buildings, roads and water projects delivered by Sato Engineering & Infrastructure Limited for government, university and private clients.",
   "labels": {
     "breadcrumb": "Breadcrumb",
     "filterLabel": "Filter projects by sector",
@@ -27,12 +27,28 @@
       "collection": "projects",
       "facetMode": "filter",
       "facets": [
-        { "value": "buildings", "label": "Buildings", "serviceSlug": "civil-infrastructure" },
-        { "value": "roads", "label": "Roads", "serviceSlug": "civil-infrastructure" },
-        { "value": "water", "label": "Water", "serviceSlug": "water-resources" },
-        { "value": "energy", "label": "Energy", "serviceSlug": "energy" }
+        {
+          "value": "buildings",
+          "label": "Buildings",
+          "serviceSlug": "construction-civil-engineering"
+        },
+        {
+          "value": "roads",
+          "label": "Roads & Pavements",
+          "serviceSlug": "construction-civil-engineering"
+        },
+        {
+          "value": "water",
+          "label": "Water",
+          "serviceSlug": "water-resources-environmental"
+        },
+        {
+          "value": "energy",
+          "label": "Energy",
+          "serviceSlug": "energy"
+        }
       ],
-      "note": "{{CONFIRM: projects delivered since 2012 — this is the biggest content gap on the site}}"
+      "note": ""
     },
     {
       "type": "cta",
@@ -40,8 +56,14 @@
       "heading": "Planning something similar?",
       "body": "Tell us the scope and we will show you comparable work and the team that would deliver it.",
       "ctas": [
-        { "label": "Contact us", "href": "/contact" },
-        { "label": "Our divisions", "href": "/services" }
+        {
+          "label": "Contact us",
+          "href": "/contact"
+        },
+        {
+          "label": "Our divisions",
+          "href": "/services"
+        }
       ]
     }
   ]

@@ -327,8 +327,8 @@
     "slug": "mobile-flood-light",
     "name": "Mobile flood light",
     "category": "power-and-air",
-    "quantity": "{{CONFIRM: quantity}}",
-    "location": "{{CONFIRM: location}}"
+    "quantity": "",
+    "location": ""
   },
   {
     "slug": "lister-petter-diesel-water-pump",

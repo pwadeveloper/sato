@@ -1,4 +1,13 @@
-# Site content — Sato Engineering and Infrastructure Limited
+# Site content — Sato Engineering & Infrastructure Limited
+
+> **Superseded in part.** The client returned the website information form on
+> 25 September 2026. Where this file disagrees with
+> `docs/decisions/client-answers-v1.md`, that file wins. In particular: the
+> company name now takes an ampersand, there are eight services rather than
+> four, the project list is rebuilt from the current website, the Equipment page
+> is gone, leadership is the founder only, and the mission and vision below are
+> replaced by the client's own wording.
+
 
 Source: satoengineering.com (live site and search-indexed versions, September 2026). Copy has been rewritten for clarity and credibility; facts are preserved as stated on the old site. Anything unverified is marked `{{CONFIRM: ...}}`.
 
@@ -8,7 +17,7 @@ Note on dates: most of the old site's content dates from 2011–2012. Years-of-e
 
 ## Company facts (site.json)
 
-- Registered name: Sato Engineering and Infrastructure Limited {{CONFIRM: exact registered name and effective date of change}}
+- Registered name: Sato Engineering & Infrastructure Limited {{CONFIRM: exact registered name and effective date of change}}
 - Former name: Sato Engineering Nigeria Limited
 - Incorporated: 1997
 - Years in operation: 29 (30th anniversary in 2027)
@@ -27,7 +36,7 @@ Note on dates: most of the old site's content dates from 2011–2012. Years-of-e
 
 **Hero headline:** Engineering Nigeria's infrastructure since 1997.
 
-**Hero subhead:** Sato Engineering and Infrastructure Limited is an indigenous Nigerian engineering firm. For nearly three decades we have designed and built roads, dams, water schemes and buildings for federal and state governments, universities and international development partners, and we now deliver {{CONFIRM: energy division name}} services.
+**Hero subhead:** Sato Engineering & Infrastructure Limited is an indigenous Nigerian engineering firm. For nearly three decades we have designed and built roads, dams, water schemes and buildings for federal and state governments, universities and international development partners, and we now deliver {{CONFIRM: energy division name}} services.
 
 **Primary CTA:** Contact us
 **Secondary CTA:** View our projects
@@ -56,19 +65,19 @@ Feature 4: Fiditi Earth Dam; Ogere Water Supply Scheme rehabilitation; Lower Awb
 **H1:** About Sato
 
 **Intro:**
-Sato Engineering and Infrastructure Limited was incorporated in 1997 as Sato Engineering Nigeria Limited, a fully indigenous Nigerian engineering firm. From our base in Abeokuta, we have delivered civil engineering design and construction across roads, dams, irrigation, buildings and water resources, for clients ranging from federal ministries to international development partners.
+Sato Engineering & Infrastructure Limited was incorporated in 1997 as Sato Engineering Nigeria Limited, a fully indigenous Nigerian engineering firm. From our base in Abeokuta, we have delivered civil engineering design and construction across roads, dams, irrigation, buildings and water resources, for clients ranging from federal ministries to international development partners.
 
 **Our new name:**
-In {{CONFIRM: year}} the company became Sato Engineering and Infrastructure Limited. The new name reflects how our work has grown: beyond construction into the full infrastructure lifecycle, including energy {{CONFIRM: wording}}. Our ownership, leadership and commitments are unchanged.
+In {{CONFIRM: year}} the company became Sato Engineering & Infrastructure Limited. The new name reflects how our work has grown: beyond construction into the full infrastructure lifecycle, including energy {{CONFIRM: wording}}. Our ownership, leadership and commitments are unchanged.
 
 **How we work:**
 We build a dedicated team for each project, drawing on a core leadership group and a pool of experienced engineers, technicians, foremen and specialists matched to the project's scope. Clients get the right expertise for the job, led by people who have delivered with Sato for years.
 
-**Mission:**
-To deliver value-added engineering and construction services that meet and exceed our clients' requirements, through the performance of every member of our team, and to build relationships that last.
+**Mission:** (client's approved wording, 25 September 2026)
+To deliver innovative, sustainable and value-driven engineering and infrastructure solutions that meet the highest standards, exceed client expectations and create lasting value.
 
-**Vision:**
-To be the leading indigenous engineering company in Nigeria and, in time, Africa, delivering projects that consistently meet international standards.
+**Vision:** (client's approved wording, 25 September 2026)
+To be a globally recognized engineering and infrastructure company, renowned for excellence, innovation and world-class project delivery.
 
 **Recognition:**
 - Best Erosion Control and Construction Engineering Company Award, 2012 {{CONFIRM: awarding body}}
@@ -273,6 +282,6 @@ Offices, phone and email from site.json. Contact form fields: name, organisation
 
 ## Footer
 
-Sato Engineering and Infrastructure Limited — formerly Sato Engineering Nigeria Limited. RC {{CONFIRM}}. Incorporated 1997.
+Sato Engineering & Infrastructure Limited — formerly Sato Engineering Nigeria Limited. RC {{CONFIRM}}. Incorporated 1997.
 Links: About, Services, Projects, HSE, Contact.
-© {current year} Sato Engineering and Infrastructure Limited.
+© {current year} Sato Engineering & Infrastructure Limited.

@@ -1,104 +1,209 @@
 [
   {
-    "slug": "civil-infrastructure",
-    "name": "Civil & Infrastructure",
+    "slug": "construction-civil-engineering",
+    "name": "Construction & Civil Engineering",
+    "group": "engineering",
+    "order": 1,
+    "reviewStatus": "approved",
     "shortSummary": "Roads, buildings, earthworks, drainage and erosion control.",
     "summary": "Design and construction of roads, buildings and civil works, from earthworks to finished surfaces.",
     "body": [
-      "Civil engineering is where Sato began. We design and build the infrastructure that institutions and communities depend on, and we manage every stage, from site preparation to handover."
+      "Civil engineering is where Sato began. We design and build the infrastructure that institutions and communities depend on, and we manage every stage, from site preparation to handover.",
+      "Our own plant and workshop mean we mobilise without waiting on hired equipment, and keep control of quality and programme on site."
     ],
     "capabilities": [
       "Civil engineering design",
       "Asphaltic concrete road construction and road rehabilitation",
+      "Pavement design, construction and repair, including heavy-duty terminal pavements",
       "Earthworks: grading, laterite filling, sub-base compaction",
-      "Drainage systems and walkways",
+      "Drainage systems, kerbs, culverts and walkways",
       "Building construction: academic, administrative, laboratory, residential and office buildings",
       "Renovation and conversion of existing buildings",
       "Erosion control"
     ],
-    "relatedProjectSlugs": [
-      "funaab-colplant-building-phase-ii",
-      "funaab-academic-building-complex-block-b",
-      "mcpherson-administrative-block-and-laboratory",
-      "lagos-state-road-rehabilitation",
-      "fce-osiele-campus-roads-and-walkways"
-    ],
-    "image": {
-      "src": "/images/services/roadworks-completed-carriageway.webp",
-      "alt": "Completed asphalt carriageway with kerbed median",
-      "width": 1920,
-      "height": 1440
-    },
-    "order": 1
+    "relatedProjectSlugs": [],
+    "registrations": [],
+    "image": null
   },
   {
-    "slug": "water-resources",
-    "name": "Water Resources",
-    "shortSummary": "Earth dams, irrigation, water supply schemes, boreholes and river works.",
-    "summary": "Dams, irrigation, water supply and river works for government and institutional clients.",
+    "slug": "electrical-engineering",
+    "name": "Electrical Engineering",
+    "group": "engineering",
+    "order": 2,
+    "reviewStatus": "draft",
+    "shortSummary": "Power, instrumentation, metering and electrical installations.",
+    "summary": "Electrical installation, instrumentation and metering for buildings, water schemes and industrial sites.",
     "body": [
-      "Water infrastructure has been central to Sato's work for decades, with clients including the Ogun-Osun River Basin Development Authority, state water corporations and the Federal Ministry of Water Resources."
+      "Sato was founded by an electrical engineer, and electrical work runs through the firm's project record — from the pump control and high lift installations on water supply schemes to the supply and installation of bulk and prepayment metering for utilities and development programmes.",
+      "We deliver electrical works as part of a wider contract or as a package in their own right, and we commission what we install."
+    ],
+    "capabilities": [
+      "Electrical installation for buildings and industrial sites",
+      "Power distribution and switchgear installation",
+      "Pump control panels and motor control centres",
+      "Instrumentation and control systems",
+      "Supply, installation and commissioning of bulk, prepayment and electromagnetic meters",
+      "Solar power systems, including solar-powered borehole installations",
+      "Standby generation and changeover systems",
+      "Testing, commissioning and handover"
+    ],
+    "relatedProjectSlugs": [],
+    "registrations": [],
+    "image": null
+  },
+  {
+    "slug": "mechanical-engineering",
+    "name": "Mechanical Engineering",
+    "group": "engineering",
+    "order": 3,
+    "reviewStatus": "draft",
+    "shortSummary": "Pumps, pipework, plant installation and mechanical maintenance.",
+    "summary": "Mechanical installation and maintenance for water, building services and plant.",
+    "body": [
+      "Sato's mechanical work sits alongside its civil and water engineering: pump houses, high lift pump installation, pipework and the plant that keeps a scheme running. The firm maintains its own fleet and workshop, which is where much of this capability was built.",
+      "We take on mechanical packages within our own contracts and as standalone installation and maintenance work."
+    ],
+    "capabilities": [
+      "Pump installation, commissioning and overhaul",
+      "Pipework fabrication and installation, including ductile iron and UPVC mains",
+      "Pumping station and pump house mechanical fit-out",
+      "Static and rotating equipment installation",
+      "Mechanical building services",
+      "Workshop fabrication and welding",
+      "Planned and corrective maintenance of plant and equipment"
+    ],
+    "relatedProjectSlugs": [],
+    "registrations": [],
+    "image": null
+  },
+  {
+    "slug": "water-resources-environmental",
+    "name": "Water Resources & Environmental Engineering",
+    "group": "engineering",
+    "order": 4,
+    "reviewStatus": "approved",
+    "shortSummary": "Dams, water supply, boreholes, river works, drainage and erosion control.",
+    "summary": "Dams, water supply, boreholes and river works, with the drainage, flood and erosion control that protects them.",
+    "body": [
+      "Water infrastructure has been central to Sato's work for decades, with clients including the Ogun-Osun River Basin Development Authority, state water corporations, the Federal Ministry of Water Resources and the World Bank.",
+      "The environmental side of the same discipline — flood and erosion control, river training, drainage and groundwater — is delivered by the same teams, because on most of these schemes they are one job."
     ],
     "capabilities": [
       "Earth dam construction",
       "Irrigation development",
-      "Water supply scheme construction and rehabilitation, including pump houses",
+      "Water supply scheme construction and rehabilitation, including intake structures and pump houses",
       "Water treatment facilities",
       "Sewage systems",
       "Borehole drilling, including solar-powered boreholes, with our own drilling rig",
-      "River dredging and stream channelization"
-    ],
-    "relatedProjectSlugs": [
-      "fiditi-earth-dam",
-      "ogere-water-supply-scheme-rehabilitation",
-      "lower-awba-stream-channelization",
-      "ogungbade-river-dredging",
-      "solar-powered-boreholes"
-    ],
-    "image": {
-      "src": "/images/services/water-ductile-iron-pipes.webp",
-      "alt": "Stacked ductile iron pipes for water distribution",
-      "width": 1600,
-      "height": 1200
-    },
-    "order": 2
-  },
-  {
-    "slug": "electrical-mechanical",
-    "name": "Electrical & Mechanical",
-    "shortSummary": "{{CONFIRM: one-line summary from client}}",
-    "summary": "{{CONFIRM: client to provide}}",
-    "body": [
-      "Sato was founded by an electrical engineer, and electrical and mechanical engineering services have been part of our offering alongside our civil and water work. {{CONFIRM: client to provide detail — scope, typical projects}}"
-    ],
-    "capabilities": [
-      "{{CONFIRM: list from client}}"
+      "Hydrogeology and groundwater development",
+      "River dredging and stream channelization",
+      "Flood and erosion control"
     ],
     "relatedProjectSlugs": [],
-    "image": {
-      "src": "/images/services/water-high-lift-pump-panel.webp",
-      "alt": "Installed high lift pump control panel at Sagamu intake",
-      "width": 1600,
-      "height": 1200
-    },
-    "order": 3
+    "registrations": [],
+    "image": null
   },
   {
     "slug": "energy",
-    "name": "{{CONFIRM: energy division name — e.g. \"Energy\", \"Oil & Gas\", \"Energy & Petroleum Services\"}}",
-    "shortSummary": "{{CONFIRM: one-line summary from client}}",
-    "summary": "{{CONFIRM: client to provide}}",
+    "name": "Energy Services",
+    "group": "energy",
+    "order": 5,
+    "reviewStatus": "draft",
+    "shortSummary": "Asset integrity, facility engineering and renewable energy.",
+    "summary": "Engineering support for energy assets, from integrity management to renewable generation.",
     "body": [
-      "{{CONFIRM: client's detailed services list, reviewed by Engr. Wale Osamiluyi. May be adapted from partner reference sites (OGAP Engineering via Wayback Machine, Sunrise Engineering) once links are provided.}}"
+      "Energy Services brings Sato's engineering and maintenance disciplines to power and process assets: keeping plant fit for purpose across its life, and building the generation and distribution that sites depend on.",
+      "The division is delivered with technical partners whose specialist teams complement Sato's site engineering and project management. Sato is building this capability deliberately, and will describe delivered work here as it is completed."
     ],
     "capabilities": [
-      "{{CONFIRM: list}}"
+      "Asset integrity management across design, maintenance, inspection and operations",
+      "Life-cycle integrity monitoring of static and rotating equipment",
+      "Facility and production engineering support",
+      "Compliance with relevant regulations and industry codes",
+      "Risk assessment and reduction to as low as reasonably practicable",
+      "Solar generation and hybrid power systems",
+      "Renewable and bio-energy technologies",
+      "Energy efficiency assessment"
     ],
     "relatedProjectSlugs": [],
-    "registrations": [
-      "{{CONFIRM: NOGICJQS / NCDMB, NipeX, NUPRC permits}}"
+    "registrations": [],
+    "image": null
+  },
+  {
+    "slug": "oil-gas",
+    "name": "Oil & Gas Services",
+    "group": "energy",
+    "order": 6,
+    "reviewStatus": "draft",
+    "shortSummary": "Subsurface studies, field development planning and pipeline engineering.",
+    "summary": "Subsurface, field development and pipeline engineering support for upstream operators.",
+    "body": [
+      "Sato offers upstream engineering support through its technical partners, covering the subsurface and field development work that sits behind an investment decision, and the pipeline and facilities engineering that follows it.",
+      "This division is addressed to operators and their procurement and vendor-verification teams. Sato's own record is in civil, water and electrical infrastructure; the oil and gas capability below is delivered with partners and is described as capability, not as completed Sato projects."
     ],
-    "image": null,
-    "order": 4
+    "capabilities": [
+      "Integrated subsurface studies",
+      "Geological studies and formation evaluation",
+      "Seismic data processing, interpretation and inversion",
+      "Reservoir planning and optimisation",
+      "Field development planning and conceptualisation",
+      "Production and reservoir management",
+      "Dynamic pipeline simulation and pipeline integrity monitoring",
+      "Integrated asset modelling and optimisation",
+      "Hydrocarbon accounting",
+      "Civil, structural and electrical works for onshore facilities"
+    ],
+    "relatedProjectSlugs": [],
+    "registrations": [],
+    "image": null
+  },
+  {
+    "slug": "digital-twin",
+    "name": "Digitalization & Digital Twin Services",
+    "group": "technology",
+    "order": 7,
+    "reviewStatus": "draft",
+    "shortSummary": "Asset data, analytics and virtual models of physical infrastructure.",
+    "summary": "Turning asset data into a working digital model that operators can plan and maintain from.",
+    "body": [
+      "A digital twin is a maintained virtual model of a physical asset, fed by its own operating and inspection data, used to plan maintenance, test changes before they are made and see condition without going to site.",
+      "Sato approaches this from the infrastructure side: the firm already supplies and installs the metering and instrumentation that such a model depends on. Delivery is with technical partners, and Sato has no completed digital twin projects to cite yet."
+    ],
+    "capabilities": [
+      "Virtual asset management and digital twin models",
+      "Asset data capture, structuring and management",
+      "Big data platforms and analytics for infrastructure and energy assets",
+      "Instrumentation and telemetry to feed asset models",
+      "Condition and performance dashboards",
+      "Digitalisation of maintenance and inspection records",
+      "Integration with metering and utility billing data"
+    ],
+    "relatedProjectSlugs": [],
+    "registrations": [],
+    "image": null
+  },
+  {
+    "slug": "research-innovation",
+    "name": "Research, Technology & Innovation",
+    "group": "technology",
+    "order": 8,
+    "reviewStatus": "draft",
+    "shortSummary": "Applied studies, technical training and new engineering methods.",
+    "summary": "Applied research, technical training and the evaluation of new methods and technologies.",
+    "body": [
+      "Sato invests in the technical development of its own people and, with partners, in applied studies that test whether a method or technology is worth adopting on Nigerian projects.",
+      "This division is new. It is offered as a capability rather than a record of delivered research, and its scope will be described more precisely as work is completed."
+    ],
+    "capabilities": [
+      "Applied engineering studies and feasibility work",
+      "Evaluation of new materials, methods and technologies",
+      "Technical training for client and contractor teams",
+      "Petro-technical and facility management training",
+      "Cost engineering and estimation",
+      "Knowledge transfer and capability building on projects"
+    ],
+    "relatedProjectSlugs": [],
+    "registrations": [],
+    "image": null
   }
 ]

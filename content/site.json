@@ -1,15 +1,15 @@
 {
-  "name": "Sato Engineering and Infrastructure Limited",
+  "name": "Sato Engineering & Infrastructure Limited",
   "url": "https://www.satoengineering.com",
   "shortName": "Sato",
-  "registeredName": "Sato Engineering and Infrastructure Limited {{CONFIRM: exact registered name and effective date of change}}",
+  "registeredName": "Sato Engineering & Infrastructure Limited",
   "formerName": "Sato Engineering Nigeria Limited",
   "formerNameLabel": "Formerly Sato Engineering Nigeria Limited",
-  "tagline": "Quality engineering since 1997 {{CONFIRM: client happy with the adapted motto}}",
-  "description": "Sato Engineering and Infrastructure Limited, formerly Sato Engineering Nigeria Limited, is an indigenous Nigerian engineering firm incorporated in 1997, delivering civil, water resources, electrical and mechanical engineering for federal and state governments, universities and international development partners.",
+  "tagline": "Quality engineering since 1997",
+  "description": "Sato Engineering & Infrastructure Limited, formerly Sato Engineering Nigeria Limited, is an indigenous Nigerian engineering firm incorporated in 1997, delivering construction and civil, electrical, mechanical, water resources, energy, oil and gas and digital engineering for federal and state governments, universities and international development partners.",
   "foundedYear": 1997,
   "anniversaryNote": "30th anniversary in 2027",
-  "rcNumber": "{{CONFIRM: CAC RC number}}",
+  "rcNumber": "317208",
   "offices": [
     {
       "id": "head-office",
@@ -18,17 +18,8 @@
       "state": "Ogun State",
       "address": "Abeokuta, Ogun State {{CONFIRM: full street address}}",
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Abeokuta%2C+Ogun+State%2C+Nigeria",
-      "isPrimary": true
-    },
-    {
-      "id": "lagos-office",
-      "label": "Branch office",
-      "city": "Lagos",
-      "state": "Lagos State",
-      "address": "Lagos {{CONFIRM: still active, full address}}",
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lagos%2C+Nigeria",
-      "note": "Opened January 2012",
-      "isPrimary": false
+      "isPrimary": true,
+      "note": ""
     }
   ],
   "phones": [
@@ -37,14 +28,15 @@
       "label": "Telephone",
       "value": "+234 803 330 3278",
       "href": "tel:+2348033303278",
-      "note": "{{CONFIRM: from a third-party directory listing, verify before use}}"
+      "note": ""
     }
   ],
   "emails": [
     {
       "id": "general",
       "label": "Email",
-      "value": "{{CONFIRM: general enquiries email}}"
+      "value": "info@satoengineering.com",
+      "href": "mailto:info@satoengineering.com"
     }
   ],
   "contactFormEndpoint": "",
@@ -62,9 +54,7 @@
     {
       "id": "oil-and-gas",
       "label": "Oil and gas registrations",
-      "items": [
-        "{{CONFIRM: NOGICJQS / NCDMB, NipeX, NUPRC permits, if held}}"
-      ]
+      "items": []
     }
   ],
   "factLabels": {
@@ -74,13 +64,14 @@
     "yearsInOperation": "Years in operation",
     "rcNumber": "RC number",
     "headOffice": "Head office",
-    "registrations": "Professional registrations"
+    "registrations": "Professional registrations",
+    "nameChanged": "Name changed"
   },
   "skipLinkLabel": "Skip to content",
   "navLabel": "Main navigation",
   "menuOpenLabel": "Menu",
   "menuCloseLabel": "Close menu",
-  "logoAlt": "Sato Engineering and Infrastructure Limited",
+  "logoAlt": "Sato Engineering & Infrastructure Limited",
   "nav": [
     {
       "label": "About",
@@ -107,16 +98,12 @@
       "href": "/hse"
     },
     {
-      "label": "Equipment",
-      "href": "/equipment"
-    },
-    {
       "label": "Contact",
       "href": "/contact"
     }
   ],
   "footer": {
-    "legal": "Sato Engineering and Infrastructure Limited — formerly Sato Engineering Nigeria Limited. RC {{CONFIRM: CAC RC number}}. Incorporated 1997.",
+    "legal": "Sato Engineering & Infrastructure Limited — formerly Sato Engineering Nigeria Limited. RC 317208. Incorporated 1997.",
     "navLabel": "Footer navigation",
     "links": [
       {
@@ -140,7 +127,7 @@
         "href": "/contact"
       }
     ],
-    "copyright": "© {year} Sato Engineering and Infrastructure Limited."
+    "copyright": "© {year} Sato Engineering & Infrastructure Limited."
   },
   "heroImages": [
     {
@@ -170,8 +157,11 @@
   ],
   "ogImage": {
     "src": "/images/og/default.png",
-    "alt": "Sato Engineering and Infrastructure Limited — engineering Nigeria's infrastructure since 1997",
+    "alt": "Sato Engineering & Infrastructure Limited — quality engineering since 1997",
     "width": 1200,
     "height": 630
-  }
+  },
+  "nameChangeDate": "3 August 2026",
+  "contactFormRecipient": "info@satoengineering.com",
+  "social": []
 }

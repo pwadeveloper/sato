@@ -190,7 +190,7 @@ Everything else on the page stays quiet so this reads as the anchor.
 │ Engineering Nigeria's                                              │  hero display 65px, wdth 118, w=7col
 │ infrastructure since 1997.                                         │
 │                                                                    │
-│ Sato Engineering and Infrastructure Limited is an       [ photo ]  │  lead 21px, w=6col
+│ Sato Engineering & Infrastructure Limited is an       [ photo ]  │  lead 21px, w=6col
 │ indigenous Nigerian engineering firm…                   [ full-   ]│  image cols 8–12, full-bleed right
 │                                                         [ bleed  ] │
 │ [ Contact us ]  View our projects                       [        ] │  primary btn + text link

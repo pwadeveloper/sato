@@ -103,7 +103,7 @@ export default function AboutPage() {
             >
               {/* The former name, pulled out of the paragraph and stated on its
                   own — this is the line a visitor checks against their records. */}
-              <p className="border-l-[3px] border-laterite py-1 pl-5 text-base font-medium text-asphalt wdth-body">
+              <p className="border-l-[3px] border-brand-deep py-1 pl-5 text-base font-medium text-asphalt wdth-body">
                 <RichText text={site.formerNameLabel} />
               </p>
             </ProseBlock>
