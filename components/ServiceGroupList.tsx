@@ -67,6 +67,12 @@ export function ServiceGroupList({
                   "
                 >
                   <span className="text-base text-steel-ink wdth-body text-pretty">
+                    {/* The row's visible text is the summary, so the link
+                        says where it goes to a screen reader too. */}
+                    <span className="sr-only">
+                      <RichText text={solo.name} />
+                      {" — "}
+                    </span>
                     <RichText text={solo.shortSummary} />
                   </span>
                   <span

@@ -3,7 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { RichText } from "./RichText";
-import { bandItems, bandMenuHref } from "@/lib/service-band";
+import { bandHref, bandItems } from "@/lib/service-band";
 import { cn } from "@/lib/cn";
 
 export interface ServicesMenuBand {
@@ -112,11 +112,26 @@ export function ServicesMenu({ label, href, bands, tone }: ServicesMenuProps) {
       >
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {bands.map((band) => {
-            const categoryHref = bandMenuHref(band);
+            const categoryHref = bandHref(band);
             const items = bandItems(band);
-            // A category of one has no sub-items, so its column would sit
-            // empty. Its summary goes there instead.
+            // A category of one has no sub-items to list. Its row shows the
+            // service's summary instead of repeating the category name that
+            // is already directly above it.
             const solo = items.length === 0 ? band.services[0] : undefined;
+
+            const rowClass =
+              "group flex items-start justify-between gap-3 py-2 text-sm " +
+              "text-concrete no-underline wdth-body transition-colors " +
+              "duration-150 hover:text-brand-light";
+
+            const arrow = (
+              <span
+                aria-hidden="true"
+                className="shrink-0 leading-6 text-steel-light transition-colors duration-150 group-hover:text-brand-light"
+              >
+                &rarr;
+              </span>
+            );
 
             return (
               <div key={band.group}>
@@ -126,10 +141,16 @@ export function ServicesMenu({ label, href, bands, tone }: ServicesMenuProps) {
                     onClick={() => setOpen(false)}
                     className={cn(
                       headingClass,
-                      "no-underline transition-colors duration-150 hover:text-concrete",
+                      "group flex items-center gap-2 no-underline transition-colors duration-150 hover:text-concrete",
                     )}
                   >
                     <RichText text={band.label} />
+                    <span
+                      aria-hidden="true"
+                      className="text-[0.9em] leading-none transition-transform duration-150 group-hover:translate-x-0.5"
+                    >
+                      &rarr;
+                    </span>
                   </Link>
                 ) : (
                   <p className={headingClass}>
@@ -137,27 +158,45 @@ export function ServicesMenu({ label, href, bands, tone }: ServicesMenuProps) {
                   </p>
                 )}
 
-                {solo ? (
-                  <p className="mt-3 text-sm text-steel-light wdth-body text-pretty">
-                    <RichText text={solo.shortSummary} />
-                  </p>
-                ) : null}
-
-                {items.length ? (
-                  <ul className={cn("mt-2", categoryHref && "border-l border-rule-dark pl-3")}>
-                    {items.map((service) => (
+                {/* Every category gets a list, so the four columns read the
+                    same way and every destination is a row. */}
+                <ul className={cn("mt-2", categoryHref && "border-l border-rule-dark pl-3")}>
+                  {solo ? (
+                    <li>
+                      <Link
+                        href={`/services/${solo.slug}`}
+                        onClick={() => setOpen(false)}
+                        className={rowClass}
+                      >
+                        {/* The row's visible text is the summary, so the
+                            link says where it goes to a screen reader too. */}
+                        <span>
+                          <span className="sr-only">
+                            <RichText text={solo.name} />
+                            {" — "}
+                          </span>
+                          <RichText text={solo.shortSummary} />
+                        </span>
+                        {arrow}
+                      </Link>
+                    </li>
+                  ) : (
+                    items.map((service) => (
                       <li key={service.slug}>
                         <Link
                           href={`/services/${service.slug}`}
                           onClick={() => setOpen(false)}
-                          className="block py-2 text-sm text-concrete no-underline wdth-body transition-colors duration-150 hover:text-brand-light"
+                          className={rowClass}
                         >
-                          <RichText text={service.name} />
+                          <span>
+                            <RichText text={service.name} />
+                          </span>
+                          {arrow}
                         </Link>
                       </li>
-                    ))}
-                  </ul>
-                ) : null}
+                    ))
+                  )}
+                </ul>
               </div>
             );
           })}
