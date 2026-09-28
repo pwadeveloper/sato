@@ -64,7 +64,9 @@ const menus: HeaderMenu[] = [
             }))
           : (solo?.sectionNav ?? []).map((section) => ({
               label: section.label,
-              href: `/services/${solo?.slug}#${section.id}`,
+              // A section that has moved off the page carries its own href —
+              // Oil & Gas "Projects" now points at /projects/oil-gas.
+              href: section.href ?? `/services/${solo?.slug}#${section.id}`,
             })),
       };
     }),

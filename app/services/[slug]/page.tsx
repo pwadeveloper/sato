@@ -11,13 +11,10 @@ import { CtaBand } from "@/components/CtaBand";
 import { Heading } from "@/components/Heading";
 import { PageHeader } from "@/components/PageHeader";
 import {
-  PartnerAttribution,
   PartnerExperience,
-  PartnerProjects,
   PartnerRecognition,
 } from "@/components/PartnerExperience";
 import { ProcurementList } from "@/components/ProcurementList";
-import { ProjectCard } from "@/components/ProjectCard";
 import { RegistrationsBlock } from "@/components/RegistrationsBlock";
 import { RelatedServices } from "@/components/RelatedServices";
 import { RichText } from "@/components/RichText";
@@ -25,12 +22,12 @@ import { Section } from "@/components/Section";
 import { SectionNav } from "@/components/SectionNav";
 import { ServiceListBlock } from "@/components/ServiceListBlock";
 import { SolutionsPyramid } from "@/components/SolutionsPyramid";
+import { TextLink } from "@/components/TextLink";
 import { ValueMap } from "@/components/ValueMap";
 
 import {
-  getCategoryForProject,
   getPage,
-  getProject,
+  getProjectCategories,
   getSection,
   getService,
   getServiceBands,
@@ -39,7 +36,8 @@ import {
 } from "@/lib/content";
 import { buildServiceMetadata } from "@/lib/metadata";
 import { isReviewMode } from "@/lib/review-mode";
-import type { CtaSection } from "@/lib/content-types";
+import type { CollectionFacet, CtaSection } from "@/lib/content-types";
+import { cn } from "@/lib/cn";
 
 type ServicePageProps = { params: Promise<{ slug: string }> };
 
@@ -86,8 +84,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
     ? getSection(servicesPage, `cta-${service.slug}`, "cta")
     : getSection(servicesPage, "cta-default", "cta");
 
-  const relatedProjects = service.relatedProjectSlugs.map((projectSlug) =>
-    getProject(projectSlug),
+  // Projects live under Projects, not under Services. A service links out to
+  // the categories that hold its work — there may be none (Energy, Digital
+  // Twin and Research have no category yet, and show no link) or more than
+  // one (Civil Engineering & Construction holds both Buildings and Roads).
+  const projectCategories = getProjectCategories().filter(
+    (category) => category.serviceSlug === service.slug,
   );
 
   const relatedServices = (service.relatedServiceSlugs ?? []).map((related) =>
@@ -211,6 +213,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 className="mt-14"
               />
             ) : null}
+
+            <CategoryProjectLinks
+              categories={projectCategories}
+              label={labels.projectsLink ?? ""}
+              className="mt-14"
+            />
           </Container>
         </Section>
 
@@ -232,12 +240,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </Container>
           </Section>
         ) : null}
-
-        <RelatedProjects
-          projects={relatedProjects}
-          heading={labels.relatedProjects ?? ""}
-          showProjectDates={site.showProjectDates}
-        />
 
         <Section tone="concrete" labelledBy="backed-by">
           <Container>
@@ -428,7 +430,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </Section>
 
       {/* ----------------------------------------------------------- projects */}
-      {partner ? (
+      {/*
+        The record itself moved to /projects/oil-gas, with the rest of the
+        project categories. The anchor stays so an existing `#projects` link
+        still lands on something — it finds this block and the link on to the
+        table, rather than a heading over nothing.
+      */}
+      {projectCategories.length ? (
         <Section tone="concrete" id="projects" labelledBy="projects-heading">
           <Container>
             <Heading
@@ -438,18 +446,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
               size="h2"
             />
 
-            {/* Whose projects these are, before the first row of the table. */}
-            <PartnerAttribution
-              partner={partner}
-              headingId="partner-experience"
-              headingLevel={3}
-              className="mt-8"
-            />
-
-            <PartnerProjects
-              partner={partner}
-              headingId="partner-experience"
-              className="mt-12"
+            <CategoryProjectLinks
+              categories={projectCategories}
+              label={labels.projectsLink ?? ""}
+              intro={projectCategories[0]?.intro}
+              className="mt-6"
             />
           </Container>
         </Section>
@@ -499,12 +500,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </Section>
       ) : null}
 
-      <RelatedProjects
-        projects={relatedProjects}
-        heading={labels.relatedProjects ?? ""}
-        showProjectDates={site.showProjectDates}
-      />
-
       <CtaBand
         heading={cta.heading}
         body={cta.body}
@@ -515,39 +510,45 @@ export default async function ServicePage({ params }: ServicePageProps) {
   );
 }
 
-/** Sato's own projects for this service. Never the partner team's. */
-function RelatedProjects({
-  projects,
-  heading,
-  showProjectDates,
+/**
+ * "See our Buildings & Construction projects" — one link per category.
+ *
+ * A service used to list project cards. Every project now lives under
+ * Projects, so a service points at the category instead: one link, at the
+ * foot of the page, going to the place that holds the whole record rather
+ * than to a sample of it.
+ */
+function CategoryProjectLinks({
+  categories,
+  label,
+  intro,
+  className,
 }: {
-  projects: ReturnType<typeof getProject>[];
-  heading: string;
-  showProjectDates: boolean;
+  categories: CollectionFacet[];
+  label: string;
+  intro?: string;
+  className?: string;
 }) {
-  if (!projects.length) return null;
+  if (!categories.length || !label) return null;
 
   return (
-    <Section tone="concrete" labelledBy="related-projects">
-      <Container>
-        <Heading level={2} text={heading} id="related-projects" size="h2" />
+    <div className={cn(className)}>
+      {intro ? (
+        <p className="max-w-(--container-measure) text-base text-steel-ink wdth-body text-pretty">
+          <RichText text={intro} />
+        </p>
+      ) : null}
 
-        <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => {
-            const category = getCategoryForProject(project);
-            return (
-              <li key={project.slug} className="contents">
-                <ProjectCard
-                  project={project}
-                  sectorLabel={category?.label ?? project.sector}
-                  sectorShortLabel={category?.shortLabel}
-                  showDates={showProjectDates}
-                />
-              </li>
-            );
-          })}
-        </ul>
-      </Container>
-    </Section>
+      <ul className={cn("flex flex-col gap-2", intro && "mt-5")}>
+        {categories.map((category) => (
+          <li key={category.value}>
+            <TextLink
+              label={label.replace("{category}", category.label)}
+              href={`/projects/${category.slug}`}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

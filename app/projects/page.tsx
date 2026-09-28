@@ -12,7 +12,7 @@ import { TextLink } from "@/components/TextLink";
 import {
   getPage,
   getProjectCategories,
-  getProjectsInCategory,
+  getProjectCount,
   getSection,
   getSite,
 } from "@/lib/content";
@@ -28,7 +28,7 @@ const labels = page.labels ?? {};
 export const metadata: Metadata = buildPageMetadata(page, site);
 
 /**
- * Projects: three doors, no list.
+ * Projects: four doors, no list.
  *
  * The page used to be every project on one scroll behind a filter. The
  * client's objection was that someone who came for water work had to scroll
@@ -37,7 +37,9 @@ export const metadata: Metadata = buildPageMetadata(page, site);
  *
  * So the categories are the page. Each tile says what it holds and how much
  * of it, and the count comes from the content rather than a number anyone
- * has to remember to update.
+ * has to remember to update. `getProjectCount` is what lets Oil & Gas sit
+ * here beside the other three: its rows live on the service rather than in
+ * projects.json, and the tile neither knows nor cares.
  */
 export default function ProjectsPage() {
   const categories = getProjectCategories();
@@ -57,9 +59,9 @@ export default function ProjectsPage() {
             <RichText text={labels.categoriesLabel ?? page.title} />
           </h2>
 
-          <ul className="grid gap-6 md:grid-cols-3">
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((category) => {
-              const count = getProjectsInCategory(category).length;
+              const count = getProjectCount(category);
               const countLabel = (
                 count === 1 ? labels.countOne ?? "" : labels.countMany ?? ""
               ).replace("{n}", String(count));
@@ -73,7 +75,7 @@ export default function ProjectsPage() {
                           src={category.image.src}
                           alt={category.image.alt}
                           fill
-                          sizes="(min-width: 768px) 33vw, 100vw"
+                          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                           className="object-cover"
                         />
                       </div>

@@ -166,11 +166,22 @@ export interface CollectionFacet {
   children?: CollectionFacet[];
   /**
    * Route segment, where the facet has a page of its own — a project category
-   * lives at `/projects/<slug>`. The routes are three static files (a second
+   * lives at `/projects/<slug>`. The routes are static files (a second
    * dynamic segment cannot sit beside `[slug]`), so a new category needs a
    * folder as well as this entry.
    */
   slug?: string;
+  /**
+   * Where this category's projects come from.
+   *
+   * `projects` (the default) means `projects.json`, matched on `sector`.
+   * `partner` means the `partner.projects` table on the service named by
+   * `serviceSlug` — a record held as client/project/year rows rather than as
+   * full project entries, because those rows have no scope, no photographs
+   * and no detail page. The category still renders as a category; only its
+   * source and its layout differ.
+   */
+  source?: "projects" | "partner";
   /** One line under the category heading, on its landing tile and its page. */
   intro?: ConfirmableText;
   /**
@@ -390,6 +401,15 @@ export interface ServiceSection {
   /** The anchor, e.g. `capabilities` -> `#capabilities`. */
   id: string;
   label: ConfirmableText;
+  /**
+   * Where the item points, when the section is not on this page.
+   *
+   * The Oil & Gas projects moved to `/projects/oil-gas`, and the sub-nav item
+   * has to follow them. The anchor stays on the page either way, so an old
+   * `#projects` link still lands somewhere sensible — it just finds a short
+   * block with this link in it rather than the table itself.
+   */
+  href?: string;
 }
 
 /**
@@ -442,11 +462,33 @@ export interface CapabilityBlock {
   items: ConfirmableText[];
 }
 
-/** A heading over a plain list. Used for solutions and "also covered". */
+/** One named item in a service list, where a bare phrase needs explaining. */
+export interface ServiceListItem {
+  name: ConfirmableText;
+  /** One or two sentences, set under the name in lighter text. */
+  description?: ConfirmableText;
+}
+
+/** A subheading within a service list, holding its own items. */
+export interface ServiceListGroup {
+  id: string;
+  heading: ConfirmableText;
+  items: ServiceListItem[];
+}
+
+/**
+ * A heading over a list. Used for solutions and "also covered".
+ *
+ * A list is either flat (`items`, bare phrases) or grouped (`groups`, each
+ * with a subheading and items that may carry a description). Solutions grew
+ * past the point where one unbroken column of thirteen phrases could be
+ * scanned, so it takes the grouped form; everything else stays flat.
+ */
 export interface ServiceList {
   heading: ConfirmableText;
   intro?: ConfirmableText;
   items: ConfirmableText[];
+  groups?: ServiceListGroup[];
 }
 
 /** One class of equipment Sato sources, and the makes offered in it. */

@@ -10,6 +10,43 @@
 
 ## Client to confirm
 
+### Client to send
+
+Promised in the fourth round of feedback, nothing needed from us until it
+arrives.
+
+- **Digital twin content and related information.** Will update the
+  Digitalization & Digital Twin Services page.
+- **One consolidated document with additional slide content**, to follow the
+  next meeting with the technical partner.
+
+### Decisions from the fourth round of feedback
+
+- **The bio, verbatim.** Your own version is now on `/leadership` word for
+  word, with the country names kept for every institution, and the
+  postnominals reordered to match it — FNSE, FNIEEE, FNIWE, FRICS. The
+  no-country rule still applies to every other word on the site; the bio is
+  the single exemption and the build enforces that it stays single.
+- **One wording suggestion, for Mudia to raise — optional.** The third
+  paragraph currently reads "a member of the Society of Petroleum Engineers
+  (SPE), Nigerian Institute of Management, a Life Member…". Suggest to the
+  client: "a member of the Society of Petroleum Engineers (SPE) **and the**
+  Nigerian Institute of Management, a Life Member…". It reads as a list item
+  dropped mid-sentence as it stands. **Not changed on the site** — it is his
+  text and stays as written unless he approves.
+- **Oil and gas projects are now presented as Sato's own.** On your
+  instruction, the partner team's twenty-six projects, the wider engagements
+  and the case study moved to `/projects/oil-gas` and the attribution lines
+  were removed. The reservation about vendor verification is recorded in
+  `docs/services-for-review.md`; the decision is yours and the site reflects
+  it.
+- **The clients page does not yet match.** Seventeen oil and gas clients on
+  `/clients` still appear under "Oil & Gas: clients served through our
+  technical partners". Nobody asked for that to change, so it has not been
+  touched — but a reader now meets attributed clients and unattributed
+  projects on the same site. **Which way should it go?** Both can match in
+  one edit.
+
 ### Decisions from the third round of feedback
 
 - **Final headings for two services.** You were deciding whether one of them
@@ -17,22 +54,9 @@
   now — **Energy Services** and **Oil & Gas Services** — and each lives in one
   field (`name` in `content/services.json`), so a rename is a one-line change
   plus a redirect from the old URL. Send the wording when you have settled it.
-- **The bio wording, adapted.** Your bio names several institutions in full.
-  Two of those names contain the country name, which cannot appear anywhere on
-  the site, so the published version uses the bodies' own abbreviations and
-  drops the country from the universities. Nothing else changed; the substance,
-  the order and the honours are yours, word for word. What is on the page:
-  - "a registered engineer with COREN and a Fellow of the NSE (FNSE), the
-    Royal Institution of Chartered Surveyors (FRICS), the NIEEE (FNIEEE) and
-    the NIWE (FNIWE)"
-  - "a member of the Society of Petroleum Engineers (SPE) and the NIM"
-  - "from the University of Ilorin", "from the University of Cape Town",
-    "University of Toronto", "the University of St. Gallen" — each without the
-    country that followed it.
-
-  **Please confirm you are happy with this.** If you would rather the full
-  names appeared, the rule they break is the one you set, so that is your call
-  to reverse, not mine.
+- ~~**The bio wording, adapted.**~~ **Settled.** You sent your own version
+  with the institutions named in full, and that is what is on the page. See
+  the fourth round above.
 - **Two sets of names for the same capabilities.** Your Home and About copy
   lists "Building, Civil Engineering & Infrastructure" and "Electro-Mechanical
   Services". The nav and the services pages say "Infrastructure Services",

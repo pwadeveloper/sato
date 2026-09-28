@@ -22,6 +22,15 @@
  *     appear anywhere on the site. The source material for the oil and gas
  *     pages contained personal contact details for the founder, and this is
  *     the check that stops one reaching production by accident.
+ *
+ * One scoped exception. The founder's own profile names each institution in
+ * full, country included, because he asked for it. So the country pattern —
+ * and only that pattern — skips whatever sits inside an element marked
+ * `data-allow-country="true"`, and only on the leadership page. Everything
+ * else on that page is scanned as before, including its title, meta
+ * description, Open Graph tags and JSON-LD; and the attribute appearing on
+ * any other page is itself a failure, so the exemption cannot spread by
+ * being copied.
  */
 import { readdir, readFile } from "node:fs/promises";
 import { dirname, extname, join, relative, resolve } from "node:path";
@@ -65,6 +74,107 @@ const EMAIL = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
 const PHONE = /(?:\+|\b00)\d[\d\s().‑-—-]{7,}\d/g;
 const TEL_HREF = /href="tel:([^"]+)"/g;
 
+/**
+ * The one page whose marked element may carry country names.
+ *
+ * Every file the leadership route emits, not just its HTML: Next also writes
+ * the same tree as React flight payloads (`leadership.txt`, the `__next.*`
+ * files), which are served for client-side navigation and contain a second
+ * copy of the bio. The page's title, meta description, Open Graph tags and
+ * JSON-LD are real markup in `leadership.html` and are scanned there
+ * whatever happens to the payloads.
+ */
+const COUNTRY_EXCEPTION =
+  /^out[/\\]leadership(?:[/\\].*)?\.(?:html|txt)$/;
+const ALLOW_ATTR = 'data-allow-country="true"';
+/**
+ * The attribute actually set to true, in any of the three encodings it is
+ * written in: the rendered attribute, the flight payload, and the flight
+ * payload escaped inside a script tag in the HTML. Matching the value
+ * matters — React serialises the unset case as `"$undefined"`, and a page
+ * that merely *renders* the component without opting in must not be flagged.
+ */
+const ALLOW_ATTR_SET = /data-allow-country\\?["']?\s*[:=]\s*\\?["']?true/i;
+
+/**
+ * Blanks every `data-allow-country="true"` subtree, preserving length.
+ *
+ * Spaces rather than deletion because `context()` reports a hit by its offset
+ * into the string it scanned — keeping the length identical means the country
+ * rule's messages line up with every other rule's, which all still scan the
+ * untouched document.
+ *
+ * The walk counts nested tags of the same name so a `<div>` inside the marked
+ * `<div>` cannot end it early. Anything it cannot parse is left in place: an
+ * unparsed element is scanned, which fails loudly, rather than skipped, which
+ * would let a country name through unseen.
+ */
+function blankAllowedCountry(text) {
+  let out = text;
+
+  for (let guard = 0; guard < 50; guard += 1) {
+    const at = out.search(ALLOW_ATTR_SET);
+    if (at === -1) return out;
+
+    const span =
+      out.startsWith(ALLOW_ATTR, at) || out[at + ALLOW_ATTR.indexOf("=")] === "="
+        ? elementSpan(out, at)
+        : objectSpan(out, at);
+
+    // Unparsed means scanned, not skipped: leaving it in place fails the
+    // check loudly rather than waving a country name through unseen.
+    if (!span) return out;
+
+    out = out.slice(0, span[0]) + " ".repeat(span[1] - span[0]) + out.slice(span[1]);
+  }
+
+  return out;
+}
+
+/** `[start, end)` of the HTML element carrying the attribute at `at`. */
+function elementSpan(text, at) {
+  const open = text.lastIndexOf("<", at);
+  const name = open === -1 ? null : /^<([a-zA-Z][\w-]*)/.exec(text.slice(open, at))?.[1];
+  const openEnd = text.indexOf(">", at);
+  if (!name || openEnd === -1) return null;
+
+  const tags = new RegExp(`<(/?)${name}\\b`, "gi");
+  tags.lastIndex = openEnd + 1;
+  let depth = 1;
+  for (let match; (match = tags.exec(text)); ) {
+    depth += match[1] ? -1 : 1;
+    if (depth === 0) {
+      const close = text.indexOf(">", match.index);
+      return close === -1 ? null : [open, close + 1];
+    }
+  }
+  return null;
+}
+
+/**
+ * `[start, end)` of the serialized props object carrying the attribute.
+ *
+ * React writes the same subtree a second time as flight data, where the
+ * element is `{"data-allow-country":"true","children":[…]}`. Braces are
+ * literal in both the raw and the backslash-escaped spelling, so counting
+ * them finds the object without having to know which one this is. An
+ * unbalanced count returns null, which leaves the text to be scanned.
+ */
+function objectSpan(text, at) {
+  const open = text.lastIndexOf("{", at);
+  if (open === -1) return null;
+
+  let depth = 0;
+  for (let i = open; i < text.length; i += 1) {
+    if (text[i] === "{") depth += 1;
+    else if (text[i] === "}") {
+      depth -= 1;
+      if (depth === 0) return [open, i + 1];
+    }
+  }
+  return null;
+}
+
 /** Every scannable file under `dir`, sorted for stable output. */
 async function walk(dir) {
   const found = [];
@@ -106,15 +216,35 @@ for (const file of files) {
   const text = await readFile(file, "utf8");
   const where = relative(ROOT, file);
 
+  const exempt = COUNTRY_EXCEPTION.test(where);
+
+  // The marker belongs on the leadership page and nowhere else. Finding it
+  // elsewhere means the exemption has been copied, which is exactly how a
+  // scoped exception stops being scoped.
+  if (!exempt && ALLOW_ATTR_SET.test(text)) {
+    const at = text.search(ALLOW_ATTR_SET);
+    failures.push({
+      file: where,
+      rule: "country-exception",
+      found: "data-allow-country",
+      why: "only the founder's bio on the leadership page may carry country names",
+      context: context(text, at, ALLOW_ATTR.length),
+    });
+  }
+
+  // Only the country rule is relaxed, and only inside the marked element.
+  const countryText = exempt ? blankAllowedCountry(text) : text;
+
   for (const term of TERMS) {
+    const scanned = term.id === "country" ? countryText : text;
     term.pattern.lastIndex = 0;
-    for (const match of text.matchAll(term.pattern)) {
+    for (const match of scanned.matchAll(term.pattern)) {
       failures.push({
         file: where,
         rule: term.id,
         found: match[0],
         why: term.why,
-        context: context(text, match.index ?? 0, match[0].length),
+        context: context(scanned, match.index ?? 0, match[0].length),
       });
     }
   }

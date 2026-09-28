@@ -27,7 +27,10 @@ export function SectionNav({ sections, label }: SectionNavProps) {
   const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
+    // A section that links off the page has no target here to observe, and
+    // must never take the current-section marker.
     const targets = sections
+      .filter((section) => !section.href)
       .map((section) => document.getElementById(section.id))
       .filter((element): element is HTMLElement => Boolean(element));
     if (!targets.length) return;
@@ -59,7 +62,7 @@ export function SectionNav({ sections, label }: SectionNavProps) {
           {sections.map((section) => (
             <li key={section.id} className="shrink-0">
               <a
-                href={`#${section.id}`}
+                href={section.href ?? `#${section.id}`}
                 aria-current={active === section.id ? "true" : undefined}
                 className={cn(
                   "block px-3 py-3 text-sm font-semibold no-underline wdth-body transition-colors duration-150",

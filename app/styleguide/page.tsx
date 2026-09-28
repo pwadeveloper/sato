@@ -21,9 +21,8 @@ import {
   getPage,
   getProjects,
   getService,
-  getTeam,
 } from "@/lib/content";
-import type { CollectionSection } from "@/lib/content-types";
+import type { CollectionSection, TeamMember } from "@/lib/content-types";
 
 /**
  * Internal design reference. Not linked from nav (which comes from site.json)
@@ -91,10 +90,34 @@ function Entry({
   );
 }
 
+/**
+ * A made-up person, so the card can be shown without publishing a real bio.
+ *
+ * `getTeam()` returns one person — the founder — and his profile carries the
+ * site's only exemption from the no-country rule, granted for `/leadership`
+ * alone. The styleguide is a second page, so it uses this instead.
+ */
+const SAMPLE_PERSON: TeamMember = {
+  slug: "sample-engineer",
+  name: "A. N. Engineer, FNSE",
+  title: "Project Director",
+  isLeadership: true,
+  bio: [
+    "A sample record, used here so the card can be shown without publishing anyone's profile a second time.",
+    "The second paragraph exists to show how the card sets a bio of more than one block.",
+  ],
+  qualifications: ["MSc Civil Engineering", "BEng Civil Engineering"],
+  memberships: ["Registered member, COREN", "Member, NSE"],
+  yearsExperience: "Over 20 years in the construction industry",
+  photo: null,
+  published: true,
+  status: "current",
+  order: 1,
+};
+
 export default function StyleguidePage() {
   const projects = getProjects();
   const clients = getClients();
-  const team = getTeam();
   const facts = getCompanyFacts();
   const waterResources = getService("water-resources-development-management");
 
@@ -243,17 +266,18 @@ export default function StyleguidePage() {
               <ClientList clients={clients.slice(0, 7)} />
             </Entry>
 
-            <Entry title="Person card">
+            <Entry
+              title="Person card"
+              note="Shown with a sample record rather than the real one. The founder's bio is the site's single exemption from the no-country rule and it is scoped to /leadership — rendering it here would put it on a second page and break that scope."
+            >
               <ul className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                {team.slice(0, 3).map((member) => (
-                  <li key={member.slug} className="contents">
-                    <PersonCard
-                      member={member}
-                      qualificationsLabel="Qualifications"
-                      membershipsLabel="Memberships"
-                    />
-                  </li>
-                ))}
+                <li className="contents">
+                  <PersonCard
+                    member={SAMPLE_PERSON}
+                    qualificationsLabel="Qualifications"
+                    membershipsLabel="Memberships"
+                  />
+                </li>
               </ul>
             </Entry>
           </div>

@@ -56,7 +56,10 @@ copy carries to service 1; old Water Resources copy to service 4.
 
 Services 2, 3, 5, 6, 7, 8 are drafted from the partner reference sites
 (Frontender, SunRise PetroSolutions, OGAB Engineering — the partner has said
-this content is free to use). No factual claim about the partner transfers:
+this content is free to use). **URLs, recorded 28 September 2026** because
+none was captured at the time and batch 4 needed one: SunRise PetroSolutions
+Tech. Inc — `https://www.sunrisepst.com/`. Frontender and OGAB Engineering
+still have no URL on file. No factual claim about the partner transfers:
 no projects, clients, certifications, staff numbers, years, locations,
 statistics or awards. Capability descriptions only. Each is
 `"reviewStatus": "draft"` and the placeholder gate fails a production build

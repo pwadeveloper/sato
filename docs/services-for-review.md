@@ -146,31 +146,43 @@ The production build is blocked until all six are approved.
 > quotes your collaborator's track record, so it cannot be published on
 > Sato's approval alone.
 
-### How the two track records are kept apart
+### How the project record is presented — changed 28 September 2026
 
-This is the most important thing to check on the page, so it is worth
-stating plainly.
+**This changed on the client's instruction and needs your attention.**
 
 The source deck presents the oil and gas capability of **Sato together with
 its technical partner**, and its project list is titled "Past Projects with
-Partners". The headline figures — projects, patents, publications, countries
-— describe the partner team's experience, not Sato's delivery history.
+Partners". Until this revision the page kept the two records visibly apart:
+the projects sat under "Experience of our partner team", the case study
+carried the line "A project delivered by our partner team", and none of it
+reached the Projects page or Sato's project counts.
 
-The page is built so a reader cannot mistake one for the other:
+Mudia was instructed on 28 September 2026 to present this work as Sato's
+own. So, as the site now stands:
 
-- **Capabilities and solutions** are written as what Sato offers ("We
-  provide…", "We source and procure…"). They are claims about the service.
-- **Every past project, figure, patent and award** sits inside a section
-  headed **"Experience of our partner team"**, introduced as "Our technical
-  partners have delivered…", and the case study carries its own line: "A
-  project delivered by our partner team."
-- **None of it appears on the Projects page**, in Sato's project counts, or
-  in the site's structured data.
+- The twenty-six projects, the wider engagements and the case study have
+  moved to **`/projects/oil-gas`**, alongside Buildings, Roads and Water.
+- **The attribution lines are gone.** The table is headed "Selected
+  projects" and the case study is headed "Case study".
+- **Capabilities and solutions** are unchanged — still written as what Sato
+  offers ("We provide…", "We source and procure…").
 
-An oil company will verify these projects. If ADNOC's work appeared as
-Sato's own, the first verification call would end the conversation. Please
-read the attribution wording and tell us if it goes too far or not far
-enough.
+The concern that was raised at the time, recorded here so it is on file and
+not buried in a chat log: oil and gas pre-qualification asks a vendor to
+declare its past performance and then verifies it by reference. Permission
+to reuse a partner's website copy is not a transfer of who delivered the
+work. If a verification call reaches ADNOC or Kuwait Oil Company about a
+project listed here, the answer will name the partner, not Sato.
+
+**Both parties should confirm they are content with this before the page is
+published.** Reinstating the attribution is a small change — one line of
+content per block — if either of you would rather.
+
+One thing was deliberately **not** changed, because nobody asked for it: the
+seventeen oil and gas clients on `/clients` still sit under the heading
+"Oil & Gas: clients served through our technical partners". That is now
+inconsistent with the projects. Tell us which way you want it and both will
+match.
 
 ### Page text as it stands
 
@@ -289,6 +301,52 @@ A figures strip is built and wired to `partner.figures` in
 `content/services.json`, but the field is **empty and the strip is hidden**.
 Publishing a number that a reader can find contradicted elsewhere costs more
 credibility than publishing none. Send one agreed set and they appear.
+
+### Oil & Gas — Solutions (added from Sunrise)
+
+Every service listed under "Services" on the technical partner's own website
+was collected and merged into the Solutions section. The partner has said
+this content is free to use.
+
+**Source:** SunRise PetroSolutions Tech. Inc — `https://www.sunrisepst.com/`
+
+All five were already present in the Solutions list by name, because the
+section was originally drafted from the same source. What this pass added is
+a short description for each, taken from the service's own page and edited
+into Sato's voice. **No item was duplicated**, and three names were kept over
+the partner's slightly different wording because they are the clearer of the
+two.
+
+| Item on the page | Description added | Source page |
+|---|---|---|
+| Seismic inversion | "Stochastic seismic inversion using proprietary technology." | `https://www.sunrisepst.com/service_4.htm` |
+| Time-lapse seismic analysis | "Time-lapse data integrated with production data and reservoir simulation, for dynamic reservoir characterization." | `https://www.sunrisepst.com/service_1.htm` |
+| Integrated reservoir characterization | "A complete study workflow, from seismic interpretation and stochastic reservoir modelling through to history matching." | `https://www.sunrisepst.com/service_2.htm` |
+| Mature field potential analysis | "Static data such as seismic integrated with production data, with a thin-layer evaluation method, to evaluate mature field potential both laterally and in vertical cross-section." | `https://www.sunrisepst.com/service_5.htm` |
+| Production optimization and enhancement | "An injection allocation function determined from production data, integrated with seismic and other information where it is available." | `https://www.sunrisepst.com/service_3.htm` |
+
+**Names kept over the partner's, as the clearer of the two:**
+
+- "Integrated reservoir characterization" over "Integrated reservoir study"
+- "Production optimization and enhancement" over "Production optimization"
+- "Mature field potential analysis" — identical on both, no change
+
+**Carried over, and not carried over.** The descriptions are capability
+statements only. Nothing was taken about the partner's own projects,
+clients, staff, years in business, certifications or locations, and the
+company's name was removed from each sentence ("SunRise provides a unique
+and efficient technique…" became "An injection allocation function
+determined from…"). No country name appears in any of it.
+
+**One phrase to check:** "using proprietary technology", under Seismic
+inversion. On the partner's site that is their technology. On Sato's site it
+now reads as Sato's. Say if you would rather it read "using proprietary
+stochastic inversion methods" or be dropped.
+
+Solutions is now set as three groups — Subsurface and seismic, Field
+development and reservoir management, Production and facilities — two
+columns on desktop, with the descriptions in lighter text under each name.
+Thirteen items in one unbroken column had stopped being scannable.
 
 ### Deliberately left out
 

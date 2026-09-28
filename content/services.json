@@ -202,20 +202,78 @@
     ],
     "solutions": {
       "heading": "Technology solutions",
-      "items": [
-        "Seismic inversion",
-        "Time-lapse seismic analysis",
-        "Simulation-to-seismic analysis",
-        "Integrated reservoir characterization",
-        "Field development planning",
-        "Mature field potential analysis",
-        "Reservoir surveillance, monitoring and management",
-        "Production optimization and enhancement",
-        "Completions and wellbore interventions",
-        "Topside facilities management",
-        "Produced water management",
-        "Multiphase flow metrology",
-        "Process instrumentation, control and optimization"
+      "items": [],
+      "groups": [
+        {
+          "id": "subsurface",
+          "heading": "Subsurface and seismic",
+          "items": [
+            {
+              "name": "Seismic inversion",
+              "description": "Stochastic seismic inversion using proprietary technology."
+            },
+            {
+              "name": "Time-lapse seismic analysis",
+              "description": "Time-lapse data integrated with production data and reservoir simulation, for dynamic reservoir characterization."
+            },
+            {
+              "name": "Simulation-to-seismic analysis",
+              "description": ""
+            },
+            {
+              "name": "Integrated reservoir characterization",
+              "description": "A complete study workflow, from seismic interpretation and stochastic reservoir modelling through to history matching."
+            }
+          ]
+        },
+        {
+          "id": "field-development",
+          "heading": "Field development and reservoir management",
+          "items": [
+            {
+              "name": "Field development planning",
+              "description": ""
+            },
+            {
+              "name": "Mature field potential analysis",
+              "description": "Static data such as seismic integrated with production data, with a thin-layer evaluation method, to evaluate mature field potential both laterally and in vertical cross-section."
+            },
+            {
+              "name": "Reservoir surveillance, monitoring and management",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "production",
+          "heading": "Production and facilities",
+          "items": [
+            {
+              "name": "Production optimization and enhancement",
+              "description": "An injection allocation function determined from production data, integrated with seismic and other information where it is available."
+            },
+            {
+              "name": "Completions and wellbore interventions",
+              "description": ""
+            },
+            {
+              "name": "Topside facilities management",
+              "description": ""
+            },
+            {
+              "name": "Produced water management",
+              "description": ""
+            },
+            {
+              "name": "Multiphase flow metrology",
+              "description": ""
+            },
+            {
+              "name": "Process instrumentation, control and optimization",
+              "description": ""
+            }
+          ]
+        }
       ]
     },
     "alsoCovered": {
@@ -306,7 +364,7 @@
       "name": "",
       "nameLabel": "Technical partner",
       "figures": [],
-      "projectsHeading": "Selected projects delivered by our partner team",
+      "projectsHeading": "Selected projects",
       "projectColumns": {
         "client": "Client",
         "project": "Project",
@@ -464,7 +522,7 @@
       },
       "caseStudy": {
         "heading": "Well intervention strategies for production enhancement",
-        "attribution": "A project delivered by our partner team.",
+        "attribution": "Case study",
         "challengeHeading": "Challenge",
         "challenge": "A national oil company needed to increase production from mature brownfields at a profitable cost, but conventional workflows could not identify and rank intervention candidates across thousands of wells quickly, or predict post-job performance reliably.",
         "solutionHeading": "Solution",
@@ -511,7 +569,8 @@
       },
       {
         "id": "projects",
-        "label": "Projects"
+        "label": "Projects",
+        "href": "/projects/oil-gas"
       },
       {
         "id": "partnerships",

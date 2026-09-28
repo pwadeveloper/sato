@@ -10,6 +10,17 @@ export interface PersonCardProps {
   /** Labels for the two detail lists, from page content. */
   qualificationsLabel: string;
   membershipsLabel: string;
+  /**
+   * Marks the bio as the one place country names are allowed.
+   *
+   * The founder's own profile names each institution in full, including the
+   * country, because he asked for it — see the banned-terms rule in
+   * CLAUDE.md. `scripts/check-banned-terms.mjs` skips the country pattern
+   * inside `data-allow-country="true"` and fails on that attribute appearing
+   * anywhere but the leadership page, so this is opt-in per call site rather
+   * than baked into the card.
+   */
+  allowCountry?: boolean;
   className?: string;
 }
 
@@ -18,6 +29,7 @@ export function PersonCard({
   headingLevel = 3,
   qualificationsLabel,
   membershipsLabel,
+  allowCountry = false,
   className,
 }: PersonCardProps) {
   const NameTag = `h${headingLevel}` as const;
@@ -52,11 +64,13 @@ export function PersonCard({
         </p>
       ) : null}
 
-      {member.bio.map((paragraph, index) => (
-        <p key={index} className="mt-3 text-base wdth-body">
-          <RichText text={paragraph} />
-        </p>
-      ))}
+      <div data-allow-country={allowCountry ? "true" : undefined}>
+        {member.bio.map((paragraph, index) => (
+          <p key={index} className="mt-3 text-base wdth-body">
+            <RichText text={paragraph} />
+          </p>
+        ))}
+      </div>
 
       {member.qualifications.length ? (
         <div className="mt-5">

@@ -6,7 +6,7 @@
   "labels": {
     "breadcrumb": "Breadcrumb",
     "capabilities": "Capabilities",
-    "relatedProjects": "Projects in this service",
+    "projectsLink": "See our {category} projects",
     "relatedServices": "Related services",
     "sectionNav": "On this page",
     "groupInfrastructure": "Infrastructure Services",

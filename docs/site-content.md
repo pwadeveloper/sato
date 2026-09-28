@@ -244,9 +244,22 @@ header menu and on the services overview.
 | Section | Holds |
 |---|---|
 | Capabilities | the overview paragraphs, the three capability areas, "also covered" |
-| Solutions | the technology solutions list, the solutions pyramid, the business value map, equipment sourcing and procurement |
-| Projects | the partner project table, the wider engagements, the case study |
+| Solutions | the technology solutions, in three groups with descriptions; the solutions pyramid; the business value map; equipment sourcing and procurement |
+| Projects | a short block linking on to `/projects/oil-gas`, where the record now lives |
 | Partnerships | the partner team description, the recognition, the partner name block |
+
+The Projects **section** stays, and keeps its `#projects` anchor and its
+sub-nav item, but both now point at `/projects/oil-gas` — the table, the
+wider engagements and the case study moved there with the rest of the
+project record. The anchor is deliberately kept so an existing
+`/services/oil-gas#projects` link still lands on the block that carries the
+onward link.
+
+**Solutions is three groups**, two columns on desktop: Subsurface and
+seismic · Field development and reservoir management · Production and
+facilities. Five of the thirteen items carry a one-sentence description
+taken from the technical partner's own service pages and edited into Sato's
+voice; the sources are listed in `docs/services-for-review.md`.
 
 **Two diagrams from the collaborator's deck:**
 
@@ -301,7 +314,7 @@ was that someone who came for water work had to scroll past buildings and
 roads to reach it, and that whole categories were being missed — which is
 what a filter does when nobody notices it is there.
 
-`/projects` is a short line and three large photographic tiles, each with its
+`/projects` is a short line and four large photographic tiles, each with its
 project count. No project list on it.
 
 | Category | Route | Projects |
@@ -309,14 +322,26 @@ project count. No project list on it.
 | Buildings & Construction | `/projects/buildings-construction` | 21 |
 | Civil Engineering & Roads | `/projects/civil-engineering-roads` | 9 |
 | Water Resources Development & Management | `/projects/water-resources-development-management` | 11 |
+| Oil & Gas | `/projects/oil-gas` | 26 |
 
-Each category page shows only its own projects as image-led cards, with a
-small "Other categories" row at the foot. The breadcrumb on a project runs
-Projects › Category › Project. Old `?sector=` URLs redirect to the matching
-category, and the ~39 old-site deep links that pointed at a filtered URL now
-point straight at the category page.
+The first three show their projects as image-led cards. **Oil & Gas is a
+table**, because its rows are client, project and year with no scope, no
+photographs and no detail page — the "Show all" disclosure opens the rows
+past the first eight, and the wider engagements and the case study follow it.
+Every category page ends with a small "Other categories" row. The breadcrumb
+on a project runs Projects › Category › Project. Old `?sector=` URLs redirect
+to the matching category, and the ~39 old-site deep links that pointed at a
+filtered URL now point straight at the category page.
 
-**Partner projects never appear here.** They stay on the Oil & Gas page.
+**Every project on the site is here.** No service page lists projects; each
+links out to its category instead ("See our Buildings & Construction
+projects"). Energy, Digital Twin and Research have no category yet and show
+no link.
+
+**The Oil & Gas projects are the technical partner's, presented as Sato's
+own on the client's instruction of 28 September 2026.** They are not counted
+into Sato's 41. The reservation, and the request that both parties confirm
+it before publication, is in `docs/services-for-review.md`.
 
 41 projects, unchanged in substance from the previous pass. Status is only
 ever "Completed" or empty; the site never labels work as ongoing. `client`,
@@ -366,25 +391,40 @@ build is blocked and neither can go live without the other.
 
 ## Leadership
 
-**Engr. Wale Osamiluyi, FNSE, FRICS, FNIEEE, FNIWE** — Founder & Managing
+**Engr. Wale Osamiluyi, FNSE, FNIEEE, FNIWE, FRICS** — Founder & Managing
 Director. The only published person. The bio is the client's own, in five
 paragraphs, covering his degrees, his memberships including SPE, his honours
 and his service with Rotary International.
 
-Two things settled by batch 3:
+Two things settled by batch 3, unchanged:
 
-- **The postnominals are FNSE, FRICS, FNIEEE, FNIWE.** The deck said FNIEE;
-  the client's own bio says FNIEEE, so FNIEEE it is. This closes the
-  Fellow-or-Member contradiction that was open on the previous build.
+- **FNIEEE, not FNIEE.** The deck said FNIEE; the client's own bio says
+  FNIEEE, so FNIEEE it is.
 - **"Over 32 years"** is the client's own figure and replaces the earlier
   recalculated one.
 
-**The bio is adapted in one respect.** It names institutions whose full names
-contain the country name, which cannot appear anywhere on the site. The
-published version uses the bodies' own abbreviations — COREN, NSE, NIEEE,
-NIWE, NIM — and drops the country from the universities. Nothing else
-changed. **The client has been asked to confirm he is happy with it**; it is
-in `docs/open-items.md`.
+**Batch 4 replaced the bio with the client's own version, verbatim**, and
+reordered the postnominals to match it — engineering fellowships first, RICS
+last. The earlier adapted version, which used COREN / NSE / NIEEE / NIWE /
+NIM and dropped the country from each university, is gone.
+
+**This is the site's only exemption from the no-country rule.** The client
+asked for every institution to be named in full, country included, so a
+reader knows where each university is. The bio is wrapped in
+`data-allow-country="true"` on `/leadership` alone, and
+`npm run check:banned` skips the country pattern inside that element and
+nowhere else. The page's own title, meta description, Open Graph tags and
+JSON-LD are still scanned and still fail on a country name — the meta
+description is deliberately written without one: "Engr. Wale Osamiluyi,
+Founder & Managing Director of Sato Engineering & Infrastructure Limited."
+The attribute appearing on any other page fails the build, which is why
+`/styleguide` shows a made-up sample person rather than the real record.
+
+**One wording suggestion is open**, not applied: the third paragraph reads
+"a member of the Society of Petroleum Engineers (SPE), Nigerian Institute of
+Management, a Life Member…", where "and the" before "Nigerian Institute of
+Management" would read better. It is his text; it stays as written until he
+says otherwise. See `docs/open-items.md`.
 
 The separate qualifications and memberships lists are empty, because the bio
 now carries both in prose and printing them twice on one page says nothing

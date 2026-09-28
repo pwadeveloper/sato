@@ -33,10 +33,65 @@ banned-terms rule below, which the build enforces.
    - A division with `"reviewStatus": "draft"` also fails `npm run build:prod`. Unreviewed capability copy must not reach an oil company's procurement team.
 4. **Names:** use "Sato Engineering & Infrastructure Limited" in full on first mention per page, "Sato" after. **Never** mention the former name, the change of name, or the RC number. `rcNumber` stays in `site.json` behind `"showRcNumber": false` so it can be restored.
 5. **Banned terms, enforced by the build.** `npm run check:banned` scans the exported `/out` and fails on `nigeria` / `nigerian` (any case), `formerly`, and `317208`. It also fails on any email address other than `info@satoengineering.com` and any telephone number other than `+234 803 330 3278` — those two are the only contact details allowed anywhere on the site. Avoid "indigenous" as well; it carries the same implication and the same instruction, even though no pattern catches it. Professional bodies are written as abbreviations (COREN, NSE, NIM) because their full names contain the banned word.
+
+   **One scoped exception: the founder's bio.** The client asked for his own
+   profile to name every institution in full, country included, and that is
+   his call to make about his own record. It is the only exemption on the
+   site. **Do not "fix" the country names out of `content/team.json` —
+   they are deliberate.** How it is held:
+
+   - The bio is wrapped in `data-allow-country="true"`, set by the
+     `allowCountry` prop on `components/PersonCard.tsx`, which **only
+     `app/leadership/page.tsx` passes**.
+   - `scripts/check-banned-terms.mjs` skips the country pattern inside that
+     element, and **only** that pattern — `formerly`, the RC number, the
+     email rule and the phone rule still scan the whole document.
+   - The exemption cannot spread: the attribute set to `true` on any file
+     outside the leadership route is itself a failure (`country-exception`).
+     That is why the styleguide renders a made-up `SAMPLE_PERSON` instead of
+     the real team — rendering the real bio would put it on a second page.
+   - It must not leak into metadata. `/leadership`'s meta description is
+     written without country names, and nothing else carries the bio:
+     `buildPageMetadata` reads only `page.metaDescription`, and
+     `buildOrganizationSchema` emits no `Person` at all. Injecting a country
+     name into that meta description still fails the check — verified.
+   - The scan covers the React flight payloads (`leadership.txt`, the
+     `__next.*` files) as well as the HTML, because they carry a second copy
+     of the same tree.
 6. **Tone:** plain, factual, confident. Sentence case headings. No superlatives the company can't prove ("foremost", "best", "world class"). Let clients, projects and years speak. **One exception:** the mission and vision statements in `pages/about.json` are the client's own approved wording and are used verbatim, superlatives included.
 7. **Accessibility and quality floor:** responsive to 360px, visible focus states, alt text on every image, reduced-motion respected, colour contrast AA, semantic HTML, one `h1` per page.
 8. **Performance:** the site should load fast on slow mobile networks. Keep JS minimal, lazy-load below-the-fold images, no heavy animation libraries.
-9. **Attribution of partner work.** The Oil & Gas service describes a joint offer. Capabilities are written as Sato's ("We provide…"); every project, figure, patent, case study and award belonging to the technical partner sits inside the `partner` block, is rendered under an explicit attribution, and never reaches the Projects page, Sato's project counts or the structured data. Presenting a partner's record as Sato's own would not survive the first vendor-verification call.
+9. **Attribution of partner work — overridden by the client on 2026-09-28.**
+   The rule used to read: every project, figure, patent, case study and award
+   belonging to the technical partner sits inside the `partner` block, is
+   rendered under an explicit attribution, and never reaches the Projects
+   page or Sato's project counts.
+
+   **The client instructed that this work be presented as Sato's own**, and
+   the site now does. The attribution lines are gone, and the partner's
+   twenty-six projects, wider engagements and case study are a project
+   category at `/projects/oil-gas`. **This is deliberate — do not reinstate
+   the attribution as a bug fix.** The reservation (oil and gas
+   pre-qualification verifies past performance by reference, and permission
+   to reuse copy is not a transfer of who delivered the work) was put to the
+   client, restated, and overruled. It is recorded in
+   `docs/services-for-review.md` and `docs/decisions/client-feedback-batch-4.md`
+   so both parties see it before they sign the page off.
+
+   What still holds:
+
+   - Capabilities and solutions are written as Sato's ("We provide…"). That
+     never changed.
+   - The rows still live in the `partner` block of `services.json` — one
+     source of truth, no duplication into `projects.json`, and no individual
+     detail pages. `/projects/oil-gas` reads them through the facet's
+     `source: "partner"`.
+   - The partner's **figures** (project counts, patents, countries) stay
+     empty and hidden, because the source numbers contradict each other —
+     that was never an attribution question.
+   - `/clients` still attributes the seventeen oil and gas clients. Nobody
+     asked for that to change; it is flagged in `docs/open-items.md` as an
+     inconsistency for the client to settle.
 10. After each task, run `npm run build` and fix all errors and type errors before reporting done. Before reporting a content change done, also run `npm run check:banned`.
 
 ## Sitemap
@@ -55,10 +110,11 @@ banned-terms rule below, which the build enforces.
 | `/services/oil-gas` | **Oil & Gas Services** — four anchored sections with a sticky sub-nav |
 | `/services/digital-twin` | Digitalization & Digital Twin Services |
 | `/services/research-innovation` | Research, Technology & Innovation Services |
-| `/projects` | Project categories — three photographic tiles, no project list |
+| `/projects` | Project categories — four photographic tiles, no project list |
 | `/projects/buildings-construction` | Buildings & Construction |
 | `/projects/civil-engineering-roads` | Civil Engineering & Roads |
 | `/projects/water-resources-development-management` | Water Resources Development & Management |
+| `/projects/oil-gas` | **Oil & Gas** — a table, not cards; behind the review gate |
 | `/projects/[slug]` | Project detail |
 | `/clients` | Clients |
 | `/leadership` | Founder, and how project teams are assembled |
@@ -81,13 +137,38 @@ Two services were renamed. Both old routes 301 in `vercel.json`:
 `water-resources-environmental` → `water-resources-development-management`.
 
 **Projects is a set of category pages, not a filtered list.** `/projects` is
-three photographic tiles with a project count each; the old `?sector=` filter
+four photographic tiles with a project count each; the old `?sector=` filter
 is gone and those URLs redirect. The categories are the flat `facets` of the
 `all-projects` section in `pages/projects.json`, each carrying a `slug`,
-`shortLabel`, `intro` and `image`. The three routes are three static files
+`shortLabel`, `intro` and `image`. The four routes are four static files
 under `app/projects/` — a second dynamic segment cannot sit beside `[slug]` —
 and each is four lines delegating to `components/ProjectCategoryPage.tsx`.
-Adding a fourth category is a content edit plus one folder.
+Adding a category is a content edit plus one folder.
+
+**Every project on the site lives under Projects.** No service page lists
+projects any more; each links out instead, through
+`labels.projectsLink` ("See our {category} projects") to the categories whose
+`serviceSlug` names it. Civil Engineering & Construction resolves to two
+(Buildings and Roads) and renders one link each; Energy, Digital Twin and
+Research resolve to none and render nothing.
+
+**A category draws its projects from one of two sources**, set by `source` on
+the facet. The default reads `projects.json`, matched on `sector`, and renders
+a grid of `ProjectCard`s. `source: "partner"` reads the `partner.projects`
+table on the service named by `serviceSlug` and renders
+`PartnerProjects` — a table, the wider engagements and the case study — because
+those rows are client, project and year with no scope, no photographs and no
+detail page. Oil & Gas is the only one. `getProjectCount()` hides the
+difference from the landing tiles and the nav, and
+`getPartnerCategoryService()` is what puts the category behind the same review
+gate as its service.
+
+**The Oil & Gas service page keeps its four sections**, but "Projects" is now
+a link out rather than an anchor: the section declares
+`"href": "/projects/oil-gas"` in its `sectionNav` entry, which `SectionNav`
+and the header dropdown both honour. The `#projects` anchor stays on the page
+so an old link still lands on something — it finds a short block with the link
+in it. That is the redirect; no client-side JavaScript is involved.
 
 There is no `/equipment` page. It was removed on the client's instruction;
 `equipment.json` stays in the repo in case it returns, and `/equipment` and the
@@ -103,9 +184,9 @@ old `/safety-policies/` redirect to `/about`. The rewritten content is kept in
 
 - `site.json` — company name, tagline, founded year, registrations, **ordered** `offices` (no "head office"; the first is the one published in structured data), phones, emails, nav, footer. `rcNumber` is held behind `showRcNumber: false`. **`showProjectDates`** switches every year on the site off in one edit — cards, category pages and project pages all read it through `getProjectYear()`.
 - `pages/*.json` — per-page headings and body blocks (home, about, services overview, infrastructure landing, contact, leadership intro, projects, clients, 404). `hse.json` is present but unregistered. Alongside `labels` (short strings the template needs), a page may carry **`images`** — the photographs its template needs that belong to no single section: its `header` shot, and on the services overview one per category, keyed `groupInfrastructure` and so on.
-- `services.json` — array of services: slug, name, **group** (infrastructure / energy / oil-gas / digital-twin / research-innovation), **order**, **reviewStatus** (approved / draft), summary, body, capabilities[], relatedProjectSlugs[], relatedServiceSlugs[], image. A service may also carry `capabilityBlocks[]` (grouped capabilities, which replace the flat sidebar list), `solutions`, `alsoCovered`, `procurement`, `partner`, **`sectionNav[]`**, **`solutionsPyramid`** and **`valueMap`** — all optional, all hidden when absent. The `partner` block is the one place another company's track record appears; see rule 9.
+- `services.json` — array of services: slug, name, **group** (infrastructure / energy / oil-gas / digital-twin / research-innovation), **order**, **reviewStatus** (approved / draft), summary, body, capabilities[], relatedProjectSlugs[], relatedServiceSlugs[], image. A service may also carry `capabilityBlocks[]` (grouped capabilities, which replace the flat sidebar list), `solutions`, `alsoCovered`, `procurement`, `partner`, **`sectionNav[]`**, **`solutionsPyramid`** and **`valueMap`** — all optional, all hidden when absent. A `sectionNav` entry may carry an **`href`**, for a section that has moved off the page. A `ServiceList` (`solutions`, `alsoCovered`, `engagements`) is either flat — `items`, bare phrases — or grouped, with **`groups[]`** of `{ name, description }`; Solutions takes the grouped form because thirteen items in one column stopped being scannable. The `partner` block holds the oil and gas project record, which the client has asked be presented as Sato's own; see rule 9.
 - `projects.json` — array: slug, title, sector, summary, scope[], images[], and **optional** client, location, year, status. Sector names the project's category. Empty means hidden, never placeheld. `status` is only ever `"Completed"` or empty — the site never labels work as ongoing.
-- `clients.json` — array: name, category (federal / state / international / education / private / **oil-gas-partner**), logo?. The page shows names only — no logos, no category headings, no agencies nested under a government. `oil-gas-partner` entries are the technical partner team's clients, not Sato's; they render in a separate block under their own attributed heading and sit behind the same review gate as the Oil & Gas page.
+- `clients.json` — array: name, category (federal / state / international / education / private / **oil-gas-partner**), logo?. The page shows names only — no logos, no category headings, no agencies nested under a government. `oil-gas-partner` entries render in a separate block under their own attributed heading and sit behind the same review gate as the Oil & Gas page. **This heading is now inconsistent with `/projects/oil-gas`**, which no longer attributes; the client was asked which way to settle it (see `docs/open-items.md`) and nothing changes here until he answers.
 - `team.json` — array: slug, name, title, isLeadership, **published**, bio, qualifications[], memberships[], photo?. `published: false` keeps a record in the file but off the site, the sitemap and the structured data.
 - `equipment.json` — array: name, category, quantity?, notes?
 
@@ -179,8 +260,12 @@ disagree with this file:
 
 1. `client-answers-v1.md` — the client's form.
 2. `client-feedback-batch-2.md` — the call and the oil and gas deck.
-3. `client-feedback-batch-3.md` — simplify, restructure, new copy. **This is
-   the current one.**
+3. `client-feedback-batch-3.md` — simplify, restructure, new copy.
+4. `client-feedback-batch-4.md` — everything under Projects, the Sunrise
+   services in Solutions, the founder's own bio. **This is the current one.**
+   Note that the attribution instruction in its section 1 was itself
+   superseded in the same round: the client asked for the partner's projects
+   to read as Sato's own work. See rule 9.
 
 ## Review deployments
 

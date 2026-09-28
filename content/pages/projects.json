@@ -2,7 +2,7 @@
   "slug": "projects",
   "title": "Projects",
   "metaTitle": "Projects",
-  "metaDescription": "Buildings, roads and water projects delivered by Sato Engineering & Infrastructure Limited for government, university, development partner and private clients.",
+  "metaDescription": "Buildings, roads, water and oil and gas projects delivered by Sato Engineering & Infrastructure Limited for government, university, development partner, private and oil company clients.",
   "labels": {
     "breadcrumb": "Breadcrumb",
     "countOne": "1 project",
@@ -35,7 +35,7 @@
       "type": "collection",
       "id": "all-projects",
       "collection": "projects",
-      "intro": "Nearly three decades of delivered work, in three categories.",
+      "intro": "Nearly three decades of delivered work, in four categories.",
       "facetMode": "group",
       "facets": [
         {
@@ -79,6 +79,21 @@
             "height": 1200
           },
           "shortLabel": "Water"
+        },
+        {
+          "value": "oil-gas",
+          "label": "Oil & Gas",
+          "slug": "oil-gas",
+          "serviceSlug": "oil-gas",
+          "source": "partner",
+          "intro": "Reservoir management, field development planning, production optimization and digital oilfield delivery for national and international oil companies.",
+          "image": {
+            "src": "/images/oil-gas/platforms-and-pipelines.webp",
+            "alt": "Two offshore platforms and a supply vessel, with subsea pipelines and wellheads drawn across the water",
+            "width": 1672,
+            "height": 941
+          },
+          "shortLabel": "Oil & Gas"
         }
       ],
       "note": ""

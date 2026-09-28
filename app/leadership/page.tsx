@@ -53,6 +53,9 @@ export default function LeadershipPage() {
                   headingLevel={2}
                   qualificationsLabel={labels.qualifications ?? ""}
                   membershipsLabel={labels.memberships ?? ""}
+                  // The one exemption from the no-country rule, and the only
+                  // place it is granted. See CLAUDE.md.
+                  allowCountry
                 />
               </li>
             ))}

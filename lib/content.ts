@@ -29,6 +29,7 @@ import type {
   Equipment,
   Page,
   PageSection,
+  PartnerBlock,
   Project,
   Service,
   ServiceBand,
@@ -269,9 +270,36 @@ export function getProjects(): Project[] {
  */
 export function getProjectCategories(): CollectionFacet[] {
   const section = getSection(pages.projects, "all-projects", "collection");
-  return (section.facets ?? []).filter((facet) =>
-    projects.some((project) => facetMatches(facet, project.sector)),
-  );
+  return (section.facets ?? []).filter((facet) => getProjectCount(facet) > 0);
+}
+
+/**
+ * The service a partner-sourced category takes its record from.
+ *
+ * Oil & Gas is a category of projects whose rows live on the service rather
+ * than in `projects.json`: they are client/project/year records with no
+ * scope, no photographs and no detail page of their own. Pointing the
+ * category at the service keeps that table in one file instead of copying
+ * twenty-six rows into a second one, and it is what puts the category behind
+ * the same review gate as the service.
+ */
+export function getPartnerCategoryService(
+  facet: CollectionFacet,
+): Service | undefined {
+  if (facet.source !== "partner" || !facet.serviceSlug) return undefined;
+  return services.find((service) => service.slug === facet.serviceSlug);
+}
+
+/** The partner record a category draws on, where it draws on one. */
+export function getPartnerBlock(facet: CollectionFacet): PartnerBlock | undefined {
+  return getPartnerCategoryService(facet)?.partner;
+}
+
+/** How many projects a category holds, whichever source it draws on. */
+export function getProjectCount(facet: CollectionFacet): number {
+  const partner = getPartnerBlock(facet);
+  if (partner) return partner.projects.length;
+  return projects.filter((project) => facetMatches(facet, project.sector)).length;
 }
 
 /** One category by its route segment. Throws rather than rendering empty. */
