@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
+import { PageHeader } from "@/components/PageHeader";
 import { PersonCard } from "@/components/PersonCard";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
@@ -34,13 +35,19 @@ export default function LeadershipPage() {
 
   return (
     <>
+      <PageHeader
+        title={page.title}
+        image={page.images?.header}
+        headingId="leadership-heading"
+      />
+
       <Section tone="concrete">
         <Container>
-          <Heading level={1} text={page.title} />
-
-          <ul className="mt-10 grid gap-6 md:mt-12 lg:grid-cols-2">
+          {/* One person, so one column on the measure rather than a
+              two-up grid with an empty cell beside him. */}
+          <ul className="flex flex-col gap-12">
             {leadership.map((member) => (
-              <li key={member.slug} className="flex">
+              <li key={member.slug} className="max-w-(--container-measure)">
                 <PersonCard
                   member={member}
                   headingLevel={2}

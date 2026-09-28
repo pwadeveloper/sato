@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
 import { Container } from "@/components/Container";
 import { CtaBand } from "@/components/CtaBand";
-import { Heading } from "@/components/Heading";
-import { ProjectFilter } from "@/components/ProjectFilter";
+import { PageHeader } from "@/components/PageHeader";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
-import { getPage, getProjects, getSection, getSite } from "@/lib/content";
+import { TextLink } from "@/components/TextLink";
+
+import {
+  getPage,
+  getProjectCategories,
+  getProjectsInCategory,
+  getSection,
+  getSite,
+} from "@/lib/content";
 import { buildPageMetadata } from "@/lib/metadata";
 
 const page = getPage("projects");
@@ -13,60 +23,96 @@ const site = getSite();
 
 const all = getSection(page, "all-projects", "collection");
 const cta = getSection(page, "cta-default", "cta");
-
-const projects = getProjects();
 const labels = page.labels ?? {};
-
-/**
- * A category appears only once it has at least one Sato project, and a
- * sub-filter only once a project uses that sector. Energy Services and Oil &
- * Gas Services therefore stay off the page until the first project of their
- * own is added to the JSON — no code change, and no empty tab in the meantime.
- *
- * Partner projects are not Sato projects and never reach this list.
- */
-const used = new Set<string>(projects.map((project) => project.sector));
-
-const facets = (all.facets ?? [])
-  .map((facet) => ({
-    ...facet,
-    children: (facet.children ?? []).filter((child) => used.has(child.value)),
-  }))
-  .filter(
-    (facet) => used.has(facet.value) || facet.children.length > 0,
-  );
 
 export const metadata: Metadata = buildPageMetadata(page, site);
 
+/**
+ * Projects: three doors, no list.
+ *
+ * The page used to be every project on one scroll behind a filter. The
+ * client's objection was that someone who came for water work had to scroll
+ * past buildings and roads to reach it, and that whole categories were being
+ * missed — which is what a filter does when nobody notices it is there.
+ *
+ * So the categories are the page. Each tile says what it holds and how much
+ * of it, and the count comes from the content rather than a number anyone
+ * has to remember to update.
+ */
 export default function ProjectsPage() {
+  const categories = getProjectCategories();
+
   return (
     <>
-      <Section tone="concrete" labelledBy="projects-heading">
+      <PageHeader
+        title={page.title}
+        intro={all.intro ? [all.intro] : []}
+        image={page.images?.header}
+        headingId="projects-heading"
+      />
+
+      <Section tone="concrete" labelledBy="project-categories">
         <Container>
-          <Heading level={1} text={page.title} id="projects-heading" />
+          <h2 id="project-categories" className="sr-only">
+            <RichText text={labels.categoriesLabel ?? page.title} />
+          </h2>
 
-          {all.intro ? (
-            <p className="mt-5 max-w-(--container-measure) text-lg text-steel-ink wdth-body">
-              <RichText text={all.intro} />
-            </p>
-          ) : null}
+          <ul className="grid gap-6 md:grid-cols-3">
+            {categories.map((category) => {
+              const count = getProjectsInCategory(category).length;
+              const countLabel = (
+                count === 1 ? labels.countOne ?? "" : labels.countMany ?? ""
+              ).replace("{n}", String(count));
 
-          <div className="mt-10 md:mt-12">
-            <ProjectFilter
-              projects={projects}
-              facets={facets}
-              labels={{
-                filterLabel: labels.filterLabel ?? "",
-                subFilterLabel: labels.subFilterLabel ?? "",
-                all: labels.allFilter ?? "",
-                countOne: labels.countOne ?? "",
-                countMany: labels.countMany ?? "",
-              }}
-            />
-          </div>
+              return (
+                <li key={category.value} className="flex">
+                  <article className="group relative flex h-full w-full flex-col border border-rule bg-white transition-colors duration-150 hover:border-steel focus-within:border-steel">
+                    {category.image ? (
+                      <div className="relative aspect-4/3 w-full overflow-hidden bg-steel/10">
+                        <Image
+                          src={category.image.src}
+                          alt={category.image.alt}
+                          fill
+                          sizes="(min-width: 768px) 33vw, 100vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : null}
+
+                    <div className="flex flex-1 flex-col gap-3 p-6">
+                      <h3 className="text-h3 wdth-heading text-balance">
+                        <Link
+                          href={`/projects/${category.slug}`}
+                          className="text-asphalt no-underline after:absolute after:inset-0 after:content-['']"
+                        >
+                          <RichText text={category.label} />
+                        </Link>
+                      </h3>
+
+                      {category.intro ? (
+                        <p className="text-sm text-steel-ink wdth-body text-pretty">
+                          <RichText text={category.intro} />
+                        </p>
+                      ) : null}
+
+                      <p className="mt-auto pt-2 text-2xs font-semibold uppercase tracking-[0.08em] text-brand-ink tabular wdth-body">
+                        <RichText text={countLabel} />
+                      </p>
+                    </div>
+                  </article>
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* Clients is out of the main nav; this and the footer are how a
+              reader who wants it still finds it. */}
+          <p className="mt-10">
+            <TextLink label={labels.clientsLink ?? ""} href="/clients" />
+          </p>
 
           {all.note ? (
-            <p className="mt-10 max-w-(--container-measure) text-xs text-steel-ink wdth-body">
+            <p className="mt-6 max-w-(--container-measure) text-xs text-steel-ink wdth-body">
               <RichText text={all.note} />
             </p>
           ) : null}

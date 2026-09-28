@@ -2,16 +2,14 @@
   "slug": "projects",
   "title": "Projects",
   "metaTitle": "Projects",
-  "metaDescription": "Selected buildings, roads and water projects delivered by Sato Engineering & Infrastructure Limited for government, university and private clients.",
+  "metaDescription": "Buildings, roads and water projects delivered by Sato Engineering & Infrastructure Limited for government, university, development partner and private clients.",
   "labels": {
     "breadcrumb": "Breadcrumb",
-    "filterLabel": "Filter projects by service",
-    "allFilter": "All",
     "countOne": "1 project",
     "countMany": "{n} projects",
     "client": "Client",
     "location": "Location",
-    "sector": "Sector",
+    "sector": "Category",
     "year": "Year",
     "status": "Status",
     "details": "Project details",
@@ -19,46 +17,68 @@
     "gallery": "Project photographs",
     "galleryThumbs": "Choose a photograph to enlarge",
     "relatedService": "Service",
-    "subFilterLabel": "Filter within Infrastructure Services"
+    "otherCategories": "Other categories",
+    "categoriesLabel": "Project categories",
+    "clientsLink": "Clients we've worked with",
+    "allProjects": "All projects"
+  },
+  "images": {
+    "header": {
+      "src": "/images/projects/ogere-3.webp",
+      "alt": "Ductile iron pipes being offloaded at the Ogere water supply scheme",
+      "width": 1600,
+      "height": 1200
+    }
   },
   "sections": [
     {
       "type": "collection",
       "id": "all-projects",
       "collection": "projects",
-      "facetMode": "filter",
+      "intro": "Nearly three decades of delivered work, in three categories.",
+      "facetMode": "group",
       "facets": [
         {
-          "value": "infrastructure",
-          "label": "Infrastructure Services",
-          "serviceSlug": "construction-civil-engineering",
-          "children": [
-            {
-              "value": "buildings",
-              "label": "Buildings",
-              "serviceSlug": "construction-civil-engineering"
-            },
-            {
-              "value": "roads",
-              "label": "Roads & Pavements",
-              "serviceSlug": "construction-civil-engineering"
-            },
-            {
-              "value": "water",
-              "label": "Water",
-              "serviceSlug": "water-resources-environmental"
-            }
-          ]
+          "value": "buildings",
+          "label": "Buildings & Construction",
+          "slug": "buildings-construction",
+          "serviceSlug": "civil-engineering-construction",
+          "intro": "Academic, administrative, laboratory, health, residential and commercial buildings, new-build and conversion.",
+          "image": {
+            "src": "/images/projects/funaab-colplant-1.webp",
+            "alt": "COLPLANT building at the Federal University of Agriculture, Abeokuta, at completion stage",
+            "width": 1040,
+            "height": 520
+          },
+          "shortLabel": "Buildings"
         },
         {
-          "value": "energy",
-          "label": "Energy Services",
-          "serviceSlug": "energy"
+          "value": "roads",
+          "label": "Civil Engineering & Roads",
+          "slug": "civil-engineering-roads",
+          "serviceSlug": "civil-engineering-construction",
+          "intro": "Roads, heavy-duty pavements, earthworks, drainage, kerbs and culverts.",
+          "image": {
+            "src": "/images/services/roadworks-completed-carriageway.webp",
+            "alt": "Completed asphalt carriageway with kerbed median",
+            "width": 1920,
+            "height": 1440
+          },
+          "shortLabel": "Roads"
         },
         {
-          "value": "oil-gas",
-          "label": "Oil & Gas Services",
-          "serviceSlug": "oil-gas"
+          "value": "water",
+          "label": "Water Resources Development & Management",
+          "slug": "water-resources-development-management",
+          "serviceSlug": "water-resources-development-management",
+          "intro": "Dams, intakes, water supply schemes, boreholes, metering, river works and erosion control.",
+          "image": {
+            "src": "/images/projects/ogere-1.webp",
+            "alt": "Reinforcement and formwork during construction at the Ogere water supply scheme",
+            "width": 1600,
+            "height": 1200
+          },
+          "shortLabel": "Water"
         }
       ],
       "note": ""

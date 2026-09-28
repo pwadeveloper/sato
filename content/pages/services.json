@@ -2,12 +2,13 @@
   "slug": "services",
   "title": "Services",
   "metaTitle": "Services",
-  "metaDescription": "Infrastructure, energy, oil and gas and technology services. Every one draws on the project management, plant and delivery systems Sato has built since 1997.",
+  "metaDescription": "Integrated engineering, infrastructure and technology-driven solutions across a diverse range of sectors, built on nearly three decades of project delivery experience.",
   "labels": {
     "breadcrumb": "Breadcrumb",
     "capabilities": "Capabilities",
     "relatedProjects": "Projects in this service",
     "relatedServices": "Related services",
+    "sectionNav": "On this page",
     "groupInfrastructure": "Infrastructure Services",
     "groupInfrastructureIntro": "Our established infrastructure practice, delivering since 1997.",
     "groupInfrastructureHref": "/services/infrastructure",
@@ -15,41 +16,57 @@
     "groupEnergyIntro": "Engineering for power and process assets, delivered with technical partners.",
     "groupOilGas": "Oil & Gas Services",
     "groupOilGasIntro": "Consulting, engineering and digital technology for the upstream sector.",
-    "groupTechnology": "Technology",
-    "groupTechnologyIntro": "Asset data, digital models and applied engineering research.",
+    "groupDigitalTwin": "Digitalization & Digital Twin Services",
+    "groupDigitalTwinIntro": "Asset data turned into a working virtual model of the physical asset.",
+    "groupResearchInnovation": "Research, Technology & Innovation Services",
+    "groupResearchInnovationIntro": "Applied studies, technical training and new engineering methods.",
     "servicesMenu": "Services menu",
-    "viewService": "View this service"
+    "allServices": "All services"
+  },
+  "images": {
+    "header": {
+      "src": "/images/services/roadworks-asphalt-compaction.webp",
+      "alt": "Asphalt being compacted by a roller",
+      "width": 1920,
+      "height": 1440
+    },
+    "groupInfrastructure": {
+      "src": "/images/projects/funaab-colplant-2.webp",
+      "alt": "COLPLANT building under construction, with a backhoe loader on site",
+      "width": 1920,
+      "height": 1440
+    },
+    "groupOilGas": {
+      "src": "/images/oil-gas/platforms-and-pipelines.webp",
+      "alt": "Two offshore platforms and a supply vessel, with subsea pipelines and wellheads drawn across the water",
+      "width": 1672,
+      "height": 941
+    }
   },
   "sections": [
     {
       "type": "prose",
       "id": "intro",
       "body": [
-        "Four service categories, one standard of delivery. Every one draws on the same project management, plant and delivery systems Sato has built since 1997."
+        "Sato Engineering & Infrastructure Limited delivers integrated engineering, infrastructure and technology-driven solutions across a diverse range of sectors.",
+        "Building on nearly three decades of engineering and project delivery experience, we combine multidisciplinary technical expertise, strong project management capabilities and evolving technologies to deliver solutions tailored to the needs of our clients and the industries we serve."
       ]
     },
     {
-      "type": "collection",
-      "id": "divisions",
-      "collection": "serviceGroups",
-      "facetMode": "group",
-      "facets": [
-        {
-          "value": "infrastructure",
-          "label": "Infrastructure Services"
-        },
-        {
-          "value": "energy",
-          "label": "Energy Services"
-        },
-        {
-          "value": "oil-gas",
-          "label": "Oil & Gas Services"
-        },
-        {
-          "value": "technology",
-          "label": "Technology"
-        }
+      "type": "list",
+      "id": "why-sato",
+      "heading": "Why Sato?",
+      "intro": "Our strength is built on decades of engineering experience, technical capability and a consistent commitment to delivering quality and value.",
+      "items": [
+        "Proven engineering and project delivery experience",
+        "Multidisciplinary technical capabilities",
+        "Strong project management capabilities",
+        "Quality and timely delivery",
+        "Reliability and dependability",
+        "Integrity and professional responsibility",
+        "Client-focused approach",
+        "Commitment to sustainable solutions and lasting value",
+        "Established track record and reputation"
       ]
     },
     {

@@ -1,39 +1,39 @@
 {
   "slug": "about",
-  "title": "About Sato",
+  "title": "About Sato Engineering & Infrastructure",
   "metaTitle": "About",
-  "metaDescription": "Sato Engineering & Infrastructure Limited was established in 1997. Nearly three decades of civil engineering design and construction across roads, dams, irrigation, buildings and water resources.",
+  "metaDescription": "Established in 1997 and grown from engineering and construction into a multidisciplinary organization spanning infrastructure, water resources, electro-mechanical systems, energy, oil and gas, digital technologies and research.",
+  "images": {
+    "header": {
+      "src": "/images/hero/building-site-drawings.webp",
+      "alt": "Sato engineer reading a drawing at a multi-storey building under construction",
+      "width": 1536,
+      "height": 1024
+    }
+  },
   "sections": [
     {
       "type": "prose",
       "id": "intro",
       "body": [
-        "Sato Engineering & Infrastructure Limited was established in 1997. For nearly three decades we have delivered civil engineering design and construction across roads, dams, irrigation, buildings and water resources, for clients ranging from government ministries to international development partners. Today our work spans infrastructure, energy, and oil and gas."
+        "Established in 1997, Sato Engineering & Infrastructure Limited has grown from its foundations in engineering and construction into a multidisciplinary organization with capabilities spanning infrastructure, water resources, electro-mechanical systems, energy, oil and gas, digital technologies, and research and innovation.",
+        "Over nearly three decades, we have delivered projects for public and private sector clients, development institutions and communities, building a track record founded on technical expertise, effective project management and reliable delivery.",
+        "Our capabilities encompass Building, Civil Engineering & Infrastructure, Electro-Mechanical Services, Water Resources Development & Management, Energy Services, Oil & Gas Services, Digitalization & Digital Twin Services, and Research, Technology & Innovation. This breadth enables us to approach projects from an integrated perspective, combining established engineering practice with technology-driven solutions and emerging innovations.",
+        "At the heart of Sato is a team of experienced professionals committed to delivering solutions that respond to the evolving needs of our clients and the sectors we serve. As infrastructure and industry continue to evolve, we continue to strengthen our capabilities and expand the solutions we provide."
       ]
     },
     {
       "type": "prose",
-      "id": "how-we-work",
-      "heading": "How we work",
-      "body": [
-        "We build a dedicated team for each project, drawing on a core leadership group and a pool of experienced engineers, technicians, foremen and specialists matched to the project's scope. Clients get the right expertise for the job, led by people who have delivered with Sato for years.",
-        "Sato owns and operates a large fleet of plant, machinery and tools, including its own borehole drilling rig. That lets us mobilise quickly, control quality on site and take on work that would otherwise wait on hired equipment."
-      ]
-    },
-    {
-      "type": "prose",
-      "id": "where-were-going",
-      "heading": "Where we're going",
-      "body": [
-        "We are extending the same capability across Africa and beyond, and intend to register internationally as we do. Alongside the roads, dams and buildings that built the company, we are working towards highway, airport, railway and hydro-electric power projects."
-      ]
+      "id": "motto",
+      "heading": "Motto",
+      "body": ["Quality Engineering since 1997"]
     },
     {
       "type": "prose",
       "id": "mission",
       "heading": "Mission",
       "body": [
-        "To deliver innovative, sustainable and value-driven engineering and infrastructure solutions that meet the highest standards, exceed client expectations and create lasting value."
+        "To deliver innovative and sustainable engineering and infrastructure solutions that meet the highest standards, exceed client expectations and create lasting value."
       ]
     },
     {
@@ -42,35 +42,6 @@
       "heading": "Vision",
       "body": [
         "To be a globally recognized engineering and infrastructure company, renowned for excellence, innovation and world-class project delivery."
-      ]
-    },
-    {
-      "type": "list",
-      "id": "recognition",
-      "heading": "Recognition",
-      "items": [
-        "Best Erosion Control and Construction Engineering Company Award, 2012 — Institute of Government Research and Leadership Technology",
-        "West Africa's Most Dynamic and Outstanding Engineering Company Award, 2012 — West African Nobles and Top Entrepreneur Forum, and Aspire West Africa",
-        "Award for Unparalleled Social Responsibility in Ogun State, 2012 — Rotary Club Oke-Ona Egba",
-        "Distinguished Corporate Award, Best Engineering Company in Ogun State, 2010 — NSE",
-        "Award of Excellent Service towards contribution to the youth and humanity, 2010 — MKO Abiola Polytechnic Rotaract Club",
-        "Award for contributing immensely to the progress of the community through Rotary Service, 2011 — Rotaract Club of Osiele"
-      ]
-    },
-    {
-      "type": "cta",
-      "id": "about-cta",
-      "heading": "Work with us",
-      "body": "Meet the people who lead our projects, or talk to us about work you are planning.",
-      "ctas": [
-        {
-          "label": "Leadership",
-          "href": "/leadership"
-        },
-        {
-          "label": "Contact us",
-          "href": "/contact"
-        }
       ]
     }
   ]

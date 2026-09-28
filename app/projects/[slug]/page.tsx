@@ -12,8 +12,10 @@ import { Section } from "@/components/Section";
 import { Tag } from "@/components/Tag";
 
 import {
+  getCategoryForProject,
   getPage,
   getProject,
+  getProjectYear,
   getProjects,
   getSection,
   getServiceForProject,
@@ -134,8 +136,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
   const project = getProject(slug);
 
-  const sectorLabel =
-    facets.find((facet) => facet.value === project.sector)?.label ?? project.sector;
+  const category = getCategoryForProject(project);
+  const sectorLabel = category?.label ?? project.sector;
   const service = getServiceForProject(project, facets);
 
   /**
@@ -147,7 +149,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const facts: Array<{ label: string; value: string }> = [
     { label: labels.client ?? "", value: project.client },
     { label: labels.location ?? "", value: project.location },
-    { label: labels.year ?? "", value: project.year },
+    { label: labels.year ?? "", value: getProjectYear(project) },
   ].filter((fact) => isKnown(fact.value));
 
   const hasImages = project.images.length > 0;
@@ -156,8 +158,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <>
       <Section tone="concrete">
         <Container>
+          {/* Projects > Category > Project: the category is a real step in
+              the structure now, not a filter state, so the trail says so. */}
           <Breadcrumbs
-            trail={[{ label: page.title, href: "/projects" }]}
+            trail={[
+              { label: page.title, href: "/projects" },
+              ...(category
+                ? [{ label: category.label, href: `/projects/${category.slug}` }]
+                : []),
+            ]}
             current={project.title}
             label={labels.breadcrumb ?? page.title}
           />

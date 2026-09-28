@@ -2,11 +2,19 @@
   "slug": "services/infrastructure",
   "title": "Infrastructure Services",
   "metaTitle": "Infrastructure Services",
-  "metaDescription": "Sato's established infrastructure practice: construction and civil, electrical, mechanical, and water resources and environmental engineering, delivering since 1997.",
+  "metaDescription": "Sato's established infrastructure practice: civil engineering and construction, electrical engineering, mechanical engineering, and water resources development and management, delivering since 1997.",
   "labels": {
     "breadcrumb": "Breadcrumb",
     "capabilities": "Selected capabilities",
     "viewService": "Full capability"
+  },
+  "images": {
+    "header": {
+      "src": "/images/projects/funaab-administrative-block-1.webp",
+      "alt": "Three-storey administrative block under construction at the Federal University of Agriculture, Abeokuta",
+      "width": 1920,
+      "height": 1440
+    }
   },
   "sections": [
     {
@@ -23,10 +31,10 @@
       "id": "disciplines",
       "collection": "services",
       "slugs": [
-        "construction-civil-engineering",
+        "civil-engineering-construction",
         "electrical-engineering",
         "mechanical-engineering",
-        "water-resources-environmental"
+        "water-resources-development-management"
       ]
     },
     {

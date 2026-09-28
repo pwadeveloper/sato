@@ -1,15 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
 import { MobileNav } from "./MobileNav";
+import { NavMenu, type NavMenuGroup } from "./NavMenu";
 import { RichText } from "./RichText";
-import { ServicesMenu, type ServicesMenuBand } from "./ServicesMenu";
 import type { Link as LinkContent } from "@/lib/content-types";
 import { cn } from "@/lib/cn";
+
+/** A nav item that opens a panel instead of going straight to its page. */
+export interface HeaderMenu {
+  /** Matches the nav link's `href`, which is how the two are paired up. */
+  href: string;
+  overviewLabel: string;
+  groups: NavMenuGroup[];
+}
 
 export interface SiteHeaderProps {
   logoAlt: string;
@@ -18,20 +25,22 @@ export interface SiteHeaderProps {
   skipLinkLabel: string;
   menuOpenLabel: string;
   menuCloseLabel: string;
-  /** Divisions grouped for the Services panel. */
-  serviceBands: ServicesMenuBand[];
+  menus: HeaderMenu[];
+}
+
+/** True for the item covering the current page — `/` only ever matches itself. */
+function isCurrent(pathname: string, href: string): boolean {
+  return href === "/" ? pathname === "/" : pathname.startsWith(href);
 }
 
 /**
- * Routes that open with a full-bleed photographic hero. There the header sits
- * transparently over the picture, and takes a solid background once the hero
- * has been scrolled past so the nav never sits unreadably on pale content.
+ * The bar. One solid surface on every route.
  *
- * Only the pathname crosses to the client; the rest of `site.json` stays on
- * the server.
+ * It used to sit transparently over the Home hero and take a background once
+ * that was scrolled past. Home no longer has white copy over a full-bleed
+ * photograph, so the observer that drove it is gone with it — the header is
+ * plain, which is what the client asked the whole site to be.
  */
-const BLEED_ROUTES = new Set(["/"]);
-
 export function SiteHeader({
   logoAlt,
   navLabel,
@@ -39,46 +48,12 @@ export function SiteHeader({
   skipLinkLabel,
   menuOpenLabel,
   menuCloseLabel,
-  serviceBands,
+  menus,
 }: SiteHeaderProps) {
   const pathname = usePathname();
-  const overHero = BLEED_ROUTES.has(pathname);
-  const [scrolledPast, setScrolledPast] = useState(false);
-
-  useEffect(() => {
-    if (!overHero) return;
-    const hero = document.querySelector('[data-hero="bleed"]');
-    if (!hero) return;
-
-    // Watching the hero itself beats a scroll handler: the browser does the
-    // work, and the switch lands exactly when the picture leaves the bar.
-    // rootMargin only understands px and %, never rem — hence offsetHeight
-    // rather than the --header-height custom property.
-    const bar = document.querySelector("header")?.offsetHeight ?? 64;
-    const observer = new IntersectionObserver(
-      ([entry]) => setScrolledPast(!entry.isIntersecting),
-      { rootMargin: `-${bar}px 0px 0px 0px`, threshold: 0 },
-    );
-    observer.observe(hero);
-    return () => observer.disconnect();
-  }, [overHero, pathname]);
-
-  // Light ink whenever the bar is over the photograph or on the dark fill.
-  const isDark = overHero;
-  const isTransparent = overHero && !scrolledPast;
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-40 h-[var(--header-height)] border-b",
-        "transition-[background-color,border-color] duration-300 motion-reduce:transition-none",
-        isTransparent
-          ? "border-transparent bg-transparent"
-          : isDark
-            ? "border-rule-dark bg-asphalt"
-            : "border-rule bg-concrete",
-      )}
-    >
+    <header className="sticky top-0 z-40 h-[var(--header-height)] border-b border-rule bg-concrete">
       <a
         href="#main"
         className="sr-only px-4 py-2 focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-asphalt focus:text-concrete"
@@ -88,46 +63,49 @@ export function SiteHeader({
 
       <Container className="flex h-full items-center justify-between gap-6">
         <Link href="/" className="flex shrink-0 items-center no-underline">
-          <Logo surface={isDark ? "dark" : "light"} alt={logoAlt} priority />
+          <Logo alt={logoAlt} priority />
         </Link>
 
         <nav aria-label={navLabel} className="hidden h-full lg:block">
           <ul className="flex h-full items-center gap-x-5 xl:gap-x-7">
-            {nav.map((link) =>
-              link.href === "/services" && serviceBands.length ? (
-                <li key={link.href} className="h-full">
-                  <ServicesMenu
-                    label={link.label}
-                    href={link.href}
-                    bands={serviceBands}
-                    tone={isDark ? "dark" : "light"}
-                  />
+            {nav.map((link) => {
+              const menu = menus.find((entry) => entry.href === link.href);
+              const current = isCurrent(pathname, link.href);
+
+              return (
+                <li key={link.href} className={menu ? "h-full" : undefined}>
+                  {menu ? (
+                    <NavMenu
+                      label={link.label}
+                      href={link.href}
+                      overviewLabel={menu.overviewLabel}
+                      groups={menu.groups}
+                      current={current}
+                    />
+                  ) : (
+                    <Link
+                      href={link.href}
+                      aria-current={current ? "page" : undefined}
+                      className={cn(
+                        "text-sm font-semibold no-underline wdth-body transition-colors duration-150 hover:text-brand-ink",
+                        current ? "text-brand-ink" : "text-asphalt",
+                      )}
+                    >
+                      <RichText text={link.label} />
+                    </Link>
+                  )}
                 </li>
-              ) : (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      "text-sm font-semibold no-underline wdth-body transition-colors duration-150",
-                      isDark
-                        ? "text-concrete hover:text-brand-light"
-                        : "text-asphalt hover:text-brand-ink",
-                    )}
-                  >
-                    <RichText text={link.label} />
-                  </Link>
-                </li>
-              ),
-            )}
+              );
+            })}
           </ul>
         </nav>
 
         <MobileNav
           links={nav}
+          menus={menus}
           navLabel={navLabel}
           openLabel={menuOpenLabel}
           closeLabel={menuCloseLabel}
-          tone={isDark ? "dark" : "light"}
         />
       </Container>
     </header>

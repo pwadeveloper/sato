@@ -3,7 +3,14 @@ import { Archivo } from "next/font/google";
 import { ReviewBanner } from "@/components/DraftNotice";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { getServiceBands, getSite } from "@/lib/content";
+import {
+  getPage,
+  getProjectCategories,
+  getServiceBands,
+  getSite,
+} from "@/lib/content";
+import { bandHref, bandItems } from "@/lib/service-band";
+import type { HeaderMenu } from "@/components/SiteHeader";
 import { isReviewMode } from "@/lib/review-mode";
 import { buildOrganizationSchema, buildWebsiteSchema } from "@/lib/structured-data";
 import "./globals.css";
@@ -21,18 +28,57 @@ const archivo = Archivo({
 });
 
 const site = getSite();
+const servicesPage = getPage("services");
+const projectsPage = getPage("projects");
 
-/** Only what the header needs crosses to the client. */
-const serviceBands = getServiceBands().map((band) => ({
-  group: band.group,
-  label: band.label,
-  href: band.href,
-  services: band.services.map((service) => ({
-    slug: service.slug,
-    name: service.name,
-    shortSummary: service.shortSummary,
-  })),
-}));
+/**
+ * The two nav panels, flattened to labels and hrefs.
+ *
+ * Only this crosses to the client. The header is interactive — it is the one
+ * place on the site that has to be — so anything it receives ships to the
+ * browser, and `getServiceBands()` carries whole service records.
+ *
+ * Both panels are built from the same content the pages use, so a service
+ * renamed in `services.json` is renamed in the menu, and a category added to
+ * `pages/projects.json` appears in it.
+ */
+const menus: HeaderMenu[] = [
+  {
+    href: "/services",
+    overviewLabel: servicesPage.labels?.allServices ?? servicesPage.title,
+    groups: getServiceBands().map((band) => {
+      const items = bandItems(band);
+      const solo = items.length === 0 ? band.services[0] : undefined;
+
+      return {
+        id: band.group,
+        label: band.label,
+        href: bandHref(band),
+        // A category of several lists its services; a category of one lists
+        // the sections of its own page, where it has any. Oil & Gas is the
+        // only page long enough to declare them.
+        items: items.length
+          ? items.map((service) => ({
+              label: service.name,
+              href: `/services/${service.slug}`,
+            }))
+          : (solo?.sectionNav ?? []).map((section) => ({
+              label: section.label,
+              href: `/services/${solo?.slug}#${section.id}`,
+            })),
+      };
+    }),
+  },
+  {
+    href: "/projects",
+    overviewLabel: projectsPage.labels?.allProjects ?? projectsPage.title,
+    groups: getProjectCategories().map((category) => ({
+      id: category.value,
+      label: category.label,
+      href: `/projects/${category.slug}`,
+    })),
+  },
+];
 
 /**
  * Emitted once, in the root layout, so every page carries it. Fields the
@@ -69,7 +115,7 @@ export default function RootLayout({
           skipLinkLabel={site.skipLinkLabel}
           menuOpenLabel={site.menuOpenLabel}
           menuCloseLabel={site.menuCloseLabel}
-          serviceBands={serviceBands}
+          menus={menus}
         />
         <main id="main">{children}</main>
         <SiteFooter site={site} year={new Date().getFullYear()} />

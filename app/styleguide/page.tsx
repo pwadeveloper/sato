@@ -96,7 +96,7 @@ export default function StyleguidePage() {
   const clients = getClients();
   const team = getTeam();
   const facts = getCompanyFacts();
-  const waterResources = getService("water-resources-environmental");
+  const waterResources = getService("water-resources-development-management");
 
   const projectsPage = getPage("projects");
   const sectorLabels = new Map(
@@ -106,13 +106,6 @@ export default function StyleguidePage() {
       ) as CollectionSection | undefined
     )?.facets?.map((facet) => [facet.value, facet.label]) ?? [],
   );
-
-  const clientsPage = getPage("clients");
-  const clientGroups = (
-    clientsPage.sections.find(
-      (section) => section.type === "collection" && section.id === "all-clients",
-    ) as CollectionSection | undefined
-  )?.facets;
 
   return (
     <>
@@ -246,8 +239,8 @@ export default function StyleguidePage() {
               </ul>
             </Entry>
 
-            <Entry title="Client register" note="Typeset, not a logo strip. Sato has no client logo files, and a ministry's name set in type carries more for a procurement reader than a low-resolution GIF.">
-              <ClientList clients={clients.slice(0, 7)} groups={clientGroups} />
+            <Entry title="Client register" note="Names in columns, nothing else. The client asked for a plain list rather than a focal point — no logos, no categories, no agencies nested under a government.">
+              <ClientList clients={clients.slice(0, 7)} />
             </Entry>
 
             <Entry title="Person card">

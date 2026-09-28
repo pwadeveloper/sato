@@ -1,75 +1,90 @@
 import type { Metadata } from "next";
 import { ClientList } from "@/components/ClientList";
 import { Container } from "@/components/Container";
-import { CtaBand } from "@/components/CtaBand";
-import { Heading } from "@/components/Heading";
+import { DraftNotice } from "@/components/DraftNotice";
+import { PageHeader } from "@/components/PageHeader";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
-import { getClients, getPage, getSection, getSite } from "@/lib/content";
+import { getClients, getPage, getSection, getService, getSite } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/metadata";
+import { isReviewMode } from "@/lib/review-mode";
 
 const page = getPage("clients");
 const site = getSite();
 
 const intro = getSection(page, "intro", "prose");
-const all = getSection(page, "all-clients", "collection");
-const cta = getSection(page, "cta-default", "cta");
+const own = getSection(page, "all-clients", "collection");
+const partner = getSection(page, "oil-gas-clients", "collection");
 
 const clients = getClients();
+const satoClients = clients.filter((client) => client.category !== "oil-gas-partner");
+const partnerClients = clients.filter((client) => client.category === "oil-gas-partner");
 
-/** Only categories that have clients, so a group never renders empty. */
-const groups = (all.facets ?? []).filter((facet) =>
-  clients.some((client) => client.category === facet.value),
-);
+/**
+ * The partner list is gated with the Oil & Gas page it belongs to: the same
+ * `reviewStatus` blocks the production build while either is unapproved, so
+ * the two can never go live apart from each other.
+ */
+const partnerIsDraft = getService("oil-gas").reviewStatus === "draft";
 
 export const metadata: Metadata = buildPageMetadata(page, site);
 
 export default function ClientsPage() {
   return (
     <>
-      <Section tone="concrete" labelledBy="clients-heading">
-        <Container>
-          <div className="lg:grid lg:grid-cols-12 lg:gap-x-12">
-            <div className="lg:col-span-4">
-              <Heading level={1} text={page.title} id="clients-heading" />
-            </div>
+      <PageHeader
+        title={page.title}
+        intro={intro.body}
+        image={page.images?.header}
+        headingId="clients-heading"
+      />
 
-            <div className="mt-5 flex flex-col gap-5 lg:col-span-7 lg:col-start-6 lg:mt-0">
-              {intro.body.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="max-w-(--container-measure) text-lg text-asphalt wdth-body text-pretty"
-                >
-                  <RichText text={paragraph} />
-                </p>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      <Section tone="white" labelledBy="clients-register">
+      <Section tone="concrete">
         <Container>
-          {all.heading ? (
-            <Heading level={2} text={all.heading} id="clients-register" />
+          {own.heading ? (
+            <h2 className="text-h3 wdth-heading text-balance">
+              <RichText text={own.heading} />
+            </h2>
           ) : null}
 
-          <ClientList clients={clients} groups={groups} className="mt-10 md:mt-12" />
+          <ClientList clients={satoClients} className={own.heading ? "mt-6" : undefined} />
 
-          {all.note ? (
-            <p className="mt-10 max-w-(--container-measure) text-xs text-steel-ink wdth-body">
-              <RichText text={all.note} />
+          {own.note ? (
+            <p className="mt-8 max-w-(--container-measure) text-xs text-steel-ink wdth-body">
+              <RichText text={own.note} />
             </p>
           ) : null}
         </Container>
       </Section>
 
-      <CtaBand
-        heading={cta.heading}
-        body={cta.body}
-        ctas={cta.ctas}
-        headingId="clients-cta"
-      />
+      {/*
+        Kept apart, under its own attributed heading. These organisations
+        were served by the partner team, not by Sato, and the heading is the
+        first thing read — a reader who skims the page must not be able to
+        come away thinking Sato holds a contract with Saudi Aramco.
+      */}
+      {partnerClients.length ? (
+        <Section tone="white" labelledBy="oil-gas-clients-heading">
+          <Container>
+            {isReviewMode && partnerIsDraft ? <DraftNotice className="mb-8" /> : null}
+
+            <h2
+              id="oil-gas-clients-heading"
+              className="border-t-[3px] border-brand pt-6 text-h3 wdth-heading text-balance"
+            >
+              <RichText text={partner.heading ?? ""} />
+            </h2>
+
+            {partner.intro ? (
+              <p className="mt-4 max-w-(--container-measure) text-base text-steel-ink wdth-body text-pretty">
+                <RichText text={partner.intro} />
+              </p>
+            ) : null}
+
+            <ClientList clients={partnerClients} className="mt-8" />
+          </Container>
+        </Section>
+      ) : null}
     </>
   );
 }

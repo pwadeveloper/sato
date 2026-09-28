@@ -192,7 +192,13 @@ export function getServices(): Service[] {
 }
 
 /** The order categories are presented in, everywhere on the site. */
-const BAND_ORDER: ServiceGroup[] = ["infrastructure", "energy", "oil-gas", "technology"];
+const BAND_ORDER: ServiceGroup[] = [
+  "infrastructure",
+  "energy",
+  "oil-gas",
+  "digital-twin",
+  "research-innovation",
+];
 
 /** `oil-gas` -> `groupOilGas`, so a category's copy is found by its value. */
 function bandKey(group: ServiceGroup): string {
@@ -203,23 +209,30 @@ function bandKey(group: ServiceGroup): string {
 /**
  * The service categories, with their copy resolved, in display order.
  *
- * The header, Home and the services overview all render the same four
- * categories, so the label, intro and landing-page link are resolved once
- * here from `pages/services.json` rather than re-derived at each call site.
- * A category with no services is dropped, which is what lets a future split
- * of Technology be a content edit.
+ * The header, the services overview and the service pages all render the
+ * same five categories, so the label, intro, photograph and landing-page
+ * link are resolved once here from `pages/services.json` rather than
+ * re-derived at each call site. A category with no services is dropped —
+ * which is how splitting Technology into two was a content edit.
+ *
+ * A category of one takes its photograph from its single service, because
+ * that service *is* the category; only Infrastructure, which holds four,
+ * needs a picture of its own.
  */
 export function getServiceBands(): ServiceBand[] {
   const labels = pages.services.labels ?? {};
+  const images = pages.services.images ?? {};
 
   return BAND_ORDER.map((group) => {
     const key = bandKey(group);
+    const members = services.filter((service) => service.group === group);
     return {
       group,
       label: labels[key] ?? group,
       intro: labels[`${key}Intro`] ?? "",
       href: labels[`${key}Href`] || undefined,
-      services: services.filter((service) => service.group === group),
+      image: images[key] ?? members[0]?.image ?? undefined,
+      services: members,
     };
   }).filter((band) => band.services.length > 0);
 }
@@ -241,6 +254,59 @@ export function getService(slug: string): Service {
 
 export function getProjects(): Project[] {
   return projects;
+}
+
+/**
+ * The project categories, in display order, from `pages/projects.json`.
+ *
+ * A category is a leaf: one sector, one route, one photograph. The old
+ * nested filter is gone — the client's point was that someone who came for
+ * water work should not have to scroll past buildings and roads to find it,
+ * and a tab they have to notice is not much better than a scroll.
+ *
+ * Only a category that actually has projects is returned, so an empty tile
+ * can never reach the landing page.
+ */
+export function getProjectCategories(): CollectionFacet[] {
+  const section = getSection(pages.projects, "all-projects", "collection");
+  return (section.facets ?? []).filter((facet) =>
+    projects.some((project) => facetMatches(facet, project.sector)),
+  );
+}
+
+/** One category by its route segment. Throws rather than rendering empty. */
+export function getProjectCategory(slug: string): CollectionFacet {
+  const category = getProjectCategories().find((facet) => facet.slug === slug);
+  if (!category) {
+    throw new Error(
+      `No project category with slug "${slug}" in /content/pages/projects.json.`,
+    );
+  }
+  return category;
+}
+
+/** The projects in one category, in `projects.json` order. */
+export function getProjectsInCategory(category: CollectionFacet): Project[] {
+  return projects.filter((project) => facetMatches(category, project.sector));
+}
+
+/** The category a project belongs to, for its breadcrumb and its card. */
+export function getCategoryForProject(
+  project: Project,
+): CollectionFacet | undefined {
+  return getProjectCategories().find((facet) =>
+    facetMatches(facet, project.sector),
+  );
+}
+
+/**
+ * The project's year, or "" while the client has dates switched off.
+ *
+ * Every date on the site goes through here, so `showProjectDates` is one
+ * edit in site.json rather than a flag each template has to remember.
+ */
+export function getProjectYear(project: Project): string {
+  return site.showProjectDates ? project.year : "";
 }
 
 /**

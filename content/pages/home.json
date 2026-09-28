@@ -1,127 +1,37 @@
 {
   "slug": "home",
-  "title": "Engineering infrastructure since 1997.",
+  "title": "Welcome to Sato Engineering & Infrastructure",
   "metaTitle": "Sato Engineering & Infrastructure Limited",
-  "metaDescription": "Engineering and infrastructure company incorporated in 1997. Roads, dams, water schemes and buildings for governments, universities and international development partners.",
+  "metaDescription": "Established in 1997. Nearly three decades of engineering, infrastructure, energy, oil and gas and digital project delivery for public and private sector clients.",
+  "images": {
+    "hero": {
+      "src": "/images/hero/dam-site-engineer.webp",
+      "alt": "Sato engineer with drawings on a dam construction site, with an excavator and survey crew behind",
+      "width": 1536,
+      "height": 1024
+    }
+  },
   "sections": [
     {
-      "type": "hero",
-      "id": "hero",
-      "subhead": "Sato Engineering & Infrastructure Limited designs and delivers infrastructure, energy, and oil and gas engineering services. Since 1997 we have built roads, dams, water schemes and buildings for governments, universities, international development partners and private clients.",
-      "ctas": [
-        {
-          "label": "Explore our work",
-          "href": "/projects"
-        },
-        {
-          "label": "Contact us",
-          "href": "/contact"
-        }
-      ],
-      "backgroundImages": [
-        {
-          "src": "/images/hero/dam-site-engineer.webp",
-          "alt": "Sato engineer with drawings on a dam construction site, with an excavator and survey crew behind",
-          "width": 1536,
-          "height": 1024
-        },
-        {
-          "src": "/images/hero/dam-site-drawings.webp",
-          "alt": "Sato engineer reading a drawing at a dam site, tower crane and formwork behind",
-          "width": 1536,
-          "height": 1024
-        },
-        {
-          "src": "/images/hero/building-site-drawings.webp",
-          "alt": "Sato engineer reading a drawing at a multi-storey building under construction",
-          "width": 1536,
-          "height": 1024
-        }
+      "type": "prose",
+      "id": "welcome",
+      "body": [
+        "Established in 1997, Sato Engineering & Infrastructure Limited has built nearly three decades of experience delivering complex projects and integrated solutions across diverse sectors.",
+        "Today, we bring together engineering expertise, project management, technology and innovation across Building, Civil Engineering & Infrastructure, Electro-Mechanical Services, Water Resources Development & Management, Energy, Oil & Gas, Digitalization & Digital Twin Services, and Research, Technology & Innovation. We remain focused on delivering sustainable, high-quality solutions that create lasting value for our clients and the communities they serve."
       ]
     },
     {
-      "type": "collection",
-      "id": "divisions",
-      "heading": "What we do",
-      "collection": "serviceGroups",
-      "ctas": [
-        {
-          "label": "All services",
-          "href": "/services"
-        }
-      ],
-      "facetMode": "group",
-      "facets": [
-        {
-          "value": "infrastructure",
-          "label": "Infrastructure Services"
-        },
-        {
-          "value": "energy",
-          "label": "Energy Services"
-        },
-        {
-          "value": "oil-gas",
-          "label": "Oil & Gas Services"
-        },
-        {
-          "value": "technology",
-          "label": "Technology"
-        }
-      ]
+      "type": "prose",
+      "id": "motto",
+      "heading": "Motto",
+      "body": ["Quality Engineering since 1997"]
     },
     {
-      "type": "facts",
-      "id": "company-at-a-glance",
-      "heading": "Company at a glance"
-    },
-    {
-      "type": "collection",
-      "id": "clients",
-      "heading": "Trusted by",
-      "collection": "clients",
-      "ctas": [
-        {
-          "label": "All clients",
-          "href": "/clients"
-        }
-      ]
-    },
-    {
-      "type": "collection",
-      "id": "selected-projects",
-      "heading": "Selected projects",
-      "collection": "projects",
-      "ctas": [
-        {
-          "label": "View all projects",
-          "href": "/projects"
-        }
-      ],
-      "facets": [
-        {
-          "value": "buildings",
-          "label": "Buildings"
-        },
-        {
-          "value": "roads",
-          "label": "Roads"
-        },
-        {
-          "value": "water",
-          "label": "Water"
-        }
-      ]
-    },
-    {
-      "type": "cta",
-      "id": "closing",
-      "body": "Working on a project in infrastructure, energy or oil and gas? Talk to our team.",
-      "ctas": [
-        {
-          "label": "Contact us",
-          "href": "/contact"
-        }
+      "type": "prose",
+      "id": "vision",
+      "heading": "Vision",
+      "body": [
+        "To be a globally recognized engineering and infrastructure company, renowned for excellence, innovation and world-class project delivery."
       ]
     }
   ]

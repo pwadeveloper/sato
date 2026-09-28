@@ -1,45 +1,21 @@
 import type { Metadata } from "next";
-import { ClientStrip } from "@/components/ClientStrip";
-import { CompanyFactsPanel } from "@/components/CompanyFactsPanel";
+import Image from "next/image";
+
 import { Container } from "@/components/Container";
-import { CtaBand } from "@/components/CtaBand";
-import { ServiceGroupList } from "@/components/ServiceGroupList";
 import { Heading } from "@/components/Heading";
-import { Hero } from "@/components/Hero";
-import { ProjectCard } from "@/components/ProjectCard";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
-import { TextLink } from "@/components/TextLink";
-import {
-  getCompanyFacts,
-  getFeaturedClients,
-  getFeaturedProjects,
-  getPage,
-  getSection,
-  getServiceBands,
-  getSite,
-} from "@/lib/content";
+import { getPage, getSection, getSite } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/metadata";
 
 const page = getPage("home");
 const site = getSite();
 
-const hero = getSection(page, "hero", "hero");
-const divisions = getSection(page, "divisions", "collection");
-const facts = getSection(page, "company-at-a-glance", "facts");
-const clients = getSection(page, "clients", "collection");
-const selected = getSection(page, "selected-projects", "collection");
-const closing = getSection(page, "closing", "cta");
+const welcome = getSection(page, "welcome", "prose");
+const motto = getSection(page, "motto", "prose");
+const vision = getSection(page, "vision", "prose");
 
-const serviceBands = getServiceBands();
-const featuredClients = getFeaturedClients();
-const featuredProjects = getFeaturedProjects();
-const companyFacts = getCompanyFacts();
-
-/** Sector value -> label, from the section's own facets. */
-const sectorLabels = new Map(
-  (selected.facets ?? []).map((facet) => [facet.value, facet.label]),
-);
+const heroImage = page.images?.hero;
 
 export const metadata: Metadata = {
   ...buildPageMetadata(page, site),
@@ -47,114 +23,97 @@ export const metadata: Metadata = {
   title: { absolute: page.metaTitle ?? site.name },
 };
 
+/**
+ * Home: a welcome, a motto and a vision. Nothing else.
+ *
+ * It used to run six sections deep — what we do, a company data plate, a
+ * client strip, selected projects, a closing call to action. The client's
+ * verdict was that it read as academic, and that the old site's plainness
+ * was closer to what he wanted. So the page introduces the company and gets
+ * out of the way; everything it used to summarise has a page of its own, and
+ * the nav is how a visitor reaches it.
+ *
+ * The components those sections used are still in `/components` and still
+ * work. They are unused on purpose — the client said he wants to build on
+ * this later, and deleting them would make that a rewrite instead of an
+ * import.
+ */
 export default function HomePage() {
-  const [lead, ...rest] = featuredProjects;
-
   return (
     <>
-      <Hero
-        headline={page.title}
-        subhead={hero.subhead}
-        ctas={hero.ctas}
-        backgroundImages={hero.backgroundImages ?? site.heroImages}
-      />
-
-      {/* 2. What we do */}
-      <Section tone="concrete" labelledBy="divisions-heading">
-        <Container>
-          <div className="flex flex-wrap items-baseline justify-between gap-4">
-            {divisions.heading ? (
-              <Heading level={2} text={divisions.heading} id="divisions-heading" />
-            ) : null}
-            {divisions.ctas?.map((cta) => (
-              <TextLink key={cta.href} label={cta.label} href={cta.href} />
-            ))}
-          </div>
-
-          <ServiceGroupList bands={serviceBands} className="mt-10 md:mt-12" />
-        </Container>
-      </Section>
-
-      {/* 3. Company at a glance — the page's signature element. */}
-      <Section tone="concrete" as="div" className="pt-0">
-        <Container>
-          <CompanyFactsPanel
-            heading={facts.heading}
-            facts={companyFacts}
-            headingId="company-at-a-glance"
-          />
-          {facts.note ? (
-            <p className="mt-4 text-xs text-steel-ink wdth-body">
-              <RichText text={facts.note} />
-            </p>
+      {/*
+        Copy beside the photograph, not over it. Two full paragraphs set in
+        white over a picture is exactly the kind of thing that reads well in a
+        mockup and badly on a phone in daylight, and this way the photograph
+        is shown rather than dimmed to make room for text.
+      */}
+      <section aria-labelledby="welcome-heading" className="bg-concrete">
+        <div className="lg:grid lg:min-h-[32rem] lg:grid-cols-2 lg:items-stretch">
+          {heroImage ? (
+            <div className="relative aspect-4/3 w-full bg-steel/10 sm:aspect-16/9 lg:order-last lg:aspect-auto lg:h-full">
+              <Image
+                src={heroImage.src}
+                alt={heroImage.alt}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                priority
+                className="object-cover"
+              />
+            </div>
           ) : null}
-        </Container>
-      </Section>
 
-      {/* 4. Trusted by */}
-      <Section tone="white" labelledBy="clients-heading">
+          <Container className="py-12 md:py-16 lg:flex lg:max-w-none lg:flex-col lg:justify-center lg:py-20 lg:pr-16">
+            <div className="lg:ml-auto lg:w-full lg:max-w-[38rem]">
+              <Heading level={1} text={page.title} id="welcome-heading" />
+
+              {welcome.body.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="mt-6 max-w-(--container-measure) text-base text-asphalt wdth-body text-pretty"
+                >
+                  <RichText text={paragraph} />
+                </p>
+              ))}
+            </div>
+          </Container>
+        </div>
+      </section>
+
+      {/* The motto, given the room it needs to be a motto. */}
+      <Section tone="asphalt" labelledBy="motto-heading">
         <Container>
-          <div className="flex flex-wrap items-baseline justify-between gap-4">
-            {clients.heading ? (
-              <Heading level={2} text={clients.heading} id="clients-heading" />
-            ) : null}
-            {clients.ctas?.map((cta) => (
-              <TextLink key={cta.href} label={cta.label} href={cta.href} />
-            ))}
-          </div>
-
-          <ClientStrip clients={featuredClients} className="mt-10 md:mt-12" />
+          <h2 id="motto-heading" className="sr-only">
+            <RichText text={motto.heading ?? ""} />
+          </h2>
+          <p className="max-w-[20ch] text-display wdth-display text-balance text-concrete">
+            <RichText text={motto.body[0]} />
+          </p>
         </Container>
       </Section>
 
-      {/* 5. Selected projects */}
-      <Section tone="concrete" labelledBy="selected-projects-heading">
+      <Section tone="concrete" labelledBy="vision-heading">
         <Container>
-          <div className="flex flex-wrap items-baseline justify-between gap-4">
-            {selected.heading ? (
-              <Heading
-                level={2}
-                text={selected.heading}
-                id="selected-projects-heading"
-              />
-            ) : null}
-            {selected.ctas?.map((cta) => (
-              <TextLink key={cta.href} label={cta.label} href={cta.href} />
-            ))}
-          </div>
+          <div className="lg:grid lg:grid-cols-12 lg:gap-x-12">
+            <h2
+              id="vision-heading"
+              className="text-2xs font-semibold uppercase tracking-[0.08em] text-brand-deep wdth-body lg:col-span-3"
+            >
+              <RichText text={vision.heading ?? ""} />
+            </h2>
 
-          <div className="mt-10 flex flex-col gap-6 md:mt-12">
-            {lead ? (
-              <ProjectCard
-                project={lead}
-                sectorLabel={sectorLabels.get(lead.sector) ?? lead.sector}
-                layout="wide"
-              />
-            ) : null}
-
-            {rest.length ? (
-              <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {rest.map((project) => (
-                  <li key={project.slug} className="flex">
-                    <ProjectCard
-                      project={project}
-                      sectorLabel={sectorLabels.get(project.sector) ?? project.sector}
-                    />
-                  </li>
-                ))}
-              </ul>
-            ) : null}
+            <div className="mt-4 lg:col-span-8 lg:col-start-5 lg:mt-0">
+              {vision.body.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="max-w-(--container-measure) text-h3 wdth-heading text-asphalt text-pretty"
+                >
+                  <RichText text={paragraph} />
+                </p>
+              ))}
+            </div>
           </div>
         </Container>
       </Section>
-
-      {/* 6. Closing CTA */}
-      <CtaBand
-        heading={closing.heading}
-        body={closing.body}
-        ctas={closing.ctas}
-        headingId="closing-heading"
-      />
     </>
   );
 }

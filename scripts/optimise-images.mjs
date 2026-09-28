@@ -24,9 +24,10 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 /**
  * Where a map entry's `source` may live. Tried in order.
  *  - raw-assets/old-site: the 2012 site, not committed
+ *  - raw-assets: anything supplied since — the oil and gas deck images
  *  - hero: client-supplied hero photography, committed
  */
-const SOURCE_ROOTS = [join(ROOT, 'raw-assets', 'old-site'), ROOT];
+const SOURCE_ROOTS = [join(ROOT, 'raw-assets', 'old-site'), join(ROOT, 'raw-assets'), ROOT];
 const OUT = join(ROOT, 'public', 'images');
 const MAX_WIDTH = 1920;
 const SMALL_WIDTH = 800;
@@ -48,7 +49,7 @@ async function resolveSource(rel) {
 const { images } = JSON.parse(await readFile(join(ROOT, 'scripts', 'image-map.json'), 'utf8'));
 
 /** Write one variant, downscaling only. Both variants are always written. */
-async function variant(src, srcMtime, absOut, width, sourceWidth, exposure) {
+async function variant(src, srcMtime, absOut, width, sourceWidth, exposure, lossless) {
   if (!force && (await exists(absOut)) && (await stat(absOut)).mtimeMs > srcMtime) return 'cached';
   await mkdir(dirname(absOut), { recursive: true });
   const pipeline = sharp(src).rotate();                           // honour EXIF orientation
@@ -62,7 +63,15 @@ async function variant(src, srcMtime, absOut, width, sourceWidth, exposure) {
   if (exposure && exposure !== 1) {
     pipeline.modulate({ brightness: exposure, saturation: 0.92 });
   }
-  const info = await pipeline.webp({ quality: QUALITY, effort: 5 }).toFile(absOut);
+  /**
+   * Diagrams are line art, not photography: lossy WebP smears the hairlines
+   * and the 9pt labels into grey mush at exactly the size someone zooms in to
+   * read them. Lossless costs more bytes on a photograph and almost nothing
+   * on a mostly-white drawing, so the map entry opts in per image.
+   */
+  const info = await pipeline
+    .webp(lossless ? { lossless: true, effort: 6 } : { quality: QUALITY, effort: 5 })
+    .toFile(absOut);
   return info;
 }
 
@@ -87,9 +96,18 @@ for (const entry of images) {
   const sourceWidth = upright ? meta.height : meta.width;
 
   const made = [];
-  for (const [suffix, width] of [['', MAX_WIDTH], ['-800', SMALL_WIDTH]]) {
+  /**
+   * The small variant exists so components can build a srcset without
+   * branching. A diagram opts out: at 800px its labels are unreadable, so it
+   * is served at one size inside a scroll container and a second file would
+   * only be dead weight in the repo.
+   */
+  const sizes = entry.noSmall ? [['', MAX_WIDTH]] : [['', MAX_WIDTH], ['-800', SMALL_WIDTH]];
+  for (const [suffix, width] of sizes) {
     const rel = `${entry.out}${suffix}.webp`;
-    const res = await variant(src, srcMtime, join(OUT, rel), width, sourceWidth, entry.exposure);
+    const res = await variant(
+      src, srcMtime, join(OUT, rel), width, sourceWidth, entry.exposure, entry.lossless,
+    );
     if (!res) continue;
     if (res === 'cached') { cached++; made.push(rel); continue; }
     written++; bytes += res.size;

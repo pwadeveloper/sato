@@ -3,41 +3,56 @@ import { ServiceListBlock } from "./ServiceListBlock";
 import type { PartnerBlock } from "@/lib/content-types";
 import { cn } from "@/lib/cn";
 
-export interface PartnerExperienceProps {
-  partner: PartnerBlock;
-  headingId: string;
-  className?: string;
-}
-
 /**
  * A technical partner's track record, kept visibly separate from Sato's own.
  *
- * Every claim in this block belongs to the partner team, and the page says so
- * before the reader meets the first number: the section opens on an
- * attribution rule, the table heading repeats it, and the case study carries
- * its own line. None of it reaches the projects index or Sato's project
- * counts. An oil company will check these projects, and finding them
- * presented as Sato's own would end the conversation.
+ * Every claim in these blocks belongs to the partner team, and the page says
+ * so before the reader meets the first number: the attribution leads, the
+ * table heading repeats it, and the case study carries its own line. None of
+ * it reaches the projects index or Sato's project counts. An oil company
+ * will check these projects, and finding them presented as Sato's own would
+ * end the conversation.
+ *
+ * The file exports the whole block and its three parts separately, because
+ * the Oil & Gas page splits them across two of its four sections — the
+ * record under Projects, the relationship under Partnerships. Splitting them
+ * must not cost the attribution, so `PartnerAttribution` is its own piece and
+ * every section that shows partner work opens with it.
  *
  * The figures strip and the collaborator's name render only when they hold
- * something — the source figures disagree with each other and the name is not
+ * something: the source figures disagree with each other and the name is not
  * yet cleared for publication, so both are empty and hidden rather than
  * guessed at.
  */
-export function PartnerExperience({
+
+interface PartProps {
+  partner: PartnerBlock;
+  headingId: string;
+  headingLevel?: 2 | 3;
+  className?: string;
+}
+
+/** The line that says whose work follows. Never optional. */
+export function PartnerAttribution({
   partner,
   headingId,
+  headingLevel = 2,
   className,
-}: PartnerExperienceProps) {
-  const visible = partner.projects.slice(0, partner.projectsInitialCount);
-  const overflow = partner.projects.slice(partner.projectsInitialCount);
-  const caseStudy = partner.caseStudy;
+}: PartProps) {
+  const HeadingTag = `h${headingLevel}` as const;
 
   return (
     <div className={cn(className)}>
-      <h2 id={headingId} className="text-h2 wdth-heading text-balance">
+      <HeadingTag
+        id={headingId}
+        className={
+          headingLevel === 2
+            ? "text-h2 wdth-heading text-balance"
+            : "text-xl font-bold wdth-heading text-balance"
+        }
+      >
         <RichText text={partner.heading} />
-      </h2>
+      </HeadingTag>
 
       <p className="mt-4 max-w-(--container-measure) text-lg text-steel-ink wdth-body text-pretty">
         <RichText text={partner.intro} />
@@ -67,9 +82,23 @@ export function PartnerExperience({
           ))}
         </dl>
       ) : null}
+    </div>
+  );
+}
 
-      {/* ------------------------------------------------ selected projects */}
-      <section aria-labelledby={`${headingId}-projects`} className="mt-12">
+/** The record: the project table, the wider engagements and the case study. */
+export function PartnerProjects({
+  partner,
+  headingId,
+  className,
+}: Omit<PartProps, "headingLevel">) {
+  const visible = partner.projects.slice(0, partner.projectsInitialCount);
+  const overflow = partner.projects.slice(partner.projectsInitialCount);
+  const caseStudy = partner.caseStudy;
+
+  return (
+    <div className={cn(className)}>
+      <section aria-labelledby={`${headingId}-projects`}>
         <h3
           id={`${headingId}-projects`}
           className="text-xl font-bold wdth-heading text-balance"
@@ -94,10 +123,16 @@ export function PartnerExperience({
             <table className="w-full border-collapse text-left sm:min-w-[34rem]">
               <thead>
                 <tr className="border-y border-asphalt">
-                  <th scope="col" className="py-3 pr-6 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
+                  <th
+                    scope="col"
+                    className="py-3 pr-6 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body"
+                  >
                     <RichText text={partner.projectColumns.client} />
                   </th>
-                  <th scope="col" className="py-3 pr-6 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
+                  <th
+                    scope="col"
+                    className="py-3 pr-6 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body"
+                  >
                     <RichText text={partner.projectColumns.project} />
                   </th>
                   <th
@@ -167,7 +202,6 @@ export function PartnerExperience({
         />
       ) : null}
 
-      {/* ------------------------------------------------------- case study */}
       {caseStudy ? (
         <section
           aria-labelledby={`${headingId}-case-study`}
@@ -212,7 +246,10 @@ export function PartnerExperience({
             </p>
             <ul className="mt-4 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-4">
               {caseStudy.results.map((result) => (
-                <li key={result} className="bg-white p-4 text-base font-semibold wdth-body">
+                <li
+                  key={result}
+                  className="bg-white p-4 text-base font-semibold wdth-body"
+                >
                   <RichText text={result} />
                 </li>
               ))}
@@ -226,15 +263,54 @@ export function PartnerExperience({
           ) : null}
         </section>
       ) : null}
+    </div>
+  );
+}
 
-      {partner.recognition ? (
-        <ServiceListBlock
-          list={partner.recognition}
-          headingId={`${headingId}-recognition`}
-          headingLevel={3}
-          className="mt-12"
-        />
-      ) : null}
+/** Awards and academic partnerships belonging to the partner team. */
+export function PartnerRecognition({
+  partner,
+  headingId,
+  headingLevel = 3,
+  className,
+}: PartProps) {
+  if (!partner.recognition) return null;
+
+  return (
+    <ServiceListBlock
+      list={partner.recognition}
+      headingId={`${headingId}-recognition`}
+      headingLevel={headingLevel}
+      className={className}
+    />
+  );
+}
+
+export interface PartnerExperienceProps {
+  partner: PartnerBlock;
+  headingId: string;
+  className?: string;
+}
+
+/** All three parts in order, for a service that shows them as one block. */
+export function PartnerExperience({
+  partner,
+  headingId,
+  className,
+}: PartnerExperienceProps) {
+  return (
+    <div className={cn(className)}>
+      <PartnerAttribution partner={partner} headingId={headingId} />
+      <PartnerProjects
+        partner={partner}
+        headingId={headingId}
+        className="mt-12"
+      />
+      <PartnerRecognition
+        partner={partner}
+        headingId={headingId}
+        className="mt-12"
+      />
     </div>
   );
 }

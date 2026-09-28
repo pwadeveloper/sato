@@ -5,6 +5,8 @@
     "out     — output stem under public/images/; the optimiser writes <out>.webp (max 1920px wide)",
     "          and <out>-800.webp, skipping any variant that would upscale the source.",
     "exposure — optional brightness multiplier baked in (hero shots carry white text)",
+    "lossless — encode this entry as lossless WebP; for line-art diagrams, where lossy smears hairlines and small labels",
+    "noSmall  — write only the full-width file; for a diagram that is illegible at 800px",
     "alt     — alt text, taken from the old site's caption and edited to sentence case.",
     "Anything in the manifest but absent here was judged not worth shipping; docs/image-report.md says why."
   ],
@@ -12,20 +14,17 @@
     {
       "source": "hero/hero 1.png",
       "out": "hero/dam-site-engineer",
-      "alt": "Sato engineer with drawings on a dam construction site, with an excavator and survey crew behind",
-      "exposure": 0.72
+      "alt": "Sato engineer with drawings on a dam construction site, with an excavator and survey crew behind"
     },
     {
       "source": "hero/hero 3.png",
       "out": "hero/dam-site-drawings",
-      "alt": "Sato engineer reading a drawing at a dam site, tower crane and formwork behind",
-      "exposure": 0.72
+      "alt": "Sato engineer reading a drawing at a dam site, tower crane and formwork behind"
     },
     {
       "source": "hero/hero 4.png",
       "out": "hero/building-site-drawings",
-      "alt": "Sato engineer reading a drawing at a multi-storey building under construction",
-      "exposure": 0.72
+      "alt": "Sato engineer reading a drawing at a multi-storey building under construction"
     },
     {
       "source": "2019/10/IMG_20190430_1230211.jpg",
@@ -396,6 +395,23 @@
       "source": "2012/08/P1000093.jpg",
       "out": "awards/egba-youth-2012",
       "alt": "Egba Youth Award 2012 plaque presented to Sato Engineering"
+    },
+    {
+      "source": "oil-gas/oil-gas-hero-rig.jpg",
+      "out": "oil-gas/platform-sunrise",
+      "alt": "Offshore production platform at sunrise, tinted green, with an open pale area to the left"
+    },
+    {
+      "source": "oil-gas/oil-gas-hero-platforms.jpg",
+      "out": "oil-gas/platforms-and-pipelines",
+      "alt": "Two offshore platforms and a supply vessel, with subsea pipelines and wellheads drawn across the water"
+    },
+    {
+      "source": "oil-gas/oil-gas-value-map.png",
+      "out": "oil-gas/business-value-map",
+      "lossless": true,
+      "alt": "Diagram mapping four business processes through solutions and improvements to their business benefits",
+      "noSmall": true
     }
   ],
   "heroCandidates": [

@@ -9,17 +9,26 @@ import { Container } from "@/components/Container";
 import { DraftNotice } from "@/components/DraftNotice";
 import { CtaBand } from "@/components/CtaBand";
 import { Heading } from "@/components/Heading";
-import { PartnerExperience } from "@/components/PartnerExperience";
+import { PageHeader } from "@/components/PageHeader";
+import {
+  PartnerAttribution,
+  PartnerExperience,
+  PartnerProjects,
+  PartnerRecognition,
+} from "@/components/PartnerExperience";
 import { ProcurementList } from "@/components/ProcurementList";
 import { ProjectCard } from "@/components/ProjectCard";
 import { RegistrationsBlock } from "@/components/RegistrationsBlock";
 import { RelatedServices } from "@/components/RelatedServices";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
+import { SectionNav } from "@/components/SectionNav";
 import { ServiceListBlock } from "@/components/ServiceListBlock";
+import { SolutionsPyramid } from "@/components/SolutionsPyramid";
+import { ValueMap } from "@/components/ValueMap";
 
 import {
-  flattenFacets,
+  getCategoryForProject,
   getPage,
   getProject,
   getSection,
@@ -35,7 +44,6 @@ import type { CtaSection } from "@/lib/content-types";
 type ServicePageProps = { params: Promise<{ slug: string }> };
 
 const servicesPage = getPage("services");
-const projectsPage = getPage("projects");
 const site = getSite();
 
 export function generateStaticParams() {
@@ -51,10 +59,16 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
  * One template for every service.
  *
  * Nothing branches on which service this is. The richer blocks — grouped
- * capabilities, named solutions, equipment procurement, a partner's track
- * record — are all optional fields on the service, so the oil and gas page is
- * long because its content is long, and the water page is short for the same
- * reason. Adding any of those blocks to another service is a content edit.
+ * capabilities, named solutions, diagrams, equipment procurement, a
+ * partner's track record — are all optional fields on the service, so the
+ * oil and gas page is long because its content is long, and the water page
+ * is short for the same reason.
+ *
+ * `sectionNav` is the same idea applied to shape rather than to blocks. A
+ * service that declares sections gets them: an anchored run of four, a
+ * sticky sub-nav, and its sub-headings dropped a level to sit under them. A
+ * service that declares none renders as one continuous page, as before.
+ * Which service that happens to be is still not the template's business.
  */
 export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
@@ -71,12 +85,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
   )
     ? getSection(servicesPage, `cta-${service.slug}`, "cta")
     : getSection(servicesPage, "cta-default", "cta");
-
-  const sectorLabels = new Map(
-    flattenFacets(
-      getSection(projectsPage, "all-projects", "collection").facets ?? [],
-    ).map((facet) => [facet.value, facet.label]),
-  );
 
   const relatedProjects = service.relatedProjectSlugs.map((projectSlug) =>
     getProject(projectSlug),
@@ -99,57 +107,262 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const trail = [{ label: servicesPage.title, href: "/services" }];
   if (band?.href) trail.push({ label: band.label, href: band.href });
 
-  return (
-    <>
-      <Section tone="concrete">
-        <Container>
+  const sections = service.sectionNav ?? [];
+  const sectioned = sections.length > 0;
+
+  const header = (
+    <PageHeader
+      title={service.name}
+      intro={[service.summary]}
+      image={sectioned ? null : service.image}
+      headingId="service-heading"
+      above={
+        <>
           <Breadcrumbs
             trail={trail}
             current={service.name}
             label={labels.breadcrumb ?? servicesPage.title}
           />
-
-          <Heading level={1} text={service.name} className="mt-6" />
-
           {isReviewMode && service.reviewStatus === "draft" ? (
             <DraftNotice className="mt-6" />
           ) : null}
+        </>
+      }
+    />
+  );
 
-          <p className="mt-5 max-w-(--container-measure) text-lg text-steel-ink wdth-body">
-            <RichText text={service.summary} />
-          </p>
-        </Container>
-      </Section>
+  /* ------------------------------------------------------- page body parts */
 
+  const bodyProse = service.body.map((paragraph, index) => (
+    <p
+      key={index}
+      className="mt-5 max-w-(--container-measure) text-base wdth-body first:mt-0"
+    >
+      <RichText text={paragraph} />
+    </p>
+  ));
+
+  if (!sectioned) {
+    return (
+      <>
+        {header}
+
+        <Section tone="concrete">
+          <Container>
+            <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
+              <div className={hasBlocks ? "lg:col-span-8" : "lg:col-span-7"}>
+                {bodyProse}
+
+                {hasBlocks ? (
+                  <CapabilityBlocks
+                    blocks={blocks}
+                    heading={labels.capabilities}
+                    headingId="capabilities"
+                    className="mt-12"
+                  />
+                ) : null}
+
+                {showRegistrations && oilAndGas ? (
+                  <RegistrationsBlock
+                    heading={oilAndGas.label}
+                    items={oilAndGas.items}
+                    headingId="registrations"
+                    className="mt-10"
+                  />
+                ) : null}
+              </div>
+
+              {hasBlocks ? null : (
+                <div className="lg:col-span-4 lg:col-start-9">
+                  <CapabilityList
+                    items={service.capabilities}
+                    heading={labels.capabilities}
+                    headingId="capabilities"
+                    className="lg:sticky lg:top-[calc(var(--header-height)+2rem)]"
+                  />
+                </div>
+              )}
+            </div>
+
+            {service.solutions || service.alsoCovered ? (
+              <div className="mt-14 grid gap-12 lg:grid-cols-12 lg:gap-8">
+                {service.solutions ? (
+                  <div className="lg:col-span-7">
+                    <ServiceListBlock
+                      list={service.solutions}
+                      headingId="solutions"
+                      variant="dense"
+                    />
+                  </div>
+                ) : null}
+                {service.alsoCovered ? (
+                  <div className="lg:col-span-4 lg:col-start-9">
+                    <ServiceListBlock list={service.alsoCovered} headingId="also-covered" />
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
+
+            {relatedServices.length ? (
+              <RelatedServices
+                heading={labels.relatedServices ?? ""}
+                headingId="related-services"
+                services={relatedServices}
+                className="mt-14"
+              />
+            ) : null}
+          </Container>
+        </Section>
+
+        {service.procurement ? (
+          <Section tone="white" labelledBy="procurement">
+            <Container>
+              <ProcurementList block={service.procurement} headingId="procurement" />
+            </Container>
+          </Section>
+        ) : null}
+
+        {service.partner ? (
+          <Section tone="concrete" labelledBy="partner-experience">
+            <Container>
+              <PartnerExperience
+                partner={service.partner}
+                headingId="partner-experience"
+              />
+            </Container>
+          </Section>
+        ) : null}
+
+        <RelatedProjects
+          projects={relatedProjects}
+          heading={labels.relatedProjects ?? ""}
+          showProjectDates={site.showProjectDates}
+        />
+
+        <Section tone="concrete" labelledBy="backed-by">
+          <Container>
+            <BackedByStrip
+              heading={backedBy.heading}
+              intro={backedBy.intro}
+              items={backedBy.items}
+              headingId="backed-by"
+            />
+          </Container>
+        </Section>
+
+        <CtaBand
+          heading={cta.heading}
+          body={cta.body}
+          ctas={cta.ctas}
+          headingId={`cta-${slug}`}
+        />
+      </>
+    );
+  }
+
+  /* ------------------------------------------------------ sectioned layout */
+
+  const partner = service.partner;
+  const sectionLabel = (id: string) =>
+    sections.find((section) => section.id === id)?.label ?? id;
+
+  return (
+    <>
+      {/*
+        This page sets its heading over the photograph rather than under it.
+        The artwork is drawn with an empty arc on the left for exactly that,
+        and a scrim holds the contrast wherever the crop lands.
+      */}
       {service.image ? (
-        <div className="relative aspect-3/2 w-full bg-steel/10 md:aspect-16/6">
-          <Image
-            src={service.image.src}
-            alt={service.image.alt}
-            fill
-            sizes="100vw"
-            priority
-            className="object-cover"
-          />
-        </div>
-      ) : null}
+        <div className="relative isolate bg-concrete">
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src={service.image.src}
+              alt=""
+              fill
+              sizes="100vw"
+              priority
+              className="object-cover object-right"
+            />
+            {/*
+              Two scrims, because the copy sits in two different places.
+              From `md` up it occupies the left column and a horizontal wash
+              covers exactly that, leaving the platforms on the right
+              untouched. On a phone the copy runs the full width, the green
+              reaches under it, and asphalt on that measures 4.2:1 — under
+              AA. So small screens get a flat wash instead, heavy enough to
+              clear 8:1 and light enough to keep the photograph.
+            */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-concrete/72 md:hidden"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 hidden md:block md:bg-[linear-gradient(to_right,var(--color-concrete)_0%,color-mix(in_srgb,var(--color-concrete)_88%,transparent)_38%,color-mix(in_srgb,var(--color-concrete)_40%,transparent)_70%,transparent_100%)]"
+            />
+          </div>
 
-      <Section tone="concrete">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-            <div className={hasBlocks ? "lg:col-span-8" : "lg:col-span-7"}>
-              {service.body.map((paragraph, index) => (
-                <p key={index} className="mt-5 text-base wdth-body first:mt-0">
-                  <RichText text={paragraph} />
+          <Section tone="concrete" as="div" className="bg-transparent!">
+            <Container>
+              <div className="max-w-[34rem]">
+                <Breadcrumbs
+                  trail={trail}
+                  current={service.name}
+                  label={labels.breadcrumb ?? servicesPage.title}
+                />
+                {isReviewMode && service.reviewStatus === "draft" ? (
+                  <DraftNotice className="mt-6" />
+                ) : null}
+                <Heading
+                  level={1}
+                  text={service.name}
+                  id="service-heading"
+                  className="mt-6"
+                />
+                <p className="mt-5 text-lg text-asphalt wdth-body text-pretty">
+                  <RichText text={service.summary} />
                 </p>
-              ))}
+              </div>
+            </Container>
+          </Section>
+        </div>
+      ) : (
+        header
+      )}
+
+      <SectionNav sections={sections} label={labels.sectionNav ?? service.name} />
+
+      {/* ------------------------------------------------------ capabilities */}
+      <Section tone="concrete" id="capabilities" labelledBy="capabilities-heading">
+        <Container>
+          <Heading
+            level={2}
+            text={sectionLabel("capabilities")}
+            id="capabilities-heading"
+            size="h2"
+          />
+
+          <div className="mt-8 grid gap-12 lg:grid-cols-12 lg:gap-8">
+            <div className="lg:col-span-7">
+              {bodyProse}
 
               {hasBlocks ? (
-                <CapabilityBlocks
-                  blocks={blocks}
-                  heading={labels.capabilities}
-                  headingId="capabilities"
-                  className="mt-12"
+                <CapabilityBlocks blocks={blocks} className="mt-10" />
+              ) : (
+                <CapabilityList
+                  items={service.capabilities}
+                  className="mt-10"
+                />
+              )}
+            </div>
+
+            <div className="lg:col-span-4 lg:col-start-9">
+              {service.alsoCovered ? (
+                <ServiceListBlock
+                  list={service.alsoCovered}
+                  headingId="also-covered"
+                  headingLevel={3}
                 />
               ) : null}
 
@@ -158,106 +371,139 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   heading={oilAndGas.label}
                   items={oilAndGas.items}
                   headingId="registrations"
+                  headingLevel={3}
                   className="mt-10"
                 />
               ) : null}
             </div>
-
-            {hasBlocks ? null : (
-              <div className="lg:col-span-4 lg:col-start-9">
-                <CapabilityList
-                  items={service.capabilities}
-                  heading={labels.capabilities}
-                  headingId="capabilities"
-                  className="lg:sticky lg:top-[calc(var(--header-height)+2rem)]"
-                />
-              </div>
-            )}
           </div>
-
-          {service.solutions || service.alsoCovered ? (
-            <div className="mt-14 grid gap-12 lg:grid-cols-12 lg:gap-8">
-              {service.solutions ? (
-                <div className="lg:col-span-7">
-                  <ServiceListBlock
-                    list={service.solutions}
-                    headingId="solutions"
-                    variant="dense"
-                  />
-                </div>
-              ) : null}
-              {service.alsoCovered ? (
-                <div className="lg:col-span-4 lg:col-start-9">
-                  <ServiceListBlock list={service.alsoCovered} headingId="also-covered" />
-                </div>
-              ) : null}
-            </div>
-          ) : null}
-
-          {relatedServices.length ? (
-            <RelatedServices
-              heading={labels.relatedServices ?? ""}
-              headingId="related-services"
-              services={relatedServices}
-              className="mt-14"
-            />
-          ) : null}
         </Container>
       </Section>
 
-      {service.procurement ? (
-        <Section tone="white" labelledBy="procurement">
-          <Container>
-            <ProcurementList block={service.procurement} headingId="procurement" />
-          </Container>
-        </Section>
-      ) : null}
+      {/* ---------------------------------------------------------- solutions */}
+      <Section tone="white" id="solutions" labelledBy="solutions-heading">
+        <Container>
+          <Heading
+            level={2}
+            text={sectionLabel("solutions")}
+            id="solutions-heading"
+            size="h2"
+          />
 
-      {service.partner ? (
-        <Section tone="concrete" labelledBy="partner-experience">
-          <Container>
-            <PartnerExperience
-              partner={service.partner}
-              headingId="partner-experience"
-            />
-          </Container>
-        </Section>
-      ) : null}
+          <div className="mt-8 flex flex-col gap-14">
+            {service.solutions ? (
+              <ServiceListBlock
+                list={service.solutions}
+                headingId="solutions-list"
+                headingLevel={3}
+                variant="dense"
+              />
+            ) : null}
 
-      {relatedProjects.length ? (
-        <Section tone="white" labelledBy="related-projects">
+            {service.solutionsPyramid ? (
+              <SolutionsPyramid
+                pyramid={service.solutionsPyramid}
+                headingId="solutions-pyramid"
+                headingLevel={3}
+              />
+            ) : null}
+
+            {service.valueMap ? (
+              <ValueMap
+                map={service.valueMap}
+                headingId="value-map"
+                headingLevel={3}
+              />
+            ) : null}
+
+            {service.procurement ? (
+              <ProcurementList
+                block={service.procurement}
+                headingId="procurement"
+                headingLevel={3}
+              />
+            ) : null}
+          </div>
+        </Container>
+      </Section>
+
+      {/* ----------------------------------------------------------- projects */}
+      {partner ? (
+        <Section tone="concrete" id="projects" labelledBy="projects-heading">
           <Container>
             <Heading
               level={2}
-              text={labels.relatedProjects ?? ""}
-              id="related-projects"
+              text={sectionLabel("projects")}
+              id="projects-heading"
               size="h2"
             />
 
-            <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {relatedProjects.map((project) => (
-                <li key={project.slug} className="contents">
-                  <ProjectCard
-                    project={project}
-                    sectorLabel={sectorLabels.get(project.sector) ?? project.sector}
-                  />
-                </li>
-              ))}
-            </ul>
+            {/* Whose projects these are, before the first row of the table. */}
+            <PartnerAttribution
+              partner={partner}
+              headingId="partner-experience"
+              headingLevel={3}
+              className="mt-8"
+            />
+
+            <PartnerProjects
+              partner={partner}
+              headingId="partner-experience"
+              className="mt-12"
+            />
           </Container>
         </Section>
       ) : null}
 
-      <Section tone="concrete" labelledBy="backed-by">
-        <Container>
-          <BackedByStrip
-            heading={backedBy.heading}
-            intro={backedBy.intro}
-            items={backedBy.items}
-            headingId="backed-by"
-          />
-        </Container>
-      </Section>
+      {/* ------------------------------------------------------- partnerships */}
+      {partner ? (
+        <Section tone="white" id="partnerships" labelledBy="partnerships-heading">
+          <Container>
+            <Heading
+              level={2}
+              text={sectionLabel("partnerships")}
+              id="partnerships-heading"
+              size="h2"
+            />
+
+            <p className="mt-6 max-w-(--container-measure) text-lg text-steel-ink wdth-body text-pretty">
+              <RichText text={partner.intro} />
+            </p>
+
+            {partner.name ? (
+              <p className="mt-4 max-w-(--container-measure) border-l-[3px] border-brand py-1 pl-5 text-base wdth-body">
+                <span className="font-bold">
+                  <RichText text={partner.nameLabel} />
+                  {": "}
+                </span>
+                <RichText text={partner.name} />
+              </p>
+            ) : null}
+
+            <PartnerRecognition
+              partner={partner}
+              headingId="partner-experience"
+              headingLevel={3}
+              className="mt-10 max-w-(--container-measure)"
+            />
+
+            {relatedServices.length ? (
+              <RelatedServices
+                heading={labels.relatedServices ?? ""}
+                headingId="related-services"
+                services={relatedServices}
+                className="mt-12"
+              />
+            ) : null}
+          </Container>
+        </Section>
+      ) : null}
+
+      <RelatedProjects
+        projects={relatedProjects}
+        heading={labels.relatedProjects ?? ""}
+        showProjectDates={site.showProjectDates}
+      />
 
       <CtaBand
         heading={cta.heading}
@@ -266,5 +512,42 @@ export default async function ServicePage({ params }: ServicePageProps) {
         headingId={`cta-${slug}`}
       />
     </>
+  );
+}
+
+/** Sato's own projects for this service. Never the partner team's. */
+function RelatedProjects({
+  projects,
+  heading,
+  showProjectDates,
+}: {
+  projects: ReturnType<typeof getProject>[];
+  heading: string;
+  showProjectDates: boolean;
+}) {
+  if (!projects.length) return null;
+
+  return (
+    <Section tone="concrete" labelledBy="related-projects">
+      <Container>
+        <Heading level={2} text={heading} id="related-projects" size="h2" />
+
+        <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => {
+            const category = getCategoryForProject(project);
+            return (
+              <li key={project.slug} className="contents">
+                <ProjectCard
+                  project={project}
+                  sectorLabel={category?.label ?? project.sector}
+                  sectorShortLabel={category?.shortLabel}
+                  showDates={showProjectDates}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      </Container>
+    </Section>
   );
 }

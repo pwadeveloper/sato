@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { BackedByStrip } from "@/components/BackedByStrip";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Container } from "@/components/Container";
 import { CtaBand } from "@/components/CtaBand";
-import { Heading } from "@/components/Heading";
+import { PageHeader } from "@/components/PageHeader";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
 import { TextLink } from "@/components/TextLink";
@@ -41,32 +42,19 @@ const CAPABILITY_PREVIEW = 5;
 export default function InfrastructurePage() {
   return (
     <>
-      <Section tone="concrete">
-        <Container>
+      <PageHeader
+        title={page.title}
+        intro={intro.body}
+        image={page.images?.header}
+        headingId="infrastructure-heading"
+        above={
           <Breadcrumbs
             trail={[{ label: servicesPage.title, href: "/services" }]}
             current={page.title}
             label={labels.breadcrumb ?? servicesPage.title}
           />
-
-          <Heading level={1} text={page.title} className="mt-6" />
-
-          <div className="mt-5 flex max-w-(--container-measure) flex-col gap-5">
-            {intro.body.map((paragraph, index) => (
-              <p
-                key={index}
-                className={
-                  index === 0
-                    ? "text-lg text-asphalt wdth-body text-pretty"
-                    : "text-base text-steel-ink wdth-body text-pretty"
-                }
-              >
-                <RichText text={paragraph} />
-              </p>
-            ))}
-          </div>
-        </Container>
-      </Section>
+        }
+      />
 
       <Section tone="white">
         <Container>
@@ -77,7 +65,19 @@ export default function InfrastructurePage() {
                 aria-labelledby={`discipline-${service.slug}`}
                 className="lg:grid lg:grid-cols-12 lg:gap-x-12"
               >
-                <div className="border-t-[3px] border-brand pt-5 lg:col-span-5">
+                <div className="lg:col-span-5">
+                  {service.image ? (
+                    <div className="relative mb-6 aspect-16/9 w-full bg-steel/10">
+                      <Image
+                        src={service.image.src}
+                        alt={service.image.alt}
+                        fill
+                        sizes="(min-width: 1024px) 40vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : null}
+
                   <h2
                     id={`discipline-${service.slug}`}
                     className="text-h3 wdth-heading text-balance"
@@ -95,7 +95,7 @@ export default function InfrastructurePage() {
                   </p>
                 </div>
 
-                <div className="mt-6 lg:col-span-6 lg:col-start-7 lg:mt-0 lg:pt-5">
+                <div className="mt-6 lg:col-span-6 lg:col-start-7 lg:mt-0">
                   <h3 className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
                     <RichText text={labels.capabilities ?? ""} />
                   </h3>

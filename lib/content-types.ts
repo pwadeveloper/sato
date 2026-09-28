@@ -96,6 +96,14 @@ export interface Site {
   offices: Office[];
   phones: ContactChannel[];
   emails: ContactChannel[];
+  /**
+   * Whether a project's date is published. The client is deciding whether the
+   * record reads better without dates — the oldest entries are from 2001, and
+   * a date column can make a long record look like a wind-down rather than a
+   * history. Turning this off hides every year on every card, detail page and
+   * category listing; the years stay in `projects.json` either way.
+   */
+  showProjectDates: boolean;
   registrations: RegistrationGroup[];
   /** Labels for the rows `getCompanyFacts()` assembles. */
   factLabels: {
@@ -151,13 +159,29 @@ export interface CollectionFacet {
    */
   serviceSlug?: string;
   /**
-   * Sub-filters, so the project index can mirror the service structure: the
-   * top row is the service category and the second row narrows within it.
-   * A parent facet matches a project whose sector is the parent's own value
-   * OR any child's, which is what lets "Infrastructure Services" show
-   * buildings, roads and water together.
+   * Sub-filters, where a facet narrows further. Unused since the project
+   * index became a set of category pages, and kept because `flattenFacets`
+   * and `facetMatches` are written against it.
    */
   children?: CollectionFacet[];
+  /**
+   * Route segment, where the facet has a page of its own — a project category
+   * lives at `/projects/<slug>`. The routes are three static files (a second
+   * dynamic segment cannot sit beside `[slug]`), so a new category needs a
+   * folder as well as this entry.
+   */
+  slug?: string;
+  /** One line under the category heading, on its landing tile and its page. */
+  intro?: ConfirmableText;
+  /**
+   * One or two words, for the places the full label will not fit: the pill on
+   * a card, and the typographic slot that stands in for a missing photograph.
+   * "Water Resources Development & Management" set at display size in a
+   * 4:3 box is not a label, it is an overflow.
+   */
+  shortLabel?: ConfirmableText;
+  /** The photograph on the category's tile and the header of its page. */
+  image?: ImageRef;
 }
 
 export interface HeroSection {
@@ -297,6 +321,12 @@ export interface Page {
    * a sidebar heading, an aria-label. Keeps them out of the components.
    */
   labels?: Record<string, ConfirmableText>;
+  /**
+   * Photographs the page's template needs that belong to no single section:
+   * its header shot, and — on the services overview — one per service
+   * category. Keyed like `labels`, so `groupInfrastructure` resolves both.
+   */
+  images?: Record<string, ImageRef>;
   /** The page's single `h1`. */
   title: ConfirmableText;
   metaTitle?: ConfirmableText;
@@ -311,12 +341,20 @@ export interface Page {
 /**
  * Which top-level category a service sits in, in display order.
  *
- * These are the categories a visitor navigates by, not an internal taxonomy:
- * "Infrastructure Services" is the established practice and has a landing
- * page of its own; Energy and Oil & Gas each stand alone; Technology holds
- * the two newer digital services.
+ * These are the five headings a visitor navigates by, not an internal
+ * taxonomy. "Infrastructure Services" is the established practice and holds
+ * four disciplines behind a landing page; the other four categories are each
+ * a single service and render as that service rather than as a heading above
+ * one repeated card. Technology used to hold the last two together — the
+ * client split it, because a reader looking for digital twin work should not
+ * have to know it was filed under something else.
  */
-export type ServiceGroup = "infrastructure" | "energy" | "oil-gas" | "technology";
+export type ServiceGroup =
+  | "infrastructure"
+  | "energy"
+  | "oil-gas"
+  | "digital-twin"
+  | "research-innovation";
 
 /** A category with its resolved copy, assembled by `getServiceBands()`. */
 export interface ServiceBand {
@@ -326,6 +364,8 @@ export interface ServiceBand {
   intro: ConfirmableText;
   /** Landing page for the category, where it has one. */
   href?: string;
+  /** The photograph beside the category on the services overview. */
+  image?: ImageRef;
   services: Service[];
 }
 
@@ -335,6 +375,65 @@ export interface ServiceBand {
  * division is still draft — see scripts/check-placeholders.mjs.
  */
 export type ReviewStatus = "approved" | "draft";
+
+/**
+ * One entry in a service page's in-page sub-nav.
+ *
+ * A service whose page is long enough to need sections declares them here,
+ * and that one list drives three things: the sticky sub-nav on the page, the
+ * sub-items under the service in the header dropdown, and the row of links
+ * under its heading on the services overview. Declaring the sections in
+ * content is also what keeps the page template free of any knowledge of
+ * which service it is rendering.
+ */
+export interface ServiceSection {
+  /** The anchor, e.g. `capabilities` -> `#capabilities`. */
+  id: string;
+  label: ConfirmableText;
+}
+
+/**
+ * The solutions pyramid: four tiers of capability, each broader than the one
+ * above it. Held as data and drawn as inline SVG rather than shipped as the
+ * source PNG, so it stays crisp, reads in a screen reader and takes the
+ * brand palette instead of the deck's primary colours.
+ */
+export interface SolutionsPyramid {
+  heading: ConfirmableText;
+  intro?: ConfirmableText;
+  /** Bottom tier first, so the array reads in the order the diagram builds. */
+  tiers: Array<{ id: string; label: ConfirmableText; items: ConfirmableText[] }>;
+  /** Names the diagram for assistive tech. */
+  alt: ConfirmableText;
+}
+
+/**
+ * The business value map: business process -> solutions -> improvements ->
+ * benefits. Too tangled to rebuild honestly as SVG, so the source image is
+ * shown and the same content is carried underneath as a real table inside a
+ * disclosure — which is the accessible alternative, not a caption.
+ */
+export interface ValueMap {
+  heading: ConfirmableText;
+  intro?: ConfirmableText;
+  image: ImageRef;
+  /** Label on the disclosure that opens the text version. */
+  alternativeLabel: ConfirmableText;
+  columns: {
+    process: ConfirmableText;
+    solutions: ConfirmableText;
+    improvements: ConfirmableText;
+    benefits: ConfirmableText;
+  };
+  rows: Array<{
+    id: string;
+    process: ConfirmableText;
+    note?: ConfirmableText;
+    solutions: ConfirmableText[];
+    improvements: ConfirmableText[];
+    benefits: ConfirmableText[];
+  }>;
+}
 
 /** A named group of capabilities, where one flat list would be unreadable. */
 export interface CapabilityBlock {
@@ -447,6 +546,14 @@ export interface Service {
   alsoCovered?: ServiceList;
   procurement?: ProcurementBlock;
   partner?: PartnerBlock;
+  /**
+   * Sections this service's page is broken into, in order. Present only on a
+   * page long enough to need navigating; absent, the page renders as one run
+   * and no sub-nav appears.
+   */
+  sectionNav?: ServiceSection[];
+  solutionsPyramid?: SolutionsPyramid;
+  valueMap?: ValueMap;
   relatedProjectSlugs: string[];
   /** Other services to link on to, e.g. oil and gas -> digital twin. */
   relatedServiceSlugs?: string[];
@@ -479,12 +586,19 @@ export interface Project {
 
 /* --------------------------------------------------------------- clients */
 
+/**
+ * `oil-gas-partner` is not one of Sato's own clients. Those organisations
+ * were served by the technical partner team, and they are listed under their
+ * own attributed heading, kept apart from every other category, so nobody can
+ * read them as Sato's contracts.
+ */
 export type ClientCategory =
   | "federal"
   | "state"
   | "international"
   | "education"
-  | "private";
+  | "private"
+  | "oil-gas-partner";
 
 export interface Client {
   slug: string;

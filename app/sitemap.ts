@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getProjects, getServices, getSite } from "@/lib/content";
+import { getProjectCategories, getProjects, getServices, getSite } from "@/lib/content";
 
 export const dynamic = "force-static";
 
@@ -29,6 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/services/infrastructure", 0.85, "yearly"),
     ...getServices().map((service) => entry(`/services/${service.slug}`, 0.8, "yearly")),
     entry("/projects", 0.9, "monthly"),
+    ...getProjectCategories().map((category) =>
+      entry(`/projects/${category.slug}`, 0.85, "monthly"),
+    ),
     ...getProjects().map((project) => entry(`/projects/${project.slug}`, 0.6, "yearly")),
     entry("/clients", 0.7, "yearly"),
     entry("/leadership", 0.7, "yearly"),

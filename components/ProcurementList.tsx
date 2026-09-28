@@ -5,6 +5,7 @@ import { cn } from "@/lib/cn";
 export interface ProcurementListProps {
   block: ProcurementBlock;
   headingId: string;
+  headingLevel?: 2 | 3;
   className?: string;
 }
 
@@ -16,12 +17,26 @@ export interface ProcurementListProps {
  * a list of brands in the same weight as the heading reads as a claim of
  * appointment that has not been confirmed.
  */
-export function ProcurementList({ block, headingId, className }: ProcurementListProps) {
+export function ProcurementList({
+  block,
+  headingId,
+  headingLevel = 2,
+  className,
+}: ProcurementListProps) {
+  const HeadingTag = `h${headingLevel}` as const;
+
   return (
     <div className={cn(className)}>
-      <h2 id={headingId} className="text-h3 wdth-heading text-balance">
+      <HeadingTag
+        id={headingId}
+        className={
+          headingLevel === 2
+            ? "text-h3 wdth-heading text-balance"
+            : "text-xl font-bold wdth-heading text-balance"
+        }
+      >
         <RichText text={block.heading} />
-      </h2>
+      </HeadingTag>
 
       <p className="mt-3 max-w-(--container-measure) text-base text-steel-ink wdth-body">
         <RichText text={block.intro} />

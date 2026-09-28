@@ -79,6 +79,10 @@
   "logoAlt": "Sato Engineering & Infrastructure Limited",
   "nav": [
     {
+      "label": "Home",
+      "href": "/"
+    },
+    {
       "label": "About",
       "href": "/about"
     },
@@ -91,10 +95,6 @@
       "href": "/projects"
     },
     {
-      "label": "Clients",
-      "href": "/clients"
-    },
-    {
       "label": "Leadership",
       "href": "/leadership"
     },
@@ -104,7 +104,7 @@
     }
   ],
   "footer": {
-    "legal": "Sato Engineering & Infrastructure Limited. Incorporated 1997.",
+    "legal": "Sato Engineering & Infrastructure Limited",
     "navLabel": "Footer navigation",
     "links": [
       {
@@ -128,18 +128,12 @@
         "href": "/contact"
       }
     ],
-    "copyright": "© {year} Sato Engineering & Infrastructure Limited."
+    "copyright": "© {year}"
   },
   "heroImages": [
     {
       "src": "/images/services/roadworks-completed-carriageway.webp",
       "alt": "Completed asphalt carriageway with kerbed median",
-      "width": 1920,
-      "height": 1440
-    },
-    {
-      "src": "/images/projects-unassigned/owode-yewa-blocks-of-shops.webp",
-      "alt": "Completed blocks of shops at Owode Yewa International Market",
       "width": 1920,
       "height": 1440
     },
@@ -163,5 +157,6 @@
     "height": 630
   },
   "contactFormRecipient": "info@satoengineering.com",
-  "social": []
+  "social": [],
+  "showProjectDates": true
 }

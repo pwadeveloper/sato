@@ -3,6 +3,52 @@
   "framework": "nextjs",
   "redirects": [
     {
+      "source": "/services/construction-civil-engineering",
+      "destination": "/services/civil-engineering-construction",
+      "permanent": true
+    },
+    {
+      "source": "/services/water-resources-environmental",
+      "destination": "/services/water-resources-development-management",
+      "permanent": true
+    },
+    {
+      "source": "/projects",
+      "has": [
+        {
+          "type": "query",
+          "key": "sector",
+          "value": "buildings"
+        }
+      ],
+      "destination": "/projects/buildings-construction",
+      "permanent": true
+    },
+    {
+      "source": "/projects",
+      "has": [
+        {
+          "type": "query",
+          "key": "sector",
+          "value": "roads"
+        }
+      ],
+      "destination": "/projects/civil-engineering-roads",
+      "permanent": true
+    },
+    {
+      "source": "/projects",
+      "has": [
+        {
+          "type": "query",
+          "key": "sector",
+          "value": "water"
+        }
+      ],
+      "destination": "/projects/water-resources-development-management",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [
         {
@@ -150,87 +196,87 @@
     },
     {
       "source": "/blocks-of-shops",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
       "source": "/building-and-construction",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
       "source": "/building1",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
       "source": "/building11",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
       "source": "/building2",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
       "source": "/building3",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
       "source": "/building4",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
       "source": "/building5",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
       "source": "/building6-2",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
       "source": "/building7",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
       "source": "/building8",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
       "source": "/civil-eng-road-projects",
-      "destination": "/projects?sector=roads",
+      "destination": "/projects/civil-engineering-roads",
       "permanent": true
     },
     {
       "source": "/civil2",
-      "destination": "/projects?sector=roads",
+      "destination": "/projects/civil-engineering-roads",
       "permanent": true
     },
     {
       "source": "/civil5",
-      "destination": "/projects?sector=roads",
+      "destination": "/projects/civil-engineering-roads",
       "permanent": true
     },
     {
       "source": "/civil6",
-      "destination": "/projects?sector=roads",
+      "destination": "/projects/civil-engineering-roads",
       "permanent": true
     },
     {
       "source": "/civil7",
-      "destination": "/projects?sector=roads",
+      "destination": "/projects/civil-engineering-roads",
       "permanent": true
     },
     {
       "source": "/civil8",
-      "destination": "/projects?sector=roads",
+      "destination": "/projects/civil-engineering-roads",
       "permanent": true
     },
     {
@@ -310,12 +356,12 @@
     },
     {
       "source": "/horizon-suites",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
       "source": "/horizon-suites-2",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
@@ -325,7 +371,7 @@
     },
     {
       "source": "/installed-high-lift-pump-panel",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
@@ -470,7 +516,7 @@
     },
     {
       "source": "/strategy-session",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
@@ -480,82 +526,82 @@
     },
     {
       "source": "/water-meter-installation",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water-meter-installation-2",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water-meter-installation-training",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water-supply-and-water-resources",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water1",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water10",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water11",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water12",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water14",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water15",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water16",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water18",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water2",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water5",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water5-2",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
       "source": "/water9",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {
@@ -565,12 +611,12 @@
     },
     {
       "source": "/work-in-progress",
-      "destination": "/projects?sector=buildings",
+      "destination": "/projects/buildings-construction",
       "permanent": true
     },
     {
       "source": "/world-bank-team-inspection",
-      "destination": "/projects?sector=water",
+      "destination": "/projects/water-resources-development-management",
       "permanent": true
     },
     {

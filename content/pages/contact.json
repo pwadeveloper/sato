@@ -7,6 +7,14 @@
     "mapLink": "View on map",
     "optional": "optional"
   },
+  "images": {
+    "header": {
+      "src": "/images/projects-unassigned/sato-office-abeokuta.webp",
+      "alt": "Sato Engineering office in Abeokuta",
+      "width": 602,
+      "height": 363
+    }
+  },
   "sections": [
     {
       "type": "prose",

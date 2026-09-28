@@ -11,6 +11,18 @@ export interface ProjectCardProps {
   project: Project;
   /** Human label for the sector, from the page's facets. */
   sectorLabel: string;
+  /**
+   * The short form, for the pill and the no-photograph slot. Falls back to
+   * `sectorLabel` where a caller has nothing shorter.
+   */
+  sectorShortLabel?: string;
+  /**
+   * Whether the card names its category — on the pill, and in the slot that
+   * stands in for a missing photograph. False on a category page, where the
+   * heading above the grid already said it and every card would otherwise
+   * repeat it, in some cases at display size, a dozen times over.
+   */
+  showSector?: boolean;
   /** Heading level, so the card fits the page's outline. */
   headingLevel?: 2 | 3;
   /**
@@ -18,20 +30,30 @@ export interface ProjectCardProps {
    * selected-projects row. Everything else stays identical.
    */
   layout?: "stacked" | "wide";
+  /**
+   * Whether to print the year. Comes from `showProjectDates` in site.json —
+   * passed in rather than read here, so the card stays a pure component and
+   * one flag controls every date on the site.
+   */
+  showDates?: boolean;
   className?: string;
 }
 
 export function ProjectCard({
   project,
   sectorLabel,
+  sectorShortLabel,
+  showSector = true,
   headingLevel = 3,
   layout = "stacked",
+  showDates = true,
   className,
 }: ProjectCardProps) {
   const Tag_ = `h${headingLevel}` as const;
   const image = project.images[0];
+  const shortLabel = sectorShortLabel || sectorLabel;
   const isWide = layout === "wide";
-  const showYear = isKnown(project.year);
+  const showYear = showDates && isKnown(project.year);
   const showStatus = isCompleted(project.status);
 
   return (
@@ -63,10 +85,12 @@ export function ProjectCard({
           />
         </div>
       ) : (
-        /* No photograph for this project yet. The slot keeps the image's exact
-           proportions so rows stay aligned, and fills it with the sector set
-           as type — an empty or grey box would read as a broken image, and a
-           short card would leave a hole in the grid. */
+        /* No photograph for this project yet. The slot keeps the image's
+           exact proportions so rows stay aligned, and the brand rule across
+           the top makes it read as a panel rather than as an image that
+           failed to load. In a mixed grid it carries the category set as
+           type; on a category page it stays empty, because the alternative
+           is the same word at display size in every cell of the grid. */
         <div
           aria-hidden="true"
           className={cn(
@@ -75,9 +99,11 @@ export function ProjectCard({
           )}
         >
           <span className="absolute inset-x-0 top-0 h-[3px] bg-brand" />
-          <span className="text-h2 wdth-display leading-none text-steel/80">
-            <RichText text={sectorLabel} />
-          </span>
+          {showSector ? (
+            <span className="text-h2 wdth-display leading-none text-steel/80 text-balance">
+              <RichText text={shortLabel} />
+            </span>
+          ) : null}
         </div>
       )}
 
@@ -87,7 +113,7 @@ export function ProjectCard({
           isWide && "md:justify-center md:p-8 lg:p-10",
         )}
       >
-        <Tag label={sectorLabel} className="self-start" />
+        {showSector ? <Tag label={shortLabel} className="self-start" /> : null}
 
         <Tag_
           className={cn(

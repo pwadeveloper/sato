@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
+import { PageHeader } from "@/components/PageHeader";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
 
@@ -29,19 +30,12 @@ export default function ContactPage() {
 
   return (
     <>
-      <Section tone="concrete">
-        <Container>
-          <Heading level={1} text={page.title} />
-          {intro.body.map((paragraph, index) => (
-            <p
-              key={index}
-              className="mt-5 max-w-(--container-measure) text-lg text-steel-ink wdth-body"
-            >
-              <RichText text={paragraph} />
-            </p>
-          ))}
-        </Container>
-      </Section>
+      <PageHeader
+        title={page.title}
+        intro={intro.body}
+        image={page.images?.header}
+        headingId="contact-heading"
+      />
 
       <Section tone="white" labelledBy="offices">
         <Container>

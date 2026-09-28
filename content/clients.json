@@ -17,19 +17,13 @@
     "slug": "federal-ministry-of-water-resources",
     "name": "Federal Ministry of Water Resources",
     "category": "federal",
-    "units": [
-      "Ogun-Osun River Basin Development Authority"
-    ],
     "logo": null,
-    "featured": true
+    "featured": false
   },
   {
     "slug": "federal-ministry-of-health",
     "name": "Federal Ministry of Health",
     "category": "federal",
-    "units": [
-      "National Primary Health Care Development Agency"
-    ],
     "logo": null,
     "featured": false
   },
@@ -37,25 +31,13 @@
     "slug": "ogun-state-government",
     "name": "Ogun State Government",
     "category": "state",
-    "units": [
-      "Ministry of Special Duties",
-      "Bureau of Management and Budget",
-      "Ministry of Water Resources",
-      "Ogun State Water Corporation",
-      "Ministry of Environment",
-      "State Universal Basic Education Board"
-    ],
     "logo": null,
-    "featured": true
+    "featured": false
   },
   {
     "slug": "oyo-state-government",
     "name": "Oyo State Government",
     "category": "state",
-    "units": [
-      "Ministry of Environment and Habitat",
-      "State Universal Basic Education Board"
-    ],
     "logo": null,
     "featured": false
   },
@@ -63,51 +45,50 @@
     "slug": "lagos-state-public-works-corporation",
     "name": "Lagos State Public Works Corporation",
     "category": "state",
-    "parent": "Lagos State Government",
     "logo": null,
-    "featured": true
+    "featured": false
   },
   {
     "slug": "world-bank",
     "name": "World Bank",
     "category": "international",
     "logo": null,
-    "featured": true
+    "featured": false
   },
   {
     "slug": "undp",
     "name": "United Nations Development Programme (UNDP)",
     "category": "international",
     "logo": null,
-    "featured": true
+    "featured": false
   },
   {
     "slug": "usaid-e-wash",
     "name": "USAID — Effective Water, Sanitation and Hygiene Services (E-WASH) Programme",
     "category": "international",
     "logo": null,
-    "featured": true
+    "featured": false
   },
   {
     "slug": "university-of-ibadan",
     "name": "University of Ibadan",
     "category": "education",
     "logo": null,
-    "featured": true
+    "featured": false
   },
   {
     "slug": "university-of-lagos",
     "name": "University of Lagos",
     "category": "education",
     "logo": null,
-    "featured": true
+    "featured": false
   },
   {
     "slug": "federal-university-of-agriculture-abeokuta",
     "name": "Federal University of Agriculture, Abeokuta",
     "category": "education",
     "logo": null,
-    "featured": true
+    "featured": false
   },
   {
     "slug": "mcpherson-university",
@@ -149,6 +130,125 @@
     "name": "APM Terminals Apapa Limited",
     "category": "private",
     "logo": null,
-    "featured": true
+    "featured": false
+  },
+  {
+    "slug": "adnoc",
+    "name": "ADNOC",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "adnoc-gas",
+    "name": "ADNOC Gas",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "al-dhafra",
+    "name": "Al Dhafra",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "kuwait-oil-company",
+    "name": "Kuwait Oil Company",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "chevron",
+    "name": "Chevron",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "ecopetrol",
+    "name": "Ecopetrol",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "pacific-rubiales",
+    "name": "Pacific Rubiales",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "santos",
+    "name": "Santos",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "halliburton",
+    "name": "Halliburton",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "vaalco",
+    "name": "Vaalco",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "saudi-aramco",
+    "name": "Saudi Aramco",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "pemex",
+    "name": "Pemex",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "pdvsa",
+    "name": "PDVSA",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "repsol",
+    "name": "Repsol",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "us-bureau-of-land-management",
+    "name": "US Bureau of Land Management",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "e3-lithium",
+    "name": "E3 Lithium",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
+  },
+  {
+    "slug": "enrema",
+    "name": "Enrema",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
   }
 ]

@@ -8,6 +8,14 @@
     "memberships": "Memberships",
     "experience": "Experience"
   },
+  "images": {
+    "header": {
+      "src": "/images/hero/dam-site-drawings.webp",
+      "alt": "Sato engineer reading a drawing at a dam site, tower crane and formwork behind",
+      "width": 1536,
+      "height": 1024
+    }
+  },
   "sections": [
     {
       "type": "collection",

@@ -1,7 +1,7 @@
 [
   {
-    "slug": "construction-civil-engineering",
-    "name": "Construction & Civil Engineering",
+    "slug": "civil-engineering-construction",
+    "name": "Civil Engineering & Construction",
     "group": "infrastructure",
     "order": 1,
     "reviewStatus": "approved",
@@ -23,7 +23,12 @@
     ],
     "relatedProjectSlugs": [],
     "registrations": [],
-    "image": null
+    "image": {
+      "src": "/images/services/roadworks-asphalt-laying.webp",
+      "alt": "Asphalt being laid by a paver",
+      "width": 1920,
+      "height": 1440
+    }
   },
   {
     "slug": "electrical-engineering",
@@ -49,7 +54,12 @@
     ],
     "relatedProjectSlugs": [],
     "registrations": [],
-    "image": null
+    "image": {
+      "src": "/images/services/water-high-lift-pump-panel.webp",
+      "alt": "Installed high lift pump control panel at Sagamu intake",
+      "width": 1920,
+      "height": 1440
+    }
   },
   {
     "slug": "mechanical-engineering",
@@ -74,11 +84,16 @@
     ],
     "relatedProjectSlugs": [],
     "registrations": [],
-    "image": null
+    "image": {
+      "src": "/images/services/water-ductile-iron-pipes.webp",
+      "alt": "Stacked ductile iron pipes for water distribution",
+      "width": 1920,
+      "height": 1440
+    }
   },
   {
-    "slug": "water-resources-environmental",
-    "name": "Water Resources & Environmental Engineering",
+    "slug": "water-resources-development-management",
+    "name": "Water Resources Development & Management",
     "group": "infrastructure",
     "order": 4,
     "reviewStatus": "approved",
@@ -86,7 +101,7 @@
     "summary": "Dams, water supply, boreholes and river works, with the drainage, flood and erosion control that protects them.",
     "body": [
       "Water infrastructure has been central to Sato's work for decades, with clients including the Ogun-Osun River Basin Development Authority, state water corporations, the Federal Ministry of Water Resources and the World Bank.",
-      "The environmental side of the same discipline — flood and erosion control, river training, drainage and groundwater — is delivered by the same teams, because on most of these schemes they are one job."
+      "Flood and erosion control, river training, drainage and groundwater development are delivered by the same teams, because on most of these schemes they are one job."
     ],
     "capabilities": [
       "Earth dam construction",
@@ -101,7 +116,12 @@
     ],
     "relatedProjectSlugs": [],
     "registrations": [],
-    "image": null
+    "image": {
+      "src": "/images/projects/fiditi-2.webp",
+      "alt": "Clay compaction for the cut-off trench at Fiditi dam",
+      "width": 1920,
+      "height": 1440
+    }
   },
   {
     "slug": "energy",
@@ -127,7 +147,12 @@
     ],
     "relatedProjectSlugs": [],
     "registrations": [],
-    "image": null
+    "image": {
+      "src": "/images/services/water-high-lift-pump-panel.webp",
+      "alt": "Installed high lift pump control panel at Sagamu intake",
+      "width": 1920,
+      "height": 1440
+    }
   },
   {
     "slug": "oil-gas",
@@ -469,12 +494,170 @@
       "digital-twin"
     ],
     "registrations": [],
-    "image": null
+    "image": {
+      "src": "/images/oil-gas/platform-sunrise.webp",
+      "alt": "Offshore production platform at sunrise, tinted green, with an open pale area to the left",
+      "width": 1672,
+      "height": 941
+    },
+    "sectionNav": [
+      {
+        "id": "capabilities",
+        "label": "Capabilities"
+      },
+      {
+        "id": "solutions",
+        "label": "Solutions"
+      },
+      {
+        "id": "projects",
+        "label": "Projects"
+      },
+      {
+        "id": "partnerships",
+        "label": "Partnerships"
+      }
+    ],
+    "solutionsPyramid": {
+      "heading": "From surveillance to transformation",
+      "intro": "Each tier rests on the one below it: nothing is optimised that is not first analysed, and nothing is analysed that is not first measured.",
+      "alt": "Four-tier pyramid. Surveillance forms the base, then Analysis, then Optimization, with Transformation at the apex. Each tier is listed in full below the diagram.",
+      "tiers": [
+        {
+          "id": "surveillance",
+          "label": "Surveillance",
+          "items": [
+            "Production Allocation",
+            "Well Test Validation",
+            "KPI Monitoring",
+            "Zonal Split Calculation",
+            "Virtual Metering",
+            "BHP & BHT Correction",
+            "Reserves Tracking"
+          ]
+        },
+        {
+          "id": "analysis",
+          "label": "Analysis",
+          "items": [
+            "Flow Assurance",
+            "Production Decline Analysis",
+            "Reservoir Performance",
+            "Model Updating",
+            "Production Performance"
+          ]
+        },
+        {
+          "id": "optimization",
+          "label": "Optimization",
+          "items": [
+            "Short Term Work Plans",
+            "Mid Term Work Plans",
+            "Long Term Work Plans"
+          ]
+        },
+        {
+          "id": "transformation",
+          "label": "Transformation",
+          "items": [
+            "Maximum Ultimate Recovery"
+          ]
+        }
+      ]
+    },
+    "valueMap": {
+      "heading": "Where the value comes from",
+      "intro": "Four business processes, the solutions applied to each, the improvement each produces and the benefit it returns.",
+      "image": {
+        "src": "/images/oil-gas/business-value-map.webp",
+        "alt": "Diagram mapping four business processes through solutions and improvements to their business benefits. The same content is set out as a table below.",
+        "width": 1903,
+        "height": 1745
+      },
+      "alternativeLabel": "Read the diagram as text",
+      "columns": {
+        "process": "Business process",
+        "solutions": "Solutions",
+        "improvements": "Improvement",
+        "benefits": "Benefits"
+      },
+      "rows": [
+        {
+          "id": "field-development",
+          "process": "Effective field development",
+          "solutions": [
+            "4D seismic",
+            "Smart wells"
+          ],
+          "improvements": [
+            "Fewer development wells",
+            "Improved sweep",
+            "Increased well production"
+          ],
+          "benefits": [
+            "Reduced CAPEX",
+            "Increased recovery",
+            "Increased production"
+          ]
+        },
+        {
+          "id": "well-and-reservoir",
+          "process": "Well and reservoir management",
+          "note": "The smart fields foundation.",
+          "solutions": [
+            "Integrated production system modelling",
+            "Production performance monitoring"
+          ],
+          "improvements": [
+            "Increased well production",
+            "Facility improvement",
+            "Reduced deferment"
+          ],
+          "benefits": [
+            "Increased production"
+          ]
+        },
+        {
+          "id": "facilities",
+          "process": "Facilities management",
+          "solutions": [
+            "Collaborative work environments",
+            "Real-time surveillance",
+            "Rotating equipment monitoring"
+          ],
+          "improvements": [
+            "Faster response and optimized production",
+            "Increased facility capacity",
+            "Increased availability"
+          ],
+          "benefits": [
+            "Increased production",
+            "Reduced OPEX"
+          ]
+        },
+        {
+          "id": "operations",
+          "process": "Effective operations",
+          "solutions": [
+            "Integrity monitoring",
+            "Remote operations"
+          ],
+          "improvements": [
+            "Increased efficiency",
+            "Reduced logistics"
+          ],
+          "benefits": [
+            "Reduced OPEX",
+            "Improved HSE"
+          ]
+        }
+      ]
+    }
   },
   {
     "slug": "digital-twin",
     "name": "Digitalization & Digital Twin Services",
-    "group": "technology",
+    "group": "digital-twin",
     "order": 7,
     "reviewStatus": "draft",
     "shortSummary": "Asset data, analytics and virtual models of physical infrastructure.",
@@ -494,12 +677,17 @@
     ],
     "relatedProjectSlugs": [],
     "registrations": [],
-    "image": null
+    "image": {
+      "src": "/images/services/water-meter-installation.webp",
+      "alt": "Water meter being installed for Ogun State Water Corporation",
+      "width": 1920,
+      "height": 1440
+    }
   },
   {
     "slug": "research-innovation",
-    "name": "Research, Technology & Innovation",
-    "group": "technology",
+    "name": "Research, Technology & Innovation Services",
+    "group": "research-innovation",
     "order": 8,
     "reviewStatus": "draft",
     "shortSummary": "Applied studies, technical training and new engineering methods.",
@@ -518,6 +706,11 @@
     ],
     "relatedProjectSlugs": [],
     "registrations": [],
-    "image": null
+    "image": {
+      "src": "/images/services/water-meter-training.webp",
+      "alt": "Ogun State Water Corporation staff being trained on water meter installation",
+      "width": 1920,
+      "height": 1440
+    }
   }
 ]

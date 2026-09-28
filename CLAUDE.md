@@ -47,27 +47,47 @@ banned-terms rule below, which the build enforces.
 | `/about` | About (story, how we work, where we're going, mission, vision, recognition) |
 | `/services` | Services overview — four categories |
 | `/services/infrastructure` | **Infrastructure Services** — category landing page |
-| `/services/construction-civil-engineering` | Construction & Civil Engineering |
+| `/services/civil-engineering-construction` | Civil Engineering & Construction |
 | `/services/electrical-engineering` | Electrical Engineering |
 | `/services/mechanical-engineering` | Mechanical Engineering |
-| `/services/water-resources-environmental` | Water Resources & Environmental Engineering |
+| `/services/water-resources-development-management` | Water Resources Development & Management |
 | `/services/energy` | Energy Services |
-| `/services/oil-gas` | Oil & Gas Services |
+| `/services/oil-gas` | **Oil & Gas Services** — four anchored sections with a sticky sub-nav |
 | `/services/digital-twin` | Digitalization & Digital Twin Services |
-| `/services/research-innovation` | Research, Technology & Innovation |
-| `/projects` | Project portfolio, filtered by service category, then by sector |
+| `/services/research-innovation` | Research, Technology & Innovation Services |
+| `/projects` | Project categories — three photographic tiles, no project list |
+| `/projects/buildings-construction` | Buildings & Construction |
+| `/projects/civil-engineering-roads` | Civil Engineering & Roads |
+| `/projects/water-resources-development-management` | Water Resources Development & Management |
 | `/projects/[slug]` | Project detail |
 | `/clients` | Clients |
 | `/leadership` | Founder, and how project teams are assembled |
 | `/contact` | Contact |
 
-**Service categories**, in display order, are the `group` values in
+**Five service categories**, in display order, are the `group` values in
 `services.json`: `infrastructure` (four disciplines, with a landing page),
-`energy` (one), `oil-gas` (one), `technology` (two). `getServiceBands()` in
-`lib/content.ts` resolves each category's label, intro and landing-page link
-from the `group…` labels in `pages/services.json`, and the header, Home and
-the services overview all read from it. A category holding a single service
-renders as that service rather than as a heading above one repeated card.
+`energy`, `oil-gas`, `digital-twin` and `research-innovation`. The Technology
+group that held the last two together was split on the client's instruction.
+`getServiceBands()` in `lib/content.ts` resolves each category's label, intro,
+photograph and landing-page link from the `group…` entries in
+`pages/services.json` (`labels` for text, `images` for the picture), and the
+header and the services overview both read from it. A category holding a
+single service renders as that service rather than as a heading above one
+repeated card, and **every category heading is a link** — a category of one
+links straight to its service.
+
+Two services were renamed. Both old routes 301 in `vercel.json`:
+`construction-civil-engineering` → `civil-engineering-construction`, and
+`water-resources-environmental` → `water-resources-development-management`.
+
+**Projects is a set of category pages, not a filtered list.** `/projects` is
+three photographic tiles with a project count each; the old `?sector=` filter
+is gone and those URLs redirect. The categories are the flat `facets` of the
+`all-projects` section in `pages/projects.json`, each carrying a `slug`,
+`shortLabel`, `intro` and `image`. The three routes are three static files
+under `app/projects/` — a second dynamic segment cannot sit beside `[slug]` —
+and each is four lines delegating to `components/ProjectCategoryPage.tsx`.
+Adding a fourth category is a content edit plus one folder.
 
 There is no `/equipment` page. It was removed on the client's instruction;
 `equipment.json` stays in the repo in case it returns, and `/equipment` and the
@@ -81,11 +101,11 @@ old `/safety-policies/` redirect to `/about`. The rewritten content is kept in
 
 ## Content model (Phase 2 CMS will edit these)
 
-- `site.json` — company name, tagline, founded year, registrations, **ordered** `offices` (no "head office"; the first is the one published in structured data), phones, emails, nav, footer. `rcNumber` is held behind `showRcNumber: false`.
-- `pages/*.json` — per-page headings and body blocks (home, about, services overview, infrastructure landing, contact, leadership intro, projects, clients, 404). `hse.json` is present but unregistered.
-- `services.json` — array of services: slug, name, **group** (infrastructure / energy / oil-gas / technology), **order**, **reviewStatus** (approved / draft), summary, body, capabilities[], relatedProjectSlugs[], relatedServiceSlugs[], image. A service may also carry `capabilityBlocks[]` (grouped capabilities, which replace the flat sidebar list), `solutions`, `alsoCovered`, `procurement` and `partner` — all optional, all hidden when absent. The `partner` block is the one place another company's track record appears; see rule 9.
-- `projects.json` — array: slug, title, sector, summary, scope[], images[], and **optional** client, location, year, status. Sector is a leaf of the project filter, which nests sectors under a service category. Empty means hidden, never placeheld. `status` is only ever `"Completed"` or empty — the site never labels work as ongoing.
-- `clients.json` — array: name, category (federal / state / international / education / private), logo?
+- `site.json` — company name, tagline, founded year, registrations, **ordered** `offices` (no "head office"; the first is the one published in structured data), phones, emails, nav, footer. `rcNumber` is held behind `showRcNumber: false`. **`showProjectDates`** switches every year on the site off in one edit — cards, category pages and project pages all read it through `getProjectYear()`.
+- `pages/*.json` — per-page headings and body blocks (home, about, services overview, infrastructure landing, contact, leadership intro, projects, clients, 404). `hse.json` is present but unregistered. Alongside `labels` (short strings the template needs), a page may carry **`images`** — the photographs its template needs that belong to no single section: its `header` shot, and on the services overview one per category, keyed `groupInfrastructure` and so on.
+- `services.json` — array of services: slug, name, **group** (infrastructure / energy / oil-gas / digital-twin / research-innovation), **order**, **reviewStatus** (approved / draft), summary, body, capabilities[], relatedProjectSlugs[], relatedServiceSlugs[], image. A service may also carry `capabilityBlocks[]` (grouped capabilities, which replace the flat sidebar list), `solutions`, `alsoCovered`, `procurement`, `partner`, **`sectionNav[]`**, **`solutionsPyramid`** and **`valueMap`** — all optional, all hidden when absent. The `partner` block is the one place another company's track record appears; see rule 9.
+- `projects.json` — array: slug, title, sector, summary, scope[], images[], and **optional** client, location, year, status. Sector names the project's category. Empty means hidden, never placeheld. `status` is only ever `"Completed"` or empty — the site never labels work as ongoing.
+- `clients.json` — array: name, category (federal / state / international / education / private / **oil-gas-partner**), logo?. The page shows names only — no logos, no category headings, no agencies nested under a government. `oil-gas-partner` entries are the technical partner team's clients, not Sato's; they render in a separate block under their own attributed heading and sit behind the same review gate as the Oil & Gas page.
 - `team.json` — array: slug, name, title, isLeadership, **published**, bio, qualifications[], memberships[], photo?. `published: false` keeps a record in the file but off the site, the sitemap and the structured data.
 - `equipment.json` — array: name, category, quantity?, notes?
 
@@ -122,14 +142,45 @@ the full nav needs the rest of the row. Always scale by height with
 `width: auto`; never set both dimensions. `--header-height` in `globals.css`
 tracks these steps.
 
-Still pending: SVG logo files, ideally including a stacked lockup.
+Still pending: SVG logo files, ideally including a stacked lockup. The client
+has asked the original designer for an updated mark; keep the current one
+until it arrives, then drop it into `/brand/` — the sizing rules do not
+change.
+
+**Simpler, more visual, less text.** The client read the previous build as
+"academic" and asked for something closer to the plainness of the old site.
+Three rules follow from it:
+
+- **Every page opens with a photograph.** `components/PageHeader.tsx` sets the
+  `h1` and lead on the page background with the picture in a band beneath, and
+  every route uses it. Text over a photograph has to be won at each
+  breakpoint, and on a header repeated across fifteen pages that fight gets
+  lost somewhere. **Oil & Gas is the one exception** — its artwork is drawn
+  with an empty arc for exactly that, and it carries two scrims, a horizontal
+  wash from `md` up where the copy is in the left column and a flat one below
+  it where the copy runs full width. Measured worst case is 7.9:1.
+- **The header is one solid bar on every route.** It used to sit transparently
+  over the Home hero and take a background once scrolled past; Home no longer
+  has white copy over a full-bleed photograph, so the observer that drove it
+  is gone with it.
+- **The footer is one band**, under 120px on desktop (currently 84px): name
+  and © on the left, five links in the middle, phone and email on the right.
+
+**Dropdowns open on click, not hover** (`components/NavMenu.tsx`, shared by
+Services and Projects). A hover menu cannot be opened by touch and opens
+itself on the way past on a trackpad. The trigger is a real `<button>` with
+`aria-expanded`; arrow keys walk the panel, Escape and tabbing out close it,
+and closing returns focus to the trigger. Arrow-key entry into the panel is
+handled by the document listener alone — the trigger only opens — because
+both firing on one press steps over the first item.
 
 Decisions are recorded in `/docs/decisions/`, newest wins where they
 disagree with this file:
 
 1. `client-answers-v1.md` — the client's form.
-2. `client-feedback-batch-2.md` — the call and the oil and gas deck. **This
-   is the current one.**
+2. `client-feedback-batch-2.md` — the call and the oil and gas deck.
+3. `client-feedback-batch-3.md` — simplify, restructure, new copy. **This is
+   the current one.**
 
 ## Review deployments
 
