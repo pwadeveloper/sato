@@ -7,14 +7,6 @@
     "mapLink": "View on map",
     "optional": "optional"
   },
-  "images": {
-    "header": {
-      "src": "/images/projects-unassigned/sato-office-abeokuta.webp",
-      "alt": "Sato Engineering office in Abeokuta",
-      "width": 602,
-      "height": 363
-    }
-  },
   "sections": [
     {
       "type": "prose",
@@ -22,6 +14,12 @@
       "body": [
         "For project enquiries, tenders and vendor verification, contact our team."
       ]
+    },
+    {
+      "type": "prose",
+      "id": "channels",
+      "heading": "Speak to us",
+      "body": []
     },
     {
       "type": "offices",

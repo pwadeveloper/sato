@@ -180,8 +180,13 @@ export function ContactForm({
           type="submit"
           disabled={status === "sending"}
           className={cn(
-            "inline-flex items-center justify-center px-6 py-3 text-base font-semibold wdth-body",
-            "bg-brand text-white transition-colors duration-150 hover:bg-brand-deep",
+            // `shrink-0` and `whitespace-nowrap`: the button is a flex item
+            // beside the mailto note, and without them the note squeezes it
+            // until "Send enquiry" wraps onto two lines.
+            "inline-flex shrink-0 items-center justify-center whitespace-nowrap px-6 py-3 text-base font-semibold wdth-body",
+            // `active:` matches the shared Button's press state — this one is
+            // bespoke because it is a submit with a sending state.
+            "bg-brand text-white transition-colors duration-150 hover:bg-brand-deep active:bg-brand-ink",
             "disabled:cursor-not-allowed disabled:opacity-70",
           )}
         >
