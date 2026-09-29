@@ -17,9 +17,10 @@ import {
   getPartnerCategoryService,
   getProjectCategories,
   getProjectCategory,
-  getProjectsInCategory,
+  getProjectGroupsInCategory,
   getSection,
   getSite,
+  isPartnerCategory,
 } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/metadata";
 import { isReviewMode } from "@/lib/review-mode";
@@ -39,6 +40,16 @@ import { isReviewMode } from "@/lib/review-mode";
  * year with no scope, no photographs and no detail page — a table is the
  * honest shape for them, and duplicating twenty-six rows into `projects.json`
  * to force them into a card grid would have invented four fields each.
+ *
+ * A category may split its grid under subheadings, which is how Civil
+ * Engineering & Construction holds thirty projects without burying either
+ * half: buildings and roads keep their headings, under one category.
+ *
+ * Partner-delivered work carries an attribution line, wherever it appears and
+ * whichever source it came from. That is automatic — `isPartnerCategory`
+ * reads it off the category or off the projects in it — so the digital twin
+ * and research projects arriving from the partner will carry it without
+ * anyone having to remember.
  */
 export function buildCategoryMetadata(slug: string): Metadata {
   const page = getPage("projects");
@@ -67,7 +78,10 @@ export function ProjectCategoryPage({ slug }: { slug: string }) {
   const others = getProjectCategories().filter((entry) => entry.slug !== slug);
 
   const partner = getPartnerBlock(category);
-  const projects = partner ? [] : getProjectsInCategory(category);
+  const groups = partner ? [] : getProjectGroupsInCategory(category);
+  const attribution = isPartnerCategory(category)
+    ? labels.partnerAttribution ?? ""
+    : "";
 
   // A partner-sourced category is only as approved as the service it reads
   // from, so it carries that service's review state with it.
@@ -96,24 +110,50 @@ export function ProjectCategoryPage({ slug }: { slug: string }) {
           labels its own inner sections. */}
       <Section tone="concrete">
         <Container>
+          {/* Whose work this is, before the reader meets the first row. */}
+          {attribution ? (
+            <p className="mb-8 max-w-(--container-measure) border-l-[3px] border-brand py-1 pl-5 text-base font-semibold wdth-body">
+              <RichText text={attribution} />
+            </p>
+          ) : null}
+
           {partner ? (
             <PartnerProjects partner={partner} headingId="category-record" />
           ) : (
-            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {projects.map((project) => (
-                <li key={project.slug} className="flex">
-                  <ProjectCard
-                    project={project}
-                    sectorLabel={category.label}
-                    sectorShortLabel={category.shortLabel}
-                    // Every card here is this category. Saying so eleven times
-                    // is noise; the heading above already said it once.
-                    showSector={false}
-                    showDates={site.showProjectDates}
-                  />
-                </li>
+            <div className="flex flex-col gap-14">
+              {groups.map((group, index) => (
+                <section
+                  key={group.id ?? `group-${index}`}
+                  aria-labelledby={group.id ? `group-${group.id}` : undefined}
+                >
+                  {group.label ? (
+                    <h2
+                      id={`group-${group.id}`}
+                      className="mb-6 border-b border-asphalt pb-3 text-h3 wdth-heading text-balance"
+                    >
+                      <RichText text={group.label} />
+                    </h2>
+                  ) : null}
+
+                  <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {group.items.map((project) => (
+                      <li key={project.slug} className="flex">
+                        <ProjectCard
+                          project={project}
+                          sectorLabel={category.label}
+                          sectorShortLabel={category.shortLabel}
+                          // Every card here is this category. Saying so eleven
+                          // times is noise; the heading above already said it
+                          // once.
+                          showSector={false}
+                          showDates={site.showProjectDates}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </section>
               ))}
-            </ul>
+            </div>
           )}
         </Container>
       </Section>

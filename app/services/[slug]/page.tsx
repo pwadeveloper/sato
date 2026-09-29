@@ -10,16 +10,14 @@ import { DraftNotice } from "@/components/DraftNotice";
 import { CtaBand } from "@/components/CtaBand";
 import { Heading } from "@/components/Heading";
 import { PageHeader } from "@/components/PageHeader";
-import {
-  PartnerExperience,
-  PartnerRecognition,
-} from "@/components/PartnerExperience";
+import { PartnerExperience } from "@/components/PartnerExperience";
 import { ProcurementList } from "@/components/ProcurementList";
 import { RegistrationsBlock } from "@/components/RegistrationsBlock";
 import { RelatedServices } from "@/components/RelatedServices";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
 import { SectionNav } from "@/components/SectionNav";
+import { ServiceGallery } from "@/components/ServiceGallery";
 import { ServiceListBlock } from "@/components/ServiceListBlock";
 import { SolutionsPyramid } from "@/components/SolutionsPyramid";
 import { TextLink } from "@/components/TextLink";
@@ -217,6 +215,15 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <CategoryProjectLinks
               categories={projectCategories}
               label={labels.projectsLink ?? ""}
+              className="mt-14"
+            />
+
+            {/* Photographs of delivered work, where the client has sent any.
+                Empty on every service today; see docs/adding-client-photos.md. */}
+            <ServiceGallery
+              images={service.images ?? []}
+              heading={labels.gallery ?? ""}
+              headingId="service-gallery"
               className="mt-14"
             />
           </Container>
@@ -480,13 +487,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 <RichText text={partner.name} />
               </p>
             ) : null}
-
-            <PartnerRecognition
-              partner={partner}
-              headingId="partner-experience"
-              headingLevel={3}
-              className="mt-10 max-w-(--container-measure)"
-            />
 
             {relatedServices.length ? (
               <RelatedServices

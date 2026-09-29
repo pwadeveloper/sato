@@ -9,6 +9,12 @@
       "alt": "Sato engineer reading a drawing at a multi-storey building under construction",
       "width": 1536,
       "height": 1024
+    },
+    "aside": {
+      "src": "/images/projects/fce-osiele-1.webp",
+      "alt": "Completed asphalt road with kerbs and drainage at the Federal College of Education, Osiele, Abeokuta",
+      "width": 520,
+      "height": 1040
     }
   },
   "sections": [
@@ -26,7 +32,9 @@
       "type": "prose",
       "id": "motto",
       "heading": "Motto",
-      "body": ["Quality Engineering since 1997"]
+      "body": [
+        "Quality Engineering since 1997"
+      ]
     },
     {
       "type": "prose",

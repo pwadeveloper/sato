@@ -31,6 +31,8 @@ import type {
   PageSection,
   PartnerBlock,
   Project,
+  ProjectBand,
+  ProjectGroup,
   Service,
   ServiceBand,
   ServiceGroup,
@@ -260,17 +262,46 @@ export function getProjects(): Project[] {
 /**
  * The project categories, in display order, from `pages/projects.json`.
  *
- * A category is a leaf: one sector, one route, one photograph. The old
- * nested filter is gone — the client's point was that someone who came for
- * water work should not have to scroll past buildings and roads to find it,
- * and a tab they have to notice is not much better than a scroll.
+ * There is one category per service, named and ordered exactly as the
+ * services are: the client asked for Projects to mirror Services, so someone
+ * who has found the Electrical Engineering service knows without being told
+ * where its projects are. A category is a leaf — one route, one photograph.
  *
- * Only a category that actually has projects is returned, so an empty tile
- * can never reach the landing page.
+ * Only a category that actually has projects is returned. That is what keeps
+ * the eight from being eight, four of which would be an empty page: Mechanical
+ * Engineering, Energy, Digital Twin and Research have no projects yet, so they
+ * are absent from the dropdown, the landing page and the sitemap, and each
+ * appears the moment its first project lands in `projects.json`.
  */
 export function getProjectCategories(): CollectionFacet[] {
   const section = getSection(pages.projects, "all-projects", "collection");
   return (section.facets ?? []).filter((facet) => getProjectCount(facet) > 0);
+}
+
+/**
+ * The visible project categories grouped into the service categories, in the
+ * same order the services use.
+ *
+ * This is what makes the Projects dropdown and landing page read like the
+ * Services ones: the Infrastructure disciplines indented under one heading,
+ * then Energy, Oil & Gas, Digital Twin and Research at the top level. A band
+ * whose categories are all empty drops out with them.
+ *
+ * The labels are the service categories' own, from `pages/services.json`, so
+ * the two menus cannot drift apart.
+ */
+export function getProjectBands(): ProjectBand[] {
+  const categories = getProjectCategories();
+  const labels = pages.services.labels ?? {};
+
+  return BAND_ORDER.map((group) => {
+    const key = bandKey(group);
+    return {
+      group,
+      label: labels[key] ?? group,
+      categories: categories.filter((category) => category.group === group),
+    };
+  }).filter((band) => band.categories.length > 0);
 }
 
 /**
@@ -299,7 +330,7 @@ export function getPartnerBlock(facet: CollectionFacet): PartnerBlock | undefine
 export function getProjectCount(facet: CollectionFacet): number {
   const partner = getPartnerBlock(facet);
   if (partner) return partner.projects.length;
-  return projects.filter((project) => facetMatches(facet, project.sector)).length;
+  return projects.filter((project) => inCategory(project, facet)).length;
 }
 
 /** One category by its route segment. Throws rather than rendering empty. */
@@ -315,16 +346,65 @@ export function getProjectCategory(slug: string): CollectionFacet {
 
 /** The projects in one category, in `projects.json` order. */
 export function getProjectsInCategory(category: CollectionFacet): Project[] {
-  return projects.filter((project) => facetMatches(category, project.sector));
+  return projects.filter((project) => inCategory(project, category));
 }
 
-/** The category a project belongs to, for its breadcrumb and its card. */
+/**
+ * One category's projects split under its subheadings, in the order the
+ * subheadings are declared.
+ *
+ * A group with nothing in it is dropped, and anything the subheadings do not
+ * claim is returned last with no heading, so a project can never fall out of
+ * the page by being mislabelled. A category that declares no subheadings
+ * comes back as one unheaded group, which is the ordinary case.
+ */
+export function getProjectGroupsInCategory(
+  category: CollectionFacet,
+): ProjectGroup[] {
+  const all = getProjectsInCategory(category);
+  const subcategories = category.subcategories ?? [];
+  if (!subcategories.length) return [{ items: all }];
+
+  const groups: ProjectGroup[] = subcategories
+    .map((sub) => ({
+      id: sub.id,
+      label: sub.label,
+      items: all.filter((project) => project.subcategory === sub.id),
+    }))
+    .filter((group) => group.items.length > 0);
+
+  const claimed = new Set(subcategories.map((sub) => sub.id));
+  const rest = all.filter(
+    (project) => !project.subcategory || !claimed.has(project.subcategory),
+  );
+  if (rest.length) groups.push({ items: rest });
+
+  return groups;
+}
+
+/**
+ * The category a project belongs to, for its breadcrumb and its card.
+ *
+ * A project may sit in more than one; the first of its `categories` that is
+ * actually published is the one it is filed under.
+ */
 export function getCategoryForProject(
   project: Project,
 ): CollectionFacet | undefined {
-  return getProjectCategories().find((facet) =>
-    facetMatches(facet, project.sector),
-  );
+  const published = getProjectCategories();
+  for (const value of project.categories) {
+    const found = published.find((facet) => facet.value === value);
+    if (found) return found;
+  }
+  return undefined;
+}
+
+/**
+ * Every published category a project appears in, for the "also in" line on
+ * its detail page.
+ */
+export function getCategoriesForProject(project: Project): CollectionFacet[] {
+  return getProjectCategories().filter((facet) => inCategory(project, facet));
 }
 
 /**
@@ -364,39 +444,41 @@ export function getProject(slug: string): Project {
 /**
  * The division a project belongs to.
  *
- * A service claiming the project in `relatedProjectSlugs` wins; otherwise the
- * project's sector facet names the owning division. Returns `undefined` when
+ * A service claiming the project in `relatedProjectSlugs` wins; otherwise its
+ * first published category names the owning service — which since the
+ * categories mirror the services is the same slug. Returns `undefined` when
  * neither is set, and the detail page then shows no division link.
  */
-export function getServiceForProject(
-  project: Project,
-  facets: CollectionFacet[] = [],
-): Service | undefined {
+export function getServiceForProject(project: Project): Service | undefined {
   const claimed = services.find((service) =>
     service.relatedProjectSlugs.includes(project.slug),
   );
   if (claimed) return claimed;
 
-  const slug = flattenFacets(facets).find(
-    (facet) => facet.value === project.sector,
-  )?.serviceSlug;
+  const slug = getCategoryForProject(project)?.serviceSlug;
   return slug ? services.find((service) => service.slug === slug) : undefined;
 }
 
-/**
- * Facets and their sub-filters as one flat list.
- *
- * The project index nests sectors under a service category, but sector
- * lookups — a project's own label, the division it links on to — care only
- * about the leaves.
- */
-export function flattenFacets(facets: CollectionFacet[]): CollectionFacet[] {
-  return facets.flatMap((facet) => [facet, ...flattenFacets(facet.children ?? [])]);
+/** True when the project is filed under this category. */
+export function inCategory(project: Project, facet: CollectionFacet): boolean {
+  return project.categories.includes(facet.value);
 }
 
-/** True when the project's sector is this facet's own, or one of its children. */
-export function facetMatches(facet: CollectionFacet, sector: string): boolean {
-  return flattenFacets([facet]).some((leaf) => leaf.value === sector);
+/**
+ * Whether a category's work was delivered by a partner rather than by Sato.
+ *
+ * True when the category says so, or when every project in it does. Anything
+ * this returns true for carries the attribution line — which is the point of
+ * holding `deliveredBy` on the project as well as the category: the digital
+ * twin and research projects are arriving from the partner, and the line has
+ * to appear with them without anyone remembering to switch it on.
+ */
+export function isPartnerCategory(facet: CollectionFacet): boolean {
+  if (facet.deliveredBy) return facet.deliveredBy === "partner";
+  const items = getProjectsInCategory(facet);
+  return (
+    items.length > 0 && items.every((project) => project.deliveredBy === "partner")
+  );
 }
 
 /* --------------------------------------------------------------- clients */

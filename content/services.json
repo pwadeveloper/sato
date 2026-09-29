@@ -28,7 +28,8 @@
       "alt": "Asphalt being laid by a paver",
       "width": 1920,
       "height": 1440
-    }
+    },
+    "images": []
   },
   {
     "slug": "electrical-engineering",
@@ -59,7 +60,8 @@
       "alt": "Installed high lift pump control panel at Sagamu intake",
       "width": 1920,
       "height": 1440
-    }
+    },
+    "images": []
   },
   {
     "slug": "mechanical-engineering",
@@ -89,7 +91,8 @@
       "alt": "Stacked ductile iron pipes for water distribution",
       "width": 1920,
       "height": 1440
-    }
+    },
+    "images": []
   },
   {
     "slug": "water-resources-development-management",
@@ -121,7 +124,8 @@
       "alt": "Clay compaction for the cut-off trench at Fiditi dam",
       "width": 1920,
       "height": 1440
-    }
+    },
+    "images": []
   },
   {
     "slug": "energy",
@@ -536,13 +540,6 @@
           "17% less CAPEX to achieve the production uplift"
         ],
         "note": "{{CONFIRM: can the case study client (ADNOC) be named?}}"
-      },
-      "recognition": {
-        "heading": "Recognition",
-        "items": [
-          "2015 SPE International Projects, Facilities and Construction Award",
-          "Strategic partnerships with leading universities in the USA and Canada"
-        ]
       },
       "projectsShowLessLabel": "Show fewer projects",
       "projectsDisclosureNote": "The remaining projects are added to the table above."

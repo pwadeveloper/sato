@@ -56,18 +56,28 @@ export default function ServicesPage() {
               // four disciplines.
               const lead = solo ? solo.summary : band.intro;
 
-              /** Where the row goes on: sub-services, or page sections. */
+              /**
+               * Where the row goes on: sub-services, or page sections.
+               *
+               * A section that has moved off its page is left out — Oil & Gas
+               * "Projects" is `/projects/oil-gas`, which Projects already
+               * lists under its own nav item, and the client asked for it in
+               * one place rather than two. Its `sectionNav` entry stays in the
+               * content for the in-page sub-nav.
+               */
               const links = items.length
                 ? items.map((service) => ({
                     key: service.slug,
                     label: service.name,
                     href: `/services/${service.slug}`,
                   }))
-                : (solo?.sectionNav ?? []).map((section) => ({
-                    key: section.id,
-                    label: section.label,
-                    href: `/services/${solo?.slug}#${section.id}`,
-                  }));
+                : (solo?.sectionNav ?? [])
+                    .filter((section) => !section.href)
+                    .map((section) => ({
+                      key: section.id,
+                      label: section.label,
+                      href: `/services/${solo?.slug}#${section.id}`,
+                    }));
 
               return (
                 <li

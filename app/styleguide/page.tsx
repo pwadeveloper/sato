@@ -122,7 +122,7 @@ export default function StyleguidePage() {
   const waterResources = getService("water-resources-development-management");
 
   const projectsPage = getPage("projects");
-  const sectorLabels = new Map(
+  const categoryLabels = new Map(
     (
       projectsPage.sections.find(
         (section) => section.type === "collection" && section.id === "all-projects",
@@ -255,7 +255,10 @@ export default function StyleguidePage() {
                   <li key={project.slug} className="contents">
                     <ProjectCard
                       project={project}
-                      sectorLabel={sectorLabels.get(project.sector) ?? project.sector}
+                      sectorLabel={
+                        categoryLabels.get(project.categories[0]) ??
+                        project.categories[0]
+                      }
                     />
                   </li>
                 ))}

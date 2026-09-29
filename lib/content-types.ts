@@ -104,6 +104,16 @@ export interface Site {
    * category listing; the years stay in `projects.json` either way.
    */
   showProjectDates: boolean;
+  /**
+   * Whether Home shows the mission and the vision, as a pair, below the motto.
+   *
+   * The vision used to sit on Home on its own. The client's point was that the
+   * two belong together and that both are already on About, so Home is now the
+   * welcome and the motto. He may yet want them back — together — so the pair
+   * is held in `pages/home.json` and this switches it on in one edit. It is
+   * never one without the other: that is the thing he asked us not to do.
+   */
+  homeShowMissionVision: boolean;
   registrations: RegistrationGroup[];
   /** Labels for the rows `getCompanyFacts()` assembles. */
   factLabels: {
@@ -149,32 +159,50 @@ export type CollectionName =
   | "team"
   | "equipment";
 
-/** A filter tab (projects) or a group heading (clients, equipment). */
+/**
+ * A subheading inside one project category.
+ *
+ * A category that holds two recognisably different bodies of work says so
+ * rather than running them together: Civil Engineering & Construction is
+ * buildings and it is roads, and twenty cards in one undifferentiated grid
+ * buries whichever the reader came for. A project names its subheading in
+ * `subcategory`; one that names none renders after the last group.
+ */
+export interface FacetSubcategory {
+  id: string;
+  label: ConfirmableText;
+}
+
+/** A group heading (clients, equipment) or a project category. */
 export interface CollectionFacet {
   value: string;
   label: ConfirmableText;
   /**
-   * The division this sector belongs to. A project detail page links on to it
-   * when no service claims the project explicitly in `relatedProjectSlugs`.
+   * The service this category belongs to — the same slug, for a project
+   * category, because the categories now mirror the services one for one.
+   * A project detail page links on to it when no service claims the project
+   * explicitly in `relatedProjectSlugs`.
    */
   serviceSlug?: string;
   /**
-   * Sub-filters, where a facet narrows further. Unused since the project
-   * index became a set of category pages, and kept because `flattenFacets`
-   * and `facetMatches` are written against it.
+   * Which service category this one sits under, so the Projects dropdown and
+   * landing page can be grouped exactly like the Services ones — the four
+   * Infrastructure disciplines indented under one heading, the rest at the
+   * top level. Resolved through `getProjectBands()`.
    */
-  children?: CollectionFacet[];
+  group?: ServiceGroup;
   /**
    * Route segment, where the facet has a page of its own — a project category
    * lives at `/projects/<slug>`. The routes are static files (a second
    * dynamic segment cannot sit beside `[slug]`), so a new category needs a
-   * folder as well as this entry.
+   * folder as well as this entry. A category with no projects is never
+   * published, so it needs no folder until it has one.
    */
   slug?: string;
   /**
    * Where this category's projects come from.
    *
-   * `projects` (the default) means `projects.json`, matched on `sector`.
+   * `projects` (the default) means `projects.json`, matched on `categories`.
    * `partner` means the `partner.projects` table on the service named by
    * `serviceSlug` — a record held as client/project/year rows rather than as
    * full project entries, because those rows have no scope, no photographs
@@ -182,6 +210,15 @@ export interface CollectionFacet {
    * source and its layout differ.
    */
   source?: "projects" | "partner";
+  /**
+   * Who delivered the work in this category, where the whole category is one
+   * or the other. A `partner` category carries the attribution line; for a
+   * `projects`-sourced category the projects say so individually, through
+   * `deliveredBy`, and this may be left unset.
+   */
+  deliveredBy?: DeliveredBy;
+  /** Subheadings within the category, in display order. */
+  subcategories?: FacetSubcategory[];
   /** One line under the category heading, on its landing tile and its page. */
   intro?: ConfirmableText;
   /**
@@ -193,6 +230,27 @@ export interface CollectionFacet {
   shortLabel?: ConfirmableText;
   /** The photograph on the category's tile and the header of its page. */
   image?: ImageRef;
+}
+
+/**
+ * One service category's project categories, assembled by `getProjectBands()`.
+ *
+ * The Projects dropdown and landing page are grouped exactly like the
+ * Services ones, so they need the same shape: a heading, and the categories
+ * under it. The heading has no page of its own — there is no
+ * `/projects/infrastructure` — so unlike `ServiceBand` it carries no `href`.
+ */
+export interface ProjectBand {
+  group: ServiceGroup;
+  label: ConfirmableText;
+  categories: CollectionFacet[];
+}
+
+/** Projects under one subheading of a category. An unnamed group has none. */
+export interface ProjectGroup {
+  id?: string;
+  label?: ConfirmableText;
+  items: Project[];
 }
 
 export interface HeroSection {
@@ -563,7 +621,6 @@ export interface PartnerBlock {
   projectsDisclosureNote: ConfirmableText;
   engagements?: ServiceList;
   caseStudy?: PartnerCaseStudy;
-  recognition?: ServiceList;
 }
 
 export interface Service {
@@ -600,13 +657,33 @@ export interface Service {
   /** Other services to link on to, e.g. oil and gas -> digital twin. */
   relatedServiceSlugs?: string[];
   registrations?: ConfirmableText[];
+  /** The header shot. */
   image: ImageRef | null;
+  /**
+   * Photographs of work delivered under this service, shown as a gallery.
+   *
+   * Separate from `image`, which is the header shot: these are the client's
+   * own labelled photographs of completed work, dropped into
+   * `raw-assets/client-photos/<service>/` and processed by
+   * `npm run images` (see docs/adding-client-photos.md). Empty is the normal
+   * state and the gallery is then not rendered — never placeheld.
+   */
+  images?: ImageRef[];
   order: number;
 }
 
 /* -------------------------------------------------------------- projects */
 
-export type ProjectSector = "buildings" | "roads" | "water" | "energy";
+/**
+ * Who delivered a piece of work.
+ *
+ * `partner` work is shown under an attribution line wherever it appears, on
+ * the category page and in the nav count alike. The field is on every project
+ * rather than inferred from the category, because the incoming digital twin
+ * and research projects are partner work arriving into categories that will
+ * otherwise hold Sato's own.
+ */
+export type DeliveredBy = "sato" | "partner";
 
 export interface Project {
   slug: string;
@@ -615,7 +692,19 @@ export interface Project {
   client: ConfirmableText;
   /** Optional, as `client`. */
   location: ConfirmableText;
-  sector: ProjectSector;
+  /**
+   * The categories this project appears under, by facet value. More than one
+   * is normal — a bulk meter supply is water work and it is electrical work,
+   * and a reader looking in either place should find it. The first is the one
+   * its breadcrumb and its card name.
+   */
+  categories: string[];
+  /**
+   * The subheading it sits under within its category, where that category
+   * declares any. Unset renders after the last group.
+   */
+  subcategory?: string;
+  deliveredBy: DeliveredBy;
   /** Optional. Either a year, or "Awarded 2012" where only the award is known. */
   year: ConfirmableText;
   /** Only ever "Completed" or empty. The site never labels work in progress. */

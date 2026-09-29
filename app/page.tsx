@@ -5,6 +5,7 @@ import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
+import { StatementPair } from "@/components/StatementPair";
 import { getPage, getSection, getSite } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/metadata";
 
@@ -13,6 +14,8 @@ const site = getSite();
 
 const welcome = getSection(page, "welcome", "prose");
 const motto = getSection(page, "motto", "prose");
+// Held in the content whether or not it is shown — see `homeShowMissionVision`.
+const mission = getSection(page, "mission", "prose");
 const vision = getSection(page, "vision", "prose");
 
 const heroImage = page.images?.hero;
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * Home: a welcome, a motto and a vision. Nothing else.
+ * Home: a welcome and a motto. Nothing else.
  *
  * It used to run six sections deep — what we do, a company data plate, a
  * client strip, selected projects, a closing call to action. The client's
@@ -32,6 +35,11 @@ export const metadata: Metadata = {
  * was closer to what he wanted. So the page introduces the company and gets
  * out of the way; everything it used to summarise has a page of its own, and
  * the nav is how a visitor reaches it.
+ *
+ * The vision went the same way, and for a different reason: it was here
+ * without the mission, and the client wants the two read together. They are
+ * both on About. Setting `homeShowMissionVision` brings them back here as a
+ * pair — never one alone.
  *
  * The components those sections used are still in `/components` and still
  * work. They are unused on purpose — the client said he wants to build on
@@ -91,29 +99,18 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section tone="concrete" labelledBy="vision-heading">
-        <Container>
-          <div className="lg:grid lg:grid-cols-12 lg:gap-x-12">
-            <h2
-              id="vision-heading"
-              className="text-2xs font-semibold uppercase tracking-[0.08em] text-brand-deep wdth-body lg:col-span-3"
-            >
-              <RichText text={vision.heading ?? ""} />
-            </h2>
-
-            <div className="mt-4 lg:col-span-8 lg:col-start-5 lg:mt-0">
-              {vision.body.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="max-w-(--container-measure) text-h3 wdth-heading text-asphalt text-pretty"
-                >
-                  <RichText text={paragraph} />
-                </p>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </Section>
+      {site.homeShowMissionVision ? (
+        <Section tone="concrete" as="div">
+          <Container>
+            <StatementPair
+              statements={[
+                { id: mission.id, label: mission.heading ?? "", body: mission.body },
+                { id: vision.id, label: vision.heading ?? "", body: vision.body },
+              ]}
+            />
+          </Container>
+        </Section>
+      ) : null}
     </>
   );
 }

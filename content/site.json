@@ -24,8 +24,8 @@
       "label": "Abeokuta Office",
       "city": "Abeokuta",
       "state": "Ogun State",
-      "address": "Abeokuta, Ogun State",
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Abeokuta%2C+Ogun+State",
+      "address": "IBB Boulevard, opposite Southwest Resource Centre, Oke-Mosan, Abeokuta, Ogun State",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=IBB+Boulevard%2C+Oke-Mosan%2C+Abeokuta%2C+Ogun+State",
       "note": ""
     }
   ],
@@ -158,5 +158,6 @@
   },
   "contactFormRecipient": "info@satoengineering.com",
   "social": [],
-  "showProjectDates": true
+  "showProjectDates": true,
+  "homeShowMissionVision": false
 }

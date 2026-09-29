@@ -24,7 +24,17 @@
       "type": "prose",
       "id": "motto",
       "heading": "Motto",
-      "body": ["Quality Engineering since 1997"]
+      "body": [
+        "Quality Engineering since 1997"
+      ]
+    },
+    {
+      "type": "prose",
+      "id": "mission",
+      "heading": "Mission",
+      "body": [
+        "To deliver innovative and sustainable engineering and infrastructure solutions that meet the highest standards, exceed client expectations and create lasting value."
+      ]
     },
     {
       "type": "prose",

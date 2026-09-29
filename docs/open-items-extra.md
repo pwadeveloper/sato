@@ -20,6 +20,39 @@ arrives.
 - **One consolidated document with additional slide content**, to follow the
   next meeting with the technical partner.
 
+### Decisions from the two review calls
+
+- **Oil and gas projects are attributed again.** You asked on the calls that
+  partner projects carry an attribution line, and that the line appear
+  automatically for the Digital Twin and Research projects Dele is sending.
+  `/projects/oil-gas` therefore now opens with "Delivered by our technical
+  partner team." **This reverses the instruction from the fourth round**,
+  where the attribution came off — please confirm which you want, because the
+  two rounds say different things. It is one string
+  (`labels.partnerAttribution` in `content/pages/projects.json`); emptying it
+  removes the line from every partner category at once. With the line on,
+  `/clients` and `/projects/oil-gas` agree again, which settles the
+  inconsistency raised last round.
+- **Four project categories are waiting for content.** Mechanical
+  Engineering, Energy Services, Digitalization & Digital Twin Services and
+  Research, Technology & Innovation Services each have a category defined and
+  **nothing in it**, so none of them is published — not in the Projects menu,
+  not on the Projects page, not in the sitemap. Each appears by itself the
+  moment its first project is added. Dele's Digital Twin and Research
+  projects will be partner work and will carry the attribution line above.
+  Each also needs a one-line description and a photograph for its tile when
+  it goes live.
+- **Photographs of completed work.** Send them whenever they are ready, in
+  four batches — Civil Engineering & Construction, Electrical Engineering,
+  Mechanical Engineering, Water Resources Development & Management — with the
+  filenames you have given them. The site is ready for them: they go into a
+  gallery on each service page. **Keep your filenames descriptive**; they are
+  what the alt text for blind and partially sighted readers is written from.
+  The process is `docs/adding-client-photos.md`.
+- **The About photograph is a stand-in.** The completed road at the Federal
+  College of Education, Osiele is beside the About text for now. It will be
+  swapped for one of your new photographs when they arrive.
+
 ### Decisions from the fourth round of feedback
 
 - **The bio, verbatim.** Your own version is now on `/leadership` word for
@@ -34,18 +67,16 @@ arrives.
   Nigerian Institute of Management, a Life Member…". It reads as a list item
   dropped mid-sentence as it stands. **Not changed on the site** — it is his
   text and stays as written unless he approves.
-- **Oil and gas projects are now presented as Sato's own.** On your
-  instruction, the partner team's twenty-six projects, the wider engagements
-  and the case study moved to `/projects/oil-gas` and the attribution lines
-  were removed. The reservation about vendor verification is recorded in
-  `docs/services-for-review.md`; the decision is yours and the site reflects
-  it.
-- **The clients page does not yet match.** Seventeen oil and gas clients on
-  `/clients` still appear under "Oil & Gas: clients served through our
-  technical partners". Nobody asked for that to change, so it has not been
-  touched — but a reader now meets attributed clients and unattributed
-  projects on the same site. **Which way should it go?** Both can match in
-  one edit.
+- ~~**Oil and gas projects are now presented as Sato's own.**~~
+  **Superseded by the review calls** — see above. The projects, the wider
+  engagements and the case study are still at `/projects/oil-gas`, but the
+  attribution line is back. The reservation about vendor verification is
+  recorded in `docs/services-for-review.md`.
+- ~~**The clients page does not yet match.**~~ **Resolved, in the direction
+  of attributing both.** `/clients` keeps its "Oil & Gas: clients served
+  through our technical partners" heading, and `/projects/oil-gas` now
+  carries an attribution line too, so the two agree. If you would rather
+  neither did, both come off in one edit each.
 
 ### Decisions from the third round of feedback
 
@@ -76,7 +107,8 @@ instead. It reads as deliberate rather than broken, but a page of them is
 thinner than the work deserves, and these are the projects an oil company will
 look at. Anything you can find — even a phone photograph — goes straight in.
 
-**Buildings & Construction (15 of 21 with no photograph)**
+**Civil Engineering & Construction — Buildings (15 of 21 with no
+photograph)**
 
 - Two-Storey Multipurpose Building with Offices (Academic Building Complex)
   Block B — Federal University of Agriculture, Abeokuta
@@ -100,7 +132,7 @@ look at. Anything you can find — even a phone photograph — goes straight in.
 - Construction of Classrooms — Ogun State Ministry of Education
 - Construction of Multipurpose Hall — Abika Limited
 
-**Civil Engineering & Roads (6 of 9)**
+**Civil Engineering & Construction — Roads & Pavements (6 of 9)**
 
 - Reefer Pavement Works, Redesign, Construction and Repairs — APM Terminals
   Apapa Limited
@@ -213,6 +245,22 @@ Also outstanding on the project record:
 
 ## On hold
 
+- **The Oil & Gas in-page sub-nav.** Capabilities · Solutions · Projects ·
+  Partnerships, exactly as it was — you asked to discuss it before anything
+  comes off. The only change made was to the *menus*: "Projects" no longer
+  appears under Oil & Gas in the Services dropdown or on the Services page,
+  because Projects has its own nav item and both pointed at the same page.
+- **The Lagos address format.** You mentioned showing the area and a nearby
+  bus stop in brackets, the way the live site does: "No 14 Agbaoku street
+  (Awosika bus stop), Opebi, Ikeja, Lagos State." The site currently reads
+  "No. 14 Agbaoku Street, Opebi, Ikeja, Lagos" with "Near Awosika bus stop."
+  underneath. Unchanged until the contact page is revisited.
+- **The Leadership page.** Untouched. You are adding two or three more
+  people, and the page will be restructured once they are in.
+- **The hero and header photographs.** You mentioned "the hero image" being
+  too large on the Oil & Gas page; we read that as the business value map
+  diagram, which is now a fifth smaller. No header photograph has been
+  resized — say the word if you meant one of those instead.
 - **The HSE page.** Not built, not linked, not in the sitemap. `/hse` and the
   old `/safety-policies/` both redirect to `/about`. The content is kept,
   rewritten, in `content/pages/hse.json`. Restoring it means re-registering

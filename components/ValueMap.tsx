@@ -39,7 +39,15 @@ function Cell({ items }: { items: string[] }) {
  *
  * The image is a plain `<img>`, not `next/image`: the loader would build a
  * srcset and serve the 800px file on a phone, where the labels are already
- * at the limit of legibility. One file, at full size, inside a scroller.
+ * at the limit of legibility. One file, inside a scroller.
+ *
+ * It is drawn at 80% of the width it would otherwise take, centred. At full
+ * width it is tall enough — the source is nearly square — that it pushed the
+ * rest of the section off the screen, which is what the client objected to.
+ * Eighty per cent is a fifth less scrolling and still legible on a laptop;
+ * the floor below it is the point where the 9pt labels stop being readable,
+ * so `min-w` holds the drawing at that size on a phone and the container
+ * scrolls sideways instead, exactly as before.
  */
 export function ValueMap({
   map,
@@ -79,7 +87,7 @@ export function ValueMap({
           height={map.image.height}
           loading="lazy"
           decoding="async"
-          className="h-auto w-full min-w-[40rem] max-w-none"
+          className="mx-auto h-auto w-4/5 min-w-[40rem] max-w-none"
         />
       </div>
 

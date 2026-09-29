@@ -2,7 +2,7 @@
   "slug": "projects",
   "title": "Projects",
   "metaTitle": "Projects",
-  "metaDescription": "Buildings, roads, water and oil and gas projects delivered by Sato Engineering & Infrastructure Limited for government, university, development partner, private and oil company clients.",
+  "metaDescription": "Civil engineering, building, electrical, water resources and oil and gas projects delivered by Sato Engineering & Infrastructure Limited for government, university, development partner, private and oil company clients.",
   "labels": {
     "breadcrumb": "Breadcrumb",
     "countOne": "1 project",
@@ -20,7 +20,9 @@
     "otherCategories": "Other categories",
     "categoriesLabel": "Project categories",
     "clientsLink": "Clients we've worked with",
-    "allProjects": "All projects"
+    "allProjects": "All projects",
+    "partnerAttribution": "Delivered by our technical partner team.",
+    "alsoIn": "Also in"
   },
   "images": {
     "header": {
@@ -35,42 +37,64 @@
       "type": "collection",
       "id": "all-projects",
       "collection": "projects",
-      "intro": "Nearly three decades of delivered work, in four categories.",
+      "intro": "Nearly three decades of delivered work, by service.",
       "facetMode": "group",
       "facets": [
         {
-          "value": "buildings",
-          "label": "Buildings & Construction",
-          "slug": "buildings-construction",
+          "value": "civil-engineering-construction",
+          "label": "Civil Engineering & Construction",
+          "slug": "civil-engineering-construction",
           "serviceSlug": "civil-engineering-construction",
-          "intro": "Academic, administrative, laboratory, health, residential and commercial buildings, new-build and conversion.",
+          "group": "infrastructure",
+          "subcategories": [
+            {
+              "id": "buildings",
+              "label": "Buildings"
+            },
+            {
+              "id": "roads-pavements",
+              "label": "Roads & Pavements"
+            }
+          ],
+          "intro": "Buildings, roads, heavy-duty pavements, earthworks, drainage, kerbs and culverts — new-build, rehabilitation and conversion.",
           "image": {
             "src": "/images/projects/funaab-colplant-1.webp",
             "alt": "COLPLANT building at the Federal University of Agriculture, Abeokuta, at completion stage",
             "width": 1040,
             "height": 520
           },
-          "shortLabel": "Buildings"
+          "shortLabel": "Civil"
         },
         {
-          "value": "roads",
-          "label": "Civil Engineering & Roads",
-          "slug": "civil-engineering-roads",
-          "serviceSlug": "civil-engineering-construction",
-          "intro": "Roads, heavy-duty pavements, earthworks, drainage, kerbs and culverts.",
+          "value": "electrical-engineering",
+          "label": "Electrical Engineering",
+          "slug": "electrical-engineering",
+          "serviceSlug": "electrical-engineering",
+          "group": "infrastructure",
+          "intro": "Metering, pumping and control installations supplied and commissioned for water and infrastructure clients.",
           "image": {
-            "src": "/images/services/roadworks-completed-carriageway.webp",
-            "alt": "Completed asphalt carriageway with kerbed median",
+            "src": "/images/services/water-high-lift-pump-panel.webp",
+            "alt": "Installed high lift pump control panel at Sagamu intake",
             "width": 1920,
             "height": 1440
           },
-          "shortLabel": "Roads"
+          "shortLabel": "Electrical"
         },
         {
-          "value": "water",
+          "value": "mechanical-engineering",
+          "label": "Mechanical Engineering",
+          "slug": "mechanical-engineering",
+          "serviceSlug": "mechanical-engineering",
+          "group": "infrastructure",
+          "intro": "",
+          "shortLabel": "Mechanical"
+        },
+        {
+          "value": "water-resources-development-management",
           "label": "Water Resources Development & Management",
           "slug": "water-resources-development-management",
           "serviceSlug": "water-resources-development-management",
+          "group": "infrastructure",
           "intro": "Dams, intakes, water supply schemes, boreholes, metering, river works and erosion control.",
           "image": {
             "src": "/images/projects/ogere-1.webp",
@@ -81,11 +105,22 @@
           "shortLabel": "Water"
         },
         {
+          "value": "energy",
+          "label": "Energy Services",
+          "slug": "energy",
+          "serviceSlug": "energy",
+          "group": "energy",
+          "intro": "",
+          "shortLabel": "Energy"
+        },
+        {
           "value": "oil-gas",
-          "label": "Oil & Gas",
+          "label": "Oil & Gas Services",
           "slug": "oil-gas",
           "serviceSlug": "oil-gas",
+          "group": "oil-gas",
           "source": "partner",
+          "deliveredBy": "partner",
           "intro": "Reservoir management, field development planning, production optimization and digital oilfield delivery for national and international oil companies.",
           "image": {
             "src": "/images/oil-gas/platforms-and-pipelines.webp",
@@ -94,6 +129,24 @@
             "height": 941
           },
           "shortLabel": "Oil & Gas"
+        },
+        {
+          "value": "digital-twin",
+          "label": "Digitalization & Digital Twin Services",
+          "slug": "digital-twin",
+          "serviceSlug": "digital-twin",
+          "group": "digital-twin",
+          "intro": "",
+          "shortLabel": "Digital Twin"
+        },
+        {
+          "value": "research-innovation",
+          "label": "Research, Technology & Innovation Services",
+          "slug": "research-innovation",
+          "serviceSlug": "research-innovation",
+          "group": "research-innovation",
+          "intro": "",
+          "shortLabel": "Research"
         }
       ],
       "note": ""

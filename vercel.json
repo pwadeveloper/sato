@@ -21,7 +21,7 @@
           "value": "buildings"
         }
       ],
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
@@ -33,7 +33,7 @@
           "value": "roads"
         }
       ],
-      "destination": "/projects/civil-engineering-roads",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
@@ -46,6 +46,16 @@
         }
       ],
       "destination": "/projects/water-resources-development-management",
+      "permanent": true
+    },
+    {
+      "source": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
+      "permanent": true
+    },
+    {
+      "source": "/projects/civil-engineering-roads",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
@@ -196,87 +206,87 @@
     },
     {
       "source": "/blocks-of-shops",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/building-and-construction",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/building1",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/building11",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/building2",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/building3",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/building4",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/building5",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/building6-2",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/building7",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/building8",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/civil-eng-road-projects",
-      "destination": "/projects/civil-engineering-roads",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/civil2",
-      "destination": "/projects/civil-engineering-roads",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/civil5",
-      "destination": "/projects/civil-engineering-roads",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/civil6",
-      "destination": "/projects/civil-engineering-roads",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/civil7",
-      "destination": "/projects/civil-engineering-roads",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/civil8",
-      "destination": "/projects/civil-engineering-roads",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
@@ -356,12 +366,12 @@
     },
     {
       "source": "/horizon-suites",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
       "source": "/horizon-suites-2",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {
@@ -611,7 +621,7 @@
     },
     {
       "source": "/work-in-progress",
-      "destination": "/projects/buildings-construction",
+      "destination": "/projects/civil-engineering-construction",
       "permanent": true
     },
     {

@@ -13,11 +13,16 @@ import { cn } from "@/lib/cn";
  * will check these projects, and finding them presented as Sato's own would
  * end the conversation.
  *
- * The file exports the whole block and its three parts separately, because
- * the Oil & Gas page splits them across two of its four sections — the
- * record under Projects, the relationship under Partnerships. Splitting them
- * must not cost the attribution, so `PartnerAttribution` is its own piece and
- * every section that shows partner work opens with it.
+ * The file exports the whole block and its parts separately, because the
+ * Oil & Gas page splits them across two of its four sections — the record
+ * under Projects, the relationship under Partnerships. Splitting them must not
+ * cost the attribution, so `PartnerAttribution` is its own piece and every
+ * section that shows partner work opens with it.
+ *
+ * There is no recognition block. The partner team's 2015 SPE award and its
+ * university partnerships were removed on the client's instruction: they are
+ * not Sato's recognition, and a reader on a Sato page has no way to tell that
+ * from an award line. The relationship itself stays, under Partnerships.
  *
  * The figures strip and the collaborator's name render only when they hold
  * something: the source figures disagree with each other and the name is not
@@ -267,25 +272,6 @@ export function PartnerProjects({
   );
 }
 
-/** Awards and academic partnerships belonging to the partner team. */
-export function PartnerRecognition({
-  partner,
-  headingId,
-  headingLevel = 3,
-  className,
-}: PartProps) {
-  if (!partner.recognition) return null;
-
-  return (
-    <ServiceListBlock
-      list={partner.recognition}
-      headingId={`${headingId}-recognition`}
-      headingLevel={headingLevel}
-      className={className}
-    />
-  );
-}
-
 export interface PartnerExperienceProps {
   partner: PartnerBlock;
   headingId: string;
@@ -302,11 +288,6 @@ export function PartnerExperience({
     <div className={cn(className)}>
       <PartnerAttribution partner={partner} headingId={headingId} />
       <PartnerProjects
-        partner={partner}
-        headingId={headingId}
-        className="mt-12"
-      />
-      <PartnerRecognition
         partner={partner}
         headingId={headingId}
         className="mt-12"

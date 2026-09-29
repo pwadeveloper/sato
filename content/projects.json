@@ -4,7 +4,10 @@
     "title": "Construction of Sagamu Intake Structure",
     "client": "World Bank / Ogun State Water Corporation",
     "location": "Sagamu, Ogun State",
-    "sector": "water",
+    "categories": [
+      "water-resources-development-management"
+    ],
+    "deliveredBy": "sato",
     "year": "2013",
     "status": "Completed",
     "summary": "Intake structure for the Sagamu water supply scheme, delivered under the World Bank-assisted programme with Ogun State Water Corporation.",
@@ -17,7 +20,11 @@
     "title": "Reefer Pavement Works — Redesign, Construction and Repairs",
     "client": "APM Terminals Apapa Limited",
     "location": "Apapa, Lagos",
-    "sector": "roads",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "roads-pavements",
+    "deliveredBy": "sato",
     "year": "",
     "status": "",
     "summary": "Redesign, construction and repair of reefer pavement at the Apapa container terminal.",
@@ -30,7 +37,10 @@
     "title": "Rehabilitation of Ogere Water Supply Scheme",
     "client": "World Bank / Ogun State Water Corporation",
     "location": "Ogere, Ogun State",
-    "sector": "water",
+    "categories": [
+      "water-resources-development-management"
+    ],
+    "deliveredBy": "sato",
     "year": "2012",
     "status": "Completed",
     "summary": "Rehabilitation of the Ogere water supply scheme, including the high lift pump building, filter beds, ductile iron mains and 253 cubic metre overhead tanks.",
@@ -121,7 +131,10 @@
     "title": "Construction of Earth Dam, Fiditi",
     "client": "Ogun-Osun River Basin Development Authority",
     "location": "Fiditi, Oyo State",
-    "sector": "water",
+    "categories": [
+      "water-resources-development-management"
+    ],
+    "deliveredBy": "sato",
     "year": "Awarded 2011",
     "status": "",
     "summary": "Construction of an earth dam, including cut-off trench clay compaction and river course clearing.",
@@ -153,7 +166,11 @@
     "title": "Supply of Prepayment and Electromagnetic Bulk Meters",
     "client": "World Bank / Federal Ministry of Water Resources",
     "location": "Abuja",
-    "sector": "water",
+    "categories": [
+      "water-resources-development-management",
+      "electrical-engineering"
+    ],
+    "deliveredBy": "sato",
     "year": "2018",
     "status": "Completed",
     "summary": "Supply of prepayment meters and electromagnetic bulk meters under the World Bank-assisted water sector programme.",
@@ -166,7 +183,11 @@
     "title": "Supply, Delivery and Installation of Immersion and Ultrasonic Bulk Meters",
     "client": "USAID Effective Water, Sanitation and Hygiene Services (E-WASH) Programme",
     "location": "",
-    "sector": "water",
+    "categories": [
+      "water-resources-development-management",
+      "electrical-engineering"
+    ],
+    "deliveredBy": "sato",
     "year": "",
     "status": "",
     "summary": "Supply, delivery and installation of immersion and ultrasonic bulk meters for the E-WASH programme.",
@@ -179,7 +200,10 @@
     "title": "Procurement of Domestic and Bulk Meters",
     "client": "World Bank / Ogun State Water Corporation",
     "location": "Abeokuta, Ogun State",
-    "sector": "water",
+    "categories": [
+      "water-resources-development-management"
+    ],
+    "deliveredBy": "sato",
     "year": "2013",
     "status": "Completed",
     "summary": "Procurement of domestic and bulk water meters for Ogun State Water Corporation.",
@@ -192,7 +216,10 @@
     "title": "Channelization of Lower Awba Stream",
     "client": "University of Ibadan",
     "location": "University of Ibadan Zoological Garden, Oyo State",
-    "sector": "water",
+    "categories": [
+      "water-resources-development-management"
+    ],
+    "deliveredBy": "sato",
     "year": "2015",
     "status": "Completed",
     "summary": "Channelization of the Lower Awba stream through the University of Ibadan Zoological Garden.",
@@ -212,7 +239,10 @@
     "title": "Ajagunmolu Flood and Erosion Control",
     "client": "Federal Ministry of Environment",
     "location": "Ijebu-Ode, Ogun State",
-    "sector": "water",
+    "categories": [
+      "water-resources-development-management"
+    ],
+    "deliveredBy": "sato",
     "year": "2014",
     "status": "Completed",
     "summary": "Flood and erosion control works at Ajagunmolu.",
@@ -225,7 +255,10 @@
     "title": "Dredging of Omi Ogungbade River",
     "client": "Federal Ministry of Environment",
     "location": "Omi Ogungbade, Oyo State",
-    "sector": "water",
+    "categories": [
+      "water-resources-development-management"
+    ],
+    "deliveredBy": "sato",
     "year": "2012",
     "status": "Completed",
     "summary": "Dredging of the Omi Ogungbade river.",
@@ -238,7 +271,10 @@
     "title": "Dredging of River, Ijaiye",
     "client": "Ogun State Ministry of Environment",
     "location": "Ijaiye, Abiola Way and Quarry Road, Abeokuta",
-    "sector": "water",
+    "categories": [
+      "water-resources-development-management"
+    ],
+    "deliveredBy": "sato",
     "year": "2012",
     "status": "Completed",
     "summary": "River dredging along Abiola Way and Quarry Road.",
@@ -251,7 +287,10 @@
     "title": "Solar-Powered Boreholes",
     "client": "Ogun State Bureau of Management and Budget; Ogun-Osun River Basin Development Authority",
     "location": "Ogun State",
-    "sector": "water",
+    "categories": [
+      "water-resources-development-management"
+    ],
+    "deliveredBy": "sato",
     "year": "2010",
     "status": "Completed",
     "summary": "Thirty-five solar-powered boreholes drilled and commissioned across Ogun State using Sato's own drilling rig — 32 for the Bureau of Management and Budget and three for the Ogun-Osun River Basin Development Authority.",
@@ -289,7 +328,11 @@
     "title": "Construction of Internal Road Network",
     "client": "Federal College of Education, Osiele",
     "location": "Abeokuta, Ogun State",
-    "sector": "roads",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "roads-pavements",
+    "deliveredBy": "sato",
     "year": "2019",
     "status": "Completed",
     "summary": "Internal road network for the college, including compacted laterite filling, walkways and asphalt laying.",
@@ -331,7 +374,11 @@
     "title": "Road Construction Works at Sagamu Intake",
     "client": "Ogun State Water Corporation",
     "location": "Sagamu, Ogun State",
-    "sector": "roads",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "roads-pavements",
+    "deliveredBy": "sato",
     "year": "2013",
     "status": "Completed",
     "summary": "Access road construction serving the Sagamu intake structure.",
@@ -344,7 +391,11 @@
     "title": "Rehabilitation of Roads, Amuwo Odofin",
     "client": "Lagos State Public Works Corporation",
     "location": "Amuwo Odofin, Lagos State",
-    "sector": "roads",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "roads-pavements",
+    "deliveredBy": "sato",
     "year": "2012",
     "status": "Completed",
     "summary": "Road rehabilitation across the Amuwo Odofin local government area.",
@@ -364,7 +415,11 @@
     "title": "Internal Road Networks, McPherson University",
     "client": "Joint Magnate Investment Limited",
     "location": "Seriki-Sotayo, Ajebo, Ogun State",
-    "sector": "roads",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "roads-pavements",
+    "deliveredBy": "sato",
     "year": "2011",
     "status": "Completed",
     "summary": "Internal road networks for the McPherson University campus.",
@@ -377,7 +432,11 @@
     "title": "Asphaltic Concrete Road and Drainage",
     "client": "Life University, Ajebo",
     "location": "Ajebo, Ogun State",
-    "sector": "roads",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "roads-pavements",
+    "deliveredBy": "sato",
     "year": "",
     "status": "",
     "summary": "Asphaltic concrete road and drainage system, including box culverts, sub-base compaction, priming and wearing course.",
@@ -409,7 +468,11 @@
     "title": "Construction of Ijohun-Igbokofi Road",
     "client": "Federal Ministry of Agriculture and Water Resources",
     "location": "Ogun State",
-    "sector": "roads",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "roads-pavements",
+    "deliveredBy": "sato",
     "year": "2010",
     "status": "Completed",
     "summary": "Construction of the Ijohun-Igbokofi road.",
@@ -422,7 +485,11 @@
     "title": "Rehabilitation of Roads with Asphalt Overlay",
     "client": "Qui Ventures Limited",
     "location": "Abeokuta, Ogun State",
-    "sector": "roads",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "roads-pavements",
+    "deliveredBy": "sato",
     "year": "2004",
     "status": "Completed",
     "summary": "Road rehabilitation with asphalt overlay.",
@@ -435,7 +502,11 @@
     "title": "Improvement of Rural Roads, Kerbs, Culverts and Drainage",
     "client": "United Nations Development Programme (UNDP)",
     "location": "Abeokuta, Ogun State",
-    "sector": "roads",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "roads-pavements",
+    "deliveredBy": "sato",
     "year": "2001",
     "status": "Completed",
     "summary": "Rural road improvement with kerbs, culverts and drainage.",
@@ -448,7 +519,11 @@
     "title": "College of Plant Science and Crop Production (COLPLANT) Building, Phase II",
     "client": "Federal University of Agriculture, Abeokuta",
     "location": "Abeokuta, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "Awarded 2016",
     "status": "",
     "summary": "Phase II of the COLPLANT building for the Federal University of Agriculture, Abeokuta.",
@@ -486,7 +561,11 @@
     "title": "Two-Storey Multipurpose Building with Offices (Academic Building Complex) Block B",
     "client": "Federal University of Agriculture, Abeokuta",
     "location": "Abeokuta, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "Awarded 2015",
     "status": "",
     "summary": "Two-storey multipurpose building with offices, Block B of the academic building complex.",
@@ -499,7 +578,11 @@
     "title": "Administrative Block, FUNAAB",
     "client": "Federal University of Agriculture, Abeokuta",
     "location": "Abeokuta, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "",
     "status": "",
     "summary": "Administrative block for the Federal University of Agriculture, Abeokuta.",
@@ -525,7 +608,11 @@
     "title": "Construction and Furnishing of the Department of Creative Arts Building",
     "client": "University of Lagos",
     "location": "Commercial Road, Lagos",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2015",
     "status": "Completed",
     "summary": "Construction and furnishing of the Department of Creative Arts building.",
@@ -538,7 +625,11 @@
     "title": "Construction of Retaining Wall, Mariere Hall",
     "client": "University of Lagos",
     "location": "Lagos",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2015",
     "status": "Completed",
     "summary": "Retaining wall to the Mariere Hall fence.",
@@ -551,7 +642,11 @@
     "title": "Administrative Block and Laboratory Building",
     "client": "McPherson University",
     "location": "Ajebo, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2011",
     "status": "Completed",
     "summary": "Administrative building and laboratory for a private university, completed and handed over in 2011.",
@@ -571,7 +666,11 @@
     "title": "Conversion of Convention Centre to Staff Quarters",
     "client": "McPherson University",
     "location": "Ajebo, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "Awarded 2012",
     "status": "",
     "summary": "Conversion and total rehabilitation of the convention centre into staff quarters.",
@@ -591,7 +690,11 @@
     "title": "Construction of 33 Lock-Up Shops",
     "client": "Ogun State Ministry of Special Duties",
     "location": "Owode-Yewa, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2005",
     "status": "Completed",
     "summary": "Thirty-three lock-up shops at Owode-Yewa International Market, delivered with Dosak Resources Limited and Damdok Ventures Limited.",
@@ -604,7 +707,11 @@
     "title": "Construction of Hotel Complex",
     "client": "Horizon Suites",
     "location": "Oluyole Estate, Ibadan, Oyo State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2006",
     "status": "Completed",
     "summary": "Construction of the Horizon Suites hotel complex.",
@@ -617,7 +724,11 @@
     "title": "Construction of Obstetrics Care Facility",
     "client": "Ogun State Bureau of Management and Budget",
     "location": "Mowe, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2009",
     "status": "Completed",
     "summary": "Obstetrics care facility at Mowe.",
@@ -630,7 +741,11 @@
     "title": "Construction of Primary Health Centre",
     "client": "National Primary Health Care Development Agency",
     "location": "Alabi-Olorunda, Ifo, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2007",
     "status": "Completed",
     "summary": "National primary health centre at Alabi-Olorunda.",
@@ -643,7 +758,11 @@
     "title": "Construction of Guest Chalets",
     "client": "Joseph Ayo Babalola University",
     "location": "Ikeji-Arakeji, Osun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2005",
     "status": "Completed",
     "summary": "Guest chalets for the university.",
@@ -656,7 +775,11 @@
     "title": "Construction of Six Flats",
     "client": "Golden Tusk Limited",
     "location": "Laderin Estate, Abeokuta, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2010",
     "status": "Completed",
     "summary": "Six flats at Laderin Estate.",
@@ -676,7 +799,11 @@
     "title": "Affordable Housing, Ogun State",
     "client": "Choice Investors",
     "location": "Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "Awarded 2011",
     "status": "",
     "summary": "Five blocks of four four-bedroom flats, delivered with Choice Investors.",
@@ -689,7 +816,11 @@
     "title": "Residential Building and Block of Flats",
     "client": "",
     "location": "Abeokuta, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2010",
     "status": "Completed",
     "summary": "Residential building and block of flats.",
@@ -702,7 +833,11 @@
     "title": "Rehabilitation of Muda Lawal Stadium",
     "client": "Ogun State Ministry of Special Duties",
     "location": "Asero, Abeokuta, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2006",
     "status": "Completed",
     "summary": "Stadium rehabilitation for the Gateway Games.",
@@ -715,7 +850,11 @@
     "title": "Classroom Construction and Hostel Fencing, School of Nursing",
     "client": "Ogun State Ministry of Special Duties",
     "location": "Ilaro, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2007",
     "status": "Completed",
     "summary": "Classroom construction and hostel fencing at the School of Nursing.",
@@ -728,7 +867,11 @@
     "title": "Construction of Classrooms for SUBEB",
     "client": "Ogun State Universal Basic Education Board",
     "location": "Ilugun-Asalu, Erifun and Atoba, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2009",
     "status": "Completed",
     "summary": "Classroom blocks across three locations for the State Universal Basic Education Board.",
@@ -741,7 +884,11 @@
     "title": "Construction of Classrooms",
     "client": "Ogun State Ministry of Education",
     "location": "Iwoye Ketu and Ikenne, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2003",
     "status": "Completed",
     "summary": "Classroom blocks at Iwoye Ketu and Ikenne.",
@@ -754,7 +901,11 @@
     "title": "Construction of Multipurpose Hall",
     "client": "Abika Limited",
     "location": "Abeokuta, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "Awarded 2007",
     "status": "",
     "summary": "Multipurpose hall.",
@@ -767,7 +918,11 @@
     "title": "Iperu Area Office",
     "client": "Ogun State Water Corporation",
     "location": "Iperu, Ogun State",
-    "sector": "buildings",
+    "categories": [
+      "civil-engineering-construction"
+    ],
+    "subcategory": "buildings",
+    "deliveredBy": "sato",
     "year": "2012",
     "status": "Completed",
     "summary": "Area office for Ogun State Water Corporation.",

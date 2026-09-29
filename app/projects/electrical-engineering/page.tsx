@@ -6,10 +6,10 @@ import {
 
 /**
  * A static segment, so it wins over `/projects/[slug]` — no project uses
- * this slug. See `components/ProjectCategoryPage.tsx` for why the three
- * categories are three files.
+ * this slug. See `components/ProjectCategoryPage.tsx` for why the categories
+ * are separate files, and why only the non-empty ones have one.
  */
-const slug = "civil-engineering-roads";
+const slug = "electrical-engineering";
 
 export const metadata: Metadata = buildCategoryMetadata(slug);
 

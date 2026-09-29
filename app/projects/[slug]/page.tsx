@@ -12,6 +12,7 @@ import { Section } from "@/components/Section";
 import { Tag } from "@/components/Tag";
 
 import {
+  getCategoriesForProject,
   getCategoryForProject,
   getPage,
   getProject,
@@ -32,9 +33,7 @@ type ProjectPageProps = { params: Promise<{ slug: string }> };
 const page = getPage("projects");
 const site = getSite();
 const labels = page.labels ?? {};
-const all = getSection(page, "all-projects", "collection");
 const cta = getSection(page, "cta-default", "cta");
-const facets = all.facets ?? [];
 
 export function generateStaticParams() {
   return getProjects().map((project) => ({ slug: project.slug }));
@@ -136,9 +135,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
   const project = getProject(slug);
 
+  // A project may be filed under more than one category — a bulk meter supply
+  // is water work and it is electrical work. The first names the trail; the
+  // others are named after it, so a reader who arrived from one is not told
+  // it belongs to the other.
   const category = getCategoryForProject(project);
-  const sectorLabel = category?.label ?? project.sector;
-  const service = getServiceForProject(project, facets);
+  const alsoIn = getCategoriesForProject(project).filter(
+    (facet) => facet.value !== category?.value,
+  );
+  const service = getServiceForProject(project);
 
   /**
    * Only facts the company has actually confirmed. A field that is nothing but
@@ -172,7 +177,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           />
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <Tag label={sectorLabel} />
+            {category ? <Tag label={category.shortLabel || category.label} /> : null}
             {isCompleted(project.status) ? (
               <span className="inline-flex items-center gap-1.5 text-2xs font-semibold uppercase tracking-[0.06em] text-brand-ink wdth-body">
                 <span aria-hidden="true" className="size-1.5 rounded-full bg-brand" />
@@ -186,6 +191,24 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {isKnown(project.summary) ? (
             <p className="mt-5 max-w-(--container-measure) text-lg text-steel-ink wdth-body">
               <RichText text={project.summary} />
+            </p>
+          ) : null}
+
+          {alsoIn.length ? (
+            <p className="mt-5 text-sm text-steel-ink wdth-body">
+              <RichText text={labels.alsoIn ?? ""} />
+              {": "}
+              {alsoIn.map((facet, index) => (
+                <span key={facet.value}>
+                  {index > 0 ? ", " : null}
+                  <Link
+                    href={`/projects/${facet.slug}`}
+                    className="text-brand-ink underline underline-offset-[0.2em] decoration-1 decoration-brand-ink/40 transition-colors duration-150 hover:text-brand-deep hover:decoration-brand-deep"
+                  >
+                    <RichText text={facet.label} />
+                  </Link>
+                </span>
+              ))}
             </p>
           ) : null}
         </Container>

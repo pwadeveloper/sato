@@ -5,12 +5,13 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import {
   getPage,
-  getProjectCategories,
+  getProjectBands,
   getServiceBands,
   getSite,
 } from "@/lib/content";
 import { bandHref, bandItems } from "@/lib/service-band";
 import type { HeaderMenu } from "@/components/SiteHeader";
+import type { Service, ServiceSection } from "@/lib/content-types";
 import { isReviewMode } from "@/lib/review-mode";
 import { buildOrganizationSchema, buildWebsiteSchema } from "@/lib/structured-data";
 import "./globals.css";
@@ -42,6 +43,21 @@ const projectsPage = getPage("projects");
  * renamed in `services.json` is renamed in the menu, and a category added to
  * `pages/projects.json` appears in it.
  */
+/**
+ * A service's sections that are actually on its page.
+ *
+ * A `sectionNav` entry carrying an `href` has moved elsewhere, and the
+ * dropdown and the services overview leave it out: Oil & Gas "Projects" is
+ * now `/projects/oil-gas`, which Projects lists under its own top-level nav
+ * item, and one destination in two menus was the duplication the client
+ * asked us to remove. The in-page sub-nav still shows it — on that page the
+ * reader is looking for the section, not for a menu — so the entry stays in
+ * the content and only the menus filter it.
+ */
+function onPageSections(service: Service | undefined): ServiceSection[] {
+  return (service?.sectionNav ?? []).filter((section) => !section.href);
+}
+
 const menus: HeaderMenu[] = [
   {
     href: "/services",
@@ -62,11 +78,9 @@ const menus: HeaderMenu[] = [
               label: service.name,
               href: `/services/${service.slug}`,
             }))
-          : (solo?.sectionNav ?? []).map((section) => ({
+          : onPageSections(solo).map((section) => ({
               label: section.label,
-              // A section that has moved off the page carries its own href —
-              // Oil & Gas "Projects" now points at /projects/oil-gas.
-              href: section.href ?? `/services/${solo?.slug}#${section.id}`,
+              href: `/services/${solo?.slug}#${section.id}`,
             })),
       };
     }),
@@ -74,11 +88,34 @@ const menus: HeaderMenu[] = [
   {
     href: "/projects",
     overviewLabel: projectsPage.labels?.allProjects ?? projectsPage.title,
-    groups: getProjectCategories().map((category) => ({
-      id: category.value,
-      label: category.label,
-      href: `/projects/${category.slug}`,
-    })),
+    /**
+     * Grouped exactly like Services: "Infrastructure Services" as a heading
+     * with its disciplines indented, then the other categories at the top
+     * level. A band of one is rendered as its own category rather than as a
+     * heading above one repeated name, and a category with no projects is not
+     * in the list at all.
+     *
+     * The Infrastructure heading is not a link: there is no
+     * `/projects/infrastructure`, and a heading that looks like a destination
+     * and is not one is worse than a plain heading.
+     */
+    groups: getProjectBands().map((band) => {
+      const solo =
+        band.categories.length === 1 && band.label === band.categories[0].label
+          ? band.categories[0]
+          : undefined;
+
+      return solo
+        ? { id: solo.value, label: solo.label, href: `/projects/${solo.slug}` }
+        : {
+            id: band.group,
+            label: band.label,
+            items: band.categories.map((category) => ({
+              label: category.label,
+              href: `/projects/${category.slug}`,
+            })),
+          };
+    }),
   },
 ];
 

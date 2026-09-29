@@ -1,13 +1,15 @@
 # Site content — Sato Engineering & Infrastructure Limited
 
-**Last reconciled:** 28 September 2026, against the client's third feedback
-batch (`docs/decisions/client-feedback-batch-3.md`).
+**Last reconciled:** 29 September 2026, against the two client review calls
+(`docs/decisions/client-review-calls.md`).
 
-The third batch replaced the Home, About and Services copy with the client's
-own wording, split the Technology group, turned Projects into category pages
-and cut the Clients page back to a list of names. Where a section below is
-marked **verbatim**, it is the client's text and is not to be edited for
-tone, length or house style.
+That round made Projects mirror Services one category per service, took the
+Recognition block off Oil & Gas and the vision off Home, emptied the footer
+of contact details, put a photograph beside the About story and added the
+Abeokuta street address. Three things in it are **on hold** and must not be
+changed: the Oil & Gas in-page sub-nav, the Lagos address format and the
+Leadership page. Where a section below is marked **verbatim**, it is the
+client's text and is not to be edited for tone, length or house style.
 
 ## How to use this file
 
@@ -44,8 +46,8 @@ document the client and his collaborator are marking up.
 - Incorporated: 1997
 - Years in operation: 29 (30th anniversary in 2027)
 - Offices, in order: **Lagos Office** — No. 14 Agbaoku Street, Opebi, Ikeja,
-  Lagos (near Awosika bus stop); **Abeokuta Office** — Abeokuta, Ogun State
-  (city and state only; street address awaited, shown without a placeholder)
+  Lagos (near Awosika bus stop); **Abeokuta Office** — IBB Boulevard, opposite
+  Southwest Resource Centre, Oke-Mosan, Abeokuta, Ogun State
 - Phone: +234 803 330 3278
 - Email: info@satoengineering.com
 - Professional registrations: COREN-registered engineers on staff; NSE; NIM;
@@ -72,7 +74,7 @@ build on the page.
 
 ## Home
 
-Three things, and nothing else. The client's verdict on the previous version
+Two things, and nothing else. The client's verdict on the previous version
 was that it read as academic; the old site's plainness was closer to what he
 wanted. What was on the page — "What we do", the company data plate, the
 client strip, selected projects, a closing call to action — is off it. The
@@ -97,9 +99,14 @@ the page later.
 
 **Motto:** Quality Engineering since 1997
 
-**Vision:** To be a globally recognized engineering and infrastructure
-company, renowned for excellence, innovation and world-class project
-delivery.
+**The vision is off Home.** It used to sit here on its own; the client's point
+on the review call was that the mission and the vision belong together and
+that both are already on About. Home ends at the motto.
+
+Both statements are still held in `pages/home.json`, and
+`homeShowMissionVision` in `site.json` puts them back **as a pair** below the
+motto in one edit. Never one without the other — that is the thing he asked us
+not to do.
 
 > **Open:** this copy names capabilities — "Building, Civil Engineering &
 > Infrastructure", "Electro-Mechanical Services" — that the nav calls
@@ -112,7 +119,13 @@ delivery.
 
 ## About
 
-Single column, one photograph, the client's four paragraphs. "How we work",
+The client's four paragraphs, set beside a photograph of delivered work from
+`lg` up: seven columns of prose, five of picture, top-aligned with the first
+paragraph and sticky so the right-hand side is not empty by the fourth. Below
+`lg` the photograph sits above the text at a moderate height. The picture is
+the completed road at the Federal College of Education, Osiele, and it is a
+placeholder for one of the client's own photographs when they arrive.
+"How we work",
 "Where we're going", the six-item Recognition list and the call to action are
 cut — not relocated. The NSE corporate award now sits inside the founder's
 bio on the Leadership page, so it is not duplicated here.
@@ -179,7 +192,7 @@ The change of name is still not mentioned anywhere on the site.
 |---|---|---|---|
 | 1 | Infrastructure Services | `/services/infrastructure` | Civil Engineering & Construction · Electrical Engineering · Mechanical Engineering · Water Resources Development & Management |
 | 2 | Energy Services | `/services/energy` | — |
-| 3 | Oil & Gas Services | `/services/oil-gas` | Capabilities · Solutions · Projects · Partnerships (anchors on the page) |
+| 3 | Oil & Gas Services | `/services/oil-gas` | Capabilities · Solutions · Partnerships (anchors on the page; "Projects" is deliberately not listed here — see Navigation) |
 | 4 | Digitalization & Digital Twin Services | `/services/digital-twin` | — |
 | 5 | Research, Technology & Innovation Services | `/services/research-innovation` | — |
 
@@ -238,15 +251,14 @@ Development & Management — and both old routes 301.
 
 The page is **four anchored sections with a sticky sub-nav** — Capabilities ·
 Solutions · Projects · Partnerships — driven by `sectionNav` in
-`services.json`, which also supplies the sub-items under Oil & Gas in the
-header menu and on the services overview.
+`services.json`.
 
 | Section | Holds |
 |---|---|
 | Capabilities | the overview paragraphs, the three capability areas, "also covered" |
 | Solutions | the technology solutions, in three groups with descriptions; the solutions pyramid; the business value map; equipment sourcing and procurement |
 | Projects | a short block linking on to `/projects/oil-gas`, where the record now lives |
-| Partnerships | the partner team description, the recognition, the partner name block |
+| Partnerships | the partner team description and the partner name block |
 
 The Projects **section** stays, and keeps its `#projects` anchor and its
 sub-nav item, but both now point at `/projects/oil-gas` — the table, the
@@ -254,6 +266,21 @@ wider engagements and the case study moved there with the rest of the
 project record. The anchor is deliberately kept so an existing
 `/services/oil-gas#projects` link still lands on the block that carries the
 onward link.
+
+**The in-page sub-nav still lists all four.** The client asked for it to stay
+exactly as it is until he has discussed it — **on hold, do not remove the
+Projects item.** What did come off is the *menu* copies of it: the Services
+dropdown and the services overview no longer list "Projects" under Oil & Gas,
+because Projects is a top-level nav item and both pointed at the same page. A
+`sectionNav` entry carrying an `href` is left out of those two menus, which is
+the rule rather than a special case for this page.
+
+**The Recognition block is gone** — the 2015 SPE International Projects,
+Facilities and Construction Award and the university partnerships in the USA
+and Canada. It is not Sato's recognition, and a reader on a Sato page has no
+way to tell that from an award line. Removed on the client's instruction; the
+Partnerships section keeps the partner team description and the still-hidden
+partner name.
 
 **Solutions is three groups**, two columns on desktop: Subsurface and
 seismic · Field development and reservoir management · Production and
@@ -272,9 +299,14 @@ voice; the sources are listed in `docs/services-for-review.md`.
 - **The business value map uses the source image.** It is a dependency graph
   with crossing edges, and a hand-made version would either lose the
   crossings, which are the point, or cost more to keep true than it is worth.
-  It scrolls horizontally on a phone and carries the same content beneath it
-  as a real table inside a `<details>` — that table is the only version a
-  screen reader can use, so it is load-bearing, not a courtesy.
+  It is drawn at **80% of the page width, centred** — the client said it
+  forced too much scrolling, and the source is nearly square, so a fifth off
+  the width is a fifth less page. Measured 946px of a 1184px column at 1440.
+  It still scrolls horizontally on a phone, where it is floored at 40rem
+  because below that the 9pt labels stop being readable, and it carries the
+  same content beneath it as a real table inside a `<details>` — that table is
+  the only version a screen reader can use, so it is load-bearing, not a
+  courtesy.
 - The deck's world maps and revenue charts are **not** used: map licensing,
   and the partner's figures are unconfirmed.
 
@@ -284,11 +316,11 @@ up where the copy is in the left column, a flat one below it where the copy
 runs full width. Measured worst case 7.9:1.
 
 The one thing to hold onto: **the page keeps two track records apart.**
-Capabilities, solutions and procurement are written as what Sato offers.
-Every past project, figure, patent, case study and award belongs to the
-technical partner, sits under "Experience of our partner team", and is
-attributed on the page. None of it appears on the Projects pages, in Sato's
-project counts or in the structured data.
+Capabilities, solutions and procurement are written as what Sato offers. The
+past projects, figures, patents and case study belong to the technical
+partner: they live in the `partner` block, they are attributed wherever they
+appear — including at the head of `/projects/oil-gas` — and none of them
+reaches Sato's project counts or the structured data.
 
 Not published, deliberately:
 
@@ -309,39 +341,66 @@ work is digital.
 
 ## Projects
 
-**Category pages, not a filtered list.** The client's objection to the filter
-was that someone who came for water work had to scroll past buildings and
-roads to reach it, and that whole categories were being missed — which is
-what a filter does when nobody notices it is there.
+**Projects mirrors Services.** The categories are the services, with the same
+names and in the same order, grouped the same way. The client's instruction on
+the review call was that a reader who has found a service should not have to
+learn a second taxonomy to find its work — and before that, that a filter
+nobody notices is how whole categories get missed.
 
-`/projects` is a short line and four large photographic tiles, each with its
-project count. No project list on it.
+`/projects` is a short line and one photographic tile per category, each with
+its project count, under the same headings the Services dropdown uses. No
+project list on it.
 
-| Category | Route | Projects |
-|---|---|---|
-| Buildings & Construction | `/projects/buildings-construction` | 21 |
-| Civil Engineering & Roads | `/projects/civil-engineering-roads` | 9 |
-| Water Resources Development & Management | `/projects/water-resources-development-management` | 11 |
-| Oil & Gas | `/projects/oil-gas` | 26 |
+| Group | Category | Route | Projects |
+|---|---|---|---|
+| Infrastructure Services | Civil Engineering & Construction | `/projects/civil-engineering-construction` | 30 |
+| Infrastructure Services | Electrical Engineering | `/projects/electrical-engineering` | 2 |
+| Infrastructure Services | Mechanical Engineering | — | 0, hidden |
+| Infrastructure Services | Water Resources Development & Management | `/projects/water-resources-development-management` | 11 |
+| — | Energy Services | — | 0, hidden |
+| — | Oil & Gas Services | `/projects/oil-gas` | 26 |
+| — | Digitalization & Digital Twin Services | — | 0, hidden |
+| — | Research, Technology & Innovation Services | — | 0, hidden |
 
-The first three show their projects as image-led cards. **Oil & Gas is a
+**A category with no projects is not published** — not in the dropdown, not on
+the landing page, not in the sitemap, and no route file exists for it. Each
+appears automatically the moment its first project lands. The client's partner
+is sending projects for Digital Twin and Research; those will be partner work,
+attributed, behind the same review gate as Oil & Gas.
+
+**Civil Engineering & Construction keeps two subheadings** — "Buildings" and
+"Roads & Pavements" — because the merge of the old Buildings and Roads
+categories put thirty projects on one page and neither half should be buried.
+
+The card categories show their projects as image-led cards. **Oil & Gas is a
 table**, because its rows are client, project and year with no scope, no
 photographs and no detail page — the "Show all" disclosure opens the rows
 past the first eight, and the wider engagements and the case study follow it.
 Every category page ends with a small "Other categories" row. The breadcrumb
-on a project runs Projects › Category › Project. Old `?sector=` URLs redirect
-to the matching category, and the ~39 old-site deep links that pointed at a
-filtered URL now point straight at the category page.
+on a project runs Projects › Category › Project.
+
+**A project can sit in more than one category.** The two bulk meter supplies —
+USAID E-WASH, and World Bank / Federal Ministry of Water Resources — are Water
+Resources work and Electrical Engineering work, and appear under both. Their
+detail page names the second category under "Also in".
+
+Old `?sector=` URLs redirect to the matching category;
+`/projects/buildings-construction` and `/projects/civil-engineering-roads`
+301 to `/projects/civil-engineering-construction`, as does every old-site deep
+link that pointed at either.
 
 **Every project on the site is here.** No service page lists projects; each
-links out to its category instead ("See our Buildings & Construction
-projects"). Energy, Digital Twin and Research have no category yet and show
-no link.
+links out to its category instead ("See our Civil Engineering & Construction
+projects"), and only when that category is published.
 
-**The Oil & Gas projects are the technical partner's, presented as Sato's
-own on the client's instruction of 28 September 2026.** They are not counted
-into Sato's 41. The reservation, and the request that both parties confirm
-it before publication, is in `docs/services-for-review.md`.
+**The Oil & Gas projects are the technical partner's, and are attributed as
+such**: "Delivered by our technical partner team." heads the page. The line
+came off on the client's instruction of 28 September 2026 and went back on
+with the review calls, which ask that partner work be attributed
+automatically. They are not counted into Sato's 41. The reservation, and the
+request that both parties confirm it before publication, is in
+`docs/services-for-review.md`, and the reversal is flagged for the client in
+`docs/open-items.md`.
 
 41 projects, unchanged in substance from the previous pass. Status is only
 ever "Completed" or empty; the site never labels work as ongoing. `client`,
@@ -356,6 +415,12 @@ the brand rule rather than the category name set at display size — on a
 category page every card would otherwise carry the same word a dozen times
 over. The full list by category is in `docs/open-items.md`; the client said
 he would work on project content.
+
+**The client's photographs of completed work** go in beside the services
+rather than the projects: each service may carry an `images[]` gallery, fed by
+`raw-assets/client-photos/<service>/` and `npm run images`. The steps are in
+`docs/adding-client-photos.md`. Nothing is mapped yet — no photographs have
+arrived.
 
 Four projects still have no year: APM Terminals Reefer Pavement, the E-WASH
 bulk meters, the FUNAAB Administrative Block and the Ajebo asphaltic concrete
@@ -462,10 +527,36 @@ minimum safety helmet and safety boots.
 **Intro:** For project enquiries, tenders and vendor verification, contact our
 team. *(No longer "our head office".)*
 
-Offices, phone and email render from `site.json`. Form fields: name,
-organisation, email, phone, subject (Project enquiry / Tender or vendor
-registration / General), message. `contactFormEndpoint` is empty, so the form
-falls back to composing a `mailto:` in the visitor's own client.
+Offices, phone and email render from `site.json`, and since the review calls
+this is the **only** page that carries the phone number and the address.
+
+**Offices, verbatim:**
+
+> **Lagos Office** — No. 14 Agbaoku Street, Opebi, Ikeja, Lagos
+> *Near Awosika bus stop.*
+>
+> **Abeokuta Office** — IBB Boulevard, opposite Southwest Resource Centre,
+> Oke-Mosan, Abeokuta, Ogun State
+
+The Abeokuta street address is from the live site's contact page, which sets
+it over three lines as "IBB Boulevard / Opposite Southwest Resource Centre, /
+Oke-Mosan, Abeokuta, Ogun State." — the same words, joined with commas for a
+single-line field.
+
+**On hold: the Lagos address format.** The client talked about showing the
+area and a nearby bus stop in brackets, the way the live site does ("No 14
+Agbaoku street (Awosika bus stop), Opebi, Ikeja, Lagos State."). The contact
+page is being revisited on the next call, so nothing here changes until then;
+the bus stop is currently a separate note line under the address.
+
+The live site's two other telephone numbers (+234 039-771162 and
++234 8055023792) are **not** used. One number and one address are all the site
+may carry, and `npm run check:banned` fails the build on any other.
+
+Form fields: name, organisation, email, phone, subject (Project enquiry /
+Tender or vendor registration / General), message. `contactFormEndpoint` is
+empty, so the form falls back to composing a `mailto:` in the visitor's own
+client.
 
 ---
 
@@ -475,12 +566,17 @@ falls back to composing a `mailto:` in the visitor's own client.
 lines on a phone. The client's note was that the bottom of every page had
 become the biggest thing on it.
 
-| Left | Middle | Right |
-|---|---|---|
-| Sato Engineering & Infrastructure Limited · © {current year} | About · Services · Projects · Clients · Contact | +234 803 330 3278 · info@satoengineering.com |
+| Left | Right |
+|---|---|
+| Sato Engineering & Infrastructure Limited · © {current year} | About · Services · Projects · Clients · Contact |
 
 The logo, the "Incorporated 1997" line and the separate copyright row are
 gone. Clients is in the footer because it is out of the main nav.
+
+**The telephone number and the email address are not in the footer.** They
+came out on the client's instruction: the contact details live on `/contact`,
+which is one of the five links beside them. They are unchanged in `site.json`
+and still in the structured data, so a search engine still has them.
 
 ## Navigation
 
@@ -492,6 +588,19 @@ sub-items shown at once, close on Escape, on an outside click or on choosing
 an item. Enter and Space open the panel, arrow keys walk it, Home and End
 jump to its ends, and closing returns focus to the trigger. One component
 (`NavMenu`) serves both, on desktop and in the phone panel.
+
+**The two panels have the same shape.** Services lists its five categories,
+Infrastructure's four disciplines indented under it. Projects lists the
+categories that have projects, grouped the same way — Infrastructure Services
+as a plain heading (there is no `/projects/infrastructure` for it to link to)
+with its disciplines under it, then the rest at the top level.
+
+**Nothing appears in two menus.** "Projects" is gone from the Oil & Gas
+sub-items in the Services panel and from the Oil & Gas sub-links on the
+Services page: it pointed at `/projects/oil-gas`, which Projects already
+lists. The rule is general — a `sectionNav` entry that carries an `href`
+belongs to another page and is left out of both menus — and the Oil & Gas
+page's own in-page sub-nav is untouched.
 
 ---
 
