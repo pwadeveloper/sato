@@ -217,16 +217,21 @@ digital twin and research projects need: they arrive from the partner, into
 categories that do not exist yet, and the line has to appear with them without
 anyone remembering to add it. See rule 9 for how this sits with batch 4.
 
-**The Oil & Gas service page keeps its four sections**, and its in-page sub-nav
-still shows all four — the client asked for that specifically and it is on
-hold until he has discussed it. "Projects" is a link out rather than an anchor:
-the section declares `"href": "/projects/oil-gas"` in its `sectionNav` entry,
-which `SectionNav` honours. **The Services dropdown and the services overview
-leave that entry out**, because a `sectionNav` entry with an `href` points at a
-page that has its own nav item, and Projects in two menus was the duplication
-the client asked us to remove. The `#projects` anchor stays on the page so an
-old link still lands on something — it finds a short block with the link in it.
-That is the redirect; no client-side JavaScript is involved.
+**The Oil & Gas service page has three sections and a link out.** Its in-page
+sub-nav still lists all four — the client asked for the sub-nav itself to stay
+as it is until he has discussed it — but "Projects" is a destination, not an
+anchor: the entry declares `"href": "/projects/oil-gas"` in `sectionNav`.
+
+**A `sectionNav` entry with an `href` is not part of the page.** Three things
+follow, and they are all in the template rather than keyed to this service:
+`SectionNav` links the item out; the page renders **no section and no `#id`
+anchor** for it (`offPage()` in `app/services/[slug]/page.tsx`); and the
+Services dropdown and the services overview leave it out, because the page it
+points at has its own nav item. The stub block that used to hold `#projects` —
+a heading, a line and one link — was removed on the client's instruction: a
+heading over one link is not a section. The consequence is that an old
+`/services/oil-gas#projects` link now lands at the top of the page rather than
+on the block. That was the trade he chose.
 
 **A service may carry `images[]`** — the client's own photographs of completed
 work, rendered by `components/ServiceGallery.tsx` and hidden when empty, which

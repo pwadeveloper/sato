@@ -249,31 +249,36 @@ Development & Management — and both old routes 301.
 **Draft. Needs Sato's approval and his collaborator's.** Full text in
 `docs/services-for-review.md`.
 
-The page is **four anchored sections with a sticky sub-nav** — Capabilities ·
-Solutions · Projects · Partnerships — driven by `sectionNav` in
-`services.json`.
+The page is **three anchored sections and a link out**, under a sticky sub-nav
+of four — Capabilities · Solutions · Projects · Partnerships — driven by
+`sectionNav` in `services.json`.
 
 | Section | Holds |
 |---|---|
 | Capabilities | the overview paragraphs, the three capability areas, "also covered" |
 | Solutions | the technology solutions, in three groups with descriptions; the solutions pyramid; the business value map; equipment sourcing and procurement |
-| Projects | a short block linking on to `/projects/oil-gas`, where the record now lives |
+| Projects | nothing on this page — the sub-nav item goes straight to `/projects/oil-gas` |
 | Partnerships | the partner team description and the partner name block |
 
-The Projects **section** stays, and keeps its `#projects` anchor and its
-sub-nav item, but both now point at `/projects/oil-gas` — the table, the
-wider engagements and the case study moved there with the rest of the
-project record. The anchor is deliberately kept so an existing
-`/services/oil-gas#projects` link still lands on the block that carries the
-onward link.
+**There is no Projects block on the page.** The table, the wider engagements
+and the case study moved to `/projects/oil-gas`, and for a while a stub
+stayed behind — a heading, the category line and one link — to hold the
+`#projects` anchor. The client's verdict was that a heading over one link is
+not a section, and it is gone. An old `/services/oil-gas#projects` link now
+lands at the top of the page instead of on that block, which is the trade he
+chose.
 
-**The in-page sub-nav still lists all four.** The client asked for it to stay
-exactly as it is until he has discussed it — **on hold, do not remove the
-Projects item.** What did come off is the *menu* copies of it: the Services
-dropdown and the services overview no longer list "Projects" under Oil & Gas,
-because Projects is a top-level nav item and both pointed at the same page. A
-`sectionNav` entry carrying an `href` is left out of those two menus, which is
-the rule rather than a special case for this page.
+**The in-page sub-nav still lists all four**, and its Projects item points at
+`/projects/oil-gas`. The client asked for the sub-nav itself to stay as it is
+until he has discussed it — **on hold, do not remove the Projects item.** The
+*menu* copies of it did come off: the Services dropdown and the services
+overview no longer list "Projects" under Oil & Gas, because Projects is a
+top-level nav item and both pointed at the same page.
+
+All of this is one rule in the template, not a special case for this page: a
+`sectionNav` entry that carries an `href` is a destination rather than a part
+of the page, so the page renders no section and no anchor for it and the two
+menus leave it out.
 
 **The Recognition block is gone** — the 2015 SPE International Projects,
 Facilities and Construction Award and the university partnerships in the USA

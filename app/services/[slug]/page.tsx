@@ -274,6 +274,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const partner = service.partner;
   const sectionLabel = (id: string) =>
     sections.find((section) => section.id === id)?.label ?? id;
+  /** True for a declared section whose content lives on another page. */
+  const offPage = (id: string) =>
+    Boolean(sections.find((section) => section.id === id)?.href);
 
   return (
     <>
@@ -438,12 +441,18 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       {/* ----------------------------------------------------------- projects */}
       {/*
-        The record itself moved to /projects/oil-gas, with the rest of the
-        project categories. The anchor stays so an existing `#projects` link
-        still lands on something — it finds this block and the link on to the
-        table, rather than a heading over nothing.
+        A section that has moved off the page is not rendered here at all.
+        Oil & Gas "Projects" is `/projects/oil-gas`: it kept a stub block for
+        a while, holding the `#projects` anchor and a link on to the table,
+        and the client's verdict was that a heading over one link is not a
+        section. Its sub-nav item stays and points straight at the page, so
+        the only thing lost is the old `#projects` anchor.
+
+        A service that declares a `projects` section without an `href` still
+        gets one — the rule is about where the section lives, not about which
+        service this is.
       */}
-      {projectCategories.length ? (
+      {projectCategories.length && !offPage("projects") ? (
         <Section tone="concrete" id="projects" labelledBy="projects-heading">
           <Container>
             <Heading
@@ -464,8 +473,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
       ) : null}
 
       {/* ------------------------------------------------------- partnerships */}
+      {/* Concrete, not white: the bands alternate, and with the Projects
+          block gone this one sits directly under Solutions. */}
       {partner ? (
-        <Section tone="white" id="partnerships" labelledBy="partnerships-heading">
+        <Section tone="concrete" id="partnerships" labelledBy="partnerships-heading">
           <Container>
             <Heading
               level={2}

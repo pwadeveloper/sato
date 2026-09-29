@@ -449,11 +449,12 @@ export type ReviewStatus = "approved" | "draft";
  * One entry in a service page's in-page sub-nav.
  *
  * A service whose page is long enough to need sections declares them here,
- * and that one list drives three things: the sticky sub-nav on the page, the
- * sub-items under the service in the header dropdown, and the row of links
- * under its heading on the services overview. Declaring the sections in
- * content is also what keeps the page template free of any knowledge of
- * which service it is rendering.
+ * and that one list drives the sticky sub-nav on the page. It used to drive
+ * the sub-items under the service in the header dropdown and the row of links
+ * on the services overview as well, and still does for any section that is
+ * actually on the page — see `href`. Declaring the sections in content is
+ * what keeps the page template free of any knowledge of which service it is
+ * rendering.
  */
 export interface ServiceSection {
   /** The anchor, e.g. `capabilities` -> `#capabilities`. */
@@ -463,9 +464,11 @@ export interface ServiceSection {
    * Where the item points, when the section is not on this page.
    *
    * The Oil & Gas projects moved to `/projects/oil-gas`, and the sub-nav item
-   * has to follow them. The anchor stays on the page either way, so an old
-   * `#projects` link still lands somewhere sensible — it just finds a short
-   * block with this link in it rather than the table itself.
+   * followed them. An entry with an `href` is a destination rather than a
+   * part of this page, and three things follow from that: the in-page sub-nav
+   * links out to it, the page renders no section and no `#id` anchor for it,
+   * and the header dropdown and services overview leave it out entirely,
+   * because whatever page it points at has its own way in.
    */
   href?: string;
 }
