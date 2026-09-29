@@ -40,6 +40,14 @@ const COLLABORATOR_SLUGS = new Set(["oil-gas"]);
 
 const GROUPS = [
   {
+    id: "top",
+    heading: "Answer these first",
+    blurb:
+      "The questions from the most recent round, which the rest of the site" +
+      " is waiting on. Nothing is detected here — it is kept by hand in" +
+      " `docs/open-items-extra.md` and cleared as each one is answered.",
+  },
+  {
     id: "client",
     heading: "Client to confirm",
     blurb:
@@ -186,15 +194,41 @@ for (const file of files) {
   });
 }
 
-/* -------------------------------------------------- unapproved services */
+/* ------------------------------------ unapproved services and page copy */
 
-const drafts = services
-  .filter((service) => service.reviewStatus === "draft")
-  .map((service) => ({
-    slug: service.slug,
-    name: service.name,
-    owner: COLLABORATOR_SLUGS.has(service.slug) ? "collaborator" : "client",
-  }));
+/**
+ * Pages that carry capability copy of their own.
+ *
+ * Almost all of it lives on a service, and a service's `reviewStatus` is the
+ * gate. The Infrastructure Services landing page is the exception: its four
+ * infrastructure types and its solution areas are written on the page, not on
+ * any of the four disciplines, so without this they would be the one body of
+ * capability copy on the site outside the gate.
+ */
+const pageFiles = files.filter((file) =>
+  relative(CONTENT, file).startsWith("pages/"),
+);
+const pageDrafts = [];
+for (const file of pageFiles) {
+  const parsed = JSON.parse(await readFile(file, "utf8"));
+  if (parsed.reviewStatus !== "draft") continue;
+  pageDrafts.push({
+    slug: parsed.slug,
+    name: `${parsed.title} (page)`,
+    owner: "client",
+  });
+}
+
+const drafts = [
+  ...services
+    .filter((service) => service.reviewStatus === "draft")
+    .map((service) => ({
+      slug: service.slug,
+      name: service.name,
+      owner: COLLABORATOR_SLUGS.has(service.slug) ? "collaborator" : "client",
+    })),
+  ...pageDrafts,
+];
 
 /* ------------------------------------------------------------ terminal */
 
@@ -219,7 +253,7 @@ if (!total && !drafts.length) {
 }
 
 if (drafts.length) {
-  console.log(`${drafts.length} division(s) awaiting Sato's approval:`);
+  console.log(`${drafts.length} page(s) of capability copy awaiting Sato's approval:`);
   drafts.forEach((d) => console.log(`    ${d.slug} — ${d.name}`));
   console.log("  See docs/services-for-review.md\n");
 }
@@ -254,7 +288,7 @@ if (process.argv.includes("--report")) {
     "Everything the website still needs, grouped by who has to answer it.",
     "",
     `**${total} placeholder${total === 1 ? "" : "s"} outstanding** and ` +
-      `**${drafts.length} service${drafts.length === 1 ? "" : "s"} awaiting approval.** ` +
+      `**${drafts.length} page${drafts.length === 1 ? "" : "s"} of capability copy awaiting approval.** ` +
       `Generated ${today} by \`npm run check:placeholders\`, so the detected ` +
       "items are always current. The rest is kept by hand in " +
       "`docs/open-items-extra.md`.",

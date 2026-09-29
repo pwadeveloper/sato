@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Heading } from "./Heading";
 import { RichText } from "./RichText";
 import type { ImageRef } from "@/lib/content-types";
 import { cn } from "@/lib/cn";
@@ -33,20 +34,16 @@ export function ServiceGallery({
 }: ServiceGalleryProps) {
   if (!images.length) return null;
 
-  const HeadingTag = `h${headingLevel}` as const;
+
 
   return (
     <section aria-labelledby={headingId} className={cn(className)}>
-      <HeadingTag
+      <Heading
+        level={headingLevel}
+        size={headingLevel === 2 ? "h2" : "h3"}
+        text={heading}
         id={headingId}
-        className={
-          headingLevel === 2
-            ? "text-h3 wdth-heading text-balance"
-            : "text-xl font-bold wdth-heading text-balance"
-        }
-      >
-        <RichText text={heading} />
-      </HeadingTag>
+      />
 
       <ul
         className={cn(

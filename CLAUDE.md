@@ -193,9 +193,9 @@ claim renders last, unheaded, so a mislabelled project can never fall off the
 page.
 
 **Every project on the site lives under Projects.** No service page lists
-projects; each links out instead, through `labels.projectsLink` ("See our
-{category} projects") to the category whose `serviceSlug` names it — one link,
-and only when that category is published.
+projects; each links out instead, through the **Projects entry in its sub-nav**,
+to the category whose `serviceSlug` names it — one link, and only when that
+category is published.
 
 **A category draws its projects from one of two sources**, set by `source` on
 the facet. The default reads `projects.json`, matched on `categories`, and
@@ -217,21 +217,45 @@ digital twin and research projects need: they arrive from the partner, into
 categories that do not exist yet, and the line has to appear with them without
 anyone remembering to add it. See rule 9 for how this sits with batch 4.
 
-**The Oil & Gas service page has three sections and a link out.** Its in-page
-sub-nav still lists all four — the client asked for the sub-nav itself to stay
-as it is until he has discussed it — but "Projects" is a destination, not an
-anchor: the entry declares `"href": "/projects/oil-gas"` in `sectionNav`.
+**Every service page is Capabilities · Solutions · Partnerships**, in that
+order, under a sticky sub-nav, on all eight of them and on the Infrastructure
+landing page. One template, `app/services/[slug]/page.tsx` plus
+`components/ServiceSections.tsx`, and nothing in it branches on which service
+it is rendering. What varies is how much sits in each section, never which
+sections there are.
 
-**A `sectionNav` entry with an `href` is not part of the page.** Three things
-follow, and they are all in the template rather than keyed to this service:
-`SectionNav` links the item out; the page renders **no section and no `#id`
-anchor** for it (`offPage()` in `app/services/[slug]/page.tsx`); and the
-Services dropdown and the services overview leave it out, because the page it
-points at has its own nav item. The stub block that used to hold `#projects` —
-a heading, a line and one link — was removed on the client's instruction: a
-heading over one link is not a section. The consequence is that an old
-`/services/oil-gas#projects` link now lands at the top of the page rather than
-on the block. That was the trade he chose.
+**The sub-nav is derived, never authored.** `getServiceSections()` builds it
+from what `sections` actually holds, and `hasSectionContent()` is the single
+test for "empty" — so a section with nothing in it produces no band, no `h2`,
+no `#id` anchor and no nav item, and there is no way to get an empty heading
+onto a page. The labels are `sectionCapabilities` … in
+`pages/services.json`, so "Capabilities" is one string for the whole site.
+The hand-written `sectionNav` array is gone.
+
+**Projects is in the sub-nav, and only there.** It appears when a published
+project category names the service, as a destination rather than an anchor
+(`href`), and the page renders no section for it. The old in-body "See our
+{category} projects" link and its `labels.projectsLink` are gone with it: with
+the sub-nav entry on every service that has a category, it was the same
+destination twice on one screen. **The Oil & Gas sub-nav the client asked us
+not to touch comes out of the derivation unchanged** — Capabilities ·
+Solutions · Projects (`/projects/oil-gas`) · Partnerships — and the page still
+has no Projects block, so an old `/services/oil-gas#projects` link still lands
+at the top of the page. That was the trade he chose.
+
+**An entry with an `href` is left out of the menus**, because the page it
+points at has its own nav item.
+
+**Partnerships names partners, never clients or funders.** The client's line:
+a partner co-delivers work with Sato, a client pays Sato for it. Infrastructure
+and Energy have no partner to name, so both pages have no Partnerships section
+at all. Never fill one with a development institution.
+
+**One heading scale, everywhere.** `h1` the page title, `h2` the three
+sections, `h3` every subsection, `h4` a group inside an `h3` — all through
+`components/Heading.tsx`, no service page setting a class of its own. The
+before-and-after is `docs/heading-audit.md`. `h4` is `text-lg`, not `text-xl`,
+because at the desktop end `text-xl` and `text-h3` are the same size.
 
 **A service may carry `images[]`** — the client's own photographs of completed
 work, rendered by `components/ServiceGallery.tsx` and hidden when empty, which
@@ -254,8 +278,20 @@ old `/safety-policies/` redirect to `/about`. The rewritten content is kept in
 ## Content model (Phase 2 CMS will edit these)
 
 - `site.json` — company name, tagline, founded year, registrations, **ordered** `offices` (no "head office"; the first is the one published in structured data), phones, emails, nav, footer. `rcNumber` is held behind `showRcNumber: false`. **`showProjectDates`** switches every year on the site off in one edit — cards, category pages and project pages all read it through `getProjectYear()`. **`homeShowMissionVision`** puts the mission and the vision back on Home, as a pair below the motto; both are held in `pages/home.json` whether or not they are shown. It is never one without the other — the vision alone was what the client asked us to take off. The phone and the email are **not** in the footer; they are on `/contact` only, and in the structured data.
-- `pages/*.json` — per-page headings and body blocks (home, about, services overview, infrastructure landing, contact, leadership intro, projects, clients, 404). `hse.json` is present but unregistered. `projects.json` also holds the eight project-category facets, and `about.json` carries an `images.aside` — the photograph beside the story. Alongside `labels` (short strings the template needs), a page may carry **`images`** — the photographs its template needs that belong to no single section: its `header` shot, and on the services overview one per category, keyed `groupInfrastructure` and so on.
-- `services.json` — array of services: slug, name, **group** (infrastructure / energy / oil-gas / digital-twin / research-innovation), **order**, **reviewStatus** (approved / draft), summary, body, capabilities[], relatedProjectSlugs[], relatedServiceSlugs[], image (the header shot) and **`images[]`** (the client's photographs of delivered work, rendered as a gallery, hidden when empty). A service may also carry `capabilityBlocks[]` (grouped capabilities, which replace the flat sidebar list), `solutions`, `alsoCovered`, `procurement`, `partner`, **`sectionNav[]`**, **`solutionsPyramid`** and **`valueMap`** — all optional, all hidden when absent. A `sectionNav` entry may carry an **`href`**, for a section that has moved off the page. A `ServiceList` (`solutions`, `alsoCovered`, `engagements`) is either flat — `items`, bare phrases — or grouped, with **`groups[]`** of `{ name, description }`; Solutions takes the grouped form because thirteen items in one column stopped being scannable. The `partner` block holds the oil and gas project record, which the client has asked be presented as Sato's own; see rule 9.
+- `pages/*.json` — per-page headings and body blocks (home, about, services overview, infrastructure landing, contact, leadership intro, projects, clients, 404). `hse.json` is present but unregistered. A page may carry **`serviceSections`** — the same three-section shape a service has — and only `infrastructure.json` does, because `/services/infrastructure` reads as a service page though it is a category landing page. A page may also carry **`reviewStatus`**, and that same file does: its four infrastructure types and six solution areas are written on the page rather than on any service, so without it they would be the one body of capability copy outside the review gate. `check-placeholders.mjs` reads pages as well as services. `projects.json` also holds the eight project-category facets, and `about.json` carries an `images.aside` — the photograph beside the story. Alongside `labels` (short strings the template needs), a page may carry **`images`** — the photographs its template needs that belong to no single section: its `header` shot, and on the services overview one per category, keyed `groupInfrastructure` and so on.
+- `services.json` — array of services: slug, name, **group** (infrastructure / energy / oil-gas / digital-twin / research-innovation), **order**, **reviewStatus** (approved / draft), shortSummary, summary, **`sections`**, relatedProjectSlugs[], relatedServiceSlugs[], image (the header shot) and **`images[]`** (the client's photographs of delivered work, rendered as a gallery at the foot of Capabilities, hidden when empty). Two booleans: **`headerOverlay`** (the `h1` over the header photograph — Oil & Gas only) and **`showSectionsInMenu`** (the Services dropdown lists this page's sections — Oil & Gas only). **`partner`** holds the oil and gas project record and is read by `/projects/oil-gas`, not by the service page; see rule 9.
+
+  **`sections` is the whole page.** It has three optional keys —
+  `capabilities`, `solutions`, `partnerships` — and each one takes
+  `intro[]` (paragraphs under the `h2`), `items[]` (a flat hairline list),
+  `groups[]` (the `h3` subsections: heading, `description[]`, `items[]`,
+  `image`, `href`, `linkLabel`), `aside` (the narrow column — a `ServiceList`,
+  only Oil & Gas has one) and `media[]`. `media` is **tagged**: `list`,
+  `pyramid`, `valueMap` or `procurement`, each the existing shape plus its
+  `type`, so the order of the blocks inside Solutions is the order they are
+  written in and a second diagram needs no new field. A `ServiceList`
+  (`aside`, a `list` media block, `engagements`) is either flat — `items`,
+  bare phrases — or grouped, with **`groups[]`** of `{ name, description }`.
 - `projects.json` — array: slug, title, **categories[]**, **deliveredBy**, summary, scope[], images[], **optional** `subcategory`, and **optional** client, location, year, status. `categories` holds facet values — the same slugs as the services — and more than one is normal. `deliveredBy` is `"sato"` or `"partner"` and drives the attribution line. Empty means hidden, never placeheld. `status` is only ever `"Completed"` or empty — the site never labels work as ongoing.
 - `clients.json` — array: name, category (federal / state / international / education / private / **oil-gas-partner**), logo?. The page shows names only — no logos, no category headings, no agencies nested under a government. `oil-gas-partner` entries render in a separate block under their own attributed heading and sit behind the same review gate as the Oil & Gas page. **This heading is now inconsistent with `/projects/oil-gas`**, which no longer attributes; the client was asked which way to settle it (see `docs/open-items.md`) and nothing changes here until he answers.
 - `team.json` — array: slug, name, title, isLeadership, **published**, bio, qualifications[], memberships[], photo?. `published: false` keeps a record in the file but off the site, the sitemap and the structured data.
@@ -345,9 +381,17 @@ disagree with this file:
    mirrors Services, the Oil & Gas recognition block and the Home vision come
    off, the footer loses its contact details, About gains a photograph beside
    the text, and the client-photo pipeline is built ahead of his batches.
-   **This is the current one.** Three things in it are explicitly **on
-   hold** — the Oil & Gas in-page sub-nav, the Lagos address format and the
-   Leadership page — and must not be touched until he has discussed them.
+   Three things in it are explicitly **on hold** — the Oil & Gas in-page
+   sub-nav, the Lagos address format and the Leadership page — and must not be
+   touched until he has discussed them. The sub-nav hold is honoured: it is
+   derived now, and it derives to exactly the four items it had.
+6. `service-structure-and-content.md` — one structure for every service
+   (Capabilities · Solutions · Partnerships), enriched Infrastructure copy,
+   placeholder Digital Twin and Research copy, the client's own two Oil & Gas
+   sentences, and one heading scale. **This is the current one**, and it says
+   it wins where it conflicts with anything earlier. Its own "How it was
+   implemented" section records the judgement calls, including the one
+   addition to the Oil & Gas page (the "Backed by Sato" strip).
 
 ## Review deployments
 

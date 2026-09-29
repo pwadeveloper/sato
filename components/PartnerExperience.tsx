@@ -6,65 +6,51 @@ import { cn } from "@/lib/cn";
 /**
  * A technical partner's track record, kept visibly separate from Sato's own.
  *
- * Every claim in these blocks belongs to the partner team, and the page says
- * so before the reader meets the first number: the attribution leads, the
- * table heading repeats it, and the case study carries its own line. None of
- * it reaches the projects index or Sato's project counts. An oil company
- * will check these projects, and finding them presented as Sato's own would
- * end the conversation.
+ * Every claim in these blocks belongs to the partner team. `PartnerProjects`
+ * is the record — the table, the wider engagements and the case study — and
+ * it is rendered in one place, `/projects/oil-gas`, under the attribution
+ * line that category prints above it. None of it reaches the projects index,
+ * Sato's project counts or the structured data. An oil company will check
+ * these projects, and finding them presented as Sato's own would end the
+ * conversation.
  *
- * The file exports the whole block and its parts separately, because the
- * Oil & Gas page splits them across two of its four sections — the record
- * under Projects, the relationship under Partnerships. Splitting them must not
- * cost the attribution, so `PartnerAttribution` is its own piece and every
- * section that shows partner work opens with it.
+ * `PartnerDetails` is the other half: who the partner is. It sits in the
+ * Partnerships section of the service page, and the prose beside it is
+ * `sections.partnerships` — the words about the relationship are edited with
+ * the rest of that page rather than inside the table's content.
  *
  * There is no recognition block. The partner team's 2015 SPE award and its
  * university partnerships were removed on the client's instruction: they are
  * not Sato's recognition, and a reader on a Sato page has no way to tell that
- * from an award line. The relationship itself stays, under Partnerships.
- *
- * The figures strip and the collaborator's name render only when they hold
- * something: the source figures disagree with each other and the name is not
- * yet cleared for publication, so both are empty and hidden rather than
- * guessed at.
+ * from an award line.
  */
-
 interface PartProps {
   partner: PartnerBlock;
   headingId: string;
-  headingLevel?: 2 | 3;
   className?: string;
 }
 
-/** The line that says whose work follows. Never optional. */
-export function PartnerAttribution({
-  partner,
-  headingId,
-  headingLevel = 2,
-  className,
-}: PartProps) {
-  const HeadingTag = `h${headingLevel}` as const;
+/**
+ * Who the partner is, where Sato has cleared us to say.
+ *
+ * Both halves are empty today and both are therefore invisible: the
+ * collaborator's name is not yet cleared for publication, and the headline
+ * figures contradict each other across the source documents (170 / 250+ /
+ * 280+ projects, 6 / 8 patents, 13 / 15 countries), so nothing is guessed at.
+ * The block stays so that filling either field in `services.json` is the
+ * whole change.
+ *
+ * It carries no heading of its own. It sits inside the Partnerships section
+ * of a service page, under that section's `h2`, and the words around it are
+ * `sections.partnerships.intro`.
+ */
+export function PartnerDetails({ partner, headingId, className }: PartProps) {
+  if (!partner.name && !partner.figures.length) return null;
 
   return (
     <div className={cn(className)}>
-      <HeadingTag
-        id={headingId}
-        className={
-          headingLevel === 2
-            ? "text-h2 wdth-heading text-balance"
-            : "text-xl font-bold wdth-heading text-balance"
-        }
-      >
-        <RichText text={partner.heading} />
-      </HeadingTag>
-
-      <p className="mt-4 max-w-(--container-measure) text-lg text-steel-ink wdth-body text-pretty">
-        <RichText text={partner.intro} />
-      </p>
-
       {partner.name ? (
-        <p className="mt-4 border-l-[3px] border-brand py-1 pl-5 text-base wdth-body">
+        <p className="max-w-(--container-measure) border-l-[3px] border-brand py-1 pl-5 text-base wdth-body">
           <span className="font-bold">
             <RichText text={partner.nameLabel} />
             {": "}
@@ -74,7 +60,10 @@ export function PartnerAttribution({
       ) : null}
 
       {partner.figures.length ? (
-        <dl className="mt-8 grid grid-cols-2 gap-px border border-rule bg-rule lg:grid-cols-4">
+        <dl
+          id={headingId}
+          className="mt-8 grid grid-cols-2 gap-px border border-rule bg-rule lg:grid-cols-4"
+        >
           {partner.figures.map((figure) => (
             <div key={figure.label} className="bg-white p-5">
               <dt className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
@@ -96,7 +85,7 @@ export function PartnerProjects({
   partner,
   headingId,
   className,
-}: Omit<PartProps, "headingLevel">) {
+}: PartProps) {
   const visible = partner.projects.slice(0, partner.projectsInitialCount);
   const overflow = partner.projects.slice(partner.projectsInitialCount);
   const caseStudy = partner.caseStudy;
@@ -268,30 +257,6 @@ export function PartnerProjects({
           ) : null}
         </section>
       ) : null}
-    </div>
-  );
-}
-
-export interface PartnerExperienceProps {
-  partner: PartnerBlock;
-  headingId: string;
-  className?: string;
-}
-
-/** All three parts in order, for a service that shows them as one block. */
-export function PartnerExperience({
-  partner,
-  headingId,
-  className,
-}: PartnerExperienceProps) {
-  return (
-    <div className={cn(className)}>
-      <PartnerAttribution partner={partner} headingId={headingId} />
-      <PartnerProjects
-        partner={partner}
-        headingId={headingId}
-        className="mt-12"
-      />
     </div>
   );
 }

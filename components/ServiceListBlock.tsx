@@ -1,3 +1,4 @@
+import { Heading } from "./Heading";
 import { RichText } from "./RichText";
 import type { ServiceList, ServiceListItem } from "@/lib/content-types";
 import { cn } from "@/lib/cn";
@@ -41,6 +42,12 @@ function Item({ item, dense }: { item: ServiceListItem; dense: boolean }) {
  * does not carry its own meaning. Groups are not columns within themselves:
  * a description under a phrase in a 50%-width column wraps to four lines and
  * stops being scannable, which is the thing the grouping was for.
+ *
+ * Both headings go through `Heading`, so a group inside this block is an
+ * `h4` at the site's `h4` size rather than the small uppercase eyebrow it
+ * used to be. That is the one heading scale from the review call: the block
+ * is an `h3`, the groups inside it are `h4`, and no service page sets either
+ * of them any other way.
  */
 export function ServiceListBlock({
   list,
@@ -49,22 +56,17 @@ export function ServiceListBlock({
   variant = "plain",
   className,
 }: ServiceListBlockProps) {
-  const HeadingTag = `h${headingLevel}` as const;
   const groups = list.groups ?? [];
   const dense = variant === "dense";
 
   return (
     <div className={cn(className)}>
-      <HeadingTag
+      <Heading
+        level={headingLevel}
+        size={headingLevel === 2 ? "h2" : "h3"}
+        text={list.heading}
         id={headingId}
-        className={
-          headingLevel === 2
-            ? "text-h3 wdth-heading text-balance"
-            : "text-xl font-bold wdth-heading text-balance"
-        }
-      >
-        <RichText text={list.heading} />
-      </HeadingTag>
+      />
 
       {list.intro ? (
         <p className="mt-3 max-w-(--container-measure) text-base text-steel-ink wdth-body">
@@ -84,12 +86,12 @@ export function ServiceListBlock({
               aria-labelledby={`${headingId}-${group.id}`}
               className="mb-8 break-inside-avoid last:mb-0"
             >
-              <h4
+              <Heading
+                level={4}
+                size="h4"
+                text={group.heading}
                 id={`${headingId}-${group.id}`}
-                className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body"
-              >
-                <RichText text={group.heading} />
-              </h4>
+              />
               <ul className="mt-3 border-t border-asphalt">
                 {group.items.map((item) => (
                   <Item key={item.name} item={item} dense={false} />

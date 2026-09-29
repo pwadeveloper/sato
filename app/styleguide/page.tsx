@@ -245,7 +245,10 @@ export default function StyleguidePage() {
 
             <Entry title="Capability list" note="Hairline schedule. Used as the service page sidebar.">
               <div className="max-w-sm">
-                <CapabilityList items={waterResources.capabilities} heading="Capabilities" />
+                <CapabilityList
+                  items={waterResources.sections.capabilities?.items ?? []}
+                  heading="Capabilities"
+                />
               </div>
             </Entry>
 

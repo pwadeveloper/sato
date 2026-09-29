@@ -1,3 +1,4 @@
+import { Heading } from "./Heading";
 import { RichText } from "./RichText";
 import type { ProcurementBlock } from "@/lib/content-types";
 import { cn } from "@/lib/cn";
@@ -23,43 +24,50 @@ export function ProcurementList({
   headingLevel = 2,
   className,
 }: ProcurementListProps) {
-  const HeadingTag = `h${headingLevel}` as const;
+
 
   return (
     <div className={cn(className)}>
-      <HeadingTag
+      <Heading
+        level={headingLevel}
+        size={headingLevel === 2 ? "h2" : "h3"}
+        text={block.heading}
         id={headingId}
-        className={
-          headingLevel === 2
-            ? "text-h3 wdth-heading text-balance"
-            : "text-xl font-bold wdth-heading text-balance"
-        }
-      >
-        <RichText text={block.heading} />
-      </HeadingTag>
+      />
 
       <p className="mt-3 max-w-(--container-measure) text-base text-steel-ink wdth-body">
         <RichText text={block.intro} />
       </p>
 
-      <dl className="mt-6 border-t border-asphalt">
+      {/*
+        Sections with real `h4` headings rather than a `<dl>`. The categories
+        are groups inside this block's `h3`, which is what an `h4` is for on a
+        service page, and heading content is not allowed inside a `<dt>`.
+      */}
+      <div className="mt-6 border-t border-asphalt">
         {block.categories.map((category) => (
-          <div key={category.id} className="border-b border-rule py-4 md:flex md:gap-8">
-            <dt className="text-base font-bold wdth-body md:w-56 md:shrink-0">
-              <RichText text={category.label} />
-            </dt>
-            <dd className="mt-1 md:mt-0">
-              <ul className="flex flex-col gap-1">
-                {category.brands.map((brand) => (
-                  <li key={brand} className="text-sm text-steel-ink wdth-body">
-                    <RichText text={brand} />
-                  </li>
-                ))}
-              </ul>
-            </dd>
-          </div>
+          <section
+            key={category.id}
+            aria-labelledby={`${headingId}-${category.id}`}
+            className="border-b border-rule py-4 md:flex md:gap-8"
+          >
+            <Heading
+              level={4}
+              size="h4"
+              text={category.label}
+              id={`${headingId}-${category.id}`}
+              className="md:w-56 md:shrink-0"
+            />
+            <ul className="mt-2 flex flex-col gap-1 md:mt-0">
+              {category.brands.map((brand) => (
+                <li key={brand} className="text-sm text-steel-ink wdth-body">
+                  <RichText text={brand} />
+                </li>
+              ))}
+            </ul>
+          </section>
         ))}
-      </dl>
+      </div>
 
       {block.note ? (
         <p className="mt-4 max-w-(--container-measure) text-xs text-steel-ink wdth-body">

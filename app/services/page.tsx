@@ -7,7 +7,13 @@ import { PageHeader } from "@/components/PageHeader";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
 
-import { getPage, getSection, getServiceBands, getSite } from "@/lib/content";
+import {
+  getPage,
+  getSection,
+  getServiceBands,
+  getServiceNav,
+  getSite,
+} from "@/lib/content";
 import { buildPageMetadata } from "@/lib/metadata";
 import { bandHref, bandItems } from "@/lib/service-band";
 import { cn } from "@/lib/cn";
@@ -59,11 +65,12 @@ export default function ServicesPage() {
               /**
                * Where the row goes on: sub-services, or page sections.
                *
-               * A section that has moved off its page is left out — Oil & Gas
-               * "Projects" is `/projects/oil-gas`, which Projects already
-               * lists under its own nav item, and the client asked for it in
-               * one place rather than two. Its `sectionNav` entry stays in the
-               * content for the in-page sub-nav.
+               * Page sections only where the service asks for them — every
+               * service page has the same three now, and repeating them under
+               * all five categories would be the same words five times. A
+               * section that lives on another page is left out even then:
+               * Oil & Gas "Projects" is `/projects/oil-gas`, which Projects
+               * already lists under its own nav item.
                */
               const links = items.length
                 ? items.map((service) => ({
@@ -71,7 +78,7 @@ export default function ServicesPage() {
                     label: service.name,
                     href: `/services/${service.slug}`,
                   }))
-                : (solo?.sectionNav ?? [])
+                : (solo?.showSectionsInMenu ? getServiceNav(solo) : [])
                     .filter((section) => !section.href)
                     .map((section) => ({
                       key: section.id,

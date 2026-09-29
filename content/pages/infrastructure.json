@@ -5,7 +5,6 @@
   "metaDescription": "Sato's established infrastructure practice: civil engineering and construction, electrical engineering, mechanical engineering, and water resources development and management, delivering since 1997.",
   "labels": {
     "breadcrumb": "Breadcrumb",
-    "capabilities": "Selected capabilities",
     "viewService": "Full capability"
   },
   "images": {
@@ -21,20 +20,7 @@
       "type": "prose",
       "id": "intro",
       "body": [
-        "Our established infrastructure practice, delivering since 1997.",
-        "Our scope covers all aspects of civil engineering design and construction: roads, dams, irrigation development, buildings and water resources development. We own and operate our own plant, including a borehole drilling rig, so we mobilise without waiting on hired equipment and keep control of quality and programme on site.",
-        "The four disciplines below are delivered by the same teams and under the same project management. Most Sato contracts draw on more than one of them."
-      ]
-    },
-    {
-      "type": "collection",
-      "id": "disciplines",
-      "collection": "services",
-      "slugs": [
-        "civil-engineering-construction",
-        "electrical-engineering",
-        "mechanical-engineering",
-        "water-resources-development-management"
+        "Our established infrastructure practice, delivering since 1997."
       ]
     },
     {
@@ -53,5 +39,126 @@
         }
       ]
     }
-  ]
+  ],
+  "reviewStatus": "draft",
+  "serviceSections": {
+    "capabilities": {
+      "intro": [
+        "Sato has built infrastructure for nearly three decades: roads and pavements, earth dams and irrigation, water supply schemes, public and academic buildings, and the bulk metering that lets a utility account for what it distributes. The clients have been federal and state ministries, river basin development authorities, water corporations, universities and international development partners.",
+        "We own and operate our own plant, including a borehole drilling rig, so we mobilise without waiting on hired equipment and keep control of quality and programme on site.",
+        "Infrastructure is rarely one discipline. A water supply scheme is a civil works contract, a mechanical installation and an electrical commissioning at the same time, and we plan and programme it as one job. The four types below are how we describe the work — they are not how we divide it."
+      ],
+      "groups": [
+        {
+          "id": "civil",
+          "heading": "Civil Engineering & Construction",
+          "description": [
+            "Site investigation, design and construction for roads, pavements, drainage and buildings, with the earthworks and erosion control that keep them standing. Civil work is the structure everything else is fixed to, and it usually arrives with an electrical and a mechanical package attached.",
+            "New build and rehabilitation both: much of Sato's record is work carried out on assets that were still in use."
+          ],
+          "image": {
+            "src": "/images/services/roadworks-asphalt-laying.webp",
+            "alt": "Asphalt being laid by a paver",
+            "width": 1920,
+            "height": 1440
+          },
+          "href": "/services/civil-engineering-construction"
+        },
+        {
+          "id": "electrical",
+          "heading": "Electrical Engineering",
+          "description": [
+            "Power distribution, control and instrumentation for buildings, pumping stations and industrial sites — switchgear and motor control centres down to the meter on the wall. It is the discipline the firm was founded on.",
+            "It is what turns a finished structure into an operating asset, so it is specified against the duty of the plant it serves and commissioned before it is handed over."
+          ],
+          "image": {
+            "src": "/images/services/water-high-lift-pump-panel.webp",
+            "alt": "Installed high lift pump control panel at Sagamu intake",
+            "width": 1920,
+            "height": 1440
+          },
+          "href": "/services/electrical-engineering"
+        },
+        {
+          "id": "mechanical",
+          "heading": "Mechanical Engineering",
+          "description": [
+            "Pumps, pipework, plant and the fabrication behind them, installed and maintained. Most of it is the moving half of a water or building services contract, sequenced with the civil and electrical work rather than after it.",
+            "The same teams maintain Sato's own fleet and workshop, which is where the capability was built and where much of the fabrication is still done."
+          ],
+          "image": {
+            "src": "/images/services/water-ductile-iron-pipes.webp",
+            "alt": "Stacked ductile iron pipes for water distribution",
+            "width": 1920,
+            "height": 1440
+          },
+          "href": "/services/mechanical-engineering"
+        },
+        {
+          "id": "water",
+          "heading": "Water Resources Development & Management",
+          "description": [
+            "Earth dams, irrigation, intake works, treatment and distribution, boreholes drilled with our own rig, and the river training, drainage and flood and erosion control that protect them.",
+            "Water resources is where the four disciplines meet most often, and where Sato's longest client relationships are — river basin development authorities, state water corporations and development programmes, some of them for over twenty years."
+          ],
+          "image": {
+            "src": "/images/projects/fiditi-2.webp",
+            "alt": "Clay compaction for the cut-off trench at Fiditi dam",
+            "width": 1920,
+            "height": 1440
+          },
+          "href": "/services/water-resources-development-management"
+        }
+      ]
+    },
+    "solutions": {
+      "intro": [
+        "What we deliver for a client, across the four types. A contract usually draws on several of these, and they are managed as one programme by one team."
+      ],
+      "groups": [
+        {
+          "id": "planning",
+          "heading": "Planning, design and feasibility",
+          "description": [
+            "Survey, site investigation, hydrogeology and engineering design, with the cost estimation that turns a brief into something that can be tendered and built. Delivered for our own contracts and as a service in its own right."
+          ]
+        },
+        {
+          "id": "construction",
+          "heading": "Construction and rehabilitation",
+          "description": [
+            "New build and the repair of infrastructure already in service — roads and pavements, buildings, dams, drainage and channel works. Rehabilitation is a different problem from construction: it has to be programmed around an asset people are still using, and much of Sato's record is exactly that."
+          ]
+        },
+        {
+          "id": "water",
+          "heading": "Water supply and resource management",
+          "description": [
+            "Source to tap as one scheme rather than four contracts: intake, treatment, storage, pumping and distribution, with groundwater development where surface water is not the answer. Delivered for river basin development authorities, state water corporations and development programmes."
+          ]
+        },
+        {
+          "id": "power",
+          "heading": "Power and electro-mechanical systems",
+          "description": [
+            "Distribution, switchgear, pump control, instrumentation, standby generation, and solar where grid supply cannot be relied on — including solar-powered boreholes. Installed, commissioned and handed over as working plant, not as equipment on a site."
+          ]
+        },
+        {
+          "id": "monitoring",
+          "heading": "Metering, monitoring and asset data",
+          "description": [
+            "Bulk, electromagnetic and prepayment metering, and the instrumentation that tells an operator what an asset is actually doing. Sato has supplied and installed metering at scale for water corporations and development programmes; what it measures is what makes loss reduction and planned maintenance possible instead of guesswork."
+          ]
+        },
+        {
+          "id": "maintenance",
+          "heading": "Maintenance and operational support",
+          "description": [
+            "Planned and corrective maintenance of plant, pumping stations and building services, with the workshop, fabrication and spares capacity behind it. An asset that is not maintained is eventually rebuilt, which costs more than both."
+          ]
+        }
+      ]
+    }
+  }
 }

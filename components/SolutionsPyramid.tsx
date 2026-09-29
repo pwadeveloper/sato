@@ -1,3 +1,4 @@
+import { Heading } from "./Heading";
 import { RichText } from "./RichText";
 import type { SolutionsPyramid as PyramidContent } from "@/lib/content-types";
 import { cn } from "@/lib/cn";
@@ -60,7 +61,7 @@ export function SolutionsPyramid({
   headingLevel = 2,
   className,
 }: SolutionsPyramidProps) {
-  const HeadingTag = `h${headingLevel}` as const;
+
 
   // Apex first, so the drawing order matches the visual order top to bottom.
   const tiers = [...pyramid.tiers].reverse();
@@ -68,16 +69,12 @@ export function SolutionsPyramid({
 
   return (
     <div className={cn(className)}>
-      <HeadingTag
+      <Heading
+        level={headingLevel}
+        size={headingLevel === 2 ? "h2" : "h3"}
+        text={pyramid.heading}
         id={headingId}
-        className={
-          headingLevel === 2
-            ? "text-h3 wdth-heading text-balance"
-            : "text-xl font-bold wdth-heading text-balance"
-        }
-      >
-        <RichText text={pyramid.heading} />
-      </HeadingTag>
+      />
 
       {pyramid.intro ? (
         <p className="mt-3 max-w-(--container-measure) text-base text-steel-ink wdth-body">
@@ -133,9 +130,12 @@ export function SolutionsPyramid({
       <div className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
         {tiers.map((tier, index) => (
           <div key={tier.id}>
-            <h4 className="flex items-center gap-2 border-b border-asphalt pb-2 text-2xs font-semibold uppercase tracking-[0.08em] text-asphalt wdth-body">
-              {/* Swatch and number both key the column to its band, so the
-                  pairing survives a reader who cannot tell the greens apart. */}
+            {/* Swatch and number both key the column to its band, so the
+                pairing survives a reader who cannot tell the greens apart.
+                It sits beside the heading rather than inside it: the tier
+                names are `h4`s at the site's `h4` size like every other
+                group inside an `h3`, and `Heading` takes text, not markup. */}
+            <div className="flex items-center gap-2 border-b border-asphalt pb-2">
               <span
                 aria-hidden="true"
                 className="flex size-5 shrink-0 items-center justify-center border border-rule text-[0.6rem] font-bold tabular"
@@ -146,8 +146,8 @@ export function SolutionsPyramid({
               >
                 {String(tiers.length - index).padStart(2, "0")}
               </span>
-              <RichText text={tier.label} />
-            </h4>
+              <Heading level={4} size="h4" text={tier.label} />
+            </div>
             <ul>
               {tier.items.map((item) => (
                 <li

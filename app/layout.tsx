@@ -7,6 +7,7 @@ import {
   getPage,
   getProjectBands,
   getServiceBands,
+  getServiceNav,
   getSite,
 } from "@/lib/content";
 import { bandHref, bandItems } from "@/lib/service-band";
@@ -44,18 +45,24 @@ const projectsPage = getPage("projects");
  * `pages/projects.json` appears in it.
  */
 /**
- * A service's sections that are actually on its page.
+ * A service's page sections, for the menu — and only where it asks for them.
  *
- * A `sectionNav` entry carrying an `href` has moved elsewhere, and the
- * dropdown and the services overview leave it out: Oil & Gas "Projects" is
- * now `/projects/oil-gas`, which Projects lists under its own top-level nav
+ * Every service page now has the same three sections, so listing them under
+ * every category would print the same two or three generic words four times
+ * in one dropdown, telling the reader nothing they do not get from the page
+ * being a service page. `showSectionsInMenu` is how a service opts in, and
+ * Oil & Gas is the only one that does: its page is long enough that reaching
+ * a section from the menu saves a scroll.
+ *
+ * A section carrying an `href` is left out even then. Oil & Gas "Projects"
+ * is `/projects/oil-gas`, which Projects lists under its own top-level nav
  * item, and one destination in two menus was the duplication the client
  * asked us to remove. The in-page sub-nav still shows it — on that page the
- * reader is looking for the section, not for a menu — so the entry stays in
- * the content and only the menus filter it.
+ * reader is looking for the section, not for a menu.
  */
 function onPageSections(service: Service | undefined): ServiceSection[] {
-  return (service?.sectionNav ?? []).filter((section) => !section.href);
+  if (!service?.showSectionsInMenu) return [];
+  return getServiceNav(service).filter((section) => !section.href);
 }
 
 const menus: HeaderMenu[] = [
@@ -71,8 +78,8 @@ const menus: HeaderMenu[] = [
         label: band.label,
         href: bandHref(band),
         // A category of several lists its services; a category of one lists
-        // the sections of its own page, where it has any. Oil & Gas is the
-        // only page long enough to declare them.
+        // the sections of its own page, where it has asked for them. Oil &
+        // Gas is the only page long enough to.
         items: items.length
           ? items.map((service) => ({
               label: service.name,

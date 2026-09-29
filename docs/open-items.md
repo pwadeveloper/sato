@@ -2,9 +2,45 @@
 
 Everything the website still needs, grouped by who has to answer it.
 
-**2 placeholders outstanding** and **6 services awaiting approval.** Generated 2026-09-29 by `npm run check:placeholders`, so the detected items are always current. The rest is kept by hand in `docs/open-items-extra.md`.
+**2 placeholders outstanding** and **9 pages of capability copy awaiting approval.** Generated 2026-09-29 by `npm run check:placeholders`, so the detected items are always current. The rest is kept by hand in `docs/open-items-extra.md`.
 
 A placeholder is text that is visible on the site right now. The production build is blocked until every one is resolved and every service is approved.
+
+---
+
+## Answer these first
+
+The questions from the most recent round, which the rest of the site is waiting on. Nothing is detected here — it is kept by hand in `docs/open-items-extra.md` and cleared as each one is answered.
+
+### From the service structure round
+
+- **The new partnership line says Sato took part.** The Oil & Gas
+  Partnerships section now reads: "Sato and its technical partners have
+  delivered projects for independent, national and international oil
+  companies across the Middle East, South America, North America, Africa,
+  Europe and Australia." **Please confirm Sato was involved in those
+  projects.** This is a change from how they have been attributed so far —
+  everywhere else on the site the same work is labelled "Delivered by our
+  technical partner team." If Sato *was* involved, we update the project
+  attribution line to match. If it was not, we revert the sentence to "Our
+  technical partners have delivered projects for…". Nothing else was changed
+  in this round: `labels.partnerAttribution` and the Clients page are exactly
+  as they were.
+- **What counts as a client.** You defined a client as a company Sato
+  delivers solutions to and gets paid by. The oil and gas list on `/clients`
+  sits under the heading "clients served through our technical partners",
+  which may not fit that definition. **Confirm whether that block stays.**
+  Removing it is a content edit — the seventeen entries are the
+  `oil-gas-partner` category in `content/clients.json`.
+- **Partnerships for Infrastructure and Energy.** Every service page now has
+  a Partnerships section. Infrastructure Services and Energy Services have no
+  partnership information, so the section — and its item in the page's
+  sub-nav — is simply absent from both. **Who are Sato's technical partners
+  in these two areas, if any?** One or two sentences is enough; we do not
+  need names if you would rather not print them.
+- **US infrastructure reference site: awaiting link.** You mentioned a
+  US-based infrastructure site to look at. Send the link whenever it is
+  convenient; nothing is blocked on it.
 
 ---
 
@@ -16,11 +52,14 @@ Questions for Sato. Everything here is either visible on the site as a placehold
 
 These describe what each service offers. They are capability descriptions, not claims of work already delivered. The full text is in `docs/services-for-review.md`.
 
+- **Civil Engineering & Construction**
 - **Electrical Engineering**
 - **Mechanical Engineering**
+- **Water Resources Development & Management**
 - **Energy Services**
 - **Digitalization & Digital Twin Services**
 - **Research, Technology & Innovation Services**
+- **Infrastructure Services (page)**
 
 ### Client to send
 
@@ -237,7 +276,7 @@ The oil and gas service describes a joint offer and quotes the partner team's tr
 
   > _(the whole field is this question)_
 
-  <sub>content/services.json → `[5].procurement.note`</sub>
+  <sub>content/services.json → `[5].sections.solutions.media[3].note`</sub>
 
 - **can the case study client (ADNOC) be named?**
 

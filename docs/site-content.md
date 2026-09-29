@@ -192,7 +192,7 @@ The change of name is still not mentioned anywhere on the site.
 |---|---|---|---|
 | 1 | Infrastructure Services | `/services/infrastructure` | Civil Engineering & Construction · Electrical Engineering · Mechanical Engineering · Water Resources Development & Management |
 | 2 | Energy Services | `/services/energy` | — |
-| 3 | Oil & Gas Services | `/services/oil-gas` | Capabilities · Solutions · Partnerships (anchors on the page; "Projects" is deliberately not listed here — see Navigation) |
+| 3 | Oil & Gas Services | `/services/oil-gas` | Capabilities · Solutions · Partnerships (anchors on the page; "Projects" is deliberately not listed here — see Navigation). It is the only service that lists its sections in the menu at all: every page has the same three now, so `showSectionsInMenu` keeps the other four categories from printing the same two words each. |
 | 4 | Digitalization & Digital Twin Services | `/services/digital-twin` | — |
 | 5 | Research, Technology & Innovation Services | `/services/research-innovation` | — |
 
@@ -230,19 +230,103 @@ timely delivery · Reliability and dependability · Integrity and professional
 responsibility · Client-focused approach · Commitment to sustainable
 solutions and lasting value · Established track record and reputation
 
+### Every service page has the same three sections
+
+**Capabilities · Solutions · Partnerships**, in that order, under a sticky
+sub-nav, on all eight services and on the Infrastructure landing page. The
+client's instruction on the review call of 29 September: a reader who has
+learned the shape of the Oil & Gas page has learned all of them.
+
+| Section | Holds |
+|---|---|
+| Capabilities | what we can do — the disciplines and the expertise |
+| Solutions | what we deliver for a client — the outcomes, systems and services |
+| Partnerships | who we work with to deliver it |
+
+Three rules follow, and all three are in the template rather than written per
+service:
+
+- **A section with nothing in it does not exist on the page.** No band, no
+  heading, no `#id` anchor, no sub-nav item. Infrastructure and Energy have
+  no Partnerships section at all.
+- **Projects is in the sub-nav and nowhere else.** It appears when a published
+  project category names the service, and it is a link to
+  `/projects/<category>`, not an anchor. The old "See our {category} projects"
+  link at the foot of the page is gone — the sub-nav entry is the same
+  destination, at the top of the page instead of the bottom.
+- **The sub-nav is derived from the content**, so it cannot drift from what
+  the page actually holds.
+
+**Partnerships names partners, not clients.** A partner co-delivers work with
+Sato; a client pays Sato for it. The World Bank, UNDP and USAID are clients
+and appear on `/clients`, never under Partnerships.
+
+**One heading scale:** `h1` the page title, `h2` the three sections, `h3`
+every subsection, `h4` a group inside one. Sentence case throughout, proper
+nouns and service names excepted. Before-and-after in
+`docs/heading-audit.md`.
+
 ### Infrastructure Services landing page
 
-**Intro:** "Our established infrastructure practice, delivering since 1997."
-Then: our scope covers all aspects of civil engineering design and
-construction — roads, dams, irrigation development, buildings and water
-resources development. *(Taken from the live site's welcome text.)* Then a
-note that the four disciplines are delivered by the same teams, and most
-contracts draw on more than one.
+**Draft. Needs Sato's approval** — its copy is written on the page rather than
+on any of the four services, so it carries its own `reviewStatus`. Full text
+in `docs/services-for-review.md`, section 7a.
 
-Each discipline shows its photograph, its summary, a "Full capability" link
-to its own page, and its first five capabilities. Two of the four were
-renamed in batch 3 — Civil Engineering & Construction, and Water Resources
-Development & Management — and both old routes 301.
+**Header intro:** "Our established infrastructure practice, delivering since
+1997."
+
+**Capabilities:** three paragraphs — nearly three decades of roads, dams,
+irrigation, water supply, buildings and bulk metering, for ministries, river
+basin development authorities, water corporations, universities and
+development partners; the firm's own plant including a drilling rig; and the
+point that infrastructure is rarely one discipline. Then **the four
+infrastructure types**, each with its photograph, two or three sentences on
+the disciplines involved, and a "Full capability" link to its own page. No
+exhaustive lists — that is what the discipline pages are for.
+
+**Solutions:** six areas that cut across the four types — planning, design and
+feasibility · construction and rehabilitation · water supply and resource
+management · power and electro-mechanical systems · metering, monitoring and
+asset data · maintenance and operational support.
+
+**Partnerships:** empty, and therefore absent. Sato has no technical partner
+in infrastructure to name. Flagged in `docs/open-items.md`.
+
+Framed with two third-party sites read for structure only —
+digitalwaterlab.org and hyfi.io. Neither is a partner and nothing of theirs is
+used; what was taken from each, and the one claim that needs the client's
+confirmation ("Metering, monitoring and asset data"), is set out in
+`docs/services-for-review.md` section 7.
+
+**Each of the four disciplines** keeps its summary and its capability list
+exactly as approved, and gains one framing paragraph and a Solutions section
+of three to five areas. Deliberately shorter than the landing page. Two of the
+four were renamed in batch 3 — Civil Engineering & Construction, and Water
+Resources Development & Management — and both old routes 301.
+
+### Digitalization & Digital Twin, and Research, Technology & Innovation
+
+**Both draft, and both placeholder.** Rewritten into the three sections on 29
+September, framed from norcompute.no — a reference site the technical partner
+sent for the purpose. The client still owes us his own digital twin material,
+and this page is written to be replaced by it.
+
+Digital Twin: Capabilities is asset data and information management ·
+instrumentation and telemetry · modelling, simulation and virtual testing.
+Solutions is what a maintained model is for — condition monitoring from a few
+sensors, maintenance planned on evidence, testing a change before it is made,
+real-time production optimization (which **links across to the Oil & Gas
+solutions stack rather than repeating the pyramid**), and metering data and
+water accounting. Both pages keep the sentence that says Sato has no completed
+project in the area yet; that sentence is what stops the rest reading as a
+claim.
+
+Research: applied engineering studies · computational methods and tooling ·
+training and knowledge transfer, and four solutions written as a question
+answered for a client rather than as a research programme.
+
+Partnerships on both says Sato delivers the work with its technical partners,
+with no names and no figures — the same team as Oil & Gas.
 
 ### Oil & Gas Services
 
@@ -250,15 +334,18 @@ Development & Management — and both old routes 301.
 `docs/services-for-review.md`.
 
 The page is **three anchored sections and a link out**, under a sticky sub-nav
-of four — Capabilities · Solutions · Projects · Partnerships — driven by
-`sectionNav` in `services.json`.
+of four — Capabilities · Solutions · Projects · Partnerships. Since 29
+September that sub-nav is **derived from the content** rather than written
+out, and it derives to exactly the same four items, in the same order, with
+Projects still a link to `/projects/oil-gas`. The client's hold on the sub-nav
+is intact.
 
 | Section | Holds |
 |---|---|
 | Capabilities | the overview paragraphs, the three capability areas, "also covered" |
 | Solutions | the technology solutions, in three groups with descriptions; the solutions pyramid; the business value map; equipment sourcing and procurement |
 | Projects | nothing on this page — the sub-nav item goes straight to `/projects/oil-gas` |
-| Partnerships | the partner team description and the partner name block |
+| Partnerships | the partner team description, the partner name block (hidden) and the link to Digitalization & Digital Twin |
 
 **There is no Projects block on the page.** The table, the wider engagements
 and the case study moved to `/projects/oil-gas`, and for a while a stub
@@ -276,8 +363,8 @@ overview no longer list "Projects" under Oil & Gas, because Projects is a
 top-level nav item and both pointed at the same page.
 
 All of this is one rule in the template, not a special case for this page: a
-`sectionNav` entry that carries an `href` is a destination rather than a part
-of the page, so the page renders no section and no anchor for it and the two
+derived section that carries an `href` is a destination rather than a part of
+the page, so the page renders no section and no anchor for it and the two
 menus leave it out.
 
 **The Recognition block is gone** — the 2015 SPE International Projects,
@@ -319,6 +406,25 @@ voice; the sources are listed in `docs/services-for-review.md`.
 its pale left arc. Two scrims hold the contrast — a horizontal wash from `md`
 up where the copy is in the left column, a flat one below it where the copy
 runs full width. Measured worst case 7.9:1.
+
+**Two sentences are the client's own words, 29 September**, and are used
+exactly as he wrote them (with "Independent" set lowercase to match its
+sentence). The Capabilities overview now opens:
+
+> We help operators (independent, national and international oil companies) to
+> maximize value from their existing assets (reservoirs, wells and facilities).
+
+and Partnerships now reads:
+
+> Sato and its technical partners have delivered projects for independent,
+> national and international oil companies across the Middle East, South
+> America, North America, Africa, Europe and Australia.
+
+**That second sentence says Sato took part**, which is not what the rest of the
+site says: `/projects/oil-gas` and `/clients` both attribute the same work to
+the partner team. Nothing else was changed —
+`labels.partnerAttribution` and the Clients page are untouched — and the
+question is the first item in `docs/open-items.md`.
 
 The one thing to hold onto: **the page keeps two track records apart.**
 Capabilities, solutions and procurement are written as what Sato offers. The
@@ -603,9 +709,16 @@ with its disciplines under it, then the rest at the top level.
 **Nothing appears in two menus.** "Projects" is gone from the Oil & Gas
 sub-items in the Services panel and from the Oil & Gas sub-links on the
 Services page: it pointed at `/projects/oil-gas`, which Projects already
-lists. The rule is general — a `sectionNav` entry that carries an `href`
-belongs to another page and is left out of both menus — and the Oil & Gas
-page's own in-page sub-nav is untouched.
+lists. The rule is general — a derived section that carries an `href` belongs
+to another page and is left out of both menus — and the Oil & Gas page's own
+in-page sub-nav is untouched.
+
+**Only Oil & Gas lists its sections in the menu.** Since 29 September every
+service page has the same three, so listing them under every category would
+print the same two or three generic words under all five. A service opts in
+with `showSectionsInMenu`, and Oil & Gas is the only one that does — which is
+exactly what the menus showed before. **The dropdown arrows are unchanged**;
+the client has decided to keep them as they are.
 
 ---
 

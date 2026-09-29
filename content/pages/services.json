@@ -5,15 +5,17 @@
   "metaDescription": "Integrated engineering, infrastructure and technology-driven solutions across a diverse range of sectors, built on nearly three decades of project delivery experience.",
   "labels": {
     "breadcrumb": "Breadcrumb",
-    "capabilities": "Capabilities",
-    "projectsLink": "See our {category} projects",
+    "sectionCapabilities": "Capabilities",
+    "sectionSolutions": "Solutions",
+    "sectionProjects": "Projects",
+    "sectionPartnerships": "Partnerships",
     "relatedServices": "Related services",
     "sectionNav": "On this page",
     "groupInfrastructure": "Infrastructure Services",
     "groupInfrastructureIntro": "Our established infrastructure practice, delivering since 1997.",
     "groupInfrastructureHref": "/services/infrastructure",
     "groupEnergy": "Energy Services",
-    "groupEnergyIntro": "Engineering for power and process assets, delivered with technical partners.",
+    "groupEnergyIntro": "Engineering for power and process assets, from integrity management to renewable generation.",
     "groupOilGas": "Oil & Gas Services",
     "groupOilGasIntro": "Consulting, engineering and digital technology for the upstream sector.",
     "groupDigitalTwin": "Digitalization & Digital Twin Services",
@@ -22,7 +24,8 @@
     "groupResearchInnovationIntro": "Applied studies, technical training and new engineering methods.",
     "servicesMenu": "Services menu",
     "allServices": "All services",
-    "gallery": "Work delivered"
+    "gallery": "Work delivered",
+    "viewService": "Full capability"
   },
   "images": {
     "header": {

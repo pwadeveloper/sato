@@ -1,3 +1,4 @@
+import { Heading } from "./Heading";
 import { RichText } from "./RichText";
 import type { ValueMap as ValueMapContent } from "@/lib/content-types";
 import { cn } from "@/lib/cn";
@@ -55,22 +56,18 @@ export function ValueMap({
   headingLevel = 2,
   className,
 }: ValueMapProps) {
-  const HeadingTag = `h${headingLevel}` as const;
+
   const head =
     "py-3 pr-6 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body";
 
   return (
     <div className={cn(className)}>
-      <HeadingTag
+      <Heading
+        level={headingLevel}
+        size={headingLevel === 2 ? "h2" : "h3"}
+        text={map.heading}
         id={headingId}
-        className={
-          headingLevel === 2
-            ? "text-h3 wdth-heading text-balance"
-            : "text-xl font-bold wdth-heading text-balance"
-        }
-      >
-        <RichText text={map.heading} />
-      </HeadingTag>
+      />
 
       {map.intro ? (
         <p className="mt-3 max-w-(--container-measure) text-base text-steel-ink wdth-body">

@@ -4,23 +4,63 @@
     "name": "Civil Engineering & Construction",
     "group": "infrastructure",
     "order": 1,
-    "reviewStatus": "approved",
+    "reviewStatus": "draft",
     "shortSummary": "Roads, buildings, earthworks, drainage and erosion control.",
     "summary": "Design and construction of roads, buildings and civil works, from earthworks to finished surfaces.",
-    "body": [
-      "Civil engineering is where Sato began. We design and build the infrastructure that institutions and communities depend on, and we manage every stage, from site preparation to handover.",
-      "Our own plant and workshop mean we mobilise without waiting on hired equipment, and keep control of quality and programme on site."
-    ],
-    "capabilities": [
-      "Civil engineering design",
-      "Asphaltic concrete road construction and road rehabilitation",
-      "Pavement design, construction and repair, including heavy-duty terminal pavements",
-      "Earthworks: grading, laterite filling, sub-base compaction",
-      "Drainage systems, kerbs, culverts and walkways",
-      "Building construction: academic, administrative, laboratory, residential and office buildings",
-      "Renovation and conversion of existing buildings",
-      "Erosion control"
-    ],
+    "sections": {
+      "capabilities": {
+        "intro": [
+          "Civil engineering is where Sato began. We design and build the infrastructure that institutions and communities depend on, and we manage every stage, from site preparation to handover.",
+          "Our own plant and workshop mean we mobilise without waiting on hired equipment, and keep control of quality and programme on site.",
+          "Civil work is the structure everything else is fixed to. On most Sato contracts it arrives with an electrical and a mechanical package attached, and it is planned as one programme rather than three."
+        ],
+        "items": [
+          "Civil engineering design",
+          "Asphaltic concrete road construction and road rehabilitation",
+          "Pavement design, construction and repair, including heavy-duty terminal pavements",
+          "Earthworks: grading, laterite filling, sub-base compaction",
+          "Drainage systems, kerbs, culverts and walkways",
+          "Building construction: academic, administrative, laboratory, residential and office buildings",
+          "Renovation and conversion of existing buildings",
+          "Erosion control"
+        ]
+      },
+      "solutions": {
+        "intro": [
+          "What we deliver under this discipline, whether it is the whole contract or one package of a larger scheme."
+        ],
+        "groups": [
+          {
+            "id": "roads",
+            "heading": "Roads and pavements",
+            "description": [
+              "Asphaltic concrete carriageways, heavy-duty terminal pavements, kerbs and walkways, built new or rehabilitated in place. The drainage that decides how long a surface lasts is designed with it, not after it."
+            ]
+          },
+          {
+            "id": "buildings",
+            "heading": "Buildings",
+            "description": [
+              "Academic, administrative, laboratory, residential and office buildings, from foundations to fit-out, and the conversion or renovation of buildings already in use."
+            ]
+          },
+          {
+            "id": "earthworks",
+            "heading": "Earthworks and site development",
+            "description": [
+              "Grading, laterite filling and sub-base compaction, delivered with our own plant, so a programme is not held up waiting on hired equipment."
+            ]
+          },
+          {
+            "id": "drainage",
+            "heading": "Drainage and erosion control",
+            "description": [
+              "Culverts, channels and slope protection, designed for the catchment rather than for the plot, on sites where uncontrolled run-off is what destroys the asset."
+            ]
+          }
+        ]
+      }
+    },
     "relatedProjectSlugs": [],
     "registrations": [],
     "image": {
@@ -39,20 +79,64 @@
     "reviewStatus": "draft",
     "shortSummary": "Power, instrumentation, metering and electrical installations.",
     "summary": "Electrical installation, instrumentation and metering for buildings, water schemes and industrial sites.",
-    "body": [
-      "Sato was founded by an electrical engineer, and electrical work runs through the firm's project record — from the pump control and high lift installations on water supply schemes to the supply and installation of bulk and prepayment metering for utilities and development programmes.",
-      "We deliver electrical works as part of a wider contract or as a package in their own right, and we commission what we install."
-    ],
-    "capabilities": [
-      "Electrical installation for buildings and industrial sites",
-      "Power distribution and switchgear installation",
-      "Pump control panels and motor control centres",
-      "Instrumentation and control systems",
-      "Supply, installation and commissioning of bulk, prepayment and electromagnetic meters",
-      "Solar power systems, including solar-powered borehole installations",
-      "Standby generation and changeover systems",
-      "Testing, commissioning and handover"
-    ],
+    "sections": {
+      "capabilities": {
+        "intro": [
+          "Sato was founded by an electrical engineer, and electrical work runs through the firm's project record — from the pump control and high lift installations on water supply schemes to the supply and installation of bulk and prepayment metering for utilities and development programmes.",
+          "We deliver electrical works as part of a wider contract or as a package in their own right, and we commission what we install.",
+          "Electrical work is what turns a completed structure into an operating asset. It is specified against the duty of the plant it serves rather than against a catalogue, and it is tested and handed over as working plant."
+        ],
+        "items": [
+          "Electrical installation for buildings and industrial sites",
+          "Power distribution and switchgear installation",
+          "Pump control panels and motor control centres",
+          "Instrumentation and control systems",
+          "Supply, installation and commissioning of bulk, prepayment and electromagnetic meters",
+          "Solar power systems, including solar-powered borehole installations",
+          "Standby generation and changeover systems",
+          "Testing, commissioning and handover"
+        ]
+      },
+      "solutions": {
+        "groups": [
+          {
+            "id": "installations",
+            "heading": "Building and industrial installations",
+            "description": [
+              "Distribution boards, switchgear, cabling, lighting and earthing for academic, administrative and industrial buildings, tested and certified on completion."
+            ]
+          },
+          {
+            "id": "control",
+            "heading": "Pump control and motor control centres",
+            "description": [
+              "Control panels, starters and protection for water supply and pumping stations, built to the duty of the plant rather than to a standard schedule."
+            ]
+          },
+          {
+            "id": "metering",
+            "heading": "Metering supply and installation",
+            "description": [
+              "Bulk, electromagnetic and prepayment meters supplied, installed, commissioned and handed over, with training for the staff who will read and maintain them."
+            ]
+          },
+          {
+            "id": "solar",
+            "heading": "Solar and standby power",
+            "description": [
+              "Solar systems, including solar-powered boreholes, and standby generation with changeover, for sites where grid supply cannot be depended on."
+            ]
+          },
+          {
+            "id": "instrumentation",
+            "heading": "Instrumentation and control",
+            "description": [
+              "Field instrumentation and control systems for water and process plant, so an operator can see what the plant is doing and act on it."
+            ]
+          }
+        ]
+      }
+    },
     "relatedProjectSlugs": [],
     "registrations": [],
     "image": {
@@ -71,19 +155,56 @@
     "reviewStatus": "draft",
     "shortSummary": "Pumps, pipework, plant installation and mechanical maintenance.",
     "summary": "Mechanical installation and maintenance for water, building services and plant.",
-    "body": [
-      "Sato's mechanical work sits alongside its civil and water engineering: pump houses, high lift pump installation, pipework and the plant that keeps a scheme running. The firm maintains its own fleet and workshop, which is where much of this capability was built.",
-      "We take on mechanical packages within our own contracts and as standalone installation and maintenance work."
-    ],
-    "capabilities": [
-      "Pump installation, commissioning and overhaul",
-      "Pipework fabrication and installation, including ductile iron and UPVC mains",
-      "Pumping station and pump house mechanical fit-out",
-      "Static and rotating equipment installation",
-      "Mechanical building services",
-      "Workshop fabrication and welding",
-      "Planned and corrective maintenance of plant and equipment"
-    ],
+    "sections": {
+      "capabilities": {
+        "intro": [
+          "Sato's mechanical work sits alongside its civil and water engineering: pump houses, high lift pump installation, pipework and the plant that keeps a scheme running. The firm maintains its own fleet and workshop, which is where much of this capability was built.",
+          "We take on mechanical packages within our own contracts and as standalone installation and maintenance work.",
+          "Mechanical work is the moving half of an infrastructure contract. A pump house is a civil structure, a mechanical installation and an electrical panel at once, and it is sequenced as one job."
+        ],
+        "items": [
+          "Pump installation, commissioning and overhaul",
+          "Pipework fabrication and installation, including ductile iron and UPVC mains",
+          "Pumping station and pump house mechanical fit-out",
+          "Static and rotating equipment installation",
+          "Mechanical building services",
+          "Workshop fabrication and welding",
+          "Planned and corrective maintenance of plant and equipment"
+        ]
+      },
+      "solutions": {
+        "groups": [
+          {
+            "id": "pumping",
+            "heading": "Pumping stations and pump houses",
+            "description": [
+              "Mechanical fit-out of intake and high lift stations: pump installation, alignment and commissioning, with the pipework and valves around them."
+            ]
+          },
+          {
+            "id": "pipework",
+            "heading": "Pipework and distribution mains",
+            "description": [
+              "Fabrication and laying of ductile iron and UPVC mains, with the fittings, chambers, testing and disinfection that go with them."
+            ]
+          },
+          {
+            "id": "plant",
+            "heading": "Plant installation and overhaul",
+            "description": [
+              "Static and rotating equipment installed, overhauled and returned to service, including equipment supplied by others."
+            ]
+          },
+          {
+            "id": "maintenance",
+            "heading": "Maintenance and workshop support",
+            "description": [
+              "Planned and corrective maintenance of plant and mechanical building services, backed by our own workshop, welding and fabrication capacity."
+            ]
+          }
+        ]
+      }
+    },
     "relatedProjectSlugs": [],
     "registrations": [],
     "image": {
@@ -99,24 +220,68 @@
     "name": "Water Resources Development & Management",
     "group": "infrastructure",
     "order": 4,
-    "reviewStatus": "approved",
+    "reviewStatus": "draft",
     "shortSummary": "Dams, water supply, boreholes, river works, drainage and erosion control.",
     "summary": "Dams, water supply, boreholes and river works, with the drainage, flood and erosion control that protects them.",
-    "body": [
-      "Water infrastructure has been central to Sato's work for decades, with clients including the Ogun-Osun River Basin Development Authority, state water corporations, the Federal Ministry of Water Resources and the World Bank.",
-      "Flood and erosion control, river training, drainage and groundwater development are delivered by the same teams, because on most of these schemes they are one job."
-    ],
-    "capabilities": [
-      "Earth dam construction",
-      "Irrigation development",
-      "Water supply scheme construction and rehabilitation, including intake structures and pump houses",
-      "Water treatment facilities",
-      "Sewage systems",
-      "Borehole drilling, including solar-powered boreholes, with our own drilling rig",
-      "Hydrogeology and groundwater development",
-      "River dredging and stream channelization",
-      "Flood and erosion control"
-    ],
+    "sections": {
+      "capabilities": {
+        "intro": [
+          "Water infrastructure has been central to Sato's work for decades, with clients including the Ogun-Osun River Basin Development Authority, state water corporations, the Federal Ministry of Water Resources and the World Bank.",
+          "Flood and erosion control, river training, drainage and groundwater development are delivered by the same teams, because on most of these schemes they are one job.",
+          "Water is the infrastructure type that draws on all four disciplines at once. A scheme is treated as one job from source to tap, rather than as a civil contract with other trades attached to it."
+        ],
+        "items": [
+          "Earth dam construction",
+          "Irrigation development",
+          "Water supply scheme construction and rehabilitation, including intake structures and pump houses",
+          "Water treatment facilities",
+          "Sewage systems",
+          "Borehole drilling, including solar-powered boreholes, with our own drilling rig",
+          "Hydrogeology and groundwater development",
+          "River dredging and stream channelization",
+          "Flood and erosion control"
+        ]
+      },
+      "solutions": {
+        "groups": [
+          {
+            "id": "dams",
+            "heading": "Dams and irrigation",
+            "description": [
+              "Earth dam construction and irrigation development, including cut-off trenches, embankments, spillways and the associated civil structures."
+            ]
+          },
+          {
+            "id": "supply",
+            "heading": "Water supply schemes",
+            "description": [
+              "Intake works, treatment, storage, pumping and distribution, built new or rehabilitated, together with the mechanical and electrical plant that runs them."
+            ]
+          },
+          {
+            "id": "groundwater",
+            "heading": "Groundwater development",
+            "description": [
+              "Hydrogeological investigation and borehole drilling with our own rig, including solar-powered boreholes where there is no dependable grid supply."
+            ]
+          },
+          {
+            "id": "river",
+            "heading": "River works, flood and erosion control",
+            "description": [
+              "Dredging, channelization, river training and drainage, delivered by the same teams as the schemes they protect."
+            ]
+          },
+          {
+            "id": "metering",
+            "heading": "Bulk metering and water accounting",
+            "description": [
+              "Supply and installation of bulk and consumer metering, so a water undertaking can measure what it produces against what it bills. Sato has delivered this at scale for state water corporations and development programmes."
+            ]
+          }
+        ]
+      }
+    },
     "relatedProjectSlugs": [],
     "registrations": [],
     "image": {
@@ -135,20 +300,63 @@
     "reviewStatus": "draft",
     "shortSummary": "Asset integrity, facility engineering and renewable energy.",
     "summary": "Engineering support for energy assets, from integrity management to renewable generation.",
-    "body": [
-      "Energy Services brings Sato's engineering and maintenance disciplines to power and process assets: keeping plant fit for purpose across its life, and building the generation and distribution that sites depend on.",
-      "The division is delivered with technical partners whose specialist teams complement Sato's site engineering and project management. Sato is building this capability deliberately, and will describe delivered work here as it is completed."
-    ],
-    "capabilities": [
-      "Asset integrity management across design, maintenance, inspection and operations",
-      "Life-cycle integrity monitoring of static and rotating equipment",
-      "Facility and production engineering support",
-      "Compliance with relevant regulations and industry codes",
-      "Risk assessment and reduction to as low as reasonably practicable",
-      "Solar generation and hybrid power systems",
-      "Renewable and bio-energy technologies",
-      "Energy efficiency assessment"
-    ],
+    "sections": {
+      "capabilities": {
+        "intro": [
+          "Energy Services brings Sato's engineering and maintenance disciplines to power and process assets: keeping plant fit for purpose across its life, and building the generation and distribution that sites depend on.",
+          "Sato is building this capability deliberately. It is offered here as a capability rather than as a record of delivered work, and completed projects will be described on this page as they are finished."
+        ],
+        "items": [
+          "Asset integrity management across design, maintenance, inspection and operations",
+          "Life-cycle integrity monitoring of static and rotating equipment",
+          "Facility and production engineering support",
+          "Compliance with relevant regulations and industry codes",
+          "Risk assessment and reduction to as low as reasonably practicable",
+          "Solar generation and hybrid power systems",
+          "Renewable and bio-energy technologies",
+          "Energy efficiency assessment"
+        ]
+      },
+      "solutions": {
+        "groups": [
+          {
+            "id": "integrity",
+            "heading": "Asset integrity management",
+            "description": [
+              "Integrity assessed and maintained across design, inspection, maintenance and operation, so plant stays fit for the duty it is actually running at rather than the one it was specified for."
+            ]
+          },
+          {
+            "id": "facility",
+            "heading": "Facility and production engineering support",
+            "description": [
+              "Engineering support to keep facilities available and producing, including life-cycle monitoring of static and rotating equipment."
+            ]
+          },
+          {
+            "id": "solar",
+            "heading": "Solar and hybrid generation",
+            "description": [
+              "Solar and hybrid power systems for sites where grid supply is unreliable or absent, sized on measured demand and installed by the teams that deliver our electrical works."
+            ]
+          },
+          {
+            "id": "efficiency",
+            "heading": "Energy efficiency assessment",
+            "description": [
+              "Measurement of where energy is going on a site, what can be changed, and what the change costs against what it saves."
+            ]
+          },
+          {
+            "id": "renewables",
+            "heading": "Renewable and bio-energy technologies",
+            "description": [
+              "Evaluation and delivery of renewable and bio-energy options where they suit the site, the load and the fuel actually available."
+            ]
+          }
+        ]
+      }
+    },
     "relatedProjectSlugs": [],
     "registrations": [],
     "image": {
@@ -156,7 +364,8 @@
       "alt": "Installed high lift pump control panel at Sagamu intake",
       "width": 1920,
       "height": 1440
-    }
+    },
+    "images": []
   },
   {
     "slug": "oil-gas",
@@ -166,205 +375,380 @@
     "reviewStatus": "draft",
     "shortSummary": "Consulting, engineering and digital technology for upstream oil and gas.",
     "summary": "Consulting, engineering and digital technology services for the upstream oil and gas sector, delivered with our technical partners.",
-    "body": [
-      "We help operators, national and international oil companies, and service companies get more value from their reservoirs and assets. Working with a partner team of internationally recognised subject-matter experts, we support the full field lifecycle: from field development planning and reservoir management to production optimization, digital twins, asset integrity and the procurement of production and surface processing equipment.",
-      "We apply innovative technologies and proven best practice to improve performance and efficiency, optimise costs, and manage risk and uncertainty."
-    ],
-    "capabilities": [],
-    "capabilityBlocks": [
-      {
-        "id": "ai-digital",
-        "heading": "Artificial intelligence, digitalization and digital twins, automation and autonomy",
-        "items": [
-          "Project assessment, benchmarking and technology roadmaps",
-          "Real-time production optimization, from definition to implementation",
-          "Automation of petroleum engineering standards and business workflows",
-          "AI-assisted reservoir and production digital twins",
-          "Information management standards, workflows and solutions"
+    "sections": {
+      "capabilities": {
+        "intro": [
+          "We help operators (independent, national and international oil companies) to maximize value from their existing assets (reservoirs, wells and facilities). Working with a partner team of internationally recognised subject-matter experts, we support the full field lifecycle: from field development planning and reservoir management to production optimization, digital twins, asset integrity and the procurement of production and surface processing equipment.",
+          "We apply innovative technologies and proven best practice to improve performance and efficiency, optimise costs, and manage risk and uncertainty."
+        ],
+        "groups": [
+          {
+            "id": "ai-digital",
+            "heading": "Artificial intelligence, digitalization and digital twins, automation and autonomy",
+            "items": [
+              {
+                "name": "Project assessment, benchmarking and technology roadmaps"
+              },
+              {
+                "name": "Real-time production optimization, from definition to implementation"
+              },
+              {
+                "name": "Automation of petroleum engineering standards and business workflows"
+              },
+              {
+                "name": "AI-assisted reservoir and production digital twins"
+              },
+              {
+                "name": "Information management standards, workflows and solutions"
+              }
+            ]
+          },
+          {
+            "id": "asset-management",
+            "heading": "Integrated asset management and production optimization",
+            "items": [
+              {
+                "name": "Reservoir, well and facility production proxy modelling, multi-sensor data assimilation and uncertainty quantification"
+              },
+              {
+                "name": "Well operating envelopes and well integrity"
+              },
+              {
+                "name": "Production monitoring and management of reservoirs, wells and facilities"
+              },
+              {
+                "name": "Production capacity forecasting, production loss management and production enhancement"
+              }
+            ]
+          },
+          {
+            "id": "field-development",
+            "heading": "Field development planning and reservoir management",
+            "items": [
+              {
+                "name": "Field development planning, review, evaluation and optimization"
+              },
+              {
+                "name": "Reservoir characterization and geo-modelling"
+              },
+              {
+                "name": "Reservoir simulation and production forecasting"
+              },
+              {
+                "name": "Integrated reservoir management standards"
+              }
+            ]
+          }
+        ],
+        "aside": {
+          "heading": "Also covered",
+          "items": [
+            "Drilling services optimization",
+            "Asset integrity management",
+            "Mature field management",
+            "Virtual asset management for integrated energy systems"
+          ]
+        }
+      },
+      "solutions": {
+        "media": [
+          {
+            "type": "list",
+            "heading": "Technology solutions",
+            "items": [],
+            "groups": [
+              {
+                "id": "subsurface",
+                "heading": "Subsurface and seismic",
+                "items": [
+                  {
+                    "name": "Seismic inversion",
+                    "description": "Stochastic seismic inversion using proprietary technology."
+                  },
+                  {
+                    "name": "Time-lapse seismic analysis",
+                    "description": "Time-lapse data integrated with production data and reservoir simulation, for dynamic reservoir characterization."
+                  },
+                  {
+                    "name": "Simulation-to-seismic analysis",
+                    "description": ""
+                  },
+                  {
+                    "name": "Integrated reservoir characterization",
+                    "description": "A complete study workflow, from seismic interpretation and stochastic reservoir modelling through to history matching."
+                  }
+                ]
+              },
+              {
+                "id": "field-development",
+                "heading": "Field development and reservoir management",
+                "items": [
+                  {
+                    "name": "Field development planning",
+                    "description": ""
+                  },
+                  {
+                    "name": "Mature field potential analysis",
+                    "description": "Static data such as seismic integrated with production data, with a thin-layer evaluation method, to evaluate mature field potential both laterally and in vertical cross-section."
+                  },
+                  {
+                    "name": "Reservoir surveillance, monitoring and management",
+                    "description": ""
+                  }
+                ]
+              },
+              {
+                "id": "production",
+                "heading": "Production and facilities",
+                "items": [
+                  {
+                    "name": "Production optimization and enhancement",
+                    "description": "An injection allocation function determined from production data, integrated with seismic and other information where it is available."
+                  },
+                  {
+                    "name": "Completions and wellbore interventions",
+                    "description": ""
+                  },
+                  {
+                    "name": "Topside facilities management",
+                    "description": ""
+                  },
+                  {
+                    "name": "Produced water management",
+                    "description": ""
+                  },
+                  {
+                    "name": "Multiphase flow metrology",
+                    "description": ""
+                  },
+                  {
+                    "name": "Process instrumentation, control and optimization",
+                    "description": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "pyramid",
+            "heading": "From surveillance to transformation",
+            "intro": "Each tier rests on the one below it: nothing is optimised that is not first analysed, and nothing is analysed that is not first measured.",
+            "alt": "Four-tier pyramid. Surveillance forms the base, then Analysis, then Optimization, with Transformation at the apex. Each tier is listed in full below the diagram.",
+            "tiers": [
+              {
+                "id": "surveillance",
+                "label": "Surveillance",
+                "items": [
+                  "Production Allocation",
+                  "Well Test Validation",
+                  "KPI Monitoring",
+                  "Zonal Split Calculation",
+                  "Virtual Metering",
+                  "BHP & BHT Correction",
+                  "Reserves Tracking"
+                ]
+              },
+              {
+                "id": "analysis",
+                "label": "Analysis",
+                "items": [
+                  "Flow Assurance",
+                  "Production Decline Analysis",
+                  "Reservoir Performance",
+                  "Model Updating",
+                  "Production Performance"
+                ]
+              },
+              {
+                "id": "optimization",
+                "label": "Optimization",
+                "items": [
+                  "Short Term Work Plans",
+                  "Mid Term Work Plans",
+                  "Long Term Work Plans"
+                ]
+              },
+              {
+                "id": "transformation",
+                "label": "Transformation",
+                "items": [
+                  "Maximum Ultimate Recovery"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "valueMap",
+            "heading": "Where the value comes from",
+            "intro": "Four business processes, the solutions applied to each, the improvement each produces and the benefit it returns.",
+            "image": {
+              "src": "/images/oil-gas/business-value-map.webp",
+              "alt": "Diagram mapping four business processes through solutions and improvements to their business benefits. The same content is set out as a table below.",
+              "width": 1903,
+              "height": 1745
+            },
+            "alternativeLabel": "Read the diagram as text",
+            "columns": {
+              "process": "Business process",
+              "solutions": "Solutions",
+              "improvements": "Improvement",
+              "benefits": "Benefits"
+            },
+            "rows": [
+              {
+                "id": "field-development",
+                "process": "Effective field development",
+                "solutions": [
+                  "4D seismic",
+                  "Smart wells"
+                ],
+                "improvements": [
+                  "Fewer development wells",
+                  "Improved sweep",
+                  "Increased well production"
+                ],
+                "benefits": [
+                  "Reduced CAPEX",
+                  "Increased recovery",
+                  "Increased production"
+                ]
+              },
+              {
+                "id": "well-and-reservoir",
+                "process": "Well and reservoir management",
+                "note": "The smart fields foundation.",
+                "solutions": [
+                  "Integrated production system modelling",
+                  "Production performance monitoring"
+                ],
+                "improvements": [
+                  "Increased well production",
+                  "Facility improvement",
+                  "Reduced deferment"
+                ],
+                "benefits": [
+                  "Increased production"
+                ]
+              },
+              {
+                "id": "facilities",
+                "process": "Facilities management",
+                "solutions": [
+                  "Collaborative work environments",
+                  "Real-time surveillance",
+                  "Rotating equipment monitoring"
+                ],
+                "improvements": [
+                  "Faster response and optimized production",
+                  "Increased facility capacity",
+                  "Increased availability"
+                ],
+                "benefits": [
+                  "Increased production",
+                  "Reduced OPEX"
+                ]
+              },
+              {
+                "id": "operations",
+                "process": "Effective operations",
+                "solutions": [
+                  "Integrity monitoring",
+                  "Remote operations"
+                ],
+                "improvements": [
+                  "Increased efficiency",
+                  "Reduced logistics"
+                ],
+                "benefits": [
+                  "Reduced OPEX",
+                  "Improved HSE"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "procurement",
+            "heading": "Equipment sourcing and procurement",
+            "intro": "We source and procure production and surface processing equipment from leading original equipment manufacturers.",
+            "categories": [
+              {
+                "id": "pumps",
+                "label": "Pumps",
+                "brands": [
+                  "Centrifugal and reciprocating pumps: Ruhrpumpen, Dean, D-Pump, NOV, Viking",
+                  "Chemical injection pumps: Wilden, Texsteam"
+                ]
+              },
+              {
+                "id": "metering",
+                "label": "Metering and flow",
+                "brands": [
+                  "Meters: Brodie, Smith",
+                  "Turbine meters: Dresser",
+                  "LACT and prover units",
+                  "Orifice fittings and plates: Daniel",
+                  "Flow monitoring and control systems",
+                  "NUFLO MC-III EXP flow analyzers"
+                ]
+              },
+              {
+                "id": "valves",
+                "label": "Valves and actuation",
+                "brands": [
+                  "Valves: KTM, CWT, Warren, Versa",
+                  "Control valves: Fisher, Masoneilan, Maskot",
+                  "Actuators: Valtek, Emerson Bettis",
+                  "Fisher regulators",
+                  "Solenoid valves: ASCO, Norgren",
+                  "Swagelok valves and fittings",
+                  "Positioners: Siemens PS2"
+                ]
+              },
+              {
+                "id": "instrumentation",
+                "label": "Instrumentation",
+                "brands": [
+                  "Pressure, flow and temperature transmitters: Rosemount, Endress+Hauser, ABB",
+                  "Pressure and temperature gauges and switches: Wika, Ashcroft, Bourdon Haenni, Axelson",
+                  "Chart recorders: Barton",
+                  "Allen-Bradley instruments",
+                  "Budenberg calibration equipment"
+                ]
+              },
+              {
+                "id": "process-control",
+                "label": "Process control and automation",
+                "brands": [
+                  "ABB process control and automation: DCS, ECS and HIS systems"
+                ]
+              },
+              {
+                "id": "compression",
+                "label": "Compression and safety",
+                "brands": [
+                  "Instrument air compressor packages: Quincy, Ingersoll Rand",
+                  "Gas sensors and detection"
+                ]
+              },
+              {
+                "id": "mechanical",
+                "label": "Mechanical components",
+                "brands": [
+                  "SKF bearings"
+                ]
+              }
+            ],
+            "note": "{{CONFIRM: brand names may be listed publicly; confirm whether Sato or its partner holds any authorised distributor status}}"
+          }
         ]
       },
-      {
-        "id": "asset-management",
-        "heading": "Integrated asset management and production optimization",
-        "items": [
-          "Reservoir, well and facility production proxy modelling, multi-sensor data assimilation and uncertainty quantification",
-          "Well operating envelopes and well integrity",
-          "Production monitoring and management of reservoirs, wells and facilities",
-          "Production capacity forecasting, production loss management and production enhancement"
-        ]
-      },
-      {
-        "id": "field-development",
-        "heading": "Field development planning and reservoir management",
-        "items": [
-          "Field development planning, review, evaluation and optimization",
-          "Reservoir characterization and geo-modelling",
-          "Reservoir simulation and production forecasting",
-          "Integrated reservoir management standards"
+      "partnerships": {
+        "intro": [
+          "Sato and its technical partners have delivered projects for independent, national and international oil companies across the Middle East, South America, North America, Africa, Europe and Australia."
         ]
       }
-    ],
-    "solutions": {
-      "heading": "Technology solutions",
-      "items": [],
-      "groups": [
-        {
-          "id": "subsurface",
-          "heading": "Subsurface and seismic",
-          "items": [
-            {
-              "name": "Seismic inversion",
-              "description": "Stochastic seismic inversion using proprietary technology."
-            },
-            {
-              "name": "Time-lapse seismic analysis",
-              "description": "Time-lapse data integrated with production data and reservoir simulation, for dynamic reservoir characterization."
-            },
-            {
-              "name": "Simulation-to-seismic analysis",
-              "description": ""
-            },
-            {
-              "name": "Integrated reservoir characterization",
-              "description": "A complete study workflow, from seismic interpretation and stochastic reservoir modelling through to history matching."
-            }
-          ]
-        },
-        {
-          "id": "field-development",
-          "heading": "Field development and reservoir management",
-          "items": [
-            {
-              "name": "Field development planning",
-              "description": ""
-            },
-            {
-              "name": "Mature field potential analysis",
-              "description": "Static data such as seismic integrated with production data, with a thin-layer evaluation method, to evaluate mature field potential both laterally and in vertical cross-section."
-            },
-            {
-              "name": "Reservoir surveillance, monitoring and management",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": "production",
-          "heading": "Production and facilities",
-          "items": [
-            {
-              "name": "Production optimization and enhancement",
-              "description": "An injection allocation function determined from production data, integrated with seismic and other information where it is available."
-            },
-            {
-              "name": "Completions and wellbore interventions",
-              "description": ""
-            },
-            {
-              "name": "Topside facilities management",
-              "description": ""
-            },
-            {
-              "name": "Produced water management",
-              "description": ""
-            },
-            {
-              "name": "Multiphase flow metrology",
-              "description": ""
-            },
-            {
-              "name": "Process instrumentation, control and optimization",
-              "description": ""
-            }
-          ]
-        }
-      ]
-    },
-    "alsoCovered": {
-      "heading": "Also covered",
-      "items": [
-        "Drilling services optimization",
-        "Asset integrity management",
-        "Mature field management",
-        "Virtual asset management for integrated energy systems"
-      ]
-    },
-    "procurement": {
-      "heading": "Equipment sourcing and procurement",
-      "intro": "We source and procure production and surface processing equipment from leading original equipment manufacturers.",
-      "categories": [
-        {
-          "id": "pumps",
-          "label": "Pumps",
-          "brands": [
-            "Centrifugal and reciprocating pumps: Ruhrpumpen, Dean, D-Pump, NOV, Viking",
-            "Chemical injection pumps: Wilden, Texsteam"
-          ]
-        },
-        {
-          "id": "metering",
-          "label": "Metering and flow",
-          "brands": [
-            "Meters: Brodie, Smith",
-            "Turbine meters: Dresser",
-            "LACT and prover units",
-            "Orifice fittings and plates: Daniel",
-            "Flow monitoring and control systems",
-            "NUFLO MC-III EXP flow analyzers"
-          ]
-        },
-        {
-          "id": "valves",
-          "label": "Valves and actuation",
-          "brands": [
-            "Valves: KTM, CWT, Warren, Versa",
-            "Control valves: Fisher, Masoneilan, Maskot",
-            "Actuators: Valtek, Emerson Bettis",
-            "Fisher regulators",
-            "Solenoid valves: ASCO, Norgren",
-            "Swagelok valves and fittings",
-            "Positioners: Siemens PS2"
-          ]
-        },
-        {
-          "id": "instrumentation",
-          "label": "Instrumentation",
-          "brands": [
-            "Pressure, flow and temperature transmitters: Rosemount, Endress+Hauser, ABB",
-            "Pressure and temperature gauges and switches: Wika, Ashcroft, Bourdon Haenni, Axelson",
-            "Chart recorders: Barton",
-            "Allen-Bradley instruments",
-            "Budenberg calibration equipment"
-          ]
-        },
-        {
-          "id": "process-control",
-          "label": "Process control and automation",
-          "brands": [
-            "ABB process control and automation: DCS, ECS and HIS systems"
-          ]
-        },
-        {
-          "id": "compression",
-          "label": "Compression and safety",
-          "brands": [
-            "Instrument air compressor packages: Quincy, Ingersoll Rand",
-            "Gas sensors and detection"
-          ]
-        },
-        {
-          "id": "mechanical",
-          "label": "Mechanical components",
-          "brands": [
-            "SKF bearings"
-          ]
-        }
-      ],
-      "note": "{{CONFIRM: brand names may be listed publicly; confirm whether Sato or its partner holds any authorised distributor status}}"
     },
     "partner": {
-      "heading": "Experience of our partner team",
-      "intro": "Our technical partners have delivered projects for national oil companies, international oil companies, governments and service companies across the Middle East, the Americas, Africa and Australia.",
       "name": "",
       "nameLabel": "Technical partner",
       "figures": [],
@@ -544,6 +928,7 @@
       "projectsShowLessLabel": "Show fewer projects",
       "projectsDisclosureNote": "The remaining projects are added to the table above."
     },
+    "showSectionsInMenu": true,
     "relatedProjectSlugs": [],
     "relatedServiceSlugs": [
       "digital-twin"
@@ -555,160 +940,8 @@
       "width": 1672,
       "height": 941
     },
-    "sectionNav": [
-      {
-        "id": "capabilities",
-        "label": "Capabilities"
-      },
-      {
-        "id": "solutions",
-        "label": "Solutions"
-      },
-      {
-        "id": "projects",
-        "label": "Projects",
-        "href": "/projects/oil-gas"
-      },
-      {
-        "id": "partnerships",
-        "label": "Partnerships"
-      }
-    ],
-    "solutionsPyramid": {
-      "heading": "From surveillance to transformation",
-      "intro": "Each tier rests on the one below it: nothing is optimised that is not first analysed, and nothing is analysed that is not first measured.",
-      "alt": "Four-tier pyramid. Surveillance forms the base, then Analysis, then Optimization, with Transformation at the apex. Each tier is listed in full below the diagram.",
-      "tiers": [
-        {
-          "id": "surveillance",
-          "label": "Surveillance",
-          "items": [
-            "Production Allocation",
-            "Well Test Validation",
-            "KPI Monitoring",
-            "Zonal Split Calculation",
-            "Virtual Metering",
-            "BHP & BHT Correction",
-            "Reserves Tracking"
-          ]
-        },
-        {
-          "id": "analysis",
-          "label": "Analysis",
-          "items": [
-            "Flow Assurance",
-            "Production Decline Analysis",
-            "Reservoir Performance",
-            "Model Updating",
-            "Production Performance"
-          ]
-        },
-        {
-          "id": "optimization",
-          "label": "Optimization",
-          "items": [
-            "Short Term Work Plans",
-            "Mid Term Work Plans",
-            "Long Term Work Plans"
-          ]
-        },
-        {
-          "id": "transformation",
-          "label": "Transformation",
-          "items": [
-            "Maximum Ultimate Recovery"
-          ]
-        }
-      ]
-    },
-    "valueMap": {
-      "heading": "Where the value comes from",
-      "intro": "Four business processes, the solutions applied to each, the improvement each produces and the benefit it returns.",
-      "image": {
-        "src": "/images/oil-gas/business-value-map.webp",
-        "alt": "Diagram mapping four business processes through solutions and improvements to their business benefits. The same content is set out as a table below.",
-        "width": 1903,
-        "height": 1745
-      },
-      "alternativeLabel": "Read the diagram as text",
-      "columns": {
-        "process": "Business process",
-        "solutions": "Solutions",
-        "improvements": "Improvement",
-        "benefits": "Benefits"
-      },
-      "rows": [
-        {
-          "id": "field-development",
-          "process": "Effective field development",
-          "solutions": [
-            "4D seismic",
-            "Smart wells"
-          ],
-          "improvements": [
-            "Fewer development wells",
-            "Improved sweep",
-            "Increased well production"
-          ],
-          "benefits": [
-            "Reduced CAPEX",
-            "Increased recovery",
-            "Increased production"
-          ]
-        },
-        {
-          "id": "well-and-reservoir",
-          "process": "Well and reservoir management",
-          "note": "The smart fields foundation.",
-          "solutions": [
-            "Integrated production system modelling",
-            "Production performance monitoring"
-          ],
-          "improvements": [
-            "Increased well production",
-            "Facility improvement",
-            "Reduced deferment"
-          ],
-          "benefits": [
-            "Increased production"
-          ]
-        },
-        {
-          "id": "facilities",
-          "process": "Facilities management",
-          "solutions": [
-            "Collaborative work environments",
-            "Real-time surveillance",
-            "Rotating equipment monitoring"
-          ],
-          "improvements": [
-            "Faster response and optimized production",
-            "Increased facility capacity",
-            "Increased availability"
-          ],
-          "benefits": [
-            "Increased production",
-            "Reduced OPEX"
-          ]
-        },
-        {
-          "id": "operations",
-          "process": "Effective operations",
-          "solutions": [
-            "Integrity monitoring",
-            "Remote operations"
-          ],
-          "improvements": [
-            "Increased efficiency",
-            "Reduced logistics"
-          ],
-          "benefits": [
-            "Reduced OPEX",
-            "Improved HSE"
-          ]
-        }
-      ]
-    }
+    "headerOverlay": true,
+    "images": []
   },
   {
     "slug": "digital-twin",
@@ -718,27 +951,127 @@
     "reviewStatus": "draft",
     "shortSummary": "Asset data, analytics and virtual models of physical infrastructure.",
     "summary": "Turning asset data into a working digital model that operators can plan and maintain from.",
-    "body": [
-      "A digital twin is a maintained virtual model of a physical asset, fed by its own operating and inspection data, used to plan maintenance, test changes before they are made and see condition without going to site.",
-      "Sato approaches this from the infrastructure side: the firm already supplies and installs the metering and instrumentation that such a model depends on. Delivery is with technical partners, and Sato has no completed digital twin projects to cite yet."
-    ],
-    "capabilities": [
-      "Virtual asset management and digital twin models",
-      "Asset data capture, structuring and management",
-      "Big data platforms and analytics for infrastructure and energy assets",
-      "Instrumentation and telemetry to feed asset models",
-      "Condition and performance dashboards",
-      "Digitalisation of maintenance and inspection records",
-      "Integration with metering and utility billing data"
-    ],
+    "sections": {
+      "capabilities": {
+        "intro": [
+          "A digital twin is a model of a physical asset that is kept true to it: built from the asset's own drawings, instrumentation and operating records, and accurate enough that a change can be tested on the model before it is made on the plant. Used well, it turns a small number of measurement points into a picture of the whole system.",
+          "Sato approaches this from the infrastructure side. We already supply, install and commission the metering and instrumentation such a model depends on, and we already hold the asset records — drawings, as-builts, inspection histories — that give it something to be built from. The modelling and simulation are delivered with our technical partners.",
+          "This page describes a capability. Sato has no completed digital twin project to cite yet, and delivered work will be described here as it is finished."
+        ],
+        "groups": [
+          {
+            "id": "asset-data",
+            "heading": "Asset data and information management",
+            "items": [
+              {
+                "name": "Capture and structuring of asset records: drawings, as-builts, inspection and maintenance histories"
+              },
+              {
+                "name": "Information management standards and workflows, so a model can be kept current rather than rebuilt"
+              },
+              {
+                "name": "Digitalisation of paper maintenance, inspection and commissioning records"
+              }
+            ]
+          },
+          {
+            "id": "instrumentation",
+            "heading": "Instrumentation and telemetry",
+            "items": [
+              {
+                "name": "Field instrumentation, metering and telemetry specified and installed to feed an asset model"
+              },
+              {
+                "name": "Integration with existing metering, SCADA and utility billing data"
+              },
+              {
+                "name": "Condition and performance dashboards for the people operating the asset"
+              }
+            ]
+          },
+          {
+            "id": "modelling",
+            "heading": "Modelling, simulation and virtual testing",
+            "items": [
+              {
+                "name": "Physics-based and data-driven models of structures, plant and process systems"
+              },
+              {
+                "name": "Virtual testing of operating changes, uprating and modifications before they are made"
+              },
+              {
+                "name": "Model validation against measured behaviour, and re-validation as the asset changes"
+              },
+              {
+                "name": "Reservoir, well and production digital twins for oil and gas assets"
+              }
+            ]
+          }
+        ]
+      },
+      "solutions": {
+        "intro": [
+          "What a maintained model is actually for. Each of these is a decision an operator has to make anyway; the twin changes what it is made on."
+        ],
+        "groups": [
+          {
+            "id": "monitoring",
+            "heading": "Condition monitoring from a few sensors",
+            "description": [
+              "A model calibrated against measurement infers what is happening across a structure or a system from the handful of points where instrumenting it is practical. That is usually the difference between monitoring an asset and instrumenting all of it."
+            ]
+          },
+          {
+            "id": "maintenance",
+            "heading": "Maintenance planned on evidence",
+            "description": [
+              "Inspection and intervention planned against what the measurements and the model say about condition, rather than against a fixed calendar that is either too early or too late."
+            ]
+          },
+          {
+            "id": "what-if",
+            "heading": "Testing a change before it is made",
+            "description": [
+              "Operating changes, modifications and uprating tried on the model first, where being wrong costs nothing and where the answer arrives before the shutdown is booked."
+            ]
+          },
+          {
+            "id": "production",
+            "heading": "Real-time production optimization",
+            "description": [
+              "For oil and gas assets, the real-time optimization, AI-assisted production and reservoir work set out under Oil & Gas Services, delivered with the same partner team. The solutions stack there — surveillance, analysis, optimization, transformation — is the same one applied to a producing field."
+            ],
+            "href": "/services/oil-gas#solutions",
+            "linkLabel": "The oil and gas solutions stack"
+          },
+          {
+            "id": "metering",
+            "heading": "Metering data and water accounting",
+            "description": [
+              "Bulk and consumer metering brought together so a water undertaking can see where water and revenue are being lost. Sato has supplied and installed metering at that scale; the analysis built on top of it is what is new."
+            ]
+          }
+        ]
+      },
+      "partnerships": {
+        "intro": [
+          "Sato delivers digitalization and digital twin work with its technical partners. The modelling, simulation and data science sit with them; the asset knowledge, the instrumentation and the site delivery sit with us.",
+          "It is the same technical partner team that delivers Sato's oil and gas services."
+        ]
+      }
+    },
     "relatedProjectSlugs": [],
+    "relatedServiceSlugs": [
+      "oil-gas"
+    ],
     "registrations": [],
     "image": {
       "src": "/images/services/water-meter-installation.webp",
       "alt": "Water meter being installed for Ogun State Water Corporation",
       "width": 1920,
       "height": 1440
-    }
+    },
+    "images": []
   },
   {
     "slug": "research-innovation",
@@ -748,25 +1081,111 @@
     "reviewStatus": "draft",
     "shortSummary": "Applied studies, technical training and new engineering methods.",
     "summary": "Applied research, technical training and the evaluation of new methods and technologies.",
-    "body": [
-      "Sato invests in the technical development of its own people and, with partners, in applied studies that test whether a method or technology is worth adopting on the projects we deliver.",
-      "This division is new. It is offered as a capability rather than a record of delivered research, and its scope will be described more precisely as work is completed."
-    ],
-    "capabilities": [
-      "Applied engineering studies and feasibility work",
-      "Evaluation of new materials, methods and technologies",
-      "Technical training for client and contractor teams",
-      "Petro-technical and facility management training",
-      "Cost engineering and estimation",
-      "Knowledge transfer and capability building on projects"
-    ],
+    "sections": {
+      "capabilities": {
+        "intro": [
+          "Research here means answering a question a project cannot proceed without: whether a method will work on this ground, whether a technology is worth adopting, what a material really costs across its life. It is applied work with a decision at the end of it.",
+          "Sato invests in the technical development of its own people and, with its technical partners, in studies that test a method or a technology before it is committed to on a contract.",
+          "This division is new. It is offered as a capability rather than as a record of completed research, and its scope will be described more precisely as work is delivered."
+        ],
+        "groups": [
+          {
+            "id": "studies",
+            "heading": "Applied engineering studies",
+            "items": [
+              {
+                "name": "Feasibility and options studies where the engineering answer is not settled"
+              },
+              {
+                "name": "Evaluation of new materials, methods and construction techniques against site conditions"
+              },
+              {
+                "name": "Cost engineering, estimation and whole-life cost comparison"
+              }
+            ]
+          },
+          {
+            "id": "computational",
+            "heading": "Computational methods and tooling",
+            "items": [
+              {
+                "name": "Numerical modelling and simulation applied to a specific engineering question"
+              },
+              {
+                "name": "Small analysis tools built for a workflow that no product covers"
+              },
+              {
+                "name": "Assessment of software and analysis platforms before a team commits to one"
+              }
+            ]
+          },
+          {
+            "id": "training",
+            "heading": "Training and knowledge transfer",
+            "items": [
+              {
+                "name": "Technical training for client and contractor teams, on the plant and systems they will operate"
+              },
+              {
+                "name": "Petro-technical and facility management training"
+              },
+              {
+                "name": "Knowledge transfer built into project delivery rather than bolted on at handover"
+              }
+            ]
+          }
+        ]
+      },
+      "solutions": {
+        "groups": [
+          {
+            "id": "evaluation",
+            "heading": "Method and technology evaluation",
+            "description": [
+              "A defined question, a method for answering it, and a recommendation the client can act on or reject. Scoped so the cost of the study stays small against the cost of getting the decision wrong."
+            ]
+          },
+          {
+            "id": "analysis",
+            "heading": "Engineering analysis on demand",
+            "description": [
+              "Modelling and analysis brought in for one problem — a structure, a system, a failure — without the client having to buy and staff the capability permanently."
+            ]
+          },
+          {
+            "id": "tooling",
+            "heading": "Custom analysis tooling",
+            "description": [
+              "Where a calculation or a workflow is repeated often enough to be worth automating, we build the tool for it rather than selling a platform to run it on."
+            ]
+          },
+          {
+            "id": "training",
+            "heading": "Training programmes",
+            "description": [
+              "Training written around the client's own plant, records and operating conditions, and delivered by engineers who work on them."
+            ]
+          }
+        ]
+      },
+      "partnerships": {
+        "intro": [
+          "Sato delivers research, technology and innovation work with its technical partners. The applied research and computational capability sit with them; the engineering question, the site and the project context sit with us.",
+          "It is the same technical partner team that delivers Sato's oil and gas and digital twin services."
+        ]
+      }
+    },
     "relatedProjectSlugs": [],
+    "relatedServiceSlugs": [
+      "digital-twin"
+    ],
     "registrations": [],
     "image": {
       "src": "/images/services/water-meter-training.webp",
       "alt": "Ogun State Water Corporation staff being trained on water meter installation",
       "width": 1920,
       "height": 1440
-    }
+    },
+    "images": []
   }
 ]

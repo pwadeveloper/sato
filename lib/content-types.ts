@@ -403,6 +403,27 @@ export interface Page {
   /** Open Graph image. Falls back to the first of `site.heroImages`. */
   ogImage?: ImageRef;
   sections: PageSection[];
+  /**
+   * The Capabilities · Solutions · Partnerships sections, for a page that is
+   * a service category rather than a service.
+   *
+   * `/services/infrastructure` is a landing page over four disciplines, but
+   * a reader arriving from the nav does not know that and should not have to
+   * learn a second page shape to read it. So it renders the same three
+   * sections through the same components, out of a `Page` instead of a
+   * `Service`. It is the only page that has this.
+   */
+  serviceSections?: ServiceSections;
+  /**
+   * Copy on this page that Sato has not yet approved.
+   *
+   * The same gate as a service's: `draft` fails `npm run build:prod` and
+   * shows the draft banner in a review build. A page carries it only where it
+   * holds capability copy of its own — the Infrastructure landing page does,
+   * because its four types and five solution areas are written here and not
+   * on any service.
+   */
+  reviewStatus?: ReviewStatus;
 }
 
 /* -------------------------------------------------------------- services */
@@ -448,13 +469,12 @@ export type ReviewStatus = "approved" | "draft";
 /**
  * One entry in a service page's in-page sub-nav.
  *
- * A service whose page is long enough to need sections declares them here,
- * and that one list drives the sticky sub-nav on the page. It used to drive
- * the sub-items under the service in the header dropdown and the row of links
- * on the services overview as well, and still does for any section that is
- * actually on the page — see `href`. Declaring the sections in content is
- * what keeps the page template free of any knowledge of which service it is
- * rendering.
+ * Derived, never authored: `getServiceSections()` builds the list from what
+ * the service's `sections` actually hold, so a section with no content has
+ * no heading, no anchor and no item here, and nobody has to remember to keep
+ * a hand-written list in step with the copy. The labels come from
+ * `pages/services.json`, which is why Capabilities is the same word on all
+ * eight pages.
  */
 export interface ServiceSection {
   /** The anchor, e.g. `capabilities` -> `#capabilities`. */
@@ -463,8 +483,8 @@ export interface ServiceSection {
   /**
    * Where the item points, when the section is not on this page.
    *
-   * The Oil & Gas projects moved to `/projects/oil-gas`, and the sub-nav item
-   * followed them. An entry with an `href` is a destination rather than a
+   * The Oil & Gas projects live at `/projects/oil-gas`, and the sub-nav item
+   * points there. An entry with an `href` is a destination rather than a
    * part of this page, and three things follow from that: the in-page sub-nav
    * links out to it, the page renders no section and no `#id` anchor for it,
    * and the header dropdown and services overview leave it out entirely,
@@ -514,13 +534,6 @@ export interface ValueMap {
     improvements: ConfirmableText[];
     benefits: ConfirmableText[];
   }>;
-}
-
-/** A named group of capabilities, where one flat list would be unreadable. */
-export interface CapabilityBlock {
-  id: string;
-  heading: ConfirmableText;
-  items: ConfirmableText[];
 }
 
 /** One named item in a service list, where a bare phrase needs explaining. */
@@ -596,17 +609,20 @@ export interface PartnerCaseStudy {
 }
 
 /**
- * Work delivered by a technical partner, not by Sato.
+ * The record of work delivered by a technical partner, not by Sato.
  *
- * This block exists to keep the two records apart. Everything inside it is
- * rendered under an explicit attribution line, and none of it reaches the
- * projects index, the project count or Sato's structured data. Presenting a
- * partner's track record as Sato's own would not survive the first
- * vendor-verification call.
+ * This block is the *record* — the project table, the wider engagements and
+ * the case study — and it is read in one place, `/projects/oil-gas`, under
+ * the attribution line that category prints. It carries no heading and no
+ * prose of its own: the words that describe the relationship belong to the
+ * service page's Partnerships section (`sections.partnerships`), so the
+ * sentence a reader meets is edited in the same place as the rest of that
+ * page rather than buried in the table's own content.
+ *
+ * None of it reaches the projects index, the project count or Sato's
+ * structured data.
  */
 export interface PartnerBlock {
-  heading: ConfirmableText;
-  intro: ConfirmableText;
   /** The collaborator's name. Empty until Sato confirms we may print it. */
   name: ConfirmableText;
   /** Label for the name, e.g. "Technical partner". */
@@ -626,6 +642,86 @@ export interface PartnerBlock {
   caseStudy?: PartnerCaseStudy;
 }
 
+/**
+ * One subsection of a service section — an `h3` with something under it.
+ *
+ * The same shape carries three different-looking things, because they are
+ * the same thing: a named area of work with a sentence or two about it, a
+ * list under it, or both. Oil & Gas's three capability areas are groups with
+ * items and no description; the Infrastructure landing page's four
+ * infrastructure types are groups with a description, a photograph and a
+ * link on to their own page; a solution area is a group with a description
+ * and nothing else.
+ */
+export interface ServiceSectionGroup {
+  id: string;
+  heading: ConfirmableText;
+  /** One to three sentences under the heading. */
+  description?: ConfirmableText[];
+  /** The list under it. Bare phrases, or names with their own descriptions. */
+  items?: ServiceListItem[];
+  /** A photograph for the group, where the group is worth a picture. */
+  image?: ImageRef;
+  /** Link on, e.g. an infrastructure type to its own service page. */
+  href?: string;
+  /** Label for that link. Falls back to the page's own default. */
+  linkLabel?: ConfirmableText;
+}
+
+/**
+ * A block a section renders after its groups, under its own `h3`.
+ *
+ * Tagged rather than a set of optional fields, so the order the blocks
+ * appear in is the order they are written in the content, and a service that
+ * wants two lists or two diagrams needs no new field. Every variant is the
+ * existing shape plus its tag, so the JSON did not have to be rewritten to
+ * gain the union.
+ */
+export type ServiceMedia =
+  | ({ type: "list" } & ServiceList)
+  | ({ type: "pyramid" } & SolutionsPyramid)
+  | ({ type: "valueMap" } & ValueMap)
+  | ({ type: "procurement" } & ProcurementBlock);
+
+/**
+ * One of the three sections every service page is built from.
+ *
+ * Empty is the normal state for two of the three on most services, and an
+ * empty section renders nothing at all — no heading, no anchor and no item
+ * in the sub-nav. `hasSectionContent()` in `lib/content.ts` is the single
+ * test for that, so "hidden when empty" cannot be implemented differently in
+ * two places.
+ */
+export interface ServiceSectionContent {
+  /** Framing paragraphs, directly under the section's `h2`. */
+  intro?: ConfirmableText[];
+  /** A flat hairline list under the intro, for a section with no subsections. */
+  items?: ConfirmableText[];
+  /** The `h3` subsections. */
+  groups?: ServiceSectionGroup[];
+  /** The narrow column beside the main content — "Also covered". */
+  aside?: ServiceList;
+  /** Lists and diagrams that follow the groups, each with its own `h3`. */
+  media?: ServiceMedia[];
+}
+
+/**
+ * Capabilities · Solutions · Partnerships — the same three sections, in the
+ * same order, on every service page.
+ *
+ * The client's instruction after the review call: a reader who has learned
+ * the shape of one service page has learned all of them. What varies between
+ * services is how much is in each section, not which sections there are.
+ * Partnerships is empty on Infrastructure and Energy because Sato has no
+ * technical partner to name there, and the section is simply absent from
+ * those pages.
+ */
+export interface ServiceSections {
+  capabilities?: ServiceSectionContent;
+  solutions?: ServiceSectionContent;
+  partnerships?: ServiceSectionContent;
+}
+
 export interface Service {
   slug: string;
   name: ConfirmableText;
@@ -635,27 +731,29 @@ export interface Service {
   shortSummary: ConfirmableText;
   /** Fuller summary used on the services overview and division pages. */
   summary: ConfirmableText;
-  body: ConfirmableText[];
-  capabilities: ConfirmableText[];
+  /** The three sections of the page, in the order they are rendered. */
+  sections: ServiceSections;
   /**
-   * Grouped capabilities, for a service whose offer is too broad for one
-   * list. When present the flat `capabilities` sidebar is not rendered.
+   * The record of the partner team's work, where the service has one.
+   *
+   * Not rendered on the service page: `/projects/oil-gas` reads it through
+   * the category's `source: "partner"`. The prose about the relationship is
+   * in `sections.partnerships`.
    */
-  capabilityBlocks?: CapabilityBlock[];
-  /** Named solutions, set as a dense two-column list. */
-  solutions?: ServiceList;
-  /** Shorter secondary scope list under the solutions. */
-  alsoCovered?: ServiceList;
-  procurement?: ProcurementBlock;
   partner?: PartnerBlock;
   /**
-   * Sections this service's page is broken into, in order. Present only on a
-   * page long enough to need navigating; absent, the page renders as one run
-   * and no sub-nav appears.
+   * Whether the Services dropdown and the services overview list this page's
+   * sections beneath its category heading.
+   *
+   * Off by default, and deliberately. Every service page now has the same
+   * three sections, so switching this on everywhere would print the same two
+   * or three generic words under every category in the menu — information
+   * the reader already has from the page being a service page. Oil & Gas
+   * declares it because its page is long enough that reaching a section from
+   * the menu saves a scroll, and because it is the one service whose sections
+   * include a destination off the page.
    */
-  sectionNav?: ServiceSection[];
-  solutionsPyramid?: SolutionsPyramid;
-  valueMap?: ValueMap;
+  showSectionsInMenu?: boolean;
   relatedProjectSlugs: string[];
   /** Other services to link on to, e.g. oil and gas -> digital twin. */
   relatedServiceSlugs?: string[];
@@ -663,7 +761,20 @@ export interface Service {
   /** The header shot. */
   image: ImageRef | null;
   /**
-   * Photographs of work delivered under this service, shown as a gallery.
+   * Whether the page sets its `h1` over the header photograph rather than
+   * above it.
+   *
+   * Off everywhere but Oil & Gas, whose artwork is drawn with an empty arc
+   * on the left for exactly this. Every other header is a photograph of real
+   * work, and text over a photograph has to be won at each breakpoint — on a
+   * header repeated across fifteen pages that fight gets lost somewhere.
+   * Turning this on for a picture that was not made for it is a contrast
+   * failure, not a style choice.
+   */
+  headerOverlay?: boolean;
+  /**
+   * Photographs of work delivered under this service, shown as a gallery at
+   * the foot of Capabilities.
    *
    * Separate from `image`, which is the header shot: these are the client's
    * own labelled photographs of completed work, dropped into

@@ -36,6 +36,9 @@ import type {
   Service,
   ServiceBand,
   ServiceGroup,
+  ServiceSection,
+  ServiceSectionContent,
+  ServiceSections,
   Site,
   TeamMember,
 } from "./content-types";
@@ -243,6 +246,95 @@ export function getServiceBands(): ServiceBand[] {
 /** Divisions whose copy Sato has not yet approved. Blocks a production build. */
 export function getDraftServices(): Service[] {
   return services.filter((service) => service.reviewStatus === "draft");
+}
+
+/**
+ * Pages carrying unapproved capability copy of their own.
+ *
+ * Only the Infrastructure landing page does: its four infrastructure types
+ * and its solution areas are written on the page, not on any service, so
+ * without this they would be the one body of capability copy on the site
+ * outside the review gate.
+ */
+export function getDraftPages(): Page[] {
+  return Object.values(pages).filter((page) => page.reviewStatus === "draft");
+}
+
+/**
+ * Whether a service section holds anything worth rendering.
+ *
+ * The single test behind "a section with no content is hidden, and so is its
+ * sub-nav item". Both the nav and the page ask this one function, so the two
+ * cannot disagree about whether Partnerships exists on Energy.
+ */
+export function hasSectionContent(
+  content: ServiceSectionContent | undefined,
+): content is ServiceSectionContent {
+  if (!content) return false;
+  return Boolean(
+    content.intro?.length ||
+      content.items?.length ||
+      content.groups?.length ||
+      content.media?.length ||
+      content.aside?.items.length ||
+      content.aside?.groups?.length,
+  );
+}
+
+/** The three template sections, in the order every service page renders them. */
+const SECTION_ORDER = ["capabilities", "solutions", "partnerships"] as const;
+
+/**
+ * A service page's sub-nav, derived from its content.
+ *
+ * Nothing here is authored. A section appears because it has something in
+ * it; Projects appears because a published project category names this
+ * service, and it appears as a destination — `href` — because the work lives
+ * under Projects and not on the service page. The labels come from
+ * `pages/services.json`, so "Capabilities" is one string for the whole site
+ * rather than eight copies that can drift apart.
+ *
+ * Order is fixed: Capabilities, Solutions, Projects, Partnerships. Projects
+ * sits third because that is where Oil & Gas has always had it, and because
+ * the record belongs between what we can do and who we do it with.
+ */
+export function getServiceSections(
+  sections: ServiceSections | undefined,
+  serviceSlug: string,
+): ServiceSection[] {
+  const labels = pages.services.labels ?? {};
+  const label = (id: string) =>
+    labels[`section${id[0].toUpperCase()}${id.slice(1)}`] ?? id;
+
+  const nav: ServiceSection[] = [];
+
+  for (const id of SECTION_ORDER) {
+    if (hasSectionContent(sections?.[id])) {
+      nav.push({ id, label: label(id) });
+    }
+
+    // Projects is not one of the three. It is slotted in after Solutions,
+    // and only when there is a published category to send the reader to.
+    if (id === "solutions") {
+      const category = getProjectCategories().find(
+        (facet) => facet.serviceSlug === serviceSlug,
+      );
+      if (category) {
+        nav.push({
+          id: "projects",
+          label: label("projects"),
+          href: `/projects/${category.slug}`,
+        });
+      }
+    }
+  }
+
+  return nav;
+}
+
+/** The same, for a service. */
+export function getServiceNav(service: Service): ServiceSection[] {
+  return getServiceSections(service.sections, service.slug);
 }
 
 export function getService(slug: string): Service {

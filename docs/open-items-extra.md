@@ -8,6 +8,38 @@
   sections into the matching generated group.
 -->
 
+## Answer these first
+
+### From the service structure round
+
+- **The new partnership line says Sato took part.** The Oil & Gas
+  Partnerships section now reads: "Sato and its technical partners have
+  delivered projects for independent, national and international oil
+  companies across the Middle East, South America, North America, Africa,
+  Europe and Australia." **Please confirm Sato was involved in those
+  projects.** This is a change from how they have been attributed so far —
+  everywhere else on the site the same work is labelled "Delivered by our
+  technical partner team." If Sato *was* involved, we update the project
+  attribution line to match. If it was not, we revert the sentence to "Our
+  technical partners have delivered projects for…". Nothing else was changed
+  in this round: `labels.partnerAttribution` and the Clients page are exactly
+  as they were.
+- **What counts as a client.** You defined a client as a company Sato
+  delivers solutions to and gets paid by. The oil and gas list on `/clients`
+  sits under the heading "clients served through our technical partners",
+  which may not fit that definition. **Confirm whether that block stays.**
+  Removing it is a content edit — the seventeen entries are the
+  `oil-gas-partner` category in `content/clients.json`.
+- **Partnerships for Infrastructure and Energy.** Every service page now has
+  a Partnerships section. Infrastructure Services and Energy Services have no
+  partnership information, so the section — and its item in the page's
+  sub-nav — is simply absent from both. **Who are Sato's technical partners
+  in these two areas, if any?** One or two sentences is enough; we do not
+  need names if you would rather not print them.
+- **US infrastructure reference site: awaiting link.** You mentioned a
+  US-based infrastructure site to look at. Send the link whenever it is
+  convenient; nothing is blocked on it.
+
 ## Client to confirm
 
 ### Client to send

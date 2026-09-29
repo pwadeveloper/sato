@@ -6,7 +6,7 @@ const SIZES = {
   h1: "text-h1 wdth-heading",
   h2: "text-h2 wdth-heading",
   h3: "text-h3 wdth-heading",
-  h4: "text-xl font-semibold wdth-heading",
+  h4: "text-lg font-bold wdth-heading",
 } as const;
 
 export interface HeadingProps {
@@ -22,6 +22,13 @@ export interface HeadingProps {
  * Headings are sentence case (CLAUDE.md rule 5) and set in Archivo's expanded
  * widths. `level` and `size` are separate so a visually large `h2` never has to
  * become an `h1` — one `h1` per page.
+ *
+ * This is the one heading scale a service page uses: `h1` the page title,
+ * `h2` the three template sections, `h3` every subsection inside them, `h4`
+ * only a group inside an `h3`. `h4` is `text-lg`, not `text-xl`: at the
+ * desktop end `text-xl` and `text-h3` are the same 1.625rem, so an `h4` set
+ * at `text-xl` was indistinguishable from the `h3` above it. Nothing on a
+ * service page sets a heading class of its own — see docs/heading-audit.md.
  */
 export function Heading({ level, text, size, id, className }: HeadingProps) {
   const Tag = `h${level}` as const;
