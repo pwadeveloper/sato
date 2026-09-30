@@ -118,9 +118,11 @@ arrives.
   gallery on each service page. **Keep your filenames descriptive**; they are
   what the alt text for blind and partially sighted readers is written from.
   The process is `docs/adding-client-photos.md`.
-- **The About photograph is a stand-in.** The completed road at the Federal
-  College of Education, Osiele is beside the About text for now. It will be
-  swapped for one of your new photographs when they arrive.
+- **The About photograph is a stand-in.** It is now one of your own tipping
+  trailers, chosen because the Sato branding is legible on it — you asked for
+  a photograph on that page that carries the mark. It replaced the completed
+  road at the Federal College of Education, Osiele. **Still a stand-in**: send
+  a better one and it is swapped in a line.
 
 ### Decisions from the fourth round of feedback
 

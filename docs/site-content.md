@@ -122,8 +122,12 @@ not to do.
 The client's four paragraphs, set beside a photograph of delivered work from
 `lg` up: seven columns of prose, five of picture, top-aligned with the first
 paragraph and sticky so the right-hand side is not empty by the fourth. Below
-`lg` the photograph sits above the text at a moderate height. The picture is
-the completed road at the Federal College of Education, Osiele, and it is a
+`lg` the photograph sits above the text at a moderate height. The picture is one of
+Sato's own tipping trailers, chosen on the client's instruction that the
+About photograph carry visible Sato branding — the mark is legible on the cab
+door and again on the trailer, and it survives the centre crop at every
+breakpoint, which the wheel loader's larger logo does not. It replaced the
+completed road at the Federal College of Education, Osiele, and it is still a
 placeholder for one of the client's own photographs when they arrive.
 "How we work",
 "Where we're going", the six-item Recognition list and the call to action are
