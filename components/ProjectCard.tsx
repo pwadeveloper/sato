@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RichText } from "./RichText";
 import { Tag } from "./Tag";
-import type { Project } from "@/lib/content-types";
+import type { ImageRef, Project } from "@/lib/content-types";
 import { isCompleted } from "@/lib/content";
 import { isKnown } from "@/lib/placeholders";
 import { cn } from "@/lib/cn";
@@ -31,6 +31,12 @@ export interface ProjectCardProps {
    */
   layout?: "stacked" | "wide";
   /**
+   * A generic photograph of Sato's work, shown when this project has none of
+   * its own. Resolved by `getProjectPlaceholder()` from the category, and
+   * never passed on the project detail page — see `CollectionFacet`.
+   */
+  fallbackImage?: ImageRef;
+  /**
    * Whether to print the year. Comes from `showProjectDates` in site.json —
    * passed in rather than read here, so the card stays a pure component and
    * one flag controls every date on the site.
@@ -47,10 +53,13 @@ export function ProjectCard({
   headingLevel = 3,
   layout = "stacked",
   showDates = true,
+  fallbackImage,
   className,
 }: ProjectCardProps) {
   const Tag_ = `h${headingLevel}` as const;
-  const image = project.images[0];
+  // The project's own photograph wins. A stand-in only ever fills a gap, and
+  // stops being used the moment the real one lands in projects.json.
+  const image = project.images[0] ?? fallbackImage;
   const shortLabel = sectorShortLabel || sectorLabel;
   const isWide = layout === "wide";
   const showYear = showDates && isKnown(project.year);

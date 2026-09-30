@@ -49,11 +49,27 @@
           "subcategories": [
             {
               "id": "buildings",
-              "label": "Buildings"
+              "label": "Buildings",
+              "placeholderImages": [
+                {
+                  "src": "/images/hero/building-site-drawings.webp",
+                  "alt": "A Sato engineer reading a drawing at a multi-storey building under construction",
+                  "width": 1536,
+                  "height": 1024
+                }
+              ]
             },
             {
               "id": "roads-pavements",
-              "label": "Roads & Pavements"
+              "label": "Roads & Pavements",
+              "placeholderImages": [
+                {
+                  "src": "/images/services/roadworks-asphalt-laying.webp",
+                  "alt": "Asphalt being laid by a paver on a Sato road contract",
+                  "width": 1920,
+                  "height": 1440
+                }
+              ]
             }
           ],
           "intro": "Buildings, roads, heavy-duty pavements, earthworks, drainage, kerbs and culverts — new-build, rehabilitation and conversion.",
@@ -78,7 +94,15 @@
             "width": 1920,
             "height": 1440
           },
-          "shortLabel": "Electrical"
+          "shortLabel": "Electrical",
+          "placeholderImages": [
+            {
+              "src": "/images/services/water-high-lift-pump-panel.webp",
+              "alt": "An installed high lift pump control panel on a Sato water scheme",
+              "width": 1600,
+              "height": 1200
+            }
+          ]
         },
         {
           "value": "mechanical-engineering",
@@ -102,7 +126,15 @@
             "width": 1600,
             "height": 1200
           },
-          "shortLabel": "Water"
+          "shortLabel": "Water",
+          "placeholderImages": [
+            {
+              "src": "/images/services/water-ductile-iron-pipes.webp",
+              "alt": "Ductile iron pipes stacked for a Sato water distribution contract",
+              "width": 1600,
+              "height": 1200
+            }
+          ]
         },
         {
           "value": "energy",

@@ -171,6 +171,8 @@ export type CollectionName =
 export interface FacetSubcategory {
   id: string;
   label: ConfirmableText;
+  /** Stand-in photographs for this subheading. See `CollectionFacet`. */
+  placeholderImages?: ImageRef[];
 }
 
 /** A group heading (clients, equipment) or a project category. */
@@ -230,6 +232,31 @@ export interface CollectionFacet {
   shortLabel?: ConfirmableText;
   /** The photograph on the category's tile and the header of its page. */
   image?: ImageRef;
+  /**
+   * Stand-in photographs for projects in this category that have none of
+   * their own, cycled so one frame is not repeated down a whole grid.
+   *
+   * Most of Sato's record predates the company photographing its work, so
+   * two thirds of the projects have no picture. A card with an empty panel
+   * reads as unfinished, and the client asked for the slots filled until his
+   * own batches arrive.
+   *
+   * **These are generic photographs of Sato's work, not of the project on
+   * the card.** Three rules keep that from becoming a false claim, and all
+   * three are load-bearing:
+   *
+   * 1. Their `alt` describes the photograph — "Asphalt being laid by a
+   *    paver" — and never names the project.
+   * 2. They appear on **cards only**. The project detail page's gallery is
+   *    headed "Project photographs" and shows nothing unless the project has
+   *    its own; a stand-in there would be a direct claim.
+   * 3. A subcategory may override the category, because a road photograph
+   *    over a building is worse than no photograph at all.
+   *
+   * Swapping one out is `project.images = [...]` in `projects.json` — the
+   * moment a project has its own photograph the stand-in stops being used.
+   */
+  placeholderImages?: ImageRef[];
 }
 
 /**

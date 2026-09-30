@@ -185,6 +185,25 @@ looking in either should find them. The first published category names its
 breadcrumb and its card; the rest are listed on its detail page under
 `labels.alsoIn`.
 
+**A card with no photograph shows its category's stand-in.** Two thirds of
+the record predates Sato photographing its own work, so a category page was
+mostly empty panels. The facet — or its subcategory, which wins — declares
+**`placeholderImages[]`**, and `getProjectPlaceholder()` hands one to
+`ProjectCard` when the project has none of its own. Four are set today:
+Buildings, Roads & Pavements, Electrical Engineering and Water Resources.
+
+**They are generic photographs of Sato's work, not of the project on the
+card**, and three things keep that from becoming a false claim. Their `alt`
+describes the photograph and never names the project. **They appear on cards
+only** — the detail page's gallery is headed "Project photographs" and shows
+nothing unless the project has its own, because a stand-in under that heading
+would be a claim rather than a placeholder. And a subcategory overrides its
+category, because a road photograph over a building is worse than no
+photograph. One frame repeating down a grid is deliberate: it reads as a
+stand-in, which is what it is. Swapping one out is `project.images = [...]`
+in `projects.json` — the stand-in stops being used the moment the real
+photograph lands.
+
 **A category may split its grid under subheadings.** The facet declares
 `subcategories[]` and a project names one in `subcategory`. Civil Engineering
 & Construction is the only one: thirty projects run under "Buildings" and
@@ -292,7 +311,7 @@ old `/safety-policies/` redirect to `/about`. The rewritten content is kept in
   written in and a second diagram needs no new field. A `ServiceList`
   (`aside`, a `list` media block, `engagements`) is either flat — `items`,
   bare phrases — or grouped, with **`groups[]`** of `{ name, description }`.
-- `projects.json` — array: slug, title, **categories[]**, **deliveredBy**, summary, scope[], images[], **optional** `subcategory`, and **optional** client, location, year, status. `categories` holds facet values — the same slugs as the services — and more than one is normal. `deliveredBy` is `"sato"` or `"partner"` and drives the attribution line. Empty means hidden, never placeheld. `status` is only ever `"Completed"` or empty — the site never labels work as ongoing.
+- `projects.json` — array: slug, title, **categories[]**, **deliveredBy**, summary, scope[], images[], **optional** `subcategory`, and **optional** client, location, year, status. `images` empty means the card falls back to its category's `placeholderImages` and the detail page shows no gallery at all. `categories` holds facet values — the same slugs as the services — and more than one is normal. `deliveredBy` is `"sato"` or `"partner"` and drives the attribution line. Empty means hidden, never placeheld. `status` is only ever `"Completed"` or empty — the site never labels work as ongoing.
 - `clients.json` — array: name, category (federal / state / international / education / private / **oil-gas-partner**), logo?. The page shows names only — no logos, no category headings, no agencies nested under a government. `oil-gas-partner` entries render in a separate block under their own attributed heading and sit behind the same review gate as the Oil & Gas page. **This heading is now inconsistent with `/projects/oil-gas`**, which no longer attributes; the client was asked which way to settle it (see `docs/open-items.md`) and nothing changes here until he answers.
 - `team.json` — array: slug, name, title, isLeadership, **published**, bio, qualifications[], memberships[], photo?. `published: false` keeps a record in the file but off the site, the sitemap and the structured data.
 - `equipment.json` — array: name, category, quantity?, notes?

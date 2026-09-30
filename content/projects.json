@@ -699,7 +699,14 @@
     "status": "Completed",
     "summary": "Thirty-three lock-up shops at Owode-Yewa International Market, delivered with Dosak Resources Limited and Damdok Ventures Limited.",
     "scope": [],
-    "images": [],
+    "images": [
+      {
+        "src": "/images/projects-unassigned/owode-yewa-blocks-of-shops.webp",
+        "alt": "Completed blocks of shops at Owode-Yewa International Market",
+        "width": 1920,
+        "height": 1440
+      }
+    ],
     "featured": false
   },
   {
@@ -716,7 +723,20 @@
     "status": "Completed",
     "summary": "Construction of the Horizon Suites hotel complex.",
     "scope": [],
-    "images": [],
+    "images": [
+      {
+        "src": "/images/projects-unassigned/horizon-suites-1.webp",
+        "alt": "Entrance to the completed Horizon Suites hotel complex, Ibadan",
+        "width": 929,
+        "height": 732
+      },
+      {
+        "src": "/images/projects-unassigned/horizon-suites-2.webp",
+        "alt": "Driveway and chalets at the completed Horizon Suites hotel complex, Ibadan",
+        "width": 1101,
+        "height": 741
+      }
+    ],
     "featured": false
   },
   {
@@ -733,7 +753,14 @@
     "status": "Completed",
     "summary": "Obstetrics care facility at Mowe.",
     "scope": [],
-    "images": [],
+    "images": [
+      {
+        "src": "/images/projects-unassigned/obstetrics-care-facility-mowe.webp",
+        "alt": "Obstetrics care facility under construction at Mowe",
+        "width": 927,
+        "height": 639
+      }
+    ],
     "featured": false
   },
   {
@@ -750,7 +777,14 @@
     "status": "Completed",
     "summary": "National primary health centre at Alabi-Olorunda.",
     "scope": [],
-    "images": [],
+    "images": [
+      {
+        "src": "/images/projects-unassigned/primary-health-centre-alabi-oloro.webp",
+        "alt": "Completed primary health centre at Alabi-Olorunda, Ifo",
+        "width": 602,
+        "height": 381
+      }
+    ],
     "featured": false
   },
   {

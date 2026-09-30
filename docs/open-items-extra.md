@@ -36,6 +36,24 @@
   sub-nav — is simply absent from both. **Who are Sato's technical partners
   in these two areas, if any?** One or two sentences is enough; we do not
   need names if you would rather not print them.
+- **Project photographs — stand-ins are in place.** Twenty-four of the
+  forty-one projects have no photograph of their own, so their cards were
+  blank panels. Each now shows a **generic photograph of Sato's work** for
+  its category — a building site for Buildings, asphalt laying for Roads &
+  Pavements, a pump control panel for Electrical, ductile iron pipes for
+  Water Resources. **These are not photographs of those projects**, and they
+  say so: the same frame repeats down the grid, the alt text for screen
+  readers describes the photograph rather than the job, and none of them
+  appears on a project's own page, where the gallery is headed "Project
+  photographs". Each is replaced by dropping the real photograph into that
+  project — nothing else changes. This is separate from the four service
+  galleries you are sending photographs for.
+- **Two recovered photographs are being held back.** Both came off the old
+  site and neither is certain: one captioned "residential development under
+  construction in Abeokuta" may or may not be the Akinyegun block of flats —
+  **is it?** — and one of the Abeokuta office, which is not a project and
+  could go on Contact or About if you want it there. **Say the word on
+  either.**
 - **US infrastructure reference site: awaiting link.** You mentioned a
   US-based infrastructure site to look at. Send the link whenever it is
   convenient; nothing is blocked on it.

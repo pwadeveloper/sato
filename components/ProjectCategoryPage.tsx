@@ -18,6 +18,7 @@ import {
   getProjectCategories,
   getProjectCategory,
   getProjectGroupsInCategory,
+  getProjectPlaceholder,
   getSection,
   getSite,
   isPartnerCategory,
@@ -136,12 +137,22 @@ export function ProjectCategoryPage({ slug }: { slug: string }) {
                   ) : null}
 
                   <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {group.items.map((project) => (
+                    {group.items.map((project, position) => (
                       <li key={project.slug} className="flex">
                         <ProjectCard
                           project={project}
                           sectorLabel={category.label}
                           sectorShortLabel={category.shortLabel}
+                          fallbackImage={getProjectPlaceholder(
+                            category,
+                            project,
+                            // Count only the cards that need a stand-in, so a
+                            // category carrying more than one spreads them
+                            // evenly instead of skipping past some.
+                            group.items
+                              .slice(0, position)
+                              .filter((earlier) => !earlier.images.length).length,
+                          )}
                           // Every card here is this category. Saying so eleven
                           // times is noise; the heading above already said it
                           // once.

@@ -25,6 +25,7 @@ import servicesPageJson from "@/content/pages/services.json";
 import type {
   Client,
   CollectionFacet,
+  ImageRef,
   CompanyFact,
   Equipment,
   Page,
@@ -472,6 +473,39 @@ export function getProjectGroupsInCategory(
   if (rest.length) groups.push({ items: rest });
 
   return groups;
+}
+
+/**
+ * The stand-in photograph for a project that has none of its own.
+ *
+ * Returns nothing when the project has its own photograph, when the category
+ * declares no stand-ins, or when the project is not in a subcategory that
+ * overrides them — in which case the card falls back to its empty panel, as
+ * before.
+ *
+ * `position` is the project's place in its grid, and the list is cycled
+ * through it, so a category with four stand-ins does not print the same
+ * frame down fifteen cards.
+ *
+ * This is deliberately not available to the project detail page. The gallery
+ * there is headed "Project photographs"; a generic shot under that heading
+ * would be a claim rather than a placeholder. See `CollectionFacet`.
+ */
+export function getProjectPlaceholder(
+  facet: CollectionFacet,
+  project: Project,
+  position: number,
+): ImageRef | undefined {
+  if (project.images.length) return undefined;
+
+  const sub = (facet.subcategories ?? []).find(
+    (entry) => entry.id === project.subcategory,
+  );
+  const pool = sub?.placeholderImages?.length
+    ? sub.placeholderImages
+    : facet.placeholderImages ?? [];
+
+  return pool.length ? pool[position % pool.length] : undefined;
 }
 
 /**
