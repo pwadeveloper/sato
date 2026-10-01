@@ -13,14 +13,17 @@ import { buildPageMetadata } from "@/lib/metadata";
 const page = getPage("leadership");
 const site = getSite();
 
+/** The only profile allowed to name countries. See the note below. */
+const FOUNDER_SLUG = "wale-osamiluyi";
+
 export const metadata: Metadata = buildPageMetadata(page, site);
 
 /**
  * Leadership.
  *
- * One person. `getTeam()` only returns published members, so anyone whose
- * status Sato has not confirmed cannot reach this page, the sitemap or the
- * structured data even if they remain in team.json.
+ * `getTeam()` only returns published members, so anyone whose status Sato has
+ * not confirmed cannot reach this page, the sitemap or the structured data
+ * even if they remain in team.json.
  *
  * The section below carries the weight the old roster used to: it explains
  * that a project is staffed to its scope rather than from a fixed payroll,
@@ -43,8 +46,8 @@ export default function LeadershipPage() {
 
       <Section tone="concrete">
         <Container>
-          {/* One person, so one column on the measure rather than a
-              two-up grid with an empty cell beside him. */}
+          {/* One column on the measure. These are long prose profiles, not
+              roster tiles, so they stack rather than sitting in a grid. */}
           <ul className="flex flex-col gap-12">
             {leadership.map((member) => (
               <li key={member.slug} className="max-w-(--container-measure)">
@@ -54,8 +57,10 @@ export default function LeadershipPage() {
                   qualificationsLabel={labels.qualifications ?? ""}
                   membershipsLabel={labels.memberships ?? ""}
                   // The one exemption from the no-country rule, and the only
-                  // place it is granted. See CLAUDE.md.
-                  allowCountry
+                  // place it is granted: the founder's own bio, by his own
+                  // instruction. Scoped to him by slug so a later profile on
+                  // this page cannot inherit it. See CLAUDE.md.
+                  allowCountry={member.slug === FOUNDER_SLUG}
                 />
               </li>
             ))}

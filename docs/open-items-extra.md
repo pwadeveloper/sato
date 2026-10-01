@@ -307,8 +307,15 @@ Also outstanding on the project record:
   (Awosika bus stop), Opebi, Ikeja, Lagos State." The site currently reads
   "No. 14 Agbaoku Street, Opebi, Ikeja, Lagos" with "Near Awosika bus stop."
   underneath. Unchanged until the contact page is revisited.
-- **The Leadership page.** Untouched. You are adding two or three more
-  people, and the page will be restructured once they are in.
+- **The Leadership page.** Structurally untouched. Afolabi Adeleke has been
+  added as the second profile, as supplied, and the page stacks the profiles
+  down one column as it did with one. The restructure you mentioned — profiles
+  that open on click — is still waiting on the rest of the people. Two notes
+  on his entry: his **role title at Sato** is the one thing the bio does not
+  give, so it is a placeholder and blocks the production build until you send
+  it; and the bio's opening line reads "West Africa, Canada and
+  internationally" rather than naming the first country, because the
+  no-country rule covers everyone on the site except you.
 - **The hero and header photographs.** You mentioned "the hero image" being
   too large on the Oil & Gas page; we read that as the business value map
   diagram, which is now a fifth smaller. No header photograph has been
