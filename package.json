@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:prod": "npm run check:placeholders && next build && npm run check:banned",
+    "build:prod": "npm run check:placeholders && npm run check:images && next build && npm run check:banned",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
@@ -13,6 +13,7 @@
     "images": "node scripts/optimise-images.mjs",
     "og": "node scripts/generate-og-image.mjs",
     "check:banned": "node scripts/check-banned-terms.mjs",
+    "check:images": "node scripts/check-image-metadata.mjs",
     "build:review": "NEXT_PUBLIC_REVIEW_MODE=1 next build"
   },
   "dependencies": {

@@ -2,7 +2,7 @@
 
 Everything the website still needs, grouped by who has to answer it.
 
-**3 placeholders outstanding** and **9 pages of capability copy awaiting approval.** Generated 2026-10-01 by `npm run check:placeholders`, so the detected items are always current. The rest is kept by hand in `docs/open-items-extra.md`.
+**3 placeholders outstanding** and **9 pages of capability copy awaiting approval.** Generated 2026-10-17 by `npm run check:placeholders`, so the detected items are always current. The rest is kept by hand in `docs/open-items-extra.md`.
 
 A placeholder is text that is visible on the site right now. The production build is blocked until every one is resolved and every service is approved.
 
@@ -181,41 +181,37 @@ arrives.
 
 ### Project photographs
 
-**28 of the 41 projects have no photograph.** Their cards show a plain panel
-instead. It reads as deliberate rather than broken, but a page of them is
-thinner than the work deserves, and these are the projects an oil company will
-look at. Anything you can find — even a phone photograph — goes straight in.
+**23 of the 41 projects have no photograph.** Their cards show their
+category's stand-in photograph. The October 2026 batch (the Word document and
+the WhatsApp folder) filled three: Ijaiye river dredging, the Unilag Creative
+Arts Building and the School of Nursing at Ilaro. It also holds photographs
+for the Omi Ogungbade dredging, but they wait on a question under "Client to
+confirm: photos". Two projects lost their photograph in the same round:
+Amuwo Odofin (the photo's location doesn't match) and Lower Awba Stream (no
+helmet). Anything you can find, even a phone photograph, goes straight in.
 
-**Civil Engineering & Construction — Buildings (15 of 21 with no
+**Civil Engineering & Construction — Buildings (9 of 21 with no
 photograph)**
 
 - Two-Storey Multipurpose Building with Offices (Academic Building Complex)
   Block B — Federal University of Agriculture, Abeokuta
-- Construction and Furnishing of the Department of Creative Arts Building —
-  University of Lagos
 - Construction of Retaining Wall, Mariere Hall — University of Lagos
-- Construction of 33 Lock-Up Shops — Ogun State Ministry of Special Duties
-- Construction of Hotel Complex — Horizon Suites
-- Construction of Obstetrics Care Facility — Ogun State Bureau of Management
-  and Budget
-- Construction of Primary Health Centre — National Primary Health Care
-  Development Agency
 - Construction of Guest Chalets — Joseph Ayo Babalola University
 - Affordable Housing, Ogun State — Choice Investors
 - Residential Building and Block of Flats
 - Rehabilitation of Muda Lawal Stadium — Ogun State Ministry of Special Duties
-- Classroom Construction and Hostel Fencing, School of Nursing — Ogun State
-  Ministry of Special Duties
 - Construction of Classrooms for SUBEB — Ogun State Universal Basic Education
   Board
 - Construction of Classrooms — Ogun State Ministry of Education
 - Construction of Multipurpose Hall — Abika Limited
 
-**Civil Engineering & Construction — Roads & Pavements (6 of 9)**
+**Civil Engineering & Construction — Roads & Pavements (7 of 9)**
 
 - Reefer Pavement Works, Redesign, Construction and Repairs — APM Terminals
   Apapa Limited
 - Road Construction Works at Sagamu Intake — Ogun State Water Corporation
+- Rehabilitation of Roads, Amuwo Odofin — Lagos State Public Works
+  Corporation (its photograph was withdrawn; see below)
 - Internal Road Networks, McPherson University — Joint Magnate Investment
   Limited
 - Construction of Ijohun-Igbokofi Road — Federal Ministry of Agriculture and
@@ -233,20 +229,66 @@ photograph)**
   USAID E-WASH Programme
 - Procurement of Domestic and Bulk Meters — World Bank / Ogun State Water
   Corporation
+- Channelization of Lower Awba Stream — University of Ibadan (its only
+  photograph was withdrawn: a man standing on the excavator's track without a
+  helmet)
 - Ajagunmolu Flood and Erosion Control — Federal Ministry of Environment
 - Dredging of Omi Ogungbade River — Federal Ministry of Environment
-- Dredging of River, Ijaiye — Ogun State Ministry of Environment
 
 Also outstanding on the project record:
 
 - **Project content.** You said you would work on this. Anything you send —
   corrected titles, scope, clients, missing projects — goes into
   `content/projects.json`.
-- **Newer photographs generally.** The newest on file is from October 2019.
-  See `docs/image-report.md`.
 - **Years for four projects** — Reefer Pavement Works (APM Terminals), the
   E-WASH bulk meters, FUNAAB Administrative Block and the Ajebo asphaltic
   concrete road. They are shown without a date until you supply one.
+
+### Client to confirm: photos
+
+None of the photographs these questions depend on is published. Each is kept
+in the unsorted batch (`raw-assets/client-photos/_work/`, IDs from the review
+page) until there's an answer.
+
+- **Omi River, Ibadan / Omi Ogungbade.** Seven photographs are captioned
+  "Work in progress at Omi River, Ibadan" (May 2012). Is this the Dredging of
+  Omi Ogungbade River project (2012)? If yes, the four approved ones go on
+  that project page.
+- **Mabunmi Junction / Ajagunmolu.** Erosion-control photographs at Mabunmi
+  Junction, Ijebu-Ode, dated 2009 and 2011. Is this the Ajagunmolu Flood and
+  Erosion Control project (2014), or separate work?
+- **Sagamu river works.** Four photographs of an excavator working in a
+  river, captioned only "Ongoing work in progress at Sagamu". Are they part of
+  the Sagamu Intake Structure project?
+- **The 2011 Lagos road photographs.** A set of road-surfacing photographs
+  from October 2011 whose GPS puts them around Oshodi / Ilupeju, Lagos. Which
+  project are they? One of them was shown on Rehabilitation of Roads, Amuwo
+  Odofin, which is about 10 km away. It has been taken off until you confirm.
+- **School of Nursing, Ilaro, or Alabi-Olorunda?** One photograph (W013) is
+  captioned "Administrative block, School of Nursing Ilaro", but it was taken
+  two minutes before the Alabi-Olorunda health centre photograph and looks
+  like the same building. Which is it?
+- **The FUNAAB buildings.** Nine WhatsApp photographs show two buildings at
+  the Federal University of Agriculture, Abeokuta: one red, white and brick,
+  three storeys or more; one cream, three storeys round a grassed courtyard.
+  Two are in the Civil Engineering & Construction gallery, named only as
+  FUNAAB. Which project is each building? If one is COLPLANT Phase II,
+  Academic Building Complex Block B or the Administrative Block, its
+  photographs move to that project page. If it is new work, please send the
+  title, client and year.
+- **Recent photographs, please.** The newest water photograph is from 2012,
+  so the About page's four water photographs are from 2009–2012. Recent water
+  work would replace them. Electrical and mechanical are the thinnest
+  galleries: two electrical photographs (both from the Iperu booster
+  station) and one mechanical. Pump houses, panels, meter installations and
+  pipework are the most useful, ideally with people in helmets.
+- **Photographs we took off for safety.** Fourteen photographs were removed
+  from the site because people on site are working without helmets: eight
+  from Ogere (trenching, pipe laying, filter-bed work, the pump installation,
+  the flood-control inspection, the tank foundations, the pipe offloading and
+  the formwork), one from Fiditi, one from Lower Awba, two road-paving
+  photographs, a meter installation and the Sagamu intake inspection. If you have versions
+  with full PPE, they can go back.
 
 ### Brand assets
 
@@ -287,10 +329,9 @@ Also outstanding on the project record:
 
 ### One photograph withdrawn
 
-- **The Owode Yewa shopfront** has a painted sign on the building abbreviating
-  the country name. No check reads text inside a photograph, so it has been
-  taken out of the hero set by hand. It is still available for the Owode Yewa
-  project page if you would rather it were used there.
+- **The Owode Yewa shopfront.** The old photograph showed a painted sign
+  abbreviating the country name, and it has been deleted. The new Owode Yewa
+  photograph is cropped clear of that sign.
 
 ---
 

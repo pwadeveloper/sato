@@ -113,7 +113,7 @@ banned-terms rule below, which the build enforces.
 | Route | Page |
 |---|---|
 | `/` | Home |
-| `/about` | About (story beside a photograph on desktop, motto, mission, vision) |
+| `/about` | About (story beside a 2×2 grid of water-work photographs on desktop, motto, mission, vision) |
 | `/services` | Services overview — four categories |
 | `/services/infrastructure` | **Infrastructure Services** — category landing page |
 | `/services/civil-engineering-construction` | Civil Engineering & Construction |
@@ -277,12 +277,29 @@ before-and-after is `docs/heading-audit.md`. `h4` is `text-lg`, not `text-xl`,
 because at the desktop end `text-xl` and `text-h3` are the same size.
 
 **A service may carry `images[]`** — the client's own photographs of completed
-work, rendered by `components/ServiceGallery.tsx` and hidden when empty, which
-it is on every service today. The pipeline from his folder to the page is
-`docs/adding-client-photos.md`: drop the files in
-`raw-assets/client-photos/<service>/` (gitignored), run `npm run images`, then
-map them from `scripts/client-photo-manifest.json`, which keeps his original
-filenames because they are the only description of what each photograph shows.
+work, rendered by `components/ServiceGallery.tsx` and hidden when empty. The
+four Infrastructure disciplines have them; the other four services do not. The
+pipeline from his folder to the page is `docs/adding-client-photos.md`: drop
+the files in `raw-assets/client-photos/<service>/` (gitignored), run
+`npm run images`, then map them from `scripts/client-photo-manifest.json`,
+which keeps his original filenames because they are the only description of
+what each photograph shows.
+
+**An unsorted batch takes a different route** (`docs/decisions/client-photos.md`):
+it lands in `raw-assets/client-photos/_inbox/` untouched, and
+`scripts/extract-client-photos.mjs` → `filter-client-photos.mjs` →
+`build-client-photo-review.mjs` turn it into a review page. Only the photos
+approved there are listed in `scripts/client-photo-selection.json` (output
+name, alt text, and any crop), which `npm run images` processes. The manifest's
+`approved` array traces every published file back to the client's original.
+
+**Every published photograph is checked twice before it goes up.** No metadata
+gets through: `npm run check:images` (part of `build:prod`) fails on any EXIF,
+GPS, XMP or IPTC in `/public/images`. And it's checked by eye: no one on site
+without a helmet, no number plates, and no legible text carrying the former
+company name or the country. Text is cropped out, never painted over, because
+an edited signboard looks doctored to someone verifying the company. If a crop
+would lose the subject, the photograph doesn't go up.
 
 There is no `/equipment` page. It was removed on the client's instruction;
 `equipment.json` stays in the repo in case it returns, and `/equipment` and the
@@ -297,7 +314,7 @@ old `/safety-policies/` redirect to `/about`. The rewritten content is kept in
 ## Content model (Phase 2 CMS will edit these)
 
 - `site.json` — company name, tagline, founded year, registrations, **ordered** `offices` (no "head office"; the first is the one published in structured data), phones, emails, nav, footer. `rcNumber` is held behind `showRcNumber: false`. **`showProjectDates`** switches every year on the site off in one edit — cards, category pages and project pages all read it through `getProjectYear()`. **`homeShowMissionVision`** puts the mission and the vision back on Home, as a pair below the motto; both are held in `pages/home.json` whether or not they are shown. It is never one without the other — the vision alone was what the client asked us to take off. The phone and the email are **not** in the footer; they are on `/contact` only, and in the structured data.
-- `pages/*.json` — per-page headings and body blocks (home, about, services overview, infrastructure landing, contact, leadership intro, projects, clients, 404). `hse.json` is present but unregistered. A page may carry **`serviceSections`** — the same three-section shape a service has — and only `infrastructure.json` does, because `/services/infrastructure` reads as a service page though it is a category landing page. A page may also carry **`reviewStatus`**, and that same file does: its four infrastructure types and six solution areas are written on the page rather than on any service, so without it they would be the one body of capability copy outside the review gate. `check-placeholders.mjs` reads pages as well as services. `projects.json` also holds the eight project-category facets, and `about.json` carries an `images.aside` — the photograph beside the story. Alongside `labels` (short strings the template needs), a page may carry **`images`** — the photographs its template needs that belong to no single section: its `header` shot, and on the services overview one per category, keyed `groupInfrastructure` and so on.
+- `pages/*.json` — per-page headings and body blocks (home, about, services overview, infrastructure landing, contact, leadership intro, projects, clients, 404). `hse.json` is present but unregistered. A page may carry **`serviceSections`** — the same three-section shape a service has — and only `infrastructure.json` does, because `/services/infrastructure` reads as a service page though it is a category landing page. A page may also carry **`reviewStatus`**, and that same file does: its four infrastructure types and six solution areas are written on the page rather than on any service, so without it they would be the one body of capability copy outside the review gate. `check-placeholders.mjs` reads pages as well as services. `projects.json` also holds the eight project-category facets, and `about.json` carries an `imageSets.aside` — the four photographs beside the story, laid out as a CSS grid (a page's `imageSets` holds arrays where `images` holds one). Alongside `labels` (short strings the template needs), a page may carry **`images`** — the photographs its template needs that belong to no single section: its `header` shot, and on the services overview one per category, keyed `groupInfrastructure` and so on.
 - `services.json` — array of services: slug, name, **group** (infrastructure / energy / oil-gas / digital-twin / research-innovation), **order**, **reviewStatus** (approved / draft), shortSummary, summary, **`sections`**, relatedProjectSlugs[], relatedServiceSlugs[], image (the header shot) and **`images[]`** (the client's photographs of delivered work, rendered as a gallery at the foot of Capabilities, hidden when empty). Two booleans: **`headerOverlay`** (the `h1` over the header photograph — Oil & Gas only) and **`showSectionsInMenu`** (the Services dropdown lists this page's sections — Oil & Gas only). **`partner`** holds the oil and gas project record and is read by `/projects/oil-gas`, not by the service page; see rule 9.
 
   **`sections` is the whole page.** It has three optional keys —
@@ -411,6 +428,10 @@ disagree with this file:
    it wins where it conflicts with anything earlier. Its own "How it was
    implemented" section records the judgement calls, including the one
    addition to the Oil & Gas page (the "Backed by Sato" strip).
+7. `client-photos.md` — the October 2026 photo batch: the brief, and under
+   "Phase 2 — what was done" the approvals, the three rulings (crop the
+   former name out or drop the photo; the helmet rule applied to every image
+   on the site; the Lagos road photo held back) and every photo removed.
 
 ## Review deployments
 

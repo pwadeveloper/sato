@@ -423,6 +423,12 @@ export interface Page {
    * category. Keyed like `labels`, so `groupInfrastructure` resolves both.
    */
   images?: Record<string, ImageRef>;
+  /**
+   * Sets of photographs a template lays out together, keyed like `images`.
+   * About's `aside` is the four-photo grid beside the story; when a set is
+   * present it takes the place of the single image under the same key.
+   */
+  imageSets?: Record<string, ImageRef[]>;
   /** The page's single `h1`. */
   title: ConfirmableText;
   metaTitle?: ConfirmableText;

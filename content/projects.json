@@ -52,20 +52,26 @@
     ],
     "images": [
       {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-house.webp",
+        "alt": "Completed high lift pump house at the Ogere water supply scheme",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ground-tank.webp",
+        "alt": "Circular concrete ground tank holding water at the Ogere water supply scheme",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/oshitelu-overhead-tank.webp",
+        "alt": "Completed elevated steel water tank at Oshitelu Memorial Grammar School, Ogere",
+        "width": 1024,
+        "height": 768
+      },
+      {
         "src": "/images/projects/ogere-1.webp",
         "alt": "Reinforcement and formwork during construction at the Ogere water supply scheme",
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "src": "/images/projects/ogere-2.webp",
-        "alt": "Construction work in progress at the Ogere water supply scheme",
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "src": "/images/projects/ogere-3.webp",
-        "alt": "Ductile iron pipes being offloaded at the Ogere water supply scheme",
         "width": 1600,
         "height": 1200
       },
@@ -74,54 +80,6 @@
         "alt": "Trench excavated for UPVC pipes at Ositelu, Ogere",
         "width": 1920,
         "height": 1440
-      },
-      {
-        "src": "/images/projects/ogere-5.webp",
-        "alt": "UPVC pipes being laid at Ositelu, Ogere",
-        "width": 1920,
-        "height": 1440
-      },
-      {
-        "src": "/images/projects/ogere-6.webp",
-        "alt": "Filter bed rehabilitation in progress at the Ogere water supply scheme",
-        "width": 602,
-        "height": 407
-      },
-      {
-        "src": "/images/projects/ogere-7.webp",
-        "alt": "High lift pump being installed at Ogere",
-        "width": 590,
-        "height": 409
-      },
-      {
-        "src": "/images/projects/ogere-8.webp",
-        "alt": "High lift pump building under construction at the Ogere water supply scheme",
-        "width": 597,
-        "height": 414
-      },
-      {
-        "src": "/images/projects/ogere-9.webp",
-        "alt": "Foundation work for 253 cubic metre overhead tanks at Ogere, Ogun State",
-        "width": 566,
-        "height": 420
-      },
-      {
-        "src": "/images/projects/ogere-10.webp",
-        "alt": "Completed overhead tank at Oshitelu Memorial Grammar School, Ogere",
-        "width": 602,
-        "height": 423
-      },
-      {
-        "src": "/images/projects/ogere-11.webp",
-        "alt": "Stone pitching for flood control at the Ogere water supply scheme",
-        "width": 562,
-        "height": 370
-      },
-      {
-        "src": "/images/projects/ogere-12.webp",
-        "alt": "Trench excavation for pipe laying at Ogere",
-        "width": 530,
-        "height": 415
       }
     ],
     "featured": true
@@ -141,22 +99,34 @@
     "scope": [],
     "images": [
       {
-        "src": "/images/projects/fiditi-1.webp",
-        "alt": "Excavation in progress on the earth dam at Fiditi",
-        "width": 920,
-        "height": 674
+        "src": "/images/projects/fiditi-earth-dam/cut-off-trench-excavation.webp",
+        "alt": "Excavator cutting the cut-off trench at the Fiditi earth dam, with a site engineer in a helmet on the bank",
+        "width": 1920,
+        "height": 1440
       },
       {
-        "src": "/images/projects/fiditi-2.webp",
-        "alt": "Clay compaction for the cut-off trench at Fiditi dam",
-        "width": 560,
-        "height": 425
+        "src": "/images/projects/fiditi-earth-dam/clay-compaction.webp",
+        "alt": "Padfoot rollers compacting clay for the cut-off trench at the Fiditi earth dam",
+        "width": 1920,
+        "height": 1440
       },
       {
-        "src": "/images/projects/fiditi-3.webp",
-        "alt": "Clearing the river course downstream of Fiditi dam",
-        "width": 552,
-        "height": 398
+        "src": "/images/projects/fiditi-earth-dam/topsoil-removal.webp",
+        "alt": "Bulldozer removing topsoil in the third cut-off trench segment at the Fiditi earth dam",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/projects/fiditi-earth-dam/third-segment-excavation.webp",
+        "alt": "Excavator digging the third cut-off trench segment at the Fiditi earth dam",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/projects/fiditi-earth-dam/clay-spreading.webp",
+        "alt": "Clay spread along the second cut-off trench segment at the Fiditi earth dam",
+        "width": 1920,
+        "height": 1440
       }
     ],
     "featured": true
@@ -224,14 +194,7 @@
     "status": "Completed",
     "summary": "Channelization of the Lower Awba stream through the University of Ibadan Zoological Garden.",
     "scope": [],
-    "images": [
-      {
-        "src": "/images/projects/awba-1.webp",
-        "alt": "Excavator working in the Awba stream channel",
-        "width": 576,
-        "height": 433
-      }
-    ],
+    "images": [],
     "featured": false
   },
   {
@@ -279,7 +242,20 @@
     "status": "Completed",
     "summary": "River dredging along Abiola Way and Quarry Road.",
     "scope": [],
-    "images": [],
+    "images": [
+      {
+        "src": "/images/projects/ijaiye-river-dredging/excavator-in-river.webp",
+        "alt": "Excavator dredging the river channel at Ijaiye, Abeokuta",
+        "width": 1430,
+        "height": 844
+      },
+      {
+        "src": "/images/projects/ijaiye-river-dredging/dredging-supervision.webp",
+        "alt": "Supervisor in a hard hat watching an excavator dredge the river at Ijaiye, Abeokuta",
+        "width": 1430,
+        "height": 789
+      }
+    ],
     "featured": false
   },
   {
@@ -400,14 +376,7 @@
     "status": "Completed",
     "summary": "Road rehabilitation across the Amuwo Odofin local government area.",
     "scope": [],
-    "images": [
-      {
-        "src": "/images/projects/lagos-road-1.webp",
-        "alt": "Road rehabilitation work in progress",
-        "width": 601,
-        "height": 373
-      }
-    ],
+    "images": [],
     "featured": false
   },
   {
@@ -443,22 +412,40 @@
     "scope": [],
     "images": [
       {
-        "src": "/images/projects/ajebo-road-1.webp",
-        "alt": "Asphaltic concrete road under construction at Ajebo, Ogun State",
-        "width": 585,
-        "height": 379
+        "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-towards-campus-buildings.webp",
+        "alt": "Asphaltic concrete road under construction at Life University, Ajebo, with campus buildings beyond",
+        "width": 1920,
+        "height": 1440
       },
       {
-        "src": "/images/projects/ajebo-road-2.webp",
-        "alt": "Asphaltic concrete road and drainage system under construction at Ajebo, Ogun State",
-        "width": 553,
-        "height": 439
+        "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-with-kerbs.webp",
+        "alt": "New asphalt road with kerbs and electricity poles at Life University, Ajebo",
+        "width": 1920,
+        "height": 1440
       },
       {
-        "src": "/images/projects/ajebo-road-3.webp",
-        "alt": "Asphaltic concrete road under construction",
-        "width": 544,
-        "height": 403
+        "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-and-drainage-channel.webp",
+        "alt": "Asphalt road beside a lined drainage channel at Life University, Ajebo",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-and-kerbed-island.webp",
+        "alt": "Asphalt road and kerbed island in front of a completed building at Life University, Ajebo",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/tandem-roller.webp",
+        "alt": "Tandem roller on a newly laid asphalt road at Life University, Ajebo",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/kerbed-road-junction.webp",
+        "alt": "Kerbed asphalt road junction beside campus buildings at Life University, Ajebo",
+        "width": 1920,
+        "height": 1440
       }
     ],
     "featured": false
@@ -617,7 +604,20 @@
     "status": "Completed",
     "summary": "Construction and furnishing of the Department of Creative Arts building.",
     "scope": [],
-    "images": [],
+    "images": [
+      {
+        "src": "/images/projects/unilag-creative-arts-building/gallery-and-studios.webp",
+        "alt": "Upper-floor gallery and ground-floor studios of the Creative Arts Building, University of Lagos",
+        "width": 1920,
+        "height": 893
+      },
+      {
+        "src": "/images/projects/unilag-creative-arts-building/facade-with-murals.webp",
+        "alt": "Two-storey facade of the Creative Arts Building, University of Lagos, with murals on the ground floor",
+        "width": 1920,
+        "height": 1689
+      }
+    ],
     "featured": false
   },
   {
@@ -653,10 +653,22 @@
     "scope": [],
     "images": [
       {
-        "src": "/images/projects/mcpherson-admin-1.webp",
-        "alt": "Work in progress on the administrative block at McPherson University, Ajebo",
-        "width": 589,
-        "height": 420
+        "src": "/images/projects/mcpherson-administrative-block-and-laboratory/administrative-block.webp",
+        "alt": "Two-storey administrative block nearing completion at McPherson University, Ajebo",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/projects/mcpherson-administrative-block-and-laboratory/administrative-block-rear.webp",
+        "alt": "Rear elevation of the administrative block at McPherson University, Ajebo",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/projects/mcpherson-administrative-block-and-laboratory/laboratory-building.webp",
+        "alt": "Laboratory building under construction at McPherson University, Ajebo",
+        "width": 1920,
+        "height": 1440
       }
     ],
     "featured": false
@@ -701,10 +713,10 @@
     "scope": [],
     "images": [
       {
-        "src": "/images/projects-unassigned/owode-yewa-blocks-of-shops.webp",
-        "alt": "Completed blocks of shops at Owode-Yewa International Market",
+        "src": "/images/projects/owode-yewa-lock-up-shops/row-of-shops.webp",
+        "alt": "Row of completed lock-up shops along the market road at Owode-Yewa",
         "width": 1920,
-        "height": 1440
+        "height": 2181
       }
     ],
     "featured": false
@@ -725,16 +737,16 @@
     "scope": [],
     "images": [
       {
-        "src": "/images/projects-unassigned/horizon-suites-1.webp",
-        "alt": "Entrance to the completed Horizon Suites hotel complex, Ibadan",
-        "width": 929,
-        "height": 732
+        "src": "/images/projects/horizon-suites-hotel-complex/hotel-entrance.webp",
+        "alt": "Entrance to the Horizon Suites hotel, Oluyole Estate, Ibadan",
+        "width": 1920,
+        "height": 1440
       },
       {
-        "src": "/images/projects-unassigned/horizon-suites-2.webp",
-        "alt": "Driveway and chalets at the completed Horizon Suites hotel complex, Ibadan",
-        "width": 1101,
-        "height": 741
+        "src": "/images/projects/horizon-suites-hotel-complex/chalet-driveway.webp",
+        "alt": "Driveway between the chalets at the Horizon Suites hotel, Ibadan",
+        "width": 1920,
+        "height": 1440
       }
     ],
     "featured": false
@@ -755,10 +767,10 @@
     "scope": [],
     "images": [
       {
-        "src": "/images/projects-unassigned/obstetrics-care-facility-mowe.webp",
+        "src": "/images/projects/obstetrics-care-facility-mowe/facility-under-construction.webp",
         "alt": "Obstetrics care facility under construction at Mowe",
-        "width": 927,
-        "height": 639
+        "width": 1920,
+        "height": 1440
       }
     ],
     "featured": false
@@ -779,10 +791,10 @@
     "scope": [],
     "images": [
       {
-        "src": "/images/projects-unassigned/primary-health-centre-alabi-oloro.webp",
-        "alt": "Completed primary health centre at Alabi-Olorunda, Ifo",
-        "width": 602,
-        "height": 381
+        "src": "/images/projects/alabi-olorunda-primary-health-centre/health-centre.webp",
+        "alt": "Completed primary health centre at Alabi-Olorunda",
+        "width": 1920,
+        "height": 1440
       }
     ],
     "featured": false
@@ -893,7 +905,20 @@
     "status": "Completed",
     "summary": "Classroom construction and hostel fencing at the School of Nursing.",
     "scope": [],
-    "images": [],
+    "images": [
+      {
+        "src": "/images/projects/ilaro-school-of-nursing/classroom-block.webp",
+        "alt": "Completed classroom block at the School of Nursing, Ilaro",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/projects/ilaro-school-of-nursing/building-and-water-tower.webp",
+        "alt": "Single-storey building and steel water tower at the School of Nursing, Ilaro",
+        "width": 1920,
+        "height": 1440
+      }
+    ],
     "featured": false
   },
   {
@@ -963,10 +988,10 @@
     "scope": [],
     "images": [
       {
-        "src": "/images/projects/iperu-1.webp",
-        "alt": "Iperu area office under construction",
-        "width": 602,
-        "height": 362
+        "src": "/images/projects/iperu-area-office/area-office.webp",
+        "alt": "Single-storey area office with a blue roof at Iperu, for the Ogun State Water Corporation",
+        "width": 1920,
+        "height": 1440
       }
     ],
     "featured": false

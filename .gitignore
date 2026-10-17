@@ -43,3 +43,6 @@ next-env.d.ts
 
 # raw source assets downloaded from the old WordPress site (regenerate with scripts/)
 /raw-assets/
+
+# the client's photo drop as received; working copy lives in raw-assets/client-photos/_inbox/
+/new images/

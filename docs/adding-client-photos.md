@@ -1,5 +1,10 @@
 # Adding the client's photographs
 
+> This is the route for a batch he has already sorted by service. An unsorted
+> batch — a Word document of pictures, a WhatsApp folder — goes through
+> `raw-assets/client-photos/_inbox/` and a review page first; see
+> `docs/decisions/client-photos.md` and `scripts/client-photo-selection.json`.
+
 Three steps: drop the files in a folder, run one command, add a few lines of
 JSON. No component is touched and no code is written.
 

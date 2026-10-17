@@ -29,10 +29,10 @@
   },
   "images": {
     "header": {
-      "src": "/images/services/roadworks-asphalt-compaction.webp",
-      "alt": "Asphalt being compacted by a roller",
+      "src": "/images/services/civil-engineering-construction/campus-road-header.webp",
+      "alt": "Newly surfaced campus road at Life University, Ajebo, with single-storey buildings beyond",
       "width": 1920,
-      "height": 1440
+      "height": 840
     },
     "groupInfrastructure": {
       "src": "/images/projects/funaab-colplant-2.webp",

@@ -64,12 +64,49 @@
     "relatedProjectSlugs": [],
     "registrations": [],
     "image": {
-      "src": "/images/services/roadworks-asphalt-laying.webp",
-      "alt": "Asphalt being laid by a paver",
+      "src": "/images/services/civil-engineering-construction/life-university-road-header.webp",
+      "alt": "New asphalt road and kerbed island in front of a completed building at Life University, Ajebo",
       "width": 1920,
-      "height": 1440
+      "height": 840
     },
-    "images": []
+    "images": [
+      {
+        "src": "/images/services/civil-engineering-construction/adetoro-close-completed-road.webp",
+        "alt": "Completed asphaltic concrete road with centre-line markings on Adetoro Close, Abeokuta",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/services/civil-engineering-construction/box-culvert-under-construction.webp",
+        "alt": "Reinforced concrete box culvert under construction, with formwork timber in the channel",
+        "width": 1920,
+        "height": 1426
+      },
+      {
+        "src": "/images/projects/ilaro-school-of-nursing/classroom-block.webp",
+        "alt": "Completed classroom block at the School of Nursing, Ilaro",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/projects/owode-yewa-lock-up-shops/row-of-shops.webp",
+        "alt": "Row of completed lock-up shops along the market road at Owode-Yewa",
+        "width": 1920,
+        "height": 2181
+      },
+      {
+        "src": "/images/services/civil-engineering-construction/funaab-building-red-and-brick.webp",
+        "alt": "Three-storey building with red and brick facade panels at the Federal University of Agriculture, Abeokuta",
+        "width": 1080,
+        "height": 809
+      },
+      {
+        "src": "/images/services/civil-engineering-construction/funaab-building-courtyard.webp",
+        "alt": "Three-storey building with open corridors around a grassed courtyard at the Federal University of Agriculture, Abeokuta",
+        "width": 1080,
+        "height": 809
+      }
+    ]
   },
   {
     "slug": "electrical-engineering",
@@ -140,12 +177,25 @@
     "relatedProjectSlugs": [],
     "registrations": [],
     "image": {
-      "src": "/images/services/water-high-lift-pump-panel.webp",
-      "alt": "Installed high lift pump control panel at Sagamu intake",
+      "src": "/images/services/electrical-engineering/iperu-booster-station-panel-header.webp",
+      "alt": "Capacitor bank and control gear in a completed panel at the Iperu booster station",
       "width": 1920,
-      "height": 1440
+      "height": 840
     },
-    "images": []
+    "images": [
+      {
+        "src": "/images/services/electrical-engineering/iperu-booster-station-capacitor-panel.webp",
+        "alt": "Completed capacitor bank and control panel at the Iperu booster station",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/services/electrical-engineering/iperu-booster-station-breaker-panel.webp",
+        "alt": "Completed breaker panel with its wiring at the Iperu booster station",
+        "width": 1920,
+        "height": 1440
+      }
+    ]
   },
   {
     "slug": "mechanical-engineering",
@@ -208,12 +258,19 @@
     "relatedProjectSlugs": [],
     "registrations": [],
     "image": {
-      "src": "/images/services/water-ductile-iron-pipes.webp",
-      "alt": "Stacked ductile iron pipes for water distribution",
+      "src": "/images/services/mechanical-engineering/drilling-rig-and-compressor-header.webp",
+      "alt": "Truck-mounted drilling rig with its air compressor on a borehole site",
       "width": 1920,
-      "height": 1440
+      "height": 840
     },
-    "images": []
+    "images": [
+      {
+        "src": "/images/services/mechanical-engineering/borehole-drilling-crew.webp",
+        "alt": "Drilling crew in helmets and hi-vis handling drill pipe at a borehole rig, Laderin Estate, Abeokuta",
+        "width": 1920,
+        "height": 1488
+      }
+    ]
   },
   {
     "slug": "water-resources-development-management",
@@ -285,12 +342,43 @@
     "relatedProjectSlugs": [],
     "registrations": [],
     "image": {
-      "src": "/images/projects/fiditi-2.webp",
-      "alt": "Clay compaction for the cut-off trench at Fiditi dam",
+      "src": "/images/services/water-resources-development-management/arakanga-sand-filter-header.webp",
+      "alt": "Water running through a sand filter at the Arakanga water treatment plant, Abeokuta",
       "width": 1920,
-      "height": 1440
+      "height": 840
     },
-    "images": []
+    "images": [
+      {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ground-tank.webp",
+        "alt": "Circular concrete ground tank holding water at the Ogere water supply scheme",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-house.webp",
+        "alt": "Completed high lift pump house at the Ogere water supply scheme",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/oshitelu-overhead-tank.webp",
+        "alt": "Completed elevated steel water tank at Oshitelu Memorial Grammar School, Ogere",
+        "width": 1024,
+        "height": 768
+      },
+      {
+        "src": "/images/projects/ijaiye-river-dredging/excavator-in-river.webp",
+        "alt": "Excavator dredging the river channel at Ijaiye, Abeokuta",
+        "width": 1430,
+        "height": 844
+      },
+      {
+        "src": "/images/projects/ijaiye-river-dredging/dredging-supervision.webp",
+        "alt": "Supervisor in a hard hat watching an excavator dredge the river at Ijaiye, Abeokuta",
+        "width": 1430,
+        "height": 789
+      }
+    ]
   },
   {
     "slug": "energy",
@@ -1066,10 +1154,10 @@
     ],
     "registrations": [],
     "image": {
-      "src": "/images/services/water-meter-installation.webp",
-      "alt": "Water meter being installed for Ogun State Water Corporation",
-      "width": 1920,
-      "height": 1440
+      "src": "/images/services/water-high-lift-pump-panel.webp",
+      "alt": "Installed high lift pump control panels at the Sagamu intake",
+      "width": 1600,
+      "height": 1200
     },
     "images": []
   },

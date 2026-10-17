@@ -60,13 +60,7 @@
     "category": "haulage-and-lifting",
     "quantity": "5",
     "notes": "Mack and Iveco, 30 tonnes",
-    "location": "Abeokuta",
-    "image": {
-      "src": "/images/equipment/tipping-trailer.webp",
-      "alt": "Iveco 30-tonne tipping trailer",
-      "width": 800,
-      "height": 600
-    }
+    "location": "Abeokuta"
   },
   {
     "slug": "block-making-machine",

@@ -26,10 +26,10 @@
   },
   "images": {
     "header": {
-      "src": "/images/projects/ogere-3.webp",
-      "alt": "Ductile iron pipes being offloaded at the Ogere water supply scheme",
-      "width": 1600,
-      "height": 1200
+      "src": "/images/projects/fiditi-earth-dam/topsoil-removal-header.webp",
+      "alt": "Bulldozer working the cut-off trench area at the Fiditi earth dam",
+      "width": 1920,
+      "height": 840
     }
   },
   "sections": [
@@ -52,10 +52,10 @@
               "label": "Buildings",
               "placeholderImages": [
                 {
-                  "src": "/images/hero/building-site-drawings.webp",
-                  "alt": "A Sato engineer reading a drawing at a multi-storey building under construction",
-                  "width": 1536,
-                  "height": 1024
+                  "src": "/images/projects/mcpherson-administrative-block-and-laboratory/administrative-block-rear.webp",
+                  "alt": "Rear elevation of a completed two-storey building delivered by Sato",
+                  "width": 1920,
+                  "height": 1440
                 }
               ]
             },
@@ -64,8 +64,8 @@
               "label": "Roads & Pavements",
               "placeholderImages": [
                 {
-                  "src": "/images/services/roadworks-asphalt-laying.webp",
-                  "alt": "Asphalt being laid by a paver on a Sato road contract",
+                  "src": "/images/services/civil-engineering-construction/adetoro-close-completed-road.webp",
+                  "alt": "A completed asphaltic concrete road with centre-line markings on a Sato contract",
                   "width": 1920,
                   "height": 1440
                 }
@@ -74,10 +74,10 @@
           ],
           "intro": "Buildings, roads, heavy-duty pavements, earthworks, drainage, kerbs and culverts — new-build, rehabilitation and conversion.",
           "image": {
-            "src": "/images/projects/funaab-colplant-1.webp",
-            "alt": "COLPLANT building at the Federal University of Agriculture, Abeokuta, at completion stage",
-            "width": 1040,
-            "height": 520
+            "src": "/images/projects/mcpherson-administrative-block-and-laboratory/administrative-block.webp",
+            "alt": "Two-storey administrative block nearing completion at McPherson University, Ajebo",
+            "width": 1920,
+            "height": 1440
           },
           "shortLabel": "Civil"
         },
@@ -89,18 +89,18 @@
           "group": "infrastructure",
           "intro": "Metering, pumping and control installations supplied and commissioned for water and infrastructure clients.",
           "image": {
-            "src": "/images/services/water-high-lift-pump-panel.webp",
-            "alt": "Installed high lift pump control panel at Sagamu intake",
+            "src": "/images/services/electrical-engineering/iperu-booster-station-capacitor-panel.webp",
+            "alt": "Completed capacitor bank and control panel at the Iperu booster station",
             "width": 1920,
             "height": 1440
           },
           "shortLabel": "Electrical",
           "placeholderImages": [
             {
-              "src": "/images/services/water-high-lift-pump-panel.webp",
-              "alt": "An installed high lift pump control panel on a Sato water scheme",
-              "width": 1600,
-              "height": 1200
+              "src": "/images/services/electrical-engineering/iperu-booster-station-breaker-panel.webp",
+              "alt": "A completed breaker panel on a Sato water scheme",
+              "width": 1920,
+              "height": 1440
             }
           ]
         },
@@ -121,18 +121,18 @@
           "group": "infrastructure",
           "intro": "Dams, intakes, water supply schemes, boreholes, metering, river works and erosion control.",
           "image": {
-            "src": "/images/projects/ogere-1.webp",
-            "alt": "Reinforcement and formwork during construction at the Ogere water supply scheme",
+            "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ground-tank.webp",
+            "alt": "Circular concrete ground tank holding water at the Ogere water supply scheme",
             "width": 1600,
             "height": 1200
           },
           "shortLabel": "Water",
           "placeholderImages": [
             {
-              "src": "/images/services/water-ductile-iron-pipes.webp",
-              "alt": "Ductile iron pipes stacked for a Sato water distribution contract",
-              "width": 1600,
-              "height": 1200
+              "src": "/images/about/arakanga-water-treatment-sand-filter.webp",
+              "alt": "Water running through a sand filter at a treatment plant Sato worked on",
+              "width": 1920,
+              "height": 1440
             }
           ]
         },
