@@ -1,0 +1,1044 @@
+{
+  "note": "Every decision for docs/decisions/mirror-old-site-content.md. Read by scripts/audit-site-content.mjs (the audit) and scripts/apply-content-mirror.mjs (the realignment). Captions are the old site's, cleaned only as that file allows; `original` holds the old wording where it changed.",
+  "old": [
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG-20191011-WA0030-1.jpg",
+      "action": "project",
+      "target": "funaab-colplant-building-phase-ii",
+      "file": "projects/funaab-colplant-1",
+      "caption": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG-20191011-WA0029-1.jpg",
+      "action": "project",
+      "target": "funaab-colplant-building-phase-ii",
+      "file": "projects/funaab-colplant-3",
+      "caption": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG-20191011-WA0023-1.jpg",
+      "action": "project",
+      "target": "funaab-colplant-building-phase-ii",
+      "file": "projects/funaab-colplant-2",
+      "caption": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG-20191011-WA0019-1.jpg",
+      "action": "project",
+      "target": "funaab-colplant-building-phase-ii",
+      "file": "projects/funaab-colplant-4",
+      "caption": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG_20190430_124146.jpg",
+      "action": "project",
+      "target": "funaab-administrative-block",
+      "file": "projects/funaab-administrative-block-2",
+      "caption": "Work in Progress, Administrative Block at Federal University of Agriculture, Abeokuta"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG_20190430_1230211.jpg",
+      "action": "project",
+      "target": "funaab-administrative-block",
+      "file": "projects/funaab-administrative-block-1",
+      "caption": "Work in Progress, Administrative Block at Federal University of Agriculture, Abeokuta",
+      "conflict": "The Ongoing Projects page shows the same photograph (IMG_20190430_123021.jpg) captioned as Academic Building Complex Block B. Placed where the Buildings page puts it; for the client to confirm."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/DSC00166.jpg",
+      "action": "project",
+      "target": "owode-yewa-lock-up-shops",
+      "file": "projects/owode-yewa-lock-up-shops/row-of-shops",
+      "batch": "W051",
+      "caption": "Blocks of Shops, Owode Yewa International Market",
+      "note": "Full-size original, cropped clear of a tenant's sign abbreviating the country (prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/Doc2-1_page-0002.jpg",
+      "action": "project",
+      "target": "horizon-suites-hotel-complex",
+      "file": "projects/horizon-suites-hotel-complex/chalet-driveway",
+      "batch": "W050",
+      "caption": "Horizon Suites, Ibadan, Oyo State"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/Doc2-1_page-0001.jpg",
+      "action": "project",
+      "target": "horizon-suites-hotel-complex",
+      "file": "projects/horizon-suites-hotel-complex/hotel-entrance",
+      "batch": "W044",
+      "caption": "Horizon Suites, Ibadan, Oyo State"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/11_page-0001.jpg",
+      "action": "project",
+      "target": "obstetrics-care-facility-mowe",
+      "file": "projects/obstetrics-care-facility-mowe/facility-under-construction",
+      "batch": "W033",
+      "caption": "Work in Progress, Obstetrics Care Facility, Mowe"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/10.jpg",
+      "action": "project",
+      "target": "alabi-olorunda-primary-health-centre",
+      "out": "projects/alabi-olorunda-primary-health-centre/completed-health-centre",
+      "batch": "W013",
+      "caption": "Picture showing completed National Primary Health Centre at Alabi-Olorunda, Oyo State by Sato",
+      "original": "PICTURE SHOWING COMPLETED NATIONAL PRIMARY HEALTH CENTRE AT ALABI-OLORUNDA, OYO STATE BY SATO ENGINEERING NIGERIA LIMITED",
+      "conflict": "The caption says Oyo State; the Buildings table gives the location as Alabi Olorunda, Ifo, Ilado."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/9.jpg",
+      "action": "category",
+      "target": "civil-engineering-construction/buildings",
+      "file": "projects-unassigned/omololu-residence",
+      "caption": "Work in progress at Mr. Lekan Omololu’s residential development, Abeokuta",
+      "original": "WORK IN PROGRESS AT MR. LEKAN OMOLOLU’S RESIDENTIAL DEVELOPMENT, ABEOKUTA",
+      "conflict": "No project on either site matches Mr. Lekan Omololu’s residential development."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/8.jpg",
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-house",
+      "batch": "W110",
+      "caption": "Construction of high lift pump building at Ogere Water Supply Scheme by Sato",
+      "original": "CONSTRUCTION OF HIGH LIFT PUMP BUILDING AT OGERE WATER SUPPLY SCHEME BY SATO ENGINEERING NIGERIA LIMITED",
+      "note": "The old site shows it on the Buildings page; the caption names the Ogere water scheme, so it sits on that project."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/71.jpg",
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-building",
+      "batch": "W121",
+      "caption": "Construction of high lift pump building at Ogere Water Supply Scheme by Sato",
+      "original": "CONSTRUCTION OF HIGH LIFT PUMP BUILDING AT OGERE WATER SUPPLY SCHEME BY SATO ENGINEERING NIGERIA LIMITED"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/6.jpg",
+      "action": "project",
+      "target": "laderin-estate-six-flats",
+      "file": "projects/laderin-1",
+      "caption": "Construction of six flats at Laderin Estate, Abeokuta",
+      "original": "CONSTRUCTION OF SIX FLATS AT LADERIN ESTATE, ABEOKUTA"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/4.jpg",
+      "action": "project",
+      "target": "mcpherson-administrative-block-and-laboratory",
+      "file": "projects/mcpherson-administrative-block-and-laboratory/administrative-block",
+      "batch": "W088",
+      "caption": "Work in progress at McPherson University administrative block Ajebo, Ogun State",
+      "original": "WORK IN PROGRESS AT MCPHERSON UNIVERSITY ADMINISTRATIVE BLOCK AJEBO, OGUN STATE"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/3.gif",
+      "action": "category",
+      "target": "civil-engineering-construction/buildings",
+      "out": "projects/civil-buildings/sato-office-abeokuta-front",
+      "caption": "Sato office in Abeokuta",
+      "original": "SATO ENGINEERING NIGERIA LIMITED OFFICE IN ABEOKUTA",
+      "conflict": "Sato's own office is shown among the building projects on the old site, but it is not in the project table."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/21.gif",
+      "action": "project",
+      "target": "iperu-area-office",
+      "file": "projects/iperu-area-office/area-office",
+      "batch": "W001",
+      "caption": "Construction of Iperu area office by Sato",
+      "original": "CONSTRUCTION OF IPERU AREA OFFICE BY SATO ENGINEERING NIGERIA LIMITED"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/1.gif",
+      "action": "category",
+      "target": "civil-engineering-construction/buildings",
+      "file": "projects-unassigned/sato-office-abeokuta",
+      "caption": "Sato office in Abeokuta",
+      "original": "SATO ENGINEERING NIGERIA OFFICE IN ABEOKUTA"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG_0085.jpg",
+      "action": "category",
+      "target": "water-resources-development-management",
+      "file": "services/water-ductile-iron-pipes",
+      "caption": "Stacked Ductile Iron Pipes for Water Distribution",
+      "original": "Stalked Ductile Iron Pipes for Water Distribution"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG_0237.jpg",
+      "action": "project",
+      "target": "sagamu-intake-structure",
+      "file": "services/water-high-lift-pump-panel",
+      "caption": "Installed High Lift Pump Panel at Sagamu Intake, Water Supply Scheme"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1030872.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "World Bank Team Inspection of on-going Sagamu Intake, Water Supply Project",
+      "why": "A site group, most without helmets (removed in prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1050419.jpg",
+      "action": "category",
+      "target": "water-resources-development-management",
+      "file": "services/water-meter-training",
+      "caption": "Training of Ogun State Water Corporation Staff on Water Meter Installation"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1050453.jpg",
+      "action": "category",
+      "target": "water-resources-development-management",
+      "out": "projects/water-resources/water-meter-strategy-session",
+      "caption": "Strategy Session on Water Meter Installation"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1050544.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "Water Meter Installation in Progress for Ogun State Water Corporation",
+      "why": "Meter fitter at work without a helmet (removed in prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1050551.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "Water Meter Installation in Progress for Ogun State Water Corporation",
+      "why": "Crew at a meter installation without helmets."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/SAM_7309.jpg",
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-4",
+      "caption": "Laying of UPVC Pipes in Progress at Ositelu Ogere",
+      "original": "Laying Of UPVC Pipes in Progress at Ositelu Ogere"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/SAM_7331.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "Laying of UPVC Pipes in Progress at Ositelu Ogere",
+      "why": "Pipe-laying crew without helmets (removed in prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/24.jpg",
+      "action": "project",
+      "target": "fiditi-earth-dam",
+      "file": "projects/fiditi-earth-dam/clay-compaction",
+      "batch": "W134",
+      "caption": "Clay compaction for COT (Fiditi Dam)",
+      "original": "CLAY COMPACTION FOR COT (FIDITI DAM)"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/c22.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "CLEARING OF RIVER COURSE (DOWN STREAM) (FIDITI DAM)",
+      "why": "Two people beside the excavator without helmets (removed in prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/34.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "CLIENT INSPECTING PROGRESS OF WORK (FLOOD CONTROL SYSTEM) AT OGERE WATER SUPPLY SCHEME BY SATO ENGINEERING NIGERIA LIMITED",
+      "why": "Site inspection without helmets (removed in prompt 16). The same photograph is also 23.jpg with a different caption."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/23.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "STONE PITCHING WORK (FLOOD CONTROL SYSTEM) IN PROGRESS AT OGERE WATER SUPPLY SCHEME BY SATO ENGINEERING NIGERIA LIMITED",
+      "why": "Same photograph as 34.jpg; site inspection without helmets."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/e02.jpg",
+      "action": "category",
+      "target": "water-resources-development-management",
+      "out": "projects/water-resources/mabunmi-junction-erosion-control",
+      "batch": "W120",
+      "caption": "Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State",
+      "original": "EXCAVATION WORK (EROSION CONTROL) IN PROGRESS AT MABUNMI JUNCTION, IJEBU-ODE, OGUN STATE",
+      "conflict": "The old site doesn't say which project this is. Ajagunmolu Flood and Erosion Control (Ijebu-Ode, 2011–2014) is the likely one; the photograph is dated 2009."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/211.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "DUCTILE IRON PIPES BEING OFFLOADED AT OGERE WATER SUPPLY SCHEME BY OUR CRANE LORRY",
+      "why": "A man beside a crane load without a helmet (removed in prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/22.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "CONSTRUCTION WORK IN PROGRESS AT OGERE WATER SCHEME OGUN STATE",
+      "why": "Worker on the rebar without a helmet (removed in prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/1.jpg",
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-1",
+      "batch": "W086",
+      "caption": "Construction work in progress at Ogere Water Scheme Ogun State",
+      "original": "CONSTRUCTION WORK IN PROGRESS AT OGERE WATER SCHEME OGUN STATE"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/s4.gif",
+      "action": "excluded",
+      "target": "safety",
+      "caption": null,
+      "why": "Pipe-joint crew without helmets; no caption on the old site."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/s2.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "LAYING OF DUCTILE IRON PIPE AT OGERE",
+      "why": "Workers in a deep trench without helmets."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/ds2.jpg",
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/oshitelu-overhead-tank",
+      "batch": "W081",
+      "caption": "Constructed overhead tank at Oshitelu Memorial Grammar School at Ogere",
+      "original": "CONSTRUCTED OVERHEAD TANK AT OSHITELU MEMORIAL GRAMMAR SCHOOL AT OGERE"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/saas2.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "FOUNDATION WORK FOR 253 M 3 OVERHEAD TANKS IN PROGRESS, OGERE, OGUN STATE",
+      "why": "People on the site without helmets (removed in prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/33.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "LAYING OF DUCTILE IRON PIPES IN PROGRESS AT OGERE",
+      "why": "Pipe-laying crew, mostly without helmets."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/21.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "LAYING OF IRON DUCTILE PIPES IN PROGRESS AT OGERE",
+      "why": "Pipe-laying crew without helmets."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/92.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "EXCAVATION OF TRENCH FOR PIPE LAYING IN PROGRESS AT OGERE",
+      "why": "People in a deep trench without helmets (removed in prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/62.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "INSTALLATION OF HIGHLIFT PUMP IN PROGRESS AT OGERE",
+      "why": "Pump installers without helmets (removed in prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/nhj.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "REHABILITATION OF FILTER BED IN PROGRESS AT OGERE WATER SUPPLY SCHEME",
+      "why": "Filter-bed crew without helmets (removed in prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/c2.jpg",
+      "action": "excluded",
+      "target": "privacy",
+      "caption": "COMPLETED SOLAR POWERED BOREHOLE PROJECT AT PRIMARY HEALTH CENTRE TUBE, OGUN STATE, MDG’S PROJECT.",
+      "why": "Children at the tap stand, one partly dressed."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/5.jpg",
+      "action": "project",
+      "target": "solar-powered-boreholes",
+      "file": "projects/boreholes-4",
+      "caption": "Completed solar powered borehole project at Primary Health Centre Tube, Ogun State, MDG’s project.",
+      "original": "COMPLETED SOLAR POWERED BOREHOLE PROJECT AT PRIMARY HEALTH CENTRE TUBE, OGUN STATE, MDG’S PROJECT.",
+      "note": "Kept at the old site's 602px: the full-size original (W061) makes the signboard's country name and former company name legible."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/w4.jpg",
+      "action": "project",
+      "target": "solar-powered-boreholes",
+      "file": "projects/boreholes-3",
+      "caption": "Completed solar powered borehole project at Primary Health Centre Idogo, Ogun State, MDG’s project.",
+      "original": "COMPLETED SOLAR POWERED BOREHOLE PROJECT AT PRIMARY HEALTH CENTRE IDOGO, OGUN STATE, MDG’S PROJECT.",
+      "note": "Kept at the old site's size: the full-size original (W059) makes the signboard legible."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/w3.jpg",
+      "action": "project",
+      "target": "solar-powered-boreholes",
+      "file": "projects/boreholes-2",
+      "caption": "Completed solar powered borehole project at Primary Health Centre Ifoyintedo, Ogun State, MDG’s project.",
+      "original": "COMPLETED SOLAR POWERED BOREHOLE PROJECT AT PRIMARY HEALTH CENTRE IFOYINTEDO, OGUN STATE, MDG’S PROJECT."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/w2.jpg",
+      "action": "project",
+      "target": "solar-powered-boreholes",
+      "out": "projects/solar-powered-boreholes/ota-tap-stand",
+      "source": "raw-assets/old-site/2012/07/w2.jpg",
+      "caption": "Completed solar powered borehole project at Primary Health Centre Ota, MDG’s project",
+      "original": "COMPLETED SOLAR POWERED BOREHOLE PROJECT AT PRIMARY HEALTH CENTRE OTA, MDG’S PROJECT"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/w1.jpg",
+      "action": "project",
+      "target": "solar-powered-boreholes",
+      "file": "projects/boreholes-1",
+      "caption": "Completed solar powered borehole project at Primary Health Centre Ota, MDG’s project",
+      "original": "COMPLETED SOLAR POWERED BOREHOLE PROJECT AT PRIMARY HEALTH CENTRE OTA, MDG’S PROJECT"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG-20191011-WA0049-1.jpg",
+      "action": "project",
+      "target": "fce-osiele-campus-roads-and-walkways",
+      "file": "projects/fce-osiele-3",
+      "caption": "Compacted laterite filling at Federal College of Education, Osiele",
+      "original": "COMPACTED LATERITE FILLING AT FEDERAL COLLEGE OF EDUCATION, OSIELE"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG-20191011-WA0047.jpg",
+      "action": "project",
+      "target": "fce-osiele-campus-roads-and-walkways",
+      "file": "projects/fce-osiele-2",
+      "caption": "Compacted laterite filling with walkway at Federal College of Education, Osiele",
+      "original": "COMPACTED LATERITE FILLING WITH WALKWAY AT FEDERAL COLLEGE OF EDUCATION, OSIELE"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG-20191011-WA0046.jpg",
+      "action": "project",
+      "target": "fce-osiele-campus-roads-and-walkways",
+      "file": "projects/fce-osiele-4",
+      "caption": "Laying of asphalt at Federal College of Education, Osiele",
+      "original": "LAYING OF ASPHALT AT FEDERAL COLLEGE OF EDUCATION, OSIELE"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG-20191011-WA0045-2.jpg",
+      "action": "project",
+      "target": "fce-osiele-campus-roads-and-walkways",
+      "file": "projects/fce-osiele-1",
+      "caption": "Completed road at Federal College of Education, Osiele",
+      "original": "COMPLETED ROAD AT FEDERAL COLLEGE OF EDUCATION, OSIELE"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/DSC00391.jpg",
+      "action": "category",
+      "target": "civil-engineering-construction/roads-pavements",
+      "file": "services/roadworks-completed-carriageway",
+      "caption": "Work in progress, asphalt laying & compaction",
+      "original": "WORK IN PROGRESS, ASPHALT LAYING & COMPACTION"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/cl002.jpg",
+      "action": "project",
+      "target": "asphaltic-concrete-road-and-drainage-ajebo",
+      "file": "projects/asphaltic-concrete-road-and-drainage-ajebo/road-and-drainage-channel",
+      "batch": "W025",
+      "caption": "Asphaltic concrete road & drainage system under construction at Life University Ajebo, Ogun State",
+      "original": "ASPHALTIC CONCRETE ROAD & DRAINAGE SYSTEM UNDER CONSTRUCTION AT LIFE UNIVERSITY AJEBO, OGUN STATE"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/2.jpg",
+      "action": "project",
+      "target": "asphaltic-concrete-road-and-drainage-ajebo",
+      "file": "projects/asphaltic-concrete-road-and-drainage-ajebo/road-towards-campus-buildings",
+      "batch": "W023",
+      "caption": "Asphaltic concrete road under construction at Life University Ajebo, Ogun State",
+      "original": "ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION AT LIFE UNIVERSITY AJEBO, OGUN STATE"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0028.jpg",
+      "action": "category",
+      "target": "civil-engineering-construction/roads-pavements",
+      "out": "projects/civil-roads-and-pavements/asphaltic-concrete-road-under-construction",
+      "batch": "W017",
+      "caption": "Asphaltic concrete road under construction by Sato",
+      "original": "ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION BY SATO ENGINEERING NIGERIA LIMITED",
+      "note": "The new site had this on the Life University road; the old site names no project, so it moves to the Roads & Pavements photographs."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0027.jpg",
+      "action": "held",
+      "target": "lagos",
+      "caption": "ROAD REHABILITATION WORK IN PROGRESS",
+      "why": "The old site names no location. Its GPS puts it in Oshodi/Ilupeju, Lagos; held off the site until the client says which project (decision 3, prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0024.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "LAYING OF WEARING COURSE IN PROGRESS",
+      "why": "Paving crew without helmets."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0013.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "ASPHALT BEEN COMPACTED",
+      "why": "Paving crew close up without helmets (removed in prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0011.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "LAYING OF ASPHALT IN PROGRESS",
+      "why": "Roller crew without helmets (removed in prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0023.jpg",
+      "action": "category",
+      "target": "civil-engineering-construction/roads-pavements",
+      "out": "projects/civil-roads-and-pavements/sub-base-compaction",
+      "batch": "W008",
+      "crop": [
+        0,
+        0,
+        1,
+        0.86
+      ],
+      "cropWhy": "removes a caption strip burned into the bottom of the photograph",
+      "caption": "Compaction of sub-base material in progress",
+      "original": "COMPACTION OF SUB-BASESE MATERIAL IN PROGRS"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0022.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "PRIMING OF MC1 PRIOR TO LAYING OF ASPHALT",
+      "why": "Two workers at the kerb without helmets; a caption is also burned into the image."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image001.jpg",
+      "action": "category",
+      "target": "civil-engineering-construction/roads-pavements",
+      "out": "projects/civil-roads-and-pavements/sandfilled-area-after-grading",
+      "batch": "W004",
+      "crop": [
+        0,
+        0,
+        1,
+        0.9
+      ],
+      "cropWhy": "removes a caption strip burned into the bottom of the photograph",
+      "caption": "Sandfilled area, after grading and prior to compaction",
+      "original": "SANDFILLED AREA, AFTER GRADING AND PRIOR TO COMPACTION"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image00ds1.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "SPREADING AND GRADING OF SANDFILL IN PROGRESS",
+      "why": "Workers without helmets beside the grader."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_1.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "CCONSTRUCTION OF BOX CULVERTONSTRUCTION OF BOX CULVERT",
+      "why": "Workers in a drain trench without helmets."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0021.jpg",
+      "action": "category",
+      "target": "civil-engineering-construction/roads-pavements",
+      "out": "projects/civil-roads-and-pavements/box-culvert",
+      "batch": "W141",
+      "caption": "Construction of box culvert",
+      "original": "CONSTRUCTION OF BOX CULVERT"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG_20190430_123021.jpg",
+      "action": "duplicate",
+      "target": "2019/10/IMG_20190430_1230211.jpg",
+      "caption": "Work in progress on construction of a 2 Storey Multipurpose Building with Offices (Academic Building Complex) Block B for Federal University of Agriculture, Abeokuta."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG-20191011-WA0030.jpg",
+      "action": "duplicate",
+      "target": "2019/10/IMG-20191011-WA0030-1.jpg",
+      "caption": "Work in progress (at completion stage) on construction of College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/22_page-0001.jpg",
+      "action": "project",
+      "target": "fiditi-earth-dam",
+      "file": "projects/fiditi-earth-dam/cut-off-trench-excavation",
+      "batch": "W127",
+      "caption": "Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/08/IMG-20120912-00066.jpg",
+      "action": "project",
+      "target": "mcpherson-convention-centre-conversion",
+      "file": "projects/mcpherson-convention-1",
+      "caption": "Work in progress at the conversion of convention centre to staff quarters project at the McPherson University, Ajebo.",
+      "original": "Work in progress at the conversion of convention centre to staff quarters project at the McPhersonUniversity, Ajebo."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/06/Awba-Stream-Project.png",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "Work in progress on the Channelization of Lower Awba Stream Project at University of Ibadan by the University of Ibadan.",
+      "why": "A man standing on the excavator's track without a helmet (removed in prompt 16)."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/08/iamge1.jpg",
+      "action": "duplicate",
+      "target": "2012/06/Awba-Stream-Project.png",
+      "caption": "Work in progress on the Channelization of Lower Awba Stream Project at University of Ibadan by the University of Ibadan."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/08/image2.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority.",
+      "why": "A site meeting at close range, no helmets."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/08/image3.jpg",
+      "action": "excluded",
+      "target": "safety",
+      "caption": "Work ongoing at the rehabilitation of roads project by Lagos State Public Works Corporation.",
+      "why": "Workers on a live road without helmets; their vests carry the former company name."
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/06/clip_image0023.gif",
+      "action": "teaser",
+      "target": "2012/07/3.gif"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/06/2.jpg",
+      "action": "teaser",
+      "target": "2012/07/62.jpg"
+    },
+    {
+      "url": "https://www.satoengineering.com/wp-content/uploads/2012/06/clip.jpg",
+      "action": "teaser",
+      "target": "2012/07/clip_image0024.jpg"
+    }
+  ],
+  "batch": [
+    {
+      "id": "W021",
+      "action": "kept",
+      "target": "asphaltic-concrete-road-and-drainage-ajebo",
+      "file": "projects/asphaltic-concrete-road-and-drainage-ajebo/road-with-kerbs",
+      "caption": "Asphaltic concrete road under construction at Life University Ajebo, Ogun State",
+      "source": "Client's Word document (Pictures.docx), caption above the photograph"
+    },
+    {
+      "id": "W099",
+      "action": "kept",
+      "target": "mcpherson-administrative-block-and-laboratory",
+      "file": "projects/mcpherson-administrative-block-and-laboratory/administrative-block-rear",
+      "caption": "Work in progress at McPherson University administrative block Ajebo, Ogun State",
+      "source": "Client's Word document"
+    },
+    {
+      "id": "W052",
+      "action": "kept",
+      "target": "mcpherson-administrative-block-and-laboratory",
+      "file": "projects/mcpherson-administrative-block-and-laboratory/laboratory-building",
+      "caption": "Construction of laboratory building in progress at McPherson University Ajebo, Ogun State",
+      "source": "Client's Word document"
+    },
+    {
+      "id": "W022",
+      "action": "kept",
+      "target": "alabi-olorunda-primary-health-centre",
+      "file": "projects/alabi-olorunda-primary-health-centre/health-centre",
+      "caption": "Picture showing completed National Primary Health Centre at Alabi-Olorunda, Oyo State by Sato",
+      "source": "Client's Word document"
+    },
+    {
+      "id": "W132",
+      "action": "kept",
+      "target": "ilaro-school-of-nursing",
+      "file": "projects/ilaro-school-of-nursing/classroom-block",
+      "caption": "Construction of block of classrooms, School of Nursing Ilaro, Ogun State",
+      "source": "Client's Word document; “Block of classrooms” is painted on the building"
+    },
+    {
+      "id": "W148",
+      "action": "kept",
+      "target": "unilag-creative-arts-building",
+      "file": "projects/unilag-creative-arts-building/gallery-and-studios",
+      "caption": "Creative Arts Building, University of Lagos",
+      "source": "The client's filename (“Creative Arts Building Unilag”), the project signboard and GPS on the Akoka campus"
+    },
+    {
+      "id": "W149",
+      "action": "kept",
+      "target": "unilag-creative-arts-building",
+      "file": "projects/unilag-creative-arts-building/facade-with-murals",
+      "caption": "Creative Arts Building, University of Lagos",
+      "source": "The client's filename, the signboard and GPS"
+    },
+    {
+      "id": "W096",
+      "action": "kept",
+      "target": "ijaiye-river-dredging",
+      "file": "projects/ijaiye-river-dredging/excavator-in-river",
+      "caption": "Ongoing work in progress at Ijaye Abeokuta by Sato",
+      "source": "Client's Word document"
+    },
+    {
+      "id": "W097",
+      "action": "kept",
+      "target": "ijaiye-river-dredging",
+      "file": "projects/ijaiye-river-dredging/dredging-supervision",
+      "caption": "Ongoing work in progress at Ijaye Abeokuta by Sato",
+      "source": "Client's Word document"
+    },
+    {
+      "id": "W126",
+      "action": "kept",
+      "target": "fiditi-earth-dam",
+      "file": "projects/fiditi-earth-dam/topsoil-removal",
+      "caption": "Removal of top soil within 3rd segment cut-off trench area (Fiditi Dam)",
+      "source": "Client's Word document"
+    },
+    {
+      "id": "W131",
+      "action": "kept",
+      "target": "fiditi-earth-dam",
+      "file": "projects/fiditi-earth-dam/third-segment-excavation",
+      "caption": "Excavation in progress for 3rd segment of COT (Fiditi Dam)",
+      "source": "Client's Word document"
+    },
+    {
+      "id": "W137",
+      "action": "kept",
+      "target": "fiditi-earth-dam",
+      "file": "projects/fiditi-earth-dam/clay-spreading",
+      "caption": "Spreading of clay for 2nd segment cut-off trench (Fiditi Dam)",
+      "source": "Client's Word document"
+    },
+    {
+      "id": "W065",
+      "action": "service",
+      "target": "about",
+      "file": "about/arakanga-water-treatment-sand-filter",
+      "caption": null,
+      "source": "Client's Word document: sand filter at the Arakanga water treatment plant"
+    },
+    {
+      "id": "W027",
+      "action": "service",
+      "target": "services:civil-engineering-construction",
+      "file": "services/civil-engineering-construction/adetoro-close-completed-road",
+      "caption": "A section completed asphaltic concrete, Adetoro Close, Abeokuta, Ogun State",
+      "source": "Client's Word document"
+    },
+    {
+      "id": "W115",
+      "action": "service",
+      "target": "services:civil-engineering-construction",
+      "file": "services/civil-engineering-construction/box-culvert-under-construction",
+      "caption": "Box culvert under construction by Sato",
+      "source": "Client's Word document"
+    },
+    {
+      "id": "W094",
+      "action": "service",
+      "target": "services:electrical-engineering (header)",
+      "file": "services/electrical-engineering/iperu-booster-station-panel-header",
+      "caption": null,
+      "source": "Client's Word document: Iperu booster station"
+    },
+    {
+      "id": "W095",
+      "action": "service",
+      "target": "category tile: Electrical Engineering",
+      "file": "services/electrical-engineering/iperu-booster-station-breaker-panel",
+      "caption": null,
+      "source": "Client's Word document: Iperu booster station"
+    },
+    {
+      "id": "W054",
+      "action": "service",
+      "target": "services:mechanical-engineering (header)",
+      "file": "services/mechanical-engineering/drilling-rig-and-compressor-header",
+      "caption": null,
+      "source": "Client's Word document"
+    },
+    {
+      "id": "W056",
+      "action": "service",
+      "target": "services:mechanical-engineering",
+      "file": "services/mechanical-engineering/borehole-drilling-crew",
+      "caption": "Drilling work in progress at Laderin Estate, Abeokuta by Sato",
+      "source": "Client's Word document"
+    },
+    {
+      "id": "W089",
+      "action": "held",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/ground-tank",
+      "why": "Medium confidence in prompt 16: its caption names no site."
+    },
+    {
+      "id": "W019",
+      "action": "held",
+      "target": "asphaltic-concrete-road-and-drainage-ajebo",
+      "file": "projects/asphaltic-concrete-road-and-drainage-ajebo/road-and-kerbed-island",
+      "why": "Medium confidence: captioned without a location."
+    },
+    {
+      "id": "W020",
+      "action": "held",
+      "target": "asphaltic-concrete-road-and-drainage-ajebo",
+      "file": "projects/asphaltic-concrete-road-and-drainage-ajebo/tandem-roller",
+      "why": "Medium confidence: captioned without a location."
+    },
+    {
+      "id": "W002",
+      "action": "held",
+      "target": "ilaro-school-of-nursing",
+      "file": "projects/ilaro-school-of-nursing/building-and-water-tower",
+      "why": "Medium confidence: matched by timestamp only."
+    },
+    {
+      "id": "W146",
+      "action": "held",
+      "target": "FUNAAB",
+      "file": "services/civil-engineering-construction/funaab-building-red-and-brick",
+      "why": "FUNAAB building photographs are held until the client says which building each is."
+    },
+    {
+      "id": "W147",
+      "action": "held",
+      "target": "FUNAAB",
+      "file": "services/civil-engineering-construction/funaab-building-courtyard",
+      "why": "FUNAAB building photographs are held until the client says which building each is."
+    }
+  ],
+  "roles": {
+    "tiles": {
+      "civil-engineering-construction": {
+        "file": "projects/horizon-suites-hotel-complex/hotel-entrance",
+        "from": "horizon-suites-hotel-complex"
+      },
+      "electrical-engineering": {
+        "file": "services/electrical-engineering/iperu-booster-station-breaker-panel",
+        "from": null,
+        "note": "Neither Electrical project has a photograph; this is the Iperu booster station panel from the client's batch."
+      },
+      "water-resources-development-management": {
+        "file": "projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-house",
+        "from": "ogere-water-supply-scheme-rehabilitation"
+      }
+    },
+    "serviceHeaders": {
+      "civil-engineering-construction": {
+        "file": "projects/mcpherson-administrative-block-and-laboratory/administrative-block-header",
+        "from": "mcpherson-administrative-block-and-laboratory"
+      },
+      "electrical-engineering": {
+        "file": "services/electrical-engineering/iperu-booster-station-panel-header",
+        "from": null
+      },
+      "mechanical-engineering": {
+        "file": "services/mechanical-engineering/drilling-rig-and-compressor-header",
+        "from": null
+      },
+      "water-resources-development-management": {
+        "out": "services/water-resources-development-management/fiditi-cut-off-trench-header",
+        "batch": "W127",
+        "header": true,
+        "focusY": 0.55,
+        "from": "fiditi-earth-dam"
+      },
+      "energy": {
+        "none": true,
+        "note": "No photograph of Sato's energy work; it borrowed the Sagamu intake panel, which belongs to that project."
+      },
+      "digital-twin": {
+        "none": true,
+        "note": "No photograph of digital twin work; it borrowed the Sagamu intake panel."
+      },
+      "research-innovation": {
+        "none": true,
+        "note": "No photograph of research work; it borrowed the meter-training photograph, which belongs with Water Resources."
+      }
+    },
+    "pageHeaders": {
+      "projects": {
+        "file": "projects/fiditi-earth-dam/topsoil-removal-header",
+        "from": "fiditi-earth-dam"
+      },
+      "clients": {
+        "out": "projects/alabi-olorunda-primary-health-centre/health-centre-header",
+        "batch": "W013",
+        "header": true,
+        "focusY": 0.5,
+        "from": "alabi-olorunda-primary-health-centre"
+      },
+      "servicesOverview": {
+        "file": "services/civil-engineering-construction/campus-road-header",
+        "from": "asphaltic-concrete-road-and-drainage-ajebo"
+      },
+      "infrastructure": {
+        "out": "projects/horizon-suites-hotel-complex/chalet-driveway-header",
+        "batch": "W050",
+        "header": true,
+        "focusY": 0.55,
+        "from": "horizon-suites-hotel-complex"
+      }
+    }
+  },
+  "projects": {
+    "mcpherson-administrative-block-and-laboratory": {
+      "title": "Construction of Administrative Block and Laboratory Building",
+      "summary": "Sato has completed the construction of Administrative building and Laboratory for McPherson University Ajebo Ogun State. This is a private University being developed by the Four Square Gospel Church.",
+      "summaryOriginal": "SATO Engineering has completed the construction of Administrative building and Laboratory for  McPherson University Ajebo Ogun State. This is a private University being developed by the Four Square Gospel Church.",
+      "sources": [
+        "/projects/",
+        "/november2011-…-mcpherson-university/"
+      ],
+      "merged": [
+        "Construction of Laboratory Building (Oct. 2010 – March 2011)",
+        "Construction of Administrative Block (Jan. 2010 – May 2011)"
+      ]
+    },
+    "solar-powered-boreholes": {
+      "title": "Construction of Solar Powered Boreholes",
+      "summary": "Sato has drilled and commissioned Solar powered Boreholes for the Federal Government, State Governments, Corporate Organizations and private individuals. Using our state of the art drilling equipment and efficient personnel.",
+      "summaryOriginal": "SATO Engineering has drilled and commissioned Solar powered Boreholes for the Federal Government, State Governments, Corporate Organizations and private individuals. Using our state of the art drilling equipment and efficient personnel.",
+      "sources": [
+        "/projects/"
+      ],
+      "merged": [
+        "Construction of 32nos of Solar Powered Boreholes (Ogun State Bureau of Management and Budget)",
+        "Construction of 3nos of Solar Powered Boreholes (Ogun-Oshun River Basin Development Authority)"
+      ]
+    },
+    "funaab-colplant-building-phase-ii": {
+      "title": "Construction of College of Plant Science and Crop Production (COLPLANT) Building Phase II",
+      "titleOriginal": "Construction of College of Plan Science and Crop Production (COLPLANT) Building Phase II",
+      "summary": "Sato is currently constructing (at completion stage) a 2 Storey Multipurpose Building with Offices (Academic Building Complex) Block B and College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta.",
+      "summaryOriginal": "SATO Engineering Nigeria Limited is currently constructing (at completion stage) a 2 Storey Multipurpose Building with Offices (Academic Building Complex) Block B and College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta.",
+      "sources": [
+        "/projects/",
+        "/ongoing-projects/"
+      ]
+    },
+    "funaab-academic-building-complex-block-b": {
+      "title": "Construction of 2 Storey Multipurpose Building with Offices (Academic Building Complex) Block B",
+      "summary": "Sato is currently constructing (at completion stage) a 2 Storey Multipurpose Building with Offices (Academic Building Complex) Block B and College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta.",
+      "summaryOriginal": "SATO Engineering Nigeria Limited is currently constructing (at completion stage) a 2 Storey Multipurpose Building with Offices (Academic Building Complex) Block B and College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta.",
+      "sources": [
+        "/projects/",
+        "/ongoing-projects/"
+      ]
+    },
+    "fiditi-earth-dam": {
+      "summary": "Sato has been awarded contract for the construction of an earth dam at Fiditi Dam. This is a Federal Government Project being financed by the Ogun-Osun River Basin Development Authority to provide water for the Agriculture and other needs for Fiditi Community.",
+      "summaryOriginal": "Sato Engineering has been awarded contract for the construction of an earth dam at Fiditi Dam. This is a Federal Government Project being financed by the Ogun-Osun River Basin Development Authority to provide water for the Agriculture and other needs for Fiditi Community.",
+      "sources": [
+        "/sato-engineering-has-been-awarded-contract-for-the-construction-of-an-earth-dam-at-fiditi-dam/"
+      ]
+    },
+    "ogere-water-supply-scheme-rehabilitation": {
+      "summary": "Sato completes and handover the rehabilitation of Ogere Water Scheme in Ogun State, a World Bank financed project. During the handing over ceremony, the Head Project implementation Unit of the Ogun State Water Corporation, Engr. Maku, commended the company for a job well done.",
+      "summaryOriginal": "SATO ENGINEERING completes and handover the rehabilitation of Ogere Water Scheme in Ogun State Nigeria, a World Bank financed project. During the handing over ceremony, the Head Project implementation Unit of the Ogun State Water Corporation, Engr. Maku, commended the company for a job well done.",
+      "scope": [
+        "Rehabilitation of the intake structure, filters, aerators, sedimentation tanks and Buildings.",
+        "Designing and construction of over-head tanks.",
+        "Rehabilitation of Booster Station.",
+        "Designing and developing of state of the art electro-mechanical systems.",
+        "Construction of over-head tanks, clear water tanks, flocculation chamber and staff quarters.",
+        "Laying of several kilometres of Ductile iron pipes.",
+        "Construction of flood control system."
+      ],
+      "omitted": "The post's second paragraph (“He was impressed that an indigenous company could deliver top quality world-class work…”) is not mirrored: it uses “indigenous”, which the site avoids, and a superlative the site can't prove.",
+      "sources": [
+        "/april-2012sato-engineering-completes-and-handover-the-rehabilitation-of-ogere-water-scheme-in-ogun-state-nigeria/"
+      ]
+    },
+    "ogungbade-river-dredging": {
+      "title": "Dredging of River, Omi Ogungbade",
+      "client": "Federal Ministry of Environment & Habitat",
+      "summary": "Sato completed works on the dredging of Ogungbade River in Ibadan. The project was embarked upon to eliminate flooding at the Ogungbade Community and the people of the community have been experiencing a flood free environment since the completion of the job.",
+      "summaryOriginal": "SATO ENGINEERING complete works on the dredging of Ogungbade River in Ibadan. The project was embarked upon to eliminate flooding at the Ogungbade Community and the people the community have been experiencing a flood free environment since the completion of the job.",
+      "sources": [
+        "/june-2012-sato-engineering-complete-works-on-the-dredging-of-ogungbade-river-in-ibadan-2/"
+      ]
+    },
+    "lower-awba-stream-channelization": {
+      "summary": "Sato has been awarded contract for the channelization of the Lower Awba Stream at the University of Ibadan. The project is to put an end to the perennial flooding along the axis of the Awba Stream from the source to the Dam. The scope involves establishing horizontal alignment and setting out as designed excavating trench using profile levels and making good the excavation to receive concrete. Reinforcement bars of different sizes are to be bent and placed in line with project working drawings and concrete works to form the shape specified for the Channelization works.",
+      "summaryOriginal": "SATO ENGINEERING has been awarded contract for the channelization of the Lower Awba Stream at the University of Ibadan. The project is to put an end to the perennial flooding along the axis of the Awba Stream from the source to the Dam. The scope involves establishing horizontal alignment and setting out as designed excavating trench using profile levels and making good the excavation to receive concrete. Reinforcement bars of different sizes are to be bent and placed in line with project working drawings and concrete works to form the shape specified for the Channelization works.",
+      "sources": [
+        "/may-2012sato-engineering-has-been-awarded-contract-for-the-channelization-of-the-lower-awba-stream-…/"
+      ]
+    },
+    "obstetrics-care-facility-mowe": {
+      "summary": "Sato completes the Construction of Obstetrics Care Facility, Mowe, Ogun State.",
+      "summaryOriginal": "SATO ENGINEERING completes the Construction of Obstetrics Care Facility, Mowe, Ogun State.",
+      "sources": [
+        "/august-2010-sato-engineering-completes-the-construction-of-obstetrics-care-facility-mowe-ogun-state/"
+      ]
+    },
+    "mcpherson-convention-centre-conversion": {
+      "summary": "Sato has been awarded the contract for the conversion and total rehabilitation of convention centre to temporary staff quarters by the McPherson’s University.",
+      "summaryOriginal": "SATO ENGINEERING has been awarded the contract for the conversion and total rehabilitation of convention centre to temporary staff quarters by the McPherson’s University.",
+      "sources": [
+        "/july2012-sato-engineering-has-been-awarded-the-contract-for-the-conversion-…/"
+      ]
+    },
+    "ogun-state-affordable-housing": {
+      "summary": "Sato is helping to make the dream of affordable housing a reality in Ogun State by working with choice investors to provide 5-Blocks, 4 Nos of 4-Bedroom flats.",
+      "summaryOriginal": "SATO ENGINEERING is helping to make the dream of affordable housing a reality in Ogun State by working with choice investors to provide 5-Blocks, 4 Nos of 4-Bedroom flats.",
+      "sources": [
+        "/november2011sato-engineering-is-helping-to-make-the-dream-of-affordable-housing-…/"
+      ]
+    },
+    "unilag-creative-arts-building": {
+      "title": "Construction with Furnishing of the Department of Creative Arts Building"
+    },
+    "unilag-mariere-retaining-wall": {
+      "title": "Construction of Retaining Wall to Mariere Hall Fence"
+    },
+    "ilaro-school-of-nursing": {
+      "title": "Construction of Classroom and Fencing of Hostels at School of Nursing"
+    },
+    "subeb-classrooms": {
+      "title": "Construction of Several Classrooms"
+    },
+    "ogun-education-classrooms": {
+      "title": "Construction of Several Classrooms"
+    },
+    "muda-lawal-stadium": {
+      "title": "Rehabilitation of Muda Lawal Stadium for the Gateway Games"
+    },
+    "akinyegun-residential-flats": {
+      "title": "Residential Building / Block of Flats",
+      "client": "Mrs. Akinyegun"
+    },
+    "alabi-olorunda-primary-health-centre": {
+      "location": "Alabi Olorunda, Ifo, Ilado"
+    },
+    "mcpherson-seriki-sotayo-roads": {
+      "title": "Construction of Internal Road Networks for McPherson University Seriki-Sotayo"
+    },
+    "undp-rural-roads": {
+      "title": "Improvement of Rural Roads / Construction of Kerbs, Culverts & Drainage"
+    },
+    "asphaltic-concrete-road-and-drainage-ajebo": {
+      "title": "Asphaltic Concrete Road & Drainage System"
+    }
+  }
+}

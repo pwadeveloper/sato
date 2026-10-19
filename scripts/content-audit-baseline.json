@@ -1,0 +1,14 @@
+{
+  "recordedAt": "2026-10-19",
+  "counts": {
+    "Duplicate": 16,
+    "Wrong project": 1,
+    "Missing photo": 44,
+    "Missing or changed caption": 30,
+    "Missing narrative": 12,
+    "New-site extra": 19,
+    "Projects": 32,
+    "Duplicate (allowed)": 6,
+    "New-site extra (kept, High confidence)": 12
+  }
+}
