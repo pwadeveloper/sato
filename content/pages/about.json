@@ -9,6 +9,12 @@
       "alt": "Sato engineer reading a drawing at a multi-storey building under construction",
       "width": 1536,
       "height": 1024
+    },
+    "aside": {
+      "src": "/images/about/arakanga-water-treatment-sand-filter.webp",
+      "alt": "Water running through a sand filter during commissioning at the Arakanga water treatment plant, Abeokuta",
+      "width": 1920,
+      "height": 1440
     }
   },
   "sections": [
@@ -46,33 +52,5 @@
         "To be a globally recognized engineering and infrastructure company, renowned for excellence, innovation and world-class project delivery."
       ]
     }
-  ],
-  "imageSets": {
-    "aside": [
-      {
-        "src": "/images/about/arakanga-water-treatment-sand-filter.webp",
-        "alt": "Water running through a sand filter during commissioning at the Arakanga water treatment plant, Abeokuta",
-        "width": 1920,
-        "height": 1440
-      },
-      {
-        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ground-tank.webp",
-        "alt": "Circular concrete ground tank holding water at the Ogere water supply scheme",
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-house.webp",
-        "alt": "Completed high lift pump house at the Ogere water supply scheme",
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/oshitelu-overhead-tank.webp",
-        "alt": "Completed elevated steel water tank at Oshitelu Memorial Grammar School, Ogere",
-        "width": 1024,
-        "height": 768
-      }
-    ]
-  }
+  ]
 }

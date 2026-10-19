@@ -173,6 +173,8 @@ export interface FacetSubcategory {
   label: ConfirmableText;
   /** Stand-in photographs for this subheading. See `CollectionFacet`. */
   placeholderImages?: ImageRef[];
+  /** The old site's photographs for this subheading that name no project. See `CollectionFacet.photos`. */
+  photos?: ImageRef[];
 }
 
 /** A group heading (clients, equipment) or a project category. */
@@ -255,8 +257,23 @@ export interface CollectionFacet {
    *
    * Swapping one out is `project.images = [...]` in `projects.json` — the
    * moment a project has its own photograph the stand-in stops being used.
+   *
+   * **Empty on every category since October 2026.** One frame repeated down
+   * a grid was exactly the "same photo in several places" the client
+   * objected to, so the rule now is one photograph, one place
+   * (docs/decisions/mirror-old-site-content.md). The field stays so the
+   * decision is an edit, not a rebuild.
    */
   placeholderImages?: ImageRef[];
+  /**
+   * Photographs the old site shows on this category's page that name no
+   * project in their caption — "Construction of box culvert", "Sato office
+   * in Abeokuta". The old site's category pages are captioned galleries; the
+   * new one leads with project cards, so these follow the cards under
+   * `labels.categoryPhotos`, each with its caption, rather than being forced
+   * onto a project the old site never tied them to.
+   */
+  photos?: ImageRef[];
 }
 
 /**
@@ -278,6 +295,8 @@ export interface ProjectGroup {
   id?: string;
   label?: ConfirmableText;
   items: Project[];
+  /** Captioned photographs that follow the cards. See `CollectionFacet.photos`. */
+  photos?: ImageRef[];
 }
 
 export interface HeroSection {

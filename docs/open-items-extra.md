@@ -154,14 +154,14 @@ arrives.
 
 ### Project photographs
 
-**23 of the 41 projects have no photograph.** Their cards show their
-category's stand-in photograph. The October 2026 batch (the Word document and
-the WhatsApp folder) filled three: Ijaiye river dredging, the Unilag Creative
-Arts Building and the School of Nursing at Ilaro. It also holds photographs
-for the Omi Ogungbade dredging, but they wait on a question under "Client to
-confirm: photos". Two projects lost their photograph in the same round:
-Amuwo Odofin (the photo's location doesn't match) and Lower Awba Stream (no
-helmet). Anything you can find, even a phone photograph, goes straight in.
+**22 of the 41 projects have no photograph.** Their cards show a plain
+panel: the stand-in photographs that used to fill those cards were taken off
+in October 2026, because one frame repeated down a grid was the "same photo
+in several places" problem (docs/decisions/mirror-old-site-content.md). Every
+project photograph now comes from the old site, on the project and in the
+order the old site uses, with its caption beneath it; Construction of Sagamu
+Intake Structure gained one that way. Anything you can find, even a phone
+photograph, goes straight in.
 
 **Civil Engineering & Construction — Buildings (9 of 21 with no
 photograph)**
@@ -192,10 +192,8 @@ photograph)**
 - Rehabilitation of Roads with Asphalt Overlay — Qui Ventures Limited
 - Improvement of Rural Roads, Kerbs, Culverts and Drainage — UNDP
 
-**Water Resources Development & Management (7 of 11)**
+**Water Resources Development & Management (6 of 11)**
 
-- Construction of Sagamu Intake Structure — World Bank / Ogun State Water
-  Corporation
 - Supply of Prepayment and Electromagnetic Bulk Meters — World Bank / Federal
   Ministry of Water Resources
 - Supply, Delivery and Installation of Immersion and Ultrasonic Bulk Meters —
@@ -219,49 +217,71 @@ Also outstanding on the project record:
 
 ### Client to confirm: photos
 
-None of the photographs these questions depend on is published. Each is kept
-in the unsorted batch (`raw-assets/client-photos/_work/`, IDs from the review
-page) until there's an answer.
+These are the questions for the Zoom call: the things the old site can't
+settle on its own. Nothing that depends on an answer is published yet. The
+full record is `docs/content-audit.md`, and every caption change is in
+`docs/caption-changes.md`.
 
-- **Omi River, Ibadan / Omi Ogungbade.** Seven photographs are captioned
-  "Work in progress at Omi River, Ibadan" (May 2012). Is this the Dredging of
-  Omi Ogungbade River project (2012)? If yes, the four approved ones go on
-  that project page.
-- **Mabunmi Junction / Ajagunmolu.** Erosion-control photographs at Mabunmi
-  Junction, Ijebu-Ode, dated 2009 and 2011. Is this the Ajagunmolu Flood and
-  Erosion Control project (2014), or separate work?
-- **Sagamu river works.** Four photographs of an excavator working in a
-  river, captioned only "Ongoing work in progress at Sagamu". Are they part of
-  the Sagamu Intake Structure project?
-- **The 2011 Lagos road photographs.** A set of road-surfacing photographs
-  from October 2011 whose GPS puts them around Oshodi / Ilupeju, Lagos. Which
-  project are they? One of them was shown on Rehabilitation of Roads, Amuwo
-  Odofin, which is about 10 km away. It has been taken off until you confirm.
-- **School of Nursing, Ilaro, or Alabi-Olorunda?** One photograph (W013) is
-  captioned "Administrative block, School of Nursing Ilaro", but it was taken
-  two minutes before the Alabi-Olorunda health centre photograph and looks
-  like the same building. Which is it?
-- **The FUNAAB buildings.** Nine WhatsApp photographs show two buildings at
-  the Federal University of Agriculture, Abeokuta: one red, white and brick,
-  three storeys or more; one cream, three storeys round a grassed courtyard.
-  Two are in the Civil Engineering & Construction gallery, named only as
-  FUNAAB. Which project is each building? If one is COLPLANT Phase II,
-  Academic Building Complex Block B or the Administrative Block, its
-  photographs move to that project page. If it is new work, please send the
-  title, client and year.
-- **Recent photographs, please.** The newest water photograph is from 2012,
-  so the About page's four water photographs are from 2009–2012. Recent water
-  work would replace them. Electrical and mechanical are the thinnest
-  galleries: two electrical photographs (both from the Iperu booster
-  station) and one mechanical. Pump houses, panels, meter installations and
-  pipework are the most useful, ideally with people in helmets.
-- **Photographs we took off for safety.** Fourteen photographs were removed
-  from the site because people on site are working without helmets: eight
-  from Ogere (trenching, pipe laying, filter-bed work, the pump installation,
-  the flood-control inspection, the tank foundations, the pipe offloading and
-  the formwork), one from Fiditi, one from Lower Awba, two road-paving
-  photographs, a meter installation and the Sagamu intake inspection. If you have versions
-  with full PPE, they can go back.
+**Where the old site contradicts itself**
+
+- **One FUNAAB photograph, two projects.** The Buildings page captions a
+  photograph "Administrative Block at Federal University of Agriculture,
+  Abeokuta"; the Ongoing Projects page shows the same photograph as the
+  Academic Building Complex Block B. It is on the Administrative Block for
+  now. Which is it?
+- **Alabi-Olorunda: Oyo State or Ifo?** The photograph's caption says
+  "Alabi-Olorunda, Oyo State"; the project table says "Alabi Olorunda, Ifo,
+  Ilado". The project shows the table's wording. Which is right, and is
+  "Ilado" meant to be Ilaro?
+- **Six flats at Laderin Estate: Abeokuta or Ibadan?** The table and the
+  photograph say Abeokuta; the September 2009 news post says Ibadan. The site
+  says Abeokuta.
+- **FUNAAB Block B and COLPLANT, "at completion stage".** The old site's
+  wording (from 2019) says Sato "is currently constructing" both. The new
+  site repeats it word for word. Are they finished?
+
+**Photographs waiting on you**
+
+- **Twelve new photographs kept, for you to confirm or reject.** They aren't
+  on the old site but were matched with high confidence: three Fiditi dam
+  photographs, the Life University road, two of the McPherson administrative
+  block and laboratory, the Alabi-Olorunda health centre, the Ilaro
+  classroom block, two of the Unilag Creative Arts Building and two of the
+  Ijaiye dredging. Each is listed under "New-site extra (kept, High
+  confidence)" in the audit.
+- **Omi River, Ibadan = Omi Ogungbade?** The old site's June 2012 news post
+  says Sato dredged "Ogungbade River in Ibadan", which fits the seven "Omi
+  River, Ibadan" photographs from May 2012. Confirm, and four of them go on
+  that project.
+- **Mabunmi Junction, Ijebu-Ode.** The old site shows an erosion-control
+  photograph there (now under Water Resources' other photographs) without
+  naming a project. Is it Ajagunmolu Flood and Erosion Control?
+- **Sagamu river works.** Four batch photographs of an excavator in a river,
+  captioned only "Sagamu". Part of the Sagamu Intake Structure?
+- **"Road rehabilitation work in progress".** The old site names no place;
+  the photograph's GPS says Oshodi / Ilupeju, Lagos, about 10 km from Amuwo
+  Odofin. Which project?
+- **The two FUNAAB buildings from WhatsApp.** Which project is each? They are
+  off the site until you say.
+- **Energy, Digital Twin and Research have no photograph.** Their pages used
+  to borrow photographs of other projects; they now open without one. Any
+  photograph of this work would do.
+- **Recent photographs.** The newest water photograph is from 2012, and the
+  electrical and mechanical pages have one or two each.
+
+**Projects only one site has**
+
+- **Not on the new site:** the housing estate in Abeokuta (news post, May
+  2010), the mini water scheme for Oladerin Village, Kobape (news post,
+  November 2010), and Mr. Lekan Omololu's residential development (one
+  photograph, no table row). Add them as projects?
+- **Merged on the new site:** McPherson's laboratory and administrative
+  block, the two Abuja meter supplies, the two Ogun State meter
+  procurements, and the 32 and 3 solar-powered boreholes are each one
+  project here and two rows on the old site. Keep them merged or split them?
+- **A private client by name.** The old table names "Mrs. Akinyegun" as the
+  client for the Residential Building / Block of Flats, and the new site now
+  shows it. Is that all right?
 
 ### Brand assets
 

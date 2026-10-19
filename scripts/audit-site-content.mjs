@@ -47,7 +47,10 @@ const canon = (url) => alias.get(url) ?? url;
 
 function identity(src) {
   const a = approved.find((x) => x.src === src);
-  if (a) return batchToOld.has(a.workingId) ? canon(batchToOld.get(a.workingId)) : a.workingId;
+  if (a) {
+    if (a.oldSite) return canon(a.oldSite);
+    return batchToOld.has(a.workingId) ? canon(batchToOld.get(a.workingId)) : a.workingId;
+  }
   const m = imageMap.find((x) => `/images/${x.out}.webp` === src);
   if (m) {
     if (/^\d{4}\/\d{2}\//.test(m.source)) return canon(OLD_BASE + m.source);

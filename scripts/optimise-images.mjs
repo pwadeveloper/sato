@@ -284,6 +284,8 @@ if (await exists(SELECTION)) {
       originalFilename: entry.originalFilename,
       docxCaption: entry.docxCaption,
       workingId: entry.working,
+      /** Set when the file was made from the old site's own copy. */
+      oldSite: entry.oldSite,
       proposals: entry.proposals,
       alt: entry.alt,
       crop: entry.crop ? entry.cropWhy ?? true : undefined,

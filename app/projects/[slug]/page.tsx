@@ -223,7 +223,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <ProjectGallery
                   images={project.images}
                   label={labels.gallery ?? ""}
-                  thumbsLabel={labels.galleryThumbs ?? ""}
                 />
 
                 {project.scope.length ? (

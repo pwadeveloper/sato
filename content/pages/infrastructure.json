@@ -9,10 +9,10 @@
   },
   "images": {
     "header": {
-      "src": "/images/projects/funaab-administrative-block-1.webp",
-      "alt": "Three-storey administrative block under construction at the Federal University of Agriculture, Abeokuta",
+      "src": "/images/projects/horizon-suites-hotel-complex/chalet-driveway-header.webp",
+      "alt": "Driveway between the chalets at the Horizon Suites hotel, Ibadan",
       "width": 1920,
-      "height": 1440
+      "height": 840
     }
   },
   "sections": [
@@ -56,12 +56,6 @@
             "Site investigation, design and construction for roads, pavements, drainage and buildings, with the earthworks and erosion control that keep them standing. Civil work is the structure everything else is fixed to, and it usually arrives with an electrical and a mechanical package attached.",
             "New build and rehabilitation both: much of Sato's record is work carried out on assets that were still in use."
           ],
-          "image": {
-            "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-towards-campus-buildings.webp",
-            "alt": "Asphaltic concrete road under construction at Life University, Ajebo, with campus buildings beyond",
-            "width": 1920,
-            "height": 1440
-          },
           "href": "/services/civil-engineering-construction"
         },
         {
@@ -71,12 +65,6 @@
             "Power distribution, control and instrumentation for buildings, pumping stations and industrial sites — switchgear and motor control centres down to the meter on the wall. It is the discipline the firm was founded on.",
             "It is what turns a finished structure into an operating asset, so it is specified against the duty of the plant it serves and commissioned before it is handed over."
           ],
-          "image": {
-            "src": "/images/services/water-high-lift-pump-panel.webp",
-            "alt": "Installed high lift pump control panel at Sagamu intake",
-            "width": 1920,
-            "height": 1440
-          },
           "href": "/services/electrical-engineering"
         },
         {
@@ -86,12 +74,6 @@
             "Pumps, pipework, plant and the fabrication behind them, installed and maintained. Most of it is the moving half of a water or building services contract, sequenced with the civil and electrical work rather than after it.",
             "The same teams maintain Sato's own fleet and workshop, which is where the capability was built and where much of the fabrication is still done."
           ],
-          "image": {
-            "src": "/images/services/water-ductile-iron-pipes.webp",
-            "alt": "Stacked ductile iron pipes for water distribution",
-            "width": 1920,
-            "height": 1440
-          },
           "href": "/services/mechanical-engineering"
         },
         {
@@ -101,12 +83,6 @@
             "Earth dams, irrigation, intake works, treatment and distribution, boreholes drilled with our own rig, and the river training, drainage and flood and erosion control that protect them.",
             "Water resources is where the four disciplines meet most often, and where Sato's longest client relationships are — river basin development authorities, state water corporations and development programmes, some of them for over twenty years."
           ],
-          "image": {
-            "src": "/images/projects/fiditi-earth-dam/clay-compaction.webp",
-            "alt": "Padfoot rollers compacting clay for the cut-off trench at the Fiditi earth dam",
-            "width": 1920,
-            "height": 1440
-          },
           "href": "/services/water-resources-development-management"
         }
       ]

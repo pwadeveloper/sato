@@ -113,7 +113,7 @@ banned-terms rule below, which the build enforces.
 | Route | Page |
 |---|---|
 | `/` | Home |
-| `/about` | About (story beside a 2×2 grid of water-work photographs on desktop, motto, mission, vision) |
+| `/about` | About (story beside one water-work photograph on desktop, motto, mission, vision) |
 | `/services` | Services overview — four categories |
 | `/services/infrastructure` | **Infrastructure Services** — category landing page |
 | `/services/civil-engineering-construction` | Civil Engineering & Construction |
@@ -185,24 +185,35 @@ looking in either should find them. The first published category names its
 breadcrumb and its card; the rest are listed on its detail page under
 `labels.alsoIn`.
 
-**A card with no photograph shows its category's stand-in.** Two thirds of
-the record predates Sato photographing its own work, so a category page was
-mostly empty panels. The facet — or its subcategory, which wins — declares
-**`placeholderImages[]`**, and `getProjectPlaceholder()` hands one to
-`ProjectCard` when the project has none of its own. Four are set today:
-Buildings, Roads & Pavements, Electrical Engineering and Water Resources.
+**For project content, the old site is the source of truth**
+(`docs/decisions/mirror-old-site-content.md`). Every project photograph
+comes from satoengineering.com, on the project and in the order the old site
+uses, with the old caption printed under it — cleaned only from ALL CAPS to
+sentence case, of clear typos, and of the country and the former name. Titles,
+details and narratives follow the old site's tables, Projects page and news
+posts in the same way. `docs/old-site-inventory.json` is the captured old site,
+`scripts/content-mirror-plan.json` holds one decision per photograph, and
+`docs/content-audit.md` (`node scripts/audit-site-content.mjs`) measures the
+site against both. Where the client's batch holds the full-size original of an
+old-site photograph, that file is used, matched by perceptual hash. A new
+photograph the old site doesn't have stays only if it was matched at High
+confidence and sits on a project the old site has; the audit lists each one
+for him to confirm.
 
-**They are generic photographs of Sato's work, not of the project on the
-card**, and three things keep that from becoming a false claim. Their `alt`
-describes the photograph and never names the project. **They appear on cards
-only** — the detail page's gallery is headed "Project photographs" and shows
-nothing unless the project has its own, because a stand-in under that heading
-would be a claim rather than a placeholder. And a subcategory overrides its
-category, because a road photograph over a building is worse than no
-photograph. One frame repeating down a grid is deliberate: it reads as a
-stand-in, which is what it is. Swapping one out is `project.images = [...]`
-in `projects.json` — the stand-in stops being used the moment the real
-photograph lands.
+**One photograph, one place.** A photograph is on one project only. It may
+also be one category tile or one page header if it is a photograph of a
+project in that category; nothing else repeats. That is why there are **no
+stand-in photographs on cards any more** — one frame repeated down a grid was
+exactly the "same photo in several categories" the client objected to — and
+why Energy, Digital Twin and Research open without a header until he sends
+photographs of that work. `placeholderImages` still exists on the facet type,
+empty, so bringing stand-ins back would be a content edit.
+
+**A photograph the old site shows but ties to no project** — "Construction
+of box culvert", "Sato office in Abeokuta" — goes in its category's
+**`photos`** (or a subcategory's), rendered after the cards under
+`labels.categoryPhotos`, each with its caption. It is never forced onto a
+project the old site didn't name.
 
 **A category may split its grid under subheadings.** The facet declares
 `subcategories[]` and a project names one in `subcategory`. Civil Engineering
@@ -277,8 +288,9 @@ before-and-after is `docs/heading-audit.md`. `h4` is `text-lg`, not `text-xl`,
 because at the desktop end `text-xl` and `text-h3` are the same size.
 
 **A service may carry `images[]`** — the client's own photographs of completed
-work, rendered by `components/ServiceGallery.tsx` and hidden when empty. The
-four Infrastructure disciplines have them; the other four services do not. The
+work, rendered by `components/ServiceGallery.tsx` and hidden when empty.
+Civil Engineering & Construction and Mechanical Engineering have them; a
+photograph that is on a project page is never also in a service gallery. The
 pipeline from his folder to the page is `docs/adding-client-photos.md`: drop
 the files in `raw-assets/client-photos/<service>/` (gitignored), run
 `npm run images`, then map them from `scripts/client-photo-manifest.json`,
@@ -314,7 +326,7 @@ old `/safety-policies/` redirect to `/about`. The rewritten content is kept in
 ## Content model (Phase 2 CMS will edit these)
 
 - `site.json` — company name, tagline, founded year, registrations, **ordered** `offices` (no "head office"; the first is the one published in structured data), phones, emails, nav, footer. `rcNumber` is held behind `showRcNumber: false`. **`showProjectDates`** switches every year on the site off in one edit — cards, category pages and project pages all read it through `getProjectYear()`. **`homeShowMissionVision`** puts the mission and the vision back on Home, as a pair below the motto; both are held in `pages/home.json` whether or not they are shown. It is never one without the other — the vision alone was what the client asked us to take off. The phone and the email are **not** in the footer; they are on `/contact` only, and in the structured data.
-- `pages/*.json` — per-page headings and body blocks (home, about, services overview, infrastructure landing, contact, leadership intro, projects, clients, 404). `hse.json` is present but unregistered. A page may carry **`serviceSections`** — the same three-section shape a service has — and only `infrastructure.json` does, because `/services/infrastructure` reads as a service page though it is a category landing page. A page may also carry **`reviewStatus`**, and that same file does: its four infrastructure types and six solution areas are written on the page rather than on any service, so without it they would be the one body of capability copy outside the review gate. `check-placeholders.mjs` reads pages as well as services. `projects.json` also holds the eight project-category facets, and `about.json` carries an `imageSets.aside` — the four photographs beside the story, laid out as a CSS grid (a page's `imageSets` holds arrays where `images` holds one). Alongside `labels` (short strings the template needs), a page may carry **`images`** — the photographs its template needs that belong to no single section: its `header` shot, and on the services overview one per category, keyed `groupInfrastructure` and so on.
+- `pages/*.json` — per-page headings and body blocks (home, about, services overview, infrastructure landing, contact, leadership intro, projects, clients, 404). `hse.json` is present but unregistered. A page may carry **`serviceSections`** — the same three-section shape a service has — and only `infrastructure.json` does, because `/services/infrastructure` reads as a service page though it is a category landing page. A page may also carry **`reviewStatus`**, and that same file does: its four infrastructure types and six solution areas are written on the page rather than on any service, so without it they would be the one body of capability copy outside the review gate. `check-placeholders.mjs` reads pages as well as services. `projects.json` also holds the eight project-category facets, and `about.json` carries an `images.aside` — the photograph beside the story. (A page may instead carry `imageSets.aside`, which the About template lays out as a 2×2 grid; the collage was retired because one of its four photographs was only Medium confidence.) Alongside `labels` (short strings the template needs), a page may carry **`images`** — the photographs its template needs that belong to no single section: its `header` shot, and on the services overview one per category, keyed `groupInfrastructure` and so on.
 - `services.json` — array of services: slug, name, **group** (infrastructure / energy / oil-gas / digital-twin / research-innovation), **order**, **reviewStatus** (approved / draft), shortSummary, summary, **`sections`**, relatedProjectSlugs[], relatedServiceSlugs[], image (the header shot) and **`images[]`** (the client's photographs of delivered work, rendered as a gallery at the foot of Capabilities, hidden when empty). Two booleans: **`headerOverlay`** (the `h1` over the header photograph — Oil & Gas only) and **`showSectionsInMenu`** (the Services dropdown lists this page's sections — Oil & Gas only). **`partner`** holds the oil and gas project record and is read by `/projects/oil-gas`, not by the service page; see rule 9.
 
   **`sections` is the whole page.** It has three optional keys —
@@ -328,7 +340,7 @@ old `/safety-policies/` redirect to `/about`. The rewritten content is kept in
   written in and a second diagram needs no new field. A `ServiceList`
   (`aside`, a `list` media block, `engagements`) is either flat — `items`,
   bare phrases — or grouped, with **`groups[]`** of `{ name, description }`.
-- `projects.json` — array: slug, title, **categories[]**, **deliveredBy**, summary, scope[], images[], **optional** `subcategory`, and **optional** client, location, year, status. `images` empty means the card falls back to its category's `placeholderImages` and the detail page shows no gallery at all. `categories` holds facet values — the same slugs as the services — and more than one is normal. `deliveredBy` is `"sato"` or `"partner"` and drives the attribution line. Empty means hidden, never placeheld. `status` is only ever `"Completed"` or empty — the site never labels work as ongoing.
+- `projects.json` — array: slug, title, **categories[]**, **deliveredBy**, summary, scope[], images[] (each with the old site's **`caption`**, shown beneath it by `components/ProjectGallery.tsx`), **optional** `subcategory`, and **optional** client, location, year, status. `images` empty means the card falls back to its category's `placeholderImages` and the detail page shows no gallery at all. `categories` holds facet values — the same slugs as the services — and more than one is normal. `deliveredBy` is `"sato"` or `"partner"` and drives the attribution line. Empty means hidden, never placeheld. `status` is only ever `"Completed"` or empty — the site never labels work as ongoing.
 - `clients.json` — array: name, category (federal / state / international / education / private / **oil-gas-partner**), logo?. The page shows names only — no logos, no category headings, no agencies nested under a government. `oil-gas-partner` entries render in a separate block under their own attributed heading and sit behind the same review gate as the Oil & Gas page. **This heading is now inconsistent with `/projects/oil-gas`**, which no longer attributes; the client was asked which way to settle it (see `docs/open-items.md`) and nothing changes here until he answers.
 - `team.json` — array: slug, name, title, isLeadership, **published**, bio, qualifications[], memberships[], photo?. `published: false` keeps a record in the file but off the site, the sitemap and the structured data.
 - `equipment.json` — array: name, category, quantity?, notes?
@@ -432,6 +444,10 @@ disagree with this file:
    "Phase 2 — what was done" the approvals, the three rulings (crop the
    former name out or drop the photo; the helmet rule applied to every image
    on the site; the Lagos road photo held back) and every photo removed.
+8. `mirror-old-site-content.md` — **the current one for project content.**
+   The old site is the source of truth for project photographs, captions,
+   titles, details and narratives; one photograph, one place; stand-ins off
+   cards; and the amendments on which October-batch photographs stay.
 
 ## Review deployments
 

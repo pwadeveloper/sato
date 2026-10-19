@@ -15,14 +15,14 @@
     "details": "Project details",
     "scope": "Scope of work",
     "gallery": "Project photographs",
-    "galleryThumbs": "Choose a photograph to enlarge",
     "relatedService": "Service",
     "otherCategories": "Other categories",
     "categoriesLabel": "Project categories",
     "clientsLink": "Clients we've worked with",
     "allProjects": "All projects",
     "partnerAttribution": "Delivered by our technical partner team.",
-    "alsoIn": "Also in"
+    "alsoIn": "Also in",
+    "categoryPhotos": "Other photographs"
   },
   "images": {
     "header": {
@@ -50,32 +50,76 @@
             {
               "id": "buildings",
               "label": "Buildings",
-              "placeholderImages": [
+              "photos": [
                 {
-                  "src": "/images/projects/mcpherson-administrative-block-and-laboratory/administrative-block-rear.webp",
-                  "alt": "Rear elevation of a completed two-storey building delivered by Sato",
-                  "width": 1920,
-                  "height": 1440
+                  "src": "/images/projects-unassigned/omololu-residence.webp",
+                  "alt": "Work in progress at Mr. Lekan Omololu’s residential development, Abeokuta",
+                  "width": 591,
+                  "height": 392,
+                  "caption": "Work in progress at Mr. Lekan Omololu’s residential development, Abeokuta"
+                },
+                {
+                  "src": "/images/projects/civil-buildings/sato-office-abeokuta-front.webp",
+                  "alt": "Sato office in Abeokuta",
+                  "width": 602,
+                  "height": 364,
+                  "caption": "Sato office in Abeokuta"
+                },
+                {
+                  "src": "/images/projects-unassigned/sato-office-abeokuta.webp",
+                  "alt": "Sato office in Abeokuta",
+                  "width": 602,
+                  "height": 363,
+                  "caption": "Sato office in Abeokuta"
                 }
               ]
             },
             {
               "id": "roads-pavements",
               "label": "Roads & Pavements",
-              "placeholderImages": [
+              "photos": [
                 {
-                  "src": "/images/services/civil-engineering-construction/adetoro-close-completed-road.webp",
-                  "alt": "A completed asphaltic concrete road with centre-line markings on a Sato contract",
+                  "src": "/images/services/roadworks-completed-carriageway.webp",
+                  "alt": "Work in progress, asphalt laying & compaction",
                   "width": 1920,
-                  "height": 1440
+                  "height": 1440,
+                  "caption": "Work in progress, asphalt laying & compaction"
+                },
+                {
+                  "src": "/images/projects/civil-roads-and-pavements/asphaltic-concrete-road-under-construction.webp",
+                  "alt": "Asphaltic concrete road under construction",
+                  "width": 1920,
+                  "height": 1440,
+                  "caption": "Asphaltic concrete road under construction by Sato"
+                },
+                {
+                  "src": "/images/projects/civil-roads-and-pavements/sub-base-compaction.webp",
+                  "alt": "Compaction of sub-base material in progress",
+                  "width": 1920,
+                  "height": 1238,
+                  "caption": "Compaction of sub-base material in progress"
+                },
+                {
+                  "src": "/images/projects/civil-roads-and-pavements/sandfilled-area-after-grading.webp",
+                  "alt": "Sandfilled area, after grading and prior to compaction",
+                  "width": 800,
+                  "height": 540,
+                  "caption": "Sandfilled area, after grading and prior to compaction"
+                },
+                {
+                  "src": "/images/projects/civil-roads-and-pavements/box-culvert.webp",
+                  "alt": "Construction of box culvert",
+                  "width": 1920,
+                  "height": 1440,
+                  "caption": "Construction of box culvert"
                 }
               ]
             }
           ],
           "intro": "Buildings, roads, heavy-duty pavements, earthworks, drainage, kerbs and culverts — new-build, rehabilitation and conversion.",
           "image": {
-            "src": "/images/projects/mcpherson-administrative-block-and-laboratory/administrative-block.webp",
-            "alt": "Two-storey administrative block nearing completion at McPherson University, Ajebo",
+            "src": "/images/projects/horizon-suites-hotel-complex/hotel-entrance.webp",
+            "alt": "Entrance to the Horizon Suites hotel, Oluyole Estate, Ibadan",
             "width": 1920,
             "height": 1440
           },
@@ -89,20 +133,12 @@
           "group": "infrastructure",
           "intro": "Metering, pumping and control installations supplied and commissioned for water and infrastructure clients.",
           "image": {
-            "src": "/images/services/electrical-engineering/iperu-booster-station-capacitor-panel.webp",
-            "alt": "Completed capacitor bank and control panel at the Iperu booster station",
+            "src": "/images/services/electrical-engineering/iperu-booster-station-breaker-panel.webp",
+            "alt": "Completed breaker panel with its wiring at the Iperu booster station",
             "width": 1920,
             "height": 1440
           },
-          "shortLabel": "Electrical",
-          "placeholderImages": [
-            {
-              "src": "/images/services/electrical-engineering/iperu-booster-station-breaker-panel.webp",
-              "alt": "A completed breaker panel on a Sato water scheme",
-              "width": 1920,
-              "height": 1440
-            }
-          ]
+          "shortLabel": "Electrical"
         },
         {
           "value": "mechanical-engineering",
@@ -121,18 +157,40 @@
           "group": "infrastructure",
           "intro": "Dams, intakes, water supply schemes, boreholes, metering, river works and erosion control.",
           "image": {
-            "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ground-tank.webp",
-            "alt": "Circular concrete ground tank holding water at the Ogere water supply scheme",
+            "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-house.webp",
+            "alt": "Completed high lift pump house at the Ogere water supply scheme",
             "width": 1600,
             "height": 1200
           },
           "shortLabel": "Water",
-          "placeholderImages": [
+          "photos": [
             {
-              "src": "/images/about/arakanga-water-treatment-sand-filter.webp",
-              "alt": "Water running through a sand filter at a treatment plant Sato worked on",
+              "src": "/images/services/water-ductile-iron-pipes.webp",
+              "alt": "Stacked Ductile Iron Pipes for Water Distribution",
+              "width": 1600,
+              "height": 1200,
+              "caption": "Stacked Ductile Iron Pipes for Water Distribution"
+            },
+            {
+              "src": "/images/services/water-meter-training.webp",
+              "alt": "Training of Ogun State Water Corporation Staff on Water Meter Installation",
+              "width": 640,
+              "height": 480,
+              "caption": "Training of Ogun State Water Corporation Staff on Water Meter Installation"
+            },
+            {
+              "src": "/images/projects/water-resources/water-meter-strategy-session.webp",
+              "alt": "Strategy Session on Water Meter Installation",
+              "width": 640,
+              "height": 480,
+              "caption": "Strategy Session on Water Meter Installation"
+            },
+            {
+              "src": "/images/projects/water-resources/mabunmi-junction-erosion-control.webp",
+              "alt": "Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State",
               "width": 1920,
-              "height": 1440
+              "height": 1440,
+              "caption": "Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State"
             }
           ]
         },

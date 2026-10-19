@@ -456,21 +456,23 @@ export function getProjectGroupsInCategory(
 ): ProjectGroup[] {
   const all = getProjectsInCategory(category);
   const subcategories = category.subcategories ?? [];
-  if (!subcategories.length) return [{ items: all }];
+  if (!subcategories.length) return [{ items: all, photos: category.photos }];
 
   const groups: ProjectGroup[] = subcategories
     .map((sub) => ({
       id: sub.id,
       label: sub.label,
       items: all.filter((project) => project.subcategory === sub.id),
+      photos: sub.photos,
     }))
-    .filter((group) => group.items.length > 0);
+    .filter((group) => group.items.length > 0 || group.photos?.length);
 
   const claimed = new Set(subcategories.map((sub) => sub.id));
   const rest = all.filter(
     (project) => !project.subcategory || !claimed.has(project.subcategory),
   );
-  if (rest.length) groups.push({ items: rest });
+  if (rest.length || category.photos?.length)
+    groups.push({ items: rest, photos: category.photos });
 
   return groups;
 }

@@ -122,36 +122,6 @@
       "alt": "Completed asphalt carriageway with kerbed median"
     },
     {
-      "source": "2012/07/clip_image0021.jpg",
-      "out": "services/roadworks-box-culvert",
-      "alt": "Box culvert under construction"
-    },
-    {
-      "source": "2012/07/clip_image0022.jpg",
-      "out": "services/roadworks-priming",
-      "alt": "MC1 prime coat applied before asphalt is laid"
-    },
-    {
-      "source": "2012/07/clip_image0023.jpg",
-      "out": "services/roadworks-sub-base-compaction",
-      "alt": "Sub-base material being compacted"
-    },
-    {
-      "source": "2012/07/clip_image0024.jpg",
-      "out": "services/roadworks-wearing-course",
-      "alt": "Wearing course being laid"
-    },
-    {
-      "source": "2012/07/clip_image00ds1.jpg",
-      "out": "services/roadworks-sandfill-grading",
-      "alt": "Sandfill being spread and graded"
-    },
-    {
-      "source": "2012/07/clip_image001.jpg",
-      "out": "services/roadworks-sandfill-graded",
-      "alt": "Graded sandfill before compaction"
-    },
-    {
       "source": "2019/10/IMG_0085.jpg",
       "out": "services/water-ductile-iron-pipes",
       "alt": "Stacked ductile iron pipes for water distribution"
@@ -165,11 +135,6 @@
       "source": "2019/10/P1050419.jpg",
       "out": "services/water-meter-training",
       "alt": "Ogun State Water Corporation staff being trained on water meter installation"
-    },
-    {
-      "source": "2012/07/e02.jpg",
-      "out": "services/water-erosion-control",
-      "alt": "Excavation for erosion control at Mabunmi junction, Ijebu"
     },
     {
       "source": "2012/07/9.jpg",

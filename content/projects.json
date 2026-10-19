@@ -12,7 +12,15 @@
     "status": "Completed",
     "summary": "Intake structure for the Sagamu water supply scheme, delivered under the World Bank-assisted programme with Ogun State Water Corporation.",
     "scope": [],
-    "images": [],
+    "images": [
+      {
+        "src": "/images/services/water-high-lift-pump-panel.webp",
+        "alt": "Installed High Lift Pump Panel at Sagamu Intake, Water Supply Scheme",
+        "width": 1600,
+        "height": 1200,
+        "caption": "Installed High Lift Pump Panel at Sagamu Intake, Water Supply Scheme"
+      }
+    ],
     "featured": true
   },
   {
@@ -43,43 +51,51 @@
     "deliveredBy": "sato",
     "year": "2012",
     "status": "Completed",
-    "summary": "Rehabilitation of the Ogere water supply scheme, including the high lift pump building, filter beds, ductile iron mains and 253 cubic metre overhead tanks.",
+    "summary": "Sato completes and handover the rehabilitation of Ogere Water Scheme in Ogun State, a World Bank financed project. During the handing over ceremony, the Head Project implementation Unit of the Ogun State Water Corporation, Engr. Maku, commended the company for a job well done.",
     "scope": [
-      "Construction of the high lift pump building",
-      "Filter bed rehabilitation",
-      "Ductile iron and UPVC main laying",
-      "Overhead tank foundations and construction"
+      "Rehabilitation of the intake structure, filters, aerators, sedimentation tanks and Buildings.",
+      "Designing and construction of over-head tanks.",
+      "Rehabilitation of Booster Station.",
+      "Designing and developing of state of the art electro-mechanical systems.",
+      "Construction of over-head tanks, clear water tanks, flocculation chamber and staff quarters.",
+      "Laying of several kilometres of Ductile iron pipes.",
+      "Construction of flood control system."
     ],
     "images": [
       {
         "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-house.webp",
-        "alt": "Completed high lift pump house at the Ogere water supply scheme",
+        "alt": "Construction of high lift pump building at Ogere Water Supply Scheme",
         "width": 1600,
-        "height": 1200
+        "height": 1200,
+        "caption": "Construction of high lift pump building at Ogere Water Supply Scheme by Sato"
       },
       {
-        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ground-tank.webp",
-        "alt": "Circular concrete ground tank holding water at the Ogere water supply scheme",
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/oshitelu-overhead-tank.webp",
-        "alt": "Completed elevated steel water tank at Oshitelu Memorial Grammar School, Ogere",
-        "width": 1024,
-        "height": 768
-      },
-      {
-        "src": "/images/projects/ogere-1.webp",
-        "alt": "Reinforcement and formwork during construction at the Ogere water supply scheme",
-        "width": 1600,
-        "height": 1200
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-building.webp",
+        "alt": "Construction of high lift pump building at Ogere Water Supply Scheme",
+        "width": 1072,
+        "height": 804,
+        "caption": "Construction of high lift pump building at Ogere Water Supply Scheme by Sato"
       },
       {
         "src": "/images/projects/ogere-4.webp",
-        "alt": "Trench excavated for UPVC pipes at Ositelu, Ogere",
+        "alt": "Laying of UPVC Pipes in Progress at Ositelu Ogere",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Laying of UPVC Pipes in Progress at Ositelu Ogere"
+      },
+      {
+        "src": "/images/projects/ogere-1.webp",
+        "alt": "Construction work in progress at Ogere Water Scheme Ogun State",
+        "width": 1600,
+        "height": 1200,
+        "caption": "Construction work in progress at Ogere Water Scheme Ogun State"
+      },
+      {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/oshitelu-overhead-tank.webp",
+        "alt": "Constructed overhead tank at Oshitelu Memorial Grammar School at Ogere",
+        "width": 1024,
+        "height": 768,
+        "caption": "Constructed overhead tank at Oshitelu Memorial Grammar School at Ogere"
       }
     ],
     "featured": true
@@ -95,38 +111,43 @@
     "deliveredBy": "sato",
     "year": "Awarded 2011",
     "status": "",
-    "summary": "Construction of an earth dam, including cut-off trench clay compaction and river course clearing.",
+    "summary": "Sato has been awarded contract for the construction of an earth dam at Fiditi Dam. This is a Federal Government Project being financed by the Ogun-Osun River Basin Development Authority to provide water for the Agriculture and other needs for Fiditi Community.",
     "scope": [],
     "images": [
       {
-        "src": "/images/projects/fiditi-earth-dam/cut-off-trench-excavation.webp",
-        "alt": "Excavator cutting the cut-off trench at the Fiditi earth dam, with a site engineer in a helmet on the bank",
+        "src": "/images/projects/fiditi-earth-dam/clay-compaction.webp",
+        "alt": "Clay compaction for COT (Fiditi Dam)",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Clay compaction for COT (Fiditi Dam)"
       },
       {
-        "src": "/images/projects/fiditi-earth-dam/clay-compaction.webp",
-        "alt": "Padfoot rollers compacting clay for the cut-off trench at the Fiditi earth dam",
+        "src": "/images/projects/fiditi-earth-dam/cut-off-trench-excavation.webp",
+        "alt": "Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority."
       },
       {
         "src": "/images/projects/fiditi-earth-dam/topsoil-removal.webp",
-        "alt": "Bulldozer removing topsoil in the third cut-off trench segment at the Fiditi earth dam",
+        "alt": "Removal of top soil within 3rd segment cut-off trench area (Fiditi Dam)",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Removal of top soil within 3rd segment cut-off trench area (Fiditi Dam)"
       },
       {
         "src": "/images/projects/fiditi-earth-dam/third-segment-excavation.webp",
-        "alt": "Excavator digging the third cut-off trench segment at the Fiditi earth dam",
+        "alt": "Excavation in progress for 3rd segment of COT (Fiditi Dam)",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Excavation in progress for 3rd segment of COT (Fiditi Dam)"
       },
       {
         "src": "/images/projects/fiditi-earth-dam/clay-spreading.webp",
-        "alt": "Clay spread along the second cut-off trench segment at the Fiditi earth dam",
+        "alt": "Spreading of clay for 2nd segment cut-off trench (Fiditi Dam)",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Spreading of clay for 2nd segment cut-off trench (Fiditi Dam)"
       }
     ],
     "featured": true
@@ -192,7 +213,7 @@
     "deliveredBy": "sato",
     "year": "2015",
     "status": "Completed",
-    "summary": "Channelization of the Lower Awba stream through the University of Ibadan Zoological Garden.",
+    "summary": "Sato has been awarded contract for the channelization of the Lower Awba Stream at the University of Ibadan. The project is to put an end to the perennial flooding along the axis of the Awba Stream from the source to the Dam. The scope involves establishing horizontal alignment and setting out as designed excavating trench using profile levels and making good the excavation to receive concrete. Reinforcement bars of different sizes are to be bent and placed in line with project working drawings and concrete works to form the shape specified for the Channelization works.",
     "scope": [],
     "images": [],
     "featured": false
@@ -215,8 +236,8 @@
   },
   {
     "slug": "ogungbade-river-dredging",
-    "title": "Dredging of Omi Ogungbade River",
-    "client": "Federal Ministry of Environment",
+    "title": "Dredging of River, Omi Ogungbade",
+    "client": "Federal Ministry of Environment & Habitat",
     "location": "Omi Ogungbade, Oyo State",
     "categories": [
       "water-resources-development-management"
@@ -224,7 +245,7 @@
     "deliveredBy": "sato",
     "year": "2012",
     "status": "Completed",
-    "summary": "Dredging of the Omi Ogungbade river.",
+    "summary": "Sato completed works on the dredging of Ogungbade River in Ibadan. The project was embarked upon to eliminate flooding at the Ogungbade Community and the people of the community have been experiencing a flood free environment since the completion of the job.",
     "scope": [],
     "images": [],
     "featured": false
@@ -245,22 +266,24 @@
     "images": [
       {
         "src": "/images/projects/ijaiye-river-dredging/excavator-in-river.webp",
-        "alt": "Excavator dredging the river channel at Ijaiye, Abeokuta",
+        "alt": "Ongoing work in progress at Ijaye Abeokuta",
         "width": 1430,
-        "height": 844
+        "height": 844,
+        "caption": "Ongoing work in progress at Ijaye Abeokuta by Sato"
       },
       {
         "src": "/images/projects/ijaiye-river-dredging/dredging-supervision.webp",
-        "alt": "Supervisor in a hard hat watching an excavator dredge the river at Ijaiye, Abeokuta",
+        "alt": "Ongoing work in progress at Ijaye Abeokuta",
         "width": 1430,
-        "height": 789
+        "height": 789,
+        "caption": "Ongoing work in progress at Ijaye Abeokuta by Sato"
       }
     ],
     "featured": false
   },
   {
     "slug": "solar-powered-boreholes",
-    "title": "Solar-Powered Boreholes",
+    "title": "Construction of Solar Powered Boreholes",
     "client": "Ogun State Bureau of Management and Budget; Ogun-Osun River Basin Development Authority",
     "location": "Ogun State",
     "categories": [
@@ -269,32 +292,43 @@
     "deliveredBy": "sato",
     "year": "2010",
     "status": "Completed",
-    "summary": "Thirty-five solar-powered boreholes drilled and commissioned across Ogun State using Sato's own drilling rig — 32 for the Bureau of Management and Budget and three for the Ogun-Osun River Basin Development Authority.",
+    "summary": "Sato has drilled and commissioned Solar powered Boreholes for the Federal Government, State Governments, Corporate Organizations and private individuals. Using our state of the art drilling equipment and efficient personnel.",
     "scope": [],
     "images": [
       {
-        "src": "/images/projects/boreholes-1.webp",
-        "alt": "Completed solar-powered borehole at the primary health centre, Ota",
-        "width": 580,
-        "height": 399
-      },
-      {
-        "src": "/images/projects/boreholes-2.webp",
-        "alt": "Completed solar-powered borehole at a primary health centre in Ogun State",
-        "width": 573,
-        "height": 387
+        "src": "/images/projects/boreholes-4.webp",
+        "alt": "Completed solar powered borehole project at Primary Health Centre Tube, Ogun State, MDG’s project",
+        "width": 602,
+        "height": 379,
+        "caption": "Completed solar powered borehole project at Primary Health Centre Tube, Ogun State, MDG’s project."
       },
       {
         "src": "/images/projects/boreholes-3.webp",
-        "alt": "Completed solar-powered borehole at a primary health centre in Ogun State",
+        "alt": "Completed solar powered borehole project at Primary Health Centre Idogo, Ogun State, MDG’s project",
         "width": 578,
-        "height": 372
+        "height": 372,
+        "caption": "Completed solar powered borehole project at Primary Health Centre Idogo, Ogun State, MDG’s project."
       },
       {
-        "src": "/images/projects/boreholes-4.webp",
-        "alt": "Completed solar-powered borehole at a primary health centre in Ogun State",
-        "width": 602,
-        "height": 379
+        "src": "/images/projects/boreholes-2.webp",
+        "alt": "Completed solar powered borehole project at Primary Health Centre Ifoyintedo, Ogun State, MDG’s project",
+        "width": 573,
+        "height": 387,
+        "caption": "Completed solar powered borehole project at Primary Health Centre Ifoyintedo, Ogun State, MDG’s project."
+      },
+      {
+        "src": "/images/projects/solar-powered-boreholes/ota-tap-stand.webp",
+        "alt": "Completed solar powered borehole project at Primary Health Centre Ota, MDG’s project",
+        "width": 578,
+        "height": 401,
+        "caption": "Completed solar powered borehole project at Primary Health Centre Ota, MDG’s project"
+      },
+      {
+        "src": "/images/projects/boreholes-1.webp",
+        "alt": "Completed solar powered borehole project at Primary Health Centre Ota, MDG’s project",
+        "width": 580,
+        "height": 399,
+        "caption": "Completed solar powered borehole project at Primary Health Centre Ota, MDG’s project"
       }
     ],
     "featured": false
@@ -319,28 +353,32 @@
     ],
     "images": [
       {
-        "src": "/images/projects/fce-osiele-1.webp",
-        "alt": "Completed road at the Federal College of Education, Osiele",
+        "src": "/images/projects/fce-osiele-3.webp",
+        "alt": "Compacted laterite filling at Federal College of Education, Osiele",
         "width": 520,
-        "height": 1040
+        "height": 1040,
+        "caption": "Compacted laterite filling at Federal College of Education, Osiele"
       },
       {
         "src": "/images/projects/fce-osiele-2.webp",
-        "alt": "Compacted laterite filling with walkway at the Federal College of Education, Osiele",
+        "alt": "Compacted laterite filling with walkway at Federal College of Education, Osiele",
         "width": 520,
-        "height": 1040
-      },
-      {
-        "src": "/images/projects/fce-osiele-3.webp",
-        "alt": "Compacted laterite filling at the Federal College of Education, Osiele",
-        "width": 520,
-        "height": 1040
+        "height": 1040,
+        "caption": "Compacted laterite filling with walkway at Federal College of Education, Osiele"
       },
       {
         "src": "/images/projects/fce-osiele-4.webp",
-        "alt": "Asphalt being laid at the Federal College of Education, Osiele",
+        "alt": "Laying of asphalt at Federal College of Education, Osiele",
         "width": 520,
-        "height": 1040
+        "height": 1040,
+        "caption": "Laying of asphalt at Federal College of Education, Osiele"
+      },
+      {
+        "src": "/images/projects/fce-osiele-1.webp",
+        "alt": "Completed road at Federal College of Education, Osiele",
+        "width": 520,
+        "height": 1040,
+        "caption": "Completed road at Federal College of Education, Osiele"
       }
     ],
     "featured": false
@@ -381,7 +419,7 @@
   },
   {
     "slug": "mcpherson-seriki-sotayo-roads",
-    "title": "Internal Road Networks, McPherson University",
+    "title": "Construction of Internal Road Networks for McPherson University Seriki-Sotayo",
     "client": "Joint Magnate Investment Limited",
     "location": "Seriki-Sotayo, Ajebo, Ogun State",
     "categories": [
@@ -398,7 +436,7 @@
   },
   {
     "slug": "asphaltic-concrete-road-and-drainage-ajebo",
-    "title": "Asphaltic Concrete Road and Drainage",
+    "title": "Asphaltic Concrete Road & Drainage System",
     "client": "Life University, Ajebo",
     "location": "Ajebo, Ogun State",
     "categories": [
@@ -412,40 +450,25 @@
     "scope": [],
     "images": [
       {
-        "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-towards-campus-buildings.webp",
-        "alt": "Asphaltic concrete road under construction at Life University, Ajebo, with campus buildings beyond",
+        "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-and-drainage-channel.webp",
+        "alt": "Asphaltic concrete road & drainage system under construction at Life University Ajebo, Ogun State",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Asphaltic concrete road & drainage system under construction at Life University Ajebo, Ogun State"
+      },
+      {
+        "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-towards-campus-buildings.webp",
+        "alt": "Asphaltic concrete road under construction at Life University Ajebo, Ogun State",
+        "width": 1920,
+        "height": 1440,
+        "caption": "Asphaltic concrete road under construction at Life University Ajebo, Ogun State"
       },
       {
         "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-with-kerbs.webp",
-        "alt": "New asphalt road with kerbs and electricity poles at Life University, Ajebo",
+        "alt": "Asphaltic concrete road under construction at Life University Ajebo, Ogun State",
         "width": 1920,
-        "height": 1440
-      },
-      {
-        "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-and-drainage-channel.webp",
-        "alt": "Asphalt road beside a lined drainage channel at Life University, Ajebo",
-        "width": 1920,
-        "height": 1440
-      },
-      {
-        "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-and-kerbed-island.webp",
-        "alt": "Asphalt road and kerbed island in front of a completed building at Life University, Ajebo",
-        "width": 1920,
-        "height": 1440
-      },
-      {
-        "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/tandem-roller.webp",
-        "alt": "Tandem roller on a newly laid asphalt road at Life University, Ajebo",
-        "width": 1920,
-        "height": 1440
-      },
-      {
-        "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/kerbed-road-junction.webp",
-        "alt": "Kerbed asphalt road junction beside campus buildings at Life University, Ajebo",
-        "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Asphaltic concrete road under construction at Life University Ajebo, Ogun State"
       }
     ],
     "featured": false
@@ -486,7 +509,7 @@
   },
   {
     "slug": "undp-rural-roads",
-    "title": "Improvement of Rural Roads, Kerbs, Culverts and Drainage",
+    "title": "Improvement of Rural Roads / Construction of Kerbs, Culverts & Drainage",
     "client": "United Nations Development Programme (UNDP)",
     "location": "Abeokuta, Ogun State",
     "categories": [
@@ -503,7 +526,7 @@
   },
   {
     "slug": "funaab-colplant-building-phase-ii",
-    "title": "College of Plant Science and Crop Production (COLPLANT) Building, Phase II",
+    "title": "Construction of College of Plant Science and Crop Production (COLPLANT) Building Phase II",
     "client": "Federal University of Agriculture, Abeokuta",
     "location": "Abeokuta, Ogun State",
     "categories": [
@@ -513,39 +536,43 @@
     "deliveredBy": "sato",
     "year": "Awarded 2016",
     "status": "",
-    "summary": "Phase II of the COLPLANT building for the Federal University of Agriculture, Abeokuta.",
+    "summary": "Sato is currently constructing (at completion stage) a 2 Storey Multipurpose Building with Offices (Academic Building Complex) Block B and College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta.",
     "scope": [],
     "images": [
       {
         "src": "/images/projects/funaab-colplant-1.webp",
-        "alt": "COLPLANT building at the Federal University of Agriculture, Abeokuta, at completion stage",
+        "alt": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta",
         "width": 1040,
-        "height": 520
-      },
-      {
-        "src": "/images/projects/funaab-colplant-2.webp",
-        "alt": "COLPLANT building under construction, with a backhoe loader on site",
-        "width": 1040,
-        "height": 520
+        "height": 520,
+        "caption": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta."
       },
       {
         "src": "/images/projects/funaab-colplant-3.webp",
-        "alt": "First-floor walkway and railings in the COLPLANT building",
+        "alt": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta",
         "width": 1040,
-        "height": 520
+        "height": 520,
+        "caption": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta."
+      },
+      {
+        "src": "/images/projects/funaab-colplant-2.webp",
+        "alt": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta",
+        "width": 1040,
+        "height": 520,
+        "caption": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta."
       },
       {
         "src": "/images/projects/funaab-colplant-4.webp",
-        "alt": "Internal corridor in the COLPLANT building",
+        "alt": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta",
         "width": 520,
-        "height": 1040
+        "height": 1040,
+        "caption": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta."
       }
     ],
     "featured": false
   },
   {
     "slug": "funaab-academic-building-complex-block-b",
-    "title": "Two-Storey Multipurpose Building with Offices (Academic Building Complex) Block B",
+    "title": "Construction of 2 Storey Multipurpose Building with Offices (Academic Building Complex) Block B",
     "client": "Federal University of Agriculture, Abeokuta",
     "location": "Abeokuta, Ogun State",
     "categories": [
@@ -555,7 +582,7 @@
     "deliveredBy": "sato",
     "year": "Awarded 2015",
     "status": "",
-    "summary": "Two-storey multipurpose building with offices, Block B of the academic building complex.",
+    "summary": "Sato is currently constructing (at completion stage) a 2 Storey Multipurpose Building with Offices (Academic Building Complex) Block B and College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta.",
     "scope": [],
     "images": [],
     "featured": false
@@ -576,23 +603,25 @@
     "scope": [],
     "images": [
       {
-        "src": "/images/projects/funaab-administrative-block-1.webp",
-        "alt": "Three-storey administrative block under construction at the Federal University of Agriculture, Abeokuta",
+        "src": "/images/projects/funaab-administrative-block-2.webp",
+        "alt": "Work in Progress, Administrative Block at Federal University of Agriculture, Abeokuta",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Work in Progress, Administrative Block at Federal University of Agriculture, Abeokuta"
       },
       {
-        "src": "/images/projects/funaab-administrative-block-2.webp",
-        "alt": "External walkway and balustrade on the administrative block at the Federal University of Agriculture, Abeokuta",
+        "src": "/images/projects/funaab-administrative-block-1.webp",
+        "alt": "Work in Progress, Administrative Block at Federal University of Agriculture, Abeokuta",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Work in Progress, Administrative Block at Federal University of Agriculture, Abeokuta"
       }
     ],
     "featured": false
   },
   {
     "slug": "unilag-creative-arts-building",
-    "title": "Construction and Furnishing of the Department of Creative Arts Building",
+    "title": "Construction with Furnishing of the Department of Creative Arts Building",
     "client": "University of Lagos",
     "location": "Commercial Road, Lagos",
     "categories": [
@@ -607,22 +636,24 @@
     "images": [
       {
         "src": "/images/projects/unilag-creative-arts-building/gallery-and-studios.webp",
-        "alt": "Upper-floor gallery and ground-floor studios of the Creative Arts Building, University of Lagos",
+        "alt": "Creative Arts Building, University of Lagos",
         "width": 1920,
-        "height": 893
+        "height": 893,
+        "caption": "Creative Arts Building, University of Lagos"
       },
       {
         "src": "/images/projects/unilag-creative-arts-building/facade-with-murals.webp",
-        "alt": "Two-storey facade of the Creative Arts Building, University of Lagos, with murals on the ground floor",
+        "alt": "Creative Arts Building, University of Lagos",
         "width": 1920,
-        "height": 1689
+        "height": 1689,
+        "caption": "Creative Arts Building, University of Lagos"
       }
     ],
     "featured": false
   },
   {
     "slug": "unilag-mariere-retaining-wall",
-    "title": "Construction of Retaining Wall, Mariere Hall",
+    "title": "Construction of Retaining Wall to Mariere Hall Fence",
     "client": "University of Lagos",
     "location": "Lagos",
     "categories": [
@@ -639,7 +670,7 @@
   },
   {
     "slug": "mcpherson-administrative-block-and-laboratory",
-    "title": "Administrative Block and Laboratory Building",
+    "title": "Construction of Administrative Block and Laboratory Building",
     "client": "McPherson University",
     "location": "Ajebo, Ogun State",
     "categories": [
@@ -649,26 +680,29 @@
     "deliveredBy": "sato",
     "year": "2011",
     "status": "Completed",
-    "summary": "Administrative building and laboratory for a private university, completed and handed over in 2011.",
+    "summary": "Sato has completed the construction of Administrative building and Laboratory for McPherson University Ajebo Ogun State. This is a private University being developed by the Four Square Gospel Church.",
     "scope": [],
     "images": [
       {
         "src": "/images/projects/mcpherson-administrative-block-and-laboratory/administrative-block.webp",
-        "alt": "Two-storey administrative block nearing completion at McPherson University, Ajebo",
+        "alt": "Work in progress at McPherson University administrative block Ajebo, Ogun State",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Work in progress at McPherson University administrative block Ajebo, Ogun State"
       },
       {
         "src": "/images/projects/mcpherson-administrative-block-and-laboratory/administrative-block-rear.webp",
-        "alt": "Rear elevation of the administrative block at McPherson University, Ajebo",
+        "alt": "Work in progress at McPherson University administrative block Ajebo, Ogun State",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Work in progress at McPherson University administrative block Ajebo, Ogun State"
       },
       {
         "src": "/images/projects/mcpherson-administrative-block-and-laboratory/laboratory-building.webp",
-        "alt": "Laboratory building under construction at McPherson University, Ajebo",
+        "alt": "Construction of laboratory building in progress at McPherson University Ajebo, Ogun State",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Construction of laboratory building in progress at McPherson University Ajebo, Ogun State"
       }
     ],
     "featured": false
@@ -685,14 +719,15 @@
     "deliveredBy": "sato",
     "year": "Awarded 2012",
     "status": "",
-    "summary": "Conversion and total rehabilitation of the convention centre into staff quarters.",
+    "summary": "Sato has been awarded the contract for the conversion and total rehabilitation of convention centre to temporary staff quarters by the McPherson’s University.",
     "scope": [],
     "images": [
       {
         "src": "/images/projects/mcpherson-convention-1.webp",
-        "alt": "Internal corridor during conversion of the convention centre to staff quarters at McPherson University, Ajebo",
+        "alt": "Work in progress at the conversion of convention centre to staff quarters project at the McPherson University, Ajebo",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Work in progress at the conversion of convention centre to staff quarters project at the McPherson University, Ajebo."
       }
     ],
     "featured": false
@@ -714,9 +749,10 @@
     "images": [
       {
         "src": "/images/projects/owode-yewa-lock-up-shops/row-of-shops.webp",
-        "alt": "Row of completed lock-up shops along the market road at Owode-Yewa",
+        "alt": "Blocks of Shops, Owode Yewa International Market",
         "width": 1920,
-        "height": 2181
+        "height": 2181,
+        "caption": "Blocks of Shops, Owode Yewa International Market"
       }
     ],
     "featured": false
@@ -737,16 +773,18 @@
     "scope": [],
     "images": [
       {
-        "src": "/images/projects/horizon-suites-hotel-complex/hotel-entrance.webp",
-        "alt": "Entrance to the Horizon Suites hotel, Oluyole Estate, Ibadan",
+        "src": "/images/projects/horizon-suites-hotel-complex/chalet-driveway.webp",
+        "alt": "Horizon Suites, Ibadan, Oyo State",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Horizon Suites, Ibadan, Oyo State"
       },
       {
-        "src": "/images/projects/horizon-suites-hotel-complex/chalet-driveway.webp",
-        "alt": "Driveway between the chalets at the Horizon Suites hotel, Ibadan",
+        "src": "/images/projects/horizon-suites-hotel-complex/hotel-entrance.webp",
+        "alt": "Horizon Suites, Ibadan, Oyo State",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Horizon Suites, Ibadan, Oyo State"
       }
     ],
     "featured": false
@@ -763,14 +801,15 @@
     "deliveredBy": "sato",
     "year": "2009",
     "status": "Completed",
-    "summary": "Obstetrics care facility at Mowe.",
+    "summary": "Sato completes the Construction of Obstetrics Care Facility, Mowe, Ogun State.",
     "scope": [],
     "images": [
       {
         "src": "/images/projects/obstetrics-care-facility-mowe/facility-under-construction.webp",
-        "alt": "Obstetrics care facility under construction at Mowe",
+        "alt": "Work in Progress, Obstetrics Care Facility, Mowe",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Work in Progress, Obstetrics Care Facility, Mowe"
       }
     ],
     "featured": false
@@ -779,7 +818,7 @@
     "slug": "alabi-olorunda-primary-health-centre",
     "title": "Construction of Primary Health Centre",
     "client": "National Primary Health Care Development Agency",
-    "location": "Alabi-Olorunda, Ifo, Ogun State",
+    "location": "Alabi Olorunda, Ifo, Ilado",
     "categories": [
       "civil-engineering-construction"
     ],
@@ -791,10 +830,18 @@
     "scope": [],
     "images": [
       {
-        "src": "/images/projects/alabi-olorunda-primary-health-centre/health-centre.webp",
-        "alt": "Completed primary health centre at Alabi-Olorunda",
+        "src": "/images/projects/alabi-olorunda-primary-health-centre/completed-health-centre.webp",
+        "alt": "Completed National Primary Health Centre at Alabi-Olorunda, Oyo State",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Picture showing completed National Primary Health Centre at Alabi-Olorunda, Oyo State by Sato"
+      },
+      {
+        "src": "/images/projects/alabi-olorunda-primary-health-centre/health-centre.webp",
+        "alt": "Completed National Primary Health Centre at Alabi-Olorunda, Oyo State",
+        "width": 1920,
+        "height": 1440,
+        "caption": "Picture showing completed National Primary Health Centre at Alabi-Olorunda, Oyo State by Sato"
       }
     ],
     "featured": false
@@ -833,9 +880,10 @@
     "images": [
       {
         "src": "/images/projects/laderin-1.webp",
-        "alt": "Six flats under construction at Laderin Estate, Abeokuta",
+        "alt": "Construction of six flats at Laderin Estate, Abeokuta",
         "width": 578,
-        "height": 415
+        "height": 415,
+        "caption": "Construction of six flats at Laderin Estate, Abeokuta"
       }
     ],
     "featured": false
@@ -852,15 +900,15 @@
     "deliveredBy": "sato",
     "year": "Awarded 2011",
     "status": "",
-    "summary": "Five blocks of four four-bedroom flats, delivered with Choice Investors.",
+    "summary": "Sato is helping to make the dream of affordable housing a reality in Ogun State by working with choice investors to provide 5-Blocks, 4 Nos of 4-Bedroom flats.",
     "scope": [],
     "images": [],
     "featured": false
   },
   {
     "slug": "akinyegun-residential-flats",
-    "title": "Residential Building and Block of Flats",
-    "client": "",
+    "title": "Residential Building / Block of Flats",
+    "client": "Mrs. Akinyegun",
     "location": "Abeokuta, Ogun State",
     "categories": [
       "civil-engineering-construction"
@@ -876,7 +924,7 @@
   },
   {
     "slug": "muda-lawal-stadium",
-    "title": "Rehabilitation of Muda Lawal Stadium",
+    "title": "Rehabilitation of Muda Lawal Stadium for the Gateway Games",
     "client": "Ogun State Ministry of Special Duties",
     "location": "Asero, Abeokuta, Ogun State",
     "categories": [
@@ -893,7 +941,7 @@
   },
   {
     "slug": "ilaro-school-of-nursing",
-    "title": "Classroom Construction and Hostel Fencing, School of Nursing",
+    "title": "Construction of Classroom and Fencing of Hostels at School of Nursing",
     "client": "Ogun State Ministry of Special Duties",
     "location": "Ilaro, Ogun State",
     "categories": [
@@ -908,22 +956,17 @@
     "images": [
       {
         "src": "/images/projects/ilaro-school-of-nursing/classroom-block.webp",
-        "alt": "Completed classroom block at the School of Nursing, Ilaro",
+        "alt": "Construction of block of classrooms, School of Nursing Ilaro, Ogun State",
         "width": 1920,
-        "height": 1440
-      },
-      {
-        "src": "/images/projects/ilaro-school-of-nursing/building-and-water-tower.webp",
-        "alt": "Single-storey building and steel water tower at the School of Nursing, Ilaro",
-        "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Construction of block of classrooms, School of Nursing Ilaro, Ogun State"
       }
     ],
     "featured": false
   },
   {
     "slug": "subeb-classrooms",
-    "title": "Construction of Classrooms for SUBEB",
+    "title": "Construction of Several Classrooms",
     "client": "Ogun State Universal Basic Education Board",
     "location": "Ilugun-Asalu, Erifun and Atoba, Ogun State",
     "categories": [
@@ -940,7 +983,7 @@
   },
   {
     "slug": "ogun-education-classrooms",
-    "title": "Construction of Classrooms",
+    "title": "Construction of Several Classrooms",
     "client": "Ogun State Ministry of Education",
     "location": "Iwoye Ketu and Ikenne, Ogun State",
     "categories": [
@@ -989,9 +1032,10 @@
     "images": [
       {
         "src": "/images/projects/iperu-area-office/area-office.webp",
-        "alt": "Single-storey area office with a blue roof at Iperu, for the Ogun State Water Corporation",
+        "alt": "Construction of Iperu area office",
         "width": 1920,
-        "height": 1440
+        "height": 1440,
+        "caption": "Construction of Iperu area office by Sato"
       }
     ],
     "featured": false

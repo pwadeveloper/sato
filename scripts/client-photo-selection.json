@@ -29,20 +29,6 @@
       "alt": "Completed high lift pump house at the Ogere water supply scheme"
     },
     {
-      "out": "projects/ogere-water-supply-scheme-rehabilitation/ground-tank",
-      "working": "W089",
-      "proposals": [
-        "P001",
-        "P004",
-        "P132",
-        "P153"
-      ],
-      "source": "raw-assets/client-photos/_work/all/W089-pictures-image50.jpg",
-      "originalFilename": "Pictures.docx › word/media/image50.jpeg",
-      "docxCaption": "CONSTRUCTION OF GROUND TANK, BY SATO ENGINEERING NIGERIA LIMITED",
-      "alt": "Circular concrete ground tank holding water at the Ogere water supply scheme"
-    },
-    {
       "out": "projects/ogere-water-supply-scheme-rehabilitation/oshitelu-overhead-tank",
       "working": "W081",
       "proposals": [
@@ -54,24 +40,6 @@
       "originalFilename": "Pictures.docx › word/media/image43.jpeg",
       "docxCaption": "CONSTRUCTED OVERHEAD TANK AT OSHITELU MEMORIAL GRAMMAR SCHOOL AT OGERE",
       "alt": "Completed elevated steel water tank at Oshitelu Memorial Grammar School, Ogere"
-    },
-    {
-      "out": "services/civil-engineering-construction/life-university-road-header",
-      "working": "W019",
-      "proposals": [
-        "P010"
-      ],
-      "source": "raw-assets/client-photos/_work/all/W019-pictures-image117.jpg",
-      "originalFilename": "Pictures.docx › word/media/image117.jpeg",
-      "docxCaption": "ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION BY SATO ENGINEERING NIGERIA LIMITED",
-      "alt": "New asphalt road and kerbed island in front of a completed building at Life University, Ajebo",
-      "header": {
-        "aspect": [
-          16,
-          7
-        ],
-        "focusY": 0.4
-      }
     },
     {
       "out": "services/civil-engineering-construction/campus-road-header",
@@ -115,26 +83,6 @@
       "alt": "Reinforced concrete box culvert under construction, with formwork timber in the channel"
     },
     {
-      "out": "services/civil-engineering-construction/funaab-building-red-and-brick",
-      "working": "W146",
-      "proposals": [
-        "P201"
-      ],
-      "source": "raw-assets/client-photos/_work/all/W146-2f05e69a-9fa1-4337-ba06-47b12eac5e61.jpg",
-      "originalFilename": "2f05e69a-9fa1-4337-ba06-47b12eac5e61.JPG",
-      "alt": "Three-storey building with red and brick facade panels at the Federal University of Agriculture, Abeokuta"
-    },
-    {
-      "out": "services/civil-engineering-construction/funaab-building-courtyard",
-      "working": "W147",
-      "proposals": [
-        "P208"
-      ],
-      "source": "raw-assets/client-photos/_work/all/W147-4ced5baf-5f49-43a1-8745-ebd4e2a53736.jpg",
-      "originalFilename": "4ced5baf-5f49-43a1-8745-ebd4e2a53736.JPG",
-      "alt": "Three-storey building with open corridors around a grassed courtyard at the Federal University of Agriculture, Abeokuta"
-    },
-    {
       "out": "services/electrical-engineering/iperu-booster-station-panel-header",
       "working": "W094",
       "proposals": [
@@ -152,18 +100,6 @@
         ],
         "focusY": 0.62
       }
-    },
-    {
-      "out": "services/electrical-engineering/iperu-booster-station-capacitor-panel",
-      "working": "W094",
-      "proposals": [
-        "P020",
-        "P152"
-      ],
-      "source": "raw-assets/client-photos/_work/all/W094-pictures-image55.jpg",
-      "originalFilename": "Pictures.docx › word/media/image55.jpeg",
-      "docxCaption": "WORKS COMPLETE IN PANELS AT IPERU BOOSTER STATION BY SATO ENGINEERING NIGERIA LIMITED",
-      "alt": "Completed capacitor bank and control panel at the Iperu booster station"
     },
     {
       "out": "services/electrical-engineering/iperu-booster-station-breaker-panel",
@@ -219,27 +155,6 @@
         0.62
       ],
       "cropWhy": "removes a hi-vis vest printed with the former company name"
-    },
-    {
-      "out": "services/water-resources-development-management/arakanga-sand-filter-header",
-      "working": "W065",
-      "proposals": [
-        "P002",
-        "P003",
-        "P041",
-        "P157"
-      ],
-      "source": "raw-assets/client-photos/_work/all/W065-pictures-image29.png",
-      "originalFilename": "Pictures.docx › word/media/image29.emf",
-      "docxCaption": "SAND FILTER DURING TESTING AND COMMISSIONING AT ARAKANGA WATER TREATMENT PLANT IN ABEOKUTA",
-      "alt": "Water running through a sand filter at the Arakanga water treatment plant, Abeokuta",
-      "header": {
-        "aspect": [
-          16,
-          7
-        ],
-        "focusY": 0.5
-      }
     },
     {
       "out": "projects/ijaiye-river-dredging/excavator-in-river",
@@ -310,17 +225,6 @@
       "alt": "Completed classroom block at the School of Nursing, Ilaro"
     },
     {
-      "out": "projects/ilaro-school-of-nursing/building-and-water-tower",
-      "working": "W002",
-      "proposals": [
-        "P110"
-      ],
-      "source": "raw-assets/client-photos/_work/all/W002-pictures-image10.jpg",
-      "originalFilename": "Pictures.docx › word/media/image10.jpeg",
-      "docxCaption": "CONSTRUCTION OF BLOCK OF CLASSROOMS, SCHOOL OF NURSING ILARO, OGUN STATE",
-      "alt": "Single-storey building and steel water tower at the School of Nursing, Ilaro"
-    },
-    {
       "out": "projects/asphaltic-concrete-road-and-drainage-ajebo/road-towards-campus-buildings",
       "working": "W023",
       "proposals": [
@@ -352,39 +256,6 @@
       "originalFilename": "Pictures.docx › word/media/image122.jpeg",
       "docxCaption": "ASPHALTIC CONCRETE ROAD & DRAINAGE SYSTEM UNDER CONSTRUCTION AT LIFE UNIVERSITY AJEBO, OGUN STATE",
       "alt": "Asphalt road beside a lined drainage channel at Life University, Ajebo"
-    },
-    {
-      "out": "projects/asphaltic-concrete-road-and-drainage-ajebo/road-and-kerbed-island",
-      "working": "W019",
-      "proposals": [
-        "P010"
-      ],
-      "source": "raw-assets/client-photos/_work/all/W019-pictures-image117.jpg",
-      "originalFilename": "Pictures.docx › word/media/image117.jpeg",
-      "docxCaption": "ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION BY SATO ENGINEERING NIGERIA LIMITED",
-      "alt": "Asphalt road and kerbed island in front of a completed building at Life University, Ajebo"
-    },
-    {
-      "out": "projects/asphaltic-concrete-road-and-drainage-ajebo/tandem-roller",
-      "working": "W020",
-      "proposals": [
-        "P114"
-      ],
-      "source": "raw-assets/client-photos/_work/all/W020-pictures-image118.jpg",
-      "originalFilename": "Pictures.docx › word/media/image118.jpeg",
-      "docxCaption": "ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION BY SATO ENGINEERING NIGERIA LIMITED",
-      "alt": "Tandem roller on a newly laid asphalt road at Life University, Ajebo"
-    },
-    {
-      "out": "projects/asphaltic-concrete-road-and-drainage-ajebo/kerbed-road-junction",
-      "working": "W017",
-      "proposals": [
-        "P115"
-      ],
-      "source": "raw-assets/client-photos/_work/all/W017-pictures-image114.jpg",
-      "originalFilename": "Pictures.docx › word/media/image114.jpeg",
-      "docxCaption": "ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION BY SATO ENGINEERING NIGERIA LIMITED",
-      "alt": "Kerbed asphalt road junction beside campus buildings at Life University, Ajebo"
     },
     {
       "out": "projects/mcpherson-administrative-block-and-laboratory/administrative-block",
@@ -586,6 +457,142 @@
       "originalFilename": "Pictures.docx › word/media/image94.jpeg",
       "docxCaption": "SPREADING OF CLAY FOR 2ND SEGMENT CUT-OFF TRENCH (FIDITI DAM)",
       "alt": "Clay spread along the second cut-off trench segment at the Fiditi earth dam"
+    },
+    {
+      "out": "projects/alabi-olorunda-primary-health-centre/completed-health-centre",
+      "working": "W013",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/10.jpg",
+      "source": "raw-assets/client-photos/_work/all/W013-pictures-image11.jpg",
+      "originalFilename": "Pictures.docx › word/media/image11.jpeg",
+      "alt": "Completed National Primary Health Centre at Alabi-Olorunda, Oyo State"
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-building",
+      "working": "W121",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/71.jpg",
+      "source": "raw-assets/client-photos/_work/all/W121-pictures-image8.jpg",
+      "originalFilename": "Pictures.docx › word/media/image8.jpeg",
+      "alt": "Construction of high lift pump building at Ogere Water Supply Scheme"
+    },
+    {
+      "out": "projects/civil-buildings/sato-office-abeokuta-front",
+      "working": null,
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/3.gif",
+      "source": "raw-assets/old-site/2012/07/3.gif",
+      "originalFilename": "old site: 2012/07/3.gif",
+      "alt": "Sato office in Abeokuta"
+    },
+    {
+      "out": "projects/water-resources/water-meter-strategy-session",
+      "working": null,
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1050453.jpg",
+      "source": "raw-assets/old-site/2019/10/P1050453.jpg",
+      "originalFilename": "old site: 2019/10/P1050453.jpg",
+      "alt": "Strategy Session on Water Meter Installation"
+    },
+    {
+      "out": "projects/water-resources/mabunmi-junction-erosion-control",
+      "working": "W120",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/e02.jpg",
+      "source": "raw-assets/client-photos/_work/all/W120-pictures-image79.jpg",
+      "originalFilename": "Pictures.docx › word/media/image79.jpeg",
+      "alt": "Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State"
+    },
+    {
+      "out": "projects/solar-powered-boreholes/ota-tap-stand",
+      "working": null,
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/w2.jpg",
+      "source": "raw-assets/old-site/2012/07/w2.jpg",
+      "originalFilename": "old site: 2012/07/w2.jpg",
+      "alt": "Completed solar powered borehole project at Primary Health Centre Ota, MDG’s project"
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/asphaltic-concrete-road-under-construction",
+      "working": "W017",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0028.jpg",
+      "source": "raw-assets/client-photos/_work/all/W017-pictures-image114.jpg",
+      "originalFilename": "Pictures.docx › word/media/image114.jpeg",
+      "alt": "Asphaltic concrete road under construction"
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/sub-base-compaction",
+      "working": "W008",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0023.jpg",
+      "source": "raw-assets/client-photos/_work/all/W008-pictures-image105.jpg",
+      "originalFilename": "Pictures.docx › word/media/image105.jpeg",
+      "alt": "Compaction of sub-base material in progress",
+      "crop": [
+        0,
+        0,
+        1,
+        0.86
+      ],
+      "cropWhy": "removes a caption strip burned into the bottom of the photograph"
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/sandfilled-area-after-grading",
+      "working": "W004",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image001.jpg",
+      "source": "raw-assets/client-photos/_work/all/W004-pictures-image101.jpg",
+      "originalFilename": "Pictures.docx › word/media/image101.jpeg",
+      "alt": "Sandfilled area, after grading and prior to compaction",
+      "crop": [
+        0,
+        0,
+        1,
+        0.9
+      ],
+      "cropWhy": "removes a caption strip burned into the bottom of the photograph"
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/box-culvert",
+      "working": "W141",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0021.jpg",
+      "source": "raw-assets/client-photos/_work/all/W141-pictures-image98.jpg",
+      "originalFilename": "Pictures.docx › word/media/image98.jpeg",
+      "alt": "Construction of box culvert"
+    },
+    {
+      "out": "services/water-resources-development-management/fiditi-cut-off-trench-header",
+      "working": "W127",
+      "source": "raw-assets/client-photos/_work/all/W127-pictures-image85.jpg",
+      "originalFilename": "Pictures.docx › word/media/image85.jpeg",
+      "alt": "Excavator cutting the cut-off trench at the Fiditi earth dam, with a site engineer in a helmet on the bank",
+      "header": {
+        "aspect": [
+          16,
+          7
+        ],
+        "focusY": 0.55
+      }
+    },
+    {
+      "out": "projects/alabi-olorunda-primary-health-centre/health-centre-header",
+      "working": "W013",
+      "source": "raw-assets/client-photos/_work/all/W013-pictures-image11.jpg",
+      "originalFilename": "Pictures.docx › word/media/image11.jpeg",
+      "alt": "Completed National Primary Health Centre at Alabi-Olorunda, Oyo State",
+      "header": {
+        "aspect": [
+          16,
+          7
+        ],
+        "focusY": 0.5
+      }
+    },
+    {
+      "out": "projects/horizon-suites-hotel-complex/chalet-driveway-header",
+      "working": "W050",
+      "source": "raw-assets/client-photos/_work/all/W050-pictures-image15.jpg",
+      "originalFilename": "Pictures.docx › word/media/image15.jpeg",
+      "alt": "Driveway between the chalets at the Horizon Suites hotel, Ibadan",
+      "header": {
+        "aspect": [
+          16,
+          7
+        ],
+        "focusY": 0.55
+      }
     }
   ]
 }

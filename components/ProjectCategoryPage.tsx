@@ -10,6 +10,7 @@ import { PartnerProjects } from "@/components/PartnerExperience";
 import { ProjectCard } from "@/components/ProjectCard";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
+import { ServiceGallery } from "@/components/ServiceGallery";
 
 import {
   getPage,
@@ -136,32 +137,46 @@ export function ProjectCategoryPage({ slug }: { slug: string }) {
                     </h2>
                   ) : null}
 
-                  <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {group.items.map((project, position) => (
-                      <li key={project.slug} className="flex">
-                        <ProjectCard
-                          project={project}
-                          sectorLabel={category.label}
-                          sectorShortLabel={category.shortLabel}
-                          fallbackImage={getProjectPlaceholder(
-                            category,
-                            project,
-                            // Count only the cards that need a stand-in, so a
-                            // category carrying more than one spreads them
-                            // evenly instead of skipping past some.
-                            group.items
-                              .slice(0, position)
-                              .filter((earlier) => !earlier.images.length).length,
-                          )}
-                          // Every card here is this category. Saying so eleven
-                          // times is noise; the heading above already said it
-                          // once.
-                          showSector={false}
-                          showDates={site.showProjectDates}
-                        />
-                      </li>
-                    ))}
-                  </ul>
+                  {group.items.length ? (
+                    <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                      {group.items.map((project, position) => (
+                        <li key={project.slug} className="flex">
+                          <ProjectCard
+                            project={project}
+                            sectorLabel={category.label}
+                            sectorShortLabel={category.shortLabel}
+                            fallbackImage={getProjectPlaceholder(
+                              category,
+                              project,
+                              // Count only the cards that need a stand-in, so a
+                              // category carrying more than one spreads them
+                              // evenly instead of skipping past some.
+                              group.items
+                                .slice(0, position)
+                                .filter((earlier) => !earlier.images.length).length,
+                            )}
+                            // Every card here is this category. Saying so eleven
+                            // times is noise; the heading above already said it
+                            // once.
+                            showSector={false}
+                            showDates={site.showProjectDates}
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+
+                  {/* The old site's photographs for this group that name no
+                      project, each with its caption. See CollectionFacet.photos. */}
+                  {group.photos?.length ? (
+                    <ServiceGallery
+                      images={group.photos}
+                      heading={labels.categoryPhotos ?? ""}
+                      headingId={`photos-${group.id ?? index}`}
+                      headingLevel={group.label ? 3 : 2}
+                      className="mt-12"
+                    />
+                  ) : null}
                 </section>
               ))}
             </div>
