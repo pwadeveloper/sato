@@ -785,10 +785,11 @@
     },
     {
       "id": "W089",
-      "action": "held",
+      "action": "kept",
       "target": "ogere-water-supply-scheme-rehabilitation",
       "file": "projects/ogere-water-supply-scheme-rehabilitation/ground-tank",
-      "why": "Medium confidence in prompt 16: its caption names no site."
+      "caption": "Construction of ground tank by Sato",
+      "from": "Client's Word document of 8 November 2026 (page 9); site confirmed by the client 9 November"
     },
     {
       "id": "W019",

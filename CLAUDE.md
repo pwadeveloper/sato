@@ -513,9 +513,9 @@ disagree with this file:
 10. `water-photo-batch.md` — the 17-page water document of 8 November. Every
     photograph in it was already in the October one. Labels are read from
     the page geometry, because text order puts three against the wrong
-    photograph. One placed (the Life University roller). Block B is the
-    Building spotlight. The Water spotlight is unchanged because no labelled,
-    safe water photograph was left. **Current for photographs.**
+    photograph. Two placed: the Life University roller, and the Ogere ground
+    tank once the client named its site. Block B is the Building spotlight
+    and the ground tank is the Water spotlight. **Current for photographs.**
 
 ## Review deployments
 

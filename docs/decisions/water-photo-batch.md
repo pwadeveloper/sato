@@ -74,7 +74,7 @@ could be new is a label, and one was.
 | N006 | 8 | Construction work in progress at Ogere water scheme | W086 | Skipped: already on the site (`ogere-1`, Ogere project) |
 | N005 | 8 | Construction work in progress at Ogere water scheme | W085 | Helmet rule |
 | N007 | 9 | Construction of ground tank | W087 | **Not placed**: names no site. Also people without helmets |
-| N008 | 9 | Construction of ground tank | W089 | **Not placed**: names no site. Safe, and the strongest water photograph in the document |
+| N008 | 9 | Construction of ground tank | W089 | **Placed** on the Ogere project, and the Water spotlight, once the client confirmed the site (9 November) |
 | N010 | 10 | Construction of clear water tank in progress at the Ogere water supply scheme | W091 | Helmet rule |
 | N009 | 10 | Construction of clear water tank in progress at the Ogere water supply scheme | W090 | Helmet rule. No crop excludes everyone: someone is crouched in the rebar at the centre |
 | N013 | 11 | Ongoing works at Ogere water supply scheme | W093 | Helmet rule |
@@ -127,6 +127,17 @@ caption text, which is a reason to crop or leave out, not a date.
 
 The four spotlights are four different photographs, each from its own
 category. The content audit shows no duplicate and no wrong project.
+
+### Settled after the report (9 November)
+
+**The ground tank is at Ogere** (client). N008 is now on the Ogere project,
+its sixth photograph, captioned with its label cleaned: "Construction of
+ground tank by Sato". It is also the **Water Resources spotlight**, replacing
+the completed high lift pump house, which stays on the project. Its
+`focalPoint` is `50% 75%`, so the 16:6 band keeps the tank's rim and the
+water rather than the roofs behind. It is published at 1600px, its original
+size, with no crop. No one is in frame, and it shows no text and no date. N007, the other
+ground-tank photograph, stays off: it shows people on site without helmets.
 
 ### Pipeline repairs found on the way
 

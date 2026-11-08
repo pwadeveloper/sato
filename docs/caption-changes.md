@@ -64,6 +64,7 @@ Kept new photographs (High confidence) take their caption from the client's own 
 | W126 | Removal of top soil within 3rd segment cut-off trench area (Fiditi Dam) | Client's Word document |
 | W131 | Excavation in progress for 3rd segment of COT (Fiditi Dam) | Client's Word document |
 | W137 | Spreading of clay for 2nd segment cut-off trench (Fiditi Dam) | Client's Word document |
+| W089 | Construction of ground tank by Sato |  |
 | W020 | Asphaltic concrete road under construction at Life University Ajebo, Ogun State |  |
 | E-068d09d3 | Academic Building Complex Block B, Federal University of Agriculture, Abeokuta |  |
 | E-cce587ff | Academic Building Complex Block B, Federal University of Agriculture, Abeokuta |  |

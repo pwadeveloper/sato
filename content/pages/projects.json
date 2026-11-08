@@ -88,10 +88,11 @@
           "group": "infrastructure",
           "intro": "Dams, intakes, water supply schemes, boreholes, metering, river works and erosion control.",
           "image": {
-            "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-house.webp",
-            "alt": "Completed high lift pump house at the Ogere water supply scheme",
+            "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ground-tank.webp",
+            "alt": "Circular concrete ground tank holding water at the Ogere water supply scheme",
             "width": 1600,
-            "height": 1200
+            "height": 1200,
+            "focalPoint": "50% 75%"
           },
           "shortLabel": "Water",
           "photos": [

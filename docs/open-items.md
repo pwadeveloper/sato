@@ -20,7 +20,9 @@ settled one thing — the Life University road photograph with the roller is
 now on its project — and left these. See
 `docs/decisions/water-photo-batch.md`.
 
-- **The Water Resources spotlight did not change.** Every photograph labelled
+- ~~**The Water Resources spotlight did not change.**~~ **Settled 9 November:
+  the ground tank is at Ogere.** It is now on the Ogere project and is the
+  Water spotlight. Original note: every photograph labelled
   with a water project (all of them Ogere) shows people on site without
   helmets, except the one already on the Ogere project (a rebar mat, weaker
   than the current picture). The strongest water photograph in the document is

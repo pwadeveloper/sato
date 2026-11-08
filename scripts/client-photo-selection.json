@@ -642,6 +642,21 @@
       "docxCaption": "ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION AT LIFE UNIVERSITY AJEBO, OGUN STATE",
       "alt": "Tandem roller on the newly surfaced campus road at Life University, Ajebo, with the entrance gate under construction behind",
       "placement": "Labelled with Life University Ajebo in the client's document of 8 November (page 17; the label is a drawn text strip beneath the photograph). October's copy, W020, named no place and was held. N021 in that batch is the same file (pHash 0)."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/ground-tank",
+      "working": "W089",
+      "proposals": [
+        "P001",
+        "P004",
+        "P132",
+        "P153"
+      ],
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N008-pictures-image16.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image16.jpeg",
+      "docxCaption": "CONSTRUCTION OF GROUND TANK, BY SATO ENGINEERING NIGERIA LIMITED",
+      "alt": "Circular concrete ground tank holding water at the Ogere water supply scheme",
+      "placement": "Client confirmed 9 November 2026: the ground tank is at the Ogere water supply scheme. Its label in the 8 November document (page 9) names no site. N008 in that batch, W089 in October (pHash 0)."
     }
   ]
 }
