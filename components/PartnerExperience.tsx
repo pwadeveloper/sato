@@ -80,12 +80,20 @@ export function PartnerDetails({ partner, headingId, className }: PartProps) {
   );
 }
 
-/** The record: the project table, the wider engagements and the case study. */
+/**
+ * The record: the project table, the wider engagements and the case study.
+ *
+ * `showDates` comes from `showProjectDates` in site.json, the same switch
+ * that hides every other project year. Off, the Year column goes entirely —
+ * header, cells and the year set under the client on a phone — rather than
+ * standing empty. The years stay in the content.
+ */
 export function PartnerProjects({
   partner,
   headingId,
   className,
-}: PartProps) {
+  showDates = true,
+}: PartProps & { showDates?: boolean }) {
   const visible = partner.projects.slice(0, partner.projectsInitialCount);
   const overflow = partner.projects.slice(partner.projectsInitialCount);
   const caseStudy = partner.caseStudy;
@@ -129,12 +137,14 @@ export function PartnerProjects({
                   >
                     <RichText text={partner.projectColumns.project} />
                   </th>
-                  <th
-                    scope="col"
-                    className="hidden py-3 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body sm:table-cell"
-                  >
-                    <RichText text={partner.projectColumns.year} />
-                  </th>
+                  {showDates ? (
+                    <th
+                      scope="col"
+                      className="hidden py-3 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body sm:table-cell"
+                    >
+                      <RichText text={partner.projectColumns.year} />
+                    </th>
+                  ) : null}
                 </tr>
               </thead>
               <tbody>
@@ -149,16 +159,20 @@ export function PartnerProjects({
                       className="py-3 pr-6 text-sm font-semibold wdth-body"
                     >
                       <RichText text={row.client} />
-                      <span className="mt-0.5 block text-xs font-normal tabular text-steel-ink sm:hidden">
-                        <RichText text={row.year} />
-                      </span>
+                      {showDates ? (
+                        <span className="mt-0.5 block text-xs font-normal tabular text-steel-ink sm:hidden">
+                          <RichText text={row.year} />
+                        </span>
+                      ) : null}
                     </th>
                     <td className="py-3 pr-6 text-sm wdth-body">
                       <RichText text={row.project} />
                     </td>
-                    <td className="hidden py-3 text-sm tabular whitespace-nowrap wdth-body sm:table-cell">
-                      <RichText text={row.year} />
-                    </td>
+                    {showDates ? (
+                      <td className="hidden py-3 text-sm tabular whitespace-nowrap wdth-body sm:table-cell">
+                        <RichText text={row.year} />
+                      </td>
+                    ) : null}
                   </tr>
                 ))}
               </tbody>

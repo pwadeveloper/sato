@@ -16,14 +16,17 @@
  *     before the filesystem, so a stale rule silently hides a live page —
  *     `/services/electrical-mechanical` once pointed at a route this round
  *     retired, and would have hidden the new page of that name.
- *  4. The source also matches the WordPress form with a trailing slash.
+ *  4. A redirect conditioned on a query does not point back at its own
+ *     path. Vercel carries the query string through to the destination, so
+ *     `/?p=707` → `/` would arrive as `/?p=707` again and loop forever.
+ *  5. The source also matches the WordPress form with a trailing slash.
  *     Vercel compiles sources strictly, so `/our-team` does not match
  *     `/our-team/`; every source carries `{/}?` for that reason.
  *
  * Source patterns are matched here with the same reading Vercel gives them
  * (path-to-regexp, strict): `{/}?` is an optional slash, `:name*` any number
- * of segments. Redirects conditioned on a query (`has`) are checked for 1 and
- * 2 only, since their source path is a live page by design.
+ * of segments. Redirects conditioned on a query (`has`) are checked for 1, 2
+ * and 4, since their source path is a live page by design.
  */
 import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
@@ -74,6 +77,9 @@ for (const rule of compiled) {
   const chained = unconditional.find((other) => other !== rule && other.regex.test(dest));
   if (chained && dest !== "/")
     problems.push(`${rule.source} → ${dest}: chains into ${chained.source} → ${chained.destination}`);
+
+  if (rule.has && rule.regex.test(dest.split("?")[0]))
+    problems.push(`${rule.source} (query ${rule.has.map((h) => h.key).join(", ")}) → ${dest}: loops — the query is carried to a path that matches again`);
 
   if (rule.has || /:/.test(rule.source)) continue;
 

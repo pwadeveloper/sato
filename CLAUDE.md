@@ -109,7 +109,7 @@ banned-terms rule below, which the build enforces.
      with `/projects/oil-gas` again, which resolves the inconsistency raised
      in `docs/open-items.md` — in the direction of attributing both.
 10. After each task, run `npm run build` and fix all errors and type errors before reporting done. Before reporting a content change done, also run `npm run check:banned`, `npm run check:dates` and `npm run check:redirects` — or simply `npm run build:prod`, which runs all of them.
-11. **No dates on project content** (`docs/decisions/launch-ready.md`, section 4). `showProjectDates` is `false`, and no caption, title, summary, scope line or alt text on a project may carry a year. `npm run check:dates` scans every project page in full, and photo captions and alt text on every other page, for `\b(19|20)\d{2}\b`. It allows only "since 1997" (the tagline's wording) and the footer's "© <year>". `/projects/oil-gas` is listed as an exception on every run, because its partner table has a Year column and the same brief says to leave Oil & Gas untouched — that one is the client's to settle.
+11. **No dates on project content** (`docs/decisions/launch-ready.md`, section 4). `showProjectDates` is `false`, and no caption, title, summary, scope line or alt text on a project may carry a year. `npm run check:dates` scans every project page in full, and photo captions and alt text on every other page, for `\b(19|20)\d{2}\b`. It allows only "since 1997" (the tagline's wording) and the footer's "© <year>". No page is exempt: the Oil & Gas partner table's Year column follows the same switch (`PartnerProjects`' `showDates`), on the client's instruction.
 
 ## Sitemap
 

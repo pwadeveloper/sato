@@ -101,7 +101,7 @@
           "key": "p"
         }
       ],
-      "destination": "/",
+      "destination": "/projects",
       "statusCode": 301
     },
     {

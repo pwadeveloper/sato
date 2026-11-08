@@ -31,10 +31,9 @@
  *  - "© <year>" in the footer, the copyright line, which is not a date on a
  *    project.
  *
- * One page is reported but not failed: `/projects/oil-gas`. Its table of the
- * partner's work has a Year column, and the same brief says to leave Oil &
- * Gas untouched. That conflict is the client's to settle; until he does, the
- * page is listed as an exception every time this runs so it is not forgotten.
+ * No page is exempt. `/projects/oil-gas` was, while its partner table kept a
+ * Year column; the client settled it — dates off there too — and the column
+ * now follows `showProjectDates` like every other year on the site.
  */
 import { readdir, readFile } from "node:fs/promises";
 import { dirname, join, relative, resolve } from "node:path";
@@ -48,14 +47,6 @@ const site = JSON.parse(await readFile(join(ROOT, "content", "site.json"), "utf8
 const FOUNDED = String(site.foundedYear);
 
 const YEAR = /\b(19|20)\d{2}\b/g;
-
-/** Pages reported but not failed, with the reason printed every run. */
-const EXCEPTIONS = new Map([
-  [
-    "projects/oil-gas.html",
-    "Oil & Gas partner table keeps its Year column — the brief also says to leave Oil & Gas untouched; for the client to settle",
-  ],
-]);
 
 async function htmlFiles(dir) {
   const found = [];
@@ -130,7 +121,6 @@ function offending(text) {
 const files = await htmlFiles(OUT);
 let failures = 0;
 let scannedProjectPages = 0;
-const excepted = [];
 
 for (const file of files) {
   const rel = relative(OUT, file);
@@ -147,11 +137,6 @@ for (const file of files) {
   if (isProjectPage) scannedProjectPages += 1;
   if (!hits.length) continue;
 
-  if (EXCEPTIONS.has(rel)) {
-    excepted.push({ rel, count: hits.length, why: EXCEPTIONS.get(rel) });
-    continue;
-  }
-
   failures += hits.length;
   console.error(`✗ ${rel}`);
   for (const hit of hits) console.error(`    ${hit.where}: …${hit.context}…`);
@@ -162,9 +147,6 @@ if (!QUIET) {
     `Date check: ${scannedProjectPages} project pages scanned in full, ` +
       `${files.length - scannedProjectPages} other pages scanned for captions and alt text.`,
   );
-  for (const entry of excepted) {
-    console.log(`  exception: ${entry.rel} — ${entry.count} year(s); ${entry.why}`);
-  }
 }
 
 if (failures) {

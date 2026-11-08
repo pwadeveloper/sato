@@ -120,7 +120,11 @@ export function ProjectCategoryPage({ slug }: { slug: string }) {
           ) : null}
 
           {partner ? (
-            <PartnerProjects partner={partner} headingId="category-record" />
+            <PartnerProjects
+              partner={partner}
+              headingId="category-record"
+              showDates={site.showProjectDates}
+            />
           ) : (
             <div className="flex flex-col gap-14">
               {groups.map((group, index) => (

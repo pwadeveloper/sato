@@ -14,12 +14,8 @@ The questions from the most recent round, which the rest of the site is waiting 
 
 ### From the launch-ready round (8 November 2026)
 
-- **Oil & Gas project years.** You asked for no dates on any project entry,
-  and also for Oil & Gas to be left exactly as it is. The table of the
-  partner team's work on `/projects/oil-gas` has a Year column, so the two
-  instructions meet there. **It is unchanged**, and the build's date check
-  lists it as its one exception every time it runs. Say which way: the
-  column comes off in one edit, or it stays.
+- ~~**Oil & Gas project years.**~~ **Settled: removed.** The Year column on
+  `/projects/oil-gas` is off with every other project date.
 - **The nine FUNAAB photographs from your resent email.** They show two
   buildings — a white, red and brick block, and a cream three-storey building
   around a grass courtyard. Two of the nine are the same photographs as the

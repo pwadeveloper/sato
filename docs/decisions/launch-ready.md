@@ -146,7 +146,7 @@ facet is byte-for-byte unchanged.
   instruction), so there is nothing there to disagree.
 - **Redirects** (`vercel.json`, 131): the six retired service and project
   routes, every earlier redirect that pointed at them re-pointed so nothing
-  chains, and four bugs fixed on the way —
+  chains, and five bugs fixed on the way —
   - `/services/electrical-mechanical` was a redirect to the retired
     Electrical Engineering page. Vercel applies redirects before files, so it
     would have hidden the new page. Removed.
@@ -162,8 +162,17 @@ facet is byte-for-byte unchanged.
     WordPress URL ends in `/`. Every source is now `/path{/}?`. Verified
     against Vercel's own compiler. `trailingSlash: false` was rejected because
     Vercel runs it before redirects, which would make every old link two hops.
+  - `/?p=…` (old WordPress post IDs) redirected to `/` — its own path. Vercel
+    carries the query string to the destination, so it would have looped.
+    It now goes to `/projects`, like every `/707`-style post URL.
   Each redirect now states `statusCode: 301` (`permanent: true` gives a 308).
   `/leadership`, `/our-team/` and `/hse` are 302s: hidden, not gone.
+
+  **Verified twice.** `npm run check:redirects` (in `build:prod`), and a
+  replay of every source — with and without its trailing slash, with its
+  query — through the routes Vercel's own `@vercel/routing-utils` compiles,
+  against `/out`: 261 requests, every one landing on a live page in one hop
+  (255 × 301, 6 × 302), and none of the 64 live pages caught by a redirect.
 
 ### 2. Old-site images
 
@@ -222,10 +231,14 @@ and alt text. Allowed: "since 1997" and the footer "© <year>". Tested the
 other way round: with `showProjectDates` switched back on it fails with 78
 dates.
 
-**One conflict, left for the client:** `/projects/oil-gas` lists the partner
-team's projects with a Year column. Section 4 says no dates; sections 0 and 1
-say leave Oil & Gas exactly as it is. It is unchanged, and the check prints it
-as its single named exception on every run.
+**Oil & Gas, settled after the first report:** `/projects/oil-gas` listed the
+partner team's projects with a Year column, which sat between "no dates" and
+"leave Oil & Gas untouched". The answer was **remove the dates there too**. The
+column — header, cells and the year set under the client on a phone — now
+follows `showProjectDates` through `PartnerProjects`' `showDates`, the years
+stay in the content, and the three bracketed years in the Halliburton row
+("(2013)", "(2015)", "(2019)") are gone from its text. The date check has no
+exception left. Nothing else on Oil & Gas changed.
 
 ### 5. Leadership
 
