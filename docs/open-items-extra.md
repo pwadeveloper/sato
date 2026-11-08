@@ -10,6 +10,37 @@
 
 ## Answer these first
 
+### From the launch-ready round (8 November 2026)
+
+- **Oil & Gas project years.** You asked for no dates on any project entry,
+  and also for Oil & Gas to be left exactly as it is. The table of the
+  partner team's work on `/projects/oil-gas` has a Year column, so the two
+  instructions meet there. **It is unchanged**, and the build's date check
+  lists it as its one exception every time it runs. Say which way: the
+  column comes off in one edit, or it stays.
+- **The nine FUNAAB photographs from your resent email.** They show two
+  buildings — a white, red and brick block, and a cream three-storey building
+  around a grass courtyard. Two of the nine are the same photographs as the
+  "two FUNAAB buildings from WhatsApp" below, so the question is the same:
+  **which project is each building?** The candidates are the Academic
+  Building Complex Block B (no photograph yet), COLPLANT Phase II and the
+  Administrative Block. They are off the site until you say. When you do,
+  five can go up straight away; three show people on site without helmets
+  and one is a near-duplicate, so those four stay off either way. (The two
+  Creative Arts photographs in the same email are already on the Unilag
+  project.)
+- **Which projects count as Electrical and Mechanical.** The category now
+  holds the three meter supply contracts and two water schemes whose scope
+  was electro-mechanical — Sagamu Intake (the high lift pump panel) and the
+  Ogere rehabilitation ("state of the art electro-mechanical systems"). All
+  five also stay under Water Resources, where the old site lists them. Add
+  or remove any.
+- **The old Civil Engineering & Construction pages.** That one category is
+  now two, so a link to the old page or the old service has to pick one. It
+  goes to **Civil Engineering and Road**, by name. The old site's own
+  Building and Construction page and its building photo pages go to
+  **Building and Construction**.
+
 ### From the service structure round
 
 - **The new partnership line says Sato took part.** The Oil & Gas
@@ -93,8 +124,8 @@ arrives.
   Each also needs a one-line description and a photograph for its tile when
   it goes live.
 - **Photographs of completed work.** Send them whenever they are ready, in
-  four batches — Civil Engineering & Construction, Electrical Engineering,
-  Mechanical Engineering, Water Resources Development & Management — with the
+  four batches — Building and Construction, Water Resources Development and
+  Management, Civil Engineering and Road, Electrical and Mechanical — with the
   filenames you have given them. The site is ready for them: they go into a
   gallery on each service page. **Keep your filenames descriptive**; they are
   what the alt text for blind and partially sighted readers is written from.
@@ -140,17 +171,15 @@ arrives.
 - ~~**The bio wording, adapted.**~~ **Settled.** You sent your own version
   with the institutions named in full, and that is what is on the page. See
   the fourth round above.
-- **Two sets of names for the same capabilities.** Your Home and About copy
-  lists "Building, Civil Engineering & Infrastructure" and "Electro-Mechanical
-  Services". The nav and the services pages say "Infrastructure Services",
-  "Electrical Engineering" and "Mechanical Engineering". A reader meets both
-  within one scroll. Your prose is used exactly as written and nothing has been
-  reworded, but the two want reconciling — either the prose adopts the service
-  names, or the services are renamed to match the prose.
-- **Project dates.** You mentioned you may want them off. They are on, behind
-  one switch: `showProjectDates` in `content/site.json`. Setting it to `false`
-  removes every year from every card, category page and project page in one
-  edit. Say the word.
+- **Two sets of names for the same capabilities — now much closer.** The
+  services are Building and Construction, Water Resources Development and
+  Management, Civil Engineering and Road, and Electrical and Mechanical. Your
+  Home and About copy still lists "Building, Civil Engineering &
+  Infrastructure" and "Electro-Mechanical Services". It is your wording and is
+  unchanged; say if you want it brought in line.
+- ~~**Project dates.**~~ **Off**, on your instruction: `showProjectDates` is
+  `false`, and the build now fails if a year reaches a project page or a
+  photo caption (`npm run check:dates`).
 
 ### Project photographs
 
@@ -163,8 +192,7 @@ order the old site uses, with its caption beneath it; Construction of Sagamu
 Intake Structure gained one that way. Anything you can find, even a phone
 photograph, goes straight in.
 
-**Civil Engineering & Construction — Buildings (9 of 21 with no
-photograph)**
+**Building and Construction (9 of 21 with no photograph)**
 
 - Two-Storey Multipurpose Building with Offices (Academic Building Complex)
   Block B — Federal University of Agriculture, Abeokuta
@@ -178,7 +206,7 @@ photograph)**
 - Construction of Classrooms — Ogun State Ministry of Education
 - Construction of Multipurpose Hall — Abika Limited
 
-**Civil Engineering & Construction — Roads & Pavements (7 of 9)**
+**Civil Engineering and Road (7 of 9)**
 
 - Reefer Pavement Works, Redesign, Construction and Repairs — APM Terminals
   Apapa Limited
@@ -192,7 +220,10 @@ photograph)**
 - Rehabilitation of Roads with Asphalt Overlay — Qui Ventures Limited
 - Improvement of Rural Roads, Kerbs, Culverts and Drainage — UNDP
 
-**Water Resources Development & Management (6 of 11)**
+**Water Resources Development and Management (6 of 11)**
+
+The three meter supply contracts are also the three without a photograph
+under **Electrical and Mechanical (3 of 5)**.
 
 - Supply of Prepayment and Electromagnetic Bulk Meters — World Bank / Federal
   Ministry of Water Resources
@@ -211,9 +242,7 @@ Also outstanding on the project record:
 - **Project content.** You said you would work on this. Anything you send —
   corrected titles, scope, clients, missing projects — goes into
   `content/projects.json`.
-- **Years for four projects** — Reefer Pavement Works (APM Terminals), the
-  E-WASH bulk meters, FUNAAB Administrative Block and the Ajebo asphaltic
-  concrete road. They are shown without a date until you supply one.
+- ~~**Years for four projects.**~~ No longer needed: project dates are off.
 
 ### Client to confirm: photos
 
@@ -262,7 +291,8 @@ full record is `docs/content-audit.md`, and every caption change is in
   the photograph's GPS says Oshodi / Ilupeju, Lagos, about 10 km from Amuwo
   Odofin. Which project?
 - **The two FUNAAB buildings from WhatsApp.** Which project is each? They are
-  off the site until you say.
+  off the site until you say. Your resent email carries seven more
+  photographs of the same two buildings — see the launch-ready round above.
 - **Energy, Digital Twin and Research have no photograph.** Their pages used
   to borrow photographs of other projects; they now open without one. Any
   photograph of this work would do.
@@ -328,11 +358,8 @@ full record is `docs/content-audit.md`, and every caption change is in
 
 ## Client and collaborator to confirm
 
-- **Approve the Oil & Gas page.** The full text is in
-  `docs/services-for-review.md`. The page is now four sections — Capabilities,
-  Solutions, Projects, Partnerships — with the partner team's record under
-  Projects and the relationship under Partnerships. The production build is
-  blocked until it is approved.
+- ~~**Approve the Oil & Gas page.**~~ **Approved** with every other service,
+  8 November 2026.
 - **Approve the oil and gas client list.** Seventeen names now appear on
   `/clients` under the heading "Oil & Gas: clients served through our
   technical partners", clearly separated from Sato's own clients. It is behind
@@ -345,13 +372,12 @@ full record is `docs/content-audit.md`, and every caption change is in
   years combined"; 150+ publications. Nothing is published while they
   disagree — `partner.figures` is empty and the strip is hidden. Send one set
   of numbers and they go in.
-- **May the case study client be named?** The page says "a national oil
-  company"; the source says ADNOC.
-- **Brand list and distributor status.** The equipment section lists
-  manufacturers by name. Confirm they can be listed publicly, and whether
-  Sato or the partner holds any authorised distributor appointment. The words
-  "authorised", "official" and "distributor" are deliberately not used
-  anywhere on the page until that is confirmed.
+- ~~**May the case study client be named?**~~ **Settled on the safe
+  default:** the page keeps "a national oil company" and does not name the
+  client. Naming it later is one edit.
+- ~~**Brand list and distributor status.**~~ **Settled on the safe
+  default:** the categories and brand names stay, with no "authorised",
+  "official" or "distributor" wording anywhere on the page.
 - **HSE content.** The page is unpublished (see below). The 2012 safety
   policy covers neither incident reporting nor quality assurance, and oil
   company pre-qualification normally asks about both.
@@ -368,7 +394,13 @@ full record is `docs/content-audit.md`, and every caption change is in
   (Awosika bus stop), Opebi, Ikeja, Lagos State." The site currently reads
   "No. 14 Agbaoku Street, Opebi, Ikeja, Lagos" with "Near Awosika bus stop."
   underneath. Unchanged until the contact page is revisited.
-- **The Leadership page.** Structurally untouched. Afolabi Adeleke has been
+- **The Leadership page — hidden, 8 November 2026.** It is not finalised, so
+  it is off the site but not deleted: out of the nav, the sitemap and every
+  link, its route parked in `app/_leadership/`, and `/leadership` and the old
+  `/our-team/` redirect to `/about` (302, because it is coming back).
+  `showLeadership` in `content/site.json` is the switch; the steps to bring it
+  back are in `docs/decisions/launch-ready.md`. While it is hidden, the
+  placeholder below no longer blocks the build. Before it was hidden: structurally untouched. Afolabi Adeleke has been
   added as the second profile, as supplied, and the page stacks the profiles
   down one column as it did with one. The restructure you mentioned — profiles
   that open on click — is still waiting on the rest of the people. Two notes
