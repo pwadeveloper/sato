@@ -1,28 +1,21 @@
 [
   {
-    "slug": "civil-engineering-construction",
-    "name": "Civil Engineering & Construction",
+    "slug": "building-construction",
+    "name": "Building and Construction",
     "group": "infrastructure",
     "order": 1,
     "reviewStatus": "approved",
-    "shortSummary": "Roads, buildings, earthworks, drainage and erosion control.",
-    "summary": "Design and construction of roads, buildings and civil works, from earthworks to finished surfaces.",
+    "shortSummary": "Academic, administrative, laboratory, residential and office buildings.",
+    "summary": "Design and construction of buildings, from foundations to fit-out, and the conversion or renovation of buildings already in use.",
     "sections": {
       "capabilities": {
         "intro": [
-          "Civil engineering is where Sato began. We design and build the infrastructure that institutions and communities depend on, and we manage every stage, from site preparation to handover.",
-          "Our own plant and workshop mean we mobilise without waiting on hired equipment, and keep control of quality and programme on site.",
-          "Civil work is the structure everything else is fixed to. On most Sato contracts it arrives with an electrical and a mechanical package attached, and it is planned as one programme rather than three."
+          "We design and build the buildings that institutions and communities depend on, and we manage every stage, from site preparation to handover.",
+          "Our own plant and workshop mean we mobilise without waiting on hired equipment, and keep control of quality and programme on site."
         ],
         "items": [
-          "Civil engineering design",
-          "Asphaltic concrete road construction and road rehabilitation",
-          "Pavement design, construction and repair, including heavy-duty terminal pavements",
-          "Earthworks: grading, laterite filling, sub-base compaction",
-          "Drainage systems, kerbs, culverts and walkways",
           "Building construction: academic, administrative, laboratory, residential and office buildings",
-          "Renovation and conversion of existing buildings",
-          "Erosion control"
+          "Renovation and conversion of existing buildings"
         ]
       },
       "solutions": {
@@ -31,31 +24,10 @@
         ],
         "groups": [
           {
-            "id": "roads",
-            "heading": "Roads and pavements",
-            "description": [
-              "Asphaltic concrete carriageways, heavy-duty terminal pavements, kerbs and walkways, built new or rehabilitated in place. The drainage that decides how long a surface lasts is designed with it, not after it."
-            ]
-          },
-          {
             "id": "buildings",
             "heading": "Buildings",
             "description": [
               "Academic, administrative, laboratory, residential and office buildings, from foundations to fit-out, and the conversion or renovation of buildings already in use."
-            ]
-          },
-          {
-            "id": "earthworks",
-            "heading": "Earthworks and site development",
-            "description": [
-              "Grading, laterite filling and sub-base compaction, delivered with our own plant, so a programme is not held up waiting on hired equipment."
-            ]
-          },
-          {
-            "id": "drainage",
-            "heading": "Drainage and erosion control",
-            "description": [
-              "Culverts, channels and slope protection, designed for the catchment rather than for the plot, on sites where uncontrolled run-off is what destroys the asset."
             ]
           }
         ]
@@ -69,180 +41,13 @@
       "width": 1920,
       "height": 840
     },
-    "images": [
-      {
-        "src": "/images/services/civil-engineering-construction/adetoro-close-completed-road.webp",
-        "alt": "A section completed asphaltic concrete, Adetoro Close, Abeokuta, Ogun State",
-        "width": 1920,
-        "height": 1440,
-        "caption": "A section completed asphaltic concrete, Adetoro Close, Abeokuta, Ogun State"
-      },
-      {
-        "src": "/images/services/civil-engineering-construction/box-culvert-under-construction.webp",
-        "alt": "Box culvert under construction",
-        "width": 1920,
-        "height": 1426,
-        "caption": "Box culvert under construction by Sato"
-      }
-    ]
-  },
-  {
-    "slug": "electrical-engineering",
-    "name": "Electrical Engineering",
-    "group": "infrastructure",
-    "order": 2,
-    "reviewStatus": "approved",
-    "shortSummary": "Power, instrumentation, metering and electrical installations.",
-    "summary": "Electrical installation, instrumentation and metering for buildings, water schemes and industrial sites.",
-    "sections": {
-      "capabilities": {
-        "intro": [
-          "Sato was founded by an electrical engineer, and electrical work runs through the firm's project record — from the pump control and high lift installations on water supply schemes to the supply and installation of bulk and prepayment metering for utilities and development programmes.",
-          "We deliver electrical works as part of a wider contract or as a package in their own right, and we commission what we install.",
-          "Electrical work is what turns a completed structure into an operating asset. It is specified against the duty of the plant it serves rather than against a catalogue, and it is tested and handed over as working plant."
-        ],
-        "items": [
-          "Electrical installation for buildings and industrial sites",
-          "Power distribution and switchgear installation",
-          "Pump control panels and motor control centres",
-          "Instrumentation and control systems",
-          "Supply, installation and commissioning of bulk, prepayment and electromagnetic meters",
-          "Solar power systems, including solar-powered borehole installations",
-          "Standby generation and changeover systems",
-          "Testing, commissioning and handover"
-        ]
-      },
-      "solutions": {
-        "groups": [
-          {
-            "id": "installations",
-            "heading": "Building and industrial installations",
-            "description": [
-              "Distribution boards, switchgear, cabling, lighting and earthing for academic, administrative and industrial buildings, tested and certified on completion."
-            ]
-          },
-          {
-            "id": "control",
-            "heading": "Pump control and motor control centres",
-            "description": [
-              "Control panels, starters and protection for water supply and pumping stations, built to the duty of the plant rather than to a standard schedule."
-            ]
-          },
-          {
-            "id": "metering",
-            "heading": "Metering supply and installation",
-            "description": [
-              "Bulk, electromagnetic and prepayment meters supplied, installed, commissioned and handed over, with training for the staff who will read and maintain them."
-            ]
-          },
-          {
-            "id": "solar",
-            "heading": "Solar and standby power",
-            "description": [
-              "Solar systems, including solar-powered boreholes, and standby generation with changeover, for sites where grid supply cannot be depended on."
-            ]
-          },
-          {
-            "id": "instrumentation",
-            "heading": "Instrumentation and control",
-            "description": [
-              "Field instrumentation and control systems for water and process plant, so an operator can see what the plant is doing and act on it."
-            ]
-          }
-        ]
-      }
-    },
-    "relatedProjectSlugs": [],
-    "registrations": [],
-    "image": {
-      "src": "/images/services/electrical-engineering/iperu-booster-station-panel-header.webp",
-      "alt": "Capacitor bank and control gear in a completed panel at the Iperu booster station",
-      "width": 1920,
-      "height": 840
-    },
     "images": []
   },
   {
-    "slug": "mechanical-engineering",
-    "name": "Mechanical Engineering",
-    "group": "infrastructure",
-    "order": 3,
-    "reviewStatus": "approved",
-    "shortSummary": "Pumps, pipework, plant installation and mechanical maintenance.",
-    "summary": "Mechanical installation and maintenance for water, building services and plant.",
-    "sections": {
-      "capabilities": {
-        "intro": [
-          "Sato's mechanical work sits alongside its civil and water engineering: pump houses, high lift pump installation, pipework and the plant that keeps a scheme running. The firm maintains its own fleet and workshop, which is where much of this capability was built.",
-          "We take on mechanical packages within our own contracts and as standalone installation and maintenance work.",
-          "Mechanical work is the moving half of an infrastructure contract. A pump house is a civil structure, a mechanical installation and an electrical panel at once, and it is sequenced as one job."
-        ],
-        "items": [
-          "Pump installation, commissioning and overhaul",
-          "Pipework fabrication and installation, including ductile iron and UPVC mains",
-          "Pumping station and pump house mechanical fit-out",
-          "Static and rotating equipment installation",
-          "Mechanical building services",
-          "Workshop fabrication and welding",
-          "Planned and corrective maintenance of plant and equipment"
-        ]
-      },
-      "solutions": {
-        "groups": [
-          {
-            "id": "pumping",
-            "heading": "Pumping stations and pump houses",
-            "description": [
-              "Mechanical fit-out of intake and high lift stations: pump installation, alignment and commissioning, with the pipework and valves around them."
-            ]
-          },
-          {
-            "id": "pipework",
-            "heading": "Pipework and distribution mains",
-            "description": [
-              "Fabrication and laying of ductile iron and UPVC mains, with the fittings, chambers, testing and disinfection that go with them."
-            ]
-          },
-          {
-            "id": "plant",
-            "heading": "Plant installation and overhaul",
-            "description": [
-              "Static and rotating equipment installed, overhauled and returned to service, including equipment supplied by others."
-            ]
-          },
-          {
-            "id": "maintenance",
-            "heading": "Maintenance and workshop support",
-            "description": [
-              "Planned and corrective maintenance of plant and mechanical building services, backed by our own workshop, welding and fabrication capacity."
-            ]
-          }
-        ]
-      }
-    },
-    "relatedProjectSlugs": [],
-    "registrations": [],
-    "image": {
-      "src": "/images/services/mechanical-engineering/drilling-rig-and-compressor-header.webp",
-      "alt": "Truck-mounted drilling rig with its air compressor on a borehole site",
-      "width": 1920,
-      "height": 840
-    },
-    "images": [
-      {
-        "src": "/images/services/mechanical-engineering/borehole-drilling-crew.webp",
-        "alt": "Drilling work in progress at Laderin Estate, Abeokuta",
-        "width": 1920,
-        "height": 1488,
-        "caption": "Drilling work in progress at Laderin Estate, Abeokuta by Sato"
-      }
-    ]
-  },
-  {
     "slug": "water-resources-development-management",
-    "name": "Water Resources Development & Management",
+    "name": "Water Resources Development and Management",
     "group": "infrastructure",
-    "order": 4,
+    "order": 2,
     "reviewStatus": "approved",
     "shortSummary": "Dams, water supply, boreholes, river works, drainage and erosion control.",
     "summary": "Dams, water supply, boreholes and river works, with the drainage, flood and erosion control that protects them.",
@@ -314,6 +119,246 @@
       "height": 840
     },
     "images": []
+  },
+  {
+    "slug": "civil-engineering-road",
+    "name": "Civil Engineering and Road",
+    "group": "infrastructure",
+    "order": 3,
+    "reviewStatus": "approved",
+    "shortSummary": "Roads, pavements, earthworks, drainage and erosion control.",
+    "summary": "Design and construction of roads and civil works, from earthworks to finished surfaces.",
+    "sections": {
+      "capabilities": {
+        "intro": [
+          "Civil engineering is where Sato began. We design and build the infrastructure that institutions and communities depend on, and we manage every stage, from site preparation to handover.",
+          "Our own plant and workshop mean we mobilise without waiting on hired equipment, and keep control of quality and programme on site.",
+          "Civil work is the structure everything else is fixed to. On most Sato contracts it arrives with an electrical and a mechanical package attached, and it is planned as one programme rather than three."
+        ],
+        "items": [
+          "Civil engineering design",
+          "Asphaltic concrete road construction and road rehabilitation",
+          "Pavement design, construction and repair, including heavy-duty terminal pavements",
+          "Earthworks: grading, laterite filling, sub-base compaction",
+          "Drainage systems, kerbs, culverts and walkways",
+          "Erosion control"
+        ]
+      },
+      "solutions": {
+        "intro": [
+          "What we deliver under this discipline, whether it is the whole contract or one package of a larger scheme."
+        ],
+        "groups": [
+          {
+            "id": "roads",
+            "heading": "Roads and pavements",
+            "description": [
+              "Asphaltic concrete carriageways, heavy-duty terminal pavements, kerbs and walkways, built new or rehabilitated in place. The drainage that decides how long a surface lasts is designed with it, not after it."
+            ]
+          },
+          {
+            "id": "earthworks",
+            "heading": "Earthworks and site development",
+            "description": [
+              "Grading, laterite filling and sub-base compaction, delivered with our own plant, so a programme is not held up waiting on hired equipment."
+            ]
+          },
+          {
+            "id": "drainage",
+            "heading": "Drainage and erosion control",
+            "description": [
+              "Culverts, channels and slope protection, designed for the catchment rather than for the plot, on sites where uncontrolled run-off is what destroys the asset."
+            ]
+          }
+        ]
+      }
+    },
+    "relatedProjectSlugs": [],
+    "registrations": [],
+    "image": {
+      "src": "/images/services/civil-engineering-road/campus-road-and-buildings-header.webp",
+      "alt": "Newly surfaced asphaltic concrete road with kerbs at Life University, Ajebo, with campus buildings beyond",
+      "width": 1920,
+      "height": 840
+    },
+    "images": [
+      {
+        "src": "/images/services/civil-engineering-construction/adetoro-close-completed-road.webp",
+        "alt": "A section completed asphaltic concrete, Adetoro Close, Abeokuta, Ogun State",
+        "width": 1920,
+        "height": 1440,
+        "caption": "A section completed asphaltic concrete, Adetoro Close, Abeokuta, Ogun State"
+      },
+      {
+        "src": "/images/services/civil-engineering-construction/box-culvert-under-construction.webp",
+        "alt": "Box culvert under construction",
+        "width": 1920,
+        "height": 1426,
+        "caption": "Box culvert under construction by Sato"
+      }
+    ]
+  },
+  {
+    "slug": "electrical-mechanical",
+    "name": "Electrical and Mechanical",
+    "group": "infrastructure",
+    "order": 4,
+    "reviewStatus": "approved",
+    "shortSummary": "Power, instrumentation, metering, pumps, pipework and plant installation.",
+    "summary": "Electrical installation, instrumentation and metering, and mechanical installation and maintenance, for buildings, water schemes and plant.",
+    "sections": {
+      "capabilities": {
+        "intro": [
+          "Sato was founded by an electrical engineer, and electrical work runs through the firm's project record — from the pump control and high lift installations on water supply schemes to the supply and installation of bulk and prepayment metering for utilities and development programmes.",
+          "Sato's mechanical work sits alongside its civil and water engineering: pump houses, high lift pump installation, pipework and the plant that keeps a scheme running. The firm maintains its own fleet and workshop, which is where much of this capability was built.",
+          "We deliver electrical and mechanical works as part of a wider contract or as packages in their own right, and we commission what we install.",
+          "A pump house is a civil structure, a mechanical installation and an electrical panel at once, and it is sequenced as one job."
+        ],
+        "groups": [
+          {
+            "id": "electrical",
+            "heading": "Electrical",
+            "items": [
+              {
+                "name": "Electrical installation for buildings and industrial sites"
+              },
+              {
+                "name": "Power distribution and switchgear installation"
+              },
+              {
+                "name": "Pump control panels and motor control centres"
+              },
+              {
+                "name": "Instrumentation and control systems"
+              },
+              {
+                "name": "Supply, installation and commissioning of bulk, prepayment and electromagnetic meters"
+              },
+              {
+                "name": "Solar power systems, including solar-powered borehole installations"
+              },
+              {
+                "name": "Standby generation and changeover systems"
+              },
+              {
+                "name": "Testing, commissioning and handover"
+              }
+            ]
+          },
+          {
+            "id": "mechanical",
+            "heading": "Mechanical",
+            "items": [
+              {
+                "name": "Pump installation, commissioning and overhaul"
+              },
+              {
+                "name": "Pipework fabrication and installation, including ductile iron and UPVC mains"
+              },
+              {
+                "name": "Pumping station and pump house mechanical fit-out"
+              },
+              {
+                "name": "Static and rotating equipment installation"
+              },
+              {
+                "name": "Mechanical building services"
+              },
+              {
+                "name": "Workshop fabrication and welding"
+              },
+              {
+                "name": "Planned and corrective maintenance of plant and equipment"
+              }
+            ]
+          }
+        ]
+      },
+      "solutions": {
+        "groups": [
+          {
+            "id": "installations",
+            "heading": "Building and industrial installations",
+            "description": [
+              "Distribution boards, switchgear, cabling, lighting and earthing for academic, administrative and industrial buildings, tested and certified on completion."
+            ]
+          },
+          {
+            "id": "control",
+            "heading": "Pump control and motor control centres",
+            "description": [
+              "Control panels, starters and protection for water supply and pumping stations, built to the duty of the plant rather than to a standard schedule."
+            ]
+          },
+          {
+            "id": "pumping",
+            "heading": "Pumping stations and pump houses",
+            "description": [
+              "Mechanical fit-out of intake and high lift stations: pump installation, alignment and commissioning, with the pipework and valves around them."
+            ]
+          },
+          {
+            "id": "pipework",
+            "heading": "Pipework and distribution mains",
+            "description": [
+              "Fabrication and laying of ductile iron and UPVC mains, with the fittings, chambers, testing and disinfection that go with them."
+            ]
+          },
+          {
+            "id": "metering",
+            "heading": "Metering supply and installation",
+            "description": [
+              "Bulk, electromagnetic and prepayment meters supplied, installed, commissioned and handed over, with training for the staff who will read and maintain them."
+            ]
+          },
+          {
+            "id": "solar",
+            "heading": "Solar and standby power",
+            "description": [
+              "Solar systems, including solar-powered boreholes, and standby generation with changeover, for sites where grid supply cannot be depended on."
+            ]
+          },
+          {
+            "id": "instrumentation",
+            "heading": "Instrumentation and control",
+            "description": [
+              "Field instrumentation and control systems for water and process plant, so an operator can see what the plant is doing and act on it."
+            ]
+          },
+          {
+            "id": "plant",
+            "heading": "Plant installation and overhaul",
+            "description": [
+              "Static and rotating equipment installed, overhauled and returned to service, including equipment supplied by others."
+            ]
+          },
+          {
+            "id": "maintenance",
+            "heading": "Maintenance and workshop support",
+            "description": [
+              "Planned and corrective maintenance of plant and mechanical building services, backed by our own workshop, welding and fabrication capacity."
+            ]
+          }
+        ]
+      }
+    },
+    "relatedProjectSlugs": [],
+    "registrations": [],
+    "image": {
+      "src": "/images/services/electrical-engineering/iperu-booster-station-panel-header.webp",
+      "alt": "Capacitor bank and control gear in a completed panel at the Iperu booster station",
+      "width": 1920,
+      "height": 840
+    },
+    "images": [
+      {
+        "src": "/images/services/mechanical-engineering/borehole-drilling-crew.webp",
+        "alt": "Drilling work in progress at Laderin Estate, Abeokuta",
+        "width": 1920,
+        "height": 1488,
+        "caption": "Drilling work in progress at Laderin Estate, Abeokuta by Sato"
+      }
+    ]
   },
   {
     "slug": "energy",

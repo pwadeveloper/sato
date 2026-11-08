@@ -9,7 +9,7 @@ import {
  * this slug. See `components/ProjectCategoryPage.tsx` for why the categories
  * are separate files, and why only the non-empty ones have one.
  */
-const slug = "electrical-engineering";
+const slug = "building-construction";
 
 export const metadata: Metadata = buildCategoryMetadata(slug);
 

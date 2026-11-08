@@ -5,7 +5,8 @@
     "client": "World Bank / Ogun State Water Corporation",
     "location": "Sagamu, Ogun State",
     "categories": [
-      "water-resources-development-management"
+      "water-resources-development-management",
+      "electrical-mechanical"
     ],
     "deliveredBy": "sato",
     "year": "2013",
@@ -29,9 +30,8 @@
     "client": "APM Terminals Apapa Limited",
     "location": "Apapa, Lagos",
     "categories": [
-      "civil-engineering-construction"
+      "civil-engineering-road"
     ],
-    "subcategory": "roads-pavements",
     "deliveredBy": "sato",
     "year": "",
     "status": "",
@@ -46,7 +46,8 @@
     "client": "World Bank / Ogun State Water Corporation",
     "location": "Ogere, Ogun State",
     "categories": [
-      "water-resources-development-management"
+      "water-resources-development-management",
+      "electrical-mechanical"
     ],
     "deliveredBy": "sato",
     "year": "2012",
@@ -159,7 +160,7 @@
     "location": "Abuja",
     "categories": [
       "water-resources-development-management",
-      "electrical-engineering"
+      "electrical-mechanical"
     ],
     "deliveredBy": "sato",
     "year": "2018",
@@ -176,7 +177,7 @@
     "location": "",
     "categories": [
       "water-resources-development-management",
-      "electrical-engineering"
+      "electrical-mechanical"
     ],
     "deliveredBy": "sato",
     "year": "",
@@ -192,7 +193,8 @@
     "client": "World Bank / Ogun State Water Corporation",
     "location": "Abeokuta, Ogun State",
     "categories": [
-      "water-resources-development-management"
+      "water-resources-development-management",
+      "electrical-mechanical"
     ],
     "deliveredBy": "sato",
     "year": "2013",
@@ -339,9 +341,8 @@
     "client": "Federal College of Education, Osiele",
     "location": "Abeokuta, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "civil-engineering-road"
     ],
-    "subcategory": "roads-pavements",
     "deliveredBy": "sato",
     "year": "2019",
     "status": "Completed",
@@ -389,9 +390,8 @@
     "client": "Ogun State Water Corporation",
     "location": "Sagamu, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "civil-engineering-road"
     ],
-    "subcategory": "roads-pavements",
     "deliveredBy": "sato",
     "year": "2013",
     "status": "Completed",
@@ -406,9 +406,8 @@
     "client": "Lagos State Public Works Corporation",
     "location": "Amuwo Odofin, Lagos State",
     "categories": [
-      "civil-engineering-construction"
+      "civil-engineering-road"
     ],
-    "subcategory": "roads-pavements",
     "deliveredBy": "sato",
     "year": "2012",
     "status": "Completed",
@@ -423,9 +422,8 @@
     "client": "Joint Magnate Investment Limited",
     "location": "Seriki-Sotayo, Ajebo, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "civil-engineering-road"
     ],
-    "subcategory": "roads-pavements",
     "deliveredBy": "sato",
     "year": "2011",
     "status": "Completed",
@@ -440,9 +438,8 @@
     "client": "Life University, Ajebo",
     "location": "Ajebo, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "civil-engineering-road"
     ],
-    "subcategory": "roads-pavements",
     "deliveredBy": "sato",
     "year": "",
     "status": "",
@@ -479,9 +476,8 @@
     "client": "Federal Ministry of Agriculture and Water Resources",
     "location": "Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "civil-engineering-road"
     ],
-    "subcategory": "roads-pavements",
     "deliveredBy": "sato",
     "year": "2010",
     "status": "Completed",
@@ -496,9 +492,8 @@
     "client": "Qui Ventures Limited",
     "location": "Abeokuta, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "civil-engineering-road"
     ],
-    "subcategory": "roads-pavements",
     "deliveredBy": "sato",
     "year": "2004",
     "status": "Completed",
@@ -513,9 +508,8 @@
     "client": "United Nations Development Programme (UNDP)",
     "location": "Abeokuta, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "civil-engineering-road"
     ],
-    "subcategory": "roads-pavements",
     "deliveredBy": "sato",
     "year": "2001",
     "status": "Completed",
@@ -530,9 +524,8 @@
     "client": "Federal University of Agriculture, Abeokuta",
     "location": "Abeokuta, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "Awarded 2016",
     "status": "",
@@ -576,9 +569,8 @@
     "client": "Federal University of Agriculture, Abeokuta",
     "location": "Abeokuta, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "Awarded 2015",
     "status": "",
@@ -593,9 +585,8 @@
     "client": "Federal University of Agriculture, Abeokuta",
     "location": "Abeokuta, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "",
     "status": "",
@@ -625,9 +616,8 @@
     "client": "University of Lagos",
     "location": "Commercial Road, Lagos",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2015",
     "status": "Completed",
@@ -657,9 +647,8 @@
     "client": "University of Lagos",
     "location": "Lagos",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2015",
     "status": "Completed",
@@ -674,9 +663,8 @@
     "client": "McPherson University",
     "location": "Ajebo, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2011",
     "status": "Completed",
@@ -713,9 +701,8 @@
     "client": "McPherson University",
     "location": "Ajebo, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "Awarded 2012",
     "status": "",
@@ -738,9 +725,8 @@
     "client": "Ogun State Ministry of Special Duties",
     "location": "Owode-Yewa, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2005",
     "status": "Completed",
@@ -763,9 +749,8 @@
     "client": "Horizon Suites",
     "location": "Oluyole Estate, Ibadan, Oyo State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2006",
     "status": "Completed",
@@ -795,9 +780,8 @@
     "client": "Ogun State Bureau of Management and Budget",
     "location": "Mowe, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2009",
     "status": "Completed",
@@ -820,9 +804,8 @@
     "client": "National Primary Health Care Development Agency",
     "location": "Alabi Olorunda, Ifo, Ilado",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2007",
     "status": "Completed",
@@ -852,9 +835,8 @@
     "client": "Joseph Ayo Babalola University",
     "location": "Ikeji-Arakeji, Osun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2005",
     "status": "Completed",
@@ -869,9 +851,8 @@
     "client": "Golden Tusk Limited",
     "location": "Laderin Estate, Abeokuta, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2010",
     "status": "Completed",
@@ -894,9 +875,8 @@
     "client": "Choice Investors",
     "location": "Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "Awarded 2011",
     "status": "",
@@ -911,9 +891,8 @@
     "client": "Mrs. Akinyegun",
     "location": "Abeokuta, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2010",
     "status": "Completed",
@@ -928,9 +907,8 @@
     "client": "Ogun State Ministry of Special Duties",
     "location": "Asero, Abeokuta, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2006",
     "status": "Completed",
@@ -945,9 +923,8 @@
     "client": "Ogun State Ministry of Special Duties",
     "location": "Ilaro, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2007",
     "status": "Completed",
@@ -970,9 +947,8 @@
     "client": "Ogun State Universal Basic Education Board",
     "location": "Ilugun-Asalu, Erifun and Atoba, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2009",
     "status": "Completed",
@@ -987,9 +963,8 @@
     "client": "Ogun State Ministry of Education",
     "location": "Iwoye Ketu and Ikenne, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2003",
     "status": "Completed",
@@ -1004,9 +979,8 @@
     "client": "Abika Limited",
     "location": "Abeokuta, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "Awarded 2007",
     "status": "",
@@ -1021,9 +995,8 @@
     "client": "Ogun State Water Corporation",
     "location": "Iperu, Ogun State",
     "categories": [
-      "civil-engineering-construction"
+      "building-construction"
     ],
-    "subcategory": "buildings",
     "deliveredBy": "sato",
     "year": "2012",
     "status": "Completed",

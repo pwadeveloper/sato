@@ -3,17 +3,17 @@
   "framework": "nextjs",
   "redirects": [
     {
-      "source": "/services/construction-civil-engineering",
-      "destination": "/services/civil-engineering-construction",
-      "permanent": true
+      "source": "/services/construction-civil-engineering{/}?",
+      "destination": "/services/civil-engineering-road",
+      "statusCode": 301
     },
     {
-      "source": "/services/water-resources-environmental",
+      "source": "/services/water-resources-environmental{/}?",
       "destination": "/services/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/projects",
+      "source": "/projects{/}?",
       "has": [
         {
           "type": "query",
@@ -21,11 +21,11 @@
           "value": "buildings"
         }
       ],
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "destination": "/projects/building-construction",
+      "statusCode": 301
     },
     {
-      "source": "/projects",
+      "source": "/projects{/}?",
       "has": [
         {
           "type": "query",
@@ -33,11 +33,11 @@
           "value": "roads"
         }
       ],
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "destination": "/projects/civil-engineering-road",
+      "statusCode": 301
     },
     {
-      "source": "/projects",
+      "source": "/projects{/}?",
       "has": [
         {
           "type": "query",
@@ -46,17 +46,52 @@
         }
       ],
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/projects/buildings-construction",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/projects/buildings-construction{/}?",
+      "destination": "/projects/building-construction",
+      "statusCode": 301
     },
     {
-      "source": "/projects/civil-engineering-roads",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/projects/civil-engineering-roads{/}?",
+      "destination": "/projects/civil-engineering-road",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/civil-engineering-construction{/}?",
+      "destination": "/services/civil-engineering-road",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/electrical-engineering{/}?",
+      "destination": "/services/electrical-mechanical",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/mechanical-engineering{/}?",
+      "destination": "/services/electrical-mechanical",
+      "statusCode": 301
+    },
+    {
+      "source": "/projects/civil-engineering-construction{/}?",
+      "destination": "/projects/civil-engineering-road",
+      "statusCode": 301
+    },
+    {
+      "source": "/projects/electrical-engineering{/}?",
+      "destination": "/projects/electrical-mechanical",
+      "statusCode": 301
+    },
+    {
+      "source": "/projects/mechanical-engineering{/}?",
+      "destination": "/projects/electrical-mechanical",
+      "statusCode": 301
+    },
+    {
+      "source": "/leadership{/}?",
+      "destination": "/about",
+      "statusCode": 302
     },
     {
       "source": "/",
@@ -67,592 +102,587 @@
         }
       ],
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/:path*/feed",
+      "source": "/:path*/feed{/}?",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/707",
+      "source": "/707{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/719",
+      "source": "/719{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/723",
+      "source": "/723{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/740",
+      "source": "/740{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/752",
+      "source": "/752{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/755",
+      "source": "/755{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/780",
+      "source": "/780{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/783",
+      "source": "/783{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/794",
+      "source": "/794{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/810",
+      "source": "/810{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/848",
+      "source": "/848{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/850",
+      "source": "/850{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/856",
+      "source": "/856{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/862",
+      "source": "/862{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/863",
+      "source": "/863{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/869",
+      "source": "/869{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/870",
+      "source": "/870{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/875",
+      "source": "/875{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/876",
+      "source": "/876{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/about-us",
+      "source": "/about-us{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/administrative-block",
+      "source": "/administrative-block{/}?",
       "destination": "/projects/funaab-administrative-block",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/administrative-block-2",
+      "source": "/administrative-block-2{/}?",
       "destination": "/projects/funaab-administrative-block",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/april-2012sato-engineering-completes-and-handover-the-rehabilitation-of-ogere-water-scheme-in-ogun-state-nigeria",
+      "source": "/april-2012sato-engineering-completes-and-handover-the-rehabilitation-of-ogere-water-scheme-in-ogun-state-nigeria{/}?",
       "destination": "/projects/ogere-water-supply-scheme-rehabilitation",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/awards",
+      "source": "/awards{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/best-engineering-company-in-ogun-state-2010",
+      "source": "/best-engineering-company-in-ogun-state-2010{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/best-erosion-control-and-construction-engineering-company-awards-2012",
+      "source": "/best-erosion-control-and-construction-engineering-company-awards-2012{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/blocks-of-shops",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/blocks-of-shops{/}?",
+      "destination": "/projects/building-construction",
+      "statusCode": 301
     },
     {
-      "source": "/building-and-construction",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/building-and-construction{/}?",
+      "destination": "/projects/building-construction",
+      "statusCode": 301
     },
     {
-      "source": "/building1",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/building1{/}?",
+      "destination": "/projects/building-construction",
+      "statusCode": 301
     },
     {
-      "source": "/building11",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/building11{/}?",
+      "destination": "/projects/building-construction",
+      "statusCode": 301
     },
     {
-      "source": "/building2",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/building2{/}?",
+      "destination": "/projects/building-construction",
+      "statusCode": 301
     },
     {
-      "source": "/building3",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/building3{/}?",
+      "destination": "/projects/building-construction",
+      "statusCode": 301
     },
     {
-      "source": "/building4",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/building4{/}?",
+      "destination": "/projects/building-construction",
+      "statusCode": 301
     },
     {
-      "source": "/building5",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/building5{/}?",
+      "destination": "/projects/building-construction",
+      "statusCode": 301
     },
     {
-      "source": "/building6-2",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/building6-2{/}?",
+      "destination": "/projects/building-construction",
+      "statusCode": 301
     },
     {
-      "source": "/building7",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/building7{/}?",
+      "destination": "/projects/building-construction",
+      "statusCode": 301
     },
     {
-      "source": "/building8",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/building8{/}?",
+      "destination": "/projects/building-construction",
+      "statusCode": 301
     },
     {
-      "source": "/civil-eng-road-projects",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/civil-eng-road-projects{/}?",
+      "destination": "/projects/civil-engineering-road",
+      "statusCode": 301
     },
     {
-      "source": "/civil2",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/civil2{/}?",
+      "destination": "/projects/civil-engineering-road",
+      "statusCode": 301
     },
     {
-      "source": "/civil5",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/civil5{/}?",
+      "destination": "/projects/civil-engineering-road",
+      "statusCode": 301
     },
     {
-      "source": "/civil6",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/civil6{/}?",
+      "destination": "/projects/civil-engineering-road",
+      "statusCode": 301
     },
     {
-      "source": "/civil7",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/civil7{/}?",
+      "destination": "/projects/civil-engineering-road",
+      "statusCode": 301
     },
     {
-      "source": "/civil8",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/civil8{/}?",
+      "destination": "/projects/civil-engineering-road",
+      "statusCode": 301
     },
     {
-      "source": "/college-of-plant-science-and-crop-production-colplant",
+      "source": "/college-of-plant-science-and-crop-production-colplant{/}?",
       "destination": "/projects/funaab-colplant-building-phase-ii",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/college-of-plant-science-and-crop-production-colplant-2",
+      "source": "/college-of-plant-science-and-crop-production-colplant-2{/}?",
       "destination": "/projects/funaab-colplant-building-phase-ii",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/college-of-plant-science-and-crop-production-colplant-3",
+      "source": "/college-of-plant-science-and-crop-production-colplant-3{/}?",
       "destination": "/projects/funaab-colplant-building-phase-ii",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/college-of-plant-science-and-crop-production-colplant-4",
+      "source": "/college-of-plant-science-and-crop-production-colplant-4{/}?",
       "destination": "/projects/funaab-colplant-building-phase-ii",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/comments/feed",
+      "source": "/comments/feed{/}?",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/contact-us",
+      "source": "/contact-us{/}?",
       "destination": "/contact",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/contributing-immensely-to-the-progress-of-the-community-through-rotary-service-2011",
+      "source": "/contributing-immensely-to-the-progress-of-the-community-through-rotary-service-2011{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/core-services",
+      "source": "/core-services{/}?",
       "destination": "/services",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/electrical-engineering",
-      "destination": "/services/electrical-engineering",
-      "permanent": true
+      "source": "/electrical-engineering{/}?",
+      "destination": "/services/electrical-mechanical",
+      "statusCode": 301
     },
     {
-      "source": "/equipment",
+      "source": "/equipment{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/equipments",
+      "source": "/equipments{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/excellent-service-towards-contribution-to-the-youth-and-humanity-2010",
+      "source": "/excellent-service-towards-contribution-to-the-youth-and-humanity-2010{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/feed",
+      "source": "/feed{/}?",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/filling-2-at-fce-osiele",
+      "source": "/filling-2-at-fce-osiele{/}?",
       "destination": "/projects/fce-osiele-campus-roads-and-walkways",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/future-plans",
+      "source": "/future-plans{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/horizon-suites",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/horizon-suites{/}?",
+      "destination": "/projects/horizon-suites-hotel-complex",
+      "statusCode": 301
     },
     {
-      "source": "/horizon-suites-2",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/horizon-suites-2{/}?",
+      "destination": "/projects/horizon-suites-hotel-complex",
+      "statusCode": 301
     },
     {
-      "source": "/hse",
+      "source": "/hse{/}?",
       "destination": "/about",
-      "permanent": false
+      "statusCode": 302
     },
     {
-      "source": "/installed-high-lift-pump-panel",
-      "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "source": "/installed-high-lift-pump-panel{/}?",
+      "destination": "/projects/sagamu-intake-structure",
+      "statusCode": 301
     },
     {
-      "source": "/january-2012-sato-engineering-opens-new-branches-sato-engineering-has-opened-branches-in-lagos",
+      "source": "/january-2012-sato-engineering-opens-new-branches-sato-engineering-has-opened-branches-in-lagos{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/july-2012-sato-engineering-receives-west-africas-dynamic-and-outstanding-engineering-company-award-2012",
+      "source": "/july-2012-sato-engineering-receives-west-africas-dynamic-and-outstanding-engineering-company-award-2012{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/july2012-sato-engineering-has-been-awarded-the-contract-for-the-conversion-and-total-rehabilitation-of-convention-centre-to-temporary-staff-quarters-by-the-mcphersons-university",
+      "source": "/july2012-sato-engineering-has-been-awarded-the-contract-for-the-conversion-and-total-rehabilitation-of-convention-centre-to-temporary-staff-quarters-by-the-mcphersons-university{/}?",
       "destination": "/projects/mcpherson-convention-centre-conversion",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/june-2012-sato-engineering-complete-works-on-the-dredging-of-ogungbade-river-in-ibadan-2",
+      "source": "/june-2012-sato-engineering-complete-works-on-the-dredging-of-ogungbade-river-in-ibadan-2{/}?",
       "destination": "/projects/ogungbade-river-dredging",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/laterite-filling-at-fce-osiele",
+      "source": "/laterite-filling-at-fce-osiele{/}?",
       "destination": "/projects/fce-osiele-campus-roads-and-walkways",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/laying-of-upvc-pipes",
+      "source": "/laying-of-upvc-pipes{/}?",
       "destination": "/projects/ogere-water-supply-scheme-rehabilitation",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/may-2012sato-engineering-has-been-awarded-contract-for-the-channelization-of-the-lower-awba-stream-at-the-university-of-ibadan-the-scope-of-work-includes",
+      "source": "/may-2012sato-engineering-has-been-awarded-contract-for-the-channelization-of-the-lower-awba-stream-at-the-university-of-ibadan-the-scope-of-work-includes{/}?",
       "destination": "/projects/lower-awba-stream-channelization",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/mechanical-engineering",
-      "destination": "/services/mechanical-engineering",
-      "permanent": true
+      "source": "/mechanical-engineering{/}?",
+      "destination": "/services/electrical-mechanical",
+      "statusCode": 301
     },
     {
-      "source": "/most-supportive-indigenous-company-2012-by-egba-youths-awards-eya",
+      "source": "/most-supportive-indigenous-company-2012-by-egba-youths-awards-eya{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/news-events",
+      "source": "/news-events{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/news-events/page/2",
+      "source": "/news-events/page/2{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/november2011-sato-engineering-completes-and-hand-over-the-administrative-blocks-and-laboratory-building-at-mcpherson-university",
+      "source": "/november2011-sato-engineering-completes-and-hand-over-the-administrative-blocks-and-laboratory-building-at-mcpherson-university{/}?",
       "destination": "/projects/mcpherson-administrative-block-and-laboratory",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/november2011sato-engineering-is-helping-to-make-the-dream-of-affordable-housing-a-reality-in-ogun-state-by-working-with-choice-investors-to-provide-5-blocks-4-nos-of-4-bedroom-flats",
+      "source": "/november2011sato-engineering-is-helping-to-make-the-dream-of-affordable-housing-a-reality-in-ogun-state-by-working-with-choice-investors-to-provide-5-blocks-4-nos-of-4-bedroom-flats{/}?",
       "destination": "/projects/ogun-state-affordable-housing",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/ongoing-projects",
+      "source": "/ongoing-projects{/}?",
       "destination": "/projects",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/our-team",
-      "destination": "/leadership",
-      "permanent": true
+      "source": "/our-team{/}?",
+      "destination": "/about",
+      "statusCode": 302
     },
     {
-      "source": "/project-1",
-      "destination": "/projects/funaab-academic-building-complex-block-b",
-      "permanent": true
+      "source": "/project-1{/}?",
+      "destination": "/projects/lower-awba-stream-channelization",
+      "statusCode": 301
     },
     {
-      "source": "/project-2",
-      "destination": "/projects/funaab-colplant-building-phase-ii",
-      "permanent": true
-    },
-    {
-      "source": "/project-3",
+      "source": "/project-2{/}?",
       "destination": "/projects/fiditi-earth-dam",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/project-4",
+      "source": "/project-3{/}?",
+      "destination": "/projects/lagos-state-road-rehabilitation",
+      "statusCode": 301
+    },
+    {
+      "source": "/project-4{/}?",
       "destination": "/projects/mcpherson-convention-centre-conversion",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/road-at-fce-osiele",
+      "source": "/road-at-fce-osiele{/}?",
       "destination": "/projects/fce-osiele-campus-roads-and-walkways",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/safety-policies",
+      "source": "/safety-policies{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/sato-engineering-has-been-awarded-contract-for-the-construction-of-an-earth-dam-at-fiditi-dam",
+      "source": "/sato-engineering-has-been-awarded-contract-for-the-construction-of-an-earth-dam-at-fiditi-dam{/}?",
       "destination": "/projects/fiditi-earth-dam",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/sato-engineering-received-the-best-erosion-control-and-construction-engineering-company-awards-2012",
+      "source": "/sato-engineering-received-the-best-erosion-control-and-construction-engineering-company-awards-2012{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/services/civil-infrastructure",
-      "destination": "/services/construction-civil-engineering",
-      "permanent": true
+      "source": "/services/civil-infrastructure{/}?",
+      "destination": "/services/civil-engineering-road",
+      "statusCode": 301
     },
     {
-      "source": "/services/electrical-mechanical",
-      "destination": "/services/electrical-engineering",
-      "permanent": true
-    },
-    {
-      "source": "/services/engineering",
+      "source": "/services/engineering{/}?",
       "destination": "/services/infrastructure",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/services/water-resources",
-      "destination": "/services/water-resources-environmental",
-      "permanent": true
+      "source": "/services/water-resources{/}?",
+      "destination": "/services/water-resources-development-management",
+      "statusCode": 301
     },
     {
-      "source": "/stalked-ductile-iron-pipes",
+      "source": "/stalked-ductile-iron-pipes{/}?",
       "destination": "/projects/ogere-water-supply-scheme-rehabilitation",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/strategy-session",
+      "source": "/strategy-session{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/unparralled-social-responsibility-in-ogun-state-2012",
+      "source": "/unparralled-social-responsibility-in-ogun-state-2012{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water-meter-installation",
+      "source": "/water-meter-installation{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water-meter-installation-2",
+      "source": "/water-meter-installation-2{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water-meter-installation-training",
+      "source": "/water-meter-installation-training{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water-supply-and-water-resources",
+      "source": "/water-supply-and-water-resources{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water1",
+      "source": "/water1{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water10",
+      "source": "/water10{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water11",
+      "source": "/water11{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water12",
+      "source": "/water12{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water14",
+      "source": "/water14{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water15",
+      "source": "/water15{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water16",
+      "source": "/water16{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water18",
+      "source": "/water18{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water2",
+      "source": "/water2{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water5",
+      "source": "/water5{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water5-2",
+      "source": "/water5-2{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/water9",
+      "source": "/water9{/}?",
       "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/west-africas-dynamic-and-outstanding-engineering-company-award-2012",
+      "source": "/west-africas-dynamic-and-outstanding-engineering-company-award-2012{/}?",
       "destination": "/about",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/work-in-progress",
-      "destination": "/projects/civil-engineering-construction",
-      "permanent": true
+      "source": "/work-in-progress{/}?",
+      "destination": "/projects/obstetrics-care-facility-mowe",
+      "statusCode": 301
     },
     {
-      "source": "/world-bank-team-inspection",
-      "destination": "/projects/water-resources-development-management",
-      "permanent": true
+      "source": "/world-bank-team-inspection{/}?",
+      "destination": "/projects/sagamu-intake-structure",
+      "statusCode": 301
     },
     {
-      "source": "/wp-admin/:path*",
+      "source": "/wp-admin/:path*{/}?",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/wp-content/:path*",
+      "source": "/wp-content/:path*{/}?",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/wp-includes/:path*",
+      "source": "/wp-includes/:path*{/}?",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/wp-login.php",
+      "source": "/wp-login.php{/}?",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/xmlrpc.php",
+      "source": "/xmlrpc.php{/}?",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     }
   ],
   "headers": [

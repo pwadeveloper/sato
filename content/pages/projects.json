@@ -2,7 +2,7 @@
   "slug": "projects",
   "title": "Projects",
   "metaTitle": "Projects",
-  "metaDescription": "Civil engineering, building, electrical, water resources and oil and gas projects delivered by Sato Engineering & Infrastructure Limited for government, university, development partner, private and oil company clients.",
+  "metaDescription": "Building, water resources, civil engineering and road, electrical and mechanical, and oil and gas projects delivered by Sato Engineering & Infrastructure Limited for government, university, development partner, private and oil company clients.",
   "labels": {
     "breadcrumb": "Breadcrumb",
     "countOne": "1 project",
@@ -41,117 +41,46 @@
       "facetMode": "group",
       "facets": [
         {
-          "value": "civil-engineering-construction",
-          "label": "Civil Engineering & Construction",
-          "slug": "civil-engineering-construction",
-          "serviceSlug": "civil-engineering-construction",
+          "value": "building-construction",
+          "label": "Building and Construction",
+          "slug": "building-construction",
+          "serviceSlug": "building-construction",
           "group": "infrastructure",
-          "subcategories": [
-            {
-              "id": "buildings",
-              "label": "Buildings",
-              "photos": [
-                {
-                  "src": "/images/projects-unassigned/omololu-residence.webp",
-                  "alt": "Work in progress at Mr. Lekan Omololu’s residential development, Abeokuta",
-                  "width": 591,
-                  "height": 392,
-                  "caption": "Work in progress at Mr. Lekan Omololu’s residential development, Abeokuta"
-                },
-                {
-                  "src": "/images/projects/civil-buildings/sato-office-abeokuta-front.webp",
-                  "alt": "Sato office in Abeokuta",
-                  "width": 602,
-                  "height": 364,
-                  "caption": "Sato office in Abeokuta"
-                },
-                {
-                  "src": "/images/projects-unassigned/sato-office-abeokuta.webp",
-                  "alt": "Sato office in Abeokuta",
-                  "width": 602,
-                  "height": 363,
-                  "caption": "Sato office in Abeokuta"
-                }
-              ]
-            },
-            {
-              "id": "roads-pavements",
-              "label": "Roads & Pavements",
-              "photos": [
-                {
-                  "src": "/images/services/roadworks-completed-carriageway.webp",
-                  "alt": "Work in progress, asphalt laying & compaction",
-                  "width": 1920,
-                  "height": 1440,
-                  "caption": "Work in progress, asphalt laying & compaction"
-                },
-                {
-                  "src": "/images/projects/civil-roads-and-pavements/asphaltic-concrete-road-under-construction.webp",
-                  "alt": "Asphaltic concrete road under construction",
-                  "width": 1920,
-                  "height": 1440,
-                  "caption": "Asphaltic concrete road under construction by Sato"
-                },
-                {
-                  "src": "/images/projects/civil-roads-and-pavements/sub-base-compaction.webp",
-                  "alt": "Compaction of sub-base material in progress",
-                  "width": 1920,
-                  "height": 1238,
-                  "caption": "Compaction of sub-base material in progress"
-                },
-                {
-                  "src": "/images/projects/civil-roads-and-pavements/sandfilled-area-after-grading.webp",
-                  "alt": "Sandfilled area, after grading and prior to compaction",
-                  "width": 800,
-                  "height": 540,
-                  "caption": "Sandfilled area, after grading and prior to compaction"
-                },
-                {
-                  "src": "/images/projects/civil-roads-and-pavements/box-culvert.webp",
-                  "alt": "Construction of box culvert",
-                  "width": 1920,
-                  "height": 1440,
-                  "caption": "Construction of box culvert"
-                }
-              ]
-            }
-          ],
-          "intro": "Buildings, roads, heavy-duty pavements, earthworks, drainage, kerbs and culverts — new-build, rehabilitation and conversion.",
+          "intro": "Academic, administrative, laboratory, residential and office buildings — new-build, rehabilitation and conversion.",
           "image": {
             "src": "/images/projects/horizon-suites-hotel-complex/hotel-entrance.webp",
             "alt": "Entrance to the Horizon Suites hotel, Oluyole Estate, Ibadan",
             "width": 1920,
             "height": 1440
           },
-          "shortLabel": "Civil"
-        },
-        {
-          "value": "electrical-engineering",
-          "label": "Electrical Engineering",
-          "slug": "electrical-engineering",
-          "serviceSlug": "electrical-engineering",
-          "group": "infrastructure",
-          "intro": "Metering, pumping and control installations supplied and commissioned for water and infrastructure clients.",
-          "image": {
-            "src": "/images/services/electrical-engineering/iperu-booster-station-breaker-panel.webp",
-            "alt": "Completed breaker panel with its wiring at the Iperu booster station",
-            "width": 1920,
-            "height": 1440
-          },
-          "shortLabel": "Electrical"
-        },
-        {
-          "value": "mechanical-engineering",
-          "label": "Mechanical Engineering",
-          "slug": "mechanical-engineering",
-          "serviceSlug": "mechanical-engineering",
-          "group": "infrastructure",
-          "intro": "",
-          "shortLabel": "Mechanical"
+          "shortLabel": "Building",
+          "photos": [
+            {
+              "src": "/images/projects-unassigned/omololu-residence.webp",
+              "alt": "Work in progress at Mr. Lekan Omololu’s residential development, Abeokuta",
+              "width": 591,
+              "height": 392,
+              "caption": "Work in progress at Mr. Lekan Omololu’s residential development, Abeokuta"
+            },
+            {
+              "src": "/images/projects/civil-buildings/sato-office-abeokuta-front.webp",
+              "alt": "Sato office in Abeokuta",
+              "width": 602,
+              "height": 364,
+              "caption": "Sato office in Abeokuta"
+            },
+            {
+              "src": "/images/projects-unassigned/sato-office-abeokuta.webp",
+              "alt": "Sato office in Abeokuta",
+              "width": 602,
+              "height": 363,
+              "caption": "Sato office in Abeokuta"
+            }
+          ]
         },
         {
           "value": "water-resources-development-management",
-          "label": "Water Resources Development & Management",
+          "label": "Water Resources Development and Management",
           "slug": "water-resources-development-management",
           "serviceSlug": "water-resources-development-management",
           "group": "infrastructure",
@@ -193,6 +122,73 @@
               "caption": "Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State"
             }
           ]
+        },
+        {
+          "value": "civil-engineering-road",
+          "label": "Civil Engineering and Road",
+          "slug": "civil-engineering-road",
+          "serviceSlug": "civil-engineering-road",
+          "group": "infrastructure",
+          "intro": "Roads, heavy-duty pavements, earthworks, drainage, kerbs and culverts — new-build and rehabilitation.",
+          "image": {
+            "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-and-drainage-channel.webp",
+            "alt": "Asphaltic concrete road and drainage channel at Life University, Ajebo",
+            "width": 1920,
+            "height": 1440
+          },
+          "shortLabel": "Civil and Road",
+          "photos": [
+            {
+              "src": "/images/services/roadworks-completed-carriageway.webp",
+              "alt": "Work in progress, asphalt laying & compaction",
+              "width": 1920,
+              "height": 1440,
+              "caption": "Work in progress, asphalt laying & compaction"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/asphaltic-concrete-road-under-construction.webp",
+              "alt": "Asphaltic concrete road under construction",
+              "width": 1920,
+              "height": 1440,
+              "caption": "Asphaltic concrete road under construction by Sato"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/sub-base-compaction.webp",
+              "alt": "Compaction of sub-base material in progress",
+              "width": 1920,
+              "height": 1238,
+              "caption": "Compaction of sub-base material in progress"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/sandfilled-area-after-grading.webp",
+              "alt": "Sandfilled area, after grading and prior to compaction",
+              "width": 800,
+              "height": 540,
+              "caption": "Sandfilled area, after grading and prior to compaction"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/box-culvert.webp",
+              "alt": "Construction of box culvert",
+              "width": 1920,
+              "height": 1440,
+              "caption": "Construction of box culvert"
+            }
+          ]
+        },
+        {
+          "value": "electrical-mechanical",
+          "label": "Electrical and Mechanical",
+          "slug": "electrical-mechanical",
+          "serviceSlug": "electrical-mechanical",
+          "group": "infrastructure",
+          "intro": "Metering, pumping, control and mechanical installations supplied and commissioned for water and infrastructure clients.",
+          "image": {
+            "src": "/images/services/electrical-engineering/iperu-booster-station-breaker-panel.webp",
+            "alt": "Completed breaker panel with its wiring at the Iperu booster station",
+            "width": 1920,
+            "height": 1440
+          },
+          "shortLabel": "Electrical and Mechanical"
         },
         {
           "value": "energy",
