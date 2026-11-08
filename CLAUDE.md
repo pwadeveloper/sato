@@ -42,7 +42,9 @@ banned-terms rule below, which the build enforces.
 
    - The bio is wrapped in `data-allow-country="true"`, set by the
      `allowCountry` prop on `components/PersonCard.tsx`, which **only
-     `app/leadership/page.tsx` passes**.
+     the leadership page passes** (`app/_leadership/page.tsx` while the page
+     is hidden — see "There is no `/leadership` page" below; the exemption
+     then matches nothing, which is fine).
    - `scripts/check-banned-terms.mjs` skips the country pattern inside that
      element, and **only** that pattern — `formerly`, the RC number, the
      email rule and the phone rule still scan the whole document.
@@ -106,7 +108,8 @@ banned-terms rule below, which the build enforces.
    - `/clients` attributes the seventeen oil and gas clients. It now agrees
      with `/projects/oil-gas` again, which resolves the inconsistency raised
      in `docs/open-items.md` — in the direction of attributing both.
-10. After each task, run `npm run build` and fix all errors and type errors before reporting done. Before reporting a content change done, also run `npm run check:banned`.
+10. After each task, run `npm run build` and fix all errors and type errors before reporting done. Before reporting a content change done, also run `npm run check:banned`, `npm run check:dates` and `npm run check:redirects` — or simply `npm run build:prod`, which runs all of them.
+11. **No dates on project content** (`docs/decisions/launch-ready.md`, section 4). `showProjectDates` is `false`, and no caption, title, summary, scope line or alt text on a project may carry a year. `npm run check:dates` scans every project page in full, and photo captions and alt text on every other page, for `\b(19|20)\d{2}\b`. It allows only "since 1997" (the tagline's wording) and the footer's "© <year>". `/projects/oil-gas` is listed as an exception on every run, because its partner table has a Year column and the same brief says to leave Oil & Gas untouched — that one is the client's to settle.
 
 ## Sitemap
 
@@ -116,22 +119,22 @@ banned-terms rule below, which the build enforces.
 | `/about` | About (story beside one water-work photograph on desktop, motto, mission, vision) |
 | `/services` | Services overview — four categories |
 | `/services/infrastructure` | **Infrastructure Services** — category landing page |
-| `/services/civil-engineering-construction` | Civil Engineering & Construction |
-| `/services/electrical-engineering` | Electrical Engineering |
-| `/services/mechanical-engineering` | Mechanical Engineering |
-| `/services/water-resources-development-management` | Water Resources Development & Management |
+| `/services/building-construction` | Building and Construction |
+| `/services/water-resources-development-management` | Water Resources Development and Management |
+| `/services/civil-engineering-road` | Civil Engineering and Road |
+| `/services/electrical-mechanical` | Electrical and Mechanical |
 | `/services/energy` | Energy Services |
 | `/services/oil-gas` | **Oil & Gas Services** — four anchored sections with a sticky sub-nav |
 | `/services/digital-twin` | Digitalization & Digital Twin Services |
 | `/services/research-innovation` | Research, Technology & Innovation Services |
 | `/projects` | Project categories — one photographic tile per service, grouped as Services is |
-| `/projects/civil-engineering-construction` | Civil Engineering & Construction — two subheadings, Buildings and Roads & Pavements |
-| `/projects/electrical-engineering` | Electrical Engineering |
-| `/projects/water-resources-development-management` | Water Resources Development & Management |
-| `/projects/oil-gas` | **Oil & Gas Services** — a table, not cards; attributed, and behind the review gate |
+| `/projects/building-construction` | Building and Construction |
+| `/projects/water-resources-development-management` | Water Resources Development and Management |
+| `/projects/civil-engineering-road` | Civil Engineering and Road |
+| `/projects/electrical-mechanical` | Electrical and Mechanical |
+| `/projects/oil-gas` | **Oil & Gas Services** — a table, not cards; attributed |
 | `/projects/[slug]` | Project detail |
 | `/clients` | Clients |
-| `/leadership` | Founder, and how project teams are assembled |
 | `/contact` | Contact |
 
 **Five service categories**, in display order, are the `group` values in
@@ -146,9 +149,21 @@ single service renders as that service rather than as a heading above one
 repeated card, and **every category heading is a link** — a category of one
 links straight to its service.
 
-Two services were renamed. Both old routes 301 in `vercel.json`:
-`construction-civil-engineering` → `civil-engineering-construction`, and
-`water-resources-environmental` → `water-resources-development-management`.
+**The four Infrastructure categories are final** (`docs/decisions/launch-ready.md`),
+following the old site's own structure: **Building and Construction**,
+**Water Resources Development and Management**, **Civil Engineering and Road**,
+**Electrical and Mechanical** — in that order, written with "and", never "&".
+They replaced Civil Engineering & Construction (split into the first and
+third), Electrical Engineering and Mechanical Engineering (merged into the
+fourth). Every retired route 301s in `vercel.json` to its successor in one
+hop; Civil Engineering & Construction goes to Civil Engineering and Road, by
+name. `npm run check:redirects` proves the whole map against the build: every
+destination a live page, no chains, no redirect hiding a live page (Vercel
+applies redirects before files — `/services/electrical-mechanical` once
+pointed elsewhere and would have hidden the new page), and every source
+written `/path{/}?`, because Vercel matches sources strictly and the old
+WordPress links end in a slash. Never use `"trailingSlash": false` for that:
+Vercel runs it before the redirects, which makes every old link two hops.
 
 **Projects mirrors Services, one category per service.** The client's
 instruction was that a reader who has found a service should not have to learn
@@ -166,21 +181,24 @@ slug), `serviceSlug`, `group`, `shortLabel`, `intro` and `image`.
 **A category with no projects is never published.** `getProjectCategories()`
 drops it, so it is absent from the dropdown, the landing page, the sitemap and
 the service page's "See our … projects" link, and it returns the moment its
-first project lands. Four are empty today: Mechanical Engineering, Energy,
-Digital Twin and Research. **Never create a route folder for an empty
-category** — `getProjectCategory()` throws and the build fails. The four live
+first project lands. Three are empty today: Energy, Digital Twin and
+Research. **Never create a route folder for an empty
+category** — `getProjectCategory()` throws and the build fails. The five live
 routes are static files under `app/projects/` (a second dynamic segment cannot
 sit beside `[slug]`), each four lines delegating to
 `components/ProjectCategoryPage.tsx`. Adding a category is a content edit plus
 one folder.
 
-`buildings-construction` and `civil-engineering-roads` were merged into
-`civil-engineering-construction`; both 301 in `vercel.json`, as does every old
-WordPress URL that pointed at them.
+Projects were split by the old site's own pages: its "Building and
+Construction" table → Building and Construction, its "Civil Engineering Road
+Projects" → Civil Engineering and Road, its water table → Water Resources.
+Electrical and Mechanical holds the three meter supply contracts and the two
+water schemes with electro-mechanical scope (Sagamu Intake, Ogere), each of
+which also stays under Water Resources, where the old site lists it.
 
 **A project carries `categories`, not a sector.** It is an array, because a
-project can belong in more than one place — the two bulk meter supplies are
-Water Resources work and they are Electrical Engineering work, and a reader
+project can belong in more than one place — the bulk meter supplies are
+Water Resources work and they are Electrical and Mechanical work, and a reader
 looking in either should find them. The first published category names its
 breadcrumb and its card; the rest are listed on its detail page under
 `labels.alsoIn`.
@@ -216,11 +234,11 @@ of box culvert", "Sato office in Abeokuta" — goes in its category's
 project the old site didn't name.
 
 **A category may split its grid under subheadings.** The facet declares
-`subcategories[]` and a project names one in `subcategory`. Civil Engineering
-& Construction is the only one: thirty projects run under "Buildings" and
-"Roads & Pavements" so neither half is buried. Anything a subheading does not
-claim renders last, unheaded, so a mislabelled project can never fall off the
-page.
+`subcategories[]` and a project names one in `subcategory`. **No category uses
+it now**: the Buildings and Roads & Pavements halves of Civil Engineering &
+Construction became categories of their own. The mechanism stays. Anything a
+subheading does not claim renders last, unheaded, so a mislabelled project
+can never fall off the page.
 
 **Every project on the site lives under Projects.** No service page lists
 projects; each links out instead, through the **Projects entry in its sub-nav**,
@@ -289,7 +307,7 @@ because at the desktop end `text-xl` and `text-h3` are the same size.
 
 **A service may carry `images[]`** — the client's own photographs of completed
 work, rendered by `components/ServiceGallery.tsx` and hidden when empty.
-Civil Engineering & Construction and Mechanical Engineering have them; a
+Civil Engineering and Road and Electrical and Mechanical have them; a
 photograph that is on a project page is never also in a service gallery. The
 pipeline from his folder to the page is `docs/adding-client-photos.md`: drop
 the files in `raw-assets/client-photos/<service>/` (gitignored), run
@@ -317,6 +335,18 @@ There is no `/equipment` page. It was removed on the client's instruction;
 `equipment.json` stays in the repo in case it returns, and `/equipment` and the
 old `/equipments/` redirect to `/about`.
 
+**There is no `/leadership` page — hidden, not deleted** (`docs/decisions/launch-ready.md`,
+section 5). It is not finalised. `showLeadership: false` in `site.json` drops
+every `/leadership` link from the nav and footer (the loader filters
+`site.nav` and `site.footer.links`) and from the sitemap
+(`isPagePublished("leadership")`); the route sits in `app/_leadership/`, a
+private folder Next does not route; `/leadership` and `/our-team/` redirect to
+`/about` with a **302**, because it is coming back; and while it is hidden its
+placeholders (`team.json`, `pages/leadership.json`) are reported "on hold" and
+do not block `build:prod`. To bring it back: set `showLeadership: true`,
+`git mv app/_leadership app/leadership`, and delete the two redirects. The
+content, `PersonCard`, `TeamList` and the founder-bio exemption are untouched.
+
 **There is no `/hse` page.** HSE is on hold until Sato reviews it with its oil
 and gas collaborator. The route is deleted, the page is unregistered in
 `lib/content.ts`, it is out of the nav, footer and sitemap, and `/hse` and the
@@ -325,7 +355,7 @@ old `/safety-policies/` redirect to `/about`. The rewritten content is kept in
 
 ## Content model (Phase 2 CMS will edit these)
 
-- `site.json` — company name, tagline, founded year, registrations, **ordered** `offices` (no "head office"; the first is the one published in structured data), phones, emails, nav, footer. `rcNumber` is held behind `showRcNumber: false`. **`showProjectDates`** switches every year on the site off in one edit — cards, category pages and project pages all read it through `getProjectYear()`. **`homeShowMissionVision`** puts the mission and the vision back on Home, as a pair below the motto; both are held in `pages/home.json` whether or not they are shown. It is never one without the other — the vision alone was what the client asked us to take off. The phone and the email are **not** in the footer; they are on `/contact` only, and in the structured data.
+- `site.json` — company name, tagline, founded year, registrations, **ordered** `offices` (no "head office"; the first is the one published in structured data), phones, emails, nav, footer. `rcNumber` is held behind `showRcNumber: false`. **`showLeadership`** (false) hides the Leadership page; see above. **`showProjectDates`** (false since launch-ready) switches every year on the site off in one edit — cards, category pages and project pages all read it through `getProjectYear()`. **`homeShowMissionVision`** puts the mission and the vision back on Home, as a pair below the motto; both are held in `pages/home.json` whether or not they are shown. It is never one without the other — the vision alone was what the client asked us to take off. The phone and the email are **not** in the footer; they are on `/contact` only, and in the structured data.
 - `pages/*.json` — per-page headings and body blocks (home, about, services overview, infrastructure landing, contact, leadership intro, projects, clients, 404). `hse.json` is present but unregistered. A page may carry **`serviceSections`** — the same three-section shape a service has — and only `infrastructure.json` does, because `/services/infrastructure` reads as a service page though it is a category landing page. A page may also carry **`reviewStatus`**, and that same file does: its four infrastructure types and six solution areas are written on the page rather than on any service, so without it they would be the one body of capability copy outside the review gate. `check-placeholders.mjs` reads pages as well as services. `projects.json` also holds the eight project-category facets, and `about.json` carries an `images.aside` — the photograph beside the story. (A page may instead carry `imageSets.aside`, which the About template lays out as a 2×2 grid; the collage was retired because one of its four photographs was only Medium confidence.) Alongside `labels` (short strings the template needs), a page may carry **`images`** — the photographs its template needs that belong to no single section: its `header` shot, and on the services overview one per category, keyed `groupInfrastructure` and so on.
 - `services.json` — array of services: slug, name, **group** (infrastructure / energy / oil-gas / digital-twin / research-innovation), **order**, **reviewStatus** (approved / draft), shortSummary, summary, **`sections`**, relatedProjectSlugs[], relatedServiceSlugs[], image (the header shot) and **`images[]`** (the client's photographs of delivered work, rendered as a gallery at the foot of Capabilities, hidden when empty). Two booleans: **`headerOverlay`** (the `h1` over the header photograph — Oil & Gas only) and **`showSectionsInMenu`** (the Services dropdown lists this page's sections — Oil & Gas only). **`partner`** holds the oil and gas project record and is read by `/projects/oil-gas`, not by the service page; see rule 9.
 
@@ -340,7 +370,7 @@ old `/safety-policies/` redirect to `/about`. The rewritten content is kept in
   written in and a second diagram needs no new field. A `ServiceList`
   (`aside`, a `list` media block, `engagements`) is either flat — `items`,
   bare phrases — or grouped, with **`groups[]`** of `{ name, description }`.
-- `projects.json` — array: slug, title, **categories[]**, **deliveredBy**, summary, scope[], images[] (each with the old site's **`caption`**, shown beneath it by `components/ProjectGallery.tsx`), **optional** `subcategory`, and **optional** client, location, year, status. `images` empty means the card falls back to its category's `placeholderImages` and the detail page shows no gallery at all. `categories` holds facet values — the same slugs as the services — and more than one is normal. `deliveredBy` is `"sato"` or `"partner"` and drives the attribution line. Empty means hidden, never placeheld. `status` is only ever `"Completed"` or empty — the site never labels work as ongoing.
+- `projects.json` — array: slug, title, **categories[]**, **deliveredBy**, summary, scope[], images[] (each with the old site's **`caption`**, shown beneath it by `components/ProjectGallery.tsx`), **optional** `subcategory` (unused since launch-ready), and **optional** client, location, year, status. `year` is kept but never shown while `showProjectDates` is false, and no other field may carry a date. `images` empty means the card falls back to its category's `placeholderImages` and the detail page shows no gallery at all. `categories` holds facet values — the same slugs as the services — and more than one is normal. `deliveredBy` is `"sato"` or `"partner"` and drives the attribution line. Empty means hidden, never placeheld. `status` is only ever `"Completed"` or empty — the site never labels work as ongoing.
 - `clients.json` — array: name, category (federal / state / international / education / private / **oil-gas-partner**), logo?. The page shows names only — no logos, no category headings, no agencies nested under a government. `oil-gas-partner` entries render in a separate block under their own attributed heading and sit behind the same review gate as the Oil & Gas page. **This heading is now inconsistent with `/projects/oil-gas`**, which no longer attributes; the client was asked which way to settle it (see `docs/open-items.md`) and nothing changes here until he answers.
 - `team.json` — array: slug, name, title, isLeadership, **published**, bio, qualifications[], memberships[], photo?. `published: false` keeps a record in the file but off the site, the sitemap and the structured data.
 - `equipment.json` — array: name, category, quantity?, notes?
@@ -444,10 +474,15 @@ disagree with this file:
    "Phase 2 — what was done" the approvals, the three rulings (crop the
    former name out or drop the photo; the helmet rule applied to every image
    on the site; the Lagos road photo held back) and every photo removed.
-8. `mirror-old-site-content.md` — **the current one for project content.**
-   The old site is the source of truth for project photographs, captions,
-   titles, details and narratives; one photograph, one place; stand-ins off
-   cards; and the amendments on which October-batch photographs stay.
+8. `mirror-old-site-content.md` — the old site is the source of truth for
+   project photographs, captions, titles, details and narratives; one
+   photograph, one place; stand-ins off cards; and the amendments on which
+   October-batch photographs stay.
+9. `launch-ready.md` — **the current one, and it wins where it conflicts.**
+   Every service approved; the four final Infrastructure categories, mirrored
+   in Services and Projects; no dates on project content (and the check that
+   enforces it); Leadership hidden; the resent email batch (all held — see
+   its "How it was implemented"); and the DNS cutover in `docs/deploy.md`.
 
 ## Review deployments
 

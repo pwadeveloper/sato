@@ -95,3 +95,161 @@ Report back with: the preview URL; screenshots of the Services dropdown, the Pro
 
 ---
 
+## How it was implemented
+
+Branch `content/mirror-old-site`, on top of the prompt 17 work.
+
+### 0. Review status
+
+Every service in `services.json`, and the Infrastructure landing page, is
+`"approved"`. The two Oil & Gas markers are gone and their notes are empty, so
+nothing renders where they were: the brand list keeps its categories and names
+with no "authorised", "official" or "distributor" anywhere, and the case study
+keeps "a national oil company". Those three fields — `reviewStatus` and the
+two `note`s — are the only difference in the Oil & Gas service; its project
+facet is byte-for-byte unchanged.
+
+### 1. Four categories
+
+- **Services** (`services.json`, order 1–4): `building-construction` takes the
+  buildings half of Civil Engineering & Construction (its building capability
+  items, the Buildings solution, the McPherson header); `civil-engineering-road`
+  takes the rest (roads, earthworks, drainage and erosion control, and the two
+  road photographs in its gallery) and a new header cropped from a Life
+  University road photograph not used anywhere else as a header or tile;
+  `electrical-mechanical` merges the two pages — Capabilities keeps both item
+  lists under "Electrical" and "Mechanical" subheadings, Solutions holds all
+  nine groups; Water Resources is renamed with "and". Joining sentences only:
+  "We deliver electrical and mechanical works as part of a wider contract or
+  as packages in their own right, and we commission what we install" (from
+  the two pages' own second paragraphs), and "A pump house is a civil
+  structure, a mechanical installation and an electrical panel at once, and it
+  is sequenced as one job" (the mechanical page's).
+- **Infrastructure landing** (`pages/infrastructure.json`): the four
+  types are the four new services, in order, each linking to its page.
+- **Projects** (`pages/projects.json`): the four facets in the same order,
+  labels identical to the service names. The Buildings and Roads & Pavements
+  subheadings are gone because they are now categories; their "other
+  photographs" moved with them. Tiles are all different photographs.
+- **Project membership** follows the old site's pages: its Building and
+  Construction table → 21 projects; its Civil Engineering Road Projects table
+  (plus the APM pavement and the Ajebo road) → 9; its water table → 11.
+  Electrical and Mechanical → the three meter supply contracts and Sagamu
+  Intake and Ogere (pump panel, electro-mechanical scope), all five also kept
+  under Water.
+- **Routes**: `app/projects/building-construction`, `civil-engineering-road`,
+  `electrical-mechanical`; the old category folders are gone.
+- **Mirroring** is structural, not copied: the header dropdowns, the Services
+  overview and the Projects landing all read `getServiceBands()` /
+  `getProjectBands()`, which take their order and labels from the same content.
+  The footer carries no category list (five links, by the client's earlier
+  instruction), so there is nothing there to disagree.
+- **Redirects** (`vercel.json`, 131): the six retired service and project
+  routes, every earlier redirect that pointed at them re-pointed so nothing
+  chains, and four bugs fixed on the way —
+  - `/services/electrical-mechanical` was a redirect to the retired
+    Electrical Engineering page. Vercel applies redirects before files, so it
+    would have hidden the new page. Removed.
+  - `/services/civil-infrastructure` and `/services/water-resources` were
+    two-hop chains.
+  - `/project-1/`, `/project-3/` and `/work-in-progress/` pointed at the
+    wrong projects. The old pages show Lower Awba, the Lagos roads and the
+    Mowe obstetrics facility; they now go there. `/horizon-suites/`,
+    `/installed-high-lift-pump-panel/` and `/world-bank-team-inspection/` go
+    to their projects instead of a category.
+  - **No old link with a trailing slash would have matched.** Vercel compiles
+    sources strictly (`@vercel/routing-utils`, `strict: true`), and every
+    WordPress URL ends in `/`. Every source is now `/path{/}?`. Verified
+    against Vercel's own compiler. `trailingSlash: false` was rejected because
+    Vercel runs it before redirects, which would make every old link two hops.
+  Each redirect now states `statusCode: 301` (`permanent: true` gives a 308).
+  `/leadership`, `/our-team/` and `/hse` are 302s: hidden, not gone.
+
+### 2. Old-site images
+
+Done in prompt 17 and unchanged here except for their categories: every
+old-site project photograph that may be published is on its project with its
+caption beneath it. The 28 that are not are each excluded under a standing
+rule, listed in `docs/content-audit.md` with the reason: 26 show people on an
+active site without helmets (among them "World Bank Team Inspection of
+on-going Sagamu Intake" and the Ogere high lift pump installation, which the
+brief names as examples — the brief keeps the helmet rule), one shows children
+at a tap stand, and one Lagos road photograph waits on the client. The old site
+could not be re-fetched from this environment (its host is not on the
+network allowlist); `docs/old-site-inventory.json` from 19 October was used.
+No caption, title or narrative carries a date (section 4).
+
+### 3. The resent email
+
+The batch arrived as a zip of 11 files and **no `captions.txt`**. Compared by
+`scripts/compare-photo-batch.mjs` (pHash, EXIF orientation applied), by the
+original filenames in `scripts/client-photo-manifest.json`, and against the
+two FUNAAB photographs prompt 17 took off the site (recovered from git):
+
+| File | What it is | Outcome |
+|---|---|---|
+| `Creative Arts Building Unilag.jpg`, `… (2).jpg` | Already processed in October as W149 and W148 (manifest `originalFilename`), cropped to remove a signboard with the former name | **Skipped — already on the Unilag project** |
+| `2f05e69a…` | Same photograph as the held `funaab-building-red-and-brick` (pHash 0) | **Held** |
+| `4ced5baf…` | Same photograph as the held `funaab-building-courtyard` (pHash 2) | **Held** |
+| `068d09d3…`, `cce587ff…` | White, red and brick FUNAAB building, no one on foot | **Held** — publishable once the building is identified |
+| `2bbc6895…`, `cdec50db…` | Cream three-storey FUNAAB building around a courtyard, no people | **Held** — publishable once identified |
+| `2829ddc5…`, `dc391f85…`, `e246f0e5…` | White, red and brick building; people on the active site without helmets (one on a ladder) | **Excluded** under the helmet rule |
+
+The nine UUID-named files carry no description; the only one is the zip's
+own name, "academic building FUNAAB". They show **two different buildings**,
+and which FUNAAB project each is — Academic Building Complex Block B, COLPLANT
+Phase II or the Administrative Block — is exactly the question prompt 17 left
+open for the client ("The two FUNAAB buildings from WhatsApp"), and the old
+site itself gives one courtyard photograph to two different projects. Placing
+them on a guess would repeat the "photo on the wrong project" problem this
+round started from, so per the brief ("no clear project → leave it out and
+list it") they are held and listed in `docs/open-items.md`. None of the
+eleven shows a burned-in date stamp. No email photograph shows the Sagamu pump
+installation or the World Bank inspection the brief expected; the batch held
+none.
+
+Every file in `/public/images` is free of EXIF, GPS, XMP and IPTC —
+`npm run check:images`, part of `build:prod`.
+
+### 4. Dates
+
+`showProjectDates: false`. No project title, summary, scope line, caption or
+alt text carried a year after prompt 17, so no copy changed. The year field is
+not serialised into any page (checked in the HTML and the flight payloads).
+`scripts/check-dates.mjs` (`npm run check:dates`, in `build:prod`) scans every
+project, category and landing page in full and every other page's captions
+and alt text. Allowed: "since 1997" and the footer "© <year>". Tested the
+other way round: with `showProjectDates` switched back on it fails with 78
+dates.
+
+**One conflict, left for the client:** `/projects/oil-gas` lists the partner
+team's projects with a Year column. Section 4 says no dates; sections 0 and 1
+say leave Oil & Gas exactly as it is. It is unchanged, and the check prints it
+as its single named exception on every run.
+
+### 5. Leadership
+
+Hidden behind `showLeadership: false`: out of the nav (and so the mobile
+menu), the footer, the sitemap and every link; no JSON-LD ever named a person;
+route moved to `app/_leadership/` (a private folder, not routed). `/leadership`
+and `/our-team/` 302 to `/about`. Its one placeholder — Afolabi Adeleke's job
+title — is reported as on hold and no longer blocks `build:prod`; it blocks
+again the moment the switch is turned back on. To restore: set
+`showLeadership: true`, `git mv app/_leadership app/leadership`, delete the
+`/leadership` and `/our-team` redirects.
+
+### 6. Launch readiness
+
+- `npm run build:prod` passes: placeholders → image metadata → build →
+  banned terms and contact details → dates → redirects.
+- `scripts/check-redirects.mjs` (`npm run check:redirects`): every redirect's
+  destination is a page in `/out`, none chains, none hides a live page, every
+  source matches with and without a trailing slash. Run against the old map it
+  reports 151 problems.
+- **`contactFormEndpoint` is empty.** The contact page says the form is not
+  accepting submissions and shows the email address and telephone number.
+- `docs/deploy.md` has the cutover checklist: record every DNS record first
+  (MX, SPF/DKIM/DMARC TXT, mail CNAMEs), add Vercel's two records at
+  Cloudflare rather than moving nameservers, both hostnames, propagation,
+  an email test both ways with SPF/DKIM checked, and rollback.
+- Screenshots: `docs/screenshots/launch-ready/`.
