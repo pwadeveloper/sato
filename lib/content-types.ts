@@ -114,6 +114,18 @@ export interface Site {
    * never one without the other: that is the thing he asked us not to do.
    */
   homeShowMissionVision: boolean;
+  /**
+   * Whether the Leadership page is published.
+   *
+   * It is not finalised, so it is hidden rather than deleted: the route lives
+   * in `app/_leadership/` (a private folder, which Next does not route), and
+   * while this is false the loader drops every `/leadership` link from the
+   * nav and footer, and the sitemap leaves it out. `/leadership` and the old
+   * `/our-team/` redirect to `/about` in vercel.json. Bringing it back is this
+   * switch, the folder renamed back to `app/leadership/`, and those two
+   * redirects removed — see docs/decisions/launch-ready.md.
+   */
+  showLeadership: boolean;
   registrations: RegistrationGroup[];
   /** Labels for the rows `getCompanyFacts()` assembles. */
   factLabels: {

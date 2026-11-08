@@ -152,6 +152,23 @@ function context(value, raw) {
 }
 
 const files = await jsonFiles(CONTENT);
+const site = JSON.parse(await readFile(join(CONTENT, "site.json"), "utf8"));
+
+/**
+ * Content that belongs to a page the site does not build.
+ *
+ * A question about a page nobody can reach is not something the launch is
+ * waiting on, so it is reported under "On hold" and does not block the
+ * build. It goes back to blocking the moment the page returns:
+ * `showLeadership: true` puts `team.json` and the leadership page back in the
+ * gate. HSE is unregistered in lib/content.ts and has no switch.
+ */
+const HIDDEN_FILES = new Set(
+  [
+    "pages/hse.json",
+    ...(site.showLeadership === false ? ["team.json", "pages/leadership.json"] : []),
+  ].map((rel) => join(CONTENT, rel)),
+);
 const servicesFile = join(CONTENT, "services.json");
 const services = JSON.parse(await readFile(servicesFile, "utf8"));
 
@@ -169,6 +186,7 @@ function serviceForPath(path) {
 
 /** Who has to answer this placeholder. */
 function ownerOf(file, path) {
+  if (HIDDEN_FILES.has(file)) return "on-hold";
   if (file !== servicesFile) return "client";
   const service = serviceForPath(path);
   return service && COLLABORATOR_SLUGS.has(service.slug)
@@ -178,6 +196,7 @@ function ownerOf(file, path) {
 
 const groups = new Map();
 let total = 0;
+let held = 0;
 
 for (const file of files) {
   const parsed = JSON.parse(await readFile(file, "utf8"));
@@ -186,7 +205,9 @@ for (const file of files) {
     owner: ownerOf(file, item.path),
   }));
   if (!items.length) continue;
-  total += items.length;
+  const blocking = items.filter((item) => item.owner !== "on-hold").length;
+  total += blocking;
+  held += items.length - blocking;
   groups.set(groupName(file), {
     file: relative(ROOT, file),
     rank: groupRank(file),
@@ -243,8 +264,10 @@ if (!total && !drafts.length) {
 } else {
   console.log(`${total} unresolved placeholder(s) in /content:\n`);
   for (const [name, group] of ordered) {
+    const blocking = group.items.filter((item) => item.owner !== "on-hold");
+    if (!blocking.length) continue;
     console.log(`  ${name}  —  ${group.file}`);
-    for (const item of group.items) {
+    for (const item of blocking) {
       console.log(`    ${item.path}`);
       console.log(`      ${item.note || "(no note)"}`);
     }
@@ -256,6 +279,18 @@ if (drafts.length) {
   console.log(`${drafts.length} page(s) of capability copy awaiting Sato's approval:`);
   drafts.forEach((d) => console.log(`    ${d.slug} — ${d.name}`));
   console.log("  See docs/services-for-review.md\n");
+}
+
+if (held) {
+  console.log(
+    `${held} placeholder(s) on pages the site does not build (on hold, not blocking):`,
+  );
+  for (const [, group] of ordered) {
+    for (const item of group.items.filter((entry) => entry.owner === "on-hold")) {
+      console.log(`    ${group.file} → ${item.path}: ${item.note || "(no note)"}`);
+    }
+  }
+  console.log("");
 }
 
 /* -------------------------------------------------------------- report */

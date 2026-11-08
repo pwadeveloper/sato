@@ -1,5 +1,11 @@
 import type { MetadataRoute } from "next";
-import { getProjectCategories, getProjects, getServices, getSite } from "@/lib/content";
+import {
+  getProjectCategories,
+  getProjects,
+  getServices,
+  getSite,
+  isPagePublished,
+} from "@/lib/content";
 
 export const dynamic = "force-static";
 
@@ -9,7 +15,8 @@ export const dynamic = "force-static";
  *
  * `/styleguide` is deliberately absent — it is a development reference, not a
  * page anyone should find in search. So is `/hse`, which is unpublished while
- * Sato reviews it with its oil and gas collaborator.
+ * Sato reviews it with its oil and gas collaborator, and so is `/leadership`
+ * while `showLeadership` is false.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const site = getSite();
@@ -34,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
     ...getProjects().map((project) => entry(`/projects/${project.slug}`, 0.6, "yearly")),
     entry("/clients", 0.7, "yearly"),
-    entry("/leadership", 0.7, "yearly"),
+    ...(isPagePublished("leadership") ? [entry("/leadership", 0.7, "yearly")] : []),
     entry("/contact", 0.8, "yearly"),
   ];
 }

@@ -53,7 +53,24 @@ function typed<T>(value: unknown): T {
   return value as T;
 }
 
-const site = typed<Site>(siteJson);
+const rawSite = typed<Site>(siteJson);
+
+/** Routes the site does not build, so nothing may link to them. */
+const HIDDEN_ROUTES = new Set(rawSite.showLeadership ? [] : ["/leadership"]);
+
+/**
+ * site.json with every link to a hidden page taken out, so the header, the
+ * mobile menu and the footer cannot point at a route that is not built.
+ * The entries stay in the file; flipping the switch brings them back.
+ */
+const site: Site = {
+  ...rawSite,
+  nav: rawSite.nav.filter((item) => !HIDDEN_ROUTES.has(item.href)),
+  footer: {
+    ...rawSite.footer,
+    links: rawSite.footer.links.filter((link) => !HIDDEN_ROUTES.has(link.href)),
+  },
+};
 
 const services = typed<Service[]>(servicesJson)
   .slice()
@@ -93,6 +110,16 @@ const pages: Record<string, Page> = {
   contact: typed<Page>(contactPageJson),
   "not-found": typed<Page>(notFoundPageJson),
 };
+
+/**
+ * Whether a page is published. `leadership` is registered above so its
+ * content stays typed and ready, but it is only built while
+ * `showLeadership` is true.
+ */
+export function isPagePublished(slug: string): boolean {
+  if (slug === "leadership") return rawSite.showLeadership;
+  return slug in pages;
+}
 
 /* ------------------------------------------------------------------ site */
 

@@ -1,3 +1,10 @@
+/**
+ * HIDDEN. This folder is `_leadership`, which Next treats as private and does
+ * not route, so the page is not built while `showLeadership` is false in
+ * content/site.json. To publish it again: set the switch to true, rename this
+ * folder back to `app/leadership/`, and delete the `/leadership` and
+ * `/our-team` redirects from vercel.json. See docs/decisions/launch-ready.md.
+ */
 import type { Metadata } from "next";
 
 import { Container } from "@/components/Container";
