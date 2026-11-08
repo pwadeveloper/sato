@@ -76,6 +76,7 @@ export function PageHeader({
             sizes="100vw"
             priority
             className="object-cover"
+            style={image.focalPoint ? { objectPosition: image.focalPoint } : undefined}
           />
         </div>
       ) : null}

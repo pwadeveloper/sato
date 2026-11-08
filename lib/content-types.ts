@@ -30,6 +30,14 @@ export interface ImageRef {
    * Sagamu pump panel) goes to Electrical & Mechanical Engineering instead.
    */
   galleryCategory?: string;
+  /**
+   * Where to anchor the picture when it is cropped to fill a box of another
+   * shape, as a CSS `object-position` ("50% 20%"). Only a category spotlight
+   * needs it: the same file is a 4:3 tile on /projects and a 16:6 band at the
+   * head of its category page, and a building whose subject sits high in the
+   * frame loses its top to a centred crop. Omitted, the crop is centred.
+   */
+  focalPoint?: string;
 }
 
 /* ------------------------------------------------------------------ site */

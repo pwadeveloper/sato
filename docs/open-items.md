@@ -12,6 +12,42 @@ A placeholder is text that is visible on the site right now. The production buil
 
 The questions from the most recent round, which the rest of the site is waiting on. Nothing is detected here — it is kept by hand in `docs/open-items-extra.md` and cleared as each one is answered.
 
+### From the water photo document (8 November 2026)
+
+The 17-page Word document is a shorter copy of the October one: all 28
+photographs in it were already in the October document (pHash 0). Its labels
+settled one thing — the Life University road photograph with the roller is
+now on its project — and left these. See
+`docs/decisions/water-photo-batch.md`.
+
+- **The Water Resources spotlight did not change.** Every photograph labelled
+  with a water project (all of them Ogere) shows people on site without
+  helmets, except the one already on the Ogere project (a rebar mat, weaker
+  than the current picture). The strongest water photograph in the document is
+  the **ground tank holding water** (page 9), but its label — "Construction of
+  ground tank" — names no site. **Is that tank at the Ogere water supply
+  scheme?** If so, it becomes the Water spotlight and goes on the Ogere
+  project. Recent water photographs of finished work, with no one on site
+  without a helmet, would solve this for good.
+- **Is the drilling rig on page 1 at Laderin Estate, Abeokuta, and is the
+  drilling part of the Six Flats project there?** Its label names the rig and
+  compressor but no place; the photograph beside it names Laderin Estate (that
+  one is already on the site, in the Electrical & Mechanical gallery). The
+  Laderin project on the site is the six flats, a building contract, so the
+  rig goes nowhere until you say where it belongs. Its compressor also carries
+  the former name, which would have to be cropped out.
+- **Road photographs with no project in their label** (pages 13–16):
+  "Laying of asphalt in progress", "Priming of MC1 prior to laying of
+  asphalt", "Laying of stone base in progress", "Asphalt been compacted",
+  "Construction of road". The stone-base photograph carries burned-in text
+  naming **"Infrastructural improvement of Yaba–Iddo"**, which is not a project
+  on the site. Most also show people on site without helmets. Which projects
+  are they, and is Yaba–Iddo one to add? You mentioned more road photographs
+  are coming; these can wait for that batch.
+- **The Block B spotlight is a 1080px photograph** (the copy from the resent
+  email, probably compressed by WhatsApp). It is soft at full width on a
+  desktop. The camera original would fix that.
+
 ### From the launch-ready round (8 November 2026)
 
 - ~~**Oil & Gas project years.**~~ **Settled: removed.** The Year column on

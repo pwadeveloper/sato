@@ -49,7 +49,8 @@ function identity(src) {
   const a = approved.find((x) => x.src === src);
   if (a) {
     if (a.oldSite) return canon(a.oldSite);
-    return batchToOld.has(a.workingId) ? canon(batchToOld.get(a.workingId)) : a.workingId;
+    if (batchToOld.has(a.workingId)) return canon(batchToOld.get(a.workingId));
+    return a.workingId ?? a.originalFilename ?? a.src;
   }
   const m = imageMap.find((x) => `/images/${x.out}.webp` === src);
   if (m) {
@@ -200,7 +201,7 @@ for (const key of new Set(places.map((p) => photo(p.src)))) {
   if (oldByUrl.has(key)) continue;
   const b = plan.batch.find((x) => x.id === key);
   const ps = placesOf(key);
-  const source = b ? "Client batch, October 2026 (prompt 16)" : key.startsWith("AI-generated") ? "AI-generated image" : key.startsWith("oil & gas") ? "Oil & Gas artwork (unchanged by rule)" : key;
+  const source = b ? (b.from ?? "Client batch, October 2026 (prompt 16)") : key.startsWith("AI-generated") ? "AI-generated image" : key.startsWith("oil & gas") ? "Oil & Gas artwork (unchanged by rule)" : key;
   const fix = b
     ? { kept: "Kept (High confidence, on a project the old site has) — for the client to confirm", service: "Kept off projects, in a service role (High in prompt 16)", held: `Held — ${b.why}` }[b.action]
     : key.startsWith("AI-generated") ? "Kept: the AI images on Home, About and Leadership are not project photographs"

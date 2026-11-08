@@ -1,5 +1,5 @@
 {
-  "note": "Approved client photographs (docs/decisions/client-photos.md, Phase 2). Processed by scripts/optimise-images.mjs; `source` is the upright working copy made by scripts/extract-client-photos.mjs from raw-assets/client-photos/_inbox/. crop is [left, top, width, height] as fractions of the source; header crops the result to the header band's ratio around focusY.",
+  "note": "Approved client photographs (docs/decisions/client-photos.md, Phase 2). Processed by scripts/optimise-images.mjs; `source` is the upright working copy made by scripts/extract-client-photos.mjs from raw-assets/client-photos/_inbox/. crop is [left, top, width, height] as fractions of the source; header crops the result to the header band's ratio around focusY. Entries whose `working` starts with E- are the resent email of 8 November and read the inbox file directly (already upright, 1080px).",
   "photos": [
     {
       "out": "about/arakanga-water-treatment-sand-filter",
@@ -593,6 +593,55 @@
         ],
         "focusY": 0.55
       }
+    },
+    {
+      "out": "projects/funaab-academic-building-complex-block-b/building-front",
+      "working": "E-068d09d3",
+      "source": "raw-assets/client-photos/_inbox/068d09d3-f569-47d2-b173-97ad1beb0052.JPG",
+      "originalFilename": "email 2026-11-08 › 068d09d3-f569-47d2-b173-97ad1beb0052.JPG",
+      "alt": "Front of the Academic Building Complex Block B, white with red and brick panels, at the Federal University of Agriculture, Abeokuta",
+      "placement": "client confirmed 2026-11-08: Building A = Academic Building Complex Block B"
+    },
+    {
+      "out": "projects/funaab-academic-building-complex-block-b/building-side",
+      "working": "E-cce587ff",
+      "source": "raw-assets/client-photos/_inbox/cce587ff-2fa5-4075-a7d8-2d2d96bb9111.JPG",
+      "originalFilename": "email 2026-11-08 › cce587ff-2fa5-4075-a7d8-2d2d96bb9111.JPG",
+      "alt": "Academic Building Complex Block B from across the site, with its brick stair towers and red end wall, Federal University of Agriculture, Abeokuta",
+      "placement": "client confirmed 2026-11-08: Building A = Academic Building Complex Block B"
+    },
+    {
+      "out": "projects/funaab-colplant-building-phase-ii/courtyard-1",
+      "working": "E-2bbc6895",
+      "source": "raw-assets/client-photos/_inbox/2bbc6895-260b-46a3-b6d7-3afa353b2d88.JPG",
+      "originalFilename": "email 2026-11-08 › 2bbc6895-260b-46a3-b6d7-3afa353b2d88.JPG",
+      "alt": "Three-storey COLPLANT building around its grass courtyard, Federal University of Agriculture, Abeokuta",
+      "placement": "client confirmed 2026-11-08: Building B = COLPLANT Phase II"
+    },
+    {
+      "out": "projects/funaab-colplant-building-phase-ii/courtyard-2",
+      "working": "E-4ced5baf",
+      "source": "raw-assets/client-photos/_inbox/4ced5baf-5f49-43a1-8745-ebd4e2a53736.JPG",
+      "originalFilename": "email 2026-11-08 › 4ced5baf-5f49-43a1-8745-ebd4e2a53736.JPG",
+      "alt": "Galleried wings of the COLPLANT building facing the courtyard, Federal University of Agriculture, Abeokuta",
+      "placement": "client confirmed 2026-11-08: Building B = COLPLANT Phase II"
+    },
+    {
+      "out": "projects/funaab-colplant-building-phase-ii/courtyard-3",
+      "working": "E-cdec50db",
+      "source": "raw-assets/client-photos/_inbox/cdec50db-8e0c-42e6-ae06-34d88f74f8f6.JPG",
+      "originalFilename": "email 2026-11-08 › cdec50db-8e0c-42e6-ae06-34d88f74f8f6.JPG",
+      "alt": "Corner of the COLPLANT courtyard, with open galleries on three floors, Federal University of Agriculture, Abeokuta",
+      "placement": "client confirmed 2026-11-08: Building B = COLPLANT Phase II"
+    },
+    {
+      "out": "projects/asphaltic-concrete-road-and-drainage-ajebo/tandem-roller",
+      "working": "W020",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N021-pictures-image29.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image29.jpeg",
+      "docxCaption": "ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION AT LIFE UNIVERSITY AJEBO, OGUN STATE",
+      "alt": "Tandem roller on the newly surfaced campus road at Life University, Ajebo, with the entrance gate under construction behind",
+      "placement": "Labelled with Life University Ajebo in the client's document of 8 November (page 17; the label is a drawn text strip beneath the photograph). October's copy, W020, named no place and was held. N021 in that batch is the same file (pHash 0)."
     }
   ]
 }

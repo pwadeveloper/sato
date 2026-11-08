@@ -182,7 +182,12 @@ drift apart. The old `?sector=` filter is gone and those URLs redirect.
 
 The categories are the flat `facets` of the `all-projects` section in
 `pages/projects.json`, each carrying `value` and `slug` (both the service's
-slug), `serviceSlug`, `group`, `shortLabel`, `intro` and `image`.
+slug), `serviceSlug`, `group`, `shortLabel`, `intro` and `image`. That
+`image` is the category's **spotlight**: the tile on `/projects` and the band
+at the head of the category page. It must be a photograph of a project in
+that category, and no two categories share one. It may carry `focalPoint`
+(a CSS `object-position`) when a centred crop would cut its subject; Building
+& Construction's does.
 
 **A category with no projects is never published.** `getProjectCategories()`
 drops it, so it is absent from the dropdown, the landing page, the sitemap and
@@ -335,7 +340,9 @@ which keeps his original filenames because they are the only description of
 what each photograph shows.
 
 **An unsorted batch takes a different route** (`docs/decisions/client-photos.md`):
-it lands in `raw-assets/client-photos/_inbox/` untouched, and
+it lands in `raw-assets/client-photos/_inbox/` untouched (a later batch in a
+dated folder of its own, `_inbox/<name>-YYYY-MM-DD/`, extracted with
+`extract-client-photos.mjs <folder>` so the October numbering never moves), and
 `scripts/extract-client-photos.mjs` → `filter-client-photos.mjs` →
 `build-client-photo-review.mjs` turn it into a review page. Only the photos
 approved there are listed in `scripts/client-photo-selection.json` (output
@@ -503,6 +510,12 @@ disagree with this file:
    enforces it); Leadership hidden; the resent email batch (the FUNAAB
    buildings placed once the client named them — see its "How it was
    implemented"); and the DNS cutover in `docs/deploy.md`.
+10. `water-photo-batch.md` — the 17-page water document of 8 November. Every
+    photograph in it was already in the October one. Labels are read from
+    the page geometry, because text order puts three against the wrong
+    photograph. One placed (the Life University roller). Block B is the
+    Building spotlight. The Water spotlight is unchanged because no labelled,
+    safe water photograph was left. **Current for photographs.**
 
 ## Review deployments
 

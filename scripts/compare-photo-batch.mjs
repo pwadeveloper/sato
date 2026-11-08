@@ -3,7 +3,13 @@
  * Compares an incoming photo batch with every image the site already
  * publishes, so a resent photograph is skipped rather than published twice.
  *
- *   node scripts/compare-photo-batch.mjs <folder>
+ *   node scripts/compare-photo-batch.mjs <folder> [--against=<dir> ...]
+ *
+ * --against adds a folder of full-size originals to compare with (searched
+ * recursively): the October working set, raw-assets/old-site. A published
+ * file is often an off-centre crop the centre-crop test misses, and a
+ * photograph dropped earlier on the helmet rule is on no page at all; its
+ * original is how a resent copy of either is recognised.
  *
  * For each file in <folder>: its size, whether it carries EXIF (which
  * `npm run images` strips), and the nearest published images by 64-bit DCT
@@ -52,9 +58,10 @@ const walk = (dir) =>
     return statSync(full).isDirectory() ? walk(full) : [full];
   });
 
-const folder = process.argv[2];
+const folder = process.argv.slice(2).find((a) => !a.startsWith("--"));
+const against = process.argv.slice(2).filter((a) => a.startsWith("--against=")).map((a) => a.slice(10));
 if (!folder) {
-  console.error("Usage: node scripts/compare-photo-batch.mjs <folder>");
+  console.error("Usage: node scripts/compare-photo-batch.mjs <folder> [--against=<dir> ...]");
   process.exit(1);
 }
 
@@ -70,6 +77,21 @@ for (const file of walk(join(ROOT, "public", "images"))) {
     });
   } catch {
     /* not an image sharp can read; nothing to compare */
+  }
+}
+for (const dir of against) {
+  for (const file of walk(dir)) {
+    if (!/\.(webp|jpe?g|png)$/i.test(file)) continue;
+    try {
+      const up = await sharp(file).rotate().toBuffer({ resolveWithObject: true });
+      published.push({
+        file: relative(ROOT, file),
+        ratio: up.info.width / up.info.height,
+        hash: hashOf(await grey(sharp(up.data))),
+      });
+    } catch {
+      /* not an image sharp can read */
+    }
   }
 }
 

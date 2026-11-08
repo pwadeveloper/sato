@@ -605,8 +605,9 @@
       "width": 1080,
       "height": 809,
       "originalFilename": "email 2026-11-08 › 068d09d3-f569-47d2-b173-97ad1beb0052.JPG",
-      "alt": "Front of the Academic Building Complex Block B, white with red and brick panels, at the Federal University of Agriculture, Abeokuta",
-      "placement": "client confirmed 2026-11-08: Building A = Academic Building Complex Block B"
+      "workingId": "E-068d09d3",
+      "placement": "client confirmed 2026-11-08: Building A = Academic Building Complex Block B",
+      "alt": "Front of the Academic Building Complex Block B, white with red and brick panels, at the Federal University of Agriculture, Abeokuta"
     },
     {
       "src": "/images/projects/funaab-academic-building-complex-block-b/building-side.webp",
@@ -614,8 +615,9 @@
       "width": 1080,
       "height": 809,
       "originalFilename": "email 2026-11-08 › cce587ff-2fa5-4075-a7d8-2d2d96bb9111.JPG",
-      "alt": "Academic Building Complex Block B from across the site, with its brick stair towers and red end wall, Federal University of Agriculture, Abeokuta",
-      "placement": "client confirmed 2026-11-08: Building A = Academic Building Complex Block B"
+      "workingId": "E-cce587ff",
+      "placement": "client confirmed 2026-11-08: Building A = Academic Building Complex Block B",
+      "alt": "Academic Building Complex Block B from across the site, with its brick stair towers and red end wall, Federal University of Agriculture, Abeokuta"
     },
     {
       "src": "/images/projects/funaab-colplant-building-phase-ii/courtyard-1.webp",
@@ -623,8 +625,9 @@
       "width": 1080,
       "height": 809,
       "originalFilename": "email 2026-11-08 › 2bbc6895-260b-46a3-b6d7-3afa353b2d88.JPG",
-      "alt": "Three-storey COLPLANT building around its grass courtyard, Federal University of Agriculture, Abeokuta",
-      "placement": "client confirmed 2026-11-08: Building B = COLPLANT Phase II"
+      "workingId": "E-2bbc6895",
+      "placement": "client confirmed 2026-11-08: Building B = COLPLANT Phase II",
+      "alt": "Three-storey COLPLANT building around its grass courtyard, Federal University of Agriculture, Abeokuta"
     },
     {
       "src": "/images/projects/funaab-colplant-building-phase-ii/courtyard-2.webp",
@@ -632,8 +635,9 @@
       "width": 1080,
       "height": 809,
       "originalFilename": "email 2026-11-08 › 4ced5baf-5f49-43a1-8745-ebd4e2a53736.JPG",
-      "alt": "Galleried wings of the COLPLANT building facing the courtyard, Federal University of Agriculture, Abeokuta",
-      "placement": "client confirmed 2026-11-08: Building B = COLPLANT Phase II"
+      "workingId": "E-4ced5baf",
+      "placement": "client confirmed 2026-11-08: Building B = COLPLANT Phase II",
+      "alt": "Galleried wings of the COLPLANT building facing the courtyard, Federal University of Agriculture, Abeokuta"
     },
     {
       "src": "/images/projects/funaab-colplant-building-phase-ii/courtyard-3.webp",
@@ -641,8 +645,20 @@
       "width": 1080,
       "height": 809,
       "originalFilename": "email 2026-11-08 › cdec50db-8e0c-42e6-ae06-34d88f74f8f6.JPG",
-      "alt": "Corner of the COLPLANT courtyard, with open galleries on three floors, Federal University of Agriculture, Abeokuta",
-      "placement": "client confirmed 2026-11-08: Building B = COLPLANT Phase II"
+      "workingId": "E-cdec50db",
+      "placement": "client confirmed 2026-11-08: Building B = COLPLANT Phase II",
+      "alt": "Corner of the COLPLANT courtyard, with open galleries on three floors, Federal University of Agriculture, Abeokuta"
+    },
+    {
+      "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/tandem-roller.webp",
+      "small": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/tandem-roller-800.webp",
+      "width": 1920,
+      "height": 1440,
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image29.jpeg",
+      "docxCaption": "ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION AT LIFE UNIVERSITY AJEBO, OGUN STATE",
+      "workingId": "W020",
+      "placement": "Labelled with Life University Ajebo in the client's document of 8 November (page 17; the label is a drawn text strip beneath the photograph). October's copy, W020, named no place and was held. N021 in that batch is the same file (pHash 0).",
+      "alt": "Tandem roller on the newly surfaced campus road at Life University, Ajebo, with the entrance gate under construction behind"
     }
   ]
 }

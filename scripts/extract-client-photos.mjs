@@ -15,6 +15,14 @@
  *                                 not in the working filename
  *
  *   node scripts/extract-client-photos.mjs
+ *   node scripts/extract-client-photos.mjs <batch> [--prefix=N]
+ *
+ * With <batch>, only _inbox/<batch>/ is read and everything above is written
+ * under _work/<batch>/ instead, with IDs from --prefix (default "N"). A later
+ * batch gets its own folder so that running this again never renumbers the
+ * October set: client-photo-selection.json points at those W-numbered files.
+ * Without <batch>, dated batch folders (`<name>-YYYY-MM-DD`) are skipped for
+ * the same reason.
  */
 import { execFileSync } from "node:child_process";
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
@@ -24,8 +32,12 @@ import sharp from "sharp";
 
 const ROOT = join(fileURLToPath(import.meta.url), "..", "..");
 const BASE = join(ROOT, "raw-assets", "client-photos");
-const INBOX = join(BASE, "_inbox");
-const WORK = join(BASE, "_work");
+const args = process.argv.slice(2);
+const BATCH = args.find((a) => !a.startsWith("--"));
+const PREFIX = args.find((a) => a.startsWith("--prefix="))?.slice(9) ?? (BATCH ? "N" : "W");
+const BATCH_DIR = /-\d{4}-\d{2}-\d{2}$/;
+const INBOX = BATCH ? join(BASE, "_inbox", BATCH) : join(BASE, "_inbox");
+const WORK = BATCH ? join(BASE, "_work", BATCH) : join(BASE, "_work");
 
 const PHOTO_EXT = new Set([".jpg", ".jpeg", ".png", ".heic", ".heif", ".webp", ".tif", ".tiff", ".gif", ".bmp"]);
 const VECTOR_EXT = new Set([".emf", ".wmf"]);
@@ -33,6 +45,7 @@ const VECTOR_EXT = new Set([".emf", ".wmf"]);
 function walk(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
     if (e.name.startsWith(".")) return [];
+    if (!BATCH && e.isDirectory() && dir === INBOX && BATCH_DIR.test(e.name)) return [];
     const p = join(dir, e.name);
     return e.isDirectory() ? walk(p) : [p];
   });
@@ -251,7 +264,7 @@ const manifest = [];
 let n = 0;
 for (const s of sources) {
   n++;
-  const id = `W${String(n).padStart(3, "0")}`;
+  const id = `${PREFIX}${String(n).padStart(3, "0")}`;
   const ext = extname(s.file).toLowerCase();
   let input = s.file;
   if (ext === ".heic" || ext === ".heif") {

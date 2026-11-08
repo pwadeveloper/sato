@@ -49,10 +49,11 @@
           "group": "infrastructure",
           "intro": "Academic, administrative, laboratory, residential and office buildings — new-build, rehabilitation and conversion.",
           "image": {
-            "src": "/images/projects/horizon-suites-hotel-complex/hotel-entrance.webp",
-            "alt": "Entrance to the Horizon Suites hotel, Oluyole Estate, Ibadan",
-            "width": 1920,
-            "height": 1440
+            "src": "/images/projects/funaab-academic-building-complex-block-b/building-front.webp",
+            "alt": "Front of the Academic Building Complex Block B, white with red and brick panels, at the Federal University of Agriculture, Abeokuta",
+            "width": 1080,
+            "height": 809,
+            "focalPoint": "40% 0%"
           },
           "shortLabel": "Building",
           "photos": [

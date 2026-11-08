@@ -228,8 +228,11 @@ if (await exists(CLIENT_PHOTOS)) {
  *   header  { aspect: [w, h], focusY } — the largest box of that ratio, centred
  *           horizontally and on focusY vertically, cut from the (cropped) frame
  *
- * The working copies are already upright (extract-client-photos.mjs applied
- * their EXIF rotation), and nothing here asks sharp to keep metadata, so the
+ * `source` is usually an upright working copy (extract-client-photos.mjs
+ * applied its EXIF rotation). It may also be a file straight from the inbox
+ * when the client sent it ready to use — the email batch of 8 November — so
+ * check the inbox file is upright before listing it. Nothing here asks sharp
+ * to keep metadata, so the
  * WebP files carry no EXIF, GPS, camera or date. scripts/check-image-metadata.mjs
  * verifies that on every published file.
  */
@@ -287,6 +290,8 @@ if (await exists(SELECTION)) {
       /** Set when the file was made from the old site's own copy. */
       oldSite: entry.oldSite,
       proposals: entry.proposals,
+      /** The client's own ruling, where a placement rests on one. */
+      placement: entry.placement,
       alt: entry.alt,
       crop: entry.crop ? entry.cropWhy ?? true : undefined,
       header: entry.header ? `${entry.header.aspect.join(':')} header crop` : undefined,

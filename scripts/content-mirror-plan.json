@@ -799,10 +799,11 @@
     },
     {
       "id": "W020",
-      "action": "held",
+      "action": "kept",
       "target": "asphaltic-concrete-road-and-drainage-ajebo",
       "file": "projects/asphaltic-concrete-road-and-drainage-ajebo/tandem-roller",
-      "why": "Medium confidence: captioned without a location."
+      "caption": "Asphaltic concrete road under construction at Life University Ajebo, Ogun State",
+      "from": "Client's Word document of 8 November 2026 (water-2026-11-08/Pictures.docx, page 17), label beneath the photograph"
     },
     {
       "id": "W002",
@@ -824,6 +825,46 @@
       "target": "FUNAAB",
       "file": "services/civil-engineering-construction/funaab-building-courtyard",
       "why": "FUNAAB building photographs are held until the client says which building each is."
+    },
+    {
+      "id": "E-068d09d3",
+      "action": "kept",
+      "target": "funaab-academic-building-complex-block-b",
+      "file": "projects/funaab-academic-building-complex-block-b/building-front",
+      "caption": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta",
+      "from": "Client's resent email, 8 November 2026; building named by the client"
+    },
+    {
+      "id": "E-cce587ff",
+      "action": "kept",
+      "target": "funaab-academic-building-complex-block-b",
+      "file": "projects/funaab-academic-building-complex-block-b/building-side",
+      "caption": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta",
+      "from": "Client's resent email, 8 November 2026; building named by the client"
+    },
+    {
+      "id": "E-2bbc6895",
+      "action": "kept",
+      "target": "funaab-colplant-building-phase-ii",
+      "file": "projects/funaab-colplant-building-phase-ii/courtyard-1",
+      "caption": "College of Plant Science and Crop Production (COLPLANT) Building Phase II, Federal University of Agriculture, Abeokuta",
+      "from": "Client's resent email, 8 November 2026; building named by the client"
+    },
+    {
+      "id": "E-4ced5baf",
+      "action": "kept",
+      "target": "funaab-colplant-building-phase-ii",
+      "file": "projects/funaab-colplant-building-phase-ii/courtyard-2",
+      "caption": "College of Plant Science and Crop Production (COLPLANT) Building Phase II, Federal University of Agriculture, Abeokuta",
+      "from": "Client's resent email, 8 November 2026; building named by the client"
+    },
+    {
+      "id": "E-cdec50db",
+      "action": "kept",
+      "target": "funaab-colplant-building-phase-ii",
+      "file": "projects/funaab-colplant-building-phase-ii/courtyard-3",
+      "caption": "College of Plant Science and Crop Production (COLPLANT) Building Phase II, Federal University of Agriculture, Abeokuta",
+      "from": "Client's resent email, 8 November 2026; building named by the client"
     }
   ],
   "roles": {
