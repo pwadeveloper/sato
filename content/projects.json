@@ -559,6 +559,27 @@
         "width": 520,
         "height": 1040,
         "caption": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta."
+      },
+      {
+        "src": "/images/projects/funaab-colplant-building-phase-ii/courtyard-1.webp",
+        "alt": "Three-storey COLPLANT building around its grass courtyard, Federal University of Agriculture, Abeokuta",
+        "width": 1080,
+        "height": 809,
+        "caption": "College of Plant Science and Crop Production (COLPLANT) Building Phase II, Federal University of Agriculture, Abeokuta"
+      },
+      {
+        "src": "/images/projects/funaab-colplant-building-phase-ii/courtyard-2.webp",
+        "alt": "Galleried wings of the COLPLANT building facing the courtyard, Federal University of Agriculture, Abeokuta",
+        "width": 1080,
+        "height": 809,
+        "caption": "College of Plant Science and Crop Production (COLPLANT) Building Phase II, Federal University of Agriculture, Abeokuta"
+      },
+      {
+        "src": "/images/projects/funaab-colplant-building-phase-ii/courtyard-3.webp",
+        "alt": "Corner of the COLPLANT courtyard, with open galleries on three floors, Federal University of Agriculture, Abeokuta",
+        "width": 1080,
+        "height": 809,
+        "caption": "College of Plant Science and Crop Production (COLPLANT) Building Phase II, Federal University of Agriculture, Abeokuta"
       }
     ],
     "featured": false
@@ -576,7 +597,22 @@
     "status": "",
     "summary": "Sato is currently constructing (at completion stage) a 2 Storey Multipurpose Building with Offices (Academic Building Complex) Block B and College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta.",
     "scope": [],
-    "images": [],
+    "images": [
+      {
+        "src": "/images/projects/funaab-academic-building-complex-block-b/building-front.webp",
+        "alt": "Front of the Academic Building Complex Block B, white with red and brick panels, at the Federal University of Agriculture, Abeokuta",
+        "width": 1080,
+        "height": 809,
+        "caption": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta"
+      },
+      {
+        "src": "/images/projects/funaab-academic-building-complex-block-b/building-side.webp",
+        "alt": "Academic Building Complex Block B from across the site, with its brick stair towers and red end wall, Federal University of Agriculture, Abeokuta",
+        "width": 1080,
+        "height": 809,
+        "caption": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta"
+      }
+    ],
     "featured": false
   },
   {

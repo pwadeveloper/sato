@@ -16,7 +16,11 @@ The questions from the most recent round, which the rest of the site is waiting 
 
 - ~~**Oil & Gas project years.**~~ **Settled: removed.** The Year column on
   `/projects/oil-gas` is off with every other project date.
-- **The nine FUNAAB photographs from your resent email.** They show two
+- ~~**The nine FUNAAB photographs from your resent email.**~~ **Settled 8
+  November: Building A (white, red and brick) is the Academic Building
+  Complex Block B, Building B (cream, courtyard) is COLPLANT Phase II.** Two
+  photographs are now on Block B — its first — and three on COLPLANT. The
+  three without helmets and the near-duplicate stay off. Original note: they show two
   buildings — a white, red and brick block, and a cream three-storey building
   around a grass courtyard. Two of the nine are the same photographs as the
   "two FUNAAB buildings from WhatsApp" below, so the question is the same:
@@ -292,8 +296,8 @@ full record is `docs/content-audit.md`, and every caption change is in
 - **"Road rehabilitation work in progress".** The old site names no place;
   the photograph's GPS says Oshodi / Ilupeju, Lagos, about 10 km from Amuwo
   Odofin. Which project?
-- **The two FUNAAB buildings from WhatsApp.** Which project is each? They are
-  off the site until you say. Your resent email carries seven more
+- ~~**The two FUNAAB buildings from WhatsApp.**~~ **Settled** — the same two
+  buildings; see the launch-ready round above. Your resent email carries seven more
   photographs of the same two buildings — see the launch-ready round above.
 - **Energy, Digital Twin and Research have no photograph.** Their pages used
   to borrow photographs of other projects; they now open without one. Any

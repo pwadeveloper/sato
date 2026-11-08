@@ -481,8 +481,9 @@ disagree with this file:
 9. `launch-ready.md` — **the current one, and it wins where it conflicts.**
    Every service approved; the four final Infrastructure categories, mirrored
    in Services and Projects; no dates on project content (and the check that
-   enforces it); Leadership hidden; the resent email batch (all held — see
-   its "How it was implemented"); and the DNS cutover in `docs/deploy.md`.
+   enforces it); Leadership hidden; the resent email batch (the FUNAAB
+   buildings placed once the client named them — see its "How it was
+   implemented"); and the DNS cutover in `docs/deploy.md`.
 
 ## Review deployments
 

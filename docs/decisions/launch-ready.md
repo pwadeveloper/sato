@@ -213,7 +213,16 @@ site itself gives one courtyard photograph to two different projects. Placing
 them on a guess would repeat the "photo on the wrong project" problem this
 round started from, so per the brief ("no clear project → leave it out and
 list it") they are held and listed in `docs/open-items.md`. None of the
-eleven shows a burned-in date stamp. No email photograph shows the Sagamu pump
+eleven shows a burned-in date stamp.
+
+**Settled after the first report.** The client identified the buildings:
+**A, white, red and brick = Academic Building Complex Block B; B, cream
+courtyard = COLPLANT Phase II.** Published: `068d09d3…` and `cce587ff…` on
+Block B (its first photographs), `2bbc6895…`, `4ced5baf…` and `cdec50db…` on
+COLPLANT, each captioned with the project's name, at their 1080px originals
+(not upscaled), metadata stripped, and recorded in the manifest's `approved`
+array with the original filename. `2f05e69a…` (near-duplicate) and the three
+without helmets stay off. No email photograph shows the Sagamu pump
 installation or the World Bank inspection the brief expected; the batch held
 none.
 
