@@ -2,7 +2,7 @@
   "slug": "services/infrastructure",
   "title": "Infrastructure Services",
   "metaTitle": "Infrastructure Services",
-  "metaDescription": "Sato’s established infrastructure practice: building & construction, water resources development & management, civil engineering & roadworks, and electrical & mechanical engineering, delivering since 1997.",
+  "metaDescription": "Sato’s established infrastructure practice: building & construction, water resources development & management, civil engineering & road construction, and electrical & mechanical engineering, delivering since 1997.",
   "labels": {
     "breadcrumb": "Breadcrumb",
     "viewService": "Full capability"
@@ -68,7 +68,7 @@
         },
         {
           "id": "civil",
-          "heading": "Civil Engineering & Roadworks",
+          "heading": "Civil Engineering & Road Construction",
           "description": [
             "Site investigation, design and construction for roads, pavements and drainage, with the earthworks and erosion control that keep them standing. Civil work is the structure everything else is fixed to, and it usually arrives with an electrical and a mechanical package attached.",
             "New build and rehabilitation both: much of Sato's record is work carried out on assets that were still in use."

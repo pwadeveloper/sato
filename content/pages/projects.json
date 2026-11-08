@@ -2,7 +2,7 @@
   "slug": "projects",
   "title": "Projects",
   "metaTitle": "Projects",
-  "metaDescription": "Building & construction, water resources development & management, civil engineering & roadworks, electrical & mechanical engineering, and oil and gas projects delivered by Sato Engineering & Infrastructure Limited for government, university, development partner, private and oil company clients.",
+  "metaDescription": "Building & construction, water resources development & management, civil engineering & road construction, electrical & mechanical engineering, and oil and gas projects delivered by Sato Engineering & Infrastructure Limited for government, university, development partner, private and oil company clients.",
   "labels": {
     "breadcrumb": "Breadcrumb",
     "countOne": "1 project",
@@ -126,7 +126,7 @@
         },
         {
           "value": "civil-engineering-road",
-          "label": "Civil Engineering & Roadworks Projects",
+          "label": "Civil Engineering & Road Construction Projects",
           "slug": "civil-engineering-road",
           "serviceSlug": "civil-engineering-road",
           "group": "infrastructure",
@@ -137,7 +137,7 @@
             "width": 1920,
             "height": 1440
           },
-          "shortLabel": "Civil & Roadworks",
+          "shortLabel": "Civil & Road Construction",
           "photos": [
             {
               "src": "/images/services/roadworks-completed-carriageway.webp",

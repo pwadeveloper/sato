@@ -300,6 +300,11 @@ Received after launch-ready went to `main`:
   Management, Civil Engineering & Roadworks, Electrical & Mechanical
   Engineering; the project categories carry " Projects". Slugs unchanged, so
   no new redirects. Oil & Gas keeps its name — the update lists only the four.
+- **Follow-up:** "Civil Engineering & Road Construction rather than
+  Roadworks." The service, the Infrastructure landing heading, the project
+  category ("… Road Construction Projects"), its short tag ("Civil & Road
+  Construction") and the two meta descriptions changed. Slug, image file
+  names and the `roadworks` equipment category are internal and unchanged.
 - **"Completed"** is gone: every project's `status` is empty, so no badge
   renders on any page. The word survives only where it is the old site's own
   caption or narrative ("Completed road at Federal College of Education,

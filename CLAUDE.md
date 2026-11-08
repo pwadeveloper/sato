@@ -121,7 +121,7 @@ banned-terms rule below, which the build enforces.
 | `/services/infrastructure` | **Infrastructure Services** — category landing page |
 | `/services/building-construction` | Building & Construction |
 | `/services/water-resources-development-management` | Water Resources Development & Management |
-| `/services/civil-engineering-road` | Civil Engineering & Roadworks |
+| `/services/civil-engineering-road` | Civil Engineering & Road Construction |
 | `/services/electrical-mechanical` | Electrical & Mechanical Engineering |
 | `/services/energy` | Energy Services |
 | `/services/oil-gas` | **Oil & Gas Services** — four anchored sections with a sticky sub-nav |
@@ -130,7 +130,7 @@ banned-terms rule below, which the build enforces.
 | `/projects` | Project categories — one photographic tile per service, grouped as Services is |
 | `/projects/building-construction` | Building & Construction Projects — one photo gallery, then a project list |
 | `/projects/water-resources-development-management` | Water Resources Development & Management Projects |
-| `/projects/civil-engineering-road` | Civil Engineering & Roadworks Projects |
+| `/projects/civil-engineering-road` | Civil Engineering & Road Construction Projects |
 | `/projects/electrical-mechanical` | Electrical & Mechanical Engineering Projects |
 | `/projects/oil-gas` | **Oil & Gas Services** — a table, not cards; attributed |
 | `/projects/[slug]` | Project detail |
@@ -152,9 +152,11 @@ links straight to its service.
 **The four Infrastructure categories are final** (`docs/decisions/launch-ready.md`),
 following the old site's own structure. **Final labels (client, 9 November):**
 services **Building & Construction**, **Water Resources Development &
-Management**, **Civil Engineering & Roadworks**, **Electrical & Mechanical
+Management**, **Civil Engineering & Road Construction**, **Electrical & Mechanical
 Engineering**, in that order, with "&"; the project categories are the same
-names with **"Projects"** appended. The URLs kept their launch-ready slugs
+names with **"Projects"** appended. The third was "Civil Engineering &
+Roadworks" in the client's list and became "Road Construction" on his
+follow-up. The URLs kept their launch-ready slugs
 (`civil-engineering-road`, `electrical-mechanical`), so the label change
 needed no redirects.
 They replaced Civil Engineering & Construction (split into the first and
