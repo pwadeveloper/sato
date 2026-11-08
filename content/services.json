@@ -4,7 +4,7 @@
     "name": "Civil Engineering & Construction",
     "group": "infrastructure",
     "order": 1,
-    "reviewStatus": "draft",
+    "reviewStatus": "approved",
     "shortSummary": "Roads, buildings, earthworks, drainage and erosion control.",
     "summary": "Design and construction of roads, buildings and civil works, from earthworks to finished surfaces.",
     "sections": {
@@ -91,7 +91,7 @@
     "name": "Electrical Engineering",
     "group": "infrastructure",
     "order": 2,
-    "reviewStatus": "draft",
+    "reviewStatus": "approved",
     "shortSummary": "Power, instrumentation, metering and electrical installations.",
     "summary": "Electrical installation, instrumentation and metering for buildings, water schemes and industrial sites.",
     "sections": {
@@ -167,7 +167,7 @@
     "name": "Mechanical Engineering",
     "group": "infrastructure",
     "order": 3,
-    "reviewStatus": "draft",
+    "reviewStatus": "approved",
     "shortSummary": "Pumps, pipework, plant installation and mechanical maintenance.",
     "summary": "Mechanical installation and maintenance for water, building services and plant.",
     "sections": {
@@ -243,7 +243,7 @@
     "name": "Water Resources Development & Management",
     "group": "infrastructure",
     "order": 4,
-    "reviewStatus": "draft",
+    "reviewStatus": "approved",
     "shortSummary": "Dams, water supply, boreholes, river works, drainage and erosion control.",
     "summary": "Dams, water supply, boreholes and river works, with the drainage, flood and erosion control that protects them.",
     "sections": {
@@ -320,7 +320,7 @@
     "name": "Energy Services",
     "group": "energy",
     "order": 5,
-    "reviewStatus": "draft",
+    "reviewStatus": "approved",
     "shortSummary": "Asset integrity, facility engineering and renewable energy.",
     "summary": "Engineering support for energy assets, from integrity management to renewable generation.",
     "sections": {
@@ -389,7 +389,7 @@
     "name": "Oil & Gas Services",
     "group": "oil-gas",
     "order": 6,
-    "reviewStatus": "draft",
+    "reviewStatus": "approved",
     "shortSummary": "Consulting, engineering and digital technology for upstream oil and gas.",
     "summary": "Consulting, engineering and digital technology services for the upstream oil and gas sector, delivered with our technical partners.",
     "sections": {
@@ -755,7 +755,7 @@
                 ]
               }
             ],
-            "note": "{{CONFIRM: brand names may be listed publicly; confirm whether Sato or its partner holds any authorised distributor status}}"
+            "note": ""
           }
         ]
       },
@@ -940,7 +940,7 @@
           "250,000 barrels of oil per day of incremental production",
           "17% less CAPEX to achieve the production uplift"
         ],
-        "note": "{{CONFIRM: can the case study client (ADNOC) be named?}}"
+        "note": ""
       },
       "projectsShowLessLabel": "Show fewer projects",
       "projectsDisclosureNote": "The remaining projects are added to the table above."
@@ -965,7 +965,7 @@
     "name": "Digitalization & Digital Twin Services",
     "group": "digital-twin",
     "order": 7,
-    "reviewStatus": "draft",
+    "reviewStatus": "approved",
     "shortSummary": "Asset data, analytics and virtual models of physical infrastructure.",
     "summary": "Turning asset data into a working digital model that operators can plan and maintain from.",
     "sections": {
@@ -1089,7 +1089,7 @@
     "name": "Research, Technology & Innovation Services",
     "group": "research-innovation",
     "order": 8,
-    "reviewStatus": "draft",
+    "reviewStatus": "approved",
     "shortSummary": "Applied studies, technical training and new engineering methods.",
     "summary": "Applied research, technical training and the evaluation of new methods and technologies.",
     "sections": {

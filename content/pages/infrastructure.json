@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "reviewStatus": "draft",
+  "reviewStatus": "approved",
   "serviceSections": {
     "capabilities": {
       "intro": [
