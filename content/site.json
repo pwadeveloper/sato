@@ -158,7 +158,7 @@
   },
   "contactFormRecipient": "info@satoengineering.com",
   "social": [],
-  "showProjectDates": true,
+  "showProjectDates": false,
   "homeShowMissionVision": false,
   "showLeadership": false
 }
