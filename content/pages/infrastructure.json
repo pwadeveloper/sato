@@ -2,7 +2,7 @@
   "slug": "services/infrastructure",
   "title": "Infrastructure Services",
   "metaTitle": "Infrastructure Services",
-  "metaDescription": "Sato's established infrastructure practice: building and construction, water resources development and management, civil engineering and road, and electrical and mechanical, delivering since 1997.",
+  "metaDescription": "Sato’s established infrastructure practice: building & construction, water resources development & management, civil engineering & roadworks, and electrical & mechanical engineering, delivering since 1997.",
   "labels": {
     "breadcrumb": "Breadcrumb",
     "viewService": "Full capability"
@@ -51,7 +51,7 @@
       "groups": [
         {
           "id": "building",
-          "heading": "Building and Construction",
+          "heading": "Building & Construction",
           "description": [
             "Site investigation, design and construction for academic, administrative, laboratory, residential and office buildings, from foundations to fit-out, and the conversion or renovation of buildings already in use."
           ],
@@ -59,7 +59,7 @@
         },
         {
           "id": "water",
-          "heading": "Water Resources Development and Management",
+          "heading": "Water Resources Development & Management",
           "description": [
             "Earth dams, irrigation, intake works, treatment and distribution, boreholes drilled with our own rig, and the river training, drainage and flood and erosion control that protect them.",
             "Water resources is where the four disciplines meet most often, and where Sato's longest client relationships are — river basin development authorities, state water corporations and development programmes, some of them for over twenty years."
@@ -68,7 +68,7 @@
         },
         {
           "id": "civil",
-          "heading": "Civil Engineering and Road",
+          "heading": "Civil Engineering & Roadworks",
           "description": [
             "Site investigation, design and construction for roads, pavements and drainage, with the earthworks and erosion control that keep them standing. Civil work is the structure everything else is fixed to, and it usually arrives with an electrical and a mechanical package attached.",
             "New build and rehabilitation both: much of Sato's record is work carried out on assets that were still in use."
@@ -77,7 +77,7 @@
         },
         {
           "id": "electrical-mechanical",
-          "heading": "Electrical and Mechanical",
+          "heading": "Electrical & Mechanical Engineering",
           "description": [
             "Power distribution, control and instrumentation for buildings, pumping stations and industrial sites — switchgear and motor control centres down to the meter on the wall — and the pumps, pipework, plant and fabrication behind them, installed and maintained.",
             "Electrical work is the discipline the firm was founded on, and it is commissioned before it is handed over. The mechanical capability was built in Sato's own fleet and workshop, where much of the fabrication is still done."

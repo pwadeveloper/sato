@@ -119,19 +119,19 @@ banned-terms rule below, which the build enforces.
 | `/about` | About (story beside one water-work photograph on desktop, motto, mission, vision) |
 | `/services` | Services overview — four categories |
 | `/services/infrastructure` | **Infrastructure Services** — category landing page |
-| `/services/building-construction` | Building and Construction |
-| `/services/water-resources-development-management` | Water Resources Development and Management |
-| `/services/civil-engineering-road` | Civil Engineering and Road |
-| `/services/electrical-mechanical` | Electrical and Mechanical |
+| `/services/building-construction` | Building & Construction |
+| `/services/water-resources-development-management` | Water Resources Development & Management |
+| `/services/civil-engineering-road` | Civil Engineering & Roadworks |
+| `/services/electrical-mechanical` | Electrical & Mechanical Engineering |
 | `/services/energy` | Energy Services |
 | `/services/oil-gas` | **Oil & Gas Services** — four anchored sections with a sticky sub-nav |
 | `/services/digital-twin` | Digitalization & Digital Twin Services |
 | `/services/research-innovation` | Research, Technology & Innovation Services |
 | `/projects` | Project categories — one photographic tile per service, grouped as Services is |
-| `/projects/building-construction` | Building and Construction |
-| `/projects/water-resources-development-management` | Water Resources Development and Management |
-| `/projects/civil-engineering-road` | Civil Engineering and Road |
-| `/projects/electrical-mechanical` | Electrical and Mechanical |
+| `/projects/building-construction` | Building & Construction Projects — one photo gallery, then a project list |
+| `/projects/water-resources-development-management` | Water Resources Development & Management Projects |
+| `/projects/civil-engineering-road` | Civil Engineering & Roadworks Projects |
+| `/projects/electrical-mechanical` | Electrical & Mechanical Engineering Projects |
 | `/projects/oil-gas` | **Oil & Gas Services** — a table, not cards; attributed |
 | `/projects/[slug]` | Project detail |
 | `/clients` | Clients |
@@ -150,9 +150,13 @@ repeated card, and **every category heading is a link** — a category of one
 links straight to its service.
 
 **The four Infrastructure categories are final** (`docs/decisions/launch-ready.md`),
-following the old site's own structure: **Building and Construction**,
-**Water Resources Development and Management**, **Civil Engineering and Road**,
-**Electrical and Mechanical** — in that order, written with "and", never "&".
+following the old site's own structure. **Final labels (client, 9 November):**
+services **Building & Construction**, **Water Resources Development &
+Management**, **Civil Engineering & Roadworks**, **Electrical & Mechanical
+Engineering**, in that order, with "&"; the project categories are the same
+names with **"Projects"** appended. The URLs kept their launch-ready slugs
+(`civil-engineering-road`, `electrical-mechanical`), so the label change
+needed no redirects.
 They replaced Civil Engineering & Construction (split into the first and
 third), Electrical Engineering and Mechanical Engineering (merged into the
 fourth). Every retired route 301s in `vercel.json` to its successor in one
@@ -239,6 +243,19 @@ it now**: the Buildings and Roads & Pavements halves of Civil Engineering &
 Construction became categories of their own. The mechanism stays. Anything a
 subheading does not claim renders last, unheaded, so a mislabelled project
 can never fall off the page.
+
+**A category page is a gallery, not a card grid** (client, 9 November). Every
+photograph in the category is mixed into one gallery — `getCategoryPhotos()`:
+each project's photographs in `projects.json` order, then the facet's own
+`photos` — each with its caption in small plain text, no bold, no titles over
+the pictures (`components/CategoryGallery.tsx`). A project photograph links to
+its project. Below it, `ProjectList` lists every project in the category,
+title then client · place, so a project with no photograph is a line, never an
+empty frame. A project in two categories shows each photograph in its first
+category's gallery only, unless the image names another in
+`galleryCategory` — the Sagamu pump panel goes to Electrical & Mechanical.
+`ProjectCard` and the stand-in mechanism are no longer used on category pages.
+**No "Completed" label anywhere:** every `status` is empty.
 
 **Every project on the site lives under Projects.** No service page lists
 projects; each links out instead, through the **Projects entry in its sub-nav**,

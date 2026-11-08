@@ -22,6 +22,14 @@ export interface ImageRef {
   width?: number;
   height?: number;
   caption?: ConfirmableText;
+  /**
+   * Which category gallery a project photograph is shown in, when that is
+   * not its project's first category. A project filed under two categories
+   * shows each photograph in one gallery only — "one photograph, one place" —
+   * and this is how a photograph of electrical work on a water scheme (the
+   * Sagamu pump panel) goes to Electrical & Mechanical Engineering instead.
+   */
+  galleryCategory?: string;
 }
 
 /* ------------------------------------------------------------------ site */

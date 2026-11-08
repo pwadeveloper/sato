@@ -504,6 +504,39 @@ export function getProjectGroupsInCategory(
   return groups;
 }
 
+/** One photograph in a category gallery, with the project it shows, if any. */
+export interface CategoryPhoto {
+  image: ImageRef;
+  project?: Project;
+}
+
+/**
+ * Every photograph a category page shows, as one gallery.
+ *
+ * The client asked for the category pages to work like the old site's: the
+ * photographs mixed together, each with its caption, rather than split into
+ * cards by project or into groups by type. So this is every photograph of
+ * every project in the category, in `projects.json` order, followed by the
+ * category's own `photos` — the ones the old site shows without naming a
+ * project.
+ *
+ * A project in two categories shows each photograph in one of them only: its
+ * first category's, unless the photograph names another in
+ * `galleryCategory`. Otherwise a water scheme that is also electrical work
+ * would put the same photographs on two pages, which is the "same photo in
+ * several categories" the client objected to.
+ */
+export function getCategoryPhotos(category: CollectionFacet): CategoryPhoto[] {
+  const fromProjects = getProjectsInCategory(category).flatMap((project) => {
+    const home = getCategoryForProject(project)?.value;
+    return project.images
+      .filter((image) => (image.galleryCategory ?? home) === category.value)
+      .map((image) => ({ image, project }));
+  });
+  const loose = (category.photos ?? []).map((image) => ({ image }));
+  return [...fromProjects, ...loose];
+}
+
 /**
  * The stand-in photograph for a project that has none of its own.
  *

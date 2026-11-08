@@ -2,7 +2,7 @@
   "slug": "projects",
   "title": "Projects",
   "metaTitle": "Projects",
-  "metaDescription": "Building, water resources, civil engineering and road, electrical and mechanical, and oil and gas projects delivered by Sato Engineering & Infrastructure Limited for government, university, development partner, private and oil company clients.",
+  "metaDescription": "Building & construction, water resources development & management, civil engineering & roadworks, electrical & mechanical engineering, and oil and gas projects delivered by Sato Engineering & Infrastructure Limited for government, university, development partner, private and oil company clients.",
   "labels": {
     "breadcrumb": "Breadcrumb",
     "countOne": "1 project",
@@ -22,7 +22,8 @@
     "allProjects": "All projects",
     "partnerAttribution": "Delivered by our technical partner team.",
     "alsoIn": "Also in",
-    "categoryPhotos": "Other photographs"
+    "categoryPhotos": "Other photographs",
+    "projectList": "List of projects"
   },
   "images": {
     "header": {
@@ -42,7 +43,7 @@
       "facets": [
         {
           "value": "building-construction",
-          "label": "Building and Construction",
+          "label": "Building & Construction Projects",
           "slug": "building-construction",
           "serviceSlug": "building-construction",
           "group": "infrastructure",
@@ -80,7 +81,7 @@
         },
         {
           "value": "water-resources-development-management",
-          "label": "Water Resources Development and Management",
+          "label": "Water Resources Development & Management Projects",
           "slug": "water-resources-development-management",
           "serviceSlug": "water-resources-development-management",
           "group": "infrastructure",
@@ -125,7 +126,7 @@
         },
         {
           "value": "civil-engineering-road",
-          "label": "Civil Engineering and Road",
+          "label": "Civil Engineering & Roadworks Projects",
           "slug": "civil-engineering-road",
           "serviceSlug": "civil-engineering-road",
           "group": "infrastructure",
@@ -136,7 +137,7 @@
             "width": 1920,
             "height": 1440
           },
-          "shortLabel": "Civil and Road",
+          "shortLabel": "Civil & Roadworks",
           "photos": [
             {
               "src": "/images/services/roadworks-completed-carriageway.webp",
@@ -172,12 +173,26 @@
               "width": 1920,
               "height": 1440,
               "caption": "Construction of box culvert"
+            },
+            {
+              "src": "/images/services/civil-engineering-construction/adetoro-close-completed-road.webp",
+              "alt": "A section completed asphaltic concrete, Adetoro Close, Abeokuta, Ogun State",
+              "width": 1920,
+              "height": 1440,
+              "caption": "A section completed asphaltic concrete, Adetoro Close, Abeokuta, Ogun State"
+            },
+            {
+              "src": "/images/services/civil-engineering-construction/box-culvert-under-construction.webp",
+              "alt": "Box culvert under construction",
+              "width": 1920,
+              "height": 1426,
+              "caption": "Box culvert under construction by Sato"
             }
           ]
         },
         {
           "value": "electrical-mechanical",
-          "label": "Electrical and Mechanical",
+          "label": "Electrical & Mechanical Engineering Projects",
           "slug": "electrical-mechanical",
           "serviceSlug": "electrical-mechanical",
           "group": "infrastructure",
@@ -188,7 +203,7 @@
             "width": 1920,
             "height": 1440
           },
-          "shortLabel": "Electrical and Mechanical"
+          "shortLabel": "Electrical & Mechanical"
         },
         {
           "value": "energy",

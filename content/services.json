@@ -1,7 +1,7 @@
 [
   {
     "slug": "building-construction",
-    "name": "Building and Construction",
+    "name": "Building & Construction",
     "group": "infrastructure",
     "order": 1,
     "reviewStatus": "approved",
@@ -45,7 +45,7 @@
   },
   {
     "slug": "water-resources-development-management",
-    "name": "Water Resources Development and Management",
+    "name": "Water Resources Development & Management",
     "group": "infrastructure",
     "order": 2,
     "reviewStatus": "approved",
@@ -122,7 +122,7 @@
   },
   {
     "slug": "civil-engineering-road",
-    "name": "Civil Engineering and Road",
+    "name": "Civil Engineering & Roadworks",
     "group": "infrastructure",
     "order": 3,
     "reviewStatus": "approved",
@@ -181,26 +181,11 @@
       "width": 1920,
       "height": 840
     },
-    "images": [
-      {
-        "src": "/images/services/civil-engineering-construction/adetoro-close-completed-road.webp",
-        "alt": "A section completed asphaltic concrete, Adetoro Close, Abeokuta, Ogun State",
-        "width": 1920,
-        "height": 1440,
-        "caption": "A section completed asphaltic concrete, Adetoro Close, Abeokuta, Ogun State"
-      },
-      {
-        "src": "/images/services/civil-engineering-construction/box-culvert-under-construction.webp",
-        "alt": "Box culvert under construction",
-        "width": 1920,
-        "height": 1426,
-        "caption": "Box culvert under construction by Sato"
-      }
-    ]
+    "images": []
   },
   {
     "slug": "electrical-mechanical",
-    "name": "Electrical and Mechanical",
+    "name": "Electrical & Mechanical Engineering",
     "group": "infrastructure",
     "order": 4,
     "reviewStatus": "approved",

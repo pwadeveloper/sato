@@ -275,3 +275,45 @@ again the moment the switch is turned back on. To restore: set
   Cloudflare rather than moving nameservers, both hostnames, propagation,
   an email test both ways with SPF/DKIM checked, and rollback.
 - Screenshots: `docs/screenshots/launch-ready/`.
+
+---
+
+## Client update, 9 November 2026
+
+Received after launch-ready went to `main`:
+
+> - All project pictures from satoengineering.com should be pulled in to fill
+>   blank images. Include every road picture and water resources picture
+>   available.
+> - Remove the "Completed" label throughout.
+> - Mix road photos together (e.g. asphaltic concrete, roadworks) rather than
+>   separating by type.
+> - Format: image + caption only, small text, no bolding needed.
+> - Services: Building and Construction; Water Resources Development and
+>   Management; Civil Engineering and Roadworks; Electrical and Mechanical
+>   Engineering. Use "&" (not "and") where applicable.
+> - Projects: append "Projects" to each service label.
+
+### How it was implemented
+
+- **Labels:** Building & Construction, Water Resources Development &
+  Management, Civil Engineering & Roadworks, Electrical & Mechanical
+  Engineering; the project categories carry " Projects". Slugs unchanged, so
+  no new redirects. Oil & Gas keeps its name — the update lists only the four.
+- **"Completed"** is gone: every project's `status` is empty, so no badge
+  renders on any page. The word survives only where it is the old site's own
+  caption or narrative ("Completed road at Federal College of Education,
+  Osiele").
+- **Category pages** are now one mixed photo gallery with small plain
+  captions, then a plain project list (decided with the developer: the
+  old-site layout rather than stand-in photographs on cards, which would have
+  repeated photographs and shown pictures as projects they are not). No
+  empty frames remain. The roads gallery holds all 14 road photographs on the
+  site, including the two that had been in the Civil service page's gallery
+  only (Adetoro Close; box culvert under construction), which moved here.
+- **"Every road and water picture available":** every old-site road and water
+  photograph that can be published already is. The ones that are not stay off
+  on the developer's decision to keep the helmet rule: 26 show people on an
+  active site without helmets, one shows children at a tap stand, one Lagos
+  road photograph is unidentified. The old site and the Wayback Machine are
+  both blocked from the build environment, but nothing else was missing.

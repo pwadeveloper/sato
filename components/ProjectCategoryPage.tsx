@@ -7,19 +7,18 @@ import { CtaBand } from "@/components/CtaBand";
 import { DraftNotice } from "@/components/DraftNotice";
 import { PageHeader } from "@/components/PageHeader";
 import { PartnerProjects } from "@/components/PartnerExperience";
-import { ProjectCard } from "@/components/ProjectCard";
+import { CategoryGallery, ProjectList } from "@/components/CategoryGallery";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
-import { ServiceGallery } from "@/components/ServiceGallery";
 
 import {
   getPage,
   getPartnerBlock,
+  getCategoryPhotos,
   getPartnerCategoryService,
   getProjectCategories,
   getProjectCategory,
-  getProjectGroupsInCategory,
-  getProjectPlaceholder,
+  getProjectsInCategory,
   getSection,
   getSite,
   isPartnerCategory,
@@ -37,15 +36,15 @@ import { isReviewMode } from "@/lib/review-mode";
  * four-line route file.
  *
  * A category draws its projects from one of two places. Most take them from
- * `projects.json` and render a grid of cards. Oil & Gas takes them from the
+ * `projects.json` and render the way the old site did, on the client's
+ * instruction: every photograph in the category mixed into one gallery, each
+ * with its caption in small plain text, then a plain list of the projects —
+ * so a project with no photograph of its own is a line in the list, never an
+ * empty frame. Oil & Gas takes them from the
  * `partner` block on its service, because those rows are client, project and
  * year with no scope, no photographs and no detail page — a table is the
  * honest shape for them, and duplicating twenty-six rows into `projects.json`
  * to force them into a card grid would have invented four fields each.
- *
- * A category may split its grid under subheadings, which is how Civil
- * Engineering & Construction holds thirty projects without burying either
- * half: buildings and roads keep their headings, under one category.
  *
  * Partner-delivered work carries an attribution line, wherever it appears and
  * whichever source it came from. That is automatic — `isPartnerCategory`
@@ -80,7 +79,8 @@ export function ProjectCategoryPage({ slug }: { slug: string }) {
   const others = getProjectCategories().filter((entry) => entry.slug !== slug);
 
   const partner = getPartnerBlock(category);
-  const groups = partner ? [] : getProjectGroupsInCategory(category);
+  const photos = partner ? [] : getCategoryPhotos(category);
+  const projects = partner ? [] : getProjectsInCategory(category);
   const attribution = isPartnerCategory(category)
     ? labels.partnerAttribution ?? ""
     : "";
@@ -126,64 +126,18 @@ export function ProjectCategoryPage({ slug }: { slug: string }) {
               showDates={site.showProjectDates}
             />
           ) : (
-            <div className="flex flex-col gap-14">
-              {groups.map((group, index) => (
-                <section
-                  key={group.id ?? `group-${index}`}
-                  aria-labelledby={group.id ? `group-${group.id}` : undefined}
-                >
-                  {group.label ? (
-                    <h2
-                      id={`group-${group.id}`}
-                      className="mb-6 border-b border-asphalt pb-3 text-h3 wdth-heading text-balance"
-                    >
-                      <RichText text={group.label} />
-                    </h2>
-                  ) : null}
-
-                  {group.items.length ? (
-                    <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                      {group.items.map((project, position) => (
-                        <li key={project.slug} className="flex">
-                          <ProjectCard
-                            project={project}
-                            sectorLabel={category.label}
-                            sectorShortLabel={category.shortLabel}
-                            fallbackImage={getProjectPlaceholder(
-                              category,
-                              project,
-                              // Count only the cards that need a stand-in, so a
-                              // category carrying more than one spreads them
-                              // evenly instead of skipping past some.
-                              group.items
-                                .slice(0, position)
-                                .filter((earlier) => !earlier.images.length).length,
-                            )}
-                            // Every card here is this category. Saying so eleven
-                            // times is noise; the heading above already said it
-                            // once.
-                            showSector={false}
-                            showDates={site.showProjectDates}
-                          />
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-
-                  {/* The old site's photographs for this group that name no
-                      project, each with its caption. See CollectionFacet.photos. */}
-                  {group.photos?.length ? (
-                    <ServiceGallery
-                      images={group.photos}
-                      heading={labels.categoryPhotos ?? ""}
-                      headingId={`photos-${group.id ?? index}`}
-                      headingLevel={group.label ? 3 : 2}
-                      className="mt-12"
-                    />
-                  ) : null}
-                </section>
-              ))}
-            </div>
+            <>
+              <CategoryGallery
+                photos={photos}
+                label={labels.gallery ?? category.label}
+              />
+              <ProjectList
+                projects={projects}
+                heading={labels.projectList ?? ""}
+                headingId="category-project-list"
+                className={photos.length ? "mt-16" : undefined}
+              />
+            </>
           )}
         </Container>
       </Section>
