@@ -37,7 +37,7 @@
     "registrations": [],
     "image": {
       "src": "/images/projects/mcpherson-administrative-block-and-laboratory/administrative-block-header.webp",
-      "alt": "Two-storey administrative block nearing completion at McPherson University, Ajebo",
+      "alt": "Two-storey administrative block nearing completion",
       "width": 1920,
       "height": 840
     },
@@ -114,7 +114,7 @@
     "registrations": [],
     "image": {
       "src": "/images/services/water-resources-development-management/fiditi-cut-off-trench-header.webp",
-      "alt": "Excavator cutting the cut-off trench at the Fiditi earth dam, with a site engineer in a helmet on the bank",
+      "alt": "Excavator cutting the cut-off trench for an earth dam, with a site engineer in a helmet on the bank",
       "width": 1920,
       "height": 840
     },
@@ -177,7 +177,7 @@
     "registrations": [],
     "image": {
       "src": "/images/services/civil-engineering-road/campus-road-and-buildings-header.webp",
-      "alt": "Newly surfaced asphaltic concrete road with kerbs at Life University, Ajebo, with campus buildings beyond",
+      "alt": "Newly surfaced asphaltic concrete road with kerbs, campus buildings beyond",
       "width": 1920,
       "height": 840
     },
@@ -331,19 +331,11 @@
     "registrations": [],
     "image": {
       "src": "/images/services/electrical-engineering/iperu-booster-station-panel-header.webp",
-      "alt": "Capacitor bank and control gear in a completed panel at the Iperu booster station",
+      "alt": "Capacitor bank and control gear in a completed panel at a booster station",
       "width": 1920,
       "height": 840
     },
-    "images": [
-      {
-        "src": "/images/services/mechanical-engineering/borehole-drilling-crew.webp",
-        "alt": "Drilling work in progress at Laderin Estate, Abeokuta",
-        "width": 1920,
-        "height": 1488,
-        "caption": "Drilling work in progress at Laderin Estate, Abeokuta by Sato"
-      }
-    ]
+    "images": []
   },
   {
     "slug": "energy",

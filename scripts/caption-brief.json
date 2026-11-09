@@ -1,0 +1,1626 @@
+{
+  "note": "The client's caption brief of 9 November 2026 (docs/decisions/plain-captions.md): every caption and alt text it changed, before and after. Written once when the brief was applied; scripts/audit-site-content.mjs prints it at the head of docs/caption-changes.md.",
+  "date": "2026-11-09",
+  "changes": [
+    {
+      "category": "building-construction",
+      "position": 1,
+      "project": "funaab-colplant-building-phase-ii",
+      "src": "/images/projects/funaab-colplant-1.webp",
+      "where": [
+        "project:funaab-colplant-building-phase-ii"
+      ],
+      "altBefore": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta",
+      "alt": "COLPLANT building at completion stage, Federal University of Agriculture, Abeokuta"
+    },
+    {
+      "category": "building-construction",
+      "position": 2,
+      "project": "funaab-colplant-building-phase-ii",
+      "src": "/images/projects/funaab-colplant-3.webp",
+      "where": [
+        "project:funaab-colplant-building-phase-ii"
+      ],
+      "captionBefore": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta.",
+      "caption": "Work in progress: first-floor walkway",
+      "altBefore": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta",
+      "alt": "First-floor walkway with red handrails, building at completion stage"
+    },
+    {
+      "category": "building-construction",
+      "position": 3,
+      "project": "funaab-colplant-building-phase-ii",
+      "src": "/images/projects/funaab-colplant-2.webp",
+      "where": [
+        "project:funaab-colplant-building-phase-ii",
+        "pages/services.images.groupInfrastructure"
+      ],
+      "captionBefore": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta.",
+      "caption": "Work in progress: site works",
+      "altBefore": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta",
+      "alt": "Building at completion stage, with a backhoe loader working the site"
+    },
+    {
+      "category": "building-construction",
+      "position": 4,
+      "project": "funaab-colplant-building-phase-ii",
+      "src": "/images/projects/funaab-colplant-4.webp",
+      "where": [
+        "project:funaab-colplant-building-phase-ii"
+      ],
+      "captionBefore": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta.",
+      "caption": "Work in progress: corridor finishes",
+      "altBefore": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta",
+      "alt": "Tiled corridor with handrail and timber-clad columns, building at completion stage"
+    },
+    {
+      "category": "building-construction",
+      "position": 5,
+      "project": "funaab-colplant-building-phase-ii",
+      "src": "/images/projects/funaab-colplant-building-phase-ii/courtyard-1.webp",
+      "where": [
+        "project:funaab-colplant-building-phase-ii"
+      ],
+      "altBefore": "Three-storey COLPLANT building around its grass courtyard, Federal University of Agriculture, Abeokuta",
+      "alt": "COLPLANT building around its grass courtyard, Federal University of Agriculture, Abeokuta"
+    },
+    {
+      "category": "building-construction",
+      "position": 6,
+      "project": "funaab-colplant-building-phase-ii",
+      "src": "/images/projects/funaab-colplant-building-phase-ii/courtyard-2.webp",
+      "where": [
+        "project:funaab-colplant-building-phase-ii"
+      ],
+      "captionBefore": "College of Plant Science and Crop Production (COLPLANT) Building Phase II, Federal University of Agriculture, Abeokuta",
+      "caption": "Work in progress: completion stage",
+      "altBefore": "Galleried wings of the COLPLANT building facing the courtyard, Federal University of Agriculture, Abeokuta",
+      "alt": "Galleried wings of a building facing a grass courtyard"
+    },
+    {
+      "category": "building-construction",
+      "position": 7,
+      "project": "funaab-colplant-building-phase-ii",
+      "src": "/images/projects/funaab-colplant-building-phase-ii/courtyard-3.webp",
+      "where": [
+        "project:funaab-colplant-building-phase-ii"
+      ],
+      "captionBefore": "College of Plant Science and Crop Production (COLPLANT) Building Phase II, Federal University of Agriculture, Abeokuta",
+      "caption": "Work in progress: courtyard and galleries",
+      "altBefore": "Corner of the COLPLANT courtyard, with open galleries on three floors, Federal University of Agriculture, Abeokuta",
+      "alt": "Corner of a grass courtyard, with open galleries on three floors"
+    },
+    {
+      "category": "building-construction",
+      "position": 8,
+      "project": "funaab-academic-building-complex-block-b",
+      "src": "/images/projects/funaab-academic-building-complex-block-b/building-front.webp",
+      "where": [
+        "project:funaab-academic-building-complex-block-b",
+        "category-spotlight:building-construction"
+      ],
+      "captionBefore": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta",
+      "caption": "Work in progress: nearing completion",
+      "altBefore": "Front of the Academic Building Complex Block B, white with red and brick panels, at the Federal University of Agriculture, Abeokuta",
+      "alt": "Front of an academic building, white with red and brick panels, nearing completion"
+    },
+    {
+      "category": "building-construction",
+      "position": 9,
+      "project": "funaab-academic-building-complex-block-b",
+      "src": "/images/projects/funaab-academic-building-complex-block-b/building-side.webp",
+      "where": [
+        "project:funaab-academic-building-complex-block-b"
+      ],
+      "captionBefore": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta",
+      "caption": "Work in progress: external works",
+      "altBefore": "Academic Building Complex Block B from across the site, with its brick stair towers and red end wall, Federal University of Agriculture, Abeokuta",
+      "alt": "Academic building from across the site, with a tractor and a truck on the external works"
+    },
+    {
+      "category": "building-construction",
+      "position": 10,
+      "project": "funaab-academic-building-complex-block-b",
+      "src": "/images/projects/funaab-academic-building-complex-block-b/building-red-end-wall.webp",
+      "where": [
+        "project:funaab-academic-building-complex-block-b"
+      ],
+      "captionBefore": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta",
+      "caption": "Work in progress: grounds",
+      "altBefore": "Block B's long elevation with its red end walls, Federal University of Agriculture, Abeokuta",
+      "alt": "Long elevation of an academic building with red end walls, workers on the grounds in front"
+    },
+    {
+      "category": "building-construction",
+      "position": 11,
+      "project": "funaab-academic-building-complex-block-b",
+      "src": "/images/projects/funaab-academic-building-complex-block-b/building-rear-wings.webp",
+      "where": [
+        "project:funaab-academic-building-complex-block-b"
+      ],
+      "captionBefore": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta",
+      "caption": "Work in progress: rear wings",
+      "altBefore": "Block B from across the site, its wings stepping back, Federal University of Agriculture, Abeokuta",
+      "alt": "Rear wings of an academic building stepping back, with red and white panels"
+    },
+    {
+      "category": "building-construction",
+      "position": 12,
+      "project": "funaab-academic-building-complex-block-b",
+      "src": "/images/projects/funaab-academic-building-complex-block-b/building-entrance-stairs.webp",
+      "where": [
+        "project:funaab-academic-building-complex-block-b"
+      ],
+      "captionBefore": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta",
+      "caption": "Work in progress: entrance stairs and ramp",
+      "altBefore": "Entrance stairs and brick stair tower of Block B, Federal University of Agriculture, Abeokuta",
+      "alt": "Entrance stairs, ramp and brick stair tower of an academic building"
+    },
+    {
+      "category": "building-construction",
+      "position": 13,
+      "project": "funaab-administrative-block",
+      "src": "/images/projects/funaab-administrative-block-2.webp",
+      "where": [
+        "project:funaab-administrative-block"
+      ],
+      "captionBefore": "Work in Progress, Administrative Block at Federal University of Agriculture, Abeokuta",
+      "caption": "Work in progress: upper walkway",
+      "altBefore": "Work in Progress, Administrative Block at Federal University of Agriculture, Abeokuta",
+      "alt": "Upper walkway of a three-storey block before finishes, with red handrails"
+    },
+    {
+      "category": "building-construction",
+      "position": 14,
+      "project": "funaab-administrative-block",
+      "src": "/images/projects/funaab-administrative-block-1.webp",
+      "where": [
+        "project:funaab-administrative-block",
+        "site.heroImages[1]"
+      ],
+      "captionBefore": "Work in Progress, Administrative Block at Federal University of Agriculture, Abeokuta",
+      "caption": "Work in progress: before painting",
+      "altBefore": "Work in Progress, Administrative Block at Federal University of Agriculture, Abeokuta",
+      "alt": "Three-storey administrative block under construction, rendered and not yet painted"
+    },
+    {
+      "category": "building-construction",
+      "position": 15,
+      "project": "unilag-creative-arts-building",
+      "src": "/images/projects/unilag-creative-arts-building/gallery-and-studios.webp",
+      "where": [
+        "project:unilag-creative-arts-building"
+      ],
+      "captionBefore": "Creative Arts Building, University of Lagos",
+      "caption": "Completed building",
+      "altBefore": "Creative Arts Building, University of Lagos",
+      "alt": "Completed two-storey building with a railed first-floor gallery"
+    },
+    {
+      "category": "building-construction",
+      "position": 16,
+      "project": "unilag-creative-arts-building",
+      "src": "/images/projects/unilag-creative-arts-building/facade-with-murals.webp",
+      "where": [
+        "project:unilag-creative-arts-building"
+      ],
+      "captionBefore": "Creative Arts Building, University of Lagos",
+      "caption": "Completed studios with murals",
+      "altBefore": "Creative Arts Building, University of Lagos",
+      "alt": "Completed studio wing, with murals hung along the ground-floor walkway"
+    },
+    {
+      "category": "building-construction",
+      "position": 17,
+      "project": "mcpherson-administrative-block-and-laboratory",
+      "src": "/images/projects/mcpherson-administrative-block-and-laboratory/administrative-block.webp",
+      "where": [
+        "project:mcpherson-administrative-block-and-laboratory"
+      ],
+      "captionBefore": "Work in progress at McPherson University administrative block Ajebo, Ogun State",
+      "caption": "Work in progress: external finishes",
+      "altBefore": "Work in progress at McPherson University administrative block Ajebo, Ogun State",
+      "alt": "Two-storey administrative block with scaffolding on one wing and a heap of gravel in front"
+    },
+    {
+      "category": "building-construction",
+      "position": 18,
+      "project": "mcpherson-administrative-block-and-laboratory",
+      "src": "/images/projects/mcpherson-administrative-block-and-laboratory/administrative-block-rear.webp",
+      "where": [
+        "project:mcpherson-administrative-block-and-laboratory"
+      ],
+      "captionBefore": "Work in progress at McPherson University administrative block Ajebo, Ogun State",
+      "caption": "Work in progress: rear elevation",
+      "altBefore": "Work in progress at McPherson University administrative block Ajebo, Ogun State",
+      "alt": "Rear of a two-storey administrative block, scaffold poles and sand on the ground"
+    },
+    {
+      "category": "building-construction",
+      "position": 19,
+      "project": "mcpherson-administrative-block-and-laboratory",
+      "src": "/images/projects/mcpherson-administrative-block-and-laboratory/laboratory-building.webp",
+      "where": [
+        "project:mcpherson-administrative-block-and-laboratory"
+      ],
+      "captionBefore": "Construction of laboratory building in progress at McPherson University Ajebo, Ogun State",
+      "caption": "Work in progress: roofed shell",
+      "altBefore": "Construction of laboratory building in progress at McPherson University Ajebo, Ogun State",
+      "alt": "Single-storey laboratory building roofed, before windows and doors"
+    },
+    {
+      "category": "building-construction",
+      "position": 20,
+      "project": "mcpherson-convention-centre-conversion",
+      "src": "/images/projects/mcpherson-convention-1.webp",
+      "where": [
+        "project:mcpherson-convention-centre-conversion"
+      ],
+      "captionBefore": "Work in progress at the conversion of convention centre to staff quarters project at the McPherson University, Ajebo.",
+      "caption": "Work in progress: conversion to staff quarters",
+      "altBefore": "Work in progress at the conversion of convention centre to staff quarters project at the McPherson University, Ajebo",
+      "alt": "Tiled walkway along a building being converted to staff quarters"
+    },
+    {
+      "category": "building-construction",
+      "position": 21,
+      "project": "owode-yewa-lock-up-shops",
+      "src": "/images/projects/owode-yewa-lock-up-shops/row-of-shops.webp",
+      "where": [
+        "project:owode-yewa-lock-up-shops"
+      ],
+      "captionBefore": "Blocks of Shops, Owode Yewa International Market",
+      "caption": "Completed blocks of shops",
+      "altBefore": "Blocks of Shops, Owode Yewa International Market",
+      "alt": "Completed row of lock-up shops beside a paved road"
+    },
+    {
+      "category": "building-construction",
+      "position": 22,
+      "project": "horizon-suites-hotel-complex",
+      "src": "/images/projects/horizon-suites-hotel-complex/chalet-driveway.webp",
+      "where": [
+        "project:horizon-suites-hotel-complex"
+      ],
+      "captionBefore": "Horizon Suites, Ibadan, Oyo State",
+      "caption": "Completed chalets",
+      "altBefore": "Horizon Suites, Ibadan, Oyo State",
+      "alt": "Paved driveway between completed hotel chalets"
+    },
+    {
+      "category": "building-construction",
+      "position": 23,
+      "project": "horizon-suites-hotel-complex",
+      "src": "/images/projects/horizon-suites-hotel-complex/hotel-entrance.webp",
+      "where": [
+        "project:horizon-suites-hotel-complex"
+      ],
+      "captionBefore": "Horizon Suites, Ibadan, Oyo State",
+      "caption": "Completed hotel entrance",
+      "altBefore": "Horizon Suites, Ibadan, Oyo State",
+      "alt": "Arched entrance porch of a completed hotel"
+    },
+    {
+      "category": "building-construction",
+      "position": 24,
+      "project": "obstetrics-care-facility-mowe",
+      "src": "/images/projects/obstetrics-care-facility-mowe/facility-under-construction.webp",
+      "where": [
+        "project:obstetrics-care-facility-mowe"
+      ],
+      "captionBefore": "Work in Progress, Obstetrics Care Facility, Mowe",
+      "caption": "Work in progress: walls and roof",
+      "altBefore": "Work in Progress, Obstetrics Care Facility, Mowe",
+      "alt": "Single-storey care facility under construction, roofed, with ladders against the walls"
+    },
+    {
+      "category": "building-construction",
+      "position": 25,
+      "project": "alabi-olorunda-primary-health-centre",
+      "src": "/images/projects/alabi-olorunda-primary-health-centre/completed-health-centre.webp",
+      "where": [
+        "project:alabi-olorunda-primary-health-centre"
+      ],
+      "captionBefore": "Picture showing completed National Primary Health Centre at Alabi-Olorunda, Oyo State by Sato",
+      "caption": "Completed health centre",
+      "altBefore": "Completed National Primary Health Centre at Alabi-Olorunda, Oyo State",
+      "alt": "Completed single-storey primary health centre"
+    },
+    {
+      "category": "building-construction",
+      "position": 26,
+      "project": "alabi-olorunda-primary-health-centre",
+      "src": "/images/projects/alabi-olorunda-primary-health-centre/health-centre.webp",
+      "where": [
+        "project:alabi-olorunda-primary-health-centre"
+      ],
+      "captionBefore": "Picture showing completed National Primary Health Centre at Alabi-Olorunda, Oyo State by Sato",
+      "caption": "Completed building and compound",
+      "altBefore": "Completed National Primary Health Centre at Alabi-Olorunda, Oyo State",
+      "alt": "Completed health centre buildings around an open compound"
+    },
+    {
+      "category": "building-construction",
+      "position": 27,
+      "project": "laderin-estate-six-flats",
+      "src": "/images/projects/laderin-1.webp",
+      "where": [
+        "project:laderin-estate-six-flats"
+      ],
+      "captionBefore": "Construction of six flats at Laderin Estate, Abeokuta",
+      "caption": "Work in progress: paving",
+      "altBefore": "Construction of six flats at Laderin Estate, Abeokuta",
+      "alt": "Two-storey block of flats, with paving stones stacked for the forecourt"
+    },
+    {
+      "category": "building-construction",
+      "position": 28,
+      "project": "ilaro-school-of-nursing",
+      "src": "/images/projects/ilaro-school-of-nursing/classroom-block.webp",
+      "where": [
+        "project:ilaro-school-of-nursing"
+      ],
+      "captionBefore": "Construction of block of classrooms, School of Nursing Ilaro, Ogun State",
+      "caption": "Completed block of classrooms",
+      "altBefore": "Construction of block of classrooms, School of Nursing Ilaro, Ogun State",
+      "alt": "Completed block of classrooms with a red roof and covered walkway"
+    },
+    {
+      "category": "building-construction",
+      "position": 29,
+      "project": "iperu-area-office",
+      "src": "/images/projects/iperu-area-office/area-office.webp",
+      "where": [
+        "project:iperu-area-office"
+      ],
+      "captionBefore": "Construction of Iperu area office by Sato",
+      "caption": "Completed area office",
+      "altBefore": "Construction of Iperu area office",
+      "alt": "Completed single-storey area office with a blue roof"
+    },
+    {
+      "category": "building-construction",
+      "position": 30,
+      "src": "/images/projects-unassigned/omololu-residence.webp",
+      "where": [
+        "category-photos:building-construction"
+      ],
+      "captionBefore": "Work in progress at Mr. Lekan Omololu’s residential development, Abeokuta",
+      "caption": "Work in progress: two-storey house",
+      "altBefore": "Work in progress at Mr. Lekan Omololu’s residential development, Abeokuta",
+      "alt": "Two-storey house under construction, with bamboo scaffolding"
+    },
+    {
+      "category": "building-construction",
+      "position": 31,
+      "src": "/images/projects/civil-buildings/sato-office-abeokuta-front.webp",
+      "where": [
+        "category-photos:building-construction"
+      ],
+      "captionBefore": "Sato office in Abeokuta",
+      "caption": "Completed office building",
+      "altBefore": "Sato office in Abeokuta",
+      "alt": "Completed single-storey office building with a paved forecourt and hedge"
+    },
+    {
+      "category": "building-construction",
+      "position": 32,
+      "src": "/images/projects-unassigned/sato-office-abeokuta.webp",
+      "where": [
+        "category-photos:building-construction"
+      ],
+      "captionBefore": "Sato office in Abeokuta",
+      "caption": "Completed car park",
+      "altBefore": "Sato office in Abeokuta",
+      "alt": "Completed paved car park with a canopy, beside an office building"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 1,
+      "project": "sagamu-intake-structure",
+      "src": "/images/projects/sagamu-intake-structure/world-bank-inspection.webp",
+      "where": [
+        "project:sagamu-intake-structure"
+      ],
+      "captionBefore": "World Bank Team Inspection of on-going Sagamu Intake, Water Supply Project",
+      "caption": "Inspection of intake works in progress",
+      "altBefore": "World Bank team and Sato engineers inspecting the Sagamu intake works",
+      "alt": "Inspection team and Sato engineers at the intake works"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 2,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-house.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Construction of high lift pump building at Ogere Water Supply Scheme by Sato",
+      "caption": "Construction of high lift pump building",
+      "altBefore": "Construction of high lift pump building at Ogere Water Supply Scheme",
+      "alt": "High lift pump building with tall blue-framed windows"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 3,
+      "project": "solar-powered-boreholes",
+      "src": "/images/projects/solar-powered-boreholes/borehole-drilling.webp",
+      "where": [
+        "project:solar-powered-boreholes"
+      ],
+      "captionBefore": "Drilling work in progress at Laderin Estate, Abeokuta by Sato",
+      "caption": "Borehole drilling in progress",
+      "altBefore": "Drilling work in progress at Laderin Estate, Abeokuta",
+      "alt": "Drilling crew in helmets handling drill pipe at a borehole rig"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 4,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-4.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation",
+        "site.heroImages[2]"
+      ],
+      "captionBefore": "Laying of UPVC Pipes in Progress at Ositelu Ogere",
+      "caption": "Laying of UPVC pipes in progress",
+      "altBefore": "Laying of UPVC Pipes in Progress at Ositelu Ogere",
+      "alt": "UPVC pipes beside a trench dug along a block wall"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 5,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-1.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Construction work in progress at Ogere Water Scheme Ogun State",
+      "caption": "Reinforcement for concrete base",
+      "altBefore": "Construction work in progress at Ogere Water Scheme Ogun State",
+      "alt": "Reinforcement mat laid in formwork for a concrete base"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 6,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/oshitelu-overhead-tank.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Constructed overhead tank at Oshitelu Memorial Grammar School at Ogere",
+      "caption": "Constructed overhead tank",
+      "altBefore": "Constructed overhead tank at Oshitelu Memorial Grammar School at Ogere",
+      "alt": "Overhead water tank on a steel tower among trees"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 7,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ground-tank.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation",
+        "category-spotlight:water-resources-development-management"
+      ],
+      "captionBefore": "Construction of ground tank by Sato",
+      "caption": "Construction of ground tank",
+      "altBefore": "Circular concrete ground tank holding water at the Ogere water supply scheme",
+      "alt": "Circular concrete ground tank holding water"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 8,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/alum-dosing-pumps.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Installation of alum dosing pumps at Ogere Water Supply Scheme",
+      "caption": "Installation of alum dosing pumps",
+      "altBefore": "Two fitters connecting the alum dosing pumps in the chemical house at the Ogere water supply scheme",
+      "alt": "Two fitters connecting the alum dosing pumps in a chemical house"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 9,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/lime-dosing-pumps.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Installation of lime dosing pumps at Ogere Water Supply Scheme",
+      "caption": "Lime dosing pumps installed",
+      "altBefore": "Lime dosing pumps mounted on the wall of the chemical house at the Ogere water supply scheme",
+      "alt": "Lime dosing pumps mounted on the wall of a chemical house"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 10,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/pipe-bend-support.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Casting of concrete support for pipe bend at Ogere",
+      "caption": "Casting of concrete support for pipe bend",
+      "altBefore": "Worker casting the concrete support under a ductile iron pipe bend at Ogere",
+      "alt": "Worker casting the concrete support under a ductile iron pipe bend"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 11,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-connection.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Connection of iron ductile pipe at Ogere",
+      "caption": "Connection of ductile iron pipes",
+      "altBefore": "Pipe fitters joining two ductile iron pipes with a coupling at Ogere",
+      "alt": "Pipe fitters joining two ductile iron pipes with a coupling"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 12,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-installation.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Installation of high lift pump in progress at Ogere",
+      "caption": "Installation of high lift pump",
+      "altBefore": "Fitter installing a vertical high lift pump in the pump house at Ogere",
+      "alt": "Fitter installing a vertical high lift pump in a pump house"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 13,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/pipe-trench-excavation.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Excavation of trench for pipe laying in progress at Ogere",
+      "caption": "Excavation of trench for pipe laying",
+      "altBefore": "Trench dug for pipe laying beside a roadside shop at Ogere, with the site team",
+      "alt": "Trench dug for pipe laying beside a roadside shop, with the site team"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 14,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/oshitelu-junction-connection.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Connection of 300mm pipe to 150mm pipe at Oshitelu Junction at Ogere",
+      "caption": "Connection of 300mm pipe to 150mm pipe",
+      "altBefore": "Reducer joining a 300mm main to a 150mm pipe in the trench at Oshitelu Junction, Ogere",
+      "alt": "Reducer joining a 300mm main to a 150mm pipe in the trench"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 15,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/pipe-laying-crane.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Laying of ductile iron pipes in progress at Ogere",
+      "caption": "Lowering of ductile iron pipe into trench",
+      "altBefore": "Ductile iron pipe lowered into a roadside trench from a crane lorry at Ogere",
+      "alt": "Ductile iron pipe lowered into a roadside trench from a crane lorry"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 16,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/pipe-laying-trench.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Laying of ductile iron pipe at Ogere",
+      "caption": "Jointing of ductile iron pipe in the trench",
+      "altBefore": "Pipe fitters jointing ductile iron pipe in a roadside trench at Ogere",
+      "alt": "Pipe fitters jointing ductile iron pipe in a roadside trench"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 17,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/pipe-laying-roadside.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Laying of ductile iron pipe in progress at Ogere",
+      "caption": "Laying of ductile iron pipeline along the road",
+      "altBefore": "Ductile iron pipeline being laid along a roadside trench at Ogere",
+      "alt": "Ductile iron pipeline being laid along a roadside trench"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 18,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/slab-reinforcement.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Construction work in progress at Ogere Water Scheme Ogun State",
+      "caption": "Formwork and reinforcement for concrete slab",
+      "altBefore": "Reinforcement and formwork for a concrete slab at the Ogere water scheme",
+      "alt": "Reinforcement and timber formwork for a concrete slab, a worker tying bars"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 19,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ground-tank-construction.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Construction of ground tank by Sato",
+      "caption": "Ground tank under construction",
+      "altBefore": "Ground tank under construction at the Ogere water supply scheme, with access stairs down to the excavation",
+      "alt": "Ground tank under construction, with access stairs down to the excavation"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 20,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/clear-water-tank-base.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Construction of clear water tank in progress at the Ogere Water Supply Scheme",
+      "caption": "Construction of clear water tank",
+      "altBefore": "Base reinforcement for the clear water tank being fixed at the Ogere water supply scheme",
+      "alt": "Base reinforcement for the clear water tank being fixed"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 21,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/clear-water-tank-reinforcement.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Construction of clear water tank in progress at the Ogere Water Supply Scheme",
+      "caption": "Reinforcement for clear water tank floor and walls",
+      "altBefore": "Reinforcement and waterstop for the floor and walls of the clear water tank at the Ogere water supply scheme",
+      "alt": "Reinforcement and waterstop for the floor and walls of the clear water tank"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 22,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/pump-house-works.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Ongoing works at Ogere Water Supply Scheme by Sato",
+      "caption": "Pump and valve installation in progress",
+      "altBefore": "Fitters working on a pump and valve in a pump house at the Ogere water supply scheme",
+      "alt": "Fitters working on a pump and valve in a pump house"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 23,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/pump-house-pipework.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Ongoing works at Ogere Water Supply Scheme by Sato",
+      "caption": "Fitting of pump house pipework and valves",
+      "altBefore": "Pipework and valves in the pump house at Ogere, with fitters at work",
+      "alt": "Pipework and valves in a pump house, with fitters at work"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 24,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/filter-bed-rehabilitation.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Rehabilitation of filter bed in progress at Ogere Water Supply Scheme",
+      "caption": "Rehabilitation of filter bed in progress",
+      "altBefore": "Fitters setting nozzles in the floor of a filter bed under rehabilitation at the Ogere water supply scheme",
+      "alt": "Fitters setting nozzles in the floor of a filter bed under rehabilitation"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 25,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/flood-control-inspection.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Client inspecting progress of work (flood control system) at Ogere Water Supply Scheme by Sato",
+      "caption": "Client inspection of flood control channel",
+      "altBefore": "Client's team inspecting the stone-pitched flood control channel at the Ogere water supply scheme",
+      "alt": "Client's team inspecting a stone-pitched flood control channel"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 26,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/flood-control-stone-pitching.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Stone pitching work (flood control system) in progress at Ogere Water Supply Scheme by Sato",
+      "caption": "Stone pitching of flood control channel",
+      "altBefore": "Crew laying stone pitching along the flood control channel at the Ogere water supply scheme",
+      "alt": "Crew laying stone pitching along a flood control channel"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 27,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/upvc-pipe-laying-ositelu.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Laying of UPVC Pipes in Progress at Ositelu Ogere",
+      "caption": "Trench excavation for UPVC pipes",
+      "altBefore": "Crew laying UPVC pipe in a trench beside a block wall at Ositelu, Ogere",
+      "alt": "Crew digging a trench for UPVC pipe beside a block wall"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 28,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/pipe-offloading-crane-lorry.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Ductile iron pipes being offloaded at Ogere Water Supply Scheme by our crane lorry",
+      "caption": "Offloading of ductile iron pipes by crane lorry",
+      "altBefore": "Crane lorry offloading ductile iron pipes from a container at the Ogere water supply scheme",
+      "alt": "Crane lorry offloading ductile iron pipes from a container"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 29,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/overhead-tank-foundations.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Foundation work for 253 m3 overhead tanks in progress, Ogere, Ogun State",
+      "caption": "Foundation work for 253 m³ overhead tanks",
+      "altBefore": "Concrete pad foundations for the overhead tanks at Ogere, with anchor bolts set",
+      "alt": "Concrete pad foundations for the overhead tanks, with anchor bolts set"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 30,
+      "project": "ogere-water-supply-scheme-rehabilitation",
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-laying-roadside.webp",
+      "where": [
+        "project:ogere-water-supply-scheme-rehabilitation"
+      ],
+      "captionBefore": "Laying of iron ductile pipes in progress at Ogere",
+      "caption": "Positioning of ductile iron pipe for laying",
+      "altBefore": "Pipe-laying crew guiding a ductile iron pipe into place beside the road at Ogere",
+      "alt": "Pipe-laying crew guiding a ductile iron pipe into place beside the road"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 31,
+      "project": "fiditi-earth-dam",
+      "src": "/images/projects/fiditi-earth-dam/clay-compaction.webp",
+      "where": [
+        "project:fiditi-earth-dam"
+      ],
+      "captionBefore": "Clay compaction for COT (Fiditi Dam)",
+      "caption": "Compaction of clay with padfoot rollers",
+      "altBefore": "Clay compaction for COT (Fiditi Dam)",
+      "alt": "Two padfoot rollers compacting clay for the cut-off trench of an earth dam"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 32,
+      "project": "fiditi-earth-dam",
+      "src": "/images/projects/fiditi-earth-dam/cut-off-trench-excavation.webp",
+      "where": [
+        "project:fiditi-earth-dam"
+      ],
+      "captionBefore": "Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority.",
+      "caption": "Excavation of cut-off trench for earth dam",
+      "altBefore": "Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority",
+      "alt": "Excavator digging the cut-off trench for an earth dam, a site engineer in a helmet on the bank"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 33,
+      "project": "fiditi-earth-dam",
+      "src": "/images/projects/fiditi-earth-dam/topsoil-removal.webp",
+      "where": [
+        "project:fiditi-earth-dam"
+      ],
+      "captionBefore": "Removal of top soil within 3rd segment cut-off trench area (Fiditi Dam)",
+      "caption": "Removal of topsoil by dozer",
+      "altBefore": "Removal of top soil within 3rd segment cut-off trench area (Fiditi Dam)",
+      "alt": "Bulldozer stripping topsoil from the cut-off trench area"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 34,
+      "project": "fiditi-earth-dam",
+      "src": "/images/projects/fiditi-earth-dam/third-segment-excavation.webp",
+      "where": [
+        "project:fiditi-earth-dam"
+      ],
+      "captionBefore": "Excavation in progress for 3rd segment of COT (Fiditi Dam)",
+      "caption": "Excavation in progress for third trench segment",
+      "altBefore": "Excavation in progress for 3rd segment of COT (Fiditi Dam)",
+      "alt": "Excavator casting spoil beside the third segment of the cut-off trench"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 35,
+      "project": "fiditi-earth-dam",
+      "src": "/images/projects/fiditi-earth-dam/clay-spreading.webp",
+      "where": [
+        "project:fiditi-earth-dam"
+      ],
+      "captionBefore": "Spreading of clay for 2nd segment cut-off trench (Fiditi Dam)",
+      "caption": "Spreading of clay in the cut-off trench",
+      "altBefore": "Spreading of clay for 2nd segment cut-off trench (Fiditi Dam)",
+      "alt": "Clay spread along the floor of the cut-off trench, a dozer at the far end"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 36,
+      "project": "fiditi-earth-dam",
+      "src": "/images/projects/fiditi-earth-dam/river-course-clearing.webp",
+      "where": [
+        "project:fiditi-earth-dam"
+      ],
+      "captionBefore": "Clearing of river course (down stream) (Fiditi Dam)",
+      "caption": "Clearing of river course downstream",
+      "altBefore": "Excavator clearing the river course downstream of the Fiditi earth dam",
+      "alt": "Excavator clearing the river course downstream of an earth dam"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 37,
+      "project": "fiditi-earth-dam",
+      "src": "/images/projects/fiditi-earth-dam/third-segment-cot-excavation.webp",
+      "where": [
+        "project:fiditi-earth-dam"
+      ],
+      "captionBefore": "Excavation in progress for 3rd segment of COT (Fiditi Dam)",
+      "caption": "Deep excavation with groundwater seeping in",
+      "altBefore": "Excavator digging the third segment of the cut-off trench at the Fiditi earth dam, a dozer working behind",
+      "alt": "Excavator digging a deep section of the cut-off trench, groundwater pooling at the bottom, a dozer behind"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 38,
+      "project": "fiditi-earth-dam",
+      "src": "/images/projects/fiditi-earth-dam/first-segment-ramp-access.webp",
+      "where": [
+        "project:fiditi-earth-dam"
+      ],
+      "captionBefore": "Construction of ramp access to 1st segment of cut-off trench excavation (Fiditi Dam)",
+      "caption": "Cutting of access ramp into the trench",
+      "altBefore": "Excavator cutting the access ramp into the first segment of the cut-off trench at the Fiditi earth dam",
+      "alt": "Excavator cutting an access ramp into the first segment of the cut-off trench"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 39,
+      "project": "fiditi-earth-dam",
+      "src": "/images/projects/fiditi-earth-dam/third-segment-dewatering.webp",
+      "where": [
+        "project:fiditi-earth-dam"
+      ],
+      "captionBefore": "Dewatering of 3rd segment cut-off trench excavation (with ends of 1st & 2nd segments) on both sides of the pool (Fiditi Dam)",
+      "caption": "Dewatering of trench excavation",
+      "altBefore": "Pump dewatering the flooded third segment of the cut-off trench at the Fiditi earth dam",
+      "alt": "Pump dewatering the flooded third segment of the cut-off trench"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 40,
+      "project": "fiditi-earth-dam",
+      "src": "/images/projects/fiditi-earth-dam/site-meeting.webp",
+      "where": [
+        "project:fiditi-earth-dam"
+      ],
+      "captionBefore": "Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority.",
+      "caption": "Site meeting over drawings",
+      "altBefore": "Site meeting over drawings at the Fiditi earth dam",
+      "alt": "Site meeting over drawings at an earth dam"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 41,
+      "project": "lower-awba-stream-channelization",
+      "src": "/images/projects/lower-awba-stream-channelization/excavator-channelization.webp",
+      "where": [
+        "project:lower-awba-stream-channelization"
+      ],
+      "captionBefore": "Work in progress on the Channelization of Lower Awba Stream Project at University of Ibadan by the University of Ibadan.",
+      "caption": "Stream channelization in progress",
+      "altBefore": "Excavator clearing and channelling the Lower Awba stream at the University of Ibadan",
+      "alt": "Excavator clearing and channelling a stream through woodland"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 42,
+      "project": "ijaiye-river-dredging",
+      "src": "/images/projects/ijaiye-river-dredging/excavator-in-river.webp",
+      "where": [
+        "project:ijaiye-river-dredging"
+      ],
+      "captionBefore": "Ongoing work in progress at Ijaye Abeokuta by Sato",
+      "caption": "Dredging of river in progress",
+      "altBefore": "Ongoing work in progress at Ijaye Abeokuta",
+      "alt": "Excavator dredging vegetation and silt from a river"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 43,
+      "project": "ijaiye-river-dredging",
+      "src": "/images/projects/ijaiye-river-dredging/dredging-supervision.webp",
+      "where": [
+        "project:ijaiye-river-dredging"
+      ],
+      "captionBefore": "Ongoing work in progress at Ijaye Abeokuta by Sato",
+      "caption": "Supervision of dredging works",
+      "altBefore": "Ongoing work in progress at Ijaye Abeokuta",
+      "alt": "Supervisor in a helmet watching an excavator dredge the river"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 44,
+      "project": "solar-powered-boreholes",
+      "src": "/images/projects/boreholes-4.webp",
+      "where": [
+        "project:solar-powered-boreholes"
+      ],
+      "captionBefore": "Completed solar powered borehole project at Primary Health Centre Tube, Ogun State, MDG’s project.",
+      "caption": "Completed solar-powered borehole",
+      "altBefore": "Completed solar powered borehole project at Primary Health Centre Tube, Ogun State, MDG’s project",
+      "alt": "Steel tank stand with its storage tank and solar panel"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 45,
+      "project": "solar-powered-boreholes",
+      "src": "/images/projects/boreholes-3.webp",
+      "where": [
+        "project:solar-powered-boreholes"
+      ],
+      "captionBefore": "Completed solar powered borehole project at Primary Health Centre Idogo, Ogun State, MDG’s project.",
+      "caption": "Tank stand, tap stand and pump house",
+      "altBefore": "Completed solar powered borehole project at Primary Health Centre Idogo, Ogun State, MDG’s project",
+      "alt": "Completed borehole tank stand beside its pump house, with a tiled tap stand"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 46,
+      "project": "solar-powered-boreholes",
+      "src": "/images/projects/boreholes-2.webp",
+      "where": [
+        "project:solar-powered-boreholes"
+      ],
+      "captionBefore": "Completed solar powered borehole project at Primary Health Centre Ifoyintedo, Ogun State, MDG’s project.",
+      "caption": "Storage tanks on steel tank stand",
+      "altBefore": "Completed solar powered borehole project at Primary Health Centre Ifoyintedo, Ogun State, MDG’s project",
+      "alt": "Two storage tanks on a steel tank stand, people at the tap stand below"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 47,
+      "project": "solar-powered-boreholes",
+      "src": "/images/projects/solar-powered-boreholes/ota-tap-stand.webp",
+      "where": [
+        "project:solar-powered-boreholes"
+      ],
+      "captionBefore": "Completed solar powered borehole project at Primary Health Centre Ota, MDG’s project",
+      "caption": "Water running at the tap stand",
+      "altBefore": "Completed solar powered borehole project at Primary Health Centre Ota, MDG’s project",
+      "alt": "Water running from three taps into basins at a tiled tap stand"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 48,
+      "project": "solar-powered-boreholes",
+      "src": "/images/projects/boreholes-1.webp",
+      "where": [
+        "project:solar-powered-boreholes"
+      ],
+      "captionBefore": "Completed solar powered borehole project at Primary Health Centre Ota, MDG’s project",
+      "caption": "Completed borehole at a primary health centre",
+      "altBefore": "Completed solar powered borehole project at Primary Health Centre Ota, MDG’s project",
+      "alt": "Completed borehole tank stand and tap stand in the grounds of a health centre"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 49,
+      "src": "/images/services/water-ductile-iron-pipes.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Stacked Ductile Iron Pipes for Water Distribution",
+      "caption": "Stacked ductile iron pipes for water distribution",
+      "altBefore": "Stacked Ductile Iron Pipes for Water Distribution",
+      "alt": "Stacked ductile iron pipes for water distribution"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 50,
+      "src": "/images/services/water-meter-training.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Training of Ogun State Water Corporation Staff on Water Meter Installation",
+      "caption": "Training Ogun State Water Corporation staff on water meter installation",
+      "altBefore": "Training of Ogun State Water Corporation Staff on Water Meter Installation",
+      "alt": "Training Ogun State Water Corporation staff on water meter installation",
+      "rule": "The client's exception: kept, in the wording of the brief"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 51,
+      "src": "/images/projects/water-resources/water-meter-strategy-session.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Strategy Session on Water Meter Installation",
+      "caption": "Strategy session on water meter installation",
+      "altBefore": "Strategy Session on Water Meter Installation",
+      "alt": "Strategy session on water meter installation",
+      "rule": "The client's exception: kept, in the wording of the brief"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 52,
+      "src": "/images/projects/water-resources/mabunmi-junction-erosion-control.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State",
+      "caption": "Excavation for erosion control channel",
+      "altBefore": "Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State",
+      "alt": "Bulldozer excavating an erosion control channel beside houses"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 53,
+      "src": "/images/projects/water-resources/drilling-rig-and-compressor.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Picture showing the drilling rig and Ingersoll Rand compressor 825cfm model by Sato",
+      "caption": "Drilling rig and compressor on site",
+      "altBefore": "Truck-mounted drilling rig beside its Ingersoll Rand compressor",
+      "alt": "Truck-mounted drilling rig beside its air compressor"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 54,
+      "src": "/images/projects/water-resources/arakanga-sand-filter-repair.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Repair works on sand filter at Arakanga Water Scheme",
+      "caption": "Repair works on sand filter",
+      "altBefore": "Fitters replacing the underdrain slabs in a sand filter at the Arakanga water scheme",
+      "alt": "Fitters replacing the underdrain slabs in a sand filter"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 55,
+      "src": "/images/projects/water-resources/arakanga-sand-filter-completed.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Repair works on sand filter now completed at Arakanga Water Scheme",
+      "caption": "Repair works on sand filter completed",
+      "altBefore": "Crew finishing the nozzle floor of a repaired sand filter at the Arakanga water scheme",
+      "alt": "Crew finishing the nozzle floor of a repaired sand filter"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 56,
+      "src": "/images/projects/water-resources/water-meter-installation-1.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Water Meter Installation in Progress for Ogun State Water Corporation",
+      "caption": "Water meter installation in progress",
+      "altBefore": "Fitter connecting a water meter at a property for the Ogun State Water Corporation",
+      "alt": "Fitter connecting a water meter at a property"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 57,
+      "src": "/images/projects/water-resources/water-meter-installation-2.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Water Meter Installation in Progress for Ogun State Water Corporation",
+      "caption": "Connection of water meter at the roadside",
+      "altBefore": "Crew installing a water meter at a roadside connection for the Ogun State Water Corporation",
+      "alt": "Crew installing a water meter at a roadside connection"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 58,
+      "src": "/images/projects/water-resources/sagamu-channel-clearing-1.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Ongoing work in progress at Sagamu Ogun State by Sato",
+      "caption": "Desilting of river channel",
+      "altBefore": "Excavator clearing a silted river channel beside houses at Sagamu",
+      "alt": "Excavator clearing a silted river channel beside houses"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 59,
+      "src": "/images/projects/water-resources/sagamu-channel-clearing-2.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Ongoing work in progress at Sagamu Ogun State by Sato",
+      "caption": "Removal of silt from river bed",
+      "altBefore": "Excavator digging out the river bed at Sagamu",
+      "alt": "Excavator digging out the river bed"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 60,
+      "src": "/images/projects/water-resources/sagamu-channel-clearing-3.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Ongoing work in progress at Sagamu Ogun State by Sato",
+      "caption": "Clearing of vegetation from river channel",
+      "altBefore": "Excavator working along an overgrown river channel at Sagamu",
+      "alt": "Excavator working along an overgrown river channel"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 61,
+      "src": "/images/projects/water-resources/sagamu-channel-clearing-4.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Ongoing work in progress at Sagamu Ogun State by Sato",
+      "caption": "Lifting of silt from the river",
+      "altBefore": "Excavator lifting silt out of the river at Sagamu",
+      "alt": "Excavator lifting silt out of the river"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 62,
+      "src": "/images/projects/water-resources/omi-river-1.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Work in progress at Omi River, Ibadan by Sato",
+      "caption": "Clearing of bush along the river bank",
+      "altBefore": "Excavator clearing palm and bush from the bank of the Omi River, Ibadan",
+      "alt": "Excavator clearing palm and bush from a river bank"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 63,
+      "src": "/images/projects/water-resources/omi-river-2.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Work in progress at Omi River, Ibadan by Sato",
+      "caption": "Cutting back of river bank",
+      "altBefore": "Sato excavator cutting back the river bank at the Omi River, Ibadan",
+      "alt": "Sato excavator cutting back a river bank"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 64,
+      "src": "/images/projects/water-resources/omi-river-3.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Work in progress at Omi River, Ibadan by Sato",
+      "caption": "Excavation of river bed from the bank",
+      "altBefore": "Excavator reaching into the Omi River from the bank, Ibadan",
+      "alt": "Excavator reaching into the river from the bank"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 65,
+      "src": "/images/projects/water-resources/omi-river-4.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Work in progress at Omi River, Ibadan by Sato",
+      "caption": "Widening of river channel",
+      "altBefore": "Excavator widening the channel of the Omi River, Ibadan",
+      "alt": "Excavator widening a river channel"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 66,
+      "src": "/images/projects/water-resources/mabunmi-junction-reinforcement.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Reinforcement work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State",
+      "caption": "Reinforcement for erosion control channel",
+      "altBefore": "Reinforcement fixed in the excavated erosion-control channel at Mabunmi Junction, Ijebu-Ode",
+      "alt": "Reinforcement fixed in an excavated erosion control channel"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 67,
+      "src": "/images/projects/water-resources/mabunmi-junction-channel-base.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Construction work in progress (erosion control) at Mabunmi Junction, Ijebu-Ode, Ogun State",
+      "caption": "Casting of channel base for erosion control",
+      "altBefore": "Concrete base of the erosion-control channel cast between its wall reinforcement at Mabunmi Junction, Ijebu-Ode",
+      "alt": "Concrete base of an erosion control channel cast between its wall reinforcement"
+    },
+    {
+      "category": "water-resources-development-management",
+      "position": 68,
+      "src": "/images/projects/water-resources/mabunmi-junction-excavation.webp",
+      "where": [
+        "category-photos:water-resources-development-management"
+      ],
+      "captionBefore": "Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State",
+      "caption": "Excavated channel for erosion control",
+      "altBefore": "Dozer excavating the erosion-control channel along a residential street at Mabunmi Junction, Ijebu-Ode",
+      "alt": "Erosion control channel excavated along a residential street, a dozer at the far end"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 1,
+      "project": "fce-osiele-campus-roads-and-walkways",
+      "src": "/images/projects/fce-osiele-3.webp",
+      "where": [
+        "project:fce-osiele-campus-roads-and-walkways"
+      ],
+      "captionBefore": "Compacted laterite filling at Federal College of Education, Osiele",
+      "caption": "Compacted laterite filling",
+      "altBefore": "Compacted laterite filling at Federal College of Education, Osiele",
+      "alt": "Compacted laterite filling for a campus road"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 2,
+      "project": "fce-osiele-campus-roads-and-walkways",
+      "src": "/images/projects/fce-osiele-2.webp",
+      "where": [
+        "project:fce-osiele-campus-roads-and-walkways"
+      ],
+      "captionBefore": "Compacted laterite filling with walkway at Federal College of Education, Osiele",
+      "caption": "Construction of walkway beside laterite fill",
+      "altBefore": "Compacted laterite filling with walkway at Federal College of Education, Osiele",
+      "alt": "New walkway and kerbs beside compacted laterite filling"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 3,
+      "project": "fce-osiele-campus-roads-and-walkways",
+      "src": "/images/projects/fce-osiele-4.webp",
+      "where": [
+        "project:fce-osiele-campus-roads-and-walkways"
+      ],
+      "captionBefore": "Laying of asphalt at Federal College of Education, Osiele",
+      "caption": "Laying of asphalt",
+      "altBefore": "Laying of asphalt at Federal College of Education, Osiele",
+      "alt": "Fresh asphalt on a campus road, the paving crew at the far end"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 4,
+      "project": "fce-osiele-campus-roads-and-walkways",
+      "src": "/images/projects/fce-osiele-1.webp",
+      "where": [
+        "project:fce-osiele-campus-roads-and-walkways"
+      ],
+      "captionBefore": "Completed road at Federal College of Education, Osiele",
+      "caption": "Completed road with painted kerbs",
+      "altBefore": "Completed road at Federal College of Education, Osiele",
+      "alt": "Completed asphalt road with black-and-white painted kerbs"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 5,
+      "project": "lagos-state-road-rehabilitation",
+      "src": "/images/projects/lagos-state-road-rehabilitation/asphalt-patching.webp",
+      "where": [
+        "project:lagos-state-road-rehabilitation"
+      ],
+      "captionBefore": "Work ongoing at the rehabilitation of roads project by Lagos State Public Works Corporation.",
+      "caption": "Patching of asphalt on a busy road",
+      "altBefore": "Sato crew raking fresh asphalt on a live road during the Lagos roads rehabilitation",
+      "alt": "Sato crew raking fresh asphalt on a live road"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 6,
+      "project": "asphaltic-concrete-road-and-drainage-ajebo",
+      "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-and-drainage-channel.webp",
+      "where": [
+        "project:asphaltic-concrete-road-and-drainage-ajebo",
+        "category-spotlight:civil-engineering-road"
+      ],
+      "captionBefore": "Asphaltic concrete road & drainage system under construction at Life University Ajebo, Ogun State",
+      "caption": "Asphaltic concrete road and drainage system under construction",
+      "altBefore": "Asphaltic concrete road & drainage system under construction at Life University Ajebo, Ogun State",
+      "alt": "Asphaltic concrete road and drainage channel under construction, campus buildings beyond"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 7,
+      "project": "asphaltic-concrete-road-and-drainage-ajebo",
+      "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-towards-campus-buildings.webp",
+      "where": [
+        "project:asphaltic-concrete-road-and-drainage-ajebo"
+      ],
+      "captionBefore": "Asphaltic concrete road under construction at Life University Ajebo, Ogun State",
+      "caption": "Asphaltic concrete road under construction",
+      "altBefore": "Asphaltic concrete road under construction at Life University Ajebo, Ogun State",
+      "alt": "New asphaltic concrete road leading towards campus buildings"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 8,
+      "project": "asphaltic-concrete-road-and-drainage-ajebo",
+      "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-with-kerbs.webp",
+      "where": [
+        "project:asphaltic-concrete-road-and-drainage-ajebo"
+      ],
+      "captionBefore": "Asphaltic concrete road under construction at Life University Ajebo, Ogun State",
+      "caption": "Kerbing at a road junction",
+      "altBefore": "Asphaltic concrete road under construction at Life University Ajebo, Ogun State",
+      "alt": "Painted kerbs turning a corner at a new road junction"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 9,
+      "project": "asphaltic-concrete-road-and-drainage-ajebo",
+      "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/tandem-roller.webp",
+      "where": [
+        "project:asphaltic-concrete-road-and-drainage-ajebo"
+      ],
+      "captionBefore": "Asphaltic concrete road under construction at Life University Ajebo, Ogun State",
+      "caption": "Tandem roller on new asphalt",
+      "altBefore": "Tandem roller on the newly surfaced campus road at Life University, Ajebo, with the entrance gate under construction behind",
+      "alt": "Tandem roller on a newly surfaced campus road, with an entrance gate under construction behind"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 10,
+      "src": "/images/services/roadworks-completed-carriageway.webp",
+      "where": [
+        "site.heroImages[0]",
+        "category-photos:civil-engineering-road"
+      ],
+      "captionBefore": "Work in progress, asphalt laying & compaction",
+      "caption": "Asphalt laying and compaction in progress",
+      "altBefore": "Completed asphalt carriageway with kerbed median",
+      "alt": "New asphalt carriageway with a kerbed median, a roller in the distance"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 11,
+      "src": "/images/projects/civil-roads-and-pavements/asphaltic-concrete-road-under-construction.webp",
+      "where": [
+        "category-photos:civil-engineering-road"
+      ],
+      "captionBefore": "Asphaltic concrete road under construction by Sato",
+      "caption": "Kerbs and side drain along new road",
+      "altBefore": "Asphaltic concrete road under construction",
+      "alt": "New asphalt road with kerbs and a side drain, single-storey buildings beside it"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 12,
+      "src": "/images/projects/civil-roads-and-pavements/sub-base-compaction.webp",
+      "where": [
+        "category-photos:civil-engineering-road"
+      ],
+      "altBefore": "Compaction of sub-base material in progress",
+      "alt": "Roller compacting sub-base material on a widened urban road"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 13,
+      "src": "/images/projects/civil-roads-and-pavements/sandfilled-area-after-grading.webp",
+      "where": [
+        "category-photos:civil-engineering-road"
+      ],
+      "altBefore": "Sandfilled area, after grading and prior to compaction",
+      "alt": "Graded sandfill along a road, kerbs and drains set beside it"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 14,
+      "src": "/images/projects/civil-roads-and-pavements/box-culvert.webp",
+      "where": [
+        "category-photos:civil-engineering-road"
+      ],
+      "altBefore": "Construction of box culvert",
+      "alt": "Twin-cell concrete box culvert with its top slab cast"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 15,
+      "src": "/images/services/civil-engineering-construction/adetoro-close-completed-road.webp",
+      "where": [
+        "category-photos:civil-engineering-road"
+      ],
+      "captionBefore": "A section completed asphaltic concrete, Adetoro Close, Abeokuta, Ogun State",
+      "caption": "Completed section of asphaltic concrete road",
+      "altBefore": "A section completed asphaltic concrete, Adetoro Close, Abeokuta, Ogun State",
+      "alt": "Completed section of asphaltic concrete road with lane markings"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 16,
+      "src": "/images/services/civil-engineering-construction/box-culvert-under-construction.webp",
+      "where": [
+        "category-photos:civil-engineering-road"
+      ],
+      "captionBefore": "Box culvert under construction by Sato",
+      "caption": "Box culvert walls under construction",
+      "altBefore": "Box culvert under construction",
+      "alt": "Concrete walls of a box culvert under construction, pipe outlet at the far end"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 18,
+      "src": "/images/projects/civil-roads-and-pavements/asphalt-laying-palm-road.webp",
+      "where": [
+        "category-photos:civil-engineering-road"
+      ],
+      "captionBefore": "Laying of asphalt in progress",
+      "caption": "Laying of asphalt on a tree-lined road"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 20,
+      "src": "/images/projects/civil-roads-and-pavements/asphalt-laying-paver.webp",
+      "where": [
+        "category-photos:civil-engineering-road"
+      ],
+      "captionBefore": "Laying of asphalt in progress",
+      "caption": "Asphalt laying with paver and roller"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 22,
+      "src": "/images/projects/civil-roads-and-pavements/road-construction-street.webp",
+      "where": [
+        "category-photos:civil-engineering-road"
+      ],
+      "captionBefore": "Construction of road by Sato",
+      "caption": "Road construction on a busy street"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 23,
+      "src": "/images/projects/civil-roads-and-pavements/drain-excavation.webp",
+      "where": [
+        "category-photos:civil-engineering-road"
+      ],
+      "captionBefore": "Excavation for drains in progress by Sato",
+      "caption": "Excavation for drains in progress"
+    },
+    {
+      "category": "civil-engineering-road",
+      "position": 28,
+      "src": "/images/projects/civil-roads-and-pavements/road-rehabilitation-1.webp",
+      "where": [
+        "category-photos:civil-engineering-road"
+      ],
+      "captionBefore": "Road rehabilitation work in progress",
+      "caption": "Resurfacing of a car park"
+    },
+    {
+      "category": "electrical-mechanical",
+      "position": 1,
+      "project": "sagamu-intake-structure",
+      "src": "/images/services/water-high-lift-pump-panel.webp",
+      "where": [
+        "project:sagamu-intake-structure"
+      ],
+      "captionBefore": "Installed High Lift Pump Panel at Sagamu Intake, Water Supply Scheme",
+      "caption": "Installed high lift pump control panel",
+      "altBefore": "Installed High Lift Pump Panel at Sagamu Intake, Water Supply Scheme",
+      "alt": "Installed high lift pump control panel"
+    },
+    {
+      "src": "/images/projects/mcpherson-administrative-block-and-laboratory/administrative-block-header.webp",
+      "where": [
+        "service-header:building-construction"
+      ],
+      "altBefore": "Two-storey administrative block nearing completion at McPherson University, Ajebo",
+      "alt": "Two-storey administrative block nearing completion"
+    },
+    {
+      "src": "/images/services/water-resources-development-management/fiditi-cut-off-trench-header.webp",
+      "where": [
+        "service-header:water-resources-development-management"
+      ],
+      "altBefore": "Excavator cutting the cut-off trench at the Fiditi earth dam, with a site engineer in a helmet on the bank",
+      "alt": "Excavator cutting the cut-off trench for an earth dam, with a site engineer in a helmet on the bank"
+    },
+    {
+      "src": "/images/services/civil-engineering-road/campus-road-and-buildings-header.webp",
+      "where": [
+        "service-header:civil-engineering-road"
+      ],
+      "altBefore": "Newly surfaced asphaltic concrete road with kerbs at Life University, Ajebo, with campus buildings beyond",
+      "alt": "Newly surfaced asphaltic concrete road with kerbs, campus buildings beyond"
+    },
+    {
+      "src": "/images/services/electrical-engineering/iperu-booster-station-panel-header.webp",
+      "where": [
+        "service-header:electrical-mechanical"
+      ],
+      "altBefore": "Capacitor bank and control gear in a completed panel at the Iperu booster station",
+      "alt": "Capacitor bank and control gear in a completed panel at a booster station"
+    },
+    {
+      "src": "/images/about/arakanga-water-treatment-sand-filter.webp",
+      "where": [
+        "pages/about.images.aside"
+      ],
+      "altBefore": "Water running through a sand filter during commissioning at the Arakanga water treatment plant, Abeokuta",
+      "alt": "Water running through a sand filter during commissioning at a water treatment plant"
+    },
+    {
+      "src": "/images/projects/alabi-olorunda-primary-health-centre/health-centre-header.webp",
+      "where": [
+        "pages/clients.images.header"
+      ],
+      "altBefore": "Completed National Primary Health Centre at Alabi-Olorunda, Oyo State",
+      "alt": "Completed primary health centre"
+    },
+    {
+      "src": "/images/projects/horizon-suites-hotel-complex/chalet-driveway-header.webp",
+      "where": [
+        "pages/infrastructure.images.header"
+      ],
+      "altBefore": "Driveway between the chalets at the Horizon Suites hotel, Ibadan",
+      "alt": "Driveway between the chalets of a completed hotel"
+    },
+    {
+      "src": "/images/projects/fiditi-earth-dam/topsoil-removal-header.webp",
+      "where": [
+        "pages/projects.images.header"
+      ],
+      "altBefore": "Bulldozer working the cut-off trench area at the Fiditi earth dam",
+      "alt": "Bulldozer working the cut-off trench area of an earth dam"
+    },
+    {
+      "src": "/images/services/electrical-engineering/iperu-booster-station-breaker-panel.webp",
+      "where": [
+        "category-spotlight:electrical-mechanical"
+      ],
+      "altBefore": "Completed breaker panel with its wiring at the Iperu booster station",
+      "alt": "Completed breaker panel with its wiring at a booster station"
+    },
+    {
+      "src": "/images/services/civil-engineering-construction/campus-road-header.webp",
+      "where": [
+        "pages/services.images.header"
+      ],
+      "altBefore": "Newly surfaced campus road at Life University, Ajebo, with single-storey buildings beyond",
+      "alt": "Newly surfaced campus road with single-storey buildings beyond"
+    }
+  ]
+}

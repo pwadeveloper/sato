@@ -217,8 +217,15 @@ breadcrumb and its card; the rest are listed on its detail page under
 **For project content, the old site is the source of truth**
 (`docs/decisions/mirror-old-site-content.md`). Every project photograph
 comes from satoengineering.com, on the project and in the order the old site
-uses, with the old caption printed under it — cleaned only from ALL CAPS to
-sentence case, of clear typos, and of the country and the former name. Titles,
+uses, with a caption printed under it. **Captions are no longer the old
+site's** (`docs/decisions/plain-captions.md`, 9 November): each describes what
+its photograph shows (the activity, the structure, the stage) and names no
+place, client or institution. The two water-meter captions and two COLPLANT
+captions are the only exceptions, and Building & Construction captions read
+"Work in progress: …" or "Completed …", by the record, not by how finished a
+building looks. No caption repeats on a category page. Alt text follows the
+same rule everywhere on the site. The before-and-after list opens
+`docs/caption-changes.md`, generated from `scripts/caption-brief.json`. Titles,
 details and narratives follow the old site's tables, Projects page and news
 posts in the same way. `docs/old-site-inventory.json` is the captured old site,
 `scripts/content-mirror-plan.json` holds one decision per photograph, and
@@ -261,6 +268,10 @@ title then client · place, so a project with no photograph is a line, never an
 empty frame. A project in two categories shows each photograph in its first
 category's gallery only, unless the image names another in
 `galleryCategory` — the Sagamu pump panel goes to Electrical & Mechanical.
+An image may also name a **`galleryPosition`** (counted from 1) to sit there
+in its category gallery instead of waiting for its project's turn: the
+borehole drilling photograph is third in Water Resources though its project
+is low in the file. It changes nothing on the project page.
 `ProjectCard` and the stand-in mechanism are no longer used on category pages.
 **No "Completed" label anywhere:** every `status` is empty.
 
@@ -331,7 +342,9 @@ because at the desktop end `text-xl` and `text-h3` are the same size.
 
 **A service may carry `images[]`** — the client's own photographs of completed
 work, rendered by `components/ServiceGallery.tsx` and hidden when empty.
-Civil Engineering and Road and Electrical and Mechanical have them; a
+**No service has one now**: Civil's photographs moved to its project gallery
+at launch-ready, and Electrical & Mechanical's only one, the borehole drilling
+crew, moved to the borehole project on 9 November, because a
 photograph that is on a project page is never also in a service gallery. The
 pipeline from his folder to the page is `docs/adding-client-photos.md`: drop
 the files in `raw-assets/client-photos/<service>/` (gitignored), run
@@ -525,6 +538,13 @@ disagree with this file:
     published, and then every photograph held anywhere on the helmet rule:
     the helmet check is gone. Block B is the Building spotlight and the
     ground tank is the Water spotlight. **Current for photographs.**
+11. `plain-captions.md` — the caption brief of 9 November. Captions describe
+    the photograph and name no place, client or institution (two water-meter
+    and two COLPLANT exceptions); Building captions are "Work in progress" or
+    "Completed"; the borehole drilling photograph moved from the Electrical &
+    Mechanical service gallery to the borehole project, third in the Water
+    gallery. **Current for captions and alt text**, and it overrides
+    `mirror-old-site-content.md` on captions.
 
 ## Review deployments
 

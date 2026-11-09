@@ -31,6 +31,15 @@ export interface ImageRef {
    */
   galleryCategory?: string;
   /**
+   * Where the photograph sits in its category gallery, counted from 1, when
+   * it should not wait for its project's turn. A category gallery otherwise
+   * runs in `projects.json` order, so a project low in the file shows its
+   * photographs near the foot of the page; the client asked for the borehole
+   * drilling photograph near the top of Water Resources (caption brief,
+   * 9 November). It changes nothing on the project's own page.
+   */
+  galleryPosition?: number;
+  /**
    * Where to anchor the picture when it is cropped to fill a box of another
    * shape, as a CSS `object-position` ("50% 20%"). Only a category spotlight
    * needs it: the same file is a 4:3 tile on /projects and a 16:6 band at the

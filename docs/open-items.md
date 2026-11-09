@@ -12,6 +12,30 @@ A placeholder is text that is visible on the site right now. The production buil
 
 The questions from the most recent round, which the rest of the site is waiting on. Nothing is detected here — it is kept by hand in `docs/open-items-extra.md` and cleared as each one is answered.
 
+### From the caption brief (9 November 2026)
+
+Every project caption now describes its photograph and names no place,
+client or institution; the full before-and-after list is
+`docs/caption-changes.md`. Three things for the client to confirm. See
+`docs/decisions/plain-captions.md`.
+
+- **Are Block B and COLPLANT handed over?** The photographs he emailed look
+  finished, but both project narratives still say "currently constructing (at
+  completion stage)". Their captions therefore read "Work in progress: …"
+  ("nearing completion", "completion stage", "external works"). If both are
+  complete, the narratives and those ten captions change to "Completed"
+  together.
+- **The borehole drilling photograph is on the solar-powered boreholes
+  project.** His label is "Drilling work in progress at Laderin Estate,
+  Abeokuta". It is borehole drilling, and that project is the site's only
+  borehole project, so it is the project's first photograph and third in the
+  Water Resources gallery. If that borehole was not part of that work, it
+  moves to the Water Resources gallery on its own, still third.
+- **The Electrical & Mechanical service page no longer has a photograph
+  gallery.** Its only photograph was the drilling one, and one photograph goes
+  in one place. A photograph of completed electrical or mechanical work
+  would fill it again.
+
 ### From the water photo document (8 November 2026)
 
 The 17-page Word document is a shorter copy of the October one: all 28

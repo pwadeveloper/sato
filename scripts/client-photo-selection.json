@@ -139,7 +139,7 @@
       }
     },
     {
-      "out": "services/mechanical-engineering/borehole-drilling-crew",
+      "out": "projects/solar-powered-boreholes/borehole-drilling",
       "working": "W056",
       "proposals": [
         "P032"
@@ -147,14 +147,15 @@
       "source": "raw-assets/client-photos/_work/all/W056-pictures-image20.jpg",
       "originalFilename": "Pictures.docx › word/media/image20.jpeg",
       "docxCaption": "DRILLING WORK IN PROGRESS AT LADERIN ESTATE, ABEOKUTA BY SATO ENGINEERING NIGERIA LIMITED",
-      "alt": "Drilling crew in helmets and hi-vis handling drill pipe at a borehole rig, Laderin Estate, Abeokuta",
+      "alt": "Drilling crew in helmets handling drill pipe at a borehole rig",
       "crop": [
         0,
         0.04,
         0.6,
         0.62
       ],
-      "cropWhy": "removes a hi-vis vest printed with the former company name"
+      "cropWhy": "removes a hi-vis vest printed with the former company name",
+      "placement": "Page 1 of the 8 November document, image 2 (N012; W056 in October, pHash 0). Moved from the Electrical & Mechanical service gallery to the solar-powered boreholes project, third in the Water Resources gallery, on the client's caption brief of 9 November."
     },
     {
       "out": "projects/ijaiye-river-dredging/excavator-in-river",

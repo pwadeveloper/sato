@@ -534,7 +534,26 @@ export function getCategoryPhotos(category: CollectionFacet): CategoryPhoto[] {
       .map((image) => ({ image, project }));
   });
   const loose = (category.photos ?? []).map((image) => ({ image }));
-  return [...fromProjects, ...loose];
+  return placeByPosition([...fromProjects, ...loose]);
+}
+
+/**
+ * Moves each photograph that names a `galleryPosition` to that place; the
+ * rest keep their order around it. Positions are honoured lowest first, and
+ * one past the end of the gallery simply puts the photograph last.
+ */
+function placeByPosition(photos: CategoryPhoto[]): CategoryPhoto[] {
+  const placed = photos
+    .filter((photo) => photo.image.galleryPosition)
+    .sort((a, b) => (a.image.galleryPosition ?? 0) - (b.image.galleryPosition ?? 0));
+  if (!placed.length) return photos;
+
+  const ordered = photos.filter((photo) => !photo.image.galleryPosition);
+  for (const photo of placed) {
+    const at = Math.min(Math.max((photo.image.galleryPosition ?? 1) - 1, 0), ordered.length);
+    ordered.splice(at, 0, photo);
+  }
+  return ordered;
 }
 
 /**

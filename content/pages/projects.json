@@ -28,7 +28,7 @@
   "images": {
     "header": {
       "src": "/images/projects/fiditi-earth-dam/topsoil-removal-header.webp",
-      "alt": "Bulldozer working the cut-off trench area at the Fiditi earth dam",
+      "alt": "Bulldozer working the cut-off trench area of an earth dam",
       "width": 1920,
       "height": 840
     }
@@ -50,7 +50,7 @@
           "intro": "Academic, administrative, laboratory, residential and office buildings — new-build, rehabilitation and conversion.",
           "image": {
             "src": "/images/projects/funaab-academic-building-complex-block-b/building-front.webp",
-            "alt": "Front of the Academic Building Complex Block B, white with red and brick panels, at the Federal University of Agriculture, Abeokuta",
+            "alt": "Front of an academic building, white with red and brick panels, nearing completion",
             "width": 1080,
             "height": 809,
             "focalPoint": "40% 0%"
@@ -59,24 +59,24 @@
           "photos": [
             {
               "src": "/images/projects-unassigned/omololu-residence.webp",
-              "alt": "Work in progress at Mr. Lekan Omololu’s residential development, Abeokuta",
+              "alt": "Two-storey house under construction, with bamboo scaffolding",
               "width": 591,
               "height": 392,
-              "caption": "Work in progress at Mr. Lekan Omololu’s residential development, Abeokuta"
+              "caption": "Work in progress: two-storey house"
             },
             {
               "src": "/images/projects/civil-buildings/sato-office-abeokuta-front.webp",
-              "alt": "Sato office in Abeokuta",
+              "alt": "Completed single-storey office building with a paved forecourt and hedge",
               "width": 602,
               "height": 364,
-              "caption": "Sato office in Abeokuta"
+              "caption": "Completed office building"
             },
             {
               "src": "/images/projects-unassigned/sato-office-abeokuta.webp",
-              "alt": "Sato office in Abeokuta",
+              "alt": "Completed paved car park with a canopy, beside an office building",
               "width": 602,
               "height": 363,
-              "caption": "Sato office in Abeokuta"
+              "caption": "Completed car park"
             }
           ]
         },
@@ -89,7 +89,7 @@
           "intro": "Dams, intakes, water supply schemes, boreholes, metering, river works and erosion control.",
           "image": {
             "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ground-tank.webp",
-            "alt": "Circular concrete ground tank holding water at the Ogere water supply scheme",
+            "alt": "Circular concrete ground tank holding water",
             "width": 1600,
             "height": 1200,
             "focalPoint": "50% 75%"
@@ -98,143 +98,143 @@
           "photos": [
             {
               "src": "/images/services/water-ductile-iron-pipes.webp",
-              "alt": "Stacked Ductile Iron Pipes for Water Distribution",
+              "alt": "Stacked ductile iron pipes for water distribution",
               "width": 1600,
               "height": 1200,
-              "caption": "Stacked Ductile Iron Pipes for Water Distribution"
+              "caption": "Stacked ductile iron pipes for water distribution"
             },
             {
               "src": "/images/services/water-meter-training.webp",
-              "alt": "Training of Ogun State Water Corporation Staff on Water Meter Installation",
+              "alt": "Training Ogun State Water Corporation staff on water meter installation",
               "width": 640,
               "height": 418,
-              "caption": "Training of Ogun State Water Corporation Staff on Water Meter Installation"
+              "caption": "Training Ogun State Water Corporation staff on water meter installation"
             },
             {
               "src": "/images/projects/water-resources/water-meter-strategy-session.webp",
-              "alt": "Strategy Session on Water Meter Installation",
+              "alt": "Strategy session on water meter installation",
               "width": 640,
               "height": 418,
-              "caption": "Strategy Session on Water Meter Installation"
+              "caption": "Strategy session on water meter installation"
             },
             {
               "src": "/images/projects/water-resources/mabunmi-junction-erosion-control.webp",
-              "alt": "Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State",
+              "alt": "Bulldozer excavating an erosion control channel beside houses",
               "width": 1920,
               "height": 1440,
-              "caption": "Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State"
+              "caption": "Excavation for erosion control channel"
             },
             {
               "src": "/images/projects/water-resources/drilling-rig-and-compressor.webp",
-              "alt": "Truck-mounted drilling rig beside its Ingersoll Rand compressor",
+              "alt": "Truck-mounted drilling rig beside its air compressor",
               "width": 1920,
               "height": 1754,
-              "caption": "Picture showing the drilling rig and Ingersoll Rand compressor 825cfm model by Sato"
+              "caption": "Drilling rig and compressor on site"
             },
             {
               "src": "/images/projects/water-resources/arakanga-sand-filter-repair.webp",
-              "alt": "Fitters replacing the underdrain slabs in a sand filter at the Arakanga water scheme",
+              "alt": "Fitters replacing the underdrain slabs in a sand filter",
               "width": 1920,
               "height": 1440,
-              "caption": "Repair works on sand filter at Arakanga Water Scheme"
+              "caption": "Repair works on sand filter"
             },
             {
               "src": "/images/projects/water-resources/arakanga-sand-filter-completed.webp",
-              "alt": "Crew finishing the nozzle floor of a repaired sand filter at the Arakanga water scheme",
+              "alt": "Crew finishing the nozzle floor of a repaired sand filter",
               "width": 1920,
               "height": 1440,
-              "caption": "Repair works on sand filter now completed at Arakanga Water Scheme"
+              "caption": "Repair works on sand filter completed"
             },
             {
               "src": "/images/projects/water-resources/water-meter-installation-1.webp",
-              "alt": "Fitter connecting a water meter at a property for the Ogun State Water Corporation",
+              "alt": "Fitter connecting a water meter at a property",
               "width": 640,
               "height": 418,
-              "caption": "Water Meter Installation in Progress for Ogun State Water Corporation"
+              "caption": "Water meter installation in progress"
             },
             {
               "src": "/images/projects/water-resources/water-meter-installation-2.webp",
-              "alt": "Crew installing a water meter at a roadside connection for the Ogun State Water Corporation",
+              "alt": "Crew installing a water meter at a roadside connection",
               "width": 480,
               "height": 602,
-              "caption": "Water Meter Installation in Progress for Ogun State Water Corporation"
+              "caption": "Connection of water meter at the roadside"
             },
             {
               "src": "/images/projects/water-resources/sagamu-channel-clearing-1.webp",
-              "alt": "Excavator clearing a silted river channel beside houses at Sagamu",
+              "alt": "Excavator clearing a silted river channel beside houses",
               "width": 1430,
               "height": 1073,
-              "caption": "Ongoing work in progress at Sagamu Ogun State by Sato"
+              "caption": "Desilting of river channel"
             },
             {
               "src": "/images/projects/water-resources/sagamu-channel-clearing-2.webp",
-              "alt": "Excavator digging out the river bed at Sagamu",
+              "alt": "Excavator digging out the river bed",
               "width": 1430,
               "height": 795,
-              "caption": "Ongoing work in progress at Sagamu Ogun State by Sato"
+              "caption": "Removal of silt from river bed"
             },
             {
               "src": "/images/projects/water-resources/sagamu-channel-clearing-3.webp",
-              "alt": "Excavator working along an overgrown river channel at Sagamu",
+              "alt": "Excavator working along an overgrown river channel",
               "width": 1430,
               "height": 784,
-              "caption": "Ongoing work in progress at Sagamu Ogun State by Sato"
+              "caption": "Clearing of vegetation from river channel"
             },
             {
               "src": "/images/projects/water-resources/sagamu-channel-clearing-4.webp",
-              "alt": "Excavator lifting silt out of the river at Sagamu",
+              "alt": "Excavator lifting silt out of the river",
               "width": 1430,
               "height": 761,
-              "caption": "Ongoing work in progress at Sagamu Ogun State by Sato"
+              "caption": "Lifting of silt from the river"
             },
             {
               "src": "/images/projects/water-resources/omi-river-1.webp",
-              "alt": "Excavator clearing palm and bush from the bank of the Omi River, Ibadan",
+              "alt": "Excavator clearing palm and bush from a river bank",
               "width": 1920,
               "height": 1440,
-              "caption": "Work in progress at Omi River, Ibadan by Sato"
+              "caption": "Clearing of bush along the river bank"
             },
             {
               "src": "/images/projects/water-resources/omi-river-2.webp",
-              "alt": "Sato excavator cutting back the river bank at the Omi River, Ibadan",
+              "alt": "Sato excavator cutting back a river bank",
               "width": 1920,
               "height": 1440,
-              "caption": "Work in progress at Omi River, Ibadan by Sato"
+              "caption": "Cutting back of river bank"
             },
             {
               "src": "/images/projects/water-resources/omi-river-3.webp",
-              "alt": "Excavator reaching into the Omi River from the bank, Ibadan",
+              "alt": "Excavator reaching into the river from the bank",
               "width": 1920,
               "height": 1308,
-              "caption": "Work in progress at Omi River, Ibadan by Sato"
+              "caption": "Excavation of river bed from the bank"
             },
             {
               "src": "/images/projects/water-resources/omi-river-4.webp",
-              "alt": "Excavator widening the channel of the Omi River, Ibadan",
+              "alt": "Excavator widening a river channel",
               "width": 1920,
               "height": 1440,
-              "caption": "Work in progress at Omi River, Ibadan by Sato"
+              "caption": "Widening of river channel"
             },
             {
               "src": "/images/projects/water-resources/mabunmi-junction-reinforcement.webp",
-              "alt": "Reinforcement fixed in the excavated erosion-control channel at Mabunmi Junction, Ijebu-Ode",
+              "alt": "Reinforcement fixed in an excavated erosion control channel",
               "width": 1920,
               "height": 1440,
-              "caption": "Reinforcement work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State"
+              "caption": "Reinforcement for erosion control channel"
             },
             {
               "src": "/images/projects/water-resources/mabunmi-junction-channel-base.webp",
-              "alt": "Concrete base of the erosion-control channel cast between its wall reinforcement at Mabunmi Junction, Ijebu-Ode",
+              "alt": "Concrete base of an erosion control channel cast between its wall reinforcement",
               "width": 1920,
               "height": 1440,
-              "caption": "Construction work in progress (erosion control) at Mabunmi Junction, Ijebu-Ode, Ogun State"
+              "caption": "Casting of channel base for erosion control"
             },
             {
               "src": "/images/projects/water-resources/mabunmi-junction-excavation.webp",
-              "alt": "Dozer excavating the erosion-control channel along a residential street at Mabunmi Junction, Ijebu-Ode",
+              "alt": "Erosion control channel excavated along a residential street, a dozer at the far end",
               "width": 1920,
               "height": 1440,
-              "caption": "Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State"
+              "caption": "Excavated channel for erosion control"
             }
           ]
         },
@@ -247,7 +247,7 @@
           "intro": "Roads, heavy-duty pavements, earthworks, drainage, kerbs and culverts — new-build and rehabilitation.",
           "image": {
             "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/road-and-drainage-channel.webp",
-            "alt": "Asphaltic concrete road and drainage channel at Life University, Ajebo",
+            "alt": "Asphaltic concrete road and drainage channel under construction, campus buildings beyond",
             "width": 1920,
             "height": 1440
           },
@@ -255,52 +255,52 @@
           "photos": [
             {
               "src": "/images/services/roadworks-completed-carriageway.webp",
-              "alt": "Work in progress, asphalt laying & compaction",
+              "alt": "New asphalt carriageway with a kerbed median, a roller in the distance",
               "width": 1920,
               "height": 1440,
-              "caption": "Work in progress, asphalt laying & compaction"
+              "caption": "Asphalt laying and compaction in progress"
             },
             {
               "src": "/images/projects/civil-roads-and-pavements/asphaltic-concrete-road-under-construction.webp",
-              "alt": "Asphaltic concrete road under construction",
+              "alt": "New asphalt road with kerbs and a side drain, single-storey buildings beside it",
               "width": 1920,
               "height": 1440,
-              "caption": "Asphaltic concrete road under construction by Sato"
+              "caption": "Kerbs and side drain along new road"
             },
             {
               "src": "/images/projects/civil-roads-and-pavements/sub-base-compaction.webp",
-              "alt": "Compaction of sub-base material in progress",
+              "alt": "Roller compacting sub-base material on a widened urban road",
               "width": 1920,
               "height": 1238,
               "caption": "Compaction of sub-base material in progress"
             },
             {
               "src": "/images/projects/civil-roads-and-pavements/sandfilled-area-after-grading.webp",
-              "alt": "Sandfilled area, after grading and prior to compaction",
+              "alt": "Graded sandfill along a road, kerbs and drains set beside it",
               "width": 800,
               "height": 540,
               "caption": "Sandfilled area, after grading and prior to compaction"
             },
             {
               "src": "/images/projects/civil-roads-and-pavements/box-culvert.webp",
-              "alt": "Construction of box culvert",
+              "alt": "Twin-cell concrete box culvert with its top slab cast",
               "width": 1920,
               "height": 1440,
               "caption": "Construction of box culvert"
             },
             {
               "src": "/images/services/civil-engineering-construction/adetoro-close-completed-road.webp",
-              "alt": "A section completed asphaltic concrete, Adetoro Close, Abeokuta, Ogun State",
+              "alt": "Completed section of asphaltic concrete road with lane markings",
               "width": 1920,
               "height": 1440,
-              "caption": "A section completed asphaltic concrete, Adetoro Close, Abeokuta, Ogun State"
+              "caption": "Completed section of asphaltic concrete road"
             },
             {
               "src": "/images/services/civil-engineering-construction/box-culvert-under-construction.webp",
-              "alt": "Box culvert under construction",
+              "alt": "Concrete walls of a box culvert under construction, pipe outlet at the far end",
               "width": 1920,
               "height": 1426,
-              "caption": "Box culvert under construction by Sato"
+              "caption": "Box culvert walls under construction"
             },
             {
               "src": "/images/projects/civil-roads-and-pavements/mc1-priming.webp",
@@ -314,7 +314,7 @@
               "alt": "Roller compacting fresh asphalt on a road lined with palm trees",
               "width": 1920,
               "height": 2560,
-              "caption": "Laying of asphalt in progress"
+              "caption": "Laying of asphalt on a tree-lined road"
             },
             {
               "src": "/images/projects/civil-roads-and-pavements/stone-base.webp",
@@ -328,7 +328,7 @@
               "alt": "Paver and roller laying asphalt on an urban road",
               "width": 1920,
               "height": 1440,
-              "caption": "Laying of asphalt in progress"
+              "caption": "Asphalt laying with paver and roller"
             },
             {
               "src": "/images/projects/civil-roads-and-pavements/asphalt-compacted.webp",
@@ -342,14 +342,14 @@
               "alt": "Roller compacting new asphalt on a busy street",
               "width": 1920,
               "height": 2560,
-              "caption": "Construction of road by Sato"
+              "caption": "Road construction on a busy street"
             },
             {
               "src": "/images/projects/civil-roads-and-pavements/drain-excavation.webp",
               "alt": "Excavator and crew digging a roadside drain trench on a busy road",
               "width": 800,
               "height": 549,
-              "caption": "Excavation for drains in progress by Sato"
+              "caption": "Excavation for drains in progress"
             },
             {
               "src": "/images/projects/civil-roads-and-pavements/sandfill-grading.webp",
@@ -384,7 +384,7 @@
               "alt": "Rollers on newly laid asphalt in a campus car park",
               "width": 1920,
               "height": 2560,
-              "caption": "Road rehabilitation work in progress"
+              "caption": "Resurfacing of a car park"
             },
             {
               "src": "/images/projects/civil-roads-and-pavements/road-rehabilitation-2.webp",
@@ -404,7 +404,7 @@
           "intro": "Metering, pumping, control and mechanical installations supplied and commissioned for water and infrastructure clients.",
           "image": {
             "src": "/images/services/electrical-engineering/iperu-booster-station-breaker-panel.webp",
-            "alt": "Completed breaker panel with its wiring at the Iperu booster station",
+            "alt": "Completed breaker panel with its wiring at a booster station",
             "width": 1920,
             "height": 1440
           },
