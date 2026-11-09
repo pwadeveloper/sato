@@ -21,6 +21,13 @@
         "height": 1200,
         "caption": "Installed High Lift Pump Panel at Sagamu Intake, Water Supply Scheme",
         "galleryCategory": "electrical-mechanical"
+      },
+      {
+        "src": "/images/projects/sagamu-intake-structure/world-bank-inspection.webp",
+        "alt": "World Bank team and Sato engineers inspecting the Sagamu intake works",
+        "width": 800,
+        "height": 600,
+        "caption": "World Bank Team Inspection of on-going Sagamu Intake, Water Supply Project"
       }
     ],
     "featured": true
@@ -217,6 +224,55 @@
         "width": 1920,
         "height": 691,
         "caption": "Ongoing works at Ogere Water Supply Scheme by Sato"
+      },
+      {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/filter-bed-rehabilitation.webp",
+        "alt": "Fitters setting nozzles in the floor of a filter bed under rehabilitation at the Ogere water supply scheme",
+        "width": 1920,
+        "height": 1440,
+        "caption": "Rehabilitation of filter bed in progress at Ogere Water Supply Scheme"
+      },
+      {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/flood-control-inspection.webp",
+        "alt": "Client's team inspecting the stone-pitched flood control channel at the Ogere water supply scheme",
+        "width": 1920,
+        "height": 1440,
+        "caption": "Client inspecting progress of work (flood control system) at Ogere Water Supply Scheme by Sato"
+      },
+      {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/flood-control-stone-pitching.webp",
+        "alt": "Crew laying stone pitching along the flood control channel at the Ogere water supply scheme",
+        "width": 1920,
+        "height": 1440,
+        "caption": "Stone pitching work (flood control system) in progress at Ogere Water Supply Scheme by Sato"
+      },
+      {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/upvc-pipe-laying-ositelu.webp",
+        "alt": "Crew laying UPVC pipe in a trench beside a block wall at Ositelu, Ogere",
+        "width": 1920,
+        "height": 1440,
+        "caption": "Laying of UPVC Pipes in Progress at Ositelu Ogere"
+      },
+      {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/pipe-offloading-crane-lorry.webp",
+        "alt": "Crane lorry offloading ductile iron pipes from a container at the Ogere water supply scheme",
+        "width": 1600,
+        "height": 1044,
+        "caption": "Ductile iron pipes being offloaded at Ogere Water Supply Scheme by our crane lorry"
+      },
+      {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/overhead-tank-foundations.webp",
+        "alt": "Concrete pad foundations for the overhead tanks at Ogere, with anchor bolts set",
+        "width": 1280,
+        "height": 960,
+        "caption": "Foundation work for 253 m3 overhead tanks in progress, Ogere, Ogun State"
+      },
+      {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-laying-roadside.webp",
+        "alt": "Pipe-laying crew guiding a ductile iron pipe into place beside the road at Ogere",
+        "width": 564,
+        "height": 450,
+        "caption": "Laying of iron ductile pipes in progress at Ogere"
       }
     ],
     "featured": true
@@ -269,6 +325,41 @@
         "width": 1920,
         "height": 1440,
         "caption": "Spreading of clay for 2nd segment cut-off trench (Fiditi Dam)"
+      },
+      {
+        "src": "/images/projects/fiditi-earth-dam/river-course-clearing.webp",
+        "alt": "Excavator clearing the river course downstream of the Fiditi earth dam",
+        "width": 1920,
+        "height": 1440,
+        "caption": "Clearing of river course (down stream) (Fiditi Dam)"
+      },
+      {
+        "src": "/images/projects/fiditi-earth-dam/third-segment-cot-excavation.webp",
+        "alt": "Excavator digging the third segment of the cut-off trench at the Fiditi earth dam, a dozer working behind",
+        "width": 1920,
+        "height": 1440,
+        "caption": "Excavation in progress for 3rd segment of COT (Fiditi Dam)"
+      },
+      {
+        "src": "/images/projects/fiditi-earth-dam/first-segment-ramp-access.webp",
+        "alt": "Excavator cutting the access ramp into the first segment of the cut-off trench at the Fiditi earth dam",
+        "width": 1920,
+        "height": 1440,
+        "caption": "Construction of ramp access to 1st segment of cut-off trench excavation (Fiditi Dam)"
+      },
+      {
+        "src": "/images/projects/fiditi-earth-dam/third-segment-dewatering.webp",
+        "alt": "Pump dewatering the flooded third segment of the cut-off trench at the Fiditi earth dam",
+        "width": 1920,
+        "height": 1440,
+        "caption": "Dewatering of 3rd segment cut-off trench excavation (with ends of 1st & 2nd segments) on both sides of the pool (Fiditi Dam)"
+      },
+      {
+        "src": "/images/projects/fiditi-earth-dam/site-meeting.webp",
+        "alt": "Site meeting over drawings at the Fiditi earth dam",
+        "width": 536,
+        "height": 399,
+        "caption": "Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority."
       }
     ],
     "featured": true
@@ -337,7 +428,15 @@
     "status": "",
     "summary": "Sato has been awarded contract for the channelization of the Lower Awba Stream at the University of Ibadan. The project is to put an end to the perennial flooding along the axis of the Awba Stream from the source to the Dam. The scope involves establishing horizontal alignment and setting out as designed excavating trench using profile levels and making good the excavation to receive concrete. Reinforcement bars of different sizes are to be bent and placed in line with project working drawings and concrete works to form the shape specified for the Channelization works.",
     "scope": [],
-    "images": [],
+    "images": [
+      {
+        "src": "/images/projects/lower-awba-stream-channelization/excavator-channelization.webp",
+        "alt": "Excavator clearing and channelling the Lower Awba stream at the University of Ibadan",
+        "width": 576,
+        "height": 433,
+        "caption": "Work in progress on the Channelization of Lower Awba Stream Project at University of Ibadan by the University of Ibadan."
+      }
+    ],
     "featured": false
   },
   {
@@ -533,7 +632,15 @@
     "status": "",
     "summary": "Road rehabilitation across the Amuwo Odofin local government area.",
     "scope": [],
-    "images": [],
+    "images": [
+      {
+        "src": "/images/projects/lagos-state-road-rehabilitation/asphalt-patching.webp",
+        "alt": "Sato crew raking fresh asphalt on a live road during the Lagos roads rehabilitation",
+        "width": 582,
+        "height": 454,
+        "caption": "Work ongoing at the rehabilitation of roads project by Lagos State Public Works Corporation."
+      }
+    ],
     "featured": false
   },
   {
@@ -735,6 +842,27 @@
       {
         "src": "/images/projects/funaab-academic-building-complex-block-b/building-side.webp",
         "alt": "Academic Building Complex Block B from across the site, with its brick stair towers and red end wall, Federal University of Agriculture, Abeokuta",
+        "width": 1080,
+        "height": 809,
+        "caption": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta"
+      },
+      {
+        "src": "/images/projects/funaab-academic-building-complex-block-b/building-red-end-wall.webp",
+        "alt": "Block B's long elevation with its red end walls, Federal University of Agriculture, Abeokuta",
+        "width": 1080,
+        "height": 809,
+        "caption": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta"
+      },
+      {
+        "src": "/images/projects/funaab-academic-building-complex-block-b/building-rear-wings.webp",
+        "alt": "Block B from across the site, its wings stepping back, Federal University of Agriculture, Abeokuta",
+        "width": 1080,
+        "height": 809,
+        "caption": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta"
+      },
+      {
+        "src": "/images/projects/funaab-academic-building-complex-block-b/building-entrance-stairs.webp",
+        "alt": "Entrance stairs and brick stair tower of Block B, Federal University of Agriculture, Abeokuta",
         "width": 1080,
         "height": 809,
         "caption": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta"

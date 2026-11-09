@@ -29,6 +29,21 @@ now on its project — and left these. See
   scheme?** If so, it becomes the Water spotlight and goes on the Ogere
   project. Recent water photographs of finished work, with no one on site
   without a helmet, would solve this for good.
+- **Still off, for reasons other than helmets** (everything held on the
+  helmet rule is now published). Each is labelled; what's missing is a
+  decision:
+  - *Sagamu, four photographs* ("Ongoing work in progress at Sagamu"): the
+    site has two Sagamu projects, the intake structure and the intake
+    roadworks. Which one, or the Water gallery?
+  - *Omi River, Ibadan, four photographs*: there is no Omi River project.
+    Add one, or put them in the Water gallery?
+  - *Mabunmi Junction erosion control, three more*: one is already in the
+    Water gallery. The rest can join it.
+  - *"Road rehabilitation work in progress", three* (two in the October
+    document, one on the old site): Lagos, by their GPS. The Civil gallery,
+    like the other Lagos road photographs now there?
+  - *Children at the tap stands, three*: kept off for privacy (one child
+    partly dressed). Recommend they stay off.
 - **Settled 9 November: every photograph in the document is published**,
   on the client's instruction (helmet check waived for this document). The
   two questions below stay open only for *where* a photograph sits: until he

@@ -183,6 +183,63 @@ number plate or burned-in caption is published.
   puts them, with its captions cleaned, so the audit's "Missing photo" count
   falls from 36 to 28.
 
+### Extended the same day: everything else held on the helmet rule
+
+> Since the client is insistent on including most of these photos,
+> especially photos from the old website, let's see if that's something we
+> can get done also.
+
+**The helmet check is dropped for every photograph**, not just this
+document's. Everything held on it is now published, 27 photographs: 16 of
+the old site's 18 (seven of them from the October document's full-size
+original instead of the old site's small copy), 8 more from the October
+document, and the 3 email photographs of Block B. The other two old-site
+entries are copies:
+
+- old-site `s4.gif` is the same photograph as the pipe joint already up from
+  this document (pHash 6), so it is recorded as that one.
+- old-site `23.jpg` is the old site's second copy of the client-inspection
+  photograph (34.jpg = W123) under the stone-pitching caption. The October
+  document's layout gives that caption to a different photograph, W122, and
+  both are now on the Ogere project with their own labels.
+
+| Where | Photographs |
+|---|---|
+| Ogere project | filter bed (W075), client inspection of the flood control channel (W123), stone pitching (W122), UPVC pipes at Ositelu, pipes offloaded by the crane lorry, overhead tank foundations (W080), pipe laying by the road |
+| Fiditi earth dam | river course clearing (W128), 3rd-segment COT excavation (W113), ramp access to the 1st segment (W124), dewatering the 3rd segment (W140), the site meeting |
+| Sagamu intake structure | the World Bank team inspection |
+| Lower Awba stream | the channelization excavator, its first photograph |
+| Amuwo Odofin roads | the asphalt crew, its first photograph |
+| Block B | the three email photographs with people on site |
+| Water Resources gallery | Arakanga sand filter repair and completion (W069, W068; no Arakanga project), two meter installations |
+| Civil gallery | drain excavation (W003), sandfill grading (W005), wearing course (W012), box culvert for erosion control (W116), drain construction (W142) |
+
+Labels come from the old site where it has the photograph and from the
+October document's page layout where it doesn't. The text-order guesses in
+October's `docx-index.json` are not used. Two labels differ from what was
+recorded before: W113 is the Fiditi 3rd-segment excavation, not Mabunmi
+Junction, and W003's old-site caption is garbled ("Cconstruction of box
+culvertonstruction of box culvert") where the document says "Excavation for
+drains in progress", which is what it shows.
+
+The other rules held:
+- **Burned-in dates** cut off three old-site photographs (the crane lorry,
+  "05/07/2009"; both meter installations, "23/JAN/2014").
+- **Burned-in captions** cut off W003 and W005, and **the old site's white
+  band** off the Fiditi site meeting.
+- **The former name.** The World Bank inspection shows it in small print on
+  one vest, inside the group. It is published at 800px, where the print can't
+  be read. The Lagos roads vest is unreadable at the photograph's own 582px.
+  Every other vest shows "SATO" alone.
+- **Plates** on the cars in W003, W005, W080 and W142 are a few pixels and
+  can't be read.
+
+The mirror plan's category photographs still named the categories retired at
+launch-ready (`civil-engineering-construction/…`), so the audit reported
+eight photographs that are on the site as missing. Corrected. **"Missing
+photo" is now 2, from 36 this morning**: the children at the Tube tap stand
+(privacy) and the Lagos road photograph held for its location.
+
 **Burned-in dates found on the way.** Two water-meter photographs already in
 the Water Resources gallery (the old site's 2019 training set, not this
 document) carried the camera's date stamp, "11/OCT/2013", in the corner. The
@@ -191,7 +248,7 @@ off, which takes the stamp and nothing else. The training photograph moved
 from `image-map.json`, which cannot crop, to the selection file, under the
 same output name.
 
-`check:images`: 246 published images, no EXIF, GPS, XMP or IPTC.
+`check:images`: 300 published images, no EXIF, GPS, XMP or IPTC.
 
 ### Pipeline repairs found on the way
 

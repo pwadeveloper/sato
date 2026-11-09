@@ -130,6 +130,34 @@
               "width": 1920,
               "height": 1754,
               "caption": "Picture showing the drilling rig and Ingersoll Rand compressor 825cfm model by Sato"
+            },
+            {
+              "src": "/images/projects/water-resources/arakanga-sand-filter-repair.webp",
+              "alt": "Fitters replacing the underdrain slabs in a sand filter at the Arakanga water scheme",
+              "width": 1920,
+              "height": 1440,
+              "caption": "Repair works on sand filter at Arakanga Water Scheme"
+            },
+            {
+              "src": "/images/projects/water-resources/arakanga-sand-filter-completed.webp",
+              "alt": "Crew finishing the nozzle floor of a repaired sand filter at the Arakanga water scheme",
+              "width": 1920,
+              "height": 1440,
+              "caption": "Repair works on sand filter now completed at Arakanga Water Scheme"
+            },
+            {
+              "src": "/images/projects/water-resources/water-meter-installation-1.webp",
+              "alt": "Fitter connecting a water meter at a property for the Ogun State Water Corporation",
+              "width": 640,
+              "height": 418,
+              "caption": "Water Meter Installation in Progress for Ogun State Water Corporation"
+            },
+            {
+              "src": "/images/projects/water-resources/water-meter-installation-2.webp",
+              "alt": "Crew installing a water meter at a roadside connection for the Ogun State Water Corporation",
+              "width": 480,
+              "height": 602,
+              "caption": "Water Meter Installation in Progress for Ogun State Water Corporation"
             }
           ]
         },
@@ -238,6 +266,41 @@
               "width": 1920,
               "height": 2560,
               "caption": "Construction of road by Sato"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/drain-excavation.webp",
+              "alt": "Excavator and crew digging a roadside drain trench on a busy road",
+              "width": 800,
+              "height": 549,
+              "caption": "Excavation for drains in progress by Sato"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/sandfill-grading.webp",
+              "alt": "Grader spreading sandfill beside new kerbs and drain covers on an urban road",
+              "width": 800,
+              "height": 555,
+              "caption": "Spreading and grading of sandfill in progress"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/wearing-course.webp",
+              "alt": "Pneumatic and steel rollers compacting the asphalt wearing course on a residential road",
+              "width": 1536,
+              "height": 1152,
+              "caption": "Laying of wearing course in progress"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/box-culvert-erosion-control.webp",
+              "alt": "Formwork and reinforcement for a box culvert being built across a stream to control erosion",
+              "width": 1920,
+              "height": 1428,
+              "caption": "Box culvert under construction to control erosion"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/drain-construction.webp",
+              "alt": "Crew placing concrete in a new roadside drain",
+              "width": 800,
+              "height": 600,
+              "caption": "Construction of drain in progress"
             }
           ]
         },

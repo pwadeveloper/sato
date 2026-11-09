@@ -932,6 +932,290 @@
         0.87
       ],
       "cropWhy": "Bottom 13% off: the camera burned a date stamp into the corner (moved here from image-map.json, which cannot crop)"
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/filter-bed-rehabilitation",
+      "working": "W075",
+      "source": "raw-assets/client-photos/_work/all/W075-pictures-image38.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/nhj.jpg",
+      "originalFilename": "Pictures.docx › word/media/image38.jpeg",
+      "alt": "Fitters setting nozzles in the floor of a filter bed under rehabilitation at the Ogere water supply scheme",
+      "placement": "Page 22 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/flood-control-inspection",
+      "working": "W123",
+      "source": "raw-assets/client-photos/_work/all/W123-pictures-image81.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/34.jpg",
+      "originalFilename": "Pictures.docx › word/media/image81.jpeg",
+      "alt": "Client's team inspecting the stone-pitched flood control channel at the Ogere water supply scheme",
+      "placement": "Page 45 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/flood-control-stone-pitching",
+      "working": "W122",
+      "source": "raw-assets/client-photos/_work/all/W122-pictures-image80.jpg",
+      "originalFilename": "Pictures.docx › word/media/image80.jpeg",
+      "docxCaption": "STONE PITCHING WORK (FLOOD CONTROL SYSTEM) IN PROGRESS AT OGERE WATER SUPPLY SCHEME BY SATO ENGINEERING NIGERIA LIMITED",
+      "alt": "Crew laying stone pitching along the flood control channel at the Ogere water supply scheme",
+      "placement": "Page 45 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/upvc-pipe-laying-ositelu",
+      "working": null,
+      "source": "raw-assets/old-site/2019/10/SAM_7331.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2019/10/SAM_7331.jpg",
+      "originalFilename": "old site: 2019/10/SAM_7331.jpg",
+      "alt": "Crew laying UPVC pipe in a trench beside a block wall at Ositelu, Ogere",
+      "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/pipe-offloading-crane-lorry",
+      "working": null,
+      "source": "raw-assets/old-site/2012/07/211.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/211.jpg",
+      "originalFilename": "old site: 2012/07/211.jpg",
+      "alt": "Crane lorry offloading ductile iron pipes from a container at the Ogere water supply scheme",
+      "crop": [
+        0,
+        0,
+        1,
+        0.87
+      ],
+      "cropWhy": "Bottom 13% off: the camera burned a date stamp into the corner",
+      "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/overhead-tank-foundations",
+      "working": "W080",
+      "source": "raw-assets/client-photos/_work/all/W080-pictures-image42.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/saas2.jpg",
+      "originalFilename": "Pictures.docx › word/media/image42.jpeg",
+      "alt": "Concrete pad foundations for the overhead tanks at Ogere, with anchor bolts set",
+      "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-laying-roadside",
+      "working": null,
+      "source": "raw-assets/old-site/2012/07/21.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/21.jpg",
+      "originalFilename": "old site: 2012/07/21.jpg",
+      "alt": "Pipe-laying crew guiding a ductile iron pipe into place beside the road at Ogere",
+      "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/fiditi-earth-dam/river-course-clearing",
+      "working": "W128",
+      "source": "raw-assets/client-photos/_work/all/W128-pictures-image86.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/c22.jpg",
+      "originalFilename": "Pictures.docx › word/media/image86.jpeg",
+      "alt": "Excavator clearing the river course downstream of the Fiditi earth dam",
+      "placement": "Page 48 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/fiditi-earth-dam/third-segment-cot-excavation",
+      "working": "W113",
+      "source": "raw-assets/client-photos/_work/all/W113-pictures-image72.jpg",
+      "originalFilename": "Pictures.docx › word/media/image72.jpeg",
+      "docxCaption": "EXCAVATION IN PROGRESS FOR 3RD SEGMENT OF COT (FIDITI DAM)",
+      "alt": "Excavator digging the third segment of the cut-off trench at the Fiditi earth dam, a dozer working behind",
+      "placement": "Page 41 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/fiditi-earth-dam/first-segment-ramp-access",
+      "working": "W124",
+      "source": "raw-assets/client-photos/_work/all/W124-pictures-image82.jpg",
+      "originalFilename": "Pictures.docx › word/media/image82.jpeg",
+      "docxCaption": "CONSTRUCTION OF RAMP ACCESS TO 1ST SEGMENT OF CUT-OFF TRENCH EXCAVATION (FIDITI DAM)",
+      "alt": "Excavator cutting the access ramp into the first segment of the cut-off trench at the Fiditi earth dam",
+      "placement": "Page 46 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/fiditi-earth-dam/third-segment-dewatering",
+      "working": "W140",
+      "source": "raw-assets/client-photos/_work/all/W140-pictures-image97.jpg",
+      "originalFilename": "Pictures.docx › word/media/image97.jpeg",
+      "docxCaption": "DEWATERS OF 3RD SEGMENT OUT-OFF TRENCH EXCAVATION, (WITH ENDS OF 1ST & 2ND SEGMENTS) ON BOTH SIDES OF THE POOL – FIDITI DAM",
+      "alt": "Pump dewatering the flooded third segment of the cut-off trench at the Fiditi earth dam",
+      "placement": "Page 53 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/fiditi-earth-dam/site-meeting",
+      "working": null,
+      "source": "raw-assets/old-site/2012/08/image2.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/08/image2.jpg",
+      "originalFilename": "old site: 2012/08/image2.jpg",
+      "alt": "Site meeting over drawings at the Fiditi earth dam",
+      "crop": [
+        0,
+        0,
+        1,
+        0.92
+      ],
+      "cropWhy": "Bottom white band off (part of the old site's image, not the photograph)",
+      "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/sagamu-intake-structure/world-bank-inspection",
+      "working": null,
+      "source": "raw-assets/old-site/2019/10/P1030872.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1030872.jpg",
+      "originalFilename": "old site: 2019/10/P1030872.jpg",
+      "alt": "World Bank team and Sato engineers inspecting the Sagamu intake works",
+      "cropWhy": "800px only: one vest's small print carries the former name; unreadable at 800px, and a crop would cut through the group",
+      "maxWidth": 800,
+      "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/lower-awba-stream-channelization/excavator-channelization",
+      "working": null,
+      "source": "raw-assets/old-site/2012/06/Awba-Stream-Project.png",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/06/Awba-Stream-Project.png",
+      "originalFilename": "old site: 2012/06/Awba-Stream-Project.png",
+      "alt": "Excavator clearing and channelling the Lower Awba stream at the University of Ibadan",
+      "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/lagos-state-road-rehabilitation/asphalt-patching",
+      "working": null,
+      "source": "raw-assets/old-site/2012/08/image3.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/08/image3.jpg",
+      "originalFilename": "old site: 2012/08/image3.jpg",
+      "alt": "Sato crew raking fresh asphalt on a live road during the Lagos roads rehabilitation",
+      "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/funaab-academic-building-complex-block-b/building-red-end-wall",
+      "working": "E-2829ddc5",
+      "source": "raw-assets/client-photos/_inbox/2829ddc5-3d5d-4006-b1a0-f7d7dfd2b00a.JPG",
+      "originalFilename": "email 2026-11-08 › 2829ddc5-3d5d-4006-b1a0-f7d7dfd2b00a.JPG",
+      "alt": "Block B's long elevation with its red end walls, Federal University of Agriculture, Abeokuta",
+      "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/funaab-academic-building-complex-block-b/building-rear-wings",
+      "working": "E-dc391f85",
+      "source": "raw-assets/client-photos/_inbox/dc391f85-025f-46da-a506-a4878365b1d1.JPG",
+      "originalFilename": "email 2026-11-08 › dc391f85-025f-46da-a506-a4878365b1d1.JPG",
+      "alt": "Block B from across the site, its wings stepping back, Federal University of Agriculture, Abeokuta",
+      "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/funaab-academic-building-complex-block-b/building-entrance-stairs",
+      "working": "E-e246f0e5",
+      "source": "raw-assets/client-photos/_inbox/e246f0e5-08c3-4f3b-8be5-4e4f2ff605e6.JPG",
+      "originalFilename": "email 2026-11-08 › e246f0e5-08c3-4f3b-8be5-4e4f2ff605e6.JPG",
+      "alt": "Entrance stairs and brick stair tower of Block B, Federal University of Agriculture, Abeokuta",
+      "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/water-resources/arakanga-sand-filter-repair",
+      "working": "W069",
+      "source": "raw-assets/client-photos/_work/all/W069-pictures-image32.jpg",
+      "originalFilename": "Pictures.docx › word/media/image32.jpeg",
+      "docxCaption": "REPAIR WORKS ON SAND FILTER AT ARAKANGA WATER SCHEME",
+      "alt": "Fitters replacing the underdrain slabs in a sand filter at the Arakanga water scheme",
+      "placement": "Page 19 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/water-resources/arakanga-sand-filter-completed",
+      "working": "W068",
+      "source": "raw-assets/client-photos/_work/all/W068-pictures-image31.jpg",
+      "originalFilename": "Pictures.docx › word/media/image31.jpeg",
+      "docxCaption": "REPAIR WORKS ON SAND FILTER NOW COMPLETED AT ARAKANGA WATER SCHEME",
+      "alt": "Crew finishing the nozzle floor of a repaired sand filter at the Arakanga water scheme",
+      "placement": "Page 19 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/water-resources/water-meter-installation-1",
+      "working": null,
+      "source": "raw-assets/old-site/2019/10/P1050544.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1050544.jpg",
+      "originalFilename": "old site: 2019/10/P1050544.jpg",
+      "alt": "Fitter connecting a water meter at a property for the Ogun State Water Corporation",
+      "crop": [
+        0,
+        0,
+        1,
+        0.87
+      ],
+      "cropWhy": "Bottom 13% off: the camera burned a date stamp into the corner",
+      "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/water-resources/water-meter-installation-2",
+      "working": null,
+      "source": "raw-assets/old-site/2019/10/P1050551.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1050551.jpg",
+      "originalFilename": "old site: 2019/10/P1050551.jpg",
+      "alt": "Crew installing a water meter at a roadside connection for the Ogun State Water Corporation",
+      "crop": [
+        0,
+        0,
+        1,
+        0.94
+      ],
+      "cropWhy": "Bottom 6% off: the camera burned a date stamp into the corner",
+      "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/drain-excavation",
+      "working": "W003",
+      "source": "raw-assets/client-photos/_work/all/W003-pictures-image100.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_1.jpg",
+      "originalFilename": "Pictures.docx › word/media/image100.jpeg",
+      "alt": "Excavator and crew digging a roadside drain trench on a busy road",
+      "crop": [
+        0,
+        0,
+        1,
+        0.915
+      ],
+      "cropWhy": "Bottom band off: a caption burned into the image",
+      "placement": "Page 55 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/sandfill-grading",
+      "working": "W005",
+      "source": "raw-assets/client-photos/_work/all/W005-pictures-image102.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image00ds1.jpg",
+      "originalFilename": "Pictures.docx › word/media/image102.jpeg",
+      "alt": "Grader spreading sandfill beside new kerbs and drain covers on an urban road",
+      "crop": [
+        0,
+        0,
+        1,
+        0.925
+      ],
+      "cropWhy": "Bottom band off: a caption burned into the image",
+      "placement": "Page 56 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/wearing-course",
+      "working": "W012",
+      "source": "raw-assets/client-photos/_work/all/W012-pictures-image109.jpg",
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0024.jpg",
+      "originalFilename": "Pictures.docx › word/media/image109.jpeg",
+      "alt": "Pneumatic and steel rollers compacting the asphalt wearing course on a residential road",
+      "placement": "Page 60 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/box-culvert-erosion-control",
+      "working": "W116",
+      "source": "raw-assets/client-photos/_work/all/W116-pictures-image75.jpg",
+      "originalFilename": "Pictures.docx › word/media/image75.jpeg",
+      "docxCaption": "BOX CULVERT UNDER CONSTRUCTION TO CONTROL EROSION",
+      "alt": "Formwork and reinforcement for a box culvert being built across a stream to control erosion",
+      "placement": "Page 42 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/drain-construction",
+      "working": "W142",
+      "source": "raw-assets/client-photos/_work/all/W142-pictures-image99.jpg",
+      "originalFilename": "Pictures.docx › word/media/image99.jpeg",
+      "docxCaption": "CONSTRUCTION OF DRAIN IN PROGRESS BY (label ends there)",
+      "alt": "Crew placing concrete in a new roadside drain",
+      "placement": "Page 55 of the October document. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
     }
   ]
 }

@@ -21,17 +21,27 @@ Every old-site caption, project title and narrative the new site uses, next to t
 | SATO ENGINEERING NIGERIA OFFICE IN ABEOKUTA | Sato office in Abeokuta | sentence case; country and former name removed |
 | Stalked Ductile Iron Pipes for Water Distribution | Stacked Ductile Iron Pipes for Water Distribution | typo fixed |
 | Installed High Lift Pump Panel at Sagamu Intake, Water Supply Scheme | Installed High Lift Pump Panel at Sagamu Intake, Water Supply Scheme | unchanged |
+| World Bank Team Inspection of on-going Sagamu Intake, Water Supply Project | World Bank Team Inspection of on-going Sagamu Intake, Water Supply Project | unchanged |
 | Training of Ogun State Water Corporation Staff on Water Meter Installation | Training of Ogun State Water Corporation Staff on Water Meter Installation | unchanged |
 | Strategy Session on Water Meter Installation | Strategy Session on Water Meter Installation | unchanged |
+| Water Meter Installation in Progress for Ogun State Water Corporation | Water Meter Installation in Progress for Ogun State Water Corporation | unchanged |
 | Laying Of UPVC Pipes in Progress at Ositelu Ogere | Laying of UPVC Pipes in Progress at Ositelu Ogere | typo fixed |
+| Laying of UPVC Pipes in Progress at Ositelu Ogere | Laying of UPVC Pipes in Progress at Ositelu Ogere | unchanged |
 | CLAY COMPACTION FOR COT (FIDITI DAM) | Clay compaction for COT (Fiditi Dam) | sentence case |
+| CLEARING OF RIVER COURSE (DOWN STREAM) (FIDITI DAM) | Clearing of river course (down stream) (Fiditi Dam) | sentence case |
+| CLIENT INSPECTING PROGRESS OF WORK (FLOOD CONTROL SYSTEM) AT OGERE WATER SUPPLY SCHEME BY SATO ENGINEERING NIGERIA LIMITED | Client inspecting progress of work (flood control system) at Ogere Water Supply Scheme by Sato | sentence case; country and former name removed |
 | EXCAVATION WORK (EROSION CONTROL) IN PROGRESS AT MABUNMI JUNCTION, IJEBU-ODE, OGUN STATE | Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State | sentence case |
+| DUCTILE IRON PIPES BEING OFFLOADED AT OGERE WATER SUPPLY SCHEME BY OUR CRANE LORRY | Ductile iron pipes being offloaded at Ogere Water Supply Scheme by our crane lorry | sentence case |
 | CONSTRUCTION WORK IN PROGRESS AT OGERE WATER SCHEME OGUN STATE | Construction work in progress at Ogere Water Scheme Ogun State | sentence case |
+| Connection of iron ductile pipe at Ogere | Connection of iron ductile pipe at Ogere | unchanged |
 | LAYING OF DUCTILE IRON PIPE AT OGERE | Laying of ductile iron pipe at Ogere | sentence case |
 | CONSTRUCTED OVERHEAD TANK AT OSHITELU MEMORIAL GRAMMAR SCHOOL AT OGERE | Constructed overhead tank at Oshitelu Memorial Grammar School at Ogere | sentence case |
+| FOUNDATION WORK FOR 253 M 3 OVERHEAD TANKS IN PROGRESS, OGERE, OGUN STATE | Foundation work for 253 m3 overhead tanks in progress, Ogere, Ogun State | sentence case |
 | LAYING OF DUCTILE IRON PIPES IN PROGRESS AT OGERE | Laying of ductile iron pipes in progress at Ogere | sentence case |
+| LAYING OF IRON DUCTILE PIPES IN PROGRESS AT OGERE | Laying of iron ductile pipes in progress at Ogere | sentence case |
 | EXCAVATION OF TRENCH FOR PIPE LAYING IN PROGRESS AT OGERE | Excavation of trench for pipe laying in progress at Ogere | sentence case |
 | INSTALLATION OF HIGHLIFT PUMP IN PROGRESS AT OGERE | Installation of high lift pump in progress at Ogere | sentence case |
+| REHABILITATION OF FILTER BED IN PROGRESS AT OGERE WATER SUPPLY SCHEME | Rehabilitation of filter bed in progress at Ogere Water Supply Scheme | sentence case |
 | COMPLETED SOLAR POWERED BOREHOLE PROJECT AT PRIMARY HEALTH CENTRE TUBE, OGUN STATE, MDG’S PROJECT. | Completed solar powered borehole project at Primary Health Centre Tube, Ogun State, MDG’s project. | sentence case |
 | COMPLETED SOLAR POWERED BOREHOLE PROJECT AT PRIMARY HEALTH CENTRE IDOGO, OGUN STATE, MDG’S PROJECT. | Completed solar powered borehole project at Primary Health Centre Idogo, Ogun State, MDG’s project. | sentence case |
 | COMPLETED SOLAR POWERED BOREHOLE PROJECT AT PRIMARY HEALTH CENTRE IFOYINTEDO, OGUN STATE, MDG’S PROJECT. | Completed solar powered borehole project at Primary Health Centre Ifoyintedo, Ogun State, MDG’s project. | sentence case |
@@ -44,14 +54,19 @@ Every old-site caption, project title and narrative the new site uses, next to t
 | ASPHALTIC CONCRETE ROAD & DRAINAGE SYSTEM UNDER CONSTRUCTION AT LIFE UNIVERSITY AJEBO, OGUN STATE | Asphaltic concrete road & drainage system under construction at Life University Ajebo, Ogun State | sentence case |
 | ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION AT LIFE UNIVERSITY AJEBO, OGUN STATE | Asphaltic concrete road under construction at Life University Ajebo, Ogun State | sentence case |
 | ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION BY SATO ENGINEERING NIGERIA LIMITED | Asphaltic concrete road under construction by Sato | sentence case; country and former name removed |
+| LAYING OF WEARING COURSE IN PROGRESS | Laying of wearing course in progress | sentence case |
 | ASPHALT BEEN COMPACTED | Asphalt being compacted | sentence case |
 | LAYING OF ASPHALT IN PROGRESS | Laying of asphalt in progress | sentence case |
 | COMPACTION OF SUB-BASESE MATERIAL IN PROGRS | Compaction of sub-base material in progress | sentence case; typo fixed |
 | PRIMING OF MC1 PRIOR TO LAYING OF ASPHALT | Priming of MC1 prior to laying of asphalt | sentence case |
 | SANDFILLED AREA, AFTER GRADING AND PRIOR TO COMPACTION | Sandfilled area, after grading and prior to compaction | sentence case |
+| SPREADING AND GRADING OF SANDFILL IN PROGRESS | Spreading and grading of sandfill in progress | sentence case |
+| CCONSTRUCTION OF BOX CULVERTONSTRUCTION OF BOX CULVERT | Excavation for drains in progress by Sato | sentence case; typo fixed |
 | CONSTRUCTION OF BOX CULVERT | Construction of box culvert | sentence case |
 | Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority. | Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority. | unchanged |
 | Work in progress at the conversion of convention centre to staff quarters project at the McPhersonUniversity, Ajebo. | Work in progress at the conversion of convention centre to staff quarters project at the McPherson University, Ajebo. | typo fixed |
+| Work in progress on the Channelization of Lower Awba Stream Project at University of Ibadan by the University of Ibadan. | Work in progress on the Channelization of Lower Awba Stream Project at University of Ibadan by the University of Ibadan. | unchanged |
+| Work ongoing at the rehabilitation of roads project by Lagos State Public Works Corporation. | Work ongoing at the rehabilitation of roads project by Lagos State Public Works Corporation. | unchanged |
 
 ## Captions for photographs the old site doesn't have
 
@@ -93,6 +108,17 @@ Kept new photographs (High confidence) take their caption from the client's own 
 | W006 | Laying of asphalt in progress |  |
 | W009 | Laying of stone base in progress |  |
 | W014 | Construction of road by Sato |  |
+| W122 | Stone pitching work (flood control system) in progress at Ogere Water Supply Scheme by Sato |  |
+| W113 | Excavation in progress for 3rd segment of COT (Fiditi Dam) |  |
+| W124 | Construction of ramp access to 1st segment of cut-off trench excavation (Fiditi Dam) |  |
+| W140 | Dewatering of 3rd segment cut-off trench excavation (with ends of 1st & 2nd segments) on both sides of the pool (Fiditi Dam) |  |
+| E-2829ddc5 | Academic Building Complex Block B, Federal University of Agriculture, Abeokuta |  |
+| E-dc391f85 | Academic Building Complex Block B, Federal University of Agriculture, Abeokuta |  |
+| E-e246f0e5 | Academic Building Complex Block B, Federal University of Agriculture, Abeokuta |  |
+| W069 | Repair works on sand filter at Arakanga Water Scheme |  |
+| W068 | Repair works on sand filter now completed at Arakanga Water Scheme |  |
+| W116 | Box culvert under construction to control erosion |  |
+| W142 | Construction of drain in progress |  |
 
 ## Project titles
 

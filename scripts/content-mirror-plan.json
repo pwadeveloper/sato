@@ -90,7 +90,7 @@
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/9.jpg",
       "action": "category",
-      "target": "civil-engineering-construction/buildings",
+      "target": "building-construction",
       "file": "projects-unassigned/omololu-residence",
       "caption": "Work in progress at Mr. Lekan Omololu’s residential development, Abeokuta",
       "original": "WORK IN PROGRESS AT MR. LEKAN OMOLOLU’S RESIDENTIAL DEVELOPMENT, ABEOKUTA",
@@ -135,7 +135,7 @@
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/3.gif",
       "action": "category",
-      "target": "civil-engineering-construction/buildings",
+      "target": "building-construction",
       "out": "projects/civil-buildings/sato-office-abeokuta-front",
       "caption": "Sato office in Abeokuta",
       "original": "SATO ENGINEERING NIGERIA LIMITED OFFICE IN ABEOKUTA",
@@ -153,7 +153,7 @@
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/1.gif",
       "action": "category",
-      "target": "civil-engineering-construction/buildings",
+      "target": "building-construction",
       "file": "projects-unassigned/sato-office-abeokuta",
       "caption": "Sato office in Abeokuta",
       "original": "SATO ENGINEERING NIGERIA OFFICE IN ABEOKUTA"
@@ -175,10 +175,11 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1030872.jpg",
-      "action": "excluded",
-      "target": "safety",
+      "action": "project",
+      "target": "sagamu-intake-structure",
       "caption": "World Bank Team Inspection of on-going Sagamu Intake, Water Supply Project",
-      "why": "A site group, most without helmets (removed in prompt 16)."
+      "file": "projects/sagamu-intake-structure/world-bank-inspection",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1050419.jpg",
@@ -196,17 +197,19 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1050544.jpg",
-      "action": "excluded",
-      "target": "safety",
+      "action": "category",
+      "target": "water-resources-development-management",
       "caption": "Water Meter Installation in Progress for Ogun State Water Corporation",
-      "why": "Meter fitter at work without a helmet (removed in prompt 16)."
+      "file": "projects/water-resources/water-meter-installation-1",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1050551.jpg",
-      "action": "excluded",
-      "target": "safety",
+      "action": "category",
+      "target": "water-resources-development-management",
       "caption": "Water Meter Installation in Progress for Ogun State Water Corporation",
-      "why": "Crew at a meter installation without helmets."
+      "file": "projects/water-resources/water-meter-installation-2",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/SAM_7309.jpg",
@@ -218,10 +221,11 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/SAM_7331.jpg",
-      "action": "excluded",
-      "target": "safety",
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
       "caption": "Laying of UPVC Pipes in Progress at Ositelu Ogere",
-      "why": "Pipe-laying crew without helmets (removed in prompt 16)."
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/upvc-pipe-laying-ositelu",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/24.jpg",
@@ -234,24 +238,30 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/c22.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "CLEARING OF RIVER COURSE (DOWN STREAM) (FIDITI DAM)",
-      "why": "Two people beside the excavator without helmets (removed in prompt 16)."
+      "action": "project",
+      "target": "fiditi-earth-dam",
+      "caption": "Clearing of river course (down stream) (Fiditi Dam)",
+      "file": "projects/fiditi-earth-dam/river-course-clearing",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule.",
+      "original": "CLEARING OF RIVER COURSE (DOWN STREAM) (FIDITI DAM)",
+      "batch": "W128"
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/34.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "CLIENT INSPECTING PROGRESS OF WORK (FLOOD CONTROL SYSTEM) AT OGERE WATER SUPPLY SCHEME BY SATO ENGINEERING NIGERIA LIMITED",
-      "why": "Site inspection without helmets (removed in prompt 16). The same photograph is also 23.jpg with a different caption."
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "caption": "Client inspecting progress of work (flood control system) at Ogere Water Supply Scheme by Sato",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/flood-control-inspection",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule.",
+      "original": "CLIENT INSPECTING PROGRESS OF WORK (FLOOD CONTROL SYSTEM) AT OGERE WATER SUPPLY SCHEME BY SATO ENGINEERING NIGERIA LIMITED",
+      "batch": "W123"
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/23.jpg",
-      "action": "excluded",
-      "target": "safety",
+      "action": "duplicate",
+      "target": "2012/07/34.jpg",
       "caption": "STONE PITCHING WORK (FLOOD CONTROL SYSTEM) IN PROGRESS AT OGERE WATER SUPPLY SCHEME BY SATO ENGINEERING NIGERIA LIMITED",
-      "why": "Same photograph as 34.jpg; site inspection without helmets."
+      "note": "The old site shows the client-inspection photograph (34.jpg, W123) a second time under the stone-pitching caption. The October document gives that caption to a different photograph, W122, which is on the Ogere project with it."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/e02.jpg",
@@ -265,10 +275,12 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/211.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "DUCTILE IRON PIPES BEING OFFLOADED AT OGERE WATER SUPPLY SCHEME BY OUR CRANE LORRY",
-      "why": "A man beside a crane load without a helmet (removed in prompt 16)."
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "caption": "Ductile iron pipes being offloaded at Ogere Water Supply Scheme by our crane lorry",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/pipe-offloading-crane-lorry",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule.",
+      "original": "DUCTILE IRON PIPES BEING OFFLOADED AT OGERE WATER SUPPLY SCHEME BY OUR CRANE LORRY"
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/22.jpg",
@@ -291,10 +303,12 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/s4.gif",
-      "action": "excluded",
-      "target": "safety",
-      "caption": null,
-      "why": "Pipe-joint crew without helmets; no caption on the old site."
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "caption": "Connection of iron ductile pipe at Ogere",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-connection",
+      "batch": "W072",
+      "note": "No caption on the old site. The same photograph went up from the 8 November document with that document's label."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/s2.jpg",
@@ -317,10 +331,13 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/saas2.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "FOUNDATION WORK FOR 253 M 3 OVERHEAD TANKS IN PROGRESS, OGERE, OGUN STATE",
-      "why": "People on the site without helmets (removed in prompt 16)."
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "caption": "Foundation work for 253 m3 overhead tanks in progress, Ogere, Ogun State",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/overhead-tank-foundations",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule.",
+      "original": "FOUNDATION WORK FOR 253 M 3 OVERHEAD TANKS IN PROGRESS, OGERE, OGUN STATE",
+      "batch": "W080"
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/33.jpg",
@@ -334,10 +351,12 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/21.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "LAYING OF IRON DUCTILE PIPES IN PROGRESS AT OGERE",
-      "why": "Pipe-laying crew without helmets."
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "caption": "Laying of iron ductile pipes in progress at Ogere",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-laying-roadside",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule.",
+      "original": "LAYING OF IRON DUCTILE PIPES IN PROGRESS AT OGERE"
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/92.jpg",
@@ -361,10 +380,13 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/nhj.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "REHABILITATION OF FILTER BED IN PROGRESS AT OGERE WATER SUPPLY SCHEME",
-      "why": "Filter-bed crew without helmets (removed in prompt 16)."
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "caption": "Rehabilitation of filter bed in progress at Ogere Water Supply Scheme",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/filter-bed-rehabilitation",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule.",
+      "original": "REHABILITATION OF FILTER BED IN PROGRESS AT OGERE WATER SUPPLY SCHEME",
+      "batch": "W075"
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/c2.jpg",
@@ -451,7 +473,7 @@
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/DSC00391.jpg",
       "action": "category",
-      "target": "civil-engineering-construction/roads-pavements",
+      "target": "civil-engineering-road",
       "file": "services/roadworks-completed-carriageway",
       "caption": "Work in progress, asphalt laying & compaction",
       "original": "WORK IN PROGRESS, ASPHALT LAYING & COMPACTION"
@@ -477,7 +499,7 @@
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0028.jpg",
       "action": "category",
-      "target": "civil-engineering-construction/roads-pavements",
+      "target": "civil-engineering-road",
       "out": "projects/civil-roads-and-pavements/asphaltic-concrete-road-under-construction",
       "batch": "W017",
       "caption": "Asphaltic concrete road under construction by Sato",
@@ -493,10 +515,13 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0024.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "LAYING OF WEARING COURSE IN PROGRESS",
-      "why": "Paving crew without helmets."
+      "action": "category",
+      "target": "civil-engineering-road",
+      "caption": "Laying of wearing course in progress",
+      "file": "projects/civil-roads-and-pavements/wearing-course",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule.",
+      "original": "LAYING OF WEARING COURSE IN PROGRESS",
+      "batch": "W012"
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0013.jpg",
@@ -521,7 +546,7 @@
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0023.jpg",
       "action": "category",
-      "target": "civil-engineering-construction/roads-pavements",
+      "target": "civil-engineering-road",
       "out": "projects/civil-roads-and-pavements/sub-base-compaction",
       "batch": "W008",
       "crop": [
@@ -547,7 +572,7 @@
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image001.jpg",
       "action": "category",
-      "target": "civil-engineering-construction/roads-pavements",
+      "target": "civil-engineering-road",
       "out": "projects/civil-roads-and-pavements/sandfilled-area-after-grading",
       "batch": "W004",
       "crop": [
@@ -562,22 +587,28 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image00ds1.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "SPREADING AND GRADING OF SANDFILL IN PROGRESS",
-      "why": "Workers without helmets beside the grader."
+      "action": "category",
+      "target": "civil-engineering-road",
+      "caption": "Spreading and grading of sandfill in progress",
+      "file": "projects/civil-roads-and-pavements/sandfill-grading",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule.",
+      "original": "SPREADING AND GRADING OF SANDFILL IN PROGRESS",
+      "batch": "W005"
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_1.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "CCONSTRUCTION OF BOX CULVERTONSTRUCTION OF BOX CULVERT",
-      "why": "Workers in a drain trench without helmets."
+      "action": "category",
+      "target": "civil-engineering-road",
+      "caption": "Excavation for drains in progress by Sato",
+      "file": "projects/civil-roads-and-pavements/drain-excavation",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule. The old site's caption here is garbled (\"CCONSTRUCTION OF BOX CULVERTONSTRUCTION OF BOX CULVERT\"); the October document's label for the same photograph is used.",
+      "original": "CCONSTRUCTION OF BOX CULVERTONSTRUCTION OF BOX CULVERT",
+      "batch": "W003"
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0021.jpg",
       "action": "category",
-      "target": "civil-engineering-construction/roads-pavements",
+      "target": "civil-engineering-road",
       "out": "projects/civil-roads-and-pavements/box-culvert",
       "batch": "W141",
       "caption": "Construction of box culvert",
@@ -613,10 +644,11 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/06/Awba-Stream-Project.png",
-      "action": "excluded",
-      "target": "safety",
+      "action": "project",
+      "target": "lower-awba-stream-channelization",
       "caption": "Work in progress on the Channelization of Lower Awba Stream Project at University of Ibadan by the University of Ibadan.",
-      "why": "A man standing on the excavator's track without a helmet (removed in prompt 16)."
+      "file": "projects/lower-awba-stream-channelization/excavator-channelization",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/08/iamge1.jpg",
@@ -626,17 +658,19 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/08/image2.jpg",
-      "action": "excluded",
-      "target": "safety",
+      "action": "project",
+      "target": "fiditi-earth-dam",
       "caption": "Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority.",
-      "why": "A site meeting at close range, no helmets."
+      "file": "projects/fiditi-earth-dam/site-meeting",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/08/image3.jpg",
-      "action": "excluded",
-      "target": "safety",
+      "action": "project",
+      "target": "lagos-state-road-rehabilitation",
       "caption": "Work ongoing at the rehabilitation of roads project by Lagos State Public Works Corporation.",
-      "why": "Workers on a live road without helmets; their vests carry the former company name."
+      "file": "projects/lagos-state-road-rehabilitation/asphalt-patching",
+      "note": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/06/clip_image0023.gif",
@@ -1002,6 +1036,94 @@
       "file": "projects/civil-roads-and-pavements/road-construction-street",
       "caption": "Construction of road by Sato",
       "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W122",
+      "action": "kept",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/flood-control-stone-pitching",
+      "caption": "Stone pitching work (flood control system) in progress at Ogere Water Supply Scheme by Sato",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November to include photographs held on the helmet rule"
+    },
+    {
+      "id": "W113",
+      "action": "kept",
+      "target": "fiditi-earth-dam",
+      "file": "projects/fiditi-earth-dam/third-segment-cot-excavation",
+      "caption": "Excavation in progress for 3rd segment of COT (Fiditi Dam)",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November to include photographs held on the helmet rule"
+    },
+    {
+      "id": "W124",
+      "action": "kept",
+      "target": "fiditi-earth-dam",
+      "file": "projects/fiditi-earth-dam/first-segment-ramp-access",
+      "caption": "Construction of ramp access to 1st segment of cut-off trench excavation (Fiditi Dam)",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November to include photographs held on the helmet rule"
+    },
+    {
+      "id": "W140",
+      "action": "kept",
+      "target": "fiditi-earth-dam",
+      "file": "projects/fiditi-earth-dam/third-segment-dewatering",
+      "caption": "Dewatering of 3rd segment cut-off trench excavation (with ends of 1st & 2nd segments) on both sides of the pool (Fiditi Dam)",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November to include photographs held on the helmet rule"
+    },
+    {
+      "id": "E-2829ddc5",
+      "action": "kept",
+      "target": "funaab-academic-building-complex-block-b",
+      "file": "projects/funaab-academic-building-complex-block-b/building-red-end-wall",
+      "caption": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta",
+      "from": "Client's resent email, 8 November 2026; building named by the client. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "id": "E-dc391f85",
+      "action": "kept",
+      "target": "funaab-academic-building-complex-block-b",
+      "file": "projects/funaab-academic-building-complex-block-b/building-rear-wings",
+      "caption": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta",
+      "from": "Client's resent email, 8 November 2026; building named by the client. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "id": "E-e246f0e5",
+      "action": "kept",
+      "target": "funaab-academic-building-complex-block-b",
+      "file": "projects/funaab-academic-building-complex-block-b/building-entrance-stairs",
+      "caption": "Academic Building Complex Block B, Federal University of Agriculture, Abeokuta",
+      "from": "Client's resent email, 8 November 2026; building named by the client. Published on the client's instruction of 9 November to include photographs held on the helmet rule."
+    },
+    {
+      "id": "W069",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/arakanga-sand-filter-repair",
+      "caption": "Repair works on sand filter at Arakanga Water Scheme",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November to include photographs held on the helmet rule"
+    },
+    {
+      "id": "W068",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/arakanga-sand-filter-completed",
+      "caption": "Repair works on sand filter now completed at Arakanga Water Scheme",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November to include photographs held on the helmet rule"
+    },
+    {
+      "id": "W116",
+      "action": "kept",
+      "target": "civil-engineering-road",
+      "file": "projects/civil-roads-and-pavements/box-culvert-erosion-control",
+      "caption": "Box culvert under construction to control erosion",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November to include photographs held on the helmet rule"
+    },
+    {
+      "id": "W142",
+      "action": "kept",
+      "target": "civil-engineering-road",
+      "file": "projects/civil-roads-and-pavements/drain-construction",
+      "caption": "Construction of drain in progress",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November to include photographs held on the helmet rule"
     }
   ],
   "roles": {

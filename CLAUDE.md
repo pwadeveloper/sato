@@ -351,18 +351,19 @@ name, alt text, and any crop), which `npm run images` processes. The manifest's
 
 **Every published photograph is checked twice before it goes up.** No metadata
 gets through: `npm run check:images` (part of `build:prod`) fails on any EXIF,
-GPS, XMP or IPTC in `/public/images`. And it's checked by eye: no one on site
-without a helmet, no number plates, and no legible text carrying the former
-company name or the country. Text is cropped out, never painted over, because
+GPS, XMP or IPTC in `/public/images`. And it's checked by eye: no number
+plates, no burned-in dates or captions, and no legible text carrying the
+former company name or the country. Text is cropped out, never painted over, because
 an edited signboard looks doctored to someone verifying the company. If a crop
 would lose the subject, the photograph goes up at 800px only, and only if the
 text can't be read at that size (`maxWidth` in `client-photo-selection.json`);
 otherwise it doesn't go up.
 
-**One exception to the helmet check: the water document of 8 November**
-(`docs/decisions/water-photo-batch.md`). On the client's instruction its
-photographs are published without it. That covers that document only; nothing
-else held on the helmet rule comes back without his word.
+**There is no helmet check any more** (client, 9 November;
+`docs/decisions/water-photo-batch.md`). He wants his photographs, and the old
+site's, published, so everything that had been held for people on site
+without helmets is now up. Privacy still counts: the children at the Tube tap
+stand stay off.
 
 There is no `/equipment` page. It was removed on the client's instruction;
 `equipment.json` stays in the repo in case it returns, and `/equipment` and the
@@ -521,10 +522,9 @@ disagree with this file:
     photograph in it was already in the October one. Labels are read from
     the page geometry, because text order puts three against the wrong
     photograph. On the client's instruction every photograph in it is
-    published, with the helmet check waived for this document only: 22 on the
-    Ogere project, and the road shots and the drilling rig in their category
-    galleries. Block B is the Building spotlight and the ground tank is the
-    Water spotlight. **Current for photographs.**
+    published, and then every photograph held anywhere on the helmet rule:
+    the helmet check is gone. Block B is the Building spotlight and the
+    ground tank is the Water spotlight. **Current for photographs.**
 
 ## Review deployments
 
