@@ -227,6 +227,10 @@ if (await exists(CLIENT_PHOTOS)) {
  *   crop    [left, top, width, height] as fractions of the source, applied first
  *   header  { aspect: [w, h], focusY } — the largest box of that ratio, centred
  *           horizontally and on focusY vertically, cut from the (cropped) frame
+ *   maxWidth  caps both files at this width. October's ruling 2 for the former
+ *           name in a photograph: where no crop keeps the subject, publish at
+ *           800px, and only if the text can't be read at that size. Both paths
+ *           still exist, so components need no branch.
  *
  * `source` is usually an upright working copy (extract-client-photos.mjs
  * applied its EXIF rotation). It may also be a file straight from the inbox
@@ -265,7 +269,9 @@ if (await exists(SELECTION)) {
     }
     const srcMtime = Math.max((await stat(src)).mtimeMs, (await stat(SELECTION)).mtimeMs);
     const files = [];
-    for (const [suffix, width] of [['', MAX_WIDTH], ['-800', SMALL_WIDTH]]) {
+    const cap = entry.maxWidth ?? MAX_WIDTH;
+    for (const [suffix, w] of [['', MAX_WIDTH], ['-800', SMALL_WIDTH]]) {
+      const width = Math.min(w, cap);
       const rel = `${entry.out}${suffix}.webp`;
       const absOut = join(OUT, rel);
       files.push(rel);
@@ -277,7 +283,7 @@ if (await exists(SELECTION)) {
       written++; bytes += info.size;
     }
     results.push({ out: entry.out, sourceWidth: box.width, files });
-    const outW = Math.min(box.width, MAX_WIDTH);
+    const outW = Math.min(box.width, MAX_WIDTH, entry.maxWidth ?? MAX_WIDTH);
     approved.push({
       src: `/images/${entry.out}.webp`,
       small: `/images/${entry.out}-800.webp`,
@@ -294,6 +300,7 @@ if (await exists(SELECTION)) {
       placement: entry.placement,
       alt: entry.alt,
       crop: entry.crop ? entry.cropWhy ?? true : undefined,
+      maxWidth: entry.maxWidth,
       header: entry.header ? `${entry.header.aspect.join(':')} header crop` : undefined,
     });
   }

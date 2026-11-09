@@ -355,7 +355,14 @@ GPS, XMP or IPTC in `/public/images`. And it's checked by eye: no one on site
 without a helmet, no number plates, and no legible text carrying the former
 company name or the country. Text is cropped out, never painted over, because
 an edited signboard looks doctored to someone verifying the company. If a crop
-would lose the subject, the photograph doesn't go up.
+would lose the subject, the photograph goes up at 800px only, and only if the
+text can't be read at that size (`maxWidth` in `client-photo-selection.json`);
+otherwise it doesn't go up.
+
+**One exception to the helmet check: the water document of 8 November**
+(`docs/decisions/water-photo-batch.md`). On the client's instruction its
+photographs are published without it. That covers that document only; nothing
+else held on the helmet rule comes back without his word.
 
 There is no `/equipment` page. It was removed on the client's instruction;
 `equipment.json` stays in the repo in case it returns, and `/equipment` and the
@@ -513,9 +520,11 @@ disagree with this file:
 10. `water-photo-batch.md` — the 17-page water document of 8 November. Every
     photograph in it was already in the October one. Labels are read from
     the page geometry, because text order puts three against the wrong
-    photograph. Two placed: the Life University roller, and the Ogere ground
-    tank once the client named its site. Block B is the Building spotlight
-    and the ground tank is the Water spotlight. **Current for photographs.**
+    photograph. On the client's instruction every photograph in it is
+    published, with the helmet check waived for this document only: 22 on the
+    Ogere project, and the road shots and the drilling rig in their category
+    galleries. Block B is the Building spotlight and the ground tank is the
+    Water spotlight. **Current for photographs.**
 
 ## Review deployments
 

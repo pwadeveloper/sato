@@ -107,14 +107,14 @@
               "src": "/images/services/water-meter-training.webp",
               "alt": "Training of Ogun State Water Corporation Staff on Water Meter Installation",
               "width": 640,
-              "height": 480,
+              "height": 418,
               "caption": "Training of Ogun State Water Corporation Staff on Water Meter Installation"
             },
             {
               "src": "/images/projects/water-resources/water-meter-strategy-session.webp",
               "alt": "Strategy Session on Water Meter Installation",
               "width": 640,
-              "height": 480,
+              "height": 418,
               "caption": "Strategy Session on Water Meter Installation"
             },
             {
@@ -123,6 +123,13 @@
               "width": 1920,
               "height": 1440,
               "caption": "Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State"
+            },
+            {
+              "src": "/images/projects/water-resources/drilling-rig-and-compressor.webp",
+              "alt": "Truck-mounted drilling rig beside its Ingersoll Rand compressor",
+              "width": 1920,
+              "height": 1754,
+              "caption": "Picture showing the drilling rig and Ingersoll Rand compressor 825cfm model by Sato"
             }
           ]
         },
@@ -189,6 +196,48 @@
               "width": 1920,
               "height": 1426,
               "caption": "Box culvert under construction by Sato"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/mc1-priming.webp",
+              "alt": "Road surface glistening with MC1 prime ahead of asphalt laying, kerbs set on the left",
+              "width": 1920,
+              "height": 1404,
+              "caption": "Priming of MC1 prior to laying of asphalt"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/asphalt-laying-palm-road.webp",
+              "alt": "Roller compacting fresh asphalt on a road lined with palm trees",
+              "width": 1920,
+              "height": 2560,
+              "caption": "Laying of asphalt in progress"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/stone-base.webp",
+              "alt": "Laid stone base along a widened urban road, with new kerbs on both sides",
+              "width": 1920,
+              "height": 1023,
+              "caption": "Laying of stone base in progress"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/asphalt-laying-paver.webp",
+              "alt": "Paver and roller laying asphalt on an urban road",
+              "width": 1920,
+              "height": 1440,
+              "caption": "Laying of asphalt in progress"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/asphalt-compacted.webp",
+              "alt": "Newly compacted asphalt road, with a crew finishing its edges",
+              "width": 1920,
+              "height": 1440,
+              "caption": "Asphalt being compacted"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/road-construction-street.webp",
+              "alt": "Roller compacting new asphalt on a busy street",
+              "width": 1920,
+              "height": 2560,
+              "caption": "Construction of road by Sato"
             }
           ]
         },

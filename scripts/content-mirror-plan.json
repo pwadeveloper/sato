@@ -272,10 +272,13 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/22.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "CONSTRUCTION WORK IN PROGRESS AT OGERE WATER SCHEME OGUN STATE",
-      "why": "Worker on the rebar without a helmet (removed in prompt 16)."
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "caption": "Construction work in progress at Ogere Water Scheme Ogun State",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/slab-reinforcement",
+      "batch": "W085",
+      "original": "CONSTRUCTION WORK IN PROGRESS AT OGERE WATER SCHEME OGUN STATE",
+      "note": "Published from the 8 November document on the client's instruction (helmet rule waived for it)."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/1.jpg",
@@ -295,10 +298,13 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/s2.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "LAYING OF DUCTILE IRON PIPE AT OGERE",
-      "why": "Workers in a deep trench without helmets."
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "caption": "Laying of ductile iron pipe at Ogere",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/pipe-laying-trench",
+      "batch": "W083",
+      "original": "LAYING OF DUCTILE IRON PIPE AT OGERE",
+      "note": "Published from the 8 November document on the client's instruction (helmet rule waived for it)."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/ds2.jpg",
@@ -318,10 +324,13 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/33.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "LAYING OF DUCTILE IRON PIPES IN PROGRESS AT OGERE",
-      "why": "Pipe-laying crew, mostly without helmets."
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "caption": "Laying of ductile iron pipes in progress at Ogere",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/pipe-laying-crane",
+      "batch": "W079",
+      "original": "LAYING OF DUCTILE IRON PIPES IN PROGRESS AT OGERE",
+      "note": "Published from the 8 November document on the client's instruction (helmet rule waived for it)."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/21.jpg",
@@ -332,17 +341,23 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/92.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "EXCAVATION OF TRENCH FOR PIPE LAYING IN PROGRESS AT OGERE",
-      "why": "People in a deep trench without helmets (removed in prompt 16)."
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "caption": "Excavation of trench for pipe laying in progress at Ogere",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/pipe-trench-excavation",
+      "batch": "W076",
+      "original": "EXCAVATION OF TRENCH FOR PIPE LAYING IN PROGRESS AT OGERE",
+      "note": "Published from the 8 November document on the client's instruction (helmet rule waived for it)."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/62.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "INSTALLATION OF HIGHLIFT PUMP IN PROGRESS AT OGERE",
-      "why": "Pump installers without helmets (removed in prompt 16)."
+      "action": "project",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "caption": "Installation of high lift pump in progress at Ogere",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-installation",
+      "batch": "W074",
+      "original": "INSTALLATION OF HIGHLIFT PUMP IN PROGRESS AT OGERE",
+      "note": "Published from the 8 November document on the client's instruction (helmet rule waived for it)."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/nhj.jpg",
@@ -485,17 +500,23 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0013.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "ASPHALT BEEN COMPACTED",
-      "why": "Paving crew close up without helmets (removed in prompt 16)."
+      "action": "category",
+      "target": "civil-engineering-road",
+      "caption": "Asphalt being compacted",
+      "file": "projects/civil-roads-and-pavements/asphalt-compacted",
+      "batch": "W010",
+      "original": "ASPHALT BEEN COMPACTED",
+      "note": "Published from the 8 November document on the client's instruction (helmet rule waived for it)."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0011.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "LAYING OF ASPHALT IN PROGRESS",
-      "why": "Roller crew without helmets (removed in prompt 16)."
+      "action": "category",
+      "target": "civil-engineering-road",
+      "caption": "Laying of asphalt in progress",
+      "file": "projects/civil-roads-and-pavements/asphalt-laying-paver",
+      "batch": "W011",
+      "original": "LAYING OF ASPHALT IN PROGRESS",
+      "note": "Published from the 8 November document on the client's instruction (helmet rule waived for it)."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0023.jpg",
@@ -515,10 +536,13 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0022.jpg",
-      "action": "excluded",
-      "target": "safety",
-      "caption": "PRIMING OF MC1 PRIOR TO LAYING OF ASPHALT",
-      "why": "Two workers at the kerb without helmets; a caption is also burned into the image."
+      "action": "category",
+      "target": "civil-engineering-road",
+      "caption": "Priming of MC1 prior to laying of asphalt",
+      "file": "projects/civil-roads-and-pavements/mc1-priming",
+      "batch": "W007",
+      "original": "PRIMING OF MC1 PRIOR TO LAYING OF ASPHALT",
+      "note": "Published from the 8 November document on the client's instruction (helmet rule waived for it)."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image001.jpg",
@@ -769,11 +793,11 @@
     },
     {
       "id": "W054",
-      "action": "service",
-      "target": "services:mechanical-engineering (header)",
-      "file": "services/mechanical-engineering/drilling-rig-and-compressor-header",
-      "caption": null,
-      "source": "Client's Word document"
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/drilling-rig-and-compressor",
+      "caption": "Picture showing the drilling rig and Ingersoll Rand compressor 825cfm model by Sato",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
     },
     {
       "id": "W056",
@@ -866,6 +890,118 @@
       "file": "projects/funaab-colplant-building-phase-ii/courtyard-3",
       "caption": "College of Plant Science and Crop Production (COLPLANT) Building Phase II, Federal University of Agriculture, Abeokuta",
       "from": "Client's resent email, 8 November 2026; building named by the client"
+    },
+    {
+      "id": "W071",
+      "action": "kept",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/alum-dosing-pumps",
+      "caption": "Installation of alum dosing pumps at Ogere Water Supply Scheme",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W070",
+      "action": "kept",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/lime-dosing-pumps",
+      "caption": "Installation of lime dosing pumps at Ogere Water Supply Scheme",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W073",
+      "action": "kept",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/pipe-bend-support",
+      "caption": "Casting of concrete support for pipe bend at Ogere",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W072",
+      "action": "kept",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-connection",
+      "caption": "Connection of iron ductile pipe at Ogere",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W078",
+      "action": "kept",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/oshitelu-junction-connection",
+      "caption": "Connection of 300mm pipe to 150mm pipe at Oshitelu Junction at Ogere",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W082",
+      "action": "kept",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/pipe-laying-roadside",
+      "caption": "Laying of ductile iron pipe in progress at Ogere",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W087",
+      "action": "kept",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/ground-tank-construction",
+      "caption": "Construction of ground tank by Sato",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W091",
+      "action": "kept",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/clear-water-tank-base",
+      "caption": "Construction of clear water tank in progress at the Ogere Water Supply Scheme",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W090",
+      "action": "kept",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/clear-water-tank-reinforcement",
+      "caption": "Construction of clear water tank in progress at the Ogere Water Supply Scheme",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W093",
+      "action": "kept",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/pump-house-works",
+      "caption": "Ongoing works at Ogere Water Supply Scheme by Sato",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W092",
+      "action": "kept",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/pump-house-pipework",
+      "caption": "Ongoing works at Ogere Water Supply Scheme by Sato",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W006",
+      "action": "kept",
+      "target": "civil-engineering-road",
+      "file": "projects/civil-roads-and-pavements/asphalt-laying-palm-road",
+      "caption": "Laying of asphalt in progress",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W009",
+      "action": "kept",
+      "target": "civil-engineering-road",
+      "file": "projects/civil-roads-and-pavements/stone-base",
+      "caption": "Laying of stone base in progress",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
+    },
+    {
+      "id": "W014",
+      "action": "kept",
+      "target": "civil-engineering-road",
+      "file": "projects/civil-roads-and-pavements/road-construction-street",
+      "caption": "Construction of road by Sato",
+      "from": "Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document)"
     }
   ],
   "roles": {

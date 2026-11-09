@@ -27,7 +27,11 @@ Every old-site caption, project title and narrative the new site uses, next to t
 | CLAY COMPACTION FOR COT (FIDITI DAM) | Clay compaction for COT (Fiditi Dam) | sentence case |
 | EXCAVATION WORK (EROSION CONTROL) IN PROGRESS AT MABUNMI JUNCTION, IJEBU-ODE, OGUN STATE | Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State | sentence case |
 | CONSTRUCTION WORK IN PROGRESS AT OGERE WATER SCHEME OGUN STATE | Construction work in progress at Ogere Water Scheme Ogun State | sentence case |
+| LAYING OF DUCTILE IRON PIPE AT OGERE | Laying of ductile iron pipe at Ogere | sentence case |
 | CONSTRUCTED OVERHEAD TANK AT OSHITELU MEMORIAL GRAMMAR SCHOOL AT OGERE | Constructed overhead tank at Oshitelu Memorial Grammar School at Ogere | sentence case |
+| LAYING OF DUCTILE IRON PIPES IN PROGRESS AT OGERE | Laying of ductile iron pipes in progress at Ogere | sentence case |
+| EXCAVATION OF TRENCH FOR PIPE LAYING IN PROGRESS AT OGERE | Excavation of trench for pipe laying in progress at Ogere | sentence case |
+| INSTALLATION OF HIGHLIFT PUMP IN PROGRESS AT OGERE | Installation of high lift pump in progress at Ogere | sentence case |
 | COMPLETED SOLAR POWERED BOREHOLE PROJECT AT PRIMARY HEALTH CENTRE TUBE, OGUN STATE, MDG’S PROJECT. | Completed solar powered borehole project at Primary Health Centre Tube, Ogun State, MDG’s project. | sentence case |
 | COMPLETED SOLAR POWERED BOREHOLE PROJECT AT PRIMARY HEALTH CENTRE IDOGO, OGUN STATE, MDG’S PROJECT. | Completed solar powered borehole project at Primary Health Centre Idogo, Ogun State, MDG’s project. | sentence case |
 | COMPLETED SOLAR POWERED BOREHOLE PROJECT AT PRIMARY HEALTH CENTRE IFOYINTEDO, OGUN STATE, MDG’S PROJECT. | Completed solar powered borehole project at Primary Health Centre Ifoyintedo, Ogun State, MDG’s project. | sentence case |
@@ -40,7 +44,10 @@ Every old-site caption, project title and narrative the new site uses, next to t
 | ASPHALTIC CONCRETE ROAD & DRAINAGE SYSTEM UNDER CONSTRUCTION AT LIFE UNIVERSITY AJEBO, OGUN STATE | Asphaltic concrete road & drainage system under construction at Life University Ajebo, Ogun State | sentence case |
 | ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION AT LIFE UNIVERSITY AJEBO, OGUN STATE | Asphaltic concrete road under construction at Life University Ajebo, Ogun State | sentence case |
 | ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION BY SATO ENGINEERING NIGERIA LIMITED | Asphaltic concrete road under construction by Sato | sentence case; country and former name removed |
+| ASPHALT BEEN COMPACTED | Asphalt being compacted | sentence case |
+| LAYING OF ASPHALT IN PROGRESS | Laying of asphalt in progress | sentence case |
 | COMPACTION OF SUB-BASESE MATERIAL IN PROGRS | Compaction of sub-base material in progress | sentence case; typo fixed |
+| PRIMING OF MC1 PRIOR TO LAYING OF ASPHALT | Priming of MC1 prior to laying of asphalt | sentence case |
 | SANDFILLED AREA, AFTER GRADING AND PRIOR TO COMPACTION | Sandfilled area, after grading and prior to compaction | sentence case |
 | CONSTRUCTION OF BOX CULVERT | Construction of box culvert | sentence case |
 | Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority. | Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority. | unchanged |
@@ -64,6 +71,7 @@ Kept new photographs (High confidence) take their caption from the client's own 
 | W126 | Removal of top soil within 3rd segment cut-off trench area (Fiditi Dam) | Client's Word document |
 | W131 | Excavation in progress for 3rd segment of COT (Fiditi Dam) | Client's Word document |
 | W137 | Spreading of clay for 2nd segment cut-off trench (Fiditi Dam) | Client's Word document |
+| W054 | Picture showing the drilling rig and Ingersoll Rand compressor 825cfm model by Sato |  |
 | W089 | Construction of ground tank by Sato |  |
 | W020 | Asphaltic concrete road under construction at Life University Ajebo, Ogun State |  |
 | E-068d09d3 | Academic Building Complex Block B, Federal University of Agriculture, Abeokuta |  |
@@ -71,6 +79,20 @@ Kept new photographs (High confidence) take their caption from the client's own 
 | E-2bbc6895 | College of Plant Science and Crop Production (COLPLANT) Building Phase II, Federal University of Agriculture, Abeokuta |  |
 | E-4ced5baf | College of Plant Science and Crop Production (COLPLANT) Building Phase II, Federal University of Agriculture, Abeokuta |  |
 | E-cdec50db | College of Plant Science and Crop Production (COLPLANT) Building Phase II, Federal University of Agriculture, Abeokuta |  |
+| W071 | Installation of alum dosing pumps at Ogere Water Supply Scheme |  |
+| W070 | Installation of lime dosing pumps at Ogere Water Supply Scheme |  |
+| W073 | Casting of concrete support for pipe bend at Ogere |  |
+| W072 | Connection of iron ductile pipe at Ogere |  |
+| W078 | Connection of 300mm pipe to 150mm pipe at Oshitelu Junction at Ogere |  |
+| W082 | Laying of ductile iron pipe in progress at Ogere |  |
+| W087 | Construction of ground tank by Sato |  |
+| W091 | Construction of clear water tank in progress at the Ogere Water Supply Scheme |  |
+| W090 | Construction of clear water tank in progress at the Ogere Water Supply Scheme |  |
+| W093 | Ongoing works at Ogere Water Supply Scheme by Sato |  |
+| W092 | Ongoing works at Ogere Water Supply Scheme by Sato |  |
+| W006 | Laying of asphalt in progress |  |
+| W009 | Laying of stone base in progress |  |
+| W014 | Construction of road by Sato |  |
 
 ## Project titles
 

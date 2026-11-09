@@ -2,7 +2,7 @@
 
 Everything the website still needs, grouped by who has to answer it.
 
-**0 placeholders outstanding** and **0 pages of capability copy awaiting approval.** Generated 2026-11-08 by `npm run check:placeholders`, so the detected items are always current. The rest is kept by hand in `docs/open-items-extra.md`.
+**0 placeholders outstanding** and **0 pages of capability copy awaiting approval.** Generated 2026-11-09 by `npm run check:placeholders`, so the detected items are always current. The rest is kept by hand in `docs/open-items-extra.md`.
 
 A placeholder is text that is visible on the site right now. The production build is blocked until every one is resolved and every service is approved.
 
@@ -31,20 +31,24 @@ now on its project — and left these. See
   scheme?** If so, it becomes the Water spotlight and goes on the Ogere
   project. Recent water photographs of finished work, with no one on site
   without a helmet, would solve this for good.
+- **Settled 9 November: every photograph in the document is published**,
+  on the client's instruction (helmet check waived for this document). The
+  two questions below stay open only for *where* a photograph sits: until he
+  names a project, the drilling rig is in the Water Resources gallery and the
+  road photographs are in the Civil Engineering & Road Construction gallery.
 - **Is the drilling rig on page 1 at Laderin Estate, Abeokuta, and is the
   drilling part of the Six Flats project there?** Its label names the rig and
   compressor but no place; the photograph beside it names Laderin Estate (that
   one is already on the site, in the Electrical & Mechanical gallery). The
   Laderin project on the site is the six flats, a building contract, so the
-  rig goes nowhere until you say where it belongs. Its compressor also carries
-  the former name, which would have to be cropped out.
+  rig stays in the category gallery until you say where it belongs. Its
+  compressor's former-name decal is cropped out.
 - **Road photographs with no project in their label** (pages 13–16):
   "Laying of asphalt in progress", "Priming of MC1 prior to laying of
   asphalt", "Laying of stone base in progress", "Asphalt been compacted",
   "Construction of road". The stone-base photograph carries burned-in text
   naming **"Infrastructural improvement of Yaba–Iddo"**, which is not a project
-  on the site. Most also show people on site without helmets. Which projects
-  are they, and is Yaba–Iddo one to add? You mentioned more road photographs
+  on the site. Which projects are they, and is Yaba–Iddo one to add? You mentioned more road photographs
   are coming; these can wait for that batch.
 - **The Block B spotlight is a 1080px photograph** (the copy from the resent
   email, probably compressed by WhatsApp). It is soft at full width on a

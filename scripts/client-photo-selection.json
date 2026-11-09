@@ -488,7 +488,14 @@
       "oldSite": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1050453.jpg",
       "source": "raw-assets/old-site/2019/10/P1050453.jpg",
       "originalFilename": "old site: 2019/10/P1050453.jpg",
-      "alt": "Strategy Session on Water Meter Installation"
+      "alt": "Strategy Session on Water Meter Installation",
+      "crop": [
+        0,
+        0,
+        1,
+        0.87
+      ],
+      "cropWhy": "Bottom 13% off: the camera burned a date stamp into the corner"
     },
     {
       "out": "projects/water-resources/mabunmi-junction-erosion-control",
@@ -657,6 +664,274 @@
       "docxCaption": "CONSTRUCTION OF GROUND TANK, BY SATO ENGINEERING NIGERIA LIMITED",
       "alt": "Circular concrete ground tank holding water at the Ogere water supply scheme",
       "placement": "Client confirmed 9 November 2026: the ground tank is at the Ogere water supply scheme. Its label in the 8 November document (page 9) names no site. N008 in that batch, W089 in October (pHash 0)."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/alum-dosing-pumps",
+      "working": "W071",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N023-pictures-image4.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image4.jpeg",
+      "docxCaption": "INSTALLATION OF ALUM DOZING PUMPS AT OGERE WATER SUPPLY SCHEME",
+      "alt": "Two fitters connecting the alum dosing pumps in the chemical house at the Ogere water supply scheme",
+      "placement": "Page 2 of the 8 November document. N023 in that batch, W071 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/lime-dosing-pumps",
+      "working": "W070",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N022-pictures-image3.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image3.jpeg",
+      "docxCaption": "INSTALLATION OF LIME DOZING PUMPS AT OGERE WATER SUPPLY SCHEME",
+      "alt": "Lime dosing pumps mounted on the wall of the chemical house at the Ogere water supply scheme",
+      "crop": [
+        0,
+        0.1,
+        0.42,
+        0.72
+      ],
+      "cropWhy": "Cropped to the pumps: right 58% off (the fitter's vest carries the former name, legible at full size), and the empty top and floor trimmed",
+      "placement": "Page 2 of the 8 November document. N022 in that batch, W070 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/pipe-bend-support",
+      "working": "W073",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N025-pictures-image6.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image6.jpeg",
+      "docxCaption": "CASTING OF CONCRETE SUPPORT FOR PIPE BEND AT OGERE",
+      "alt": "Worker casting the concrete support under a ductile iron pipe bend at Ogere",
+      "cropWhy": "800px only: the vest's small print carries the former name; unreadable at 800px, and a crop would lose the pipe bend",
+      "maxWidth": 800,
+      "placement": "Page 3 of the 8 November document. N025 in that batch, W073 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-connection",
+      "working": "W072",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N024-pictures-image5.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image5.jpeg",
+      "docxCaption": "CONNECTION OF IRON DUCTILE PIPE AT OGERE",
+      "alt": "Pipe fitters joining two ductile iron pipes with a coupling at Ogere",
+      "placement": "Page 3 of the 8 November document. N024 in that batch, W072 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-installation",
+      "working": "W074",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N026-pictures-image7.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image7.jpeg",
+      "docxCaption": "INSTALLATION OF HIGHLIFT PUMP IN PROGRESS AT OGERE",
+      "alt": "Fitter installing a vertical high lift pump in the pump house at Ogere",
+      "crop": [
+        0.27,
+        0,
+        0.73,
+        1
+      ],
+      "cropWhy": "Left 27% off: a vest carrying the former name, legible at full size",
+      "placement": "Page 4 of the 8 November document. N026 in that batch, W074 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/pipe-trench-excavation",
+      "working": "W076",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N027-pictures-image8.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image8.jpeg",
+      "docxCaption": "EXCAVATION OF TRENCH FOR PIPE LAYING IN PROGRESS AT OGERE",
+      "alt": "Trench dug for pipe laying beside a roadside shop at Ogere, with the site team",
+      "placement": "Page 5 of the 8 November document. N027 in that batch, W076 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/oshitelu-junction-connection",
+      "working": "W078",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N028-pictures-image9.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image9.jpeg",
+      "docxCaption": "CONNECTION OF 300MM PIPE TO 150MM PIPE AT OSHITELU JUNCTION AT OGERE",
+      "alt": "Reducer joining a 300mm main to a 150mm pipe in the trench at Oshitelu Junction, Ogere",
+      "placement": "Page 5 of the 8 November document. N028 in that batch, W078 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/pipe-laying-crane",
+      "working": "W079",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N002-pictures-image10.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image10.jpeg",
+      "docxCaption": "LAYING OF DUCTILE IRON PIPES IN PROGRESS AT OGERE",
+      "alt": "Ductile iron pipe lowered into a roadside trench from a crane lorry at Ogere",
+      "placement": "Page 6 of the 8 November document. N002 in that batch, W079 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/pipe-laying-trench",
+      "working": "W083",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N004-pictures-image12.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image12.jpeg",
+      "docxCaption": "LAYING OF DUCTILE IRON PIPE AT OGERE",
+      "alt": "Pipe fitters jointing ductile iron pipe in a roadside trench at Ogere",
+      "cropWhy": "800px only: two vests' small print carries the former name; unreadable at 800px, and a crop would cut through the fitters",
+      "maxWidth": 800,
+      "placement": "Page 7 of the 8 November document. N004 in that batch, W083 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/pipe-laying-roadside",
+      "working": "W082",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N003-pictures-image11.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image11.jpeg",
+      "docxCaption": "LAYING OF DUCTILE IRON PIPE IN PROGRESS AT OGERE",
+      "alt": "Ductile iron pipeline being laid along a roadside trench at Ogere",
+      "placement": "Page 7 of the 8 November document. N003 in that batch, W082 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/slab-reinforcement",
+      "working": "W085",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N005-pictures-image13.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image13.jpeg",
+      "docxCaption": "CONSTRUCTION WORK IN PROGRESS AT OGERE WATER SCHEME OGUN STATE",
+      "alt": "Reinforcement and formwork for a concrete slab at the Ogere water scheme",
+      "placement": "Page 8 of the 8 November document. N005 in that batch, W085 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/ground-tank-construction",
+      "working": "W087",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N007-pictures-image15.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image15.jpeg",
+      "docxCaption": "CONSTRUCTION OF GROUND TANK, BY SATO ENGINEERING NIGERIA LIMITED",
+      "alt": "Ground tank under construction at the Ogere water supply scheme, with access stairs down to the excavation",
+      "placement": "Page 9 of the 8 November document. N007 in that batch, W087 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/clear-water-tank-base",
+      "working": "W091",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N010-pictures-image18.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image18.jpeg",
+      "docxCaption": "CONSTRUCTION OF CLEAR WATER TANK IN PROGRESS AT THE OGERE WATER SUPPLY SCHEME",
+      "alt": "Base reinforcement for the clear water tank being fixed at the Ogere water supply scheme",
+      "placement": "Page 10 of the 8 November document. N010 in that batch, W091 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/clear-water-tank-reinforcement",
+      "working": "W090",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N009-pictures-image17.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image17.jpeg",
+      "docxCaption": "CONSTRUCTION OF CLEAR WATER TANK IN PROGRESS AT THE OGERE WATER SUPPLY SCHEME",
+      "alt": "Reinforcement and waterstop for the floor and walls of the clear water tank at the Ogere water supply scheme",
+      "placement": "Page 10 of the 8 November document. N009 in that batch, W090 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/pump-house-works",
+      "working": "W093",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N013-pictures-image20.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image20.jpeg",
+      "docxCaption": "ONGOING WORKS AT OGERE WATER SUPPLY SCHEME BY SATO ENGINEERING NIGERIA LIMITED",
+      "alt": "Fitters working on a pump and valve in a pump house at the Ogere water supply scheme",
+      "placement": "Page 11 of the 8 November document. N013 in that batch, W093 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/pump-house-pipework",
+      "working": "W092",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N011-pictures-image19.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image19.jpeg",
+      "docxCaption": "ONGOING WORKS AT OGERE WATER SUPPLY SCHEME BY SATO ENGINEERING NIGERIA LIMITED",
+      "alt": "Pipework and valves in the pump house at Ogere, with fitters at work",
+      "crop": [
+        0,
+        0,
+        1,
+        0.48
+      ],
+      "cropWhy": "Bottom 52% off: two vests carrying the former name, legible at full size",
+      "placement": "Page 11 of the 8 November document. N011 in that batch, W092 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/water-resources/drilling-rig-and-compressor",
+      "working": "W054",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N001-pictures-image1.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image1.jpeg",
+      "docxCaption": "PICTURE SHOWING THE DRILLING RIG AND INGERSOLL ROAD COMPRESSOR 825CFM MODEL BY SATO ENGINEERING NIGERIA LIMITED",
+      "alt": "Truck-mounted drilling rig beside its Ingersoll Rand compressor",
+      "crop": [
+        0,
+        0.05,
+        0.78,
+        0.95
+      ],
+      "cropWhy": "Right 22% off: the compressor's decal carries the former name (October's crop of the same file)",
+      "placement": "Page 1 of the 8 November document. N001 in that batch, W054 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/mc1-priming",
+      "working": "W007",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N015-pictures-image22.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image22.jpeg",
+      "docxCaption": "PRIMING OF MC1 PRIOR TO LAYING OF ASPHALT",
+      "alt": "Road surface glistening with MC1 prime ahead of asphalt laying, kerbs set on the left",
+      "crop": [
+        0,
+        0,
+        1,
+        0.975
+      ],
+      "cropWhy": "Bottom strip off: a caption burned into the image",
+      "placement": "Page 13 of the 8 November document. N015 in that batch, W007 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/asphalt-laying-palm-road",
+      "working": "W006",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N014-pictures-image21.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image21.jpeg",
+      "docxCaption": "LAYING OF ASPHALT IN PROGRESS",
+      "alt": "Roller compacting fresh asphalt on a road lined with palm trees",
+      "placement": "Page 13 of the 8 November document. N014 in that batch, W006 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/stone-base",
+      "working": "W009",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N017-pictures-image24.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image24.jpeg",
+      "docxCaption": "LAYING OF STONE BASE IN PROGRESS",
+      "alt": "Laid stone base along a widened urban road, with new kerbs on both sides",
+      "crop": [
+        0,
+        0,
+        1,
+        0.71
+      ],
+      "cropWhy": "Bottom band off: burned-in text (project name, certificate number and chainage)",
+      "placement": "Page 14 of the 8 November document. N017 in that batch, W009 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/asphalt-laying-paver",
+      "working": "W011",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N019-pictures-image26.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image26.jpeg",
+      "docxCaption": "LAYING OF ASPHALT IN PROGRESS",
+      "alt": "Paver and roller laying asphalt on an urban road",
+      "placement": "Page 15 of the 8 November document. N019 in that batch, W011 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/asphalt-compacted",
+      "working": "W010",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N018-pictures-image25.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image25.jpeg",
+      "docxCaption": "ASPHALT BEEN COMPACTED",
+      "alt": "Newly compacted asphalt road, with a crew finishing its edges",
+      "placement": "Page 15 of the 8 November document. N018 in that batch, W010 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/road-construction-street",
+      "working": "W014",
+      "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N020-pictures-image27.jpg",
+      "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image27.jpeg",
+      "docxCaption": "CONSTRUCTION OF ROAD BY SATO ENGINEERING NIGERIA LIMITED",
+      "alt": "Roller compacting new asphalt on a busy street",
+      "placement": "Page 16 of the 8 November document. N020 in that batch, W014 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document."
+    },
+    {
+      "out": "services/water-meter-training",
+      "working": null,
+      "oldSite": "https://www.satoengineering.com/wp-content/uploads/2019/10/P1050419.jpg",
+      "source": "raw-assets/old-site/2019/10/P1050419.jpg",
+      "originalFilename": "old site: 2019/10/P1050419.jpg",
+      "alt": "Ogun State Water Corporation staff being trained on water meter installation",
+      "crop": [
+        0,
+        0,
+        1,
+        0.87
+      ],
+      "cropWhy": "Bottom 13% off: the camera burned a date stamp into the corner (moved here from image-map.json, which cannot crop)"
     }
   ]
 }
