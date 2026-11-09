@@ -322,3 +322,9 @@ Received after launch-ready went to `main`:
   active site without helmets, one shows children at a tap stand, one Lagos
   road photograph is unidentified. The old site and the Wayback Machine are
   both blocked from the build environment, but nothing else was missing.
+
+**9 November, client:** the Water gallery's second and third photographs
+carried the same caption ("Construction of high lift pump building at Ogere
+Water Supply Scheme by Sato"). The third — `high-lift-pump-building.webp`,
+the second of the two on the Ogere project — is off the project. The
+file stays in `public/images` so it can come back in one edit.
