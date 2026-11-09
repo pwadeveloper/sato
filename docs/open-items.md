@@ -31,9 +31,12 @@ now on its project — and left these. See
   scheme?** If so, it becomes the Water spotlight and goes on the Ogere
   project. Recent water photographs of finished work, with no one on site
   without a helmet, would solve this for good.
-- **Still off, for reasons other than helmets** (everything held on the
-  helmet rule is now published). Each is labelled; what's missing is a
-  decision:
+- ~~**Still off, for reasons other than helmets.**~~ **Settled 9 November:
+  placed as suggested** — Sagamu (4), Omi River (4) and Mabunmi Junction (3)
+  in the Water Resources gallery, the Lagos road rehabilitation photographs
+  in the Civil gallery. If Sagamu or Omi River should be projects of their
+  own, say so and they move. The tap-stand children stay off. Original note,
+  each labelled, what was missing was a decision:
   - *Sagamu, four photographs* ("Ongoing work in progress at Sagamu"): the
     site has two Sagamu projects, the intake structure and the intake
     roadworks. Which one, or the Water gallery?

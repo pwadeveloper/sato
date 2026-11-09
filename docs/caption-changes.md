@@ -54,6 +54,7 @@ Every old-site caption, project title and narrative the new site uses, next to t
 | ASPHALTIC CONCRETE ROAD & DRAINAGE SYSTEM UNDER CONSTRUCTION AT LIFE UNIVERSITY AJEBO, OGUN STATE | Asphaltic concrete road & drainage system under construction at Life University Ajebo, Ogun State | sentence case |
 | ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION AT LIFE UNIVERSITY AJEBO, OGUN STATE | Asphaltic concrete road under construction at Life University Ajebo, Ogun State | sentence case |
 | ASPHALTIC CONCRETE ROAD UNDER CONSTRUCTION BY SATO ENGINEERING NIGERIA LIMITED | Asphaltic concrete road under construction by Sato | sentence case; country and former name removed |
+| Road rehabilitation work in progress | Road rehabilitation work in progress | unchanged |
 | LAYING OF WEARING COURSE IN PROGRESS | Laying of wearing course in progress | sentence case |
 | ASPHALT BEEN COMPACTED | Asphalt being compacted | sentence case |
 | LAYING OF ASPHALT IN PROGRESS | Laying of asphalt in progress | sentence case |
@@ -119,6 +120,18 @@ Kept new photographs (High confidence) take their caption from the client's own 
 | W068 | Repair works on sand filter now completed at Arakanga Water Scheme |  |
 | W116 | Box culvert under construction to control erosion |  |
 | W142 | Construction of drain in progress |  |
+| W100 | Ongoing work in progress at Sagamu Ogun State by Sato |  |
+| W098 | Ongoing work in progress at Sagamu Ogun State by Sato |  |
+| W101 | Ongoing work in progress at Sagamu Ogun State by Sato |  |
+| W102 | Ongoing work in progress at Sagamu Ogun State by Sato |  |
+| W103 | Work in progress at Omi River, Ibadan by Sato |  |
+| W104 | Work in progress at Omi River, Ibadan by Sato |  |
+| W105 | Work in progress at Omi River, Ibadan by Sato |  |
+| W106 | Work in progress at Omi River, Ibadan by Sato |  |
+| W112 | Reinforcement work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State |  |
+| W114 | Construction work in progress (erosion control) at Mabunmi Junction, Ijebu-Ode, Ogun State |  |
+| W119 | Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State |  |
+| W016 | Road rehabilitation work in progress |  |
 
 ## Project titles
 

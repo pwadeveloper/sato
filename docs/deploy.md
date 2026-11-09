@@ -44,6 +44,14 @@ Every push to a branch gets a preview URL. Every push to `main` goes to
 production once the domain is attached. Before attaching the domain, push a
 branch and check the preview URL against the list in "Verification" below.
 
+### Where the client looks
+
+Until the DNS cutover, satoengineering.com is still the old site and every
+deployment URL needs a Vercel login. The one link that works without one is
+the production alias **https://sato-mauve-theta.vercel.app**, which builds
+from `main`. Send the client that, and remember a branch he hasn't seen on
+`main` is a branch he can't see.
+
 ### 3. Protect the preview deployments
 
 While the old site is still live, preview URLs are public and indexable by

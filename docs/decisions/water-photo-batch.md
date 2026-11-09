@@ -240,6 +240,23 @@ eight photographs that are on the site as missing. Corrected. **"Missing
 photo" is now 2, from 36 this morning**: the children at the Tube tap stand
 (privacy) and the Lagos road photograph held for its location.
 
+### The held photographs placed (9 November)
+
+On "yes please do that": Sagamu ×4 ("Ongoing work in progress at Sagamu"),
+Omi River ×4 and Mabunmi Junction ×3 (reinforcement, channel base,
+excavation, from the page layout) in the Water Resources gallery; "Road
+rehabilitation work in progress" ×2 in the Civil gallery. The old site's
+held Lagos road photograph is a landscape crop of W015, so W015's original
+stands for it. No crop was needed: no plates, dates or text. The audit's
+missing-photo count is 1, the tap-stand children, kept off for privacy.
+
+**Why the client couldn't see any of it.** satoengineering.com still serves
+the old WordPress site (DNS not cut over), every `*.vercel.app` deployment
+link sits behind Vercel Authentication, and the one public production alias,
+`sato-mauve-theta.vercel.app`, builds from `main`, which still held only the
+label change. Everything from this record went to `main` on 9 November on
+the developer's instruction, so that link now shows it.
+
 **Burned-in dates found on the way.** Two water-meter photographs already in
 the Water Resources gallery (the old site's 2019 training set, not this
 document) carried the camera's date stamp, "11/OCT/2013", in the corner. The

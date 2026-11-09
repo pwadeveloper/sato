@@ -508,10 +508,12 @@
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0027.jpg",
-      "action": "held",
-      "target": "lagos",
-      "caption": "ROAD REHABILITATION WORK IN PROGRESS",
-      "why": "The old site names no location. Its GPS puts it in Oshodi/Ilupeju, Lagos; held off the site until the client says which project (decision 3, prompt 16)."
+      "action": "category",
+      "target": "civil-engineering-road",
+      "caption": "Road rehabilitation work in progress",
+      "file": "projects/civil-roads-and-pavements/road-rehabilitation-1",
+      "batch": "W015",
+      "note": "The old site's copy is a landscape crop of this photograph (W015, full size). Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2012/07/clip_image0024.jpg",
@@ -1124,6 +1126,102 @@
       "file": "projects/civil-roads-and-pavements/drain-construction",
       "caption": "Construction of drain in progress",
       "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November to include photographs held on the helmet rule"
+    },
+    {
+      "id": "W100",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/sagamu-channel-clearing-1",
+      "caption": "Ongoing work in progress at Sagamu Ogun State by Sato",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
+    },
+    {
+      "id": "W098",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/sagamu-channel-clearing-2",
+      "caption": "Ongoing work in progress at Sagamu Ogun State by Sato",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
+    },
+    {
+      "id": "W101",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/sagamu-channel-clearing-3",
+      "caption": "Ongoing work in progress at Sagamu Ogun State by Sato",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
+    },
+    {
+      "id": "W102",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/sagamu-channel-clearing-4",
+      "caption": "Ongoing work in progress at Sagamu Ogun State by Sato",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
+    },
+    {
+      "id": "W103",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/omi-river-1",
+      "caption": "Work in progress at Omi River, Ibadan by Sato",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
+    },
+    {
+      "id": "W104",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/omi-river-2",
+      "caption": "Work in progress at Omi River, Ibadan by Sato",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
+    },
+    {
+      "id": "W105",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/omi-river-3",
+      "caption": "Work in progress at Omi River, Ibadan by Sato",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
+    },
+    {
+      "id": "W106",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/omi-river-4",
+      "caption": "Work in progress at Omi River, Ibadan by Sato",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
+    },
+    {
+      "id": "W112",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/mabunmi-junction-reinforcement",
+      "caption": "Reinforcement work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
+    },
+    {
+      "id": "W114",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/mabunmi-junction-channel-base",
+      "caption": "Construction work in progress (erosion control) at Mabunmi Junction, Ijebu-Ode, Ogun State",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
+    },
+    {
+      "id": "W119",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/mabunmi-junction-excavation",
+      "caption": "Excavation work (erosion control) in progress at Mabunmi Junction, Ijebu-Ode, Ogun State",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
+    },
+    {
+      "id": "W016",
+      "action": "kept",
+      "target": "civil-engineering-road",
+      "file": "projects/civil-roads-and-pavements/road-rehabilitation-2",
+      "caption": "Road rehabilitation work in progress",
+      "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
     }
   ],
   "roles": {
