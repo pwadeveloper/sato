@@ -57,7 +57,7 @@ export function SiteHeader({
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 h-(--header-height) border-b border-rule bg-concrete">
+    <header className="sticky top-0 z-40 h-(--header-height) border-b border-rule/70 bg-concrete/85 backdrop-blur-xl backdrop-saturate-150">
       <a
         href="#main"
         className="sr-only px-4 py-2 focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-asphalt focus:text-concrete"
@@ -86,13 +86,24 @@ export function SiteHeader({
                       groups={menu.groups}
                       current={current}
                     />
+                  ) : link.href === "/contact" ? (
+                    /* The one action in the bar, set as a button, as the
+                       references set their sign-in: it is where a
+                       verifying reader is going. */
+                    <Link
+                      href={link.href}
+                      aria-current={current ? "page" : undefined}
+                      className="eyebrow inline-flex h-10 items-center bg-asphalt px-5 text-white no-underline transition-colors duration-300 hover:bg-brand"
+                    >
+                      <RichText text={link.label} />
+                    </Link>
                   ) : (
                     <Link
                       href={link.href}
                       aria-current={current ? "page" : undefined}
                       className={cn(
-                        "eyebrow link-draw py-2 transition-colors duration-150 hover:text-brand-ink",
-                        current ? "text-brand-ink [background-size:100%_1px]" : "text-asphalt",
+                        "eyebrow link-draw py-2 transition-colors duration-150 hover:text-asphalt",
+                        current ? "text-asphalt [background-size:100%_1px]" : "text-steel-ink",
                       )}
                     >
                       <RichText text={link.label} />

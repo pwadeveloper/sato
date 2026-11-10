@@ -96,25 +96,41 @@ export default function AboutPage() {
               </div>
             ) : null}
 
-            <div className="mt-8 flex max-w-(--container-measure) flex-col gap-6 lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:mt-0">
-              {intro.body.map((paragraph, index) => (
-                <Reveal key={index} as="p" index={index} className="text-lg text-asphalt wdth-body text-pretty">
-                  <RichText text={paragraph} />
-                </Reveal>
-              ))}
+            <div className="mt-10 flex flex-col gap-6 lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:mt-0">
+              {/* The first paragraph is the company's own one-line history,
+                  so it is set as the statement it is, and read a word at a
+                  time; the rest is the text it introduces. */}
+              {intro.body[0] ? (
+                <p
+                  data-anim="scrub-words"
+                  className="font-display text-[clamp(1.875rem,1.2rem+2vw,3rem)] leading-[1.08] tracking-[-0.015em] text-asphalt"
+                >
+                  <RichText text={intro.body[0]} />
+                </p>
+              ) : null}
+              <div className="mt-6 grid gap-6 md:grid-cols-2 md:gap-x-10">
+                {intro.body.slice(1).map((paragraph, index) => (
+                  <Reveal key={index} as="p" index={index} className="text-base text-steel-ink text-pretty">
+                    <RichText text={paragraph} />
+                  </Reveal>
+                ))}
+              </div>
             </div>
           </div>
         </Container>
       </Section>
 
-      <Section tone="asphalt" labelledBy="motto-heading" className="dot-grid-dark py-14! md:py-20!">
+      <section aria-labelledby="motto-heading" className="overflow-hidden bg-asphalt pb-10 pt-16 text-concrete md:pt-24">
         <Container>
           <Eyebrow text={motto.heading ?? ""} tone="darkBrand" as="h2" id="motto-heading" />
-          <p className="mt-4 max-w-[18ch] text-h1 wdth-display text-balance text-concrete">
-            <RichText text={motto.body[0]} />
-          </p>
         </Container>
-      </Section>
+        <p
+          data-anim="lines"
+          className="mt-10 px-(--gutter) font-display text-[clamp(3.5rem,13.5vw,16rem)] leading-[0.86] tracking-[-0.035em] text-concrete"
+        >
+          <RichText text={motto.body[0]} />
+        </p>
+      </section>
 
       <Section tone="paper" as="div">
         <Container>

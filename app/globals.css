@@ -4,24 +4,25 @@
 @layer base {
   :root {
     /*
-     * Sticky header height. The mobile nav panel hangs off it.
-     *
-     * Each step is the logo height for that breakpoint (40 / 52 / 56 / 64px)
-     * plus its clearance, so raising the mark is a single edit here and in
-     * `Logo`.
+     * Sticky header height. The mobile nav panel hangs off it. Each step is
+     * the logo height for that breakpoint (40 / 52 / 56 / 64px) plus its
+     * clearance — see `Logo`.
      */
     --header-height: 4.5rem;
+    --gutter: 1.25rem;
   }
 
   @media (min-width: 768px) {
     :root {
       --header-height: 5.5rem;
+      --gutter: 2rem;
     }
   }
 
   @media (min-width: 1024px) {
     :root {
       --header-height: 6rem;
+      --gutter: 3rem;
     }
   }
 
@@ -33,7 +34,6 @@
 
   html {
     -webkit-text-size-adjust: 100%;
-    /* Keep anchor targets clear of the sticky header. */
     scroll-padding-top: calc(var(--header-height) + 1rem);
   }
 
@@ -43,152 +43,87 @@
     font-family: var(--font-sans);
     font-size: var(--text-base);
     line-height: 1.6;
-    font-variation-settings: "wdth" 100;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
-  /* One ring, everywhere, on every focusable thing. */
   :focus-visible {
-    outline: 3px solid var(--color-survey);
+    outline: 2px solid var(--color-survey);
     outline-offset: 2px;
     box-shadow: 0 0 0 2px var(--color-asphalt);
   }
 
-  /* Numbers line up in the data plate, project meta and equipment schedule. */
   :where(dd, td, time, .tabular) {
     font-variant-numeric: tabular-nums;
   }
 
   ::selection {
-    background-color: var(--color-survey);
-    color: var(--color-asphalt);
+    background-color: var(--color-brand);
+    color: #fff;
   }
 }
 
 /*
- * The halftone develop.
- *
- * Every photograph on the site arrives the same way: as a field of dots that
- * grow until the picture is whole — a print coming up from the drawing. It is
- * one CSS mask, a radial gradient tiled every 6px, whose dot radius is the
- * animated custom property below. No JavaScript: where the browser supports
- * scroll-driven animations the develop is scrubbed by the picture entering
- * the viewport, so it is reversible and costs nothing while nothing moves;
- * elsewhere it plays once on load. Reduced motion shows the picture whole.
+ * The serif carries every display size. Unlayered, so it wins over a
+ * `font-*` utility set beside it; the weight is pinned because Instrument
+ * Serif has one, and a synthesised bold is never wanted.
  */
-@property --halftone {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 6px;
+.text-display,
+.text-h1,
+.text-h2 {
+  font-family: var(--font-display);
+  font-weight: 400 !important;
+  font-synthesis: none;
 }
 
-@keyframes halftone-develop {
-  from {
-    /* A hero may start from a faint field of dots rather than a blank sheet. */
-    --halftone: var(--develop-from, 0px);
-    opacity: 0.4;
-  }
+/* The serif's italic, for the muted half of a split headline. */
+.serif-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/*
+ * Motion. `html.motion` is set by an inline script before first paint, and
+ * only when the reader has not asked for reduced motion. Under it, anything
+ * marked `data-anim` starts hidden and GSAP (components/motion/MotionRuntime)
+ * brings it in. If the runtime never arrives — no script, a crash — the
+ * fallback animation shows everything after two and a half seconds, so the
+ * page is never left blank.
+ */
+html.motion [data-anim]:not([data-anim="parallax"]):not([data-anim="scrub-words"]) {
+  visibility: hidden;
+  animation: anim-fallback 0s 2.5s forwards;
+}
+
+@keyframes anim-fallback {
   to {
-    --halftone: 6px;
-    opacity: 1;
+    visibility: visible;
   }
 }
 
-[data-develop] {
-  --halftone: 6px;
-  mask-image: radial-gradient(circle, #000 var(--halftone), transparent calc(var(--halftone) + 0.5px));
-  mask-size: 8px 8px;
-  mask-position: center;
-  animation: halftone-develop var(--develop-duration, 1s) var(--develop-ease, var(--ease-out-expo)) both;
+/* SplitText's masks: a line slides up out of its own clipped box. */
+.split-line-mask {
+  overflow: clip;
+  /* Room for descenders and accents, taken back so the leading is unchanged. */
+  padding-block: 0.06em 0.22em;
+  margin-block: -0.06em -0.22em;
 }
 
-/* Scrubbed by the viewport where the browser can, so it also plays in reverse. */
-@supports (animation-timeline: view()) {
-  [data-develop="view"] {
-    animation-timeline: view();
-    animation-range: entry 0% entry 55%;
-    animation-fill-mode: both;
-  }
+/* Lenis: the smooth scroller, desktop only. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
 }
 
-/* Once developed, the mask is a no-op; clear it so the compositor is free. */
-[data-develop="none"] {
-  mask-image: none;
-  animation: none;
-}
-
-/*
- * The scroll reveal for copy and cards.
- *
- * Rendered visible, then animated from below as it enters the viewport —
- * never hidden by an inline style waiting for JavaScript, so a reader with
- * scripts off, a crawler, or a print stylesheet gets the page whole. Where
- * the browser supports scroll-driven animations the reveal is scrubbed by
- * the element's own entry; the stagger between siblings is a longer range,
- * set per item with `--reveal-stagger`. Elsewhere it plays once on load,
- * staggered by `--reveal-delay`.
- */
-@keyframes reveal-up {
-  from {
-    opacity: 0;
-    transform: translateY(1.25rem);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-[data-reveal] {
-  animation: reveal-up var(--duration-reveal) var(--ease-out-expo) both;
-  animation-delay: var(--reveal-delay, 0ms);
-}
-
-@supports (animation-timeline: view()) {
-  [data-reveal] {
-    animation-timeline: view();
-    animation-range: entry 0% entry calc(30% + var(--reveal-stagger, 0%));
-    animation-delay: 0ms;
-  }
-}
-
-/*
- * The load-time cousin of the scroll reveal, for copy that is on screen when
- * the page paints — a header's lead, the hero's buttons. A scroll timeline
- * would already be at its end for these, so they rise on a clock instead,
- * staggered by `--fade-delay`.
- */
-[data-fade] {
-  animation: reveal-up var(--duration-reveal) var(--ease-out-expo) both;
-  animation-delay: var(--fade-delay, 0ms);
-}
-
-/*
- * Word-level heading reveal. The words are wrapped by `SplitText` and slide
- * up out of a clipped line box; the delay is set per word inline.
- */
-@keyframes rise-in {
-  from {
-    transform: translateY(110%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-[data-rise] {
-  display: inline-block;
-  animation: rise-in var(--duration-reveal) var(--ease-out-expo) both;
-  animation-delay: var(--rise-delay, 0ms);
-}
-
-/*
- * The client-name marquee on Home. Pure CSS: the track holds two copies of
- * the list and travels one copy's width, so the loop is seamless. It pauses
- * on hover and under reduced motion, where it simply wraps as a list.
- */
+/* The client-name marquee. Two copies on a track; one copy's travel per loop. */
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -197,32 +132,25 @@
     transform: translateX(-50%);
   }
 }
-
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 [data-marquee] {
   animation: marquee var(--marquee-duration, 60s) linear infinite;
 }
-
-[data-marquee]:hover,
-[data-marquee-paused] [data-marquee] {
+[data-marquee="reverse"] {
+  animation-name: marquee-reverse;
+}
+[data-marquee]:hover {
   animation-play-state: paused;
 }
 
-/* Under reduced motion the track becomes a wrapping list and the second copy goes. */
-@media (prefers-reduced-motion: reduce) {
-  [data-marquee] {
-    flex-wrap: wrap;
-    width: auto;
-  }
-  [data-marquee-copy] {
-    display: none;
-  }
-}
-
-/*
- * Link underline that draws from the left. Used on the drawing-layer links
- * (index rows, footer, breadcrumbs) — a change of colour alone is the
- * affordance this site is not allowed to rely on.
- */
+/* An underline that draws from the left. */
 .link-draw {
   text-decoration: none;
   background-image: linear-gradient(currentColor, currentColor);
@@ -237,18 +165,14 @@
   background-size: 100% 1px;
 }
 
-/*
- * Route change: a short crossfade, and a shared-element morph for the
- * photograph that carries from a gallery to its project page. React's
- * <ViewTransition> names the pairs; these are the timings.
- */
+/* Route change: a short crossfade; shared photographs morph. */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 260ms;
+  animation-duration: 280ms;
   animation-timing-function: var(--ease-out-quiet);
 }
 ::view-transition-group(*) {
-  animation-duration: 420ms;
+  animation-duration: 520ms;
   animation-timing-function: var(--ease-in-out-quart);
 }
 
@@ -262,19 +186,13 @@
     scroll-behavior: auto !important;
   }
 
-  [data-develop] {
-    mask-image: none;
-    animation: none;
-  }
-
-  [data-rise],
-  [data-reveal],
-  [data-fade] {
-    animation: none;
-  }
-
   [data-marquee] {
     animation: none;
+    flex-wrap: wrap;
+    width: auto;
+  }
+  [data-marquee-copy] {
+    display: none;
   }
 
   ::view-transition-group(*),
@@ -285,12 +203,7 @@
 }
 
 /*
- * Row disclosure with no JavaScript.
- *
- * The overflow rows are visible by default and hidden only while the
- * disclosure is closed, so a browser without `:has()` renders the whole table
- * rather than stranding rows behind a control it cannot honour. The summary
- * carries both labels and shows one.
+ * Row disclosure with no JavaScript — the Oil & Gas partner table.
  */
 [data-disclosure="rows"]:has(details:not([open])) [data-overflow] {
   display: none;
@@ -305,7 +218,6 @@
   display: none;
 }
 
-/* A caret that turns, so the control reads as a toggle rather than a link. */
 [data-disclosure="rows"] summary::after {
   content: "\25BC";
   font-size: 0.6em;
@@ -315,10 +227,4 @@
 
 [data-disclosure="rows"] details[open] summary::after {
   transform: rotate(180deg);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-disclosure="rows"] summary::after {
-    transition: none;
-  }
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import { BackedByStrip } from "@/components/BackedByStrip";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -234,8 +234,7 @@ function OverlayHeader({
               className="mt-6"
             />
             <p
-              data-fade=""
-              style={{ "--fade-delay": "320ms" } as CSSProperties}
+              data-anim="fade" data-delay={320}
               className="mt-5 text-lg text-asphalt wdth-body text-pretty"
             >
               <RichText text={service.summary} />

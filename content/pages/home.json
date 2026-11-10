@@ -4,6 +4,8 @@
   "metaTitle": "Sato Engineering & Infrastructure Limited",
   "metaDescription": "Established in 1997. Nearly three decades of engineering, infrastructure, energy, oil and gas and digital project delivery for public and private sector clients.",
   "labels": {
+    "titleMuted": "Welcome to",
+    "aboutLabel": "About Sato",
     "aboutLink": "About Sato",
     "servicesOf": "Services",
     "projectsOf": "Projects",
@@ -12,14 +14,19 @@
     "doorsLabel": "Project categories",
     "clientsLabel": "Clients",
     "factsLabel": "Company at a glance",
-    "indexLabel": "What we do"
+    "indexLabel": "What we do",
+    "allProjectsCard": "All projects",
+    "statYears": "years in operation.",
+    "statProjects": "projects on the record.",
+    "statServices": "areas of service."
   },
   "images": {
     "hero": {
-      "src": "/images/hero/dam-site-engineer.webp",
-      "alt": "Sato engineer with drawings on a dam construction site, with an excavator and survey crew behind",
-      "width": 1536,
-      "height": 1024
+      "src": "/images/projects/fiditi-earth-dam/clay-compaction.webp",
+      "alt": "Two padfoot rollers compacting clay for the cut-off trench of an earth dam",
+      "width": 1920,
+      "height": 1440,
+      "caption": "Compaction of clay with padfoot rollers"
     }
   },
   "sections": [

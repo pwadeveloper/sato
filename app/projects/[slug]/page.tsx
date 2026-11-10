@@ -18,6 +18,7 @@ import {
   getProject,
   getProjectYear,
   getProjects,
+  getProjectsInCategory,
   getSection,
   getServiceForProject,
   getSite,
@@ -165,9 +166,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   const hasImages = project.images.length > 0;
 
+  // The next project in the same category, wrapping round, so the record can
+  // be read through one project after another.
+  const siblings = category ? getProjectsInCategory(category) : [];
+  const next =
+    siblings.length > 1
+      ? siblings[(siblings.findIndex((entry) => entry.slug === project.slug) + 1) % siblings.length]
+      : undefined;
+
   return (
     <>
-      <Section tone="concrete" className="dot-grid pb-10! md:pb-12!">
+      <Section tone="concrete" className="pb-12! pt-14! md:pt-20!">
         <Container>
           {/* Projects > Category > Project: the category is a real step in
               the structure now, not a filter state, so the trail says so. */}
@@ -196,8 +205,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
           {isKnown(project.summary) ? (
             <p
-              data-fade=""
-              style={{ "--fade-delay": "320ms" } as React.CSSProperties}
+              data-anim="fade" data-delay={320}
               className="mt-5 max-w-(--container-measure) text-lg text-steel-ink wdth-body text-pretty"
             >
               <RichText text={project.summary} />
@@ -284,6 +292,36 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           )}
         </Container>
       </Section>
+
+      {next ? (
+        <section aria-labelledby="next-project" className="border-t border-rule bg-paper">
+          <Link
+            href={`/projects/${next.slug}`}
+            className="group block no-underline"
+          >
+            <Container className="grid items-center gap-10 py-16 md:py-24 lg:grid-cols-12 lg:gap-12">
+              {/* Text only: a photograph belongs to its own project's page
+                  ("one photograph, one place"), not as a teaser on another. */}
+              <div className="lg:col-span-10">
+                <p id="next-project" className="eyebrow flex items-center gap-3 text-steel-ink">
+                  <span aria-hidden="true" className="size-1.5 bg-brand-bright" />
+                  <RichText text={labels.nextProject ?? ""} />
+                </p>
+                <p className="mt-6 font-display text-[clamp(2.25rem,1.4rem+3.2vw,5rem)] leading-[0.98] tracking-[-0.025em] text-asphalt text-balance">
+                  <RichText text={next.title} />
+                  <span
+                    aria-hidden="true"
+                    className="ml-4 inline-block text-[0.6em] text-brand transition-transform duration-700 ease-(--ease-out-expo) group-hover:translate-x-3 motion-reduce:transform-none"
+                  >
+                    &rarr;
+                  </span>
+                </p>
+              </div>
+
+            </Container>
+          </Link>
+        </section>
+      ) : null}
 
       <CtaBand
         heading={cta.heading}

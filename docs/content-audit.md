@@ -13,9 +13,9 @@ A photograph is matched by provenance and by perceptual hash, so the old site's 
 | Missing photo | 44 | 3 |
 | Missing or changed caption | 30 | 0 |
 | Missing narrative | 12 | 0 |
-| New-site extra | 19 | 11 |
+| New-site extra | 19 | 10 |
 | Projects | 32 | 14 |
-| Duplicate (allowed) | 6 | 16 |
+| Duplicate (allowed) | 6 | 17 |
 | New-site extra (kept, High confidence) | 12 | 68 |
 
 **Counted as allowed:** a project's photograph also used as one category tile or one page header. **Missing photo** includes old-site photographs that stay off the site under a standing rule (no helmets, a legible former company name) or wait on the client; the Fix column says which.
@@ -42,6 +42,7 @@ A photograph is matched by provenance and by perceptual hash, so the old site's 
 | Old site: image + caption | Old site: page / project | New site: where it appears now | Problem | Fix |
 |---|---|---|---|---|
 | [2012/07/c2.jpg](https://www.satoengineering.com/wp-content/uploads/2012/07/c2.jpg)<br>“COMPLETED SOLAR POWERED BOREHOLE PROJECT AT PRIMARY HEALTH CENTRE TUBE, OGUN STATE, MDG’S PROJECT.” | /water-supply-and-water-resources/ #27 | — | **Missing photo** — Not on the new site | Not published — privacy: Children at the tap stand, one partly dressed. |
+| [2012/07/24.jpg](https://www.satoengineering.com/wp-content/uploads/2012/07/24.jpg)<br>“CLAY COMPACTION FOR COT (FIDITI DAM)” | /water-supply-and-water-resources/ #10 | project:fiditi-earth-dam<br>page-header:home | **Duplicate (allowed)** — A project's photograph also used as one tile or header (allowed) | One place: On **fiditi-earth-dam** (full-size original W134), caption beneath |
 
 ## Ongoing projects, project pages and home page
 
@@ -113,7 +114,6 @@ A photograph is matched by provenance and by perceptual hash, so the old site's 
 | oil & gas artwork: oil-gas/oil-gas-hero-rig.jpg | Oil & Gas artwork (unchanged by rule) | service-header:oil-gas | **New-site extra** — Not on the old site | Kept: Oil & Gas is unchanged |
 | oil & gas artwork: oil-gas/oil-gas-value-map.png | Oil & Gas artwork (unchanged by rule) | service-section:oil-gas | **New-site extra** — Not on the old site | Kept: Oil & Gas is unchanged |
 | AI-generated: hero/hero 4.png | AI-generated image | page-header:about | **New-site extra** — Not on the old site | Kept: the AI images on Home, About and Leadership are not project photographs |
-| AI-generated: hero/hero 1.png | AI-generated image | page-header:home | **New-site extra** — Not on the old site | Kept: the AI images on Home, About and Leadership are not project photographs |
 | AI-generated: hero/hero 3.png | AI-generated image | page-header:leadership | **New-site extra** — Not on the old site | Kept: the AI images on Home, About and Leadership are not project photographs |
 | W054<br>“Drilling rig and compressor on site” | Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document) | category-photos:water-resources-development-management | **New-site extra (kept, High confidence)** — Not on the old site | Kept (High confidence, on a project the old site has) — for the client to confirm |
 | B-P1030364<br>“World Bank officials visiting site” | Client's unlabelled batch of 10 November 2026 (batch-2026-11-10), identified by eye from his verbal breakdown | category-photos:water-resources-development-management | **New-site extra (kept, High confidence)** — Not on the old site | Kept (High confidence, on a project the old site has) — for the client to confirm |

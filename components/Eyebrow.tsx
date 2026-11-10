@@ -10,7 +10,7 @@ const TONES = {
 
 export interface EyebrowProps {
   text: string;
-  /** A running number, printed before the text as `01`. */
+  /** A running number, printed before the text as `01`. Replaces the marker. */
   index?: number;
   tone?: keyof typeof TONES;
   as?: "p" | "span" | "h2" | "h3" | "div";
@@ -19,20 +19,19 @@ export interface EyebrowProps {
 }
 
 /**
- * The survey annotation: mono, small, letterspaced, with an optional index.
- *
- * It labels a section the way a drawing labels a detail — what it is and
- * which one it is — and it is one component so the voice cannot drift
- * between pages.
+ * The label: mono, small, letterspaced, led by a small green square or a
+ * running number. One component, so the voice cannot drift between pages.
  */
 export function Eyebrow({ text, index, tone = "light", as: Tag = "p", id, className }: EyebrowProps) {
   return (
-    <Tag id={id} className={cn("eyebrow flex items-baseline gap-3", TONES[tone], className)}>
+    <Tag id={id} className={cn("eyebrow flex items-center gap-3", TONES[tone], className)}>
       {index !== undefined ? (
-        <span aria-hidden="true" className="tabular">
+        <span aria-hidden="true" className="tabular opacity-70">
           {String(index).padStart(2, "0")}
         </span>
-      ) : null}
+      ) : (
+        <span aria-hidden="true" className="size-1.5 shrink-0 bg-brand-bright" />
+      )}
       <RichText text={text} />
     </Tag>
   );

@@ -1,21 +1,17 @@
-import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 
 import { Button } from "@/components/Button";
 import { ClientMarquee } from "@/components/ClientMarquee";
 import { Container } from "@/components/Container";
-import { CtaBand } from "@/components/CtaBand";
-import { DataPlate } from "@/components/DataPlate";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Heading } from "@/components/Heading";
-import { IndexList, type IndexListItem } from "@/components/IndexList";
-import { Reveal } from "@/components/Reveal";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
+import { ServicesIndex, type ServicesIndexItem } from "@/components/ServicesIndex";
 import { StatementPair } from "@/components/StatementPair";
 import { TextLink } from "@/components/TextLink";
-import { HeroPhoto } from "@/components/home/HeroPhoto";
-import { ProjectDoors } from "@/components/home/ProjectDoors";
+import { HomeHero } from "@/components/home/HomeHero";
+import { ProjectsRail } from "@/components/home/ProjectsRail";
 import { SurveyBand } from "@/components/home/SurveyBand";
 
 import {
@@ -24,9 +20,12 @@ import {
   getPage,
   getProjectCategories,
   getProjectCount,
+  getProjects,
   getSection,
   getServiceBands,
+  getServices,
   getSite,
+  getYearsInOperation,
 } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/metadata";
 import { bandHref, bandItems } from "@/lib/service-band";
@@ -51,27 +50,70 @@ const heroImage = hero.image ?? page.images?.hero;
 
 export const metadata: Metadata = {
   ...buildPageMetadata(page, site),
-  // Home carries the full company name rather than the `%s — Sato` template.
   title: { absolute: page.metaTitle ?? site.name },
 };
+
+/** A section's opening: label, heading, and a line beside it on a desktop. */
+function SectionHead({
+  label,
+  index,
+  heading,
+  headingId,
+  intro,
+  action,
+  tone = "light",
+}: {
+  label: string;
+  index: number;
+  heading: string;
+  headingId: string;
+  intro?: string;
+  action?: { label: string; href: string };
+  tone?: "light" | "dark";
+}) {
+  const dark = tone === "dark";
+  return (
+    <div className="lg:grid lg:grid-cols-12 lg:items-end lg:gap-x-12">
+      <div className="lg:col-span-7">
+        <div data-anim="fade">
+          <Eyebrow text={label} index={index} tone={dark ? "dark" : "light"} />
+        </div>
+        <Heading level={2} text={heading} id={headingId} split className={dark ? "mt-6 text-concrete" : "mt-6"} />
+      </div>
+      {intro || action ? (
+        <div data-anim="fade" data-delay={200} className="mt-8 lg:col-span-5 lg:mt-0 lg:pb-2">
+          {intro ? (
+            <p className={dark ? "max-w-[44ch] text-lg text-steel-light text-pretty" : "max-w-[44ch] text-lg text-steel-ink text-pretty"}>
+              <RichText text={intro} />
+            </p>
+          ) : null}
+          {action ? (
+            <div className="mt-6">
+              <Button label={action.label} href={action.href} variant={dark ? "inverse" : "secondary"} />
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+    </div>
+  );
+}
 
 /**
  * Home: the company, in the order a verifying reader wants it.
  *
- * The welcome and the motto are the client's own words and open and anchor
- * the page as before. What follows is everything the site already holds,
- * pulled onto one page rather than written again: the five areas of work
- * (from the services), the project categories with their photographs (from
- * Projects), the company's facts (from site.json) and the clients' names
- * (from Clients). Nothing here is a claim the rest of the site does not
- * make, and every line of it is edited where it lives.
+ * The welcome and the motto are the client's own words. Everything else is
+ * the site's own material brought onto one page rather than written again —
+ * the areas of work from the services, the project categories from Projects,
+ * the figures from the content itself, the clients' names from Clients — so
+ * there is no claim here the rest of the site does not make, and every line
+ * is edited where it lives. The figures are counted, not typed: years from
+ * the founding year, projects from projects.json, areas from services.json.
  *
- * The vision is still only ever shown with the mission, as a pair below the
- * motto, under `homeShowMissionVision`.
+ * The vision is only ever shown with the mission, under
+ * `homeShowMissionVision`.
  */
 export default function HomePage() {
-  const bands = getServiceBands();
-  const index: IndexListItem[] = bands.map((band) => {
+  const index: ServicesIndexItem[] = getServiceBands().map((band) => {
     const items = bandItems(band);
     const solo = items.length === 0 ? band.services[0] : undefined;
     return {
@@ -80,243 +122,158 @@ export default function HomePage() {
       href: bandHref(band) ?? "/services",
       intro: solo ? solo.summary : band.intro,
       image: band.image,
-      links: items.map((service) => ({
-        label: service.name,
-        href: `/services/${service.slug}`,
-      })),
+      links: items.map((service) => ({ label: service.name, href: `/services/${service.slug}` })),
     };
   });
 
-  const doors = getProjectCategories().map((category) => ({
-    category,
-    count: getProjectCount(category),
-  }));
-
+  const rail = getProjectCategories().map((category) => ({ category, count: getProjectCount(category) }));
   const clients = getClients().filter((client) => client.category !== "oil-gas-partner");
+  const half = Math.ceil(clients.length / 2);
 
-  const [primary, ...secondary] = hero.ctas ?? [];
+  const stats = [
+    { id: "years", value: getYearsInOperation(), label: labels.statYears ?? "" },
+    { id: "projects", value: getProjects().length, label: labels.statProjects ?? "" },
+    { id: "services", value: getServices().length, label: labels.statServices ?? "" },
+  ];
+  // The registered name is the plate's own heading line; the rest sit under the figures.
+  const plate = getCompanyFacts().filter((fact) => fact.id !== "yearsInOperation");
 
   return (
     <>
-      {/*
-        The hero. Copy on the left, the photograph on the right, developing
-        from the drawing as the page paints. Nothing is set over the picture.
-      */}
-      <section aria-labelledby="welcome-heading" className="relative overflow-hidden bg-concrete dot-grid">
-        <Container className="pt-10 md:pt-14 lg:pt-16">
-          <div className="lg:grid lg:min-h-[36rem] lg:grid-cols-12 lg:gap-x-12">
-            <div className="flex flex-col justify-end lg:col-span-7 lg:pb-10">
-              <div data-fade="" style={{ "--fade-delay": "0ms" } as CSSProperties}>
-                <Eyebrow text={site.tagline} tone="brand" />
-              </div>
+      {heroImage ? (
+        <HomeHero
+          eyebrow={site.tagline}
+          title={page.title}
+          titleMuted={labels.titleMuted}
+          lead={welcome.body[0]}
+          ctas={hero.ctas ?? []}
+          image={heroImage}
+          caption={heroImage.caption}
+        />
+      ) : null}
 
-              <Heading
-                level={1}
-                size="display"
-                text={page.title}
-                id="welcome-heading"
-                split
-                splitDelay={120}
-                className="mt-5 max-w-[15ch]"
-              />
-
-              {welcome.body[0] ? (
-                <p
-                  data-fade=""
-                  style={{ "--fade-delay": "520ms" } as CSSProperties}
-                  className="mt-8 max-w-[52ch] text-lg text-asphalt wdth-body text-pretty"
-                >
-                  <RichText text={welcome.body[0]} />
-                </p>
-              ) : null}
-
-              {primary ? (
-                <div
-                  data-fade=""
-                  style={{ "--fade-delay": "640ms" } as CSSProperties}
-                  className="mt-8 flex flex-wrap items-center gap-3"
-                >
-                  <Button label={primary.label} href={primary.href} />
-                  {secondary.map((link) => (
-                    <Button key={link.href} label={link.label} href={link.href} variant="secondary" />
-                  ))}
-                </div>
-              ) : null}
+      {/* The second paragraph of the welcome, read a word at a time. */}
+      <Section tone="concrete" labelledBy="about-label">
+        <Container className="lg:grid lg:grid-cols-12 lg:gap-x-12">
+          <div className="lg:col-span-3">
+            <div data-anim="fade" className="lg:sticky lg:top-[calc(var(--header-height)+2rem)]">
+              <Eyebrow text={labels.aboutLabel ?? ""} as="h2" id="about-label" />
             </div>
-
-            {heroImage ? (
-              <div className="mt-10 lg:col-span-5 lg:col-start-8 lg:mt-0">
-                <HeroPhoto
-                  image={heroImage}
-                  sizes="(min-width: 1024px) 42vw, 100vw"
-                  className="aspect-4/3 w-full sm:aspect-3/2 lg:aspect-4/5"
-                />
-              </div>
-            ) : null}
           </div>
-        </Container>
-
-        {/* The rest of the welcome, set on the measure beside the picture's column. */}
-        <Container className="py-12 md:py-16 lg:grid lg:grid-cols-12 lg:gap-x-12">
-          <Reveal className="lg:col-span-7 lg:col-start-1">
+          <div className="mt-8 lg:col-span-9 lg:mt-0">
             {welcome.body.slice(1).map((paragraph, position) => (
               <p
                 key={position}
-                className="max-w-(--container-measure) text-lg text-asphalt wdth-body text-pretty"
+                data-anim="scrub-words"
+                className="font-display text-[clamp(1.875rem,1.2rem+2.4vw,3.5rem)] leading-[1.08] tracking-[-0.015em] text-asphalt"
               >
                 <RichText text={paragraph} />
               </p>
             ))}
             {labels.aboutLink ? (
-              <p className="mt-6">
-                <TextLink label={labels.aboutLink} href="/about" />
-              </p>
+              <div data-anim="fade" className="mt-12">
+                <Button label={labels.aboutLink} href="/about" variant="secondary" />
+              </div>
             ) : null}
-          </Reveal>
+          </div>
         </Container>
+      </Section>
+
+      <Section tone="paper" labelledBy="what-we-do-heading">
+        <Container>
+          <SectionHead
+            label={labels.servicesOf ?? ""}
+            index={1}
+            heading={whatWeDo.heading ?? ""}
+            headingId="what-we-do-heading"
+            intro={whatWeDo.intro}
+            action={whatWeDo.ctas?.[0]}
+          />
+          <ServicesIndex items={index} label={labels.indexLabel ?? whatWeDo.heading ?? ""} className="mt-16 md:mt-20" />
+        </Container>
+      </Section>
+
+      <section aria-labelledby="selected-work-heading" className="section-y bg-concrete">
+        <Container>
+          <SectionHead
+            label={labels.projectsOf ?? ""}
+            index={2}
+            heading={selectedWork.heading ?? ""}
+            headingId="selected-work-heading"
+            intro={selectedWork.intro}
+            action={selectedWork.ctas?.[0]}
+          />
+        </Container>
+        <ProjectsRail
+          items={rail}
+          countOne={labels.countOne ?? ""}
+          countMany={labels.countMany ?? ""}
+          label={labels.doorsLabel ?? ""}
+          allLabel={labels.allProjectsCard ?? ""}
+          allHref="/projects"
+          className="mt-14 md:mt-20"
+        />
       </section>
 
-      {/*
-        The motto, over the survey field. The band is asphalt with the grid
-        before the field loads and the field itself after, so the words are
-        legible from the first frame.
-      */}
+      {/* The figures, over the survey field. */}
       <section
-        aria-labelledby="motto-heading"
-        className="relative isolate flex min-h-[60svh] flex-col justify-end overflow-hidden bg-asphalt text-concrete dot-grid-dark md:min-h-[72svh]"
+        aria-labelledby="facts-heading"
+        className="relative isolate overflow-hidden bg-asphalt text-concrete"
       >
         <SurveyBand />
-        {/* `pointer-events-none`: the copy sits over the field, and the
-            field's probe must still feel the pointer under the words. */}
-        <Container className="pointer-events-none relative z-10 pb-12 pt-24 md:pb-16">
-          <Eyebrow
-            text={motto.heading ?? ""}
-            tone="darkBrand"
-            as="h2"
-            id="motto-heading"
-          />
-          <p className="mt-4 max-w-[16ch] text-display wdth-display text-balance text-concrete">
-            <RichText text={motto.body[0]} />
-          </p>
+        <Container className="pointer-events-none relative z-10 section-y">
+          <div data-anim="fade">
+            <Eyebrow text={facts.heading} index={3} tone="dark" as="h2" id="facts-heading" />
+          </div>
+
+          <ul className="mt-12 md:mt-16">
+            {stats.map((stat) => (
+              <li
+                key={stat.id}
+                data-anim="fade"
+                className="border-t border-rule-dark py-5 font-display text-[clamp(2.75rem,1.4rem+5.2vw,7rem)] leading-[1] tracking-[-0.025em] md:py-7"
+              >
+                <span data-anim="count" data-value={stat.value} className="tabular text-concrete">
+                  {stat.value}
+                </span>{" "}
+                <span className="text-steel-light">
+                  <RichText text={stat.label} />
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <dl data-anim="stagger" className="mt-14 grid gap-x-10 gap-y-8 border-t border-rule-dark pt-10 sm:grid-cols-2 lg:grid-cols-4">
+            {plate.map((fact) => (
+              <div key={fact.id}>
+                <dt className="eyebrow text-steel-light">
+                  <RichText text={fact.label} />
+                </dt>
+                <dd className="mt-3 text-base text-concrete text-pretty">
+                  <RichText text={fact.value} />
+                </dd>
+              </div>
+            ))}
+          </dl>
         </Container>
       </section>
 
-      {/* What we do: the five areas, with the pictures following the pointer. */}
-      <Section tone="concrete" labelledBy="what-we-do-heading">
+      <Section tone="concrete" labelledBy="clients-heading" className="overflow-hidden">
         <Container>
-          <div className="lg:grid lg:grid-cols-12 lg:gap-x-12">
-            <Reveal className="lg:col-span-7">
-              <Eyebrow text={labels.servicesOf ?? ""} index={1} />
-              <Heading
-                level={2}
-                text={whatWeDo.heading ?? ""}
-                id="what-we-do-heading"
-                className="mt-4"
-              />
-              {whatWeDo.intro ? (
-                <p className="mt-5 max-w-(--container-measure) text-lg text-steel-ink wdth-body text-pretty">
-                  <RichText text={whatWeDo.intro} />
-                </p>
-              ) : null}
-            </Reveal>
-          </div>
-
-          <IndexList items={index} label={labels.indexLabel ?? whatWeDo.heading ?? ""} className="mt-10 md:mt-14" />
-
-          {whatWeDo.ctas?.length ? (
-            <div className="mt-10 flex flex-wrap gap-3">
-              {whatWeDo.ctas.map((link, position) => (
-                <Button
-                  key={link.href}
-                  label={link.label}
-                  href={link.href}
-                  variant={position === 0 ? "secondary" : "secondary"}
-                />
-              ))}
-            </div>
-          ) : null}
-        </Container>
-      </Section>
-
-      {/* Projects: one door per published category, each its own photograph. */}
-      <Section tone="paper" labelledBy="selected-work-heading">
-        <Container>
-          <div className="lg:grid lg:grid-cols-12 lg:gap-x-12">
-            <Reveal className="lg:col-span-7">
-              <Eyebrow text={labels.projectsOf ?? ""} index={2} />
-              <Heading
-                level={2}
-                text={selectedWork.heading ?? ""}
-                id="selected-work-heading"
-                className="mt-4"
-              />
-              {selectedWork.intro ? (
-                <p className="mt-5 max-w-(--container-measure) text-lg text-steel-ink wdth-body text-pretty">
-                  <RichText text={selectedWork.intro} />
-                </p>
-              ) : null}
-            </Reveal>
-          </div>
-
-          <ProjectDoors
-            doors={doors}
-            countOne={labels.countOne ?? ""}
-            countMany={labels.countMany ?? ""}
-            label={labels.doorsLabel ?? selectedWork.heading ?? ""}
-            className="mt-10 md:mt-14"
-          />
-
-          {selectedWork.ctas?.length ? (
-            <div className="mt-12 flex flex-wrap gap-3">
-              {selectedWork.ctas.map((link) => (
-                <Button key={link.href} label={link.label} href={link.href} variant="secondary" />
-              ))}
-            </div>
-          ) : null}
-        </Container>
-      </Section>
-
-      {/* The company's facts, as a plate, and the clients' names. */}
-      <Section tone="concrete" as="div">
-        <Container>
-          <Reveal>
-            <Eyebrow text={facts.heading} index={3} />
-          </Reveal>
-          <DataPlate
-            facts={getCompanyFacts()}
-            heading={facts.heading}
-            headingId="facts-heading"
-            className="mt-6"
+          <SectionHead
+            label={labels.clientsLabel ?? ""}
+            index={4}
+            heading={clientsSection.heading ?? ""}
+            headingId="clients-heading"
+            intro={clientsSection.intro}
           />
         </Container>
-
-        <Container className="mt-20 md:mt-28">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-x-12">
-            <Reveal className="lg:col-span-7">
-              <Eyebrow text={labels.clientsLabel ?? ""} index={4} />
-              <Heading
-                level={2}
-                text={clientsSection.heading ?? ""}
-                id="clients-heading"
-                className="mt-4"
-              />
-              {clientsSection.intro ? (
-                <p className="mt-5 max-w-(--container-measure) text-lg text-steel-ink wdth-body text-pretty">
-                  <RichText text={clientsSection.intro} />
-                </p>
-              ) : null}
-            </Reveal>
-          </div>
-        </Container>
-
-        <ClientMarquee
-          clients={clients}
-          label={clientsSection.heading ?? ""}
-          className="mt-10"
-        />
-
+        <div className="mt-14 flex flex-col gap-2 md:mt-20">
+          <ClientMarquee clients={clients.slice(0, half)} label={clientsSection.heading ?? ""} />
+          <ClientMarquee clients={clients.slice(half)} label={clientsSection.heading ?? ""} reverse />
+        </div>
         {clientsSection.ctas?.length ? (
-          <Container className="mt-8">
+          <Container className="mt-12">
             {clientsSection.ctas.map((link) => (
               <TextLink key={link.href} label={link.label} href={link.href} />
             ))}
@@ -337,7 +294,34 @@ export default function HomePage() {
         </Section>
       ) : null}
 
-      <CtaBand heading={cta.heading} body={cta.body} ctas={cta.ctas} headingId="home-cta" />
+      {/* The close: the question, the two ways on, and the motto across the page. */}
+      <section aria-labelledby="home-cta" className="overflow-hidden bg-asphalt pt-[clamp(5rem,3rem+8vw,10rem)] text-concrete">
+        <Container className="flex flex-col items-center text-center">
+          <Heading level={2} text={cta.heading ?? ""} id="home-cta" split className="max-w-[22ch] text-concrete" />
+          {cta.body ? (
+            <p data-anim="fade" data-delay={200} className="mt-6 max-w-[50ch] text-lg text-steel-light text-pretty">
+              <RichText text={cta.body} />
+            </p>
+          ) : null}
+          <div data-anim="fade" data-delay={320} className="mt-10 flex flex-col gap-3 sm:flex-row">
+            {cta.ctas.map((link, position) => (
+              <Button key={link.href} label={link.label} href={link.href} variant={position === 0 ? "light" : "inverse"} />
+            ))}
+          </div>
+        </Container>
+
+        <div className="mt-[clamp(5rem,3rem+8vw,10rem)] border-t border-rule-dark px-(--gutter) pt-10">
+          <h2 className="sr-only">
+            <RichText text={motto.heading ?? ""} />
+          </h2>
+          <p
+            data-anim="lines"
+            className="font-display text-[clamp(3.5rem,13.5vw,16rem)] leading-[0.86] tracking-[-0.035em] text-concrete"
+          >
+            <RichText text={motto.body[0]} />
+          </p>
+        </div>
+      </section>
     </>
   );
 }

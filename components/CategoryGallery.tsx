@@ -32,9 +32,11 @@ export function CategoryGallery({ photos, label, className }: CategoryGalleryPro
 
   return (
     <section aria-label={label} className={cn(className)}>
-      <ul className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {photos.map(({ image, project }, index) => {
           const portrait = (image.height ?? 0) > (image.width ?? 0);
+          // The first photograph leads the gallery at twice the size.
+          const lead = index === 0 && !portrait;
           const isLead = Boolean(project && project.images[0]?.src === image.src);
           const box = (
             <DevelopImage
@@ -44,11 +46,11 @@ export function CategoryGallery({ photos, label, className }: CategoryGalleryPro
               develop={index < 3 ? "load" : "view"}
               contain={portrait}
               zoom={Boolean(project)}
-              className="aspect-4/3 w-full"
+              className={lead ? "aspect-4/3 w-full lg:aspect-auto lg:h-[calc(100%-2.5rem)]" : "aspect-4/3 w-full"}
             />
           );
           const figure = (
-            <figure className="m-0">
+            <figure className="m-0 h-full">
               {isLead && project ? (
                 <ViewTransition name={`project-${project.slug}`}>{box}</ViewTransition>
               ) : (
@@ -64,11 +66,16 @@ export function CategoryGallery({ photos, label, className }: CategoryGalleryPro
           );
 
           return (
-            <Reveal key={image.src} as="li" index={index % 3}>
+            <Reveal
+              key={image.src}
+              as="li"
+              index={index % 3}
+              className={lead ? "sm:col-span-2 lg:row-span-2" : undefined}
+            >
               {project ? (
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="group block no-underline focus-visible:outline-offset-4"
+                  className="group block h-full no-underline focus-visible:outline-offset-4"
                 >
                   {figure}
                 </Link>

@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Button } from "@/components/Button";
-import { DataPlate } from "@/components/DataPlate";
 import { DevelopImage } from "@/components/DevelopImage";
 import { Eyebrow } from "@/components/Eyebrow";
-import { ScaleRule } from "@/components/ScaleRule";
 import { CapabilityList } from "@/components/CapabilityList";
 import { ClientList } from "@/components/ClientList";
 import { CompanyFactsPanel } from "@/components/CompanyFactsPanel";
@@ -187,7 +185,7 @@ export default function StyleguidePage() {
 
             <Entry
               title="The drawing layer"
-              note="IBM Plex Mono for every label: eyebrows, running indices, the nav, buttons, captions' numbers, the data plate. The survey grid sits under headers and dark bands; the scale bar marks the edge of every photograph band. Photographs develop from a field of dots as they arrive."
+              note="IBM Plex Mono for every label: eyebrows, running indices, the nav, buttons, captions' numbers, the data plate. Instrument Serif for display, Geist for text. Photographs wipe open as they arrive and drift inside their frames; headings rise a line at a time (GSAP, in MotionRuntime)."
             >
               <div className="flex flex-col gap-8">
                 <div className="flex flex-wrap gap-x-10 gap-y-4">
@@ -195,13 +193,9 @@ export default function StyleguidePage() {
                   <Eyebrow text="With an index" index={3} />
                   <Eyebrow text="Brand tone" tone="brand" />
                 </div>
-                <div className="bg-asphalt p-6 dot-grid-dark">
+                <div className="bg-asphalt p-6">
                   <Eyebrow text="On asphalt" tone="dark" index={1} />
                   <Eyebrow text="Brand on asphalt" tone="darkBrand" className="mt-3" />
-                  <ScaleRule className="mt-6 text-rule-dark" />
-                </div>
-                <div className="dot-grid border border-rule p-6">
-                  <p className="text-sm text-steel-ink wdth-body">The survey grid, on concrete.</p>
                 </div>
                 {projects[0]?.images[0] ? (
                   <div className="max-w-md">
@@ -211,16 +205,13 @@ export default function StyleguidePage() {
                       className="aspect-3/2 w-full"
                     />
                     <p className="mt-2 text-xs text-steel-ink wdth-body">
-                      A photograph developing as it scrolls in (reload with it below the fold to see the dots).
+                      A photograph frame, revealed as it scrolls in.
                     </p>
                   </div>
                 ) : null}
               </div>
             </Entry>
 
-            <Entry title="Data plate" note="The company facts as a plate: figures count up as they come into view.">
-              <DataPlate facts={facts} heading="Company at a glance" headingId="styleguide-plate" />
-            </Entry>
 
             <Entry title="Buttons" note="Square corners, set in the mono. Primary is a brand fill; secondary is the ink outline; inverse is for asphalt sections. A link carries an arrow; a form button does not.">
               <div className="flex flex-col gap-6">

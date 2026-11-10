@@ -213,8 +213,8 @@ function CategoryTile({
                 ? "(min-width: 768px) 50vw, 100vw"
                 : "(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
             }
-            zoom
-            className={cn("w-full", isWide ? "aspect-16/9 md:aspect-3/2" : "aspect-4/3")}
+            parallax
+            className={cn("w-full", isWide ? "aspect-16/9 md:aspect-3/2" : "aspect-4/5")}
           />
         </ViewTransition>
       ) : null}
@@ -229,7 +229,12 @@ function CategoryTile({
           </p>
         </div>
 
-        <h4 className={cn("wdth-heading text-balance", isWide ? "text-h2" : "text-h3")}>
+        <h4
+          className={cn(
+            "font-display font-normal leading-[1.02] tracking-[-0.02em] text-balance",
+            isWide ? "text-[clamp(2.25rem,1.6rem+2.2vw,3.75rem)]" : "text-[clamp(1.75rem,1.4rem+1vw,2.5rem)]",
+          )}
+        >
           <Link
             href={`/projects/${category.slug}`}
             className="text-asphalt no-underline after:absolute after:inset-0 after:content-['']"

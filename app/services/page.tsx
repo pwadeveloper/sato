@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 import { Container } from "@/components/Container";
-import { DevelopImage } from "@/components/DevelopImage";
-import { Eyebrow } from "@/components/Eyebrow";
+import { ServicesIndex, type ServicesIndexItem } from "@/components/ServicesIndex";
 import { Heading } from "@/components/Heading";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
@@ -19,7 +17,6 @@ import {
 } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/metadata";
 import { bandHref, bandItems } from "@/lib/service-band";
-import { cn } from "@/lib/cn";
 
 const page = getPage("services");
 const site = getSite();
@@ -39,12 +36,34 @@ export const metadata: Metadata = buildPageMetadata(page, site);
  * separated line rather than a stack of cards, so the page reads as five
  * things rather than eleven.
  *
- * The rows alternate sides on desktop, each indexed in the mono, and the
- * photograph develops as its row scrolls in. It is the only ornament on the
- * page, and it exists so five near-identical rows do not read as a table.
+ * They are set as the index Home uses, the category's photograph following
+ * the pointer, so the two pages read Sato's work the same way.
  */
 export default function ServicesPage() {
   const bands = getServiceBands();
+
+  const items: ServicesIndexItem[] = bands.map((band) => {
+    const href = bandHref(band) ?? "/services";
+    const children = bandItems(band);
+    const solo = children.length === 0 ? band.services[0] : undefined;
+    // A category of one shows its service's summary; a category of several
+    // shows its own intro, because no one summary covers four disciplines.
+    // Beneath it, the category's own destinations: Infrastructure's four
+    // disciplines, or the sections of a page that asks to list them.
+    const links = children.length
+      ? children.map((service) => ({ label: service.name, href: `/services/${service.slug}` }))
+      : (solo?.showSectionsInMenu ? getServiceNav(solo) : [])
+          .filter((section) => !section.href)
+          .map((section) => ({ label: section.label, href: `/services/${solo?.slug}#${section.id}` }));
+    return {
+      id: band.group,
+      label: band.label,
+      href,
+      intro: solo ? solo.summary : band.intro,
+      image: band.image,
+      links,
+    };
+  });
 
   return (
     <>
@@ -54,119 +73,11 @@ export default function ServicesPage() {
         image={page.images?.header}
       />
 
+      {/* The five categories, as the same index Home uses: one way of
+          reading Sato's work, wherever it is listed. */}
       <Section tone="concrete" as="div">
         <Container>
-          <ol className="flex flex-col gap-16 md:gap-24">
-            {bands.map((band, index) => {
-              const href = bandHref(band);
-              const items = bandItems(band);
-              const solo = items.length === 0 ? band.services[0] : undefined;
-              // A category of one shows its service's summary; a category of
-              // several shows its own intro, because no one summary covers
-              // four disciplines.
-              const lead = solo ? solo.summary : band.intro;
-
-              /**
-               * Where the row goes on: sub-services, or page sections.
-               *
-               * Page sections only where the service asks for them — every
-               * service page has the same three now, and repeating them under
-               * all five categories would be the same words five times. A
-               * section that lives on another page is left out even then:
-               * Oil & Gas "Projects" is `/projects/oil-gas`, which Projects
-               * already lists under its own nav item.
-               */
-              const links = items.length
-                ? items.map((service) => ({
-                    key: service.slug,
-                    label: service.name,
-                    href: `/services/${service.slug}`,
-                  }))
-                : (solo?.showSectionsInMenu ? getServiceNav(solo) : [])
-                    .filter((section) => !section.href)
-                    .map((section) => ({
-                      key: section.id,
-                      label: section.label,
-                      href: `/services/${solo?.slug}#${section.id}`,
-                    }));
-
-              const flip = index % 2 === 1;
-
-              return (
-                <Reveal
-                  key={band.group}
-                  as="li"
-                  className="group lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-12"
-                >
-                  {band.image ? (
-                    <div className={cn("lg:col-span-5", flip ? "lg:col-start-8" : "lg:col-start-1")}>
-                      <Link href={href ?? "#"} tabIndex={-1} aria-hidden="true" className="block">
-                        <DevelopImage
-                          image={band.image}
-                          sizes="(min-width: 1024px) 40vw, 100vw"
-                          zoom
-                          className="aspect-16/9 w-full lg:aspect-4/3"
-                        />
-                      </Link>
-                    </div>
-                  ) : null}
-
-                  <div
-                    className={cn(
-                      "mt-6 lg:col-span-6 lg:mt-0",
-                      flip ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-7",
-                      !band.image && "lg:col-span-8 lg:col-start-1",
-                    )}
-                  >
-                    <Eyebrow text={band.label} index={index + 1} className="sr-only" />
-                    <p aria-hidden="true" className="eyebrow tabular text-steel-ink">
-                      {String(index + 1).padStart(2, "0")}
-                    </p>
-
-                    <h2 className="mt-3 text-h2 wdth-heading text-balance">
-                      {href ? (
-                        <Link
-                          href={href}
-                          className="inline-flex items-baseline gap-4 text-asphalt no-underline transition-colors duration-150 hover:text-brand-ink"
-                        >
-                          <RichText text={band.label} />
-                          <span
-                            aria-hidden="true"
-                            className="inline-block text-[0.55em] text-brand transition-transform duration-500 ease-(--ease-out-expo) group-hover:translate-x-1.5 motion-reduce:transition-none"
-                          >
-                            &rarr;
-                          </span>
-                        </Link>
-                      ) : (
-                        <RichText text={band.label} />
-                      )}
-                    </h2>
-
-                    {lead ? (
-                      <p className="mt-4 max-w-(--container-measure) text-base text-steel-ink wdth-body text-pretty">
-                        <RichText text={lead} />
-                      </p>
-                    ) : null}
-
-                    {links.length ? (
-                      <ul className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-rule pt-4">
-                        {links.map((link) => (
-                          <li key={link.key}>
-                            <Link
-                              href={link.href}
-                              className="eyebrow link-draw text-brand-ink transition-colors duration-150 hover:text-brand-deep"
-                            >
-                              <RichText text={link.label} />
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </div>
-                </Reveal>
-              );
-            })}
-          </ol>
+          <ServicesIndex items={items} label={page.title} />
         </Container>
       </Section>
 

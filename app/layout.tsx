@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Archivo, IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { ViewTransition } from "react";
 import { ReviewBanner } from "@/components/DraftNotice";
 import { MotionProvider } from "@/components/motion/MotionProvider";
+import { MotionRuntime } from "@/components/motion/MotionRuntime";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import {
@@ -20,27 +21,40 @@ import { buildOrganizationSchema, buildWebsiteSchema } from "@/lib/structured-da
 import "./globals.css";
 
 /**
- * Two families, both self-hosted by next/font so the static export makes no
- * third-party font request.
- *
- * Archivo carries the display and the body; `wdth` is loaded as a variable
- * axis so headings can use the expanded widths without a second file. IBM
- * Plex Mono is the drawing layer — eyebrows, indices, the nav, buttons, the
- * data plate — two weights, latin only.
+ * Three families, self-hosted from `app/fonts` (Geist from Vercel's `geist`
+ * package, Instrument Serif from Fontsource; both SIL Open Font License), so
+ * neither the build nor a visitor makes a third-party font request:
+ * Instrument Serif for display, Geist for text, Geist Mono for labels.
  */
-const archivo = Archivo({
-  subsets: ["latin"],
-  axes: ["wdth"],
+const instrument = localFont({
+  src: [
+    { path: "./fonts/InstrumentSerif-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/InstrumentSerif-Italic.woff2", weight: "400", style: "italic" },
+  ],
   display: "swap",
-  variable: "--font-archivo",
+  variable: "--font-instrument",
 });
 
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
+const geist = localFont({
+  src: "./fonts/Geist-Variable.woff2",
+  weight: "100 900",
   display: "swap",
-  variable: "--font-plex-mono",
+  variable: "--font-geist",
 });
+
+const geistMono = localFont({
+  src: "./fonts/GeistMono-Variable.woff2",
+  weight: "100 900",
+  display: "swap",
+  variable: "--font-geist-mono",
+});
+
+/**
+ * Sets `html.motion` before the first paint, unless the reader has asked for
+ * reduced motion. CSS hides what GSAP will bring in only under that class, so
+ * a reader who never runs the motion layer never sees anything hidden.
+ */
+const MOTION_FLAG = `if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("motion")}`;
 
 const site = getSite();
 const servicesPage = getPage("services");
@@ -159,8 +173,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${archivo.variable} ${plexMono.variable}`}>
+    <html
+      lang="en"
+      className={`${instrument.variable} ${geist.variable} ${geistMono.variable}`}
+      // The motion flag is added by the inline script before hydration.
+      suppressHydrationWarning
+    >
       <body className="min-h-dvh bg-concrete text-asphalt antialiased">
+        <script dangerouslySetInnerHTML={{ __html: MOTION_FLAG }} />
         <script
           type="application/ld+json"
           // Built from content JSON at build time; no user input reaches it.
@@ -187,6 +207,7 @@ export default function RootLayout({
             <ViewTransition>{children}</ViewTransition>
           </main>
           <SiteFooter site={site} year={new Date().getFullYear()} />
+          <MotionRuntime />
         </MotionProvider>
       </body>
     </html>

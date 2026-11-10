@@ -30,7 +30,7 @@ export const metadata: Metadata = {
  */
 export default function NotFound() {
   return (
-    <Section tone="concrete" labelledBy="not-found-heading" className="dot-grid">
+    <Section tone="concrete" labelledBy="not-found-heading">
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-12">
           <div className="lg:col-span-5">
@@ -48,8 +48,7 @@ export default function NotFound() {
             {intro.body.map((paragraph, index) => (
               <p
                 key={index}
-                data-fade=""
-                style={{ "--fade-delay": `${300 + index * 90}ms` } as React.CSSProperties}
+                data-anim="fade" data-delay={300 + index * 90}
                 className="max-w-(--container-measure) text-base text-asphalt wdth-body text-pretty"
               >
                 <RichText text={paragraph} />

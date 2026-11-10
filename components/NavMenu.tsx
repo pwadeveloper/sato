@@ -161,9 +161,9 @@ export function NavMenu({
         }}
         className={cn(
           "eyebrow link-draw flex items-center gap-2 py-2",
-          "transition-colors duration-150 hover:text-brand-ink",
-          current ? "text-brand-ink [background-size:100%_1px]" : "text-asphalt",
-          open && "text-brand-ink",
+          "transition-colors duration-150 hover:text-asphalt",
+          current ? "text-asphalt [background-size:100%_1px]" : "text-steel-ink",
+          open && "text-asphalt",
         )}
       >
         <RichText text={label} />
@@ -190,7 +190,7 @@ export function NavMenu({
             className={cn(
               // Anchored to the trigger's right edge so it can never run off the
               // side of the window, and only as wide as its contents need.
-              "absolute right-0 top-full z-50 border border-rule-dark bg-asphalt p-7 text-concrete dot-grid-dark",
+              "absolute right-0 top-[calc(100%-0.5rem)] z-50 rounded-(--radius-frame) border border-rule-dark bg-asphalt p-8 text-concrete shadow-2xl shadow-black/20",
               groups.length > 3
                 ? "w-[min(60rem,calc(100vw-3rem))]"
                 : "w-[min(24rem,calc(100vw-3rem))]",

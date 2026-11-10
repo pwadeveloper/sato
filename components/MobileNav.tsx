@@ -103,7 +103,7 @@ export function MobileNav({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6, transition: { duration: 0.15 } }}
             transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-x-0 bottom-0 top-(--header-height) z-50 overflow-y-auto bg-asphalt dot-grid-dark"
+            className="fixed inset-x-0 bottom-0 top-(--header-height) z-50 overflow-y-auto bg-asphalt"
           >
             <nav aria-label={navLabel} className="px-5 py-4 md:px-8">
               <ul className="flex flex-col">

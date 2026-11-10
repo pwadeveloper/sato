@@ -1,6 +1,6 @@
 # Design refresh — 10 November 2026
 
-**Status:** implemented on the `NewDesign` branch, for the client's review.
+**Status:** implemented on the `NewDesign` branch, for the client's review. **Superseded in its visual language by the second pass at the end of this file**; the content rules below still hold.
 Wins over `docs/design-plan.md` wherever the two disagree on presentation.
 Changes nothing the earlier decision records settled about *content*: every
 word, photograph, caption, attribution line and hidden page is where those
@@ -147,3 +147,73 @@ images and redirects checks all pass on `npm run build:prod`.
   dither on the hero — any of the three is one component removed.
 - Energy, Digital Twin and Research photographs, which would complete the
   "What we do" index and let their project categories publish.
+
+
+---
+
+# Second pass — 10 November 2026
+
+The first pass kept the old site's bones (heavy expanded Archivo on a warm
+concrete page) and added a drawing layer over them; read against the
+references it looked like the same website. This pass replaces the visual
+language outright. What changed, and why:
+
+## Language
+
+- **Type.** Instrument Serif for display, `h1` and `h2`; Geist for text;
+  Geist Mono for labels. The references set their headlines in a refined
+  serif or a light grotesk with a mono microlabel, never a heavy expanded
+  sans. Self-hosted in `app/fonts/`.
+- **Page.** Cool near-white, white cards, near-black ink and bands, hairlines
+  instead of boxes, a 6px radius on photograph frames. Green is the single
+  accent, as the references use one hue against a quiet page.
+- **Retired:** the dot grid, the scale bar, the CSS halftone develop, the
+  dither shader on the hero, the CSS reveals. Nothing of the first pass's
+  look is left on screen.
+
+## Motion: GSAP
+
+One runtime (`MotionRuntime`) wires GSAP ScrollTrigger and SplitText to
+`data-anim` attributes: headings rise a line at a time out of masks; blocks
+rise and fade; photograph frames wipe open and settle from a zoom; pictures
+drift inside their frames; the long welcome paragraph and About's opening
+light up a word at a time as they are read; figures count. Lenis smooths the
+wheel on a desktop. Reduced motion turns all of it off at the source.
+
+## Home
+
+1. **Hero** — centred serif title ("Welcome to" in the muted italic), lead,
+   two buttons, and beneath them a real Sato photograph (the padfoot rollers
+   at Fiditi) drawn as ruled green lines fading into the page: the
+   references' scanline skyline, on Sato's own work. The pointer bends the
+   lines like a lens. On scroll the stage pins, the frame opens to the whole
+   window and the lines resolve into the photograph a row at a time, top
+   down; the caption arrives as it settles. The photograph is the Fiditi
+   project's own and this is its one header use, which the rule allows.
+2. **Statement** — the second welcome paragraph in the serif, lit word by
+   word.
+3. **What we do** — the five categories as an index; the row's photograph
+   follows the cursor. The services overview now uses the same index.
+4. **Projects** — a pinned horizontal rail of the published categories,
+   ending in "All projects".
+5. **Company at a glance** — three counted figures over the survey field
+   (years from the founding year, projects from `projects.json`, areas from
+   `services.json`; the labels are in `pages/home.json`), then the facts.
+6. **Clients** — two marquee rows of names in the serif, passing each other.
+7. **Close** — the question and two buttons, then the motto set across the
+   whole width.
+
+## Elsewhere
+
+Page headers set the serif title beside its lead with a wide photograph
+that wipes open and drifts. Category galleries lead with one photograph at
+twice the size. Project pages end with a link to the next project in the
+category — text only, because a photograph belongs on its own project's page.
+Contact sets the telephone and email in the serif.
+
+## For the client
+
+- The light serif replaces the heavy headings he asked for in an earlier
+  round. Flagged in `docs/open-items-extra.md`.
+- Home's hero now uses the Fiditi clay compaction photograph instead of the
+  generated dam-site image.

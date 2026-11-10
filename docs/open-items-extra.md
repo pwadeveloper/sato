@@ -547,3 +547,10 @@ third place for a photograph the one-photograph rule allows in two. The
 reading taken is that the spotlight is the category's identity picture
 wherever the category is listed (`docs/decisions/design-refresh-2026-11-10.md`).
 **To confirm:** keep the doors as they are, or give Home other photographs.
+
+## Headings: serif instead of heavy
+
+The second design pass (`NewDesign`, 10 November) sets headings in a light
+serif (Instrument Serif) rather than the heavy expanded sans the client asked
+for in an earlier round. **To confirm:** that he is happy with the new
+direction, or whether he wants weight back.

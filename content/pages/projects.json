@@ -28,7 +28,8 @@
     "lightboxClose": "Close",
     "lightboxNext": "Next photograph",
     "lightboxPrevious": "Previous photograph",
-    "lightboxCounter": "Photograph {n} of {total}"
+    "lightboxCounter": "Photograph {n} of {total}",
+    "nextProject": "Next project"
   },
   "images": {
     "header": {

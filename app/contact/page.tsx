@@ -58,9 +58,9 @@ export default function ContactPage() {
         a dark band is marked as deliberate on this site rather than as a gap
         where an image failed to load.
       */}
-      <Section tone="asphalt" labelledBy="channels" className="dot-grid-dark">
+      <Section tone="asphalt" labelledBy="channels">
         <Container>
-          <div className="border-l-[3px] border-brand pl-6 md:pl-10">
+          <div>
             <h2
               id="channels"
               className="eyebrow text-brand-light"
@@ -84,7 +84,7 @@ export default function ContactPage() {
                       // Body width, not the expanded heading width: these are
                       // data, not headings, and at 360px the email set in the
                       // expanded axis overflows and breaks after "…co".
-                      "text-h2 wdth-body",
+                      "font-display text-[clamp(2rem,1.1rem+3vw,3.5rem)] leading-[1.05] tracking-[-0.02em]",
                       // A telephone number is a figure: tabular so the digit
                       // groups line up, and unbroken so it is never split
                       // mid-group. An address has no spaces to wrap at, so it
@@ -92,7 +92,7 @@ export default function ContactPage() {
                       // wide.
                       kind === "phone"
                         ? "tabular whitespace-nowrap"
-                        : "break-words",
+                        : "break-all sm:break-words",
                     )}
                   >
                     <RichText text={channel.value} />

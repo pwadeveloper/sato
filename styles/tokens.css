@@ -1,220 +1,161 @@
 /**
- * Design tokens — Sato Engineering and Infrastructure.
+ * Design tokens — Sato Engineering & Infrastructure.
  *
  * Tailwind v4 is CSS-first: this `@theme` block both declares the tokens as
- * plain CSS custom properties on `:root` AND generates the matching utilities
- * (`bg-asphalt`, `text-brand-ink`, `text-h1`, ...). Swapping the palette means
- * editing this file only — nothing else hardcodes a colour.
+ * CSS custom properties on `:root` AND generates the matching utilities.
+ * Swapping the palette means editing this file only.
  *
- * Palette is sampled from the supplied logo (see /docs/design-plan.md).
- * The client's second feedback batch fixes the two greens:
- *   #2E7229  primary brand — buttons, fills, rules
- *   #177B0B  the brighter lozenge tone — sparing highlight only
- * There is no second hue, so tonal separation comes from `brand` vs
- * `brand-deep`, never from a second colour.
+ * The second design direction (docs/decisions/design-refresh-2026-11-10.md):
+ * a cool near-white page, white surfaces, near-black ink, and Sato green as
+ * the single accent — in the imagery, the markers and the hover, the way the
+ * references use one saturated hue against a quiet page. The token *names*
+ * are the original ones (concrete is the page, asphalt is the ink) so every
+ * component carries over; only the values moved.
  *
- * Contrast is verified to WCAG 2.1 AA. Two text colours are darkened
- * derivatives of the sampled values, because the sampled values do not clear
- * 4.5:1 at body size against the concrete page background:
- *   brand-ink    <- brand-bright (#177B0B is 4.4:1 on concrete — fails)
- *   steel-ink    <- steel        (#5A6A73 is 4.50:1 on concrete — no margin)
- *   *-light      <- new          (no text colour was specified for dark bands)
+ * Contrast, verified to WCAG 2.1 AA at body size:
+ *   asphalt on concrete   17.9:1     steel-ink on concrete   5.8:1
+ *   brand-ink on concrete  6.6:1     steel-light on asphalt  7.4:1
+ *   brand-light on asphalt 7.0:1     white on brand          5.9:1
  */
 
 @theme {
-  /* Clear Tailwind's stock green scale so `green` is unambiguously Sato's. */
   --color-green-*: initial;
 
-  /*
-   * Brand — one family, one swap.
-   *
-   * `brand` is the primary: button fills, rules, pills. White on it is 5.9:1,
-   * and it clears 4.5:1 on concrete, so it is also safe as large-text ink.
-   * Body-size link and label text uses `brand-ink` instead, which carries a
-   * real margin (5.8:1) rather than a bare pass.
-   */
-  --color-brand: #2e7229; /* primary; white on it 5.9:1, 4.7:1 on concrete */
-  --color-brand-bright: #177b0b; /* highlight fills and rules ONLY — 4.4:1, never text */
-  --color-brand-deep: #1c5718; /* hover and pressed fills; 7.0:1 on concrete  */
-  --color-brand-ink: #136509; /* link and label text on light; 5.8:1          */
-  --color-brand-light: #80b076; /* link text on dark;  6.0:1 on asphalt         */
-  --color-brand-tint: #e3ede6; /* subtle wash; asphalt on it 12.6:1            */
+  /* Brand — one family. Unchanged: it is the logo's. */
+  --color-brand: #2e7229;
+  --color-brand-bright: #177b0b; /* highlight fills and imagery ONLY — never text */
+  --color-brand-deep: #1c5718;
+  --color-brand-ink: #136509;
+  --color-brand-light: #8cc47f; /* text and marks on dark */
+  --color-brand-tint: #e7efe4;
 
-  /* Neutrals — site work */
-  --color-asphalt: #22272b; /* body text, dark sections, the data plate */
-  --color-asphalt-raised: #2e3236; /* card surface inside dark sections        */
-  --color-concrete: #e9e6e1; /* page background                          */
-  --color-steel: #5a6a73; /* borders, muted UI, rivets                */
-  --color-steel-ink: #4e5c64; /* secondary text on light; 5.6:1           */
-  --color-steel-light: #9aa2a4; /* secondary text on dark;  5.8:1           */
-  --color-rule: #cacbc9; /* hairline on light                        */
-  --color-rule-dark: #3e4244; /* hairline on dark                         */
+  /* Neutrals */
+  --color-asphalt: #0f110f; /* ink; dark bands */
+  --color-asphalt-raised: #1a1d1a;
+  --color-concrete: #f3f3ef; /* the page */
+  --color-paper: #ffffff; /* cards and alternate bands */
+  --color-steel: #7a7f7a; /* decoration: indices, arrows, icons */
+  --color-steel-ink: #5a5f5a; /* secondary text on light */
+  --color-steel-light: #a3a8a3; /* secondary text on dark */
+  --color-rule: #dfdfda;
+  --color-rule-dark: #2a2e2a;
 
-  /* Accents */
-  --color-survey: #e2b236; /* fill / rule / focus only. NEVER text on light. */
-  /*
-   * State, not brand. Validation errors must never wear the brand colour —
-   * green reads as success. 8.0:1 on white, 6.5:1 on concrete.
-   */
+  --color-survey: #e2b236; /* focus ring only */
   --color-error: #9a2218;
 
   /*
-   * Paper — the card and alternate-band surface. Between concrete and white,
-   * so every text colour verified on concrete clears it with more margin,
-   * and a card no longer reads as a white hole punched in a warm page.
+   * Three families. Instrument Serif for display (h1, h2, display) — one
+   * weight, set large and tight, as the references set their headlines.
+   * Geist for everything read. Geist Mono for labels and controls.
    */
-  --color-paper: #f4f2ee;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-instrument), "Times New Roman", serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
 
-  /*
-   * Type — Archivo, variable, wdth 62-125, wght 100-900, for display and body.
-   * IBM Plex Mono for the drawing layer: eyebrows, indices, captions' numbers,
-   * the nav, buttons, data. The mono is what makes a label read as a survey
-   * annotation rather than as marketing microcopy.
-   */
-  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
-
-  /* Scale: 1.25 ratio, body 17px. Display steps are fluid 360px -> 1280px. */
-  --text-2xs: 0.75rem;
+  --text-2xs: 0.6875rem;
   --text-2xs--line-height: 1.4;
-  --text-xs: 0.85rem;
+  --text-xs: 0.8125rem;
   --text-xs--line-height: 1.45;
   --text-sm: 0.9375rem;
   --text-sm--line-height: 1.5;
   --text-base: 1.0625rem;
   --text-base--line-height: 1.6;
-  --text-lg: 1.3125rem;
-  --text-lg--line-height: 1.45;
-  --text-xl: 1.625rem;
-  --text-xl--line-height: 1.3;
-  --text-2xl: 2.0625rem;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.5;
+  --text-xl: 1.5rem;
+  --text-xl--line-height: 1.35;
+  --text-2xl: 2rem;
   --text-2xl--line-height: 1.2;
-  --text-3xl: 2.5625rem;
+  --text-3xl: 2.5rem;
   --text-3xl--line-height: 1.1;
   --text-4xl: 3.25rem;
   --text-4xl--line-height: 1.05;
-  --text-5xl: 4.0625rem;
-  --text-5xl--line-height: 1.02;
-  --text-6xl: 5.0625rem;
+  --text-5xl: 4rem;
+  --text-5xl--line-height: 1;
+  --text-6xl: 5rem;
   --text-6xl--line-height: 1;
 
   /*
-   * Display steps. The client asked for bolder, more prominent headings, so
-   * display / h1 / h2 each moved up one step of the 1.25 scale at the desktop
-   * end and gained weight. The 360px end is unchanged: a 33px h1 on a phone is
-   * already at the limit of a sensible measure, and growing it there would
-   * cost line breaks rather than buy presence.
+   * Headings. h3 and h4 are Geist — the names of services and projects run
+   * long and read better in the text face; h1, h2 and display are the serif.
+   * The serif is narrow, so "Infrastructure" at 360px fits at 52px.
    */
-  --text-h3: clamp(1.3125rem, 1.19rem + 0.543vw, 1.625rem);
+  --text-h3: clamp(1.25rem, 1.12rem + 0.55vw, 1.625rem);
   --text-h3--line-height: 1.25;
-  --text-h3--letter-spacing: -0.01em;
-  --text-h3--font-weight: 700;
+  --text-h3--letter-spacing: -0.015em;
+  --text-h3--font-weight: 500;
 
-  --text-h2: clamp(1.625rem, 0.989rem + 2.826vw, 3.25rem);
-  --text-h2--line-height: 1.1;
-  --text-h2--letter-spacing: -0.018em;
-  --text-h2--font-weight: 800;
+  --text-h2: clamp(2.375rem, 1.6rem + 3.4vw, 4.5rem);
+  --text-h2--line-height: 1;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2--font-weight: 400;
 
-  --text-h1: clamp(2.0625rem, 1.28rem + 3.478vw, 4.0625rem);
-  --text-h1--line-height: 1.03;
-  --text-h1--letter-spacing: -0.02em;
-  --text-h1--font-weight: 900;
+  --text-h1: clamp(3rem, 1.9rem + 4.9vw, 6.5rem);
+  --text-h1--line-height: 0.96;
+  --text-h1--letter-spacing: -0.025em;
+  --text-h1--font-weight: 400;
 
-  /*
-   * The 360px floor is set by the longest word the hero has to carry
-   * ("infrastructure"), not by the scale: at 41px it overflowed the 320px
-   * measure and the hero clipped it. 37px fits with room to spare.
-   */
-  --text-display: clamp(2.3125rem, 1.236rem + 4.783vw, 5.0625rem);
-  --text-display--line-height: 1;
-  --text-display--letter-spacing: -0.025em;
-  --text-display--font-weight: 900;
+  --text-display: clamp(3.25rem, 1.7rem + 6.9vw, 8.75rem);
+  --text-display--line-height: 0.92;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 400;
 
-  /* Layout */
-  --container-page: 80rem; /* 1280px */
-  --container-measure: 68ch; /* prose, under the 75-char ceiling */
+  --container-page: 82rem;
+  --container-measure: 64ch;
 
-  /*
-   * Motion. `quiet` for colour and small hover moves; `out-expo` for anything
-   * that enters — it decelerates hard, so a reveal lands rather than drifts.
-   * Killed by reduced-motion in globals.css.
-   */
+  --radius-frame: 0.375rem;
+
   --ease-out-quiet: cubic-bezier(0.22, 0.61, 0.36, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
   --duration-quick: 150ms;
-  --duration-hover: 500ms;
-  --duration-reveal: 900ms;
+  --duration-hover: 600ms;
 }
 
 /*
- * Width axis. Archivo's `wdth` is the expressive axis here, standing in for a
- * second typeface. Utilities so it composes with variants (`md:wdth-display`).
+ * The `wdth` utilities belonged to Archivo's width axis. Geist has none, so
+ * they are kept as no-ops rather than chased out of every component.
  */
 @utility wdth-display {
-  font-variation-settings: "wdth" 118;
+  font-variation-settings: normal;
 }
 @utility wdth-heading {
-  font-variation-settings: "wdth" 112;
+  font-variation-settings: normal;
 }
 @utility wdth-body {
-  font-variation-settings: "wdth" 100;
+  font-variation-settings: normal;
 }
 
-/* Section rhythm: 56px at 360, 112px at 1280. */
+/* Section rhythm: 72px at 360, 160px at 1280. */
 @utility section-y {
-  padding-block: clamp(3.5rem, 2rem + 6vw, 7rem);
+  padding-block: clamp(4.5rem, 2.5rem + 8vw, 10rem);
 }
 
-/*
- * Focus. Survey yellow is the brand signal; the asphalt ring inside the offset
- * gap is what actually carries contrast, since survey on concrete is only
- * 1.6:1. Together they read on both light and dark surfaces.
- */
 @utility focus-ring {
-  outline: 3px solid var(--color-survey);
+  outline: 2px solid var(--color-survey);
   outline-offset: 2px;
   box-shadow: 0 0 0 2px var(--color-asphalt);
 }
 
-/*
- * The drawing layer's label: mono, small, uppercase, letterspaced. Eyebrows,
- * indices, nav items, captions' numbers and the data plate all share it, so
- * one rule here keeps them one voice.
- */
+/* The label voice: mono, small, uppercase, letterspaced. */
 @utility eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   line-height: 1.4;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 450;
   font-variation-settings: normal;
 }
 
-/*
- * Survey grid: a dot every 24px, set as a background so it sits under the
- * content and never in the markup. Pass a colour with `--grid-ink` (defaults
- * to steel at low opacity); `dot-grid-dark` is the same for asphalt bands.
- */
+/* Retired with the dot grid; kept as no-ops so nothing breaks. */
 @utility dot-grid {
-  --grid-ink: color-mix(in srgb, var(--color-steel) 22%, transparent);
-  background-image: radial-gradient(var(--grid-ink) 1px, transparent 1.2px);
-  background-size: 24px 24px;
-  background-position: 12px 12px;
+  background-image: none;
 }
 @utility dot-grid-dark {
-  --grid-ink: color-mix(in srgb, var(--color-steel-light) 16%, transparent);
-  background-image: radial-gradient(var(--grid-ink) 1px, transparent 1.2px);
-  background-size: 24px 24px;
-  background-position: 12px 12px;
+  background-image: none;
 }
 
-/*
- * A hover zoom on photographs: slow and small, so it reads as the picture
- * coming forward rather than as a UI effect.
- */
 @utility zoom-on-hover {
-  transition: transform var(--duration-hover) var(--ease-out-expo);
-  will-change: transform;
+  transition: transform 900ms var(--ease-out-expo);
 }

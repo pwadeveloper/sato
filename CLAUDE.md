@@ -438,36 +438,43 @@ live in `/styles/tokens.css` in a single `@theme` block, which declares them as
 CSS custom properties on `:root` and generates the matching utilities. Swapping
 the palette means editing that one file.
 
-The logo has arrived. The palette is sampled from it and there is **no second
-hue**: the laterite accent was retired on the client's instruction. The family
-is `brand` `#2E7229` (primary — buttons, fills, rules), `brand-bright`
-`#177B0B` (**highlight fills only**, 4.4:1 on concrete, never text),
-`brand-deep` `#1C5718` (hover and pressed), `brand-ink` `#136509` (link and
-label text on light, 5.8:1), `brand-light` `#80B076` (text on dark) and
-`brand-tint` `#E3EDE6`. Tonal separation comes from `brand` versus
-`brand-deep`, not from a second colour. `error` `#9A2218` exists for validation
-only — never dress an error in the brand colour. Survey yellow stays on focus
-rings, the data plate's top bar and the review-mode banner.
+**Second design direction (10 November, `docs/decisions/design-refresh-2026-11-10.md`,
+"Second pass").** A cool near-white page (`concrete` #F3F3EF), white cards
+(`paper`), near-black ink and dark bands (`asphalt` #0F110F), and Sato green
+as the single accent — in the imagery, the eyebrow markers, the hovers. The
+brand family is unchanged (`brand` #2E7229, `brand-bright` #177B0B for fills
+and imagery only, never text, `brand-ink` #136509 for link text on light,
+`brand-light` for marks on dark). The token *names* are the original ones, so
+`concrete` is still "the page" and `asphalt` still "the ink". `error` #9A2218
+is validation only. Survey yellow is the focus ring only.
 
-**Type is deliberately heavy.** Display and h1 are weight 900, h2 is 800, and
-display / h1 / h2 each sit one step of the 1.25 scale higher at the desktop
-end than they did. The display floor at 360px is set by the longest word the
-hero carries ("infrastructure"), not by the scale.
+**Type.** Instrument Serif (one weight) for display, `h1` and `h2` — set
+large and tight, applied by the size classes themselves in `globals.css`, so
+never put `font-bold` on a serif heading. Geist for text, `h3` and `h4`.
+Geist Mono for labels (`eyebrow`), nav, buttons and data. All three are
+self-hosted in `app/fonts/` (OFL), so the build makes no font request. The
+heavy expanded Archivo of the first build is gone; the client's earlier ask
+for heavier headings is superseded by this direction and flagged for him.
 
-**The logo is art-directed by width** (`components/Logo.tsx`). The horizontal
-lockup is nearly 8:1 and cannot fit a phone header at a useful height, so
-below `md` a stacked lockup runs at 40px, and from `md` up the horizontal one
-runs at 52 / 56 / 64px. The 1024–1279px step is 56px rather than 64px because
-the full nav needs the rest of the row. Always scale by height with
-`width: auto`; never set both dimensions. `--header-height` in `globals.css`
-tracks these steps.
+**Motion is GSAP**, in one place: `components/motion/MotionRuntime.tsx` reads
+`data-anim` attributes (`lines`, `fade`, `stagger`, `image`, `parallax`,
+`scrub-words`, `count`) after every route change and builds the timelines,
+so server components stay server components. Lenis smooths the wheel on a
+desktop. An inline script sets `html.motion` before paint unless the reader
+asked for reduced motion; only under it is anything hidden, and a CSS
+fallback reveals everything after 2.5s if the runtime never arrives. The
+Home hero (`components/home/HomeHero.tsx` + `components/webgl/ScanlineCanvas.tsx`)
+renders a real project photograph as green scanlines that pin, open to full
+bleed and resolve into the photograph on scroll; the survey field
+(`components/webgl/SurveyField.tsx`) sits behind the figures. Three.js is
+loaded lazily on Home only.
 
 Still pending: SVG logo files, ideally including a stacked lockup. The client
 has asked the original designer for an updated mark; keep the current one
 until it arrives, then drop it into `/brand/` — the sizing rules do not
 change.
 
-**Simpler, more visual, less text.** The client read the previous build as
+**Simpler, more visual, less text** (still holds under the second direction). The client read the previous build as
 "academic" and asked for something closer to the plainness of the old site.
 Three rules follow from it:
 

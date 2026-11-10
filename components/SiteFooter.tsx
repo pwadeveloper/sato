@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Container } from "./Container";
 import { RichText } from "./RichText";
-import { ScaleRule } from "./ScaleRule";
 import type { Site } from "@/lib/content-types";
 
 export interface SiteFooterProps {
@@ -23,17 +22,13 @@ export interface SiteFooterProps {
  * row of links beside them, and repeating them on every page of the site was
  * one more thing to keep in step. `site.phones` and `site.emails` are
  * unchanged and still the single source for the Contact page.
- *
- * The scale bar along its top edge is the drawing's: the same tick rule
- * that marks the edge of every photograph band.
  */
 export function SiteFooter({ site, year }: SiteFooterProps) {
   const copyright = site.footer.copyright.replace("{year}", String(year));
 
   return (
-    <footer className="bg-asphalt text-concrete">
-      <ScaleRule className="text-rule-dark" height={8} />
-      <Container className="py-7">
+    <footer className="border-t border-rule-dark bg-asphalt text-concrete">
+      <Container className="py-8">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
           <p className="eyebrow text-steel-light">
             <RichText text={site.footer.legal} />

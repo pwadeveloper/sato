@@ -13,12 +13,10 @@ const TAGS = {
 export interface RevealProps {
   children: ReactNode;
   as?: keyof typeof TAGS;
-  /**
-   * Position among siblings revealed together. Each step extends the scroll
-   * range (or delays the load-time fallback) so a row of cards arrives one
-   * after another rather than as a block.
-   */
+  /** Position among siblings revealed together; each step adds 80ms. */
   index?: number;
+  /** `stagger` animates each direct child in turn instead of the block. */
+  mode?: "fade" | "stagger";
   id?: string;
   className?: string;
   style?: CSSProperties;
@@ -27,27 +25,28 @@ export interface RevealProps {
 /**
  * Marks a block to rise into place as it enters the viewport.
  *
- * A server component: it renders the children visible with a data attribute,
- * and `globals.css` does the rest with a scroll-driven animation. Nothing
- * here depends on JavaScript, which is why there is no hook and no `use
- * client`.
+ * A server component: it renders the children with a `data-anim` attribute,
+ * and `MotionRuntime` builds the animation. Under reduced motion, or with no
+ * script, it is simply the block.
  */
 export function Reveal({
   children,
   as = "div",
   index = 0,
+  mode = "fade",
   id,
   className,
   style,
 }: RevealProps) {
   const Tag = TAGS[as];
-  const stagger = {
-    "--reveal-stagger": `${Math.min(index, 8) * 5}%`,
-    "--reveal-delay": `${Math.min(index, 8) * 70}ms`,
-  } as CSSProperties;
-
   return (
-    <Tag id={id} data-reveal="" className={cn(className)} style={{ ...stagger, ...style }}>
+    <Tag
+      id={id}
+      data-anim={mode}
+      data-delay={index ? Math.min(index, 8) * 80 : undefined}
+      className={cn(className)}
+      style={style}
+    >
       {children}
     </Tag>
   );
