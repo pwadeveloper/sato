@@ -95,6 +95,10 @@ export default function AboutPage() {
                     fill
                     sizes="(min-width: 1024px) 40vw, 100vw"
                     className="object-cover"
+                    /* The frame is 3:4 on desktop and 3:2 below it, so a
+                       landscape photograph loses its sides; `focalPoint`
+                       keeps the subject in, as on a page header. */
+                    style={aside.focalPoint ? { objectPosition: aside.focalPoint } : undefined}
                   />
                 ) : null}
               </div>

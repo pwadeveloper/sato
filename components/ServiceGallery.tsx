@@ -34,8 +34,6 @@ export function ServiceGallery({
 }: ServiceGalleryProps) {
   if (!images.length) return null;
 
-
-
   return (
     <section aria-labelledby={headingId} className={cn(className)}>
       <Heading
@@ -48,7 +46,8 @@ export function ServiceGallery({
       <ul
         className={cn(
           "mt-6 grid gap-6 sm:grid-cols-2",
-          images.length > 2 && "lg:grid-cols-3",
+          /* Four sit 2×2: three columns would leave one alone on a row. */
+          images.length > 2 && images.length !== 4 && "lg:grid-cols-3",
         )}
       >
         {images.map((image) => (

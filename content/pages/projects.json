@@ -88,11 +88,11 @@
           "group": "infrastructure",
           "intro": "Dams, intakes, water supply schemes, boreholes, metering, river works and erosion control.",
           "image": {
-            "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ground-tank.webp",
-            "alt": "Circular concrete ground tank holding water",
-            "width": 1600,
-            "height": 1200,
-            "focalPoint": "50% 75%"
+            "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/treatment-tanks.webp",
+            "alt": "Round concrete water treatment tanks, one with a scraper bridge, beside red-railed walkways",
+            "width": 1920,
+            "height": 1440,
+            "focalPoint": "50% 15%"
           },
           "shortLabel": "Water",
           "photos": [
@@ -130,6 +130,13 @@
               "width": 1920,
               "height": 1754,
               "caption": "Drilling rig and compressor on site"
+            },
+            {
+              "src": "/images/projects/water-resources/world-bank-visit.webp",
+              "alt": "World Bank official in a hard hat in discussion with the project team on site",
+              "width": 800,
+              "height": 600,
+              "caption": "World Bank officials visiting site"
             },
             {
               "src": "/images/projects/water-resources/arakanga-sand-filter-repair.webp",
@@ -254,6 +261,13 @@
           "shortLabel": "Civil & Road Construction",
           "photos": [
             {
+              "src": "/images/projects/civil-roads-and-pavements/survey-and-levelling.webp",
+              "alt": "Surveyor in a hard hat and high-visibility vest sighting through a levelling instrument on a tripod",
+              "width": 640,
+              "height": 853,
+              "caption": "Survey and levelling works"
+            },
+            {
               "src": "/images/services/roadworks-completed-carriageway.webp",
               "alt": "New asphalt carriageway with a kerbed median, a roller in the distance",
               "width": 1920,
@@ -294,6 +308,13 @@
               "width": 1920,
               "height": 1440,
               "caption": "Completed section of asphaltic concrete road"
+            },
+            {
+              "src": "/images/projects/civil-roads-and-pavements/world-bank-visit.webp",
+              "alt": "World Bank officials and the project team walking along a newly surfaced road",
+              "width": 1920,
+              "height": 1440,
+              "caption": "World Bank officials visiting site"
             },
             {
               "src": "/images/services/civil-engineering-construction/box-culvert-under-construction.webp",
@@ -408,7 +429,33 @@
             "width": 1920,
             "height": 1440
           },
-          "shortLabel": "Electrical & Mechanical"
+          "shortLabel": "Electrical & Mechanical",
+          "photos": [
+            {
+              "src": "/images/projects/electrical-mechanical/pump-motors-and-transformers.webp",
+              "alt": "Pump motors and transformers installed in a pump house",
+              "width": 1920,
+              "height": 1440
+            },
+            {
+              "src": "/images/projects/electrical-mechanical/split-case-pump.webp",
+              "alt": "Split-case pump coupled to its electric motor",
+              "width": 1920,
+              "height": 1440
+            },
+            {
+              "src": "/images/projects/electrical-mechanical/motor-and-transformer.webp",
+              "alt": "Transformer beside a pump motor and its cable terminal box",
+              "width": 1920,
+              "height": 1440
+            },
+            {
+              "src": "/images/projects/electrical-mechanical/split-case-pump-installation.webp",
+              "alt": "Split-case pump installation, with the pump motors behind",
+              "width": 1920,
+              "height": 1440
+            }
+          ]
         },
         {
           "value": "energy",

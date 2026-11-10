@@ -3,10 +3,11 @@
   "old": [
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG-20191011-WA0030-1.jpg",
-      "action": "project",
-      "target": "funaab-colplant-building-phase-ii",
+      "action": "excluded",
+      "target": "client's instruction",
       "file": "projects/funaab-colplant-1",
-      "caption": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta."
+      "caption": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta.",
+      "why": "Replaced on 10 November by the client's photograph of the same front from a better angle (funaab-colplant-building-phase-ii/building-corner), which carries this caption. The file stays in public/images."
     },
     {
       "url": "https://www.satoengineering.com/wp-content/uploads/2019/10/IMG-20191011-WA0029-1.jpg",
@@ -1246,6 +1247,74 @@
       "file": "projects/civil-roads-and-pavements/road-rehabilitation-2",
       "caption": "Road rehabilitation work in progress",
       "from": "Client's Word document of October 2026; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
+    },
+    {
+      "id": "B-25072008005",
+      "action": "kept",
+      "target": "electrical-mechanical",
+      "file": "projects/electrical-mechanical/pump-motors-and-transformers",
+      "from": "Client's unlabelled batch of 10 November 2026 (batch-2026-11-10), identified by eye from his verbal breakdown"
+    },
+    {
+      "id": "B-25072008007",
+      "action": "kept",
+      "target": "electrical-mechanical",
+      "file": "projects/electrical-mechanical/split-case-pump",
+      "from": "Client's unlabelled batch of 10 November 2026 (batch-2026-11-10), identified by eye from his verbal breakdown"
+    },
+    {
+      "id": "B-25072008013",
+      "action": "kept",
+      "target": "electrical-mechanical",
+      "file": "projects/electrical-mechanical/motor-and-transformer",
+      "from": "Client's unlabelled batch of 10 November 2026 (batch-2026-11-10), identified by eye from his verbal breakdown"
+    },
+    {
+      "id": "B-25072008011",
+      "action": "kept",
+      "target": "electrical-mechanical",
+      "file": "projects/electrical-mechanical/split-case-pump-installation",
+      "from": "Client's unlabelled batch of 10 November 2026 (batch-2026-11-10), identified by eye from his verbal breakdown"
+    },
+    {
+      "id": "B-IMG_20200820_125",
+      "action": "kept",
+      "target": "funaab-colplant-building-phase-ii",
+      "file": "projects/funaab-colplant-building-phase-ii/building-corner",
+      "caption": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta.",
+      "from": "Client's unlabelled batch of 10 November 2026 (batch-2026-11-10), identified by eye from his verbal breakdown"
+    },
+    {
+      "id": "B-S6300021",
+      "action": "kept",
+      "target": "ogere-water-supply-scheme-rehabilitation",
+      "file": "projects/ogere-water-supply-scheme-rehabilitation/treatment-tanks",
+      "caption": "Water treatment tanks",
+      "from": "Client's unlabelled batch of 10 November 2026 (batch-2026-11-10), identified by eye from his verbal breakdown"
+    },
+    {
+      "id": "B-P1030364",
+      "action": "kept",
+      "target": "water-resources-development-management",
+      "file": "projects/water-resources/world-bank-visit",
+      "caption": "World Bank officials visiting site",
+      "from": "Client's unlabelled batch of 10 November 2026 (batch-2026-11-10), identified by eye from his verbal breakdown"
+    },
+    {
+      "id": "B-P1030369",
+      "action": "kept",
+      "target": "civil-engineering-road",
+      "file": "projects/civil-roads-and-pavements/world-bank-visit",
+      "caption": "World Bank officials visiting site",
+      "from": "Client's unlabelled batch of 10 November 2026 (batch-2026-11-10), identified by eye from his verbal breakdown"
+    },
+    {
+      "id": "B-3599d113-f3e7-41",
+      "action": "kept",
+      "target": "civil-engineering-road",
+      "file": "projects/civil-roads-and-pavements/survey-and-levelling",
+      "caption": "Survey and levelling works",
+      "from": "Client's unlabelled batch of 10 November 2026 (batch-2026-11-10), identified by eye from his verbal breakdown"
     }
   ],
   "roles": {

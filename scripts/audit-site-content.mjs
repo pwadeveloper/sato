@@ -174,6 +174,18 @@ for (const o of plan.old) {
 
 // Every photograph shown in more than one place.
 const ROLE_OK = new Set(["header", "tile"]);
+// A category's own photographs may also be the gallery of the service that
+// category mirrors, and nowhere else: the four Electrical & Mechanical
+// equipment photographs of 10 November, placed in both on the instruction
+// (docs/decisions/client-photo-batch-2026-11-10.md).
+const facetService = new Map(
+  read("content/pages/projects.json").sections.find((s) => s.id === "all-projects").facets.map((f) => [f.value, f.serviceSlug]),
+);
+const ownServiceGallery = (distinct) =>
+  distinct.length === 2 &&
+  distinct.some((d) => d.startsWith("service-gallery:")) &&
+  distinct.some((d) => d.startsWith("category-photos:") &&
+    `service-gallery:${facetService.get(d.slice("category-photos:".length))}` === distinct.find((x) => x.startsWith("service-gallery:")));
 for (const key of new Set(places.map((p) => photo(p.src)))) {
   const ps = placesOf(key);
   const distinct = [...new Set(ps.map((p) => p.place))];
@@ -183,7 +195,8 @@ for (const key of new Set(places.map((p) => photo(p.src)))) {
   const others = distinct.filter((d) => !d.startsWith("project:") && !ps.find((p) => p.place === d && ROLE_OK.has(p.role)));
   // Oil & Gas is outside this round: its artwork stays exactly where it is.
   const oilGas = key.startsWith("oil & gas");
-  const allowed = oilGas || (projectPlaces.length === 1 && others.length === 0 && new Set(roles.map((r) => r.place)).size <= 1);
+  const ownService = ownServiceGallery(distinct);
+  const allowed = oilGas || ownService || (projectPlaces.length === 1 && others.length === 0 && new Set(roles.map((r) => r.place)).size <= 1);
   const o = oldByUrl.get(key);
   issues.push({
     type: allowed ? "Duplicate (allowed)" : "Duplicate",
@@ -191,7 +204,7 @@ for (const key of new Set(places.map((p) => photo(p.src)))) {
     old: o ? oldCell(o) : `${key}`,
     oldWhere: o ? oldWhere(key) : "—",
     now: fmtPlaces(ps),
-    problem: oilGas ? "Oil & Gas artwork, unchanged by rule (allowed)" : allowed ? "A project's photograph also used as one tile or header (allowed)" : `Shown in ${distinct.length} places`,
+    problem: oilGas ? "Oil & Gas artwork, unchanged by rule (allowed)" : ownService ? "A category photograph also in its own service's gallery (allowed, 10 November)" : allowed ?"A project's photograph also used as one tile or header (allowed)" : `Shown in ${distinct.length} places`,
     fix: o ? `One place: ${fixFor(o)}` : "One place only",
   });
 }

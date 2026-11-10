@@ -238,7 +238,12 @@ for him to confirm.
 
 **One photograph, one place.** A photograph is on one project only. It may
 also be one category tile or one page header if it is a photograph of a
-project in that category; nothing else repeats. That is why there are **no
+project in that category; nothing else repeats. **One exception (10
+November):** the four Electrical & Mechanical equipment photographs are both
+that category's own `photos` and the E&M service gallery, on the
+instruction, and the audit allows exactly that pairing (a category's photograph
+in the gallery of the service it mirrors). The About aside, like a header, may
+be a project's photograph. That is why there are **no
 stand-in photographs on cards any more** — one frame repeated down a grid was
 exactly the "same photo in several categories" the client objected to — and
 why Energy, Digital Twin and Research open without a header until he sends
@@ -342,10 +347,12 @@ because at the desktop end `text-xl` and `text-h3` are the same size.
 
 **A service may carry `images[]`** — the client's own photographs of completed
 work, rendered by `components/ServiceGallery.tsx` and hidden when empty.
-**No service has one now**: Civil's photographs moved to its project gallery
-at launch-ready, and Electrical & Mechanical's only one, the borehole drilling
-crew, moved to the borehole project on 9 November, because a
-photograph that is on a project page is never also in a service gallery. The
+**Only Electrical & Mechanical has one**: the four equipment photographs of
+10 November (pumps, motors, transformers; no captions), which are also its
+category's photographs (the exception above). Civil's photographs moved to its
+project gallery at launch-ready, and the borehole drilling crew moved to the
+borehole project on 9 November, because a photograph that is on a project
+page is never also in a service gallery. Four photographs sit 2×2. The
 pipeline from his folder to the page is `docs/adding-client-photos.md`: drop
 the files in `raw-assets/client-photos/<service>/` (gitignored), run
 `npm run images`, then map them from `scripts/client-photo-manifest.json`,
@@ -545,6 +552,16 @@ disagree with this file:
     Mechanical service gallery to the borehole project, third in the Water
     gallery. **Current for captions and alt text**, and it overrides
     `mirror-old-site-content.md` on captions.
+12. `client-photo-batch-2026-11-10.md` — eleven unlabelled photographs,
+    sorted by eye from the client's verbal breakdown. Four E&M equipment
+    photographs (category and service gallery, no captions); a better COLPLANT
+    front replacing the old site's lead, keeping its caption; two of four
+    World Bank visit photographs (Water and Civil galleries, no project); the
+    treatment-tanks photograph as the **Water spotlight** (on Ogere, captioned
+    "Water treatment tanks", not his "Overhead water tank", which it isn't);
+    the surveyor in Civil. **About's aside is now the borehole drilling
+    crew**, with `focalPoint` honoured; two alternatives are screenshotted.
+    **Current for photographs.**
 
 ## Review deployments
 

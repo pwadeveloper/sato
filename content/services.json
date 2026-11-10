@@ -335,7 +335,32 @@
       "width": 1920,
       "height": 840
     },
-    "images": []
+    "images": [
+      {
+        "src": "/images/projects/electrical-mechanical/pump-motors-and-transformers.webp",
+        "alt": "Pump motors and transformers installed in a pump house",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/projects/electrical-mechanical/split-case-pump.webp",
+        "alt": "Split-case pump coupled to its electric motor",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/projects/electrical-mechanical/motor-and-transformer.webp",
+        "alt": "Transformer beside a pump motor and its cable terminal box",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/projects/electrical-mechanical/split-case-pump-installation.webp",
+        "alt": "Split-case pump installation, with the pump motors behind",
+        "width": 1920,
+        "height": 1440
+      }
+    ]
   },
   {
     "slug": "energy",

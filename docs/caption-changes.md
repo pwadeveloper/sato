@@ -283,7 +283,6 @@ Every alt text the brief changed, captioned photographs and the headers, spotlig
 
 | Old site, exactly as written | New site | What changed |
 |---|---|---|
-| Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta. | Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta. | unchanged |
 | Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta. | Work in progress: first-floor walkway | replaced with a plain description (caption brief, 9 November) |
 | Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta. | Work in progress: site works | replaced with a plain description (caption brief, 9 November) |
 | Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta. | Work in progress: corridor finishes | replaced with a plain description (caption brief, 9 November) |
@@ -419,6 +418,11 @@ Kept new photographs (High confidence) took their caption from the client's own 
 | W114 | Casting of channel base for erosion control | ; caption rewritten under the caption brief, 9 November |
 | W119 | Excavated channel for erosion control | ; caption rewritten under the caption brief, 9 November |
 | W016 | Road rehabilitation work in progress |  |
+| B-IMG_20200820_125 | Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta. |  |
+| B-S6300021 | Water treatment tanks |  |
+| B-P1030364 | World Bank officials visiting site |  |
+| B-P1030369 | World Bank officials visiting site |  |
+| B-3599d113-f3e7-41 | Survey and levelling works |  |
 
 ## Project titles
 

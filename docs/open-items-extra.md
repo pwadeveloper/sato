@@ -10,6 +10,31 @@
 
 ## Answer these first
 
+### From the photo batch of 10 November 2026
+
+Eleven unlabelled photographs, placed from his verbal breakdown. See
+`docs/decisions/client-photo-batch-2026-11-10.md`.
+
+- **The water tank caption.** He asked for "Overhead water tank". The
+  photograph shows ground-level treatment tanks (a clarifier with its bridge,
+  filter channels), not an overhead tank, and the Ogere page already shows the
+  real overhead tank. It reads "Water treatment tanks". Is that acceptable,
+  and is it really the Ogere works? By eye it looks like a finished, larger
+  plant.
+- **About page photograph.** Now the borehole drilling crew (option A). Two
+  alternatives are screenshotted: the pump motors and transformers (B) and
+  the COLPLANT courtyard (C). Which does he prefer?
+- **The surveyor.** The container terminal behind him suggests the APM
+  Terminals reefer pavement project. If so, it moves onto that project, which
+  has no photograph yet.
+- **The World Bank visit photographs.** Two are up, in the Water and Civil
+  galleries, on no project. Which site were they taken at? Two more were
+  left out: one has no helmets beside a working excavator, the other shows
+  the former name and RC number legibly on two vests.
+- **The E&M equipment photographs** are on both the E&M projects page and the
+  E&M service page, as asked. It is the one exception to "one photograph, one
+  place".
+
 ### From the caption brief (9 November 2026)
 
 Every project caption now describes its photograph and names no place,

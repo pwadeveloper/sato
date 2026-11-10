@@ -11,10 +11,11 @@
       "height": 1024
     },
     "aside": {
-      "src": "/images/about/arakanga-water-treatment-sand-filter.webp",
-      "alt": "Water running through a sand filter during commissioning at a water treatment plant",
+      "src": "/images/projects/solar-powered-boreholes/borehole-drilling.webp",
+      "alt": "Drilling crew in helmets handling drill pipe at a borehole rig",
       "width": 1920,
-      "height": 1440
+      "height": 1488,
+      "focalPoint": "70% 50%"
     }
   },
   "sections": [

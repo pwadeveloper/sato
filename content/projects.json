@@ -107,6 +107,13 @@
         "caption": "Construction of ground tank"
       },
       {
+        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/treatment-tanks.webp",
+        "alt": "Round concrete water treatment tanks, one with a scraper bridge, beside red-railed walkways",
+        "width": 1920,
+        "height": 1440,
+        "caption": "Water treatment tanks"
+      },
+      {
         "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/alum-dosing-pumps.webp",
         "alt": "Two fitters connecting the alum dosing pumps in a chemical house",
         "width": 1920,
@@ -768,10 +775,10 @@
     "scope": [],
     "images": [
       {
-        "src": "/images/projects/funaab-colplant-1.webp",
-        "alt": "COLPLANT building at completion stage, Federal University of Agriculture, Abeokuta",
-        "width": 1040,
-        "height": 520,
+        "src": "/images/projects/funaab-colplant-building-phase-ii/building-corner.webp",
+        "alt": "COLPLANT building at completion stage, seen from one corner, Federal University of Agriculture, Abeokuta",
+        "width": 1080,
+        "height": 495,
         "caption": "Work in progress (completion stage) at College of Plant Science and Crop Production (COLPLANT) Building Phase II for Federal University of Agriculture, Abeokuta."
       },
       {

@@ -1335,6 +1335,82 @@
       "docxCaption": "ROAD REHABILITATION WORK IN PROGRESS",
       "alt": "Roller finishing fresh asphalt beside a colonnaded building",
       "placement": "Page 61 of the October document; label read from the page layout. Published on the client's instruction of 9 November (\"yes please do that\" to the suggested placements)."
+    },
+    {
+      "out": "projects/electrical-mechanical/pump-motors-and-transformers",
+      "working": "B-25072008005",
+      "source": "raw-assets/client-photos/_inbox/batch-2026-11-10/25072008005.jpg",
+      "originalFilename": "batch-2026-11-10 › 25072008005.jpg",
+      "alt": "Pump motors and transformers installed in a pump house",
+      "placement": "Client, 10 November 2026, explained verbally and relayed with the unlabelled batch: pumps and electrical equipment. Electrical & Mechanical category photographs and its service gallery, no caption (visitors will recognise the equipment)."
+    },
+    {
+      "out": "projects/electrical-mechanical/split-case-pump",
+      "working": "B-25072008007",
+      "source": "raw-assets/client-photos/_inbox/batch-2026-11-10/25072008007.jpg",
+      "originalFilename": "batch-2026-11-10 › 25072008007.jpg",
+      "alt": "Split-case pump coupled to its electric motor",
+      "placement": "Client, 10 November 2026, explained verbally and relayed with the unlabelled batch: pumps and electrical equipment. Electrical & Mechanical category photographs and its service gallery, no caption."
+    },
+    {
+      "out": "projects/electrical-mechanical/motor-and-transformer",
+      "working": "B-25072008013",
+      "source": "raw-assets/client-photos/_inbox/batch-2026-11-10/25072008013.jpg",
+      "originalFilename": "batch-2026-11-10 › 25072008013.jpg",
+      "alt": "Transformer beside a pump motor and its cable terminal box",
+      "placement": "Client, 10 November 2026, explained verbally and relayed with the unlabelled batch: pumps and electrical equipment. Electrical & Mechanical category photographs and its service gallery, no caption."
+    },
+    {
+      "out": "projects/electrical-mechanical/split-case-pump-installation",
+      "working": "B-25072008011",
+      "source": "raw-assets/client-photos/_inbox/batch-2026-11-10/25072008011.jpg",
+      "originalFilename": "batch-2026-11-10 › 25072008011.jpg",
+      "alt": "Split-case pump installation, with the pump motors behind",
+      "placement": "Client, 10 November 2026, explained verbally and relayed with the unlabelled batch: pumps and electrical equipment. Electrical & Mechanical category photographs and its service gallery, no caption."
+    },
+    {
+      "out": "projects/funaab-colplant-building-phase-ii/building-corner",
+      "working": "B-IMG_20200820_125",
+      "source": "raw-assets/client-photos/_inbox/batch-2026-11-10/IMG_20200820_125640_11.jpg",
+      "originalFilename": "batch-2026-11-10 › IMG_20200820_125640_11.jpg",
+      "alt": "COLPLANT building at completion stage, seen from one corner, Federal University of Agriculture, Abeokuta",
+      "placement": "Client, 10 November 2026, explained verbally and relayed with the unlabelled batch: the COLPLANT building, a better angle than the current one. Same front as the old site's lead photograph (funaab-colplant-1), which it replaces, keeping that photograph's caption."
+    },
+    {
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/treatment-tanks",
+      "working": "B-S6300021",
+      "source": "raw-assets/client-photos/_inbox/batch-2026-11-10/S6300021.JPG",
+      "originalFilename": "batch-2026-11-10 › S6300021.JPG",
+      "alt": "Round concrete water treatment tanks, one with a scraper bridge, beside red-railed walkways",
+      "placement": "Client, 10 November 2026, explained verbally and relayed with the unlabelled batch: the same tank as the Water Resources spotlight (the Ogere ground tank), clearer. Placed on the Ogere project beside it and made the Water spotlight. By eye it shows a working treatment plant with circular clarifiers; the site rests on the client's word."
+    },
+    {
+      "out": "projects/water-resources/world-bank-visit",
+      "working": "B-P1030364",
+      "source": "raw-assets/client-photos/_inbox/batch-2026-11-10/P1030364.JPG",
+      "originalFilename": "batch-2026-11-10 › P1030364.JPG",
+      "alt": "World Bank official in a hard hat in discussion with the project team on site",
+      "cropWhy": "800px only: the small print under the logo on the visitor's helmet carries the former name, partly legible at 1920px; a crop would cut the visitor out",
+      "maxWidth": 800,
+      "placement": "Client, 10 November 2026, explained verbally and relayed with the unlabelled batch: World Bank officials visiting sites. Water Resources category photographs (no project: the photograph names no site, and it is a different visit from the Sagamu inspection, P1030872)."
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/world-bank-visit",
+      "working": "B-P1030369",
+      "source": "raw-assets/client-photos/_inbox/batch-2026-11-10/P1030369.JPG",
+      "originalFilename": "batch-2026-11-10 › P1030369.JPG",
+      "alt": "World Bank officials and the project team walking along a newly surfaced road",
+      "placement": "Client, 10 November 2026, explained verbally and relayed with the unlabelled batch: World Bank officials visiting sites. Civil Engineering & Road category photographs (a completed road; no project named). The visitor is in a hard hat; the road is finished, with no work in progress in frame."
+    },
+    {
+      "out": "projects/civil-roads-and-pavements/survey-and-levelling",
+      "working": "B-3599d113-f3e7-41",
+      "source": "raw-assets/client-photos/_inbox/batch-2026-11-10/3599d113-f3e7-4177-862e-126a034fbe43.JPG",
+      "originalFilename": "batch-2026-11-10 › 3599d113-f3e7-4177-862e-126a034fbe43.JPG",
+      "alt": "Surveyor in a hard hat and high-visibility vest sighting through a levelling instrument on a tripod",
+      "cropWhy": "640px only: the small print under the logo on the surveyor's vest carries the former name, faintly legible at the original 864px; the vest is the subject, so no crop clears it",
+      "maxWidth": 640,
+      "placement": "Client, 10 November 2026, explained verbally and relayed with the unlabelled batch: surveyor using a levelling instrument. Civil Engineering & Road category photographs. The container terminal behind suggests the APM Terminals reefer pavement project; not placed on it until the client confirms."
     }
   ]
 }
