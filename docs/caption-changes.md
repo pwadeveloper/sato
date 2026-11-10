@@ -55,7 +55,7 @@ In gallery order, numbered as the category page shows them. “Before” is what
 | 6 | Rehabilitation of Ogere Water Supply Scheme | Constructed overhead tank at Oshitelu Memorial Grammar School at Ogere | Constructed overhead tank |
 | 7 | Rehabilitation of Ogere Water Supply Scheme | Construction of ground tank by Sato | Construction of ground tank |
 | 8 | Rehabilitation of Ogere Water Supply Scheme | Installation of alum dosing pumps at Ogere Water Supply Scheme | Installation of alum dosing pumps |
-| 9 | Rehabilitation of Ogere Water Supply Scheme | Installation of lime dosing pumps at Ogere Water Supply Scheme | Lime dosing pumps installed |
+| 9 | Rehabilitation of Ogere Water Supply Scheme | Installation of lime dosing pumps at Ogere Water Supply Scheme | Lime dosing pump installed |
 | 10 | Rehabilitation of Ogere Water Supply Scheme | Casting of concrete support for pipe bend at Ogere | Casting of concrete support for pipe bend |
 | 11 | Rehabilitation of Ogere Water Supply Scheme | Connection of iron ductile pipe at Ogere | Connection of ductile iron pipes |
 | 12 | Rehabilitation of Ogere Water Supply Scheme | Installation of high lift pump in progress at Ogere | Installation of high lift pump |
@@ -76,7 +76,7 @@ In gallery order, numbered as the category page shows them. “Before” is what
 | 27 | Rehabilitation of Ogere Water Supply Scheme | Laying of UPVC Pipes in Progress at Ositelu Ogere | Trench excavation for UPVC pipes |
 | 28 | Rehabilitation of Ogere Water Supply Scheme | Ductile iron pipes being offloaded at Ogere Water Supply Scheme by our crane lorry | Offloading of ductile iron pipes by crane lorry |
 | 29 | Rehabilitation of Ogere Water Supply Scheme | Foundation work for 253 m3 overhead tanks in progress, Ogere, Ogun State | Foundation work for 253 m³ overhead tanks |
-| 30 | Rehabilitation of Ogere Water Supply Scheme | Laying of iron ductile pipes in progress at Ogere | Positioning of ductile iron pipe for laying |
+| 30 | Rehabilitation of Ogere Water Supply Scheme | Laying of iron ductile pipes in progress at Ogere | Positioning of ductile iron pipe |
 | 31 | Construction of Earth Dam, Fiditi | Clay compaction for COT (Fiditi Dam) | Compaction of clay with padfoot rollers |
 | 32 | Construction of Earth Dam, Fiditi | Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority. | Excavation of cut-off trench for earth dam |
 | 33 | Construction of Earth Dam, Fiditi | Removal of top soil within 3rd segment cut-off trench area (Fiditi Dam) | Removal of topsoil by dozer |
@@ -191,7 +191,7 @@ Every alt text the brief changed, captioned photographs and the headers, spotlig
 | `projects/ogere-water-supply-scheme-rehabilitation/oshitelu-overhead-tank.webp` | Constructed overhead tank at Oshitelu Memorial Grammar School at Ogere | Overhead water tank on a steel tower among trees |
 | `projects/ogere-water-supply-scheme-rehabilitation/ground-tank.webp` | Circular concrete ground tank holding water at the Ogere water supply scheme | Circular concrete ground tank holding water |
 | `projects/ogere-water-supply-scheme-rehabilitation/alum-dosing-pumps.webp` | Two fitters connecting the alum dosing pumps in the chemical house at the Ogere water supply scheme | Two fitters connecting the alum dosing pumps in a chemical house |
-| `projects/ogere-water-supply-scheme-rehabilitation/lime-dosing-pumps.webp` | Lime dosing pumps mounted on the wall of the chemical house at the Ogere water supply scheme | Lime dosing pumps mounted on the wall of a chemical house |
+| `projects/ogere-water-supply-scheme-rehabilitation/lime-dosing-pumps.webp` | Lime dosing pumps mounted on the wall of the chemical house at the Ogere water supply scheme | Lime dosing pump mounted on the wall of a chemical house |
 | `projects/ogere-water-supply-scheme-rehabilitation/pipe-bend-support.webp` | Worker casting the concrete support under a ductile iron pipe bend at Ogere | Worker casting the concrete support under a ductile iron pipe bend |
 | `projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-connection.webp` | Pipe fitters joining two ductile iron pipes with a coupling at Ogere | Pipe fitters joining two ductile iron pipes with a coupling |
 | `projects/ogere-water-supply-scheme-rehabilitation/high-lift-pump-installation.webp` | Fitter installing a vertical high lift pump in the pump house at Ogere | Fitter installing a vertical high lift pump in a pump house |
@@ -212,7 +212,7 @@ Every alt text the brief changed, captioned photographs and the headers, spotlig
 | `projects/ogere-water-supply-scheme-rehabilitation/upvc-pipe-laying-ositelu.webp` | Crew laying UPVC pipe in a trench beside a block wall at Ositelu, Ogere | Crew digging a trench for UPVC pipe beside a block wall |
 | `projects/ogere-water-supply-scheme-rehabilitation/pipe-offloading-crane-lorry.webp` | Crane lorry offloading ductile iron pipes from a container at the Ogere water supply scheme | Crane lorry offloading ductile iron pipes from a container |
 | `projects/ogere-water-supply-scheme-rehabilitation/overhead-tank-foundations.webp` | Concrete pad foundations for the overhead tanks at Ogere, with anchor bolts set | Concrete pad foundations for the overhead tanks, with anchor bolts set |
-| `projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-laying-roadside.webp` | Pipe-laying crew guiding a ductile iron pipe into place beside the road at Ogere | Pipe-laying crew guiding a ductile iron pipe into place beside the road |
+| `projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-positioning.webp` | Pipe-laying crew guiding a ductile iron pipe into place beside the road at Ogere | Two workers in hi-vis vests guiding a ductile iron pipe into place beside the road |
 | `projects/fiditi-earth-dam/clay-compaction.webp` | Clay compaction for COT (Fiditi Dam) | Two padfoot rollers compacting clay for the cut-off trench of an earth dam |
 | `projects/fiditi-earth-dam/cut-off-trench-excavation.webp` | Work in progress on the construction of Earth Dam at Fiditi project by Ogun Osun River Basin Development Authority | Excavator digging the cut-off trench for an earth dam, a site engineer in a helmet on the bank |
 | `projects/fiditi-earth-dam/topsoil-removal.webp` | Removal of top soil within 3rd segment cut-off trench area (Fiditi Dam) | Bulldozer stripping topsoil from the cut-off trench area |
@@ -321,7 +321,7 @@ Every alt text the brief changed, captioned photographs and the headers, spotlig
 | CONSTRUCTED OVERHEAD TANK AT OSHITELU MEMORIAL GRAMMAR SCHOOL AT OGERE | Constructed overhead tank | replaced with a plain description (caption brief, 9 November) |
 | FOUNDATION WORK FOR 253 M 3 OVERHEAD TANKS IN PROGRESS, OGERE, OGUN STATE | Foundation work for 253 m³ overhead tanks | replaced with a plain description (caption brief, 9 November) |
 | LAYING OF DUCTILE IRON PIPES IN PROGRESS AT OGERE | Lowering of ductile iron pipe into trench | replaced with a plain description (caption brief, 9 November) |
-| LAYING OF IRON DUCTILE PIPES IN PROGRESS AT OGERE | Positioning of ductile iron pipe for laying | replaced with a plain description (caption brief, 9 November) |
+| LAYING OF IRON DUCTILE PIPES IN PROGRESS AT OGERE | Positioning of ductile iron pipe | replaced with a plain description (caption brief, 9 November) |
 | EXCAVATION OF TRENCH FOR PIPE LAYING IN PROGRESS AT OGERE | Excavation of trench for pipe laying | replaced with a plain description (caption brief, 9 November) |
 | INSTALLATION OF HIGHLIFT PUMP IN PROGRESS AT OGERE | Installation of high lift pump | replaced with a plain description (caption brief, 9 November) |
 | REHABILITATION OF FILTER BED IN PROGRESS AT OGERE WATER SUPPLY SCHEME | Rehabilitation of filter bed in progress | replaced with a plain description (caption brief, 9 November) |
@@ -382,7 +382,7 @@ Kept new photographs (High confidence) took their caption from the client's own 
 | E-4ced5baf | Work in progress: completion stage | ; caption rewritten under the caption brief, 9 November |
 | E-cdec50db | Work in progress: courtyard and galleries | ; caption rewritten under the caption brief, 9 November |
 | W071 | Installation of alum dosing pumps | ; caption rewritten under the caption brief, 9 November |
-| W070 | Lime dosing pumps installed | ; caption rewritten under the caption brief, 9 November |
+| W070 | Lime dosing pump installed | ; caption rewritten under the caption brief, 9 November |
 | W073 | Casting of concrete support for pipe bend | ; caption rewritten under the caption brief, 9 November |
 | W072 | Connection of ductile iron pipes | ; caption rewritten under the caption brief, 9 November |
 | W078 | Connection of 300mm pipe to 150mm pipe | ; caption rewritten under the caption brief, 9 November |

@@ -681,7 +681,7 @@
       "source": "raw-assets/client-photos/_work/water-2026-11-08/all/N022-pictures-image3.jpg",
       "originalFilename": "water-2026-11-08/Pictures.docx › word/media/image3.jpeg",
       "docxCaption": "INSTALLATION OF LIME DOZING PUMPS AT OGERE WATER SUPPLY SCHEME",
-      "alt": "Lime dosing pumps mounted on the wall of the chemical house at the Ogere water supply scheme",
+      "alt": "Lime dosing pump mounted on the wall of the chemical house at the Ogere water supply scheme",
       "crop": [
         0,
         0.1,
@@ -996,12 +996,19 @@
       "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
     },
     {
-      "out": "projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-laying-roadside",
+      "out": "projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-positioning",
       "working": null,
       "source": "raw-assets/old-site/2012/07/21.jpg",
       "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/21.jpg",
       "originalFilename": "old site: 2012/07/21.jpg",
-      "alt": "Pipe-laying crew guiding a ductile iron pipe into place beside the road at Ogere",
+      "alt": "Two workers in hi-vis vests guiding a ductile iron pipe into place beside the road",
+      "crop": [
+        0.44,
+        0,
+        0.5,
+        1
+      ],
+      "cropWhy": "Cropped to 44–94% of the width on the client's instruction of 10 November: takes out the shirtless worker and the half-visible figure at the right edge, keeps the pipe and the two hi-vis workers. The old site's 564px copy is the only one; no client batch holds a larger original (pHash).",
       "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule."
     },
     {

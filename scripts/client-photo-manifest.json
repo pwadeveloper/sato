@@ -699,7 +699,7 @@
       "docxCaption": "INSTALLATION OF LIME DOZING PUMPS AT OGERE WATER SUPPLY SCHEME",
       "workingId": "W070",
       "placement": "Page 2 of the 8 November document. N022 in that batch, W070 in October (pHash 0). Published on the client's instruction of 9 November; the helmet rule is waived for this document.",
-      "alt": "Lime dosing pumps mounted on the wall of the chemical house at the Ogere water supply scheme",
+      "alt": "Lime dosing pump mounted on the wall of the chemical house at the Ogere water supply scheme",
       "crop": "Cropped to the pumps: right 58% off (the fitter's vest carries the former name, legible at full size), and the empty top and floor trimmed"
     },
     {
@@ -1019,15 +1019,16 @@
       "alt": "Concrete pad foundations for the overhead tanks at Ogere, with anchor bolts set"
     },
     {
-      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-laying-roadside.webp",
-      "small": "/images/projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-laying-roadside-800.webp",
-      "width": 564,
+      "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-positioning.webp",
+      "small": "/images/projects/ogere-water-supply-scheme-rehabilitation/ductile-iron-pipe-positioning-800.webp",
+      "width": 282,
       "height": 450,
       "originalFilename": "old site: 2012/07/21.jpg",
       "workingId": null,
       "oldSite": "https://www.satoengineering.com/wp-content/uploads/2012/07/21.jpg",
       "placement": "Published on the client's instruction of 9 November to include photographs held on the helmet rule.",
-      "alt": "Pipe-laying crew guiding a ductile iron pipe into place beside the road at Ogere"
+      "alt": "Two workers in hi-vis vests guiding a ductile iron pipe into place beside the road",
+      "crop": "Cropped to 44–94% of the width on the client's instruction of 10 November: takes out the shirtless worker and the half-visible figure at the right edge, keeps the pipe and the two hi-vis workers. The old site's 564px copy is the only one; no client batch holds a larger original (pHash)."
     },
     {
       "src": "/images/projects/fiditi-earth-dam/river-course-clearing.webp",
