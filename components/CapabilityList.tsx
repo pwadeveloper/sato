@@ -1,3 +1,4 @@
+import { Reveal } from "./Reveal";
 import { RichText } from "./RichText";
 import { cn } from "@/lib/cn";
 
@@ -9,7 +10,7 @@ export interface CapabilityListProps {
   className?: string;
 }
 
-/** Hairline-separated schedule. Used as the service page's sidebar. */
+/** Hairline-separated schedule, each line indexed. Used as a scope list. */
 export function CapabilityList({
   items,
   heading,
@@ -22,21 +23,26 @@ export function CapabilityList({
   return (
     <div className={cn(className)}>
       {heading ? (
-        <HeadingTag
-          id={headingId}
-          className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body"
-        >
+        <HeadingTag id={headingId} className="eyebrow text-steel-ink">
           <RichText text={heading} />
         </HeadingTag>
       ) : null}
 
-      <ul className="mt-4 border-t border-asphalt">
-        {items.map((item) => (
-          <li key={item} className="border-b border-rule py-3 text-base wdth-body">
+      <ol className="mt-4 border-t border-asphalt">
+        {items.map((item, index) => (
+          <Reveal
+            key={item}
+            as="li"
+            index={index}
+            className="flex items-baseline gap-4 border-b border-rule py-3 text-base wdth-body"
+          >
+            <span aria-hidden="true" className="eyebrow tabular text-steel">
+              {String(index + 1).padStart(2, "0")}
+            </span>
             <RichText text={item} />
-          </li>
+          </Reveal>
         ))}
-      </ul>
+      </ol>
     </div>
   );
 }

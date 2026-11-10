@@ -58,12 +58,12 @@ export default function ContactPage() {
         a dark band is marked as deliberate on this site rather than as a gap
         where an image failed to load.
       */}
-      <Section tone="asphalt" labelledBy="channels">
+      <Section tone="asphalt" labelledBy="channels" className="dot-grid-dark">
         <Container>
           <div className="border-l-[3px] border-brand pl-6 md:pl-10">
             <h2
               id="channels"
-              className="text-2xs font-semibold uppercase tracking-[0.08em] text-brand-light wdth-body"
+              className="eyebrow text-brand-light"
             >
               <RichText text={channels.heading ?? ""} />
             </h2>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                       // Body width, not the expanded heading width: these are
                       // data, not headings, and at 360px the email set in the
                       // expanded axis overflows and breaks after "…co".
-                      "text-h3 wdth-body",
+                      "text-h2 wdth-body",
                       // A telephone number is a figure: tabular so the digit
                       // groups line up, and unbroken so it is never split
                       // mid-group. An address has no spaces to wrap at, so it
@@ -101,7 +101,7 @@ export default function ContactPage() {
 
                 return (
                   <div key={channel.id}>
-                    <dt className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-light wdth-body">
+                    <dt className="eyebrow text-steel-light">
                       <RichText text={channel.label} />
                     </dt>
 
@@ -136,7 +136,7 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section tone="white" labelledBy="offices">
+      <Section tone="paper" labelledBy="offices">
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-5">
@@ -145,7 +145,7 @@ export default function ContactPage() {
               <ul className="mt-6 border-t border-asphalt">
                 {site.offices.map((office) => (
                   <li key={office.id} className="border-b border-rule py-6">
-                    <h3 className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
+                    <h3 className="eyebrow text-steel-ink">
                       <RichText text={office.label} />
                     </h3>
 
@@ -167,7 +167,7 @@ export default function ContactPage() {
                           href={office.mapUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="relative inline-block py-1 text-sm font-medium text-brand-ink underline underline-offset-[0.2em] decoration-1 transition-colors duration-150 hover:text-brand-deep before:absolute before:-inset-2 before:content-['']"
+                          className="eyebrow link-draw relative inline-block py-1 text-brand-ink transition-colors duration-150 hover:text-brand-deep before:absolute before:-inset-2 before:content-['']"
                         >
                           <RichText text={labels.mapLink ?? ""} />
                           <span className="sr-only">

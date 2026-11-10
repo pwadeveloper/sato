@@ -67,7 +67,7 @@ export default function InfrastructurePage() {
 
       <ServiceSections content={content} nav={nav} labels={labels} />
 
-      <Section tone="white" labelledBy="backed-by">
+      <Section tone="paper" labelledBy="backed-by">
         <Container>
           <BackedByStrip
             heading={backedBy.heading}

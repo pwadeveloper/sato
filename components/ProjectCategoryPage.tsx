@@ -8,6 +8,7 @@ import { DraftNotice } from "@/components/DraftNotice";
 import { PageHeader } from "@/components/PageHeader";
 import { PartnerProjects } from "@/components/PartnerExperience";
 import { CategoryGallery, ProjectList } from "@/components/CategoryGallery";
+import { Reveal } from "@/components/Reveal";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
 
@@ -95,6 +96,7 @@ export function ProjectCategoryPage({ slug }: { slug: string }) {
         title={category.label}
         intro={category.intro ? [category.intro] : []}
         image={category.image}
+        transitionName={`category-${category.slug}`}
         headingId="category-heading"
         above={
           <>
@@ -114,7 +116,7 @@ export function ProjectCategoryPage({ slug }: { slug: string }) {
         <Container>
           {/* Whose work this is, before the reader meets the first row. */}
           {attribution ? (
-            <p className="mb-8 max-w-(--container-measure) border-l-[3px] border-brand py-1 pl-5 text-base font-semibold wdth-body">
+            <p className="mb-10 max-w-(--container-measure) border-l-[3px] border-brand py-1 pl-5 text-base font-semibold wdth-body">
               <RichText text={attribution} />
             </p>
           ) : null}
@@ -143,44 +145,35 @@ export function ProjectCategoryPage({ slug }: { slug: string }) {
       </Section>
 
       {others.length ? (
-        <Section tone="white" labelledBy="other-categories">
+        <Section tone="paper" labelledBy="other-categories">
           <Container>
-            <h2
-              id="other-categories"
-              className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body"
-            >
+            <h2 id="other-categories" className="eyebrow text-steel-ink">
               <RichText text={labels.otherCategories ?? ""} />
             </h2>
 
-            <ul className="mt-4 grid gap-px border border-rule bg-rule md:grid-cols-2">
-              {others.map((other) => (
-                <li key={other.value}>
+            <ol className="mt-4 border-t border-asphalt">
+              {others.map((other, index) => (
+                <Reveal key={other.value} as="li" index={index} className="border-b border-rule">
                   <Link
                     href={`/projects/${other.slug}`}
-                    className="group flex h-full items-center justify-between gap-4 bg-white p-6 no-underline transition-colors duration-150 hover:bg-brand-tint"
+                    className="group grid grid-cols-[2.5rem_1fr_auto] items-baseline gap-x-4 py-5 no-underline md:grid-cols-[3.5rem_1fr_auto]"
                   >
-                    <span className="text-xl font-bold wdth-heading text-balance text-asphalt">
+                    <span aria-hidden="true" className="eyebrow tabular text-steel">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="link-draw w-fit text-xl font-bold wdth-heading text-balance text-asphalt transition-colors duration-150 group-hover:text-brand-ink">
                       <RichText text={other.label} />
                     </span>
                     <span
                       aria-hidden="true"
-                      className="shrink-0 text-steel transition-transform duration-150 group-hover:translate-x-1 group-hover:text-brand"
+                      className="shrink-0 text-steel transition-transform duration-500 ease-(--ease-out-expo) group-hover:translate-x-1 group-hover:text-brand motion-reduce:transition-none"
                     >
                       &rarr;
                     </span>
                   </Link>
-                </li>
+                </Reveal>
               ))}
-
-              {/* The 1px rules between cells are the container's background
-                  showing through a `gap-px` grid, so an incomplete last row
-                  leaves a grey block rather than a gap. With four categories
-                  there are three others and the two-column grid is one short;
-                  these fill the remainder. */}
-              {Array.from({ length: (2 - (others.length % 2)) % 2 }).map((_, index) => (
-                <li key={`filler-${index}`} aria-hidden="true" className="bg-white" />
-              ))}
-            </ul>
+            </ol>
           </Container>
         </Section>
       ) : null}

@@ -14,7 +14,7 @@ export function DraftNotice({ className }: { className?: string }) {
       role="note"
       className={cn("border-l-[6px] border-survey bg-asphalt px-5 py-4 text-concrete", className)}
     >
-      <p className="text-2xs font-bold uppercase tracking-[0.1em] text-survey wdth-body">
+      <p className="eyebrow text-survey">
         {REVIEW_COPY.draftLabel}
       </p>
       <p className="mt-1 max-w-(--container-measure) text-sm wdth-body">
@@ -28,7 +28,7 @@ export function DraftNotice({ className }: { className?: string }) {
 export function ReviewBanner() {
   return (
     <div className="bg-survey px-5 py-2 text-asphalt">
-      <p className="text-2xs font-bold uppercase tracking-[0.1em] wdth-body">
+      <p className="eyebrow">
         {REVIEW_COPY.siteLabel}
         <span className="ml-3 font-normal normal-case tracking-normal">
           {REVIEW_COPY.siteBody}

@@ -1,3 +1,4 @@
+import { Reveal } from "./Reveal";
 import { RichText } from "./RichText";
 import type { Client } from "@/lib/content-types";
 import { cn } from "@/lib/cn";
@@ -39,13 +40,18 @@ export function ClientList({ clients, className }: ClientListProps) {
         className,
       )}
     >
-      {clients.map((client) => (
-        <li
+      {clients.map((client, index) => (
+        <Reveal
           key={client.slug}
-          className="border-b border-rule py-3.5 text-base font-medium wdth-body"
+          as="li"
+          index={index % 3}
+          className="flex items-baseline gap-4 border-b border-rule py-3.5 text-base font-medium wdth-body"
         >
+          <span aria-hidden="true" className="eyebrow tabular text-steel">
+            {String(index + 1).padStart(2, "0")}
+          </span>
           <RichText text={client.name} />
-        </li>
+        </Reveal>
       ))}
 
       {padRow(clients.length).map((index) => (

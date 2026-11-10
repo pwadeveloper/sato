@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "./Container";
 import { RichText } from "./RichText";
+import { ScaleRule } from "./ScaleRule";
 import type { Site } from "@/lib/content-types";
 
 export interface SiteFooterProps {
@@ -22,29 +23,33 @@ export interface SiteFooterProps {
  * row of links beside them, and repeating them on every page of the site was
  * one more thing to keep in step. `site.phones` and `site.emails` are
  * unchanged and still the single source for the Contact page.
+ *
+ * The scale bar along its top edge is the drawing's: the same tick rule
+ * that marks the edge of every photograph band.
  */
 export function SiteFooter({ site, year }: SiteFooterProps) {
   const copyright = site.footer.copyright.replace("{year}", String(year));
 
   return (
-    <footer className="border-t border-rule-dark bg-asphalt text-concrete">
+    <footer className="bg-asphalt text-concrete">
+      <ScaleRule className="text-rule-dark" height={8} />
       <Container className="py-7">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
-          <p className="text-sm text-steel-light tabular wdth-body">
+          <p className="eyebrow text-steel-light">
             <RichText text={site.footer.legal} />
-            <span className="mx-2 text-rule-dark" aria-hidden="true">
-              ·
+            <span className="mx-3 text-rule-dark" aria-hidden="true">
+              /
             </span>
             <RichText text={copyright} />
           </p>
 
           <nav aria-label={site.footer.navLabel}>
-            <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            <ul className="flex flex-wrap gap-x-7 gap-y-2">
               {site.footer.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm font-semibold text-concrete no-underline wdth-body transition-colors duration-150 hover:text-brand-light"
+                    className="eyebrow link-draw text-concrete transition-colors duration-150 hover:text-brand-light"
                   >
                     <RichText text={link.label} />
                   </Link>

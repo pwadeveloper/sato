@@ -55,28 +55,36 @@ export function SectionNav({ sections, label }: SectionNavProps) {
   return (
     <nav
       aria-label={label}
-      className="sticky top-[var(--header-height)] z-30 border-y border-rule bg-concrete/95 backdrop-blur-sm"
+      className="sticky top-(--header-height) z-30 border-y border-rule bg-concrete/95 backdrop-blur-sm"
     >
       <Container>
-        <ul className="-mx-1 flex gap-x-1 overflow-x-auto py-1">
-          {sections.map((section) => (
+        <ol className="-mx-1 flex gap-x-1 overflow-x-auto py-1">
+          {sections.map((section, index) => (
             <li key={section.id} className="shrink-0">
               <a
                 href={section.href ?? `#${section.id}`}
                 aria-current={active === section.id ? "true" : undefined}
                 className={cn(
-                  "block px-3 py-3 text-sm font-semibold no-underline wdth-body transition-colors duration-150",
+                  "eyebrow flex items-baseline gap-2 px-3 py-3.5 no-underline transition-colors duration-150",
                   "border-b-[3px] hover:text-brand-ink",
                   active === section.id
                     ? "border-brand text-brand-ink"
                     : "border-transparent text-steel-ink",
                 )}
               >
+                <span aria-hidden="true" className="tabular text-steel">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <RichText text={section.label} />
+                {section.href ? (
+                  <span aria-hidden="true" className="text-steel">
+                    &rarr;
+                  </span>
+                ) : null}
               </a>
             </li>
           ))}
-        </ul>
+        </ol>
       </Container>
     </nav>
   );

@@ -58,8 +58,21 @@
    */
   --color-error: #9a2218;
 
-  /* Type — Archivo, variable, wdth 62-125, wght 100-900. One family. */
+  /*
+   * Paper — the card and alternate-band surface. Between concrete and white,
+   * so every text colour verified on concrete clears it with more margin,
+   * and a card no longer reads as a white hole punched in a warm page.
+   */
+  --color-paper: #f4f2ee;
+
+  /*
+   * Type — Archivo, variable, wdth 62-125, wght 100-900, for display and body.
+   * IBM Plex Mono for the drawing layer: eyebrows, indices, captions' numbers,
+   * the nav, buttons, data. The mono is what makes a label read as a survey
+   * annotation rather than as marketing microcopy.
+   */
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   /* Scale: 1.25 ratio, body 17px. Display steps are fluid 360px -> 1280px. */
   --text-2xs: 0.75rem;
@@ -121,9 +134,17 @@
   --container-page: 80rem; /* 1280px */
   --container-measure: 68ch; /* prose, under the 75-char ceiling */
 
-  /* Motion — short, and only on colour. Killed by reduced-motion below. */
+  /*
+   * Motion. `quiet` for colour and small hover moves; `out-expo` for anything
+   * that enters — it decelerates hard, so a reveal lands rather than drifts.
+   * Killed by reduced-motion in globals.css.
+   */
   --ease-out-quiet: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
   --duration-quick: 150ms;
+  --duration-hover: 500ms;
+  --duration-reveal: 900ms;
 }
 
 /*
@@ -154,4 +175,46 @@
   outline: 3px solid var(--color-survey);
   outline-offset: 2px;
   box-shadow: 0 0 0 2px var(--color-asphalt);
+}
+
+/*
+ * The drawing layer's label: mono, small, uppercase, letterspaced. Eyebrows,
+ * indices, nav items, captions' numbers and the data plate all share it, so
+ * one rule here keeps them one voice.
+ */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-variation-settings: normal;
+}
+
+/*
+ * Survey grid: a dot every 24px, set as a background so it sits under the
+ * content and never in the markup. Pass a colour with `--grid-ink` (defaults
+ * to steel at low opacity); `dot-grid-dark` is the same for asphalt bands.
+ */
+@utility dot-grid {
+  --grid-ink: color-mix(in srgb, var(--color-steel) 22%, transparent);
+  background-image: radial-gradient(var(--grid-ink) 1px, transparent 1.2px);
+  background-size: 24px 24px;
+  background-position: 12px 12px;
+}
+@utility dot-grid-dark {
+  --grid-ink: color-mix(in srgb, var(--color-steel-light) 16%, transparent);
+  background-image: radial-gradient(var(--grid-ink) 1px, transparent 1.2px);
+  background-size: 24px 24px;
+  background-position: 12px 12px;
+}
+
+/*
+ * A hover zoom on photographs: slow and small, so it reads as the picture
+ * coming forward rather than as a UI effect.
+ */
+@utility zoom-on-hover {
+  transition: transform var(--duration-hover) var(--ease-out-expo);
+  will-change: transform;
 }

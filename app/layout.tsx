@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Archivo } from "next/font/google";
+import { Archivo, IBM_Plex_Mono } from "next/font/google";
+import { ViewTransition } from "react";
 import { ReviewBanner } from "@/components/DraftNotice";
+import { MotionProvider } from "@/components/motion/MotionProvider";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import {
@@ -18,15 +20,26 @@ import { buildOrganizationSchema, buildWebsiteSchema } from "@/lib/structured-da
 import "./globals.css";
 
 /**
- * One family. `wdth` is loaded as a variable axis so headings can use the
- * expanded widths without a second file. Self-hosted by next/font, so the
- * static export makes no third-party font request.
+ * Two families, both self-hosted by next/font so the static export makes no
+ * third-party font request.
+ *
+ * Archivo carries the display and the body; `wdth` is loaded as a variable
+ * axis so headings can use the expanded widths without a second file. IBM
+ * Plex Mono is the drawing layer — eyebrows, indices, the nav, buttons, the
+ * data plate — two weights, latin only.
  */
 const archivo = Archivo({
   subsets: ["latin"],
   axes: ["wdth"],
   display: "swap",
   variable: "--font-archivo",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-plex-mono",
 });
 
 const site = getSite();
@@ -146,25 +159,35 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={archivo.variable}>
+    <html lang="en" className={`${archivo.variable} ${plexMono.variable}`}>
       <body className="min-h-dvh bg-concrete text-asphalt antialiased">
         <script
           type="application/ld+json"
           // Built from content JSON at build time; no user input reaches it.
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
-        {isReviewMode ? <ReviewBanner /> : null}
-        <SiteHeader
-          logoAlt={site.logoAlt}
-          navLabel={site.navLabel}
-          nav={site.nav}
-          skipLinkLabel={site.skipLinkLabel}
-          menuOpenLabel={site.menuOpenLabel}
-          menuCloseLabel={site.menuCloseLabel}
-          menus={menus}
-        />
-        <main id="main">{children}</main>
-        <SiteFooter site={site} year={new Date().getFullYear()} />
+        <MotionProvider>
+          {isReviewMode ? <ReviewBanner /> : null}
+          <SiteHeader
+            logoAlt={site.logoAlt}
+            navLabel={site.navLabel}
+            nav={site.nav}
+            skipLinkLabel={site.skipLinkLabel}
+            menuOpenLabel={site.menuOpenLabel}
+            menuCloseLabel={site.menuCloseLabel}
+            menus={menus}
+          />
+          {/*
+            Route changes crossfade, and a photograph that carries from a
+            gallery to its project page morphs between the two — React's
+            ViewTransition names the pairs, globals.css sets the timing, and
+            a browser without the API simply swaps pages as before.
+          */}
+          <main id="main">
+            <ViewTransition>{children}</ViewTransition>
+          </main>
+          <SiteFooter site={site} year={new Date().getFullYear()} />
+        </MotionProvider>
       </body>
     </html>
   );

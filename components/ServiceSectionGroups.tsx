@@ -1,6 +1,6 @@
-import Image from "next/image";
-
+import { DevelopImage } from "./DevelopImage";
 import { Heading } from "./Heading";
+import { Reveal } from "./Reveal";
 import { RichText } from "./RichText";
 import { TextLink } from "./TextLink";
 import type { ServiceSectionGroup } from "@/lib/content-types";
@@ -55,25 +55,19 @@ export function ServiceSectionGroups({
       )}
     >
       {groups.map((group, index) => (
-        <section key={group.id} aria-labelledby={`${idPrefix}-${group.id}`}>
+        <Reveal key={group.id} index={illustrated ? index % 2 : 0} className="group">
+          <section aria-labelledby={`${idPrefix}-${group.id}`}>
           {group.image ? (
-            <div className="relative mb-5 aspect-16/9 w-full bg-steel/10">
-              <Image
-                src={group.image.src}
-                alt={group.image.alt}
-                fill
-                sizes="(min-width: 768px) 45vw, 100vw"
-                loading="lazy"
-                className="object-cover"
-              />
-            </div>
+            <DevelopImage
+              image={group.image}
+              sizes="(min-width: 768px) 45vw, 100vw"
+              zoom={Boolean(group.href)}
+              className="mb-5 aspect-16/9 w-full"
+            />
           ) : null}
 
           <div className="flex items-baseline gap-4 border-t-[3px] border-brand pt-4">
-            <span
-              aria-hidden="true"
-              className="text-2xs font-bold tabular text-brand-ink wdth-body"
-            >
+            <span aria-hidden="true" className="eyebrow tabular text-brand-ink">
               {String(index + 1).padStart(2, "0")}
             </span>
             <Heading
@@ -121,7 +115,8 @@ export function ServiceSectionGroups({
               />
             </p>
           ) : null}
-        </section>
+          </section>
+        </Reveal>
       ))}
     </div>
   );

@@ -35,6 +35,15 @@ const site = getSite();
 const labels = page.labels ?? {};
 const cta = getSection(page, "cta-default", "cta");
 
+/** The enlarged view's labels, from the page like every other string. */
+const lightbox = {
+  open: labels.lightboxOpen ?? "",
+  close: labels.lightboxClose ?? "",
+  next: labels.lightboxNext ?? "",
+  previous: labels.lightboxPrevious ?? "",
+  counter: labels.lightboxCounter ?? "",
+};
+
 export function generateStaticParams() {
   return getProjects().map((project) => ({ slug: project.slug }));
 }
@@ -87,10 +96,7 @@ function ProjectFacts({
     <>
       {facts.length ? (
         <>
-          <h2
-            id="project-details"
-            className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body"
-          >
+          <h2 id="project-details" className="eyebrow text-steel-ink">
             <RichText text={heading} />
           </h2>
 
@@ -102,7 +108,7 @@ function ProjectFacts({
           >
             {facts.map((fact) => (
               <div key={fact.label} className="border-b border-rule py-4">
-                <dt className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel wdth-body">
+                <dt className="eyebrow text-steel">
                   <RichText text={fact.label} />
                 </dt>
                 <dd className="mt-1 text-base wdth-body">
@@ -116,7 +122,7 @@ function ProjectFacts({
 
       {service ? (
         <div className="mt-8">
-          <h2 className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
+          <h2 className="eyebrow text-steel-ink">
             <RichText text={serviceLabel} />
           </h2>
           <Link
@@ -161,7 +167,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <>
-      <Section tone="concrete">
+      <Section tone="concrete" className="dot-grid pb-10! md:pb-12!">
         <Container>
           {/* Projects > Category > Project: the category is a real step in
               the structure now, not a filter state, so the trail says so. */}
@@ -179,17 +185,21 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="mt-6 flex flex-wrap items-center gap-3">
             {category ? <Tag label={category.shortLabel || category.label} /> : null}
             {isCompleted(project.status) ? (
-              <span className="inline-flex items-center gap-1.5 text-2xs font-semibold uppercase tracking-[0.06em] text-brand-ink wdth-body">
+              <span className="eyebrow inline-flex items-center gap-1.5 text-brand-ink">
                 <span aria-hidden="true" className="size-1.5 rounded-full bg-brand" />
                 <RichText text={project.status} />
               </span>
             ) : null}
           </div>
 
-          <Heading level={1} text={project.title} className="mt-4" />
+          <Heading level={1} text={project.title} className="mt-4 max-w-[18ch]" split />
 
           {isKnown(project.summary) ? (
-            <p className="mt-5 max-w-(--container-measure) text-lg text-steel-ink wdth-body">
+            <p
+              data-fade=""
+              style={{ "--fade-delay": "320ms" } as React.CSSProperties}
+              className="mt-5 max-w-(--container-measure) text-lg text-steel-ink wdth-body text-pretty"
+            >
               <RichText text={project.summary} />
             </p>
           ) : null}
@@ -223,6 +233,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <ProjectGallery
                   images={project.images}
                   label={labels.gallery ?? ""}
+                  lightbox={lightbox}
+                  transitionName={`project-${project.slug}`}
                 />
 
                 {project.scope.length ? (
@@ -250,7 +262,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                be, the record itself becomes the page: the facts run across the
                full width as a plate, with the scope beneath. Clean, and it
                never looks like an image failed to load. */
-            <div className="border-t-[3px] border-brand bg-white px-6 py-10 md:px-10 md:py-12">
+            <div className="border-t-[3px] border-brand bg-paper px-6 py-10 md:px-10 md:py-12">
               <ProjectFacts
                 facts={facts}
                 heading={labels.details ?? ""}

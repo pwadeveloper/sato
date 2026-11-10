@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import { ViewTransition } from "react";
 
 import { Container } from "@/components/Container";
 import { CtaBand } from "@/components/CtaBand";
+import { DevelopImage } from "@/components/DevelopImage";
+import { Eyebrow } from "@/components/Eyebrow";
 import { PageHeader } from "@/components/PageHeader";
+import { Reveal } from "@/components/Reveal";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
 import { TextLink } from "@/components/TextLink";
@@ -39,10 +42,10 @@ export const metadata: Metadata = buildPageMetadata(page, site);
  * projects are, and nobody has to learn a second taxonomy to navigate the
  * work.
  *
- * Only categories that hold something are here. Four of the eight are empty
- * today — Mechanical, Energy, Digital Twin and Research — and an empty tile
- * leading to an empty page is worse than no tile, so `getProjectBands()`
- * drops them and each returns the moment its first project lands.
+ * Only categories that hold something are here. Three of the eight are empty
+ * today — Energy, Digital Twin and Research — and an empty tile leading to
+ * an empty page is worse than no tile, so `getProjectBands()` drops them and
+ * each returns the moment its first project lands.
  *
  * `getProjectCount` is what lets Oil & Gas sit here beside the others: its
  * rows live on the service rather than in projects.json, and the tile neither
@@ -78,6 +81,13 @@ export default function ProjectsPage() {
     [],
   );
 
+  // Tiles are numbered straight through the rows, so the first category of
+  // the second row is 05, not 01 again.
+  const numbers = new Map<string, number>();
+  rows.flatMap((row) => row.categories).forEach((category, index) => {
+    numbers.set(category.value, index + 1);
+  });
+
   return (
     <>
       <PageHeader
@@ -93,19 +103,22 @@ export default function ProjectsPage() {
             <RichText text={labels.categoriesLabel ?? page.title} />
           </h2>
 
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-16">
             {rows.map((row, index) => (
               <section
                 key={row.label ?? `row-${index}`}
                 aria-labelledby={row.label ? `row-${index}` : undefined}
               >
                 {row.label ? (
-                  <h3
-                    id={`row-${index}`}
-                    className="mb-6 border-b border-asphalt pb-3 text-2xs font-semibold uppercase tracking-[0.08em] text-brand-deep wdth-body"
-                  >
-                    <RichText text={row.label} />
-                  </h3>
+                  <Reveal>
+                    <Eyebrow
+                      text={row.label}
+                      tone="brand"
+                      as="h3"
+                      id={`row-${index}`}
+                      className="mb-8 border-b border-asphalt pb-3"
+                    />
+                  </Reveal>
                 ) : null}
 
                 {/* The row takes as many columns as it has tiles, up to
@@ -113,24 +126,27 @@ export default function ProjectsPage() {
                     leaving a quarter of it empty. A fifth wraps. */}
                 <ul
                   className={cn(
-                    "grid gap-6",
+                    "grid gap-x-6 gap-y-10",
                     row.categories.length > 1 && "sm:grid-cols-2",
                     row.categories.length === 3 && "lg:grid-cols-3",
                     row.categories.length >= 4 && "lg:grid-cols-4",
                   )}
                 >
-                  {row.categories.map((category) => (
-                    <li key={category.value} className="flex">
-                      <CategoryTile
-                        category={category}
-                        // A row of one is set side-on across the full width
-                        // rather than left as a quarter-width tile with three
-                        // empty columns beside it. It is the same move the
-                        // services overview makes for a category of one.
-                        layout={row.categories.length === 1 ? "wide" : "stacked"}
-                      />
-                    </li>
-                  ))}
+                  {row.categories.map((category, position) => {
+                    return (
+                      <Reveal key={category.value} as="li" index={position} className="flex">
+                        <CategoryTile
+                          category={category}
+                          number={numbers.get(category.value) ?? position + 1}
+                          // A row of one is set side-on across the full width
+                          // rather than left as a quarter-width tile with three
+                          // empty columns beside it. It is the same move the
+                          // services overview makes for a category of one.
+                          layout={row.categories.length === 1 ? "wide" : "stacked"}
+                        />
+                      </Reveal>
+                    );
+                  })}
                 </ul>
               </section>
             ))}
@@ -138,7 +154,7 @@ export default function ProjectsPage() {
 
           {/* Clients is out of the main nav; this and the footer are how a
               reader who wants it still finds it. */}
-          <p className="mt-10">
+          <p className="mt-12">
             <TextLink label={labels.clientsLink ?? ""} href="/clients" />
           </p>
 
@@ -160,12 +176,19 @@ export default function ProjectsPage() {
   );
 }
 
-/** One category: its photograph, its name, its line, and how much it holds. */
+/**
+ * One category: its photograph, its name, its line, and how much it holds.
+ *
+ * The photograph morphs into the header of the category's page when the
+ * tile is opened — it is the same picture, and the reader should see that.
+ */
 function CategoryTile({
   category,
+  number,
   layout = "stacked",
 }: {
   category: CollectionFacet;
+  number: number;
   layout?: "stacked" | "wide";
 }) {
   const count = getProjectCount(category);
@@ -177,39 +200,36 @@ function CategoryTile({
   return (
     <article
       className={cn(
-        "group relative flex h-full w-full flex-col border border-rule bg-white transition-colors duration-150 hover:border-steel focus-within:border-steel",
-        isWide && "md:grid md:grid-cols-2 md:items-stretch",
+        "group relative flex h-full w-full flex-col",
+        isWide && "md:grid md:grid-cols-2 md:items-center md:gap-x-10",
       )}
     >
       {category.image ? (
-        <div
-          className={cn(
-            "relative w-full overflow-hidden bg-steel/10",
-            isWide ? "aspect-16/9 md:aspect-auto md:h-full" : "aspect-4/3",
-          )}
-        >
-          <Image
-            src={category.image.src}
-            alt={category.image.alt}
-            fill
+        <ViewTransition name={`category-${category.slug}`}>
+          <DevelopImage
+            image={category.image}
             sizes={
               isWide
                 ? "(min-width: 768px) 50vw, 100vw"
                 : "(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
             }
-            className="object-cover"
-            style={category.image.focalPoint ? { objectPosition: category.image.focalPoint } : undefined}
+            zoom
+            className={cn("w-full", isWide ? "aspect-16/9 md:aspect-3/2" : "aspect-4/3")}
           />
-        </div>
+        </ViewTransition>
       ) : null}
 
-      <div
-        className={cn(
-          "flex flex-1 flex-col gap-3 p-6",
-          isWide && "md:justify-center md:p-8",
-        )}
-      >
-        <h4 className="text-h3 wdth-heading text-balance">
+      <div className={cn("flex flex-1 flex-col gap-3 pt-4", isWide && "md:pt-0")}>
+        <div className="flex items-baseline justify-between gap-4">
+          <span aria-hidden="true" className="eyebrow tabular text-steel-ink">
+            {String(number).padStart(2, "0")}
+          </span>
+          <p className="eyebrow text-brand-ink tabular">
+            <RichText text={countLabel} />
+          </p>
+        </div>
+
+        <h4 className={cn("wdth-heading text-balance", isWide ? "text-h2" : "text-h3")}>
           <Link
             href={`/projects/${category.slug}`}
             className="text-asphalt no-underline after:absolute after:inset-0 after:content-['']"
@@ -222,18 +242,12 @@ function CategoryTile({
           <p
             className={cn(
               "text-steel-ink wdth-body text-pretty",
-              isWide
-                ? "max-w-(--container-measure) text-base"
-                : "text-sm",
+              isWide ? "max-w-(--container-measure) text-base" : "text-sm",
             )}
           >
             <RichText text={category.intro} />
           </p>
         ) : null}
-
-        <p className="mt-auto pt-2 text-2xs font-semibold uppercase tracking-[0.08em] text-brand-ink tabular wdth-body">
-          <RichText text={countLabel} />
-        </p>
       </div>
     </article>
   );

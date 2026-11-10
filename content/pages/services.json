@@ -25,7 +25,12 @@
     "servicesMenu": "Services menu",
     "allServices": "All services",
     "gallery": "Work delivered",
-    "viewService": "Full capability"
+    "viewService": "Full capability",
+    "lightboxOpen": "View larger",
+    "lightboxClose": "Close",
+    "lightboxNext": "Next photograph",
+    "lightboxPrevious": "Previous photograph",
+    "lightboxCounter": "Photograph {n} of {total}"
   },
   "images": {
     "header": {

@@ -65,8 +65,8 @@ export function PartnerDetails({ partner, headingId, className }: PartProps) {
           className="mt-8 grid grid-cols-2 gap-px border border-rule bg-rule lg:grid-cols-4"
         >
           {partner.figures.map((figure) => (
-            <div key={figure.label} className="bg-white p-5">
-              <dt className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
+            <div key={figure.label} className="bg-paper p-5">
+              <dt className="eyebrow text-steel-ink">
                 <RichText text={figure.label} />
               </dt>
               <dd className="mt-1 text-2xl font-bold tabular wdth-heading text-asphalt">
@@ -127,20 +127,20 @@ export function PartnerProjects({
                 <tr className="border-y border-asphalt">
                   <th
                     scope="col"
-                    className="py-3 pr-6 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body"
+                    className="py-3 pr-6 eyebrow text-steel-ink"
                   >
                     <RichText text={partner.projectColumns.client} />
                   </th>
                   <th
                     scope="col"
-                    className="py-3 pr-6 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body"
+                    className="py-3 pr-6 eyebrow text-steel-ink"
                   >
                     <RichText text={partner.projectColumns.project} />
                   </th>
                   {showDates ? (
                     <th
                       scope="col"
-                      className="hidden py-3 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body sm:table-cell"
+                      className="hidden py-3 eyebrow text-steel-ink sm:table-cell"
                     >
                       <RichText text={partner.projectColumns.year} />
                     </th>
@@ -213,9 +213,9 @@ export function PartnerProjects({
       {caseStudy ? (
         <section
           aria-labelledby={`${headingId}-case-study`}
-          className="mt-12 border-t-[3px] border-brand bg-white p-6 md:p-10"
+          className="mt-12 border-t-[3px] border-brand bg-paper p-6 md:p-10"
         >
-          <p className="text-2xs font-semibold uppercase tracking-[0.08em] text-brand-ink wdth-body">
+          <p className="eyebrow text-brand-ink">
             <RichText text={caseStudy.attribution} />
           </p>
 
@@ -228,7 +228,7 @@ export function PartnerProjects({
 
           <div className="mt-6 grid gap-8 lg:grid-cols-2">
             <div>
-              <h4 className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
+              <h4 className="eyebrow text-steel-ink">
                 <RichText text={caseStudy.challengeHeading} />
               </h4>
               <p className="mt-2 text-base wdth-body text-pretty">
@@ -236,7 +236,7 @@ export function PartnerProjects({
               </p>
             </div>
             <div>
-              <h4 className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
+              <h4 className="eyebrow text-steel-ink">
                 <RichText text={caseStudy.solutionHeading} />
               </h4>
               <p className="mt-2 text-base wdth-body text-pretty">
@@ -246,7 +246,7 @@ export function PartnerProjects({
           </div>
 
           <div className="mt-8">
-            <h4 className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
+            <h4 className="eyebrow text-steel-ink">
               <RichText text={caseStudy.resultsHeading} />
             </h4>
             <p className="mt-2 max-w-(--container-measure) text-sm text-steel-ink wdth-body">
@@ -256,7 +256,7 @@ export function PartnerProjects({
               {caseStudy.results.map((result) => (
                 <li
                   key={result}
-                  className="bg-white p-4 text-base font-semibold wdth-body"
+                  className="bg-paper p-4 text-base font-semibold wdth-body"
                 >
                   <RichText text={result} />
                 </li>

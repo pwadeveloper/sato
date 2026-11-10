@@ -57,7 +57,7 @@ export function CompanyFactsPanel({
               key={fact.id}
               className="border-b border-rule-dark py-4 md:flex md:items-baseline md:gap-8"
             >
-              <dt className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-light wdth-body md:w-52 md:shrink-0">
+              <dt className="eyebrow text-steel-light md:w-52 md:shrink-0">
                 <RichText text={fact.label} />
               </dt>
               <dd className="mt-1 text-base font-medium text-concrete wdth-body md:mt-0">

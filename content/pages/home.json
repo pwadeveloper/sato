@@ -3,6 +3,17 @@
   "title": "Welcome to Sato Engineering & Infrastructure",
   "metaTitle": "Sato Engineering & Infrastructure Limited",
   "metaDescription": "Established in 1997. Nearly three decades of engineering, infrastructure, energy, oil and gas and digital project delivery for public and private sector clients.",
+  "labels": {
+    "aboutLink": "About Sato",
+    "servicesOf": "Services",
+    "projectsOf": "Projects",
+    "countOne": "1 project",
+    "countMany": "{n} projects",
+    "doorsLabel": "Project categories",
+    "clientsLabel": "Clients",
+    "factsLabel": "Company at a glance",
+    "indexLabel": "What we do"
+  },
   "images": {
     "hero": {
       "src": "/images/hero/dam-site-engineer.webp",
@@ -12,6 +23,20 @@
     }
   },
   "sections": [
+    {
+      "type": "hero",
+      "id": "hero",
+      "ctas": [
+        {
+          "label": "What we do",
+          "href": "/services"
+        },
+        {
+          "label": "Contact us",
+          "href": "/contact"
+        }
+      ]
+    },
     {
       "type": "prose",
       "id": "welcome",
@@ -29,6 +54,50 @@
       ]
     },
     {
+      "type": "collection",
+      "id": "what-we-do",
+      "collection": "serviceGroups",
+      "heading": "What we do",
+      "intro": "The areas we work in. Each has a page of its own: what we can do, the solutions we provide, and who we deliver with.",
+      "ctas": [
+        {
+          "label": "All services",
+          "href": "/services"
+        }
+      ]
+    },
+    {
+      "type": "collection",
+      "id": "selected-work",
+      "collection": "projects",
+      "heading": "Projects",
+      "intro": "Delivered work, by category. Each category opens a gallery of photographs and the list of projects in it.",
+      "ctas": [
+        {
+          "label": "All projects",
+          "href": "/projects"
+        }
+      ]
+    },
+    {
+      "type": "facts",
+      "id": "facts",
+      "heading": "Company at a glance"
+    },
+    {
+      "type": "collection",
+      "id": "clients",
+      "collection": "clients",
+      "heading": "Clients",
+      "intro": "For nearly three decades, Sato has delivered for federal and state government, international development partners, universities and private organisations.",
+      "ctas": [
+        {
+          "label": "All clients",
+          "href": "/clients"
+        }
+      ]
+    },
+    {
       "type": "prose",
       "id": "mission",
       "heading": "Mission",
@@ -42,6 +111,22 @@
       "heading": "Vision",
       "body": [
         "To be a globally recognized engineering and infrastructure company, renowned for excellence, innovation and world-class project delivery."
+      ]
+    },
+    {
+      "type": "cta",
+      "id": "cta",
+      "heading": "Working on a project in infrastructure, energy or oil and gas?",
+      "body": "Talk to our team. We will supply registration documents, referees and a capability statement on request.",
+      "ctas": [
+        {
+          "label": "Contact us",
+          "href": "/contact"
+        },
+        {
+          "label": "Company information",
+          "href": "/about"
+        }
       ]
     }
   ]

@@ -3,6 +3,7 @@ import { ClientList } from "@/components/ClientList";
 import { Container } from "@/components/Container";
 import { DraftNotice } from "@/components/DraftNotice";
 import { PageHeader } from "@/components/PageHeader";
+import { Reveal } from "@/components/Reveal";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
 import { getClients, getPage, getSection, getService, getSite } from "@/lib/content";
@@ -64,22 +65,24 @@ export default function ClientsPage() {
         come away thinking Sato holds a contract with Saudi Aramco.
       */}
       {partnerClients.length ? (
-        <Section tone="white" labelledBy="oil-gas-clients-heading">
+        <Section tone="paper" labelledBy="oil-gas-clients-heading">
           <Container>
             {isReviewMode && partnerIsDraft ? <DraftNotice className="mb-8" /> : null}
 
-            <h2
-              id="oil-gas-clients-heading"
-              className="border-t-[3px] border-brand pt-6 text-h3 wdth-heading text-balance"
-            >
-              <RichText text={partner.heading ?? ""} />
-            </h2>
+            <Reveal>
+              <h2
+                id="oil-gas-clients-heading"
+                className="border-t-[3px] border-brand pt-6 text-h3 wdth-heading text-balance"
+              >
+                <RichText text={partner.heading ?? ""} />
+              </h2>
 
-            {partner.intro ? (
-              <p className="mt-4 max-w-(--container-measure) text-base text-steel-ink wdth-body text-pretty">
-                <RichText text={partner.intro} />
-              </p>
-            ) : null}
+              {partner.intro ? (
+                <p className="mt-4 max-w-(--container-measure) text-base text-steel-ink wdth-body text-pretty">
+                  <RichText text={partner.intro} />
+                </p>
+              ) : null}
+            </Reveal>
 
             <ClientList clients={partnerClients} className="mt-8" />
           </Container>

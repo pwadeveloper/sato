@@ -37,15 +37,24 @@ export function RelatedServices({
           services.length > 1 && "md:grid-cols-2",
         )}
       >
-        {services.map((service) => (
-          <li key={service.slug} className="relative bg-white p-5">
-            <h4 className="text-base font-bold wdth-heading">
+        {services.map((service, index) => (
+          <li key={service.slug} className="group relative bg-paper p-6">
+            <span aria-hidden="true" className="eyebrow tabular text-steel">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <h4 className="mt-2 flex items-baseline gap-3 text-base font-bold wdth-heading">
               <Link
                 href={`/services/${service.slug}`}
                 className="no-underline after:absolute after:inset-0 after:content-['']"
               >
                 <RichText text={service.name} />
               </Link>
+              <span
+                aria-hidden="true"
+                className="inline-block text-[0.8em] text-brand transition-transform duration-500 ease-(--ease-out-expo) group-hover:translate-x-1 motion-reduce:transition-none"
+              >
+                &rarr;
+              </span>
             </h4>
             <p className="mt-1 text-sm text-steel-ink wdth-body">
               <RichText text={service.shortSummary} />

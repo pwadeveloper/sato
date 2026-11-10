@@ -40,6 +40,10 @@ function isCurrent(pathname: string, href: string): boolean {
  * that was scrolled past. Home no longer has white copy over a full-bleed
  * photograph, so the observer that drove it is gone with it — the header is
  * plain, which is what the client asked the whole site to be.
+ *
+ * The nav is set in the mono, like the labels on a drawing: small,
+ * uppercase, letterspaced. The current section carries a brand underline
+ * rather than only a change of colour.
  */
 export function SiteHeader({
   logoAlt,
@@ -53,7 +57,7 @@ export function SiteHeader({
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 h-[var(--header-height)] border-b border-rule bg-concrete">
+    <header className="sticky top-0 z-40 h-(--header-height) border-b border-rule bg-concrete">
       <a
         href="#main"
         className="sr-only px-4 py-2 focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-asphalt focus:text-concrete"
@@ -67,7 +71,7 @@ export function SiteHeader({
         </Link>
 
         <nav aria-label={navLabel} className="hidden h-full lg:block">
-          <ul className="flex h-full items-center gap-x-5 xl:gap-x-7">
+          <ul className="flex h-full items-center gap-x-7 xl:gap-x-9">
             {nav.map((link) => {
               const menu = menus.find((entry) => entry.href === link.href);
               const current = isCurrent(pathname, link.href);
@@ -87,8 +91,8 @@ export function SiteHeader({
                       href={link.href}
                       aria-current={current ? "page" : undefined}
                       className={cn(
-                        "text-sm font-semibold no-underline wdth-body transition-colors duration-150 hover:text-brand-ink",
-                        current ? "text-brand-ink" : "text-asphalt",
+                        "eyebrow link-draw py-2 transition-colors duration-150 hover:text-brand-ink",
+                        current ? "text-brand-ink [background-size:100%_1px]" : "text-asphalt",
                       )}
                     >
                       <RichText text={link.label} />

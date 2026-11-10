@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 import { BackedByStrip } from "@/components/BackedByStrip";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -152,7 +152,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         }}
       />
 
-      <Section tone="white" labelledBy="backed-by">
+      <Section tone="paper" labelledBy="backed-by">
         <Container>
           <BackedByStrip
             heading={backedBy.heading}
@@ -224,15 +224,20 @@ function OverlayHeader({
 
       <Section tone="concrete" as="div" className="bg-transparent!">
         <Container>
-          <div className="max-w-[34rem]">
+          <div className="max-w-[36rem]">
             {above}
             <Heading
               level={1}
               text={service.name}
               id="service-heading"
+              split
               className="mt-6"
             />
-            <p className="mt-5 text-lg text-asphalt wdth-body text-pretty">
+            <p
+              data-fade=""
+              style={{ "--fade-delay": "320ms" } as CSSProperties}
+              className="mt-5 text-lg text-asphalt wdth-body text-pretty"
+            >
               <RichText text={service.summary} />
             </p>
           </div>

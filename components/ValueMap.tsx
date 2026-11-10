@@ -58,7 +58,7 @@ export function ValueMap({
 }: ValueMapProps) {
 
   const head =
-    "py-3 pr-6 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body";
+    "py-3 pr-6 eyebrow text-steel-ink";
 
   return (
     <div className={cn(className)}>
@@ -75,7 +75,7 @@ export function ValueMap({
         </p>
       ) : null}
 
-      <div className="mt-6 overflow-x-auto border border-rule bg-white">
+      <div className="mt-6 overflow-x-auto border border-rule bg-paper">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={map.image.src}

@@ -1,10 +1,12 @@
 "use client";
 
+import { AnimatePresence, m } from "motion/react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { RichText } from "./RichText";
 import type { HeaderMenu } from "./SiteHeader";
 import type { Link as LinkContent } from "@/lib/content-types";
+import { cn } from "@/lib/cn";
 
 export interface MobileNavProps {
   links: LinkContent[];
@@ -23,6 +25,10 @@ export interface MobileNavProps {
  * tapping the row's label still goes to the overview. Open by default is
  * wrong here — six sections and their children would be a page of links
  * before the visitor has asked for any of them.
+ *
+ * The panel is the same drawing as the desktop dropdown: asphalt, the survey
+ * grid, every top-level item indexed, the destinations set large enough to
+ * tap without aiming.
  */
 export function MobileNav({
   links,
@@ -62,125 +68,140 @@ export function MobileNav({
         aria-expanded={isOpen}
         aria-controls="mobile-nav-panel"
         onClick={() => setIsOpen((open) => !open)}
-        className="-mr-2 flex size-11 items-center justify-center text-asphalt"
+        className="-mr-2 flex h-11 items-center gap-3 px-2 text-asphalt"
       >
-        <span className="sr-only">
+        <span className="eyebrow">
           <RichText text={isOpen ? closeLabel : openLabel} />
         </span>
         <span aria-hidden="true" className="relative block h-4 w-6">
           <span
-            className={`absolute left-0 block h-0.5 w-6 bg-current transition-transform duration-150 ${
-              isOpen ? "top-[7px] rotate-45" : "top-0"
-            }`}
+            className={cn(
+              "absolute left-0 block h-0.5 w-6 bg-current transition-transform duration-300 ease-(--ease-out-expo)",
+              isOpen ? "top-[7px] rotate-45" : "top-0",
+            )}
           />
           <span
-            className={`absolute left-0 top-[7px] block h-0.5 w-6 bg-current transition-opacity duration-150 ${
-              isOpen ? "opacity-0" : "opacity-100"
-            }`}
+            className={cn(
+              "absolute left-0 top-[7px] block h-0.5 w-6 bg-current transition-opacity duration-150",
+              isOpen ? "opacity-0" : "opacity-100",
+            )}
           />
           <span
-            className={`absolute left-0 block h-0.5 w-6 bg-current transition-transform duration-150 ${
-              isOpen ? "top-[7px] -rotate-45" : "top-[14px]"
-            }`}
+            className={cn(
+              "absolute left-0 block h-0.5 w-6 bg-current transition-transform duration-300 ease-(--ease-out-expo)",
+              isOpen ? "top-[7px] -rotate-45" : "top-[14px]",
+            )}
           />
         </span>
       </button>
 
-      {isOpen ? (
-        <div
-          id="mobile-nav-panel"
-          className="fixed inset-x-0 bottom-0 top-[var(--header-height)] z-50 overflow-y-auto bg-asphalt"
-        >
-          <nav aria-label={navLabel} className="px-5 py-6">
-            <ul className="flex flex-col">
-              {links.map((link) => {
-                const menu = menus.find((entry) => entry.href === link.href);
-                const isExpanded = expanded === link.href;
+      <AnimatePresence>
+        {isOpen ? (
+          <m.div
+            id="mobile-nav-panel"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6, transition: { duration: 0.15 } }}
+            transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-x-0 bottom-0 top-(--header-height) z-50 overflow-y-auto bg-asphalt dot-grid-dark"
+          >
+            <nav aria-label={navLabel} className="px-5 py-4 md:px-8">
+              <ul className="flex flex-col">
+                {links.map((link, index) => {
+                  const menu = menus.find((entry) => entry.href === link.href);
+                  const isExpanded = expanded === link.href;
 
-                return (
-                  <li key={link.href} className="border-b border-rule-dark">
-                    <div className="flex items-center justify-between gap-3">
-                      <Link
-                        href={link.href}
-                        onClick={closeAll}
-                        className="block flex-1 py-4 text-xl font-semibold text-concrete no-underline wdth-heading"
-                      >
-                        <RichText text={link.label} />
-                      </Link>
-
-                      {menu ? (
-                        <button
-                          type="button"
-                          aria-expanded={isExpanded}
-                          aria-controls={`mobile-nav-${menu.href.slice(1)}`}
-                          onClick={() =>
-                            setExpanded(isExpanded ? null : link.href)
-                          }
-                          className="flex size-11 shrink-0 items-center justify-center text-concrete"
+                  return (
+                    <li key={link.href} className="border-b border-rule-dark">
+                      <div className="flex items-center justify-between gap-3">
+                        <Link
+                          href={link.href}
+                          onClick={closeAll}
+                          className="flex flex-1 items-baseline gap-4 py-4 no-underline"
                         >
-                          <span className="sr-only">
+                          <span aria-hidden="true" className="eyebrow tabular text-brand-light">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <span className="text-2xl font-extrabold text-concrete wdth-heading">
                             <RichText text={link.label} />
                           </span>
-                          <span
-                            aria-hidden="true"
-                            className={`text-xs leading-none transition-transform duration-150 ${
-                              isExpanded ? "rotate-180" : ""
-                            }`}
+                        </Link>
+
+                        {menu ? (
+                          <button
+                            type="button"
+                            aria-expanded={isExpanded}
+                            aria-controls={`mobile-nav-${menu.href.slice(1)}`}
+                            onClick={() =>
+                              setExpanded(isExpanded ? null : link.href)
+                            }
+                            className="flex size-11 shrink-0 items-center justify-center border border-rule-dark text-concrete"
                           >
-                            &#9660;
-                          </span>
-                        </button>
+                            <span className="sr-only">
+                              <RichText text={link.label} />
+                            </span>
+                            <span
+                              aria-hidden="true"
+                              className={cn(
+                                "text-xs leading-none transition-transform duration-300 ease-(--ease-out-expo)",
+                                isExpanded && "rotate-180",
+                              )}
+                            >
+                              &#9660;
+                            </span>
+                          </button>
+                        ) : null}
+                      </div>
+
+                      {menu ? (
+                        <ul
+                          id={`mobile-nav-${menu.href.slice(1)}`}
+                          hidden={!isExpanded}
+                          className="ml-9 border-l border-rule-dark pb-5 pl-4"
+                        >
+                          {menu.groups.map((group) => (
+                            <li key={group.id}>
+                              {group.href ? (
+                                <Link
+                                  href={group.href}
+                                  onClick={closeAll}
+                                  className="eyebrow block py-3 text-brand-light no-underline"
+                                >
+                                  <RichText text={group.label} />
+                                </Link>
+                              ) : (
+                                <p className="eyebrow py-3 text-brand-light">
+                                  <RichText text={group.label} />
+                                </p>
+                              )}
+
+                              {group.items?.length ? (
+                                <ul className="border-l border-rule-dark pl-4">
+                                  {group.items.map((item) => (
+                                    <li key={item.href}>
+                                      <Link
+                                        href={item.href}
+                                        onClick={closeAll}
+                                        className="block py-2.5 text-base text-concrete no-underline wdth-body"
+                                      >
+                                        <RichText text={item.label} />
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              ) : null}
+                            </li>
+                          ))}
+                        </ul>
                       ) : null}
-                    </div>
-
-                    {menu ? (
-                      <ul
-                        id={`mobile-nav-${menu.href.slice(1)}`}
-                        hidden={!isExpanded}
-                        className="border-l border-rule-dark pb-4 pl-4"
-                      >
-                        {menu.groups.map((group) => (
-                          <li key={group.id}>
-                            {group.href ? (
-                              <Link
-                                href={group.href}
-                                onClick={closeAll}
-                                className="block py-2.5 text-base font-semibold text-brand-light no-underline wdth-body"
-                              >
-                                <RichText text={group.label} />
-                              </Link>
-                            ) : (
-                              <p className="py-2.5 text-base font-semibold text-brand-light wdth-body">
-                                <RichText text={group.label} />
-                              </p>
-                            )}
-
-                            {group.items?.length ? (
-                              <ul className="border-l border-rule-dark pl-4">
-                                {group.items.map((item) => (
-                                  <li key={item.href}>
-                                    <Link
-                                      href={item.href}
-                                      onClick={closeAll}
-                                      className="block py-2.5 text-sm text-concrete no-underline wdth-body"
-                                    >
-                                      <RichText text={item.label} />
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            ) : null}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </div>
-      ) : null}
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+          </m.div>
+        ) : null}
+      </AnimatePresence>
     </div>
   );
 }

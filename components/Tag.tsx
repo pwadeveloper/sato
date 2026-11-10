@@ -23,7 +23,7 @@ export function Tag({ label, tone = "deep", className }: TagProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full px-3 py-1 text-2xs font-semibold uppercase tracking-[0.06em] wdth-body",
+        "eyebrow inline-flex items-center rounded-full px-3 py-1.5 text-[0.6875rem]",
         TONES[tone],
         className,
       )}

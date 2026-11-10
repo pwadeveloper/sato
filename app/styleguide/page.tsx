@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Button } from "@/components/Button";
+import { DataPlate } from "@/components/DataPlate";
+import { DevelopImage } from "@/components/DevelopImage";
+import { Eyebrow } from "@/components/Eyebrow";
+import { ScaleRule } from "@/components/ScaleRule";
 import { CapabilityList } from "@/components/CapabilityList";
 import { ClientList } from "@/components/ClientList";
 import { CompanyFactsPanel } from "@/components/CompanyFactsPanel";
@@ -181,7 +185,44 @@ export default function StyleguidePage() {
               </ul>
             </Entry>
 
-            <Entry title="Buttons" note="Square corners. Primary is a brand fill; secondary is the brand outline; inverse is for asphalt sections.">
+            <Entry
+              title="The drawing layer"
+              note="IBM Plex Mono for every label: eyebrows, running indices, the nav, buttons, captions' numbers, the data plate. The survey grid sits under headers and dark bands; the scale bar marks the edge of every photograph band. Photographs develop from a field of dots as they arrive."
+            >
+              <div className="flex flex-col gap-8">
+                <div className="flex flex-wrap gap-x-10 gap-y-4">
+                  <Eyebrow text="Eyebrow, light" />
+                  <Eyebrow text="With an index" index={3} />
+                  <Eyebrow text="Brand tone" tone="brand" />
+                </div>
+                <div className="bg-asphalt p-6 dot-grid-dark">
+                  <Eyebrow text="On asphalt" tone="dark" index={1} />
+                  <Eyebrow text="Brand on asphalt" tone="darkBrand" className="mt-3" />
+                  <ScaleRule className="mt-6 text-rule-dark" />
+                </div>
+                <div className="dot-grid border border-rule p-6">
+                  <p className="text-sm text-steel-ink wdth-body">The survey grid, on concrete.</p>
+                </div>
+                {projects[0]?.images[0] ? (
+                  <div className="max-w-md">
+                    <DevelopImage
+                      image={projects[0].images[0]}
+                      sizes="(min-width: 768px) 28rem, 100vw"
+                      className="aspect-3/2 w-full"
+                    />
+                    <p className="mt-2 text-xs text-steel-ink wdth-body">
+                      A photograph developing as it scrolls in (reload with it below the fold to see the dots).
+                    </p>
+                  </div>
+                ) : null}
+              </div>
+            </Entry>
+
+            <Entry title="Data plate" note="The company facts as a plate: figures count up as they come into view.">
+              <DataPlate facts={facts} heading="Company at a glance" headingId="styleguide-plate" />
+            </Entry>
+
+            <Entry title="Buttons" note="Square corners, set in the mono. Primary is a brand fill; secondary is the ink outline; inverse is for asphalt sections. A link carries an arrow; a form button does not.">
               <div className="flex flex-col gap-6">
                 <div className="flex flex-wrap items-center gap-4">
                   <Button label="Contact us" href="/contact" />

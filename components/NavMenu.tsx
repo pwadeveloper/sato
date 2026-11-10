@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { AnimatePresence, m } from "motion/react";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { RichText } from "./RichText";
 import { cn } from "@/lib/cn";
@@ -44,6 +45,9 @@ export interface NavMenuProps {
  * come free; Arrow keys walk the panel, Escape and Tab-out close it, and
  * closing puts focus back on the trigger rather than dropping it to the top
  * of the document.
+ *
+ * The panel is the drawing: asphalt with the survey grid, each group indexed
+ * in the mono. It enters with a short rise and leaves faster than it came.
  */
 export function NavMenu({
   label,
@@ -125,13 +129,13 @@ export function NavMenu({
   }, [open, close, links]);
 
   const rowClass =
-    "group flex items-start justify-between gap-3 py-2 text-sm text-concrete " +
+    "group flex items-start justify-between gap-4 py-2 text-sm text-concrete " +
     "no-underline wdth-body transition-colors duration-150 hover:text-brand-light";
 
   const arrow = (
     <span
       aria-hidden="true"
-      className="shrink-0 leading-6 text-steel-light transition-colors duration-150 group-hover:text-brand-light"
+      className="shrink-0 leading-6 text-steel-light transition-transform duration-500 ease-(--ease-out-expo) group-hover:translate-x-1 group-hover:text-brand-light motion-reduce:transition-none"
     >
       &rarr;
     </span>
@@ -156,16 +160,17 @@ export function NavMenu({
           setOpen(true);
         }}
         className={cn(
-          "flex items-center gap-1.5 text-sm font-semibold wdth-body",
+          "eyebrow link-draw flex items-center gap-2 py-2",
           "transition-colors duration-150 hover:text-brand-ink",
-          current ? "text-brand-ink" : "text-asphalt",
+          current ? "text-brand-ink [background-size:100%_1px]" : "text-asphalt",
+          open && "text-brand-ink",
         )}
       >
         <RichText text={label} />
         <span
           aria-hidden="true"
           className={cn(
-            "text-[0.6em] leading-none transition-transform duration-150",
+            "text-[0.55em] leading-none transition-transform duration-300 ease-(--ease-out-expo)",
             open && "rotate-180",
           )}
         >
@@ -173,85 +178,101 @@ export function NavMenu({
         </span>
       </button>
 
-      <div
-        ref={panel}
-        id={panelId}
-        hidden={!open}
-        className={cn(
-          // Anchored to the trigger's right edge so it can never run off the
-          // side of the window, and only as wide as its contents need.
-          "absolute right-0 top-full z-50 border border-rule-dark bg-asphalt p-6 text-concrete",
-          groups.length > 3
-            ? "w-[min(58rem,calc(100vw-3rem))]"
-            : "w-[min(22rem,calc(100vw-3rem))]",
-        )}
-      >
-        <div
-          className={cn(
-            // CSS columns rather than a grid: these headings are four and
-            // five words long, and a five-track grid gives each about 160px,
-            // which wraps "Research, Technology & Innovation Services" onto
-            // four lines. Columns let each group take the height it needs
-            // and pack the rest around it.
-            groups.length > 3 && "lg:columns-3 lg:gap-8",
-          )}
-        >
-          {groups.map((group) => {
-            const items = group.items ?? [];
+      <AnimatePresence>
+        {open ? (
+          <m.div
+            ref={panel}
+            id={panelId}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 4, transition: { duration: 0.12 } }}
+            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            className={cn(
+              // Anchored to the trigger's right edge so it can never run off the
+              // side of the window, and only as wide as its contents need.
+              "absolute right-0 top-full z-50 border border-rule-dark bg-asphalt p-7 text-concrete dot-grid-dark",
+              groups.length > 3
+                ? "w-[min(60rem,calc(100vw-3rem))]"
+                : "w-[min(24rem,calc(100vw-3rem))]",
+            )}
+          >
+            <div
+              className={cn(
+                // CSS columns rather than a grid: these headings are four and
+                // five words long, and a five-track grid gives each about 160px,
+                // which wraps "Research, Technology & Innovation Services" onto
+                // four lines. Columns let each group take the height it needs
+                // and pack the rest around it.
+                groups.length > 3 && "lg:columns-3 lg:gap-10",
+              )}
+            >
+              {groups.map((group, index) => {
+                const items = group.items ?? [];
+                const number = (
+                  <span aria-hidden="true" className="tabular text-steel-light">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                );
 
-            return (
-              <div key={group.id} className="mb-6 break-inside-avoid last:mb-0">
-                {group.href ? (
-                  <Link
-                    href={group.href}
-                    onClick={() => close(false)}
-                    className="group flex items-center gap-2 border-b border-rule-dark pb-2 text-2xs font-semibold uppercase tracking-[0.08em] text-brand-light no-underline wdth-body transition-colors duration-150 hover:text-concrete"
-                  >
-                    <RichText text={group.label} />
-                    <span
-                      aria-hidden="true"
-                      className="text-[0.9em] leading-none transition-transform duration-150 group-hover:translate-x-0.5"
-                    >
-                      &rarr;
-                    </span>
-                  </Link>
-                ) : (
-                  <p className="border-b border-rule-dark pb-2 text-2xs font-semibold uppercase tracking-[0.08em] text-brand-light wdth-body">
-                    <RichText text={group.label} />
-                  </p>
-                )}
-
-                {items.length ? (
-                  <ul className="mt-2 border-l border-rule-dark pl-3">
-                    {items.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          onClick={() => close(false)}
-                          className={rowClass}
+                return (
+                  <div key={group.id} className="mb-7 break-inside-avoid last:mb-0">
+                    {group.href ? (
+                      <Link
+                        href={group.href}
+                        onClick={() => close(false)}
+                        className="group eyebrow flex items-baseline gap-3 border-b border-rule-dark pb-2.5 text-brand-light no-underline transition-colors duration-150 hover:text-concrete"
+                      >
+                        {number}
+                        <span className="flex-1">
+                          <RichText text={group.label} />
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          className="text-[0.95em] leading-none transition-transform duration-500 ease-(--ease-out-expo) group-hover:translate-x-1 motion-reduce:transition-none"
                         >
-                          <span>
-                            <RichText text={item.label} />
-                          </span>
-                          {arrow}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
-            );
-          })}
-        </div>
+                          &rarr;
+                        </span>
+                      </Link>
+                    ) : (
+                      <p className="eyebrow flex items-baseline gap-3 border-b border-rule-dark pb-2.5 text-brand-light">
+                        {number}
+                        <RichText text={group.label} />
+                      </p>
+                    )}
 
-        <Link
-          href={href}
-          onClick={() => close(false)}
-          className="mt-5 inline-block border-t border-rule-dark pt-4 text-xs font-semibold text-brand-light no-underline underline-offset-[0.2em] wdth-body hover:underline"
-        >
-          <RichText text={overviewLabel} />
-        </Link>
-      </div>
+                    {items.length ? (
+                      <ul className="mt-2 border-l border-rule-dark pl-4">
+                        {items.map((item) => (
+                          <li key={item.href}>
+                            <Link
+                              href={item.href}
+                              onClick={() => close(false)}
+                              className={rowClass}
+                            >
+                              <span>
+                                <RichText text={item.label} />
+                              </span>
+                              {arrow}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
+
+            <Link
+              href={href}
+              onClick={() => close(false)}
+              className="eyebrow link-draw mt-6 inline-block border-t border-rule-dark pt-4 text-brand-light"
+            >
+              <RichText text={overviewLabel} />
+            </Link>
+          </m.div>
+        ) : null}
+      </AnimatePresence>
     </div>
   );
 }

@@ -23,7 +23,12 @@
     "partnerAttribution": "Delivered by our technical partner team.",
     "alsoIn": "Also in",
     "categoryPhotos": "Other photographs",
-    "projectList": "List of projects"
+    "projectList": "List of projects",
+    "lightboxOpen": "View larger",
+    "lightboxClose": "Close",
+    "lightboxNext": "Next photograph",
+    "lightboxPrevious": "Previous photograph",
+    "lightboxCounter": "Photograph {n} of {total}"
   },
   "images": {
     "header": {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BackedByStrip } from "@/components/BackedByStrip";
 import { Container } from "@/components/Container";
+import { Eyebrow } from "@/components/Eyebrow";
 import { Heading } from "@/components/Heading";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
@@ -29,28 +30,26 @@ export const metadata: Metadata = {
  */
 export default function NotFound() {
   return (
-    <Section tone="concrete" labelledBy="not-found-heading">
+    <Section tone="concrete" labelledBy="not-found-heading" className="dot-grid">
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-12">
-          <div className="lg:col-span-4">
-            <p
-              aria-hidden="true"
-              className="text-2xs font-semibold uppercase tracking-[0.08em] text-brand-deep wdth-body"
-            >
-              <RichText text={page.labels?.code ?? ""} />
-            </p>
+          <div className="lg:col-span-5">
+            <Eyebrow text={page.labels?.code ?? ""} tone="brand" />
             <Heading
               level={1}
               text={page.title}
               id="not-found-heading"
-              className="mt-3"
+              split
+              className="mt-4"
             />
           </div>
 
-          <div className="mt-6 flex flex-col gap-5 lg:col-span-7 lg:col-start-6 lg:mt-0">
+          <div className="mt-6 flex flex-col gap-5 lg:col-span-6 lg:col-start-7 lg:mt-0">
             {intro.body.map((paragraph, index) => (
               <p
                 key={index}
+                data-fade=""
+                style={{ "--fade-delay": `${300 + index * 90}ms` } as React.CSSProperties}
                 className="max-w-(--container-measure) text-base text-asphalt wdth-body text-pretty"
               >
                 <RichText text={paragraph} />

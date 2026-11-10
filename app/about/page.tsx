@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Container } from "@/components/Container";
+import { DevelopImage } from "@/components/DevelopImage";
+import { Eyebrow } from "@/components/Eyebrow";
 import { PageHeader } from "@/components/PageHeader";
+import { Reveal } from "@/components/Reveal";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
 import { StatementPair } from "@/components/StatementPair";
@@ -39,10 +41,9 @@ export const metadata: Metadata = buildPageMetadata(page, site);
  * what those sections said in twelve. What he cut is cut, not relocated.
  *
  * From `lg` the story runs beside photographs of delivered water work rather
- * than under them: seven columns of prose, five of picture (a 2×2 grid),
- * top-aligned with the first paragraph. The picture is `sticky`, so the
- * right-hand side still has
- * something in it by the fourth paragraph instead of trailing off into
+ * than under them: seven columns of prose, five of picture, top-aligned with
+ * the first paragraph. The picture is `sticky`, so the right-hand side still
+ * has something in it by the fourth paragraph instead of trailing off into
  * whitespace. Below `lg` it sits above the text at a moderate height — the
  * page opens with its header photograph and does not need a second hero.
  */
@@ -73,32 +74,23 @@ export default function AboutPage() {
                          Square at `lg`, so every cell is square and a 4:3
                          photograph loses only its edges. */
                       "grid aspect-3/2 grid-cols-2 grid-rows-2 gap-2 sm:aspect-16/9 lg:aspect-square"
-                    : "aspect-3/2 bg-steel/10 sm:aspect-16/9 lg:aspect-3/4",
+                    : "aspect-3/2 sm:aspect-16/9 lg:aspect-3/4",
                 )}
               >
                 {asideSet.length ? (
                   asideSet.map((image) => (
-                    <div key={image.src} className="relative overflow-hidden bg-steel/10">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        fill
-                        sizes="(min-width: 1024px) 20vw, 50vw"
-                        className="object-cover"
-                      />
-                    </div>
+                    <DevelopImage
+                      key={image.src}
+                      image={image}
+                      sizes="(min-width: 1024px) 20vw, 50vw"
+                      className="h-full w-full"
+                    />
                   ))
                 ) : aside ? (
-                  <Image
-                    src={aside.src}
-                    alt={aside.alt}
-                    fill
+                  <DevelopImage
+                    image={aside}
                     sizes="(min-width: 1024px) 40vw, 100vw"
-                    className="object-cover"
-                    /* The frame is 3:4 on desktop and 3:2 below it, so a
-                       landscape photograph loses its sides; `focalPoint`
-                       keeps the subject in, as on a page header. */
-                    style={aside.focalPoint ? { objectPosition: aside.focalPoint } : undefined}
+                    className="h-full w-full"
                   />
                 ) : null}
               </div>
@@ -106,30 +98,25 @@ export default function AboutPage() {
 
             <div className="mt-8 flex max-w-(--container-measure) flex-col gap-6 lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:mt-0">
               {intro.body.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="text-lg text-asphalt wdth-body text-pretty"
-                >
+                <Reveal key={index} as="p" index={index} className="text-lg text-asphalt wdth-body text-pretty">
                   <RichText text={paragraph} />
-                </p>
+                </Reveal>
               ))}
             </div>
           </div>
         </Container>
       </Section>
 
-      <Section tone="asphalt" labelledBy="motto-heading" className="py-12! md:py-16!">
+      <Section tone="asphalt" labelledBy="motto-heading" className="dot-grid-dark py-14! md:py-20!">
         <Container>
-          <h2 id="motto-heading" className="sr-only">
-            <RichText text={motto.heading ?? ""} />
-          </h2>
-          <p className="max-w-[20ch] text-h1 wdth-display text-balance text-concrete">
+          <Eyebrow text={motto.heading ?? ""} tone="darkBrand" as="h2" id="motto-heading" />
+          <p className="mt-4 max-w-[18ch] text-h1 wdth-display text-balance text-concrete">
             <RichText text={motto.body[0]} />
           </p>
         </Container>
       </Section>
 
-      <Section tone="concrete" as="div">
+      <Section tone="paper" as="div">
         <Container>
           <StatementPair
             statements={[

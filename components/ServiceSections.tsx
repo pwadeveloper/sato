@@ -1,5 +1,6 @@
 import { CapabilityList } from "./CapabilityList";
 import { Container } from "./Container";
+import { Eyebrow } from "./Eyebrow";
 import { Heading } from "./Heading";
 import { ProcurementList } from "./ProcurementList";
 import { RegistrationsBlock } from "./RegistrationsBlock";
@@ -25,7 +26,7 @@ import type { ReactNode } from "react";
 /** The tone each section's band takes, so no two adjacent bands match. */
 const TONES = {
   capabilities: "concrete",
-  solutions: "white",
+  solutions: "paper",
   partnerships: "concrete",
 } as const;
 
@@ -82,6 +83,8 @@ export function ServiceSections({
         const id = section.id as keyof typeof TONES;
         const body = content[id];
         if (!hasSectionContent(body)) return null;
+        // The section's number in the sub-nav, so the page and the nav agree.
+        const position = nav.findIndex((entry) => entry.id === section.id) + 1;
 
         return (
           <Section
@@ -91,11 +94,16 @@ export function ServiceSections({
             labelledBy={`${id}-heading`}
           >
             <Container>
+              <Eyebrow text={section.label} index={position} className="sr-only" />
+              <p aria-hidden="true" className="eyebrow tabular text-steel-ink">
+                {String(position).padStart(2, "0")}
+              </p>
               <Heading
                 level={2}
                 size="h2"
                 text={section.label}
                 id={`${id}-heading`}
+                className="mt-3"
               />
 
               <SectionBody
@@ -177,6 +185,17 @@ function SectionBody({
         heading={labels.gallery ?? ""}
         headingId={`${id}-gallery`}
         headingLevel={3}
+        lightbox={
+          labels.lightboxCounter
+            ? {
+                open: labels.lightboxOpen ?? "",
+                close: labels.lightboxClose ?? "",
+                next: labels.lightboxNext ?? "",
+                previous: labels.lightboxPrevious ?? "",
+                counter: labels.lightboxCounter,
+              }
+            : undefined
+        }
         className="mt-12"
       />
 

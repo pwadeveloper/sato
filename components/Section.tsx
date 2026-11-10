@@ -3,6 +3,8 @@ import { cn } from "@/lib/cn";
 
 const TONES = {
   concrete: "bg-concrete text-asphalt",
+  /** The card surface, as a band: lighter than concrete, warmer than white. */
+  paper: "bg-paper text-asphalt",
   white: "bg-white text-asphalt",
   asphalt: "bg-asphalt text-concrete",
   brand: "bg-brand text-white",

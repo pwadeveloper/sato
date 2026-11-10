@@ -1,3 +1,5 @@
+import { Eyebrow } from "./Eyebrow";
+import { Reveal } from "./Reveal";
 import { RichText } from "./RichText";
 import { cn } from "@/lib/cn";
 
@@ -26,32 +28,32 @@ export function StatementPair({
   headingLevel = 2,
   className,
 }: StatementPairProps) {
-  const Label = `h${headingLevel}` as const;
-
   return (
     <div className={cn("grid gap-px bg-rule md:grid-cols-2", className)}>
-      {statements.map((statement) => (
-        <section
+      {statements.map((statement, index) => (
+        <Reveal
           key={statement.id}
-          aria-labelledby={`${statement.id}-label`}
-          className="flex flex-col gap-4 bg-concrete py-8 md:px-8 md:py-10 md:first:pl-0 md:last:pr-0"
+          as="section"
+          index={index}
+          className="flex flex-col gap-5 bg-paper py-8 md:px-10 md:py-10 md:first:pl-0 md:last:pr-0"
         >
-          <Label
+          <Eyebrow
+            text={statement.label}
+            index={index + 1}
+            tone="brand"
+            as={headingLevel === 2 ? "h2" : "h3"}
             id={`${statement.id}-label`}
-            className="text-2xs font-semibold uppercase tracking-[0.08em] text-brand-deep wdth-body"
-          >
-            <RichText text={statement.label} />
-          </Label>
+          />
 
-          {statement.body.map((paragraph, index) => (
+          {statement.body.map((paragraph, position) => (
             <p
-              key={index}
-              className="max-w-(--container-measure) text-lg text-asphalt wdth-body text-pretty"
+              key={position}
+              className="max-w-(--container-measure) text-xl font-medium text-asphalt wdth-body text-pretty"
             >
               <RichText text={paragraph} />
             </p>
           ))}
-        </section>
+        </Reveal>
       ))}
     </div>
   );

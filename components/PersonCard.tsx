@@ -74,7 +74,7 @@ export function PersonCard({
 
       {member.qualifications.length ? (
         <div className="mt-5">
-          <p className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
+          <p className="eyebrow text-steel-ink">
             <RichText text={qualificationsLabel} />
           </p>
           <ul className="mt-2 flex flex-col gap-1">
@@ -89,7 +89,7 @@ export function PersonCard({
 
       {member.memberships.length ? (
         <div className="mt-5">
-          <p className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
+          <p className="eyebrow text-steel-ink">
             <RichText text={membershipsLabel} />
           </p>
           <ul className="mt-2 flex flex-col gap-1">

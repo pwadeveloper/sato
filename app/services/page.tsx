@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/Container";
+import { DevelopImage } from "@/components/DevelopImage";
+import { Eyebrow } from "@/components/Eyebrow";
+import { Heading } from "@/components/Heading";
 import { PageHeader } from "@/components/PageHeader";
+import { Reveal } from "@/components/Reveal";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
 
@@ -36,8 +39,9 @@ export const metadata: Metadata = buildPageMetadata(page, site);
  * separated line rather than a stack of cards, so the page reads as five
  * things rather than eleven.
  *
- * The rows alternate sides on desktop. It is the only ornament on the page,
- * and it exists so five near-identical rows do not read as a table.
+ * The rows alternate sides on desktop, each indexed in the mono, and the
+ * photograph develops as its row scrolls in. It is the only ornament on the
+ * page, and it exists so five near-identical rows do not read as a table.
  */
 export default function ServicesPage() {
   const bands = getServiceBands();
@@ -52,7 +56,7 @@ export default function ServicesPage() {
 
       <Section tone="concrete" as="div">
         <Container>
-          <ul className="flex flex-col gap-14 md:gap-20">
+          <ol className="flex flex-col gap-16 md:gap-24">
             {bands.map((band, index) => {
               const href = bandHref(band);
               const items = bandItems(band);
@@ -86,44 +90,49 @@ export default function ServicesPage() {
                       href: `/services/${solo?.slug}#${section.id}`,
                     }));
 
+              const flip = index % 2 === 1;
+
               return (
-                <li
+                <Reveal
                   key={band.group}
-                  className="lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-12"
+                  as="li"
+                  className="group lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-12"
                 >
                   {band.image ? (
-                    <div
-                      className={cn(
-                        "relative aspect-16/9 w-full bg-steel/10 lg:col-span-5 lg:aspect-4/3",
-                        index % 2 === 1 ? "lg:col-start-8" : "lg:col-start-1",
-                      )}
-                    >
-                      <Image
-                        src={band.image.src}
-                        alt={band.image.alt}
-                        fill
-                        sizes="(min-width: 1024px) 40vw, 100vw"
-                        className="object-cover"
-                      />
+                    <div className={cn("lg:col-span-5", flip ? "lg:col-start-8" : "lg:col-start-1")}>
+                      <Link href={href ?? "#"} tabIndex={-1} aria-hidden="true" className="block">
+                        <DevelopImage
+                          image={band.image}
+                          sizes="(min-width: 1024px) 40vw, 100vw"
+                          zoom
+                          className="aspect-16/9 w-full lg:aspect-4/3"
+                        />
+                      </Link>
                     </div>
                   ) : null}
 
                   <div
                     className={cn(
                       "mt-6 lg:col-span-6 lg:mt-0",
-                      index % 2 === 1 ? "lg:col-start-1" : "lg:col-start-7",
+                      flip ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-7",
+                      !band.image && "lg:col-span-8 lg:col-start-1",
                     )}
                   >
-                    <h2 className="text-h2 wdth-heading text-balance">
+                    <Eyebrow text={band.label} index={index + 1} className="sr-only" />
+                    <p aria-hidden="true" className="eyebrow tabular text-steel-ink">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+
+                    <h2 className="mt-3 text-h2 wdth-heading text-balance">
                       {href ? (
                         <Link
                           href={href}
-                          className="group text-asphalt no-underline transition-colors duration-150 hover:text-brand-ink"
+                          className="inline-flex items-baseline gap-4 text-asphalt no-underline transition-colors duration-150 hover:text-brand-ink"
                         >
                           <RichText text={band.label} />
                           <span
                             aria-hidden="true"
-                            className="ml-3 inline-block text-[0.6em] text-steel transition-transform duration-150 group-hover:translate-x-1 group-hover:text-brand"
+                            className="inline-block text-[0.55em] text-brand transition-transform duration-500 ease-(--ease-out-expo) group-hover:translate-x-1.5 motion-reduce:transition-none"
                           >
                             &rarr;
                           </span>
@@ -140,67 +149,59 @@ export default function ServicesPage() {
                     ) : null}
 
                     {links.length ? (
-                      /* The separator trails its own item rather than
-                         leading the next one. Four service names do not fit
-                         on one line at any phone width, and a leading
-                         separator leaves a pipe stranded at the start of
-                         every wrapped line. */
-                      <ul className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-2 border-t border-rule pt-4">
-                        {links.map((link, position) => (
-                          <li key={link.key} className="flex items-center gap-x-2">
+                      <ul className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-rule pt-4">
+                        {links.map((link) => (
+                          <li key={link.key}>
                             <Link
                               href={link.href}
-                              className="text-sm font-semibold text-brand-ink underline underline-offset-[0.2em] decoration-1 decoration-brand-ink/40 wdth-body transition-colors duration-150 hover:text-brand-deep hover:decoration-brand-deep"
+                              className="eyebrow link-draw text-brand-ink transition-colors duration-150 hover:text-brand-deep"
                             >
                               <RichText text={link.label} />
                             </Link>
-                            {position < links.length - 1 ? (
-                              <span aria-hidden="true" className="text-steel">
-                                |
-                              </span>
-                            ) : null}
                           </li>
                         ))}
                       </ul>
                     ) : null}
                   </div>
-                </li>
+                </Reveal>
               );
             })}
-          </ul>
+          </ol>
         </Container>
       </Section>
 
-      {/* Why Sato — nine short points, three across, not a column of bullets. */}
-      <Section tone="white" labelledBy="why-sato-heading">
+      {/* Why Sato — nine short points, three across, indexed, not a column of bullets. */}
+      <Section tone="paper" labelledBy="why-sato-heading">
         <Container>
           <div className="lg:grid lg:grid-cols-12 lg:gap-x-12">
-            <div className="lg:col-span-4">
-              <h2
-                id="why-sato-heading"
-                className="text-h2 wdth-heading text-balance"
-              >
-                <RichText text={whySato.heading ?? ""} />
-              </h2>
-            </div>
+            <Reveal className="lg:col-span-4">
+              <Heading level={2} text={whySato.heading ?? ""} id="why-sato-heading" />
+            </Reveal>
 
             {whySato.intro ? (
-              <p className="mt-5 max-w-(--container-measure) text-lg text-steel-ink wdth-body text-pretty lg:col-span-7 lg:col-start-6 lg:mt-0">
-                <RichText text={whySato.intro} />
-              </p>
+              <Reveal index={1} className="mt-5 lg:col-span-7 lg:col-start-6 lg:mt-0">
+                <p className="max-w-(--container-measure) text-lg text-steel-ink wdth-body text-pretty">
+                  <RichText text={whySato.intro} />
+                </p>
+              </Reveal>
             ) : null}
           </div>
 
-          <ul className="mt-10 grid gap-x-10 border-t border-asphalt sm:grid-cols-2 lg:grid-cols-3">
-            {whySato.items.map((item) => (
-              <li
+          <ol className="mt-10 grid gap-x-10 border-t border-asphalt sm:grid-cols-2 lg:grid-cols-3">
+            {whySato.items.map((item, index) => (
+              <Reveal
                 key={item}
-                className="border-b border-rule py-4 text-base font-medium wdth-body"
+                as="li"
+                index={index}
+                className="flex items-baseline gap-4 border-b border-rule py-4 text-base font-medium wdth-body"
               >
+                <span aria-hidden="true" className="eyebrow tabular text-steel">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <RichText text={item} />
-              </li>
+              </Reveal>
             ))}
-          </ul>
+          </ol>
 
           {whySato.note ? (
             <p className="mt-6 max-w-(--container-measure) text-xs text-steel-ink wdth-body">

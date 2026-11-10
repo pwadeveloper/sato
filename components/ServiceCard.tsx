@@ -31,7 +31,7 @@ export function ServiceCard({
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col border border-rule bg-white transition-colors duration-150",
+        "group relative flex h-full flex-col border border-rule bg-paper transition-colors duration-150",
         "hover:border-steel focus-within:border-steel",
         className,
       )}

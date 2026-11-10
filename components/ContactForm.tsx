@@ -22,7 +22,7 @@ type Status = "idle" | "sending" | "sent" | "mailto" | "error";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const CONTROL =
-  "w-full border border-steel bg-white px-4 py-3 text-base wdth-body text-asphalt " +
+  "w-full border border-steel bg-paper px-4 py-3 text-base wdth-body text-asphalt " +
   "transition-colors duration-150 placeholder:text-steel-ink";
 
 /**
@@ -125,7 +125,7 @@ export function ContactForm({
     const isMailto = status === "mailto";
 
     return (
-      <div className="border-l-[3px] border-brand bg-white p-6 md:p-8" role="status">
+      <div className="border-l-[3px] border-brand bg-paper p-6 md:p-8" role="status">
         <h3 className="text-h3 wdth-heading">
           <RichText text={isMailto ? form.mailtoHeading : form.successHeading} />
         </h3>
@@ -138,7 +138,7 @@ export function ContactForm({
 
   if (!canSubmit) {
     return (
-      <p className="border-l-[3px] border-brand bg-white p-6 text-base text-asphalt wdth-body md:p-8">
+      <p className="border-l-[3px] border-brand bg-paper p-6 text-base text-asphalt wdth-body md:p-8">
         <RichText text={form.unavailableMessage} />
       </p>
     );
@@ -155,7 +155,7 @@ export function ContactForm({
         className={cn(errorList.length || status === "error" ? "mb-6" : "sr-only")}
       >
         {status === "error" ? (
-          <p className="border-l-[3px] border-error bg-white p-4 text-base text-asphalt wdth-body">
+          <p className="border-l-[3px] border-error bg-paper p-4 text-base text-asphalt wdth-body">
             <RichText text={form.errorMessage} />
           </p>
         ) : null}

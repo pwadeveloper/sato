@@ -65,6 +65,193 @@
   }
 }
 
+/*
+ * The halftone develop.
+ *
+ * Every photograph on the site arrives the same way: as a field of dots that
+ * grow until the picture is whole — a print coming up from the drawing. It is
+ * one CSS mask, a radial gradient tiled every 6px, whose dot radius is the
+ * animated custom property below. No JavaScript: where the browser supports
+ * scroll-driven animations the develop is scrubbed by the picture entering
+ * the viewport, so it is reversible and costs nothing while nothing moves;
+ * elsewhere it plays once on load. Reduced motion shows the picture whole.
+ */
+@property --halftone {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 6px;
+}
+
+@keyframes halftone-develop {
+  from {
+    /* A hero may start from a faint field of dots rather than a blank sheet. */
+    --halftone: var(--develop-from, 0px);
+    opacity: 0.4;
+  }
+  to {
+    --halftone: 6px;
+    opacity: 1;
+  }
+}
+
+[data-develop] {
+  --halftone: 6px;
+  mask-image: radial-gradient(circle, #000 var(--halftone), transparent calc(var(--halftone) + 0.5px));
+  mask-size: 8px 8px;
+  mask-position: center;
+  animation: halftone-develop var(--develop-duration, 1s) var(--develop-ease, var(--ease-out-expo)) both;
+}
+
+/* Scrubbed by the viewport where the browser can, so it also plays in reverse. */
+@supports (animation-timeline: view()) {
+  [data-develop="view"] {
+    animation-timeline: view();
+    animation-range: entry 0% entry 55%;
+    animation-fill-mode: both;
+  }
+}
+
+/* Once developed, the mask is a no-op; clear it so the compositor is free. */
+[data-develop="none"] {
+  mask-image: none;
+  animation: none;
+}
+
+/*
+ * The scroll reveal for copy and cards.
+ *
+ * Rendered visible, then animated from below as it enters the viewport —
+ * never hidden by an inline style waiting for JavaScript, so a reader with
+ * scripts off, a crawler, or a print stylesheet gets the page whole. Where
+ * the browser supports scroll-driven animations the reveal is scrubbed by
+ * the element's own entry; the stagger between siblings is a longer range,
+ * set per item with `--reveal-stagger`. Elsewhere it plays once on load,
+ * staggered by `--reveal-delay`.
+ */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-reveal] {
+  animation: reveal-up var(--duration-reveal) var(--ease-out-expo) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+@supports (animation-timeline: view()) {
+  [data-reveal] {
+    animation-timeline: view();
+    animation-range: entry 0% entry calc(30% + var(--reveal-stagger, 0%));
+    animation-delay: 0ms;
+  }
+}
+
+/*
+ * The load-time cousin of the scroll reveal, for copy that is on screen when
+ * the page paints — a header's lead, the hero's buttons. A scroll timeline
+ * would already be at its end for these, so they rise on a clock instead,
+ * staggered by `--fade-delay`.
+ */
+[data-fade] {
+  animation: reveal-up var(--duration-reveal) var(--ease-out-expo) both;
+  animation-delay: var(--fade-delay, 0ms);
+}
+
+/*
+ * Word-level heading reveal. The words are wrapped by `SplitText` and slide
+ * up out of a clipped line box; the delay is set per word inline.
+ */
+@keyframes rise-in {
+  from {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+[data-rise] {
+  display: inline-block;
+  animation: rise-in var(--duration-reveal) var(--ease-out-expo) both;
+  animation-delay: var(--rise-delay, 0ms);
+}
+
+/*
+ * The client-name marquee on Home. Pure CSS: the track holds two copies of
+ * the list and travels one copy's width, so the loop is seamless. It pauses
+ * on hover and under reduced motion, where it simply wraps as a list.
+ */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+[data-marquee] {
+  animation: marquee var(--marquee-duration, 60s) linear infinite;
+}
+
+[data-marquee]:hover,
+[data-marquee-paused] [data-marquee] {
+  animation-play-state: paused;
+}
+
+/* Under reduced motion the track becomes a wrapping list and the second copy goes. */
+@media (prefers-reduced-motion: reduce) {
+  [data-marquee] {
+    flex-wrap: wrap;
+    width: auto;
+  }
+  [data-marquee-copy] {
+    display: none;
+  }
+}
+
+/*
+ * Link underline that draws from the left. Used on the drawing-layer links
+ * (index rows, footer, breadcrumbs) — a change of colour alone is the
+ * affordance this site is not allowed to rely on.
+ */
+.link-draw {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  transition: background-size var(--duration-hover) var(--ease-out-expo);
+}
+.link-draw:hover,
+.link-draw:focus-visible,
+.group:hover .link-draw {
+  background-size: 100% 1px;
+}
+
+/*
+ * Route change: a short crossfade, and a shared-element morph for the
+ * photograph that carries from a gallery to its project page. React's
+ * <ViewTransition> names the pairs; these are the timings.
+ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 260ms;
+  animation-timing-function: var(--ease-out-quiet);
+}
+::view-transition-group(*) {
+  animation-duration: 420ms;
+  animation-timing-function: var(--ease-in-out-quart);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -73,6 +260,27 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  [data-develop] {
+    mask-image: none;
+    animation: none;
+  }
+
+  [data-rise],
+  [data-reveal],
+  [data-fade] {
+    animation: none;
+  }
+
+  [data-marquee] {
+    animation: none;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }
 

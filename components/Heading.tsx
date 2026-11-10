@@ -1,4 +1,5 @@
 import { RichText } from "./RichText";
+import { SplitText } from "./SplitText";
 import { cn } from "@/lib/cn";
 
 const SIZES = {
@@ -16,6 +17,13 @@ export interface HeadingProps {
   size?: keyof typeof SIZES;
   id?: string;
   className?: string;
+  /**
+   * Rise in one word at a time as the page paints. For the `h1` of a page
+   * and nothing lower: a reveal on every subheading is a tic, not a rhythm.
+   */
+  split?: boolean;
+  /** Milliseconds before the first word, when `split` is set. */
+  splitDelay?: number;
 }
 
 /**
@@ -30,13 +38,21 @@ export interface HeadingProps {
  * at `text-xl` was indistinguishable from the `h3` above it. Nothing on a
  * service page sets a heading class of its own — see docs/heading-audit.md.
  */
-export function Heading({ level, text, size, id, className }: HeadingProps) {
+export function Heading({
+  level,
+  text,
+  size,
+  id,
+  className,
+  split = false,
+  splitDelay = 0,
+}: HeadingProps) {
   const Tag = `h${level}` as const;
   const resolved = size ?? (`h${level}` as keyof typeof SIZES);
 
   return (
     <Tag id={id} className={cn("text-balance", SIZES[resolved], className)}>
-      <RichText text={text} />
+      {split ? <SplitText text={text} delay={splitDelay} /> : <RichText text={text} />}
     </Tag>
   );
 }

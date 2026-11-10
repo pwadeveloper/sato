@@ -35,10 +35,10 @@ export function RegistrationsBlock({
   const HeadingTag = `h${headingLevel}` as const;
 
   return (
-    <div className={cn("border border-rule bg-white p-6 md:p-8", className)}>
+    <div className={cn("border border-rule bg-paper p-6 md:p-8", className)}>
       <HeadingTag
         id={headingId}
-        className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body"
+        className="eyebrow text-steel-ink"
       >
         <RichText text={heading} />
       </HeadingTag>

@@ -1,10 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
+import { ViewTransition } from "react";
 
+import { DevelopImage } from "./DevelopImage";
+import { Reveal } from "./Reveal";
+import { RichText } from "./RichText";
 import type { CategoryPhoto } from "@/lib/content";
 import type { Project } from "@/lib/content-types";
 import { cn } from "@/lib/cn";
-import { RichText } from "./RichText";
 
 export interface CategoryGalleryProps {
   photos: CategoryPhoto[];
@@ -20,6 +22,7 @@ export interface CategoryGalleryProps {
  * text. No titles over the pictures, no bold, no badges. A photograph of a
  * project links to that project's page, so the gallery is also the way in —
  * the link is the whole figure, and it looks like nothing but the picture.
+ * A project's lead photograph morphs into the one at the top of its page.
  *
  * Portrait photographs sit whole inside the 4:3 frame rather than being cut
  * to their middle, because the caption describes the whole frame.
@@ -29,35 +32,39 @@ export function CategoryGallery({ photos, label, className }: CategoryGalleryPro
 
   return (
     <section aria-label={label} className={cn(className)}>
-      <ul className="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
         {photos.map(({ image, project }, index) => {
           const portrait = (image.height ?? 0) > (image.width ?? 0);
+          const isLead = Boolean(project && project.images[0]?.src === image.src);
+          const box = (
+            <DevelopImage
+              image={image}
+              sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw"
+              priority={index < 3}
+              develop={index < 3 ? "load" : "view"}
+              contain={portrait}
+              zoom={Boolean(project)}
+              className="aspect-4/3 w-full"
+            />
+          );
           const figure = (
             <figure className="m-0">
-              <div className="relative aspect-4/3 w-full overflow-hidden bg-steel/10">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  priority={index < 3}
-                  sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw"
-                  className={cn(
-                    portrait ? "object-contain" : "object-cover",
-                    "transition-opacity duration-150 motion-reduce:transition-none",
-                    project && "group-hover:opacity-90",
-                  )}
-                />
-              </div>
-              {image.caption ? (
-                <figcaption className="mt-2 text-sm font-normal text-steel-ink wdth-body text-pretty">
-                  <RichText text={image.caption} />
-                </figcaption>
-              ) : null}
+              {isLead && project ? (
+                <ViewTransition name={`project-${project.slug}`}>{box}</ViewTransition>
+              ) : (
+                box
+              )}
+              <figcaption className="mt-3 flex items-baseline gap-3 text-sm font-normal text-steel-ink wdth-body text-pretty">
+                <span aria-hidden="true" className="eyebrow tabular text-steel">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                {image.caption ? <RichText text={image.caption} /> : null}
+              </figcaption>
             </figure>
           );
 
           return (
-            <li key={image.src}>
+            <Reveal key={image.src} as="li" index={index % 3}>
               {project ? (
                 <Link
                   href={`/projects/${project.slug}`}
@@ -68,7 +75,7 @@ export function CategoryGallery({ photos, label, className }: CategoryGalleryPro
               ) : (
                 figure
               )}
-            </li>
+            </Reveal>
           );
         })}
       </ul>
@@ -94,42 +101,42 @@ export function ProjectList({ projects, heading, headingId, className }: Project
 
   return (
     <section aria-labelledby={headingId} className={cn(className)}>
-      <h2
-        id={headingId}
-        className="border-b border-asphalt pb-3 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body"
-      >
+      <h2 id={headingId} className="eyebrow border-b border-asphalt pb-3 text-steel-ink">
         <RichText text={heading} />
       </h2>
-      <ul>
-        {projects.map((project) => {
+      <ol>
+        {projects.map((project, index) => {
           const details = [project.client, project.location].filter(Boolean).join(" · ");
           return (
-            <li key={project.slug} className="border-b border-rule">
+            <Reveal key={project.slug} as="li" index={Math.min(index, 4)} className="border-b border-rule">
               <Link
                 href={`/projects/${project.slug}`}
-                className="group flex items-baseline justify-between gap-4 py-3 no-underline"
+                className="group grid grid-cols-[2.5rem_1fr_auto] items-baseline gap-x-4 py-4 no-underline md:grid-cols-[3.5rem_1fr_auto]"
               >
+                <span aria-hidden="true" className="eyebrow tabular text-steel">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <span>
-                  <span className="block text-base font-normal text-asphalt wdth-body text-pretty group-hover:text-brand-ink group-hover:underline">
+                  <span className="link-draw block w-fit text-lg font-medium text-asphalt wdth-body text-pretty transition-colors duration-150 group-hover:text-brand-ink">
                     <RichText text={project.title} />
                   </span>
                   {details ? (
-                    <span className="mt-0.5 block text-sm text-steel-ink wdth-body">
+                    <span className="mt-1 block text-sm text-steel-ink wdth-body">
                       <RichText text={details} />
                     </span>
                   ) : null}
                 </span>
                 <span
                   aria-hidden="true"
-                  className="shrink-0 text-steel transition-transform duration-150 group-hover:translate-x-1 group-hover:text-brand motion-reduce:transition-none"
+                  className="shrink-0 text-steel transition-transform duration-500 ease-(--ease-out-expo) group-hover:translate-x-1 group-hover:text-brand motion-reduce:transition-none"
                 >
                   &rarr;
                 </span>
               </Link>
-            </li>
+            </Reveal>
           );
         })}
-      </ul>
+      </ol>
     </section>
   );
 }

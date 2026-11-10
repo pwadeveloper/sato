@@ -82,6 +82,10 @@ for (const f of readdirSync(join(ROOT, "content", "pages"))) {
   walk(page.serviceSections);
   if (slug === "projects") {
     for (const f2 of page.sections.find((s) => s.id === "all-projects").facets) {
+      // The spotlight is the category's identity picture: its tile on
+      // /projects, the header of its page, and — since the design refresh of
+      // 10 November — its door on Home. One role, wherever the category is
+      // listed, so it is recorded as one place.
       if (f2.image) add(f2.image.src, `tile:${f2.value}`, "tile", f2.image);
       (f2.placeholderImages ?? []).forEach((img) => add(img.src, `stand-in:${f2.value}`, "stand-in", img));
       (f2.photos ?? []).forEach((img) => add(img.src, `category-photos:${f2.value}`, "category", img));

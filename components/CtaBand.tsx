@@ -1,5 +1,6 @@
 import { Button } from "./Button";
 import { Heading } from "./Heading";
+import { Reveal } from "./Reveal";
 import { RichText } from "./RichText";
 import { Container } from "./Container";
 import { Section } from "./Section";
@@ -20,9 +21,9 @@ export interface CtaBandProps {
  */
 export function CtaBand({ heading, body, ctas, headingId }: CtaBandProps) {
   return (
-    <Section tone="asphalt" labelledBy={heading ? headingId : undefined}>
+    <Section tone="asphalt" labelledBy={heading ? headingId : undefined} className="dot-grid-dark">
       <Container>
-        <div className="border-l-[3px] border-brand pl-6 md:pl-10">
+        <Reveal className="border-l-[3px] border-brand pl-6 md:pl-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
             <div className="max-w-(--container-measure)">
               {heading ? (
@@ -36,7 +37,7 @@ export function CtaBand({ heading, body, ctas, headingId }: CtaBandProps) {
               {body ? (
                 <p
                   className={cn(
-                    "text-lg text-concrete wdth-body",
+                    "text-lg text-concrete wdth-body text-pretty",
                     heading && "mt-4",
                   )}
                 >
@@ -58,7 +59,7 @@ export function CtaBand({ heading, body, ctas, headingId }: CtaBandProps) {
               </div>
             ) : null}
           </div>
-        </div>
+        </Reveal>
       </Container>
     </Section>
   );

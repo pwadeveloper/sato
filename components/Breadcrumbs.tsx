@@ -9,15 +9,16 @@ export interface BreadcrumbsProps {
   label: string;
 }
 
+/** The trail, in the mono: a drawing's reference line. */
 export function Breadcrumbs({ trail, current, label }: BreadcrumbsProps) {
   return (
     <nav aria-label={label}>
-      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-steel-ink wdth-body">
+      <ol className="eyebrow flex flex-wrap items-center gap-x-3 gap-y-1 text-steel-ink">
         {trail.map((crumb) => (
-          <li key={crumb.href} className="flex items-center gap-x-2">
+          <li key={crumb.href} className="flex items-center gap-x-3">
             <Link
               href={crumb.href}
-              className="underline underline-offset-[0.2em] decoration-1 decoration-steel hover:text-brand-ink"
+              className="link-draw transition-colors duration-150 hover:text-brand-ink"
             >
               <RichText text={crumb.label} />
             </Link>

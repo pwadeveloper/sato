@@ -537,3 +537,13 @@ full record is `docs/content-audit.md`, and every caption change is in
   action are off Home but still in `/components`, working, because you said
   you want to build on the page later. Nothing imports them; nothing has to
   be rewritten to bring one back.
+
+## Home repeats the category spotlights
+
+The redesigned Home (`NewDesign` branch, 10 November) shows each published
+project category as a door with its spotlight photograph — the same picture
+as the tile on /projects and the header of the category page. That is a
+third place for a photograph the one-photograph rule allows in two. The
+reading taken is that the spotlight is the category's identity picture
+wherever the category is listed (`docs/decisions/design-refresh-2026-11-10.md`).
+**To confirm:** keep the doors as they are, or give Home other photographs.
