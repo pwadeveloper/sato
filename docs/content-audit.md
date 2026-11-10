@@ -16,7 +16,7 @@ A photograph is matched by provenance and by perceptual hash, so the old site's 
 | New-site extra | 19 | 11 |
 | Projects | 32 | 14 |
 | Duplicate (allowed) | 6 | 16 |
-| New-site extra (kept, High confidence) | 12 | 66 |
+| New-site extra (kept, High confidence) | 12 | 68 |
 
 **Counted as allowed:** a project's photograph also used as one category tile or one page header. **Missing photo** includes old-site photographs that stay off the site under a standing rule (no helmets, a legible former company name) or wait on the client; the Fix column says which.
 
@@ -63,6 +63,8 @@ A photograph is matched by provenance and by perceptual hash, so the old site's 
 | B-25072008013 | — | service-gallery:electrical-mechanical<br>category-photos:electrical-mechanical | **Duplicate (allowed)** — A category photograph also in its own service's gallery (allowed, 10 November) | One place only |
 | B-25072008011 | — | service-gallery:electrical-mechanical<br>category-photos:electrical-mechanical | **Duplicate (allowed)** — A category photograph also in its own service's gallery (allowed, 10 November) | One place only |
 | oil & gas artwork: oil-gas/oil-gas-hero-platforms.jpg | — | tile:oil-gas<br>page-band:services.groupOilGas | **Duplicate (allowed)** — Oil & Gas artwork, unchanged by rule (allowed) | One place only |
+| B-P1030924-1<br>“World Bank officials visiting site” | Client's unlabelled batch of 10 November 2026; held in the first round, published on the instruction that every photograph be used | project:sagamu-intake-structure | **New-site extra (kept, High confidence)** — Not on the old site | Kept (High confidence, on a project the old site has) — for the client to confirm |
+| B-P1030932 (1)<br>“World Bank officials visiting site” | Client's unlabelled batch of 10 November 2026; held in the first round, published on the instruction that every photograph be used | project:sagamu-intake-structure | **New-site extra (kept, High confidence)** — Not on the old site | Kept (High confidence, on a project the old site has) — for the client to confirm |
 | W089<br>“Construction of ground tank” | Client's Word document of 8 November 2026 (page 9); site confirmed by the client 9 November | project:ogere-water-supply-scheme-rehabilitation | **New-site extra (kept, High confidence)** — Not on the old site | Kept (High confidence, on a project the old site has) — for the client to confirm |
 | B-S6300021<br>“Water treatment tanks” | Client's unlabelled batch of 10 November 2026 (batch-2026-11-10), identified by eye from his verbal breakdown | project:ogere-water-supply-scheme-rehabilitation<br>tile:water-resources-development-management | **New-site extra (kept, High confidence)** — Not on the old site | Kept (High confidence, on a project the old site has) — for the client to confirm |
 | W071<br>“Installation of alum dosing pumps” | Client's Word document of 8 November 2026; published on the client's instruction of 9 November (helmet rule waived for this document) | project:ogere-water-supply-scheme-rehabilitation | **New-site extra (kept, High confidence)** — Not on the old site | Kept (High confidence, on a project the old site has) — for the client to confirm |

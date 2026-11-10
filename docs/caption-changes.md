@@ -423,6 +423,8 @@ Kept new photographs (High confidence) took their caption from the client's own 
 | B-P1030364 | World Bank officials visiting site |  |
 | B-P1030369 | World Bank officials visiting site |  |
 | B-3599d113-f3e7-41 | Survey and levelling works |  |
+| B-P1030924-1 | World Bank officials visiting site |  |
+| B-P1030932 (1) | World Bank officials visiting site |  |
 
 ## Project titles
 

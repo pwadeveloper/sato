@@ -42,7 +42,7 @@ over. Contact sheet: `docs/screenshots/photo-batch-2026-11-10/grouping.jpg`.
 |---|---|---|
 | Pumps and electrical (4) | `25072008005.jpg`, `25072008007.jpg`, `25072008013.jpg`, `25072008011.jpg` | All four published (no generator among them: two split-case pumps, the motors and their transformers) |
 | COLPLANT (1) | `IMG_20200820_125640_11.jpg` | Published; replaces the old site's lead photograph |
-| World Bank officials (4) | `P1030364.JPG`, `P1030369.JPG`, `P1030924-1.JPG`, `P1030932 (1).JPG` | Two published, two left out (below) |
+| World Bank officials (4) | `P1030364.JPG`, `P1030369.JPG`, `P1030924-1.JPG`, `P1030932 (1).JPG` | All four published; two were held in the first round and added the same day (below) |
 | Water tank (1) | `S6300021.JPG` | Published; the Water spotlight |
 | Surveyor (1) | `3599d113-f3e7-4177-862e-126a034fbe43.JPG` | Published |
 
@@ -89,12 +89,24 @@ None shows a burned-in date or a number plate.
     Sagamu inspection photograph (`P1030872`), with different people, so
     nothing ties them to a site. Not on the Sagamu intake project for that
     reason.
-  - **Left out:** `P1030924-1` (no one in the foreground has a helmet, with
-    an excavator working behind them: an active construction area, which the
-    brief excludes) and `P1030932 (1)` (two vests read "SATO RC 317208
-    ENGINEERING NIGERIA LIMITED" legibly, which puts the former name, the RC
-    number and the country in the foreground; nobody wears a helmet beside an
-    open excavation). Both are from the Sagamu visit's series.
+  - **First round, left out:** `P1030924-1` (no helmets in the foreground,
+    an excavator working behind) and `P1030932 (1)` (two vests legibly read
+    "SATO RC 317208 ENGINEERING NIGERIA LIMITED").
+  - **Same day, published** on the instruction that the client wants every
+    photograph in the batch used. The helmet rule was already waived (9
+    November). Both are from the Sagamu visit's camera series (the old site's
+    inspection photograph is `P1030872`, 50–60 frames earlier, with the same
+    visitor), so both are on the **Sagamu intake structure** project:
+    `world-bank-visit-excavation` (`P1030924`) in the Water gallery, and
+    `world-bank-visit-briefing` (`P1030932`) with `galleryCategory`
+    Electrical & Mechanical, as the brief suggested. `P1030932` is cropped to
+    the visitor (left 5%, right 28% off), which takes the print off both
+    vests; nothing legible remains. On `P1030924` the only text is the
+    excavator's "CAT", "SATO" and "320BL"; no plate shows.
+  - So all four World Bank photographs are up, each captioned exactly as
+    asked. That puts the caption on the Water page twice (Sagamu, and
+    `P1030364` among the category photographs, far apart). The brief's exact
+    wording wins over the no-repeat rule there.
 - **Water tank → Water spotlight.** Placed on the Ogere project, after the
   ground tank it replaces as spotlight, because the spotlight must be a
   photograph of a project in its category and the client says it is the same
