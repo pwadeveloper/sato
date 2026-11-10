@@ -563,6 +563,13 @@ disagree with this file:
     the surveyor in Civil. **About's aside is now the borehole drilling
     crew**, with `focalPoint` honoured; two alternatives are screenshotted.
     **Current for photographs.**
+13. `review-call-2026-11-10.md` — two Water fixes from the review call. The
+    ductile iron pipe photograph is cropped (44–94% of the width, from the
+    old site's 564px file, the only copy) to take out a shirtless worker, and
+    published under a new name, the uncropped files deleted; caption
+    "Positioning of ductile iron pipe". The lime dosing caption is singular,
+    "Lime dosing pump installed"; no extracted photograph shows the pumps
+    better, so it stays.
 
 ## Review deployments
 
