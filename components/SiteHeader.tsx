@@ -57,7 +57,15 @@ export function SiteHeader({
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 h-(--header-height) border-b border-rule/70 bg-concrete/85 backdrop-blur-xl backdrop-saturate-150">
+    <header className="sticky top-0 z-40 h-(--header-height) border-b border-rule/70">
+      {/*
+        The frosted glass is its own layer, not the header's. A
+        `backdrop-filter` on the header would make it the containing block
+        for fixed-position children, and the phone menu — `fixed`, hung off
+        the header's foot — would be trapped inside the 72px bar instead of
+        covering the screen.
+      */}
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-concrete/85 backdrop-blur-xl backdrop-saturate-150" />
       <a
         href="#main"
         className="sr-only px-4 py-2 focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-asphalt focus:text-concrete"

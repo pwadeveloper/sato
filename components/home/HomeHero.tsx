@@ -178,7 +178,10 @@ export function HomeHero({ eyebrow, title, titleMuted, lead, ctas, image, captio
           ref={copy}
           className={cn(
             "relative z-10 mx-auto flex max-w-(--container-page) flex-col items-center px-(--gutter) pt-12 text-center md:pt-14 lg:pt-[6vh]",
-            enhanced && "pointer-events-none md:[&_a]:pointer-events-auto",
+            // From md up the copy lets the pointer through to the canvas beneath
+            // (the lens), and only its links take clicks. On a phone the
+            // frame sits below the copy, so nothing needs to pass through.
+            enhanced && "md:pointer-events-none md:[&_a]:pointer-events-auto",
           )}
         >
           <div data-anim="fade">

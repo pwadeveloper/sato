@@ -99,6 +99,8 @@ export function MobileNav({
         {isOpen ? (
           <m.div
             id="mobile-nav-panel"
+            // Lenis must not take the panel's own scroll.
+            data-lenis-prevent=""
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6, transition: { duration: 0.15 } }}
@@ -122,7 +124,7 @@ export function MobileNav({
                           <span aria-hidden="true" className="eyebrow tabular text-brand-light">
                             {String(index + 1).padStart(2, "0")}
                           </span>
-                          <span className="text-2xl font-extrabold text-concrete wdth-heading">
+                          <span className="font-display text-[2.5rem] leading-none tracking-[-0.02em] text-concrete">
                             <RichText text={link.label} />
                           </span>
                         </Link>

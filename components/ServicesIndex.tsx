@@ -102,7 +102,7 @@ export function ServicesIndex({ items, label, className }: ServicesIndexProps) {
                   <ul className="relative z-10 mt-4 flex flex-wrap gap-x-5 gap-y-2">
                     {item.links.map((link) => (
                       <li key={link.href}>
-                        <Link href={link.href} className="eyebrow link-draw text-asphalt transition-colors hover:text-brand-ink">
+                        <Link href={link.href} className="eyebrow link-draw inline-block py-1.5 text-asphalt transition-colors hover:text-brand-ink">
                           <RichText text={link.label} />
                         </Link>
                       </li>
