@@ -28,6 +28,21 @@
         "width": 800,
         "height": 600,
         "caption": "Inspection of intake works in progress"
+      },
+      {
+        "src": "/images/projects/sagamu-intake-structure/world-bank-visit-excavation.webp",
+        "alt": "World Bank officials with the project team on site, an excavator working behind them",
+        "width": 1920,
+        "height": 1440,
+        "caption": "World Bank officials visiting site"
+      },
+      {
+        "src": "/images/projects/sagamu-intake-structure/world-bank-visit-briefing.webp",
+        "alt": "World Bank official briefed on site by members of the project team in high-visibility vests",
+        "width": 1920,
+        "height": 2149,
+        "caption": "World Bank officials visiting site",
+        "galleryCategory": "electrical-mechanical"
       }
     ],
     "featured": true

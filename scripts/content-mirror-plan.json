@@ -1315,6 +1315,22 @@
       "file": "projects/civil-roads-and-pavements/survey-and-levelling",
       "caption": "Survey and levelling works",
       "from": "Client's unlabelled batch of 10 November 2026 (batch-2026-11-10), identified by eye from his verbal breakdown"
+    },
+    {
+      "id": "B-P1030924-1",
+      "action": "kept",
+      "target": "sagamu-intake-structure",
+      "file": "projects/sagamu-intake-structure/world-bank-visit-excavation",
+      "caption": "World Bank officials visiting site",
+      "from": "Client's unlabelled batch of 10 November 2026; held in the first round, published on the instruction that every photograph be used"
+    },
+    {
+      "id": "B-P1030932 (1)",
+      "action": "kept",
+      "target": "sagamu-intake-structure",
+      "file": "projects/sagamu-intake-structure/world-bank-visit-briefing",
+      "caption": "World Bank officials visiting site",
+      "from": "Client's unlabelled batch of 10 November 2026; held in the first round, published on the instruction that every photograph be used"
     }
   ],
   "roles": {

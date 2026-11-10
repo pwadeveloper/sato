@@ -1411,6 +1411,29 @@
       "cropWhy": "640px only: the small print under the logo on the surveyor's vest carries the former name, faintly legible at the original 864px; the vest is the subject, so no crop clears it",
       "maxWidth": 640,
       "placement": "Client, 10 November 2026, explained verbally and relayed with the unlabelled batch: surveyor using a levelling instrument. Civil Engineering & Road category photographs. The container terminal behind suggests the APM Terminals reefer pavement project; not placed on it until the client confirms."
+    },
+    {
+      "out": "projects/sagamu-intake-structure/world-bank-visit-excavation",
+      "working": "B-P1030924-1",
+      "source": "raw-assets/client-photos/_inbox/batch-2026-11-10/P1030924-1.JPG",
+      "originalFilename": "batch-2026-11-10 › P1030924-1.JPG",
+      "alt": "World Bank officials with the project team on site, an excavator working behind them",
+      "placement": "Client, 10 November 2026: every photograph in the batch to be used (relayed after the first round left it out). Same camera series as the old site's Sagamu inspection photograph (P1030872, ~50-60 frames earlier, the same visitor), so placed on the Sagamu intake project. Helmet rule waived by the client on 9 November."
+    },
+    {
+      "out": "projects/sagamu-intake-structure/world-bank-visit-briefing",
+      "working": "B-P1030932 (1)",
+      "source": "raw-assets/client-photos/_inbox/batch-2026-11-10/P1030932 (1).JPG",
+      "originalFilename": "batch-2026-11-10 › P1030932 (1).JPG",
+      "alt": "World Bank official briefed on site by members of the project team in high-visibility vests",
+      "crop": [
+        0.05,
+        0,
+        0.67,
+        1
+      ],
+      "cropWhy": "Cropped to the visitor: left 5% and right 28% off, which take out the print on both vests (the former name and the RC number, legible at full size). No other text in frame.",
+      "placement": "Client, 10 November 2026: every photograph in the batch to be used (relayed after the first round left it out). Same camera series as the old site's Sagamu inspection photograph (P1030872, ~50-60 frames earlier, the same visitor), so placed on the Sagamu intake project. Helmet rule waived by the client on 9 November."
     }
   ]
 }

@@ -29,10 +29,14 @@ Eleven unlabelled photographs, placed from his verbal breakdown. See
 - **The surveyor.** The container terminal behind him suggests the APM
   Terminals reefer pavement project. If so, it moves onto that project, which
   has no photograph yet.
-- **The World Bank visit photographs.** Two are up, in the Water and Civil
-  galleries, on no project. Which site were they taken at? Two more were
-  left out: one has no helmets beside a working excavator, the other shows
-  the former name and RC number legibly on two vests.
+- **The World Bank visit photographs.** All four are up. Two are on the
+  Sagamu intake project (same visit as the old site's inspection photograph;
+  one cropped to take the former name and RC number off two vests). The
+  other two are in the Water and Civil galleries on no project: which site
+  were they taken at?
+- **The resent email's `2f05e69a…`** is still the one email photograph not on
+  the site: it is the Block B front from almost the same spot as the Building
+  spotlight. Add it as well, or leave it?
 - **The E&M equipment photographs** are on both the E&M projects page and the
   E&M service page, as asked. It is the one exception to "one photograph, one
   place".

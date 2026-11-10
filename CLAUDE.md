@@ -555,8 +555,9 @@ disagree with this file:
 12. `client-photo-batch-2026-11-10.md` — eleven unlabelled photographs,
     sorted by eye from the client's verbal breakdown. Four E&M equipment
     photographs (category and service gallery, no captions); a better COLPLANT
-    front replacing the old site's lead, keeping its caption; two of four
-    World Bank visit photographs (Water and Civil galleries, no project); the
+    front replacing the old site's lead, keeping its caption; all four World
+    Bank visit photographs (two on Sagamu intake, one cropped clear of the
+    former name; two in the Water and Civil galleries, no project); the
     treatment-tanks photograph as the **Water spotlight** (on Ogere, captioned
     "Water treatment tanks", not his "Overhead water tank", which it isn't);
     the surveyor in Civil. **About's aside is now the borehole drilling
