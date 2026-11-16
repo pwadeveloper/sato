@@ -46,3 +46,6 @@ next-env.d.ts
 
 # the client's photo drop as received; working copy lives in raw-assets/client-photos/_inbox/
 /new images/
+
+# confidential client brief and working notes — never commit
+/_brief/
