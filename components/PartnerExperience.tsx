@@ -33,49 +33,23 @@ interface PartProps {
 /**
  * Who the partner is, where Sato has cleared us to say.
  *
- * Both halves are empty today and both are therefore invisible: the
- * collaborator's name is not yet cleared for publication, and the headline
- * figures contradict each other across the source documents (170 / 250+ /
- * 280+ projects, 6 / 8 patents, 13 / 15 countries), so nothing is guessed at.
- * The block stays so that filling either field in `services.json` is the
- * whole change.
- *
- * It carries no heading of its own. It sits inside the Partnerships section
- * of a service page, under that section's `h2`, and the words around it are
- * `sections.partnerships.intro`.
+ * Empty today, and therefore invisible: the consortium partners are not yet
+ * cleared to be named. Filling `partner.name` in `services.json` is the whole
+ * change. The headline figures are not here: they sit under the service
+ * page's heading, in a `StatStrip` labelled with whose figures they are.
  */
-export function PartnerDetails({ partner, headingId, className }: PartProps) {
-  if (!partner.name && !partner.figures.length) return null;
+export function PartnerDetails({ partner, className }: PartProps) {
+  if (!partner.name) return null;
 
   return (
     <div className={cn(className)}>
-      {partner.name ? (
-        <p className="max-w-(--container-measure) border-l-[3px] border-brand py-1 pl-5 text-base wdth-body">
-          <span className="font-bold">
-            <RichText text={partner.nameLabel} />
-            {": "}
-          </span>
-          <RichText text={partner.name} />
-        </p>
-      ) : null}
-
-      {partner.figures.length ? (
-        <dl
-          id={headingId}
-          className="mt-8 grid grid-cols-2 gap-px border border-rule bg-rule lg:grid-cols-4"
-        >
-          {partner.figures.map((figure) => (
-            <div key={figure.label} className="bg-paper p-5">
-              <dt className="eyebrow text-steel-ink">
-                <RichText text={figure.label} />
-              </dt>
-              <dd className="mt-1 text-2xl font-bold tabular wdth-heading text-asphalt">
-                <RichText text={figure.value} />
-              </dd>
-            </div>
-          ))}
-        </dl>
-      ) : null}
+      <p className="max-w-(--container-measure) border-l-[3px] border-brand py-1 pl-5 text-base wdth-body">
+        <span className="font-bold">
+          <RichText text={partner.nameLabel} />
+          {": "}
+        </span>
+        <RichText text={partner.name} />
+      </p>
     </div>
   );
 }

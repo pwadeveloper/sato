@@ -437,220 +437,107 @@
     "group": "energy",
     "order": 5,
     "reviewStatus": "approved",
-    "shortSummary": "Consulting, engineering and digital technology for upstream oil and gas.",
-    "summary": "Consulting, engineering and digital technology services for the upstream oil and gas sector, delivered with our technical partners.",
+    "shortSummary": "Upstream engineering and consulting, delivered through our consortium.",
+    "summary": "Our consortium provides engineering and consulting services to the upstream energy sector.",
+    "overview": {
+      "id": "consortium",
+      "heading": "Our consortium",
+      "intro": [
+        "Our consortium provides engineering and consulting services to the upstream energy sector, with focus on field development planning review, evaluation and optimization; integrated reservoir characterization, monitoring and management; mature field management; upstream digital transformation; improved management of integrated energy systems; production enhancement; drilling services optimization; completion and wellbore intervention; asset integrity management; produced water management; specialized engineered procurement of production and surface processing facilities; and pipeline integrity management systems."
+      ],
+      "items": [
+        "Our consortium implements innovative technologies and methods to enhance the value of customers' assets.",
+        "Our team consists of internationally recognized subject matter experts with a combined experience of over 200 years in the global energy sector, providing solutions to tomorrow's problems today.",
+        "160 upstream projects across the Americas, the Middle East, Africa, Europe and Australia.",
+        "Multiple international patents and 150+ technical publications.",
+        "Clients: governments, NOCs, IOCs and service companies.",
+        "Partners: technology providers, research institutions, academia, and global expert firms with regional insights."
+      ]
+    },
     "sections": {
       "capabilities": {
         "intro": [
-          "We help operators (independent, national and international oil companies) to maximize value from their existing assets (reservoirs, wells and facilities). Working with a partner team of internationally recognised subject-matter experts, we support the full field lifecycle: from field development planning and reservoir management to production optimization, digital twins, asset integrity and the procurement of production and surface processing equipment.",
-          "We apply innovative technologies and proven best practice to improve performance and efficiency, optimise costs, and manage risk and uncertainty."
+          "An agile team with extensive hands-on experience working within major international and national oil and gas companies. Our consortium also supports independent operators with advisory and fit-for-purpose services and solutions. Here are our core capabilities:"
         ],
         "groups": [
           {
-            "id": "ai-digital",
-            "heading": "Artificial intelligence, digitalization and digital twins, automation and autonomy",
+            "id": "digital-oilfield",
+            "heading": "Digital Oilfield, Automation and Agentic AI",
             "items": [
               {
-                "name": "Project assessment, benchmarking and technology roadmaps"
+                "name": "Project assessment, benchmarking and technology roadmap"
               },
               {
-                "name": "Real-time production optimization, from definition to implementation"
+                "name": "Real-time production optimization from definition to implementation"
               },
               {
-                "name": "Automation of petroleum engineering standards and business workflows"
+                "name": "Engineering and business workflows automation"
               },
               {
-                "name": "AI-assisted reservoir and production digital twins"
+                "name": "Reservoir and production predictive data analytics"
               },
               {
-                "name": "Information management standards, workflows and solutions"
+                "name": "Development and documentation of information management standards and solutions"
+              },
+              {
+                "name": "Development and documentation of standard digital workflows and processes"
+              },
+              {
+                "name": "Design and implementation of business process management solutions"
               }
             ]
           },
           {
             "id": "asset-management",
-            "heading": "Integrated asset management and production optimization",
+            "heading": "Integrated Asset Management & Production Optimization",
             "items": [
               {
-                "name": "Reservoir, well and facility production proxy modelling, multi-sensor data assimilation and uncertainty quantification"
+                "name": "Well performance modelling and optimization"
               },
               {
-                "name": "Well operating envelopes and well integrity"
+                "name": "Reservoir-to-surface integrated optimization"
               },
               {
-                "name": "Production monitoring and management of reservoirs, wells and facilities"
+                "name": "Well operating envelope and well integrity"
               },
               {
-                "name": "Production capacity forecasting, production loss management and production enhancement"
+                "name": "Production management standards"
+              },
+              {
+                "name": "Surface capability planning, production losses and optimization"
+              },
+              {
+                "name": "Surface facilities concept and basic engineering"
               }
             ]
           },
           {
             "id": "field-development",
-            "heading": "Field development planning and reservoir management",
+            "heading": "Reservoir Management & Field Development",
             "items": [
               {
-                "name": "Field development planning, review, evaluation and optimization"
+                "name": "Value discovery and front-end loading"
               },
               {
-                "name": "Reservoir characterization and geo-modelling"
-              },
-              {
-                "name": "Reservoir simulation and production forecasting"
+                "name": "Reservoir characterization, geo-modelling, reservoir simulation and production forecasts"
               },
               {
                 "name": "Integrated reservoir management standards"
+              },
+              {
+                "name": "Opportunity management, from identification of interventions to value realization"
+              },
+              {
+                "name": "Secondary / enhanced oil recovery"
               }
             ]
           }
         ],
-        "aside": {
-          "heading": "Also covered",
-          "items": [
-            "Drilling services optimization",
-            "Asset integrity management",
-            "Mature field management",
-            "Virtual asset management for integrated energy systems"
-          ]
-        }
-      },
-      "solutions": {
         "media": [
-          {
-            "type": "list",
-            "heading": "Technology solutions",
-            "items": [],
-            "groups": [
-              {
-                "id": "subsurface",
-                "heading": "Subsurface and seismic",
-                "items": [
-                  {
-                    "name": "Seismic inversion",
-                    "description": "Stochastic seismic inversion using proprietary technology."
-                  },
-                  {
-                    "name": "Time-lapse seismic analysis",
-                    "description": "Time-lapse data integrated with production data and reservoir simulation, for dynamic reservoir characterization."
-                  },
-                  {
-                    "name": "Simulation-to-seismic analysis",
-                    "description": ""
-                  },
-                  {
-                    "name": "Integrated reservoir characterization",
-                    "description": "A complete study workflow, from seismic interpretation and stochastic reservoir modelling through to history matching."
-                  }
-                ]
-              },
-              {
-                "id": "field-development",
-                "heading": "Field development and reservoir management",
-                "items": [
-                  {
-                    "name": "Field development planning",
-                    "description": ""
-                  },
-                  {
-                    "name": "Mature field potential analysis",
-                    "description": "Static data such as seismic integrated with production data, with a thin-layer evaluation method, to evaluate mature field potential both laterally and in vertical cross-section."
-                  },
-                  {
-                    "name": "Reservoir surveillance, monitoring and management",
-                    "description": ""
-                  }
-                ]
-              },
-              {
-                "id": "production",
-                "heading": "Production and facilities",
-                "items": [
-                  {
-                    "name": "Production optimization and enhancement",
-                    "description": "An injection allocation function determined from production data, integrated with seismic and other information where it is available."
-                  },
-                  {
-                    "name": "Completions and wellbore interventions",
-                    "description": ""
-                  },
-                  {
-                    "name": "Topside facilities management",
-                    "description": ""
-                  },
-                  {
-                    "name": "Produced water management",
-                    "description": ""
-                  },
-                  {
-                    "name": "Multiphase flow metrology",
-                    "description": ""
-                  },
-                  {
-                    "name": "Process instrumentation, control and optimization",
-                    "description": ""
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "pyramid",
-            "heading": "From surveillance to transformation",
-            "intro": "Each tier rests on the one below it: nothing is optimised that is not first analysed, and nothing is analysed that is not first measured.",
-            "alt": "Four-tier pyramid. Surveillance forms the base, then Analysis, then Optimization, with Transformation at the apex. Each tier is listed in full below the diagram.",
-            "tiers": [
-              {
-                "id": "surveillance",
-                "label": "Surveillance",
-                "items": [
-                  "Production Allocation",
-                  "Well Test Validation",
-                  "KPI Monitoring",
-                  "Zonal Split Calculation",
-                  "Virtual Metering",
-                  "BHP & BHT Correction",
-                  "Reserves Tracking"
-                ]
-              },
-              {
-                "id": "analysis",
-                "label": "Analysis",
-                "items": [
-                  "Flow Assurance",
-                  "Production Decline Analysis",
-                  "Reservoir Performance",
-                  "Model Updating",
-                  "Production Performance"
-                ]
-              },
-              {
-                "id": "optimization",
-                "label": "Optimization",
-                "items": [
-                  "Short Term Work Plans",
-                  "Mid Term Work Plans",
-                  "Long Term Work Plans"
-                ]
-              },
-              {
-                "id": "transformation",
-                "label": "Transformation",
-                "items": [
-                  "Maximum Ultimate Recovery"
-                ]
-              }
-            ]
-          },
           {
             "type": "valueMap",
             "heading": "Where the value comes from",
             "intro": "Four business processes, the solutions applied to each, the improvement each produces and the benefit it returns.",
-            "image": {
-              "src": "/images/oil-gas/business-value-map.webp",
-              "alt": "Diagram mapping four business processes through solutions and improvements to their business benefits. The same content is set out as a table below.",
-              "width": 1903,
-              "height": 1745
-            },
             "alternativeLabel": "Read the diagram as text",
             "columns": {
               "process": "Business process",
@@ -728,76 +615,320 @@
                   "Improved HSE"
                 ]
               }
+            ],
+            "alt": "Diagram mapping four business processes through the solutions applied to each and the improvement each produces to the benefit it returns. The same content is set out as a table below."
+          }
+        ]
+      },
+      "solutions": {
+        "media": [
+          {
+            "type": "flow",
+            "heading": "How the system works",
+            "quote": "The system recommends the optimum operating set point, and it is up to the operator to accept or decline.",
+            "label": "Flow from wellsite sensors and RTUs, to the operational data historian, to the integration and advisory system, to the engineer or operator, who accepts, rejects or automates the recommendation; the set point then goes back to the field.",
+            "steps": [
+              {
+                "id": "sensors",
+                "label": "Wellsite sensors and RTUs"
+              },
+              {
+                "id": "historian",
+                "label": "Operational data historian"
+              },
+              {
+                "id": "advisory",
+                "label": "Integration and advisory system"
+              },
+              {
+                "id": "decision",
+                "label": "Engineer / operator decision",
+                "items": [
+                  "Accept",
+                  "Reject",
+                  "Automate"
+                ]
+              }
+            ],
+            "returnLabel": "Set point back to the field",
+            "lists": [
+              {
+                "id": "office",
+                "heading": "Office value",
+                "items": [
+                  "Update models",
+                  "Update operating envelopes",
+                  "Accelerated troubleshooting"
+                ]
+              },
+              {
+                "id": "field",
+                "heading": "Field value",
+                "items": [
+                  "Continuous surveillance and optimized production",
+                  "Maximized well availability"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "cycle",
+            "heading": "From data to action",
+            "intro": "The seven-step loop that maximizes asset value.",
+            "steps": [
+              "Automate wellsite data acquisition with IoT devices",
+              "Ingest many data sources (spatial, time series, past well events)",
+              "Predict multiphase rates and reservoir status",
+              "Monitor and detect events by exception",
+              "Detection of sustained annulus pressure; well integrity surveillance",
+              "Recommend optimum well operating envelope",
+              "Initiate and track recommended actions"
+            ],
+            "centre": {
+              "label": "Mini-cycle",
+              "steps": [
+                "Detect",
+                "Initiate",
+                "Execute",
+                "Feedback"
+              ]
+            },
+            "alt": "A ring of seven numbered steps, from automated wellsite data acquisition to initiating and tracking recommended actions, which leads back to step one. In the centre, the mini-cycle Detect, Initiate, Execute, Feedback. The seven steps are listed in order beside the ring."
+          },
+          {
+            "type": "pyramid",
+            "heading": "From surveillance to transformation",
+            "intro": "Each tier rests on the one below it: nothing is optimised that is not first analysed, and nothing is analysed that is not first measured.",
+            "alt": "Four-tier pyramid. Surveillance forms the base, then Analysis, then Optimization, with Transformation at the apex. Each tier is listed in full below the diagram.",
+            "tiers": [
+              {
+                "id": "surveillance",
+                "label": "Surveillance",
+                "items": [
+                  "Production Allocation",
+                  "Well Test Validation",
+                  "KPI Monitoring",
+                  "Zonal Split Calculation",
+                  "Virtual Metering",
+                  "BHP & BHT Correction",
+                  "Reserves Tracking"
+                ]
+              },
+              {
+                "id": "analysis",
+                "label": "Analysis",
+                "items": [
+                  "Flow Assurance",
+                  "Production Decline Analysis",
+                  "Reservoir Performance",
+                  "Model Updating",
+                  "Production Performance"
+                ]
+              },
+              {
+                "id": "optimization",
+                "label": "Optimization",
+                "items": [
+                  "Short Term Work Plans",
+                  "Mid Term Work Plans",
+                  "Long Term Work Plans"
+                ]
+              },
+              {
+                "id": "transformation",
+                "label": "Transformation",
+                "items": [
+                  "Maximum Ultimate Recovery"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flow",
+            "heading": "Digital solutions for processing facilities and pipelines",
+            "intro": "A rigorous integrated transient asset model: asset performance management (APM).",
+            "label": "Instrumentation data from the pipeline network and from processing plants feeds the integrated transient asset model, which shows what is happening and what will happen, gives information on flow behaviour, raises alarms on problems and potential issues, and predicts future conditions.",
+            "steps": [
+              {
+                "id": "inputs",
+                "label": "Instrumentation data",
+                "items": [
+                  "From the pipeline network",
+                  "From processing plants"
+                ]
+              },
+              {
+                "id": "model",
+                "label": "Integrated transient asset model (APM)"
+              },
+              {
+                "id": "outputs",
+                "label": "What it shows",
+                "items": [
+                  "What is happening and what will happen",
+                  "Information on flow behaviour",
+                  "Alarms on problems and potential issues",
+                  "Future conditions, predicted"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "list",
+            "heading": "Why our consortium?",
+            "intro": "Our consortium provides operators and regulators with robust, unique technology that draws on our international experience.",
+            "items": [
+              "Unique set of technical skills (reservoir, production and simulation modelling) and soft skills (mentoring, change and process management)",
+              "Wealth of technical knowledge generated for upstream modelling and digital oilfield",
+              "Relevant experience in the description of upstream processes and workflows",
+              "Relevant experience in ADNOC's Integrated Reservoir Management",
+              "Relevant experience with ADNOC and its group of companies"
+            ]
+          },
+          {
+            "type": "prose",
+            "heading": "Frameworks to maximize client value",
+            "body": [
+              "Integrated Asset Management, Integrated Reservoir Management, Production Efficiency Improvement and Operational Excellence frameworks can deliver tremendous value in mature fields in terms of profitability, efficiency and performance."
+            ]
+          },
+          {
+            "type": "results",
+            "heading": "Published results",
+            "intro": "Each result is documented in the technical papers referenced with it.",
+            "groups": [
+              {
+                "id": "production",
+                "heading": "Production optimisation and increase",
+                "items": [
+                  {
+                    "id": "production-gain",
+                    "value": "8–31%",
+                    "label": "Sustained 8–31% production gain",
+                    "refs": "SPE 165475, SPE 167273"
+                  },
+                  {
+                    "id": "condensate",
+                    "value": "5%+",
+                    "label": "Increased condensate production: 5%+",
+                    "refs": "SPE 145723"
+                  }
+                ]
+              },
+              {
+                "id": "opex",
+                "heading": "OPEX and cost savings",
+                "items": [
+                  {
+                    "id": "surveillance",
+                    "label": "Exception-based surveillance and constraints management",
+                    "refs": "SPE 145723"
+                  },
+                  {
+                    "id": "esp",
+                    "value": "605 → 650 days",
+                    "label": "Reduced ESP trips: increased MTBF from 605 to 650 days, with projected OPEX savings of USD 2.5 million in 2010",
+                    "refs": "SPE 133236, 128834"
+                  },
+                  {
+                    "id": "productivity",
+                    "value": "33%",
+                    "label": "33% increase in operator productivity",
+                    "refs": "SPE 133236, 128834"
+                  },
+                  {
+                    "id": "allocation",
+                    "label": "Increase in allocation factor accuracy",
+                    "refs": "SPE 125178"
+                  },
+                  {
+                    "id": "test-times",
+                    "label": "Reduced test times and associated deferment",
+                    "refs": "SPE 99971"
+                  },
+                  {
+                    "id": "gas-lift",
+                    "value": "20%+",
+                    "label": "20%+ reduction in gas lift gas utilisation",
+                    "refs": "SPE 120461, 128654"
+                  },
+                  {
+                    "id": "emissions",
+                    "label": "Energy efficiency and reductions in GHG emissions",
+                    "refs": "OTC 21166"
+                  }
+                ]
+              }
             ]
           },
           {
             "type": "procurement",
             "heading": "Equipment sourcing and procurement",
-            "intro": "We source and procure production and surface processing equipment from leading original equipment manufacturers.",
+            "intro": "Our consortium sources production and surface processing equipment from leading original equipment manufacturers.",
             "categories": [
               {
                 "id": "pumps",
                 "label": "Pumps",
                 "brands": [
-                  "Centrifugal and reciprocating pumps: Ruhrpumpen, Dean, D-Pump, NOV, Viking",
-                  "Chemical injection pumps: Wilden, Texsteam"
-                ]
-              },
-              {
-                "id": "metering",
-                "label": "Metering and flow",
-                "brands": [
-                  "Meters: Brodie, Smith",
-                  "Turbine meters: Dresser",
-                  "LACT and prover units",
-                  "Orifice fittings and plates: Daniel",
-                  "Flow monitoring and control systems",
-                  "NUFLO MC-III EXP flow analyzers"
+                  "Ruhrpumpen, Dean Pump, D-Pump, NOV, Viking (centrifugal & reciprocating)",
+                  "Wilden, Texsteam (chemical injection)"
                 ]
               },
               {
                 "id": "valves",
-                "label": "Valves and actuation",
+                "label": "Valves & regulators",
                 "brands": [
-                  "Valves: KTM, CWT, Warren, Versa",
-                  "Control valves: Fisher, Masoneilan, Maskot",
-                  "Actuators: Valtek, Emerson Bettis",
-                  "Fisher regulators",
-                  "Solenoid valves: ASCO, Norgren",
-                  "Swagelok valves and fittings",
-                  "Positioners: Siemens PS2"
+                  "Swagelok valves & accessories",
+                  "KTM, CWT, Warren, Versa",
+                  "ASCO, Norgren (solenoid)",
+                  "Fisher, Masoneilan, Maskot (control valves)",
+                  "Fisher regulators & accessories"
+                ]
+              },
+              {
+                "id": "actuation",
+                "label": "Actuation & positioning",
+                "brands": [
+                  "Valtek, Emerson Bettis (actuators)",
+                  "Siemens PS2 (positioners)"
+                ]
+              },
+              {
+                "id": "metering",
+                "label": "Metering & flow",
+                "brands": [
+                  "Brodie, Smith meters",
+                  "Dresser turbine meters",
+                  "Daniel Senior Orifice Fittings & orifice plates",
+                  "NUFLO MC-III EXP flow analyzer",
+                  "LACT and prover units",
+                  "flow monitoring and control systems"
                 ]
               },
               {
                 "id": "instrumentation",
                 "label": "Instrumentation",
                 "brands": [
-                  "Pressure, flow and temperature transmitters: Rosemount, Endress+Hauser, ABB",
-                  "Pressure and temperature gauges and switches: Wika, Ashcroft, Bourdon Haenni, Axelson",
-                  "Chart recorders: Barton",
-                  "Allen-Bradley instruments",
-                  "Budenberg calibration equipment"
+                  "Rosemount, Endress+Hauser, ABB (pressure, flow & temperature transmitters)",
+                  "Wika, Ashcroft, Bourdon Haenni, Axelson (pressure & temperature gauges and switches)",
+                  "Barton chart recorders",
+                  "Allen-Bradley instruments & accessories",
+                  "Budenberg calibration equipment",
+                  "gas sensors & detection"
                 ]
               },
               {
                 "id": "process-control",
-                "label": "Process control and automation",
+                "label": "Process control",
                 "brands": [
-                  "ABB process control and automation: DCS, ECS and HIS systems"
+                  "ABB process control & automation (DCS, ECS & HISS systems)"
                 ]
               },
               {
                 "id": "compression",
-                "label": "Compression and safety",
+                "label": "Compression & mechanical",
                 "brands": [
-                  "Instrument air compressor packages: Quincy, Ingersoll Rand",
-                  "Gas sensors and detection"
-                ]
-              },
-              {
-                "id": "mechanical",
-                "label": "Mechanical components",
-                "brands": [
+                  "Quincy, Ingersoll Rand (instrument air compressor packages)",
                   "SKF bearings"
                 ]
               }
@@ -808,14 +939,58 @@
       },
       "partnerships": {
         "intro": [
-          "Sato and its technical partners have delivered projects for independent, national and international oil companies across the Middle East, South America, North America, Africa, Europe and Australia."
+          "Our consortium has delivered for national oil companies, international oil companies, independent operators, service companies and governments."
+        ],
+        "groups": [
+          {
+            "id": "regions",
+            "heading": "Regions",
+            "items": [
+              {
+                "name": "The Middle East (UAE, Kuwait, Saudi Arabia, Bahrain)"
+              },
+              {
+                "name": "The Americas (USA, Mexico, Colombia, Venezuela, Argentina)"
+              },
+              {
+                "name": "Africa (Algeria, Uganda, Equatorial Guinea)"
+              },
+              {
+                "name": "Europe (France)"
+              },
+              {
+                "name": "Australia"
+              }
+            ]
+          },
+          {
+            "id": "research",
+            "heading": "Research partnerships",
+            "description": [
+              "Our consortium has strategic partnerships with universities in the USA and Canada."
+            ]
+          }
         ]
       }
     },
     "partner": {
       "name": "",
-      "nameLabel": "Technical partner",
-      "figures": [],
+      "nameLabel": "Consortium partner",
+      "figures": [
+        {
+          "value": "160",
+          "label": "upstream projects"
+        },
+        {
+          "value": "200+",
+          "label": "years of combined experience in the global energy sector"
+        },
+        {
+          "value": "150+",
+          "label": "technical publications"
+        }
+      ],
+      "figuresLabel": "Our consortium",
       "projectsHeading": "Selected projects",
       "projectColumns": {
         "client": "Client",

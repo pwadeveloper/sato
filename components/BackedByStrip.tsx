@@ -14,6 +14,8 @@ export interface BackedByStripProps {
   intro?: string;
   items: BackedByItem[];
   headingId?: string;
+  /** `h3` when the strip sits inside a section, as on Oil & Gas. */
+  headingLevel?: 2 | 3;
   className?: string;
 }
 
@@ -21,20 +23,31 @@ export interface BackedByStripProps {
  * Shared capability that applies to every service — plant fleet, delivered
  * projects, long-standing clients. Rendered on each service page so a reader
  * who lands directly on one service still sees what stands behind it.
+ *
+ * A service may replace it with its own version (`backed-by-<slug>` in
+ * `pages/services.json`): Oil & Gas has "One group, two strengths", because
+ * "Backed by Sato" read there as two companies, and it renders inside the
+ * Partnerships section as an `h3`.
  */
 export function BackedByStrip({
   heading,
   intro,
   items,
   headingId,
+  headingLevel = 2,
   className,
 }: BackedByStripProps) {
+  const HeadingTag = headingLevel === 2 ? "h2" : "h3";
+  const CardTag = headingLevel === 2 ? "h3" : "h4";
   return (
     <div className={cn(className)}>
       <Reveal>
-        <h2 id={headingId} className="text-h2 wdth-heading text-balance">
+        <HeadingTag
+          id={headingId}
+          className={cn(headingLevel === 2 ? "text-h2" : "text-h3", "wdth-heading text-balance")}
+        >
           <RichText text={heading} />
-        </h2>
+        </HeadingTag>
 
         {intro ? (
           <p className="mt-3 max-w-(--container-measure) text-lg text-steel-ink wdth-body text-pretty">
@@ -49,7 +62,7 @@ export function BackedByStrip({
             <span aria-hidden="true" className="eyebrow tabular text-steel">
               {String(index + 1).padStart(2, "0")}
             </span>
-            <h3 className="mt-3 flex items-baseline gap-3 text-xl font-bold wdth-heading">
+            <CardTag className="mt-3 flex items-baseline gap-3 text-xl font-bold wdth-heading">
               <Link
                 href={item.href}
                 className="no-underline after:absolute after:inset-0 after:content-['']"
@@ -62,7 +75,7 @@ export function BackedByStrip({
               >
                 &rarr;
               </span>
-            </h3>
+            </CardTag>
             <p className="mt-2 text-base text-steel-ink wdth-body text-pretty">
               <RichText text={item.body} />
             </p>

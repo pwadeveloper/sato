@@ -1,9 +1,12 @@
 import { CapabilityList } from "./CapabilityList";
 import { Container } from "./Container";
+import { CycleDiagram } from "./CycleDiagram";
+import { FlowDiagram } from "./FlowDiagram";
 import { Eyebrow } from "./Eyebrow";
 import { Heading } from "./Heading";
 import { ProcurementList } from "./ProcurementList";
 import { RegistrationsBlock } from "./RegistrationsBlock";
+import { ResultsGrid } from "./ResultsGrid";
 import { RichText } from "./RichText";
 import { Section } from "./Section";
 import { SectionNav } from "./SectionNav";
@@ -277,6 +280,39 @@ function MediaBlock({
           headingLevel={3}
           className="mt-12"
         />
+      );
+    case "flow":
+      return (
+        <FlowDiagram block={block} headingId={headingId} headingLevel={3} className="mt-16" />
+      );
+    case "cycle":
+      return (
+        <CycleDiagram block={block} headingId={headingId} headingLevel={3} className="mt-16" />
+      );
+    case "results":
+      return (
+        <ResultsGrid
+          heading={block.heading}
+          intro={block.intro}
+          groups={block.groups}
+          headingId={headingId}
+          headingLevel={3}
+          className="mt-16"
+        />
+      );
+    case "prose":
+      return (
+        <div className="mt-12">
+          <Heading level={3} size="h3" text={block.heading} id={headingId} />
+          {block.body.map((paragraph, index) => (
+            <p
+              key={index}
+              className="mt-4 max-w-[44rem] text-lg leading-relaxed text-asphalt wdth-body text-pretty"
+            >
+              <RichText text={paragraph} />
+            </p>
+          ))}
+        </div>
       );
   }
 }

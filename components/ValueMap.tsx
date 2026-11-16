@@ -23,32 +23,61 @@ function Cell({ items }: { items: string[] }) {
   );
 }
 
+/** One stage of a row: its column name (shown on a phone) and its items. */
+function Stage({
+  column,
+  items,
+  tone,
+}: {
+  column: string;
+  items: string[];
+  tone: "plain" | "benefit";
+}) {
+  return (
+    <div
+      className={cn(
+        "border p-3.5",
+        tone === "benefit" ? "border-brand/40 bg-brand-tint" : "border-rule bg-concrete",
+      )}
+    >
+      <p className="eyebrow text-xs! text-steel-ink md:hidden">
+        <RichText text={column} />
+      </p>
+      <ul className="mt-1.5 flex flex-col gap-1 md:mt-0">
+        {items.map((item) => (
+          <li key={item} className="text-sm leading-snug wdth-body">
+            <RichText text={item} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/** The connector between two stages: across on a desktop, down on a phone. */
+function Arrow() {
+  return (
+    <span
+      aria-hidden="true"
+      className="flex items-center justify-center py-1 text-brand md:py-0"
+    >
+      <span className="md:hidden">&darr;</span>
+      <span className="hidden md:inline">&rarr;</span>
+    </span>
+  );
+}
+
 /**
- * The business value map: the source image, plus the same content as text.
+ * The business value map, drawn from its rows.
  *
- * Unlike the pyramid this one is not rebuilt. It is a dependency graph with
- * crossing edges, and a hand-made SVG of it would either lose the crossings —
- * which are the point, since one solution feeds several improvements — or
- * take more care to keep true than it would ever be worth. So the drawing is
- * shown as drawn.
+ * Each business process runs across the page: the process, the solutions
+ * applied to it, the improvement they produce and the benefit returned. On a
+ * phone each row stacks downward with the column named on every stage, so no
+ * label is ever smaller than body text — the reason the deck's raster could
+ * not stay (the oil and gas brief also rules out screenshots of slides).
  *
- * That makes the text alternative load-bearing rather than a courtesy: it is
- * the only version a screen reader, or anyone on a 360px screen, can
- * actually use. It is a real table with real headers, inside a `<details>`
- * so it does not double the length of the page for readers who can see the
- * diagram.
- *
- * The image is a plain `<img>`, not `next/image`: the loader would build a
- * srcset and serve the 800px file on a phone, where the labels are already
- * at the limit of legibility. One file, inside a scroller.
- *
- * It is drawn at 80% of the width it would otherwise take, centred. At full
- * width it is tall enough — the source is nearly square — that it pushed the
- * rest of the section off the screen, which is what the client objected to.
- * Eighty per cent is a fifth less scrolling and still legible on a laptop;
- * the floor below it is the point where the 9pt labels stop being readable,
- * so `min-w` holds the drawing at that size on a phone and the container
- * scrolls sideways instead, exactly as before.
+ * The drawing is one `role="img"` with a summary label; the table in the
+ * disclosure underneath is the full text version for a screen reader.
  */
 export function ValueMap({
   map,
@@ -59,6 +88,8 @@ export function ValueMap({
 
   const head =
     "py-3 pr-6 eyebrow text-steel-ink";
+  const grid =
+    "md:grid md:grid-cols-[minmax(0,1fr)_1.5rem_minmax(0,1.25fr)_1.5rem_minmax(0,1.25fr)_1.5rem_minmax(0,1fr)] md:items-stretch";
 
   return (
     <div className={cn(className)}>
@@ -75,17 +106,50 @@ export function ValueMap({
         </p>
       ) : null}
 
-      <div className="mt-6 overflow-x-auto border border-rule bg-paper">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={map.image.src}
-          alt={map.image.alt}
-          width={map.image.width}
-          height={map.image.height}
-          loading="lazy"
-          decoding="async"
-          className="mx-auto h-auto w-4/5 min-w-[40rem] max-w-none"
-        />
+      <div
+        role="img"
+        aria-label={map.alt}
+        className="mt-6 border border-rule bg-paper p-3 md:p-5"
+      >
+        <div aria-hidden="true" className={cn("hidden pb-3", grid)}>
+          {[map.columns.process, map.columns.solutions, map.columns.improvements, map.columns.benefits].map(
+            (column, index) => (
+              <p
+                key={column}
+                className="eyebrow text-xs! text-steel-ink"
+                style={{ gridColumn: index * 2 + 1 }}
+              >
+                <RichText text={column} />
+              </p>
+            ),
+          )}
+        </div>
+
+        <div className="flex flex-col gap-5 md:gap-3">
+          {map.rows.map((row) => (
+            <div key={row.id} className={cn("flex flex-col", grid)} data-anim="fade">
+              <div className="bg-asphalt p-3.5 text-concrete">
+                <p className="eyebrow text-xs! text-steel-light md:hidden">
+                  <RichText text={map.columns.process} />
+                </p>
+                <p className="mt-1.5 text-sm font-semibold leading-snug wdth-body md:mt-0">
+                  <RichText text={row.process} />
+                </p>
+                {row.note ? (
+                  <p className="mt-1 text-xs text-steel-light wdth-body">
+                    <RichText text={row.note} />
+                  </p>
+                ) : null}
+              </div>
+              <Arrow />
+              <Stage column={map.columns.solutions} items={row.solutions} tone="plain" />
+              <Arrow />
+              <Stage column={map.columns.improvements} items={row.improvements} tone="plain" />
+              <Arrow />
+              <Stage column={map.columns.benefits} items={row.benefits} tone="benefit" />
+            </div>
+          ))}
+        </div>
       </div>
 
       <details className="mt-4 border-t border-rule pt-4">
