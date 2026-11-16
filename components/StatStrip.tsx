@@ -10,6 +10,8 @@ export interface StatStripGroup {
 
 export interface StatStripProps {
   groups: StatStripGroup[];
+  /** `dark` for the asphalt figures band on Home. */
+  tone?: "light" | "dark";
   className?: string;
 }
 
@@ -22,7 +24,8 @@ export interface StatStripProps {
  * group carries its owner's name above its numbers, and the groups are
  * separated by a rule rather than run together in one row.
  */
-export function StatStrip({ groups, className }: StatStripProps) {
+export function StatStrip({ groups, tone = "light", className }: StatStripProps) {
+  const dark = tone === "dark";
   return (
     <div
       className={cn(
@@ -36,11 +39,11 @@ export function StatStrip({ groups, className }: StatStripProps) {
           key={group.id}
           aria-label={group.label}
           className={cn(
-            groupIndex > 0 && groups.length > 1 && "lg:border-l lg:border-rule lg:pl-10",
+            groupIndex > 0 && groups.length > 1 && cn("lg:border-l lg:pl-10", dark ? "lg:border-rule-dark" : "lg:border-rule"),
             groupIndex === 0 && groups.length > 1 && "lg:pr-10",
           )}
         >
-          <p className="eyebrow text-xs! flex items-center gap-2 text-steel-ink">
+          <p className={cn("eyebrow text-xs! flex items-center gap-2", dark ? "text-brand-light" : "text-steel-ink")}>
             <span aria-hidden="true" className="inline-block size-1.5 rounded-full bg-brand" />
             <RichText text={group.label} />
           </p>
@@ -51,11 +54,11 @@ export function StatStrip({ groups, className }: StatStripProps) {
             )}
           >
             {group.stats.map((stat) => (
-              <div key={stat.id ?? stat.label} className="flex flex-col border-t border-asphalt pt-3">
-                <dt className="order-2 mt-2 text-sm leading-snug text-steel-ink wdth-body text-pretty">
+              <div key={stat.id ?? stat.label} className={cn("flex flex-col border-t pt-3", dark ? "border-rule-dark" : "border-asphalt")}>
+                <dt className={cn("order-2 mt-2 text-sm leading-snug wdth-body text-pretty", dark ? "text-steel-light" : "text-steel-ink")}>
                   <RichText text={stat.label} />
                 </dt>
-                <dd className="order-1 font-display text-4xl leading-none tracking-[-0.02em] text-asphalt tabular md:text-5xl">
+                <dd className={cn("order-1 font-display leading-none tracking-[-0.02em] tabular", dark ? "text-[clamp(2.75rem,1.6rem+3.6vw,5.5rem)] text-concrete" : "text-4xl text-asphalt md:text-5xl")}>
                   {typeof stat.value === "number" ? stat.value : <RichText text={stat.value} />}
                 </dd>
               </div>

@@ -7,24 +7,29 @@ import { Eyebrow } from "@/components/Eyebrow";
 import { Heading } from "@/components/Heading";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
-import { ServicesIndex, type ServicesIndexItem } from "@/components/ServicesIndex";
+import { StatStrip } from "@/components/StatStrip";
 import { StatementPair } from "@/components/StatementPair";
 import { TextLink } from "@/components/TextLink";
+import { UseCaseCard } from "@/components/UseCaseCard";
 import { HomeHero } from "@/components/home/HomeHero";
+import { HomePillars, type Pillar } from "@/components/home/HomePillars";
 import { ProjectsRail } from "@/components/home/ProjectsRail";
 import { SurveyBand } from "@/components/home/SurveyBand";
 
 import {
   getClients,
   getCompanyFacts,
+  getFeaturedResults,
   getPage,
   getProjectCategories,
   getProjectCount,
   getProjects,
   getSection,
+  getService,
   getServiceBands,
-  getServices,
+  getServiceNav,
   getSite,
+  getUseCases,
   getYearsInOperation,
 } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/metadata";
@@ -113,28 +118,56 @@ function SectionHead({
  * `homeShowMissionVision`.
  */
 export default function HomePage() {
-  const index: ServicesIndexItem[] = getServiceBands().map((band) => {
-    const items = bandItems(band);
-    const solo = items.length === 0 ? band.services[0] : undefined;
-    return {
-      id: band.group,
-      label: band.label,
-      href: bandHref(band) ?? "/services",
-      intro: solo ? solo.summary : band.intro,
-      image: band.image,
-      links: items.map((service) => ({ label: service.name, href: `/services/${service.slug}` })),
-    };
-  });
+  // The two halves of the company. Each lists its services; a service that
+  // asks for its sections in the menu (Oil & Gas) also lists the subsections
+  // of its first section here — its three capability pillars, each linked to
+  // its own place on the service page.
+  const pillars: Pillar[] = getServiceBands().map((band) => ({
+    id: band.group,
+    label: band.label,
+    intro: band.intro,
+    href: bandHref(band) ?? "/services",
+    image: band.image,
+    links: bandItems(band).map((service) => {
+      const first = getServiceNav(service)[0];
+      const groups = service.showSectionsInMenu && first
+        ? service.sections[first.id as "capabilities"]?.groups ?? []
+        : [];
+      return {
+        label: service.name,
+        href: `/services/${service.slug}`,
+        children: groups.map((group) => ({
+          label: group.heading,
+          href: `/services/${service.slug}#${first.id}-${group.id}`,
+        })),
+      };
+    }),
+  }));
 
   const rail = getProjectCategories().map((category) => ({ category, count: getProjectCount(category) }));
   const clients = getClients().filter((client) => client.category !== "oil-gas-partner");
-  const half = Math.ceil(clients.length / 2);
+  const consortiumClients = getClients().filter((client) => client.category === "oil-gas-partner");
 
-  const stats = [
-    { id: "years", value: getYearsInOperation(), label: labels.statYears ?? "" },
-    { id: "projects", value: getProjects().length, label: labels.statProjects ?? "" },
-    { id: "services", value: getServices().length, label: labels.statServices ?? "" },
+  // Two labelled groups, so the consortium's figures can never be read as
+  // Sato's own record, nor Sato's founding year as the start of the oil and
+  // gas work.
+  const oilGas = getService("oil-gas");
+  const statGroups = [
+    {
+      id: "sato",
+      label: labels.statSato ?? "",
+      stats: [
+        { id: "years", value: getYearsInOperation(), label: labels.statYears ?? "" },
+        { id: "projects", value: getProjects().length, label: labels.statProjects ?? "" },
+      ],
+    },
+    ...(oilGas.partner?.figures.length
+      ? [{ id: "consortium", label: labels.statConsortium ?? "", stats: oilGas.partner.figures }]
+      : []),
   ];
+
+  const featured = getUseCases("oil-gas")[0];
+
   // The registered name is the plate's own heading line; the rest sit under the figures.
   const plate = getCompanyFacts().filter((fact) => fact.id !== "yearsInOperation");
 
@@ -142,17 +175,31 @@ export default function HomePage() {
     <>
       {heroImage ? (
         <HomeHero
-          eyebrow={site.tagline}
+          eyebrow={site.name}
           title={page.title}
-          titleMuted={labels.titleMuted}
-          lead={welcome.body[0]}
+          lead={hero.subhead}
           ctas={hero.ctas ?? []}
           image={heroImage}
           caption={heroImage.caption}
         />
       ) : null}
 
-      {/* The second paragraph of the welcome, read a word at a time. */}
+      <Section tone="paper" labelledBy="what-we-do-heading">
+        <Container>
+          <SectionHead
+            label={labels.servicesOf ?? ""}
+            index={1}
+            heading={whatWeDo.heading ?? ""}
+            headingId="what-we-do-heading"
+            intro={whatWeDo.intro}
+            action={whatWeDo.ctas?.[0]}
+          />
+          <HomePillars pillars={pillars} className="mt-14 md:mt-16" />
+        </Container>
+      </Section>
+
+      {/* The welcome: the founding line, then the second paragraph read a
+          word at a time. */}
       <Section tone="concrete" labelledBy="about-label">
         <Container className="lg:grid lg:grid-cols-12 lg:gap-x-12">
           <div className="lg:col-span-3">
@@ -161,6 +208,9 @@ export default function HomePage() {
             </div>
           </div>
           <div className="mt-8 lg:col-span-9 lg:mt-0">
+            <p data-anim="fade" className="mb-8 max-w-[52ch] text-lg text-steel-ink text-pretty">
+              <RichText text={welcome.body[0]} />
+            </p>
             {welcome.body.slice(1).map((paragraph, position) => (
               <p
                 key={position}
@@ -176,20 +226,6 @@ export default function HomePage() {
               </div>
             ) : null}
           </div>
-        </Container>
-      </Section>
-
-      <Section tone="paper" labelledBy="what-we-do-heading">
-        <Container>
-          <SectionHead
-            label={labels.servicesOf ?? ""}
-            index={1}
-            heading={whatWeDo.heading ?? ""}
-            headingId="what-we-do-heading"
-            intro={whatWeDo.intro}
-            action={whatWeDo.ctas?.[0]}
-          />
-          <ServicesIndex items={index} label={labels.indexLabel ?? whatWeDo.heading ?? ""} className="mt-16 md:mt-20" />
         </Container>
       </Section>
 
@@ -226,22 +262,7 @@ export default function HomePage() {
             <Eyebrow text={facts.heading} index={3} tone="dark" as="h2" id="facts-heading" />
           </div>
 
-          <ul className="mt-12 md:mt-16">
-            {stats.map((stat) => (
-              <li
-                key={stat.id}
-                data-anim="fade"
-                className="border-t border-rule-dark py-5 font-display text-[clamp(2.75rem,1.4rem+5.2vw,7rem)] leading-[1] tracking-[-0.025em] md:py-7"
-              >
-                <span data-anim="count" data-value={stat.value} className="tabular text-concrete">
-                  {stat.value}
-                </span>{" "}
-                <span className="text-steel-light">
-                  <RichText text={stat.label} />
-                </span>
-              </li>
-            ))}
-          </ul>
+          <StatStrip groups={statGroups} tone="dark" className="mt-12 md:mt-16" />
 
           <dl data-anim="stagger" className="mt-14 grid gap-x-10 gap-y-8 border-t border-rule-dark pt-10 sm:grid-cols-2 lg:grid-cols-4">
             {plate.map((fact) => (
@@ -258,6 +279,23 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {featured ? (
+        <Section tone="paper" labelledBy="featured-heading">
+          <Container>
+            <Eyebrow text={labels.featuredLabel ?? ""} as="h2" id="featured-heading" />
+            <UseCaseCard
+              href={`/projects/oil-gas/${featured.slug}`}
+              eyebrow={getPage("projects").labels?.useCase ?? ""}
+              title={featured.title}
+              clientDisplay={featured.clientDisplay}
+              results={getFeaturedResults(featured)}
+              linkLabel={getPage("projects").labels?.useCaseLink ?? ""}
+              className="mt-6"
+            />
+          </Container>
+        </Section>
+      ) : null}
+
       <Section tone="concrete" labelledBy="clients-heading" className="overflow-hidden">
         <Container>
           <SectionHead
@@ -268,9 +306,26 @@ export default function HomePage() {
             intro={clientsSection.intro}
           />
         </Container>
-        <div className="mt-14 flex flex-col gap-2 md:mt-20">
-          <ClientMarquee clients={clients.slice(0, half)} label={clientsSection.heading ?? ""} />
-          <ClientMarquee clients={clients.slice(half)} label={clientsSection.heading ?? ""} reverse />
+        {/* Two rows, each labelled with whose clients they are. */}
+        <div className="mt-14 flex flex-col gap-10 md:mt-20">
+          <div>
+            <Container>
+              <p className="eyebrow text-xs! text-steel-ink">
+                <RichText text={labels.clientsSato ?? ""} />
+              </p>
+            </Container>
+            <ClientMarquee clients={clients} label={labels.clientsSato ?? ""} className="mt-3" />
+          </div>
+          {consortiumClients.length ? (
+            <div>
+              <Container>
+                <p className="eyebrow text-xs! text-steel-ink">
+                  <RichText text={labels.clientsConsortium ?? ""} />
+                </p>
+              </Container>
+              <ClientMarquee clients={consortiumClients} label={labels.clientsConsortium ?? ""} reverse className="mt-3" />
+            </div>
+          ) : null}
         </div>
         {clientsSection.ctas?.length ? (
           <Container className="mt-12">

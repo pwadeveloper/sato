@@ -1,10 +1,9 @@
 {
   "slug": "home",
-  "title": "Welcome to Sato Engineering & Infrastructure",
+  "title": "Engineering, infrastructure and upstream energy",
   "metaTitle": "Sato Engineering & Infrastructure Limited",
-  "metaDescription": "Established in 1997. Nearly three decades of engineering, infrastructure, energy, oil and gas and digital project delivery for public and private sector clients.",
+  "metaDescription": "Sato Engineering & Infrastructure Limited: engineering and infrastructure delivery since 1997, and upstream oil and gas engineering and consulting through our consortium.",
   "labels": {
-    "titleMuted": "Welcome to",
     "aboutLabel": "About Sato",
     "aboutLink": "About Sato",
     "servicesOf": "Services",
@@ -16,9 +15,13 @@
     "factsLabel": "Company at a glance",
     "indexLabel": "What we do",
     "allProjectsCard": "All projects",
-    "statYears": "years in operation.",
-    "statProjects": "projects on the record.",
-    "statServices": "areas of service."
+    "statYears": "years in operation, since 1997",
+    "statProjects": "Sato projects on the record",
+    "statSato": "Sato",
+    "statConsortium": "Our consortium",
+    "featuredLabel": "Featured result",
+    "clientsSato": "Sato's clients",
+    "clientsConsortium": "Oil and gas clients served by our consortium"
   },
   "images": {
     "hero": {
@@ -35,14 +38,15 @@
       "id": "hero",
       "ctas": [
         {
-          "label": "What we do",
-          "href": "/services"
+          "label": "Infrastructure",
+          "href": "/services/infrastructure"
         },
         {
-          "label": "Contact us",
-          "href": "/contact"
+          "label": "Oil & Gas",
+          "href": "/services/oil-gas"
         }
-      ]
+      ],
+      "subhead": "Engineering and infrastructure delivery since 1997, and upstream oil and gas through our consortium."
     },
     {
       "type": "prose",
@@ -65,7 +69,7 @@
       "id": "what-we-do",
       "collection": "serviceGroups",
       "heading": "What we do",
-      "intro": "The areas we work in. Each has a page of its own: what we can do, the solutions we provide, and who we deliver with.",
+      "intro": "Two practices under one name: Sato's infrastructure work, and energy, led by upstream oil and gas through our consortium.",
       "ctas": [
         {
           "label": "All services",
@@ -123,7 +127,7 @@
     {
       "type": "cta",
       "id": "cta",
-      "heading": "Working on a project in infrastructure, energy or oil and gas?",
+      "heading": "Discuss your field, asset or project",
       "body": "Talk to our team. We will supply registration documents, referees and a capability statement on request.",
       "ctas": [
         {
