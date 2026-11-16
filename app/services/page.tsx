@@ -27,7 +27,8 @@ const whySato = getSection(page, "why-sato", "list");
 export const metadata: Metadata = buildPageMetadata(page, site);
 
 /**
- * The services overview: five categories, each with its photograph.
+ * The services overview: two categories, Infrastructure and Energy, each
+ * with its photograph.
  *
  * Every heading is a live link to the service it names — the client asked
  * for that specifically, having clicked one on the old build and had nothing
@@ -54,7 +55,12 @@ export default function ServicesPage() {
         <Container>
           <ul className="flex flex-col gap-14 md:gap-20">
             {bands.map((band, index) => {
-              const href = bandHref(band);
+              // A band whose landing link is an anchor on this very page
+              // (Energy's `/services#energy`, the menu's way in) links its
+              // heading to its first service, so it is never a link to itself.
+              const href = band.href?.startsWith("/services#")
+                ? `/services/${band.services[0].slug}`
+                : bandHref(band);
               const items = bandItems(band);
               const solo = items.length === 0 ? band.services[0] : undefined;
               // A category of one shows its service's summary; a category of
@@ -89,7 +95,8 @@ export default function ServicesPage() {
               return (
                 <li
                   key={band.group}
-                  className="lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-12"
+                  id={band.group}
+                  className="scroll-mt-(--header-height) lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-12"
                 >
                   {band.image ? (
                     <div

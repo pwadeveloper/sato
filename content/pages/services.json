@@ -14,14 +14,9 @@
     "groupInfrastructure": "Infrastructure Services",
     "groupInfrastructureIntro": "Our established infrastructure practice, delivering since 1997.",
     "groupInfrastructureHref": "/services/infrastructure",
-    "groupEnergy": "Energy Services",
-    "groupEnergyIntro": "Engineering for power and process assets, from integrity management to renewable generation.",
-    "groupOilGas": "Oil & Gas Services",
-    "groupOilGasIntro": "Consulting, engineering and digital technology for the upstream sector.",
-    "groupDigitalTwin": "Digitalization & Digital Twin Services",
-    "groupDigitalTwinIntro": "Asset data turned into a working virtual model of the physical asset.",
-    "groupResearchInnovation": "Research, Technology & Innovation Services",
-    "groupResearchInnovationIntro": "Applied studies, technical training and new engineering methods.",
+    "groupEnergy": "Energy",
+    "groupEnergyIntro": "Upstream oil and gas engineering and consulting through our consortium, with energy, digitalization and research services.",
+    "groupEnergyHref": "/services#energy",
     "servicesMenu": "Services menu",
     "allServices": "All services",
     "gallery": "Work delivered",
@@ -40,7 +35,7 @@
       "width": 1920,
       "height": 1440
     },
-    "groupOilGas": {
+    "groupEnergy": {
       "src": "/images/oil-gas/platforms-and-pipelines.webp",
       "alt": "Two offshore platforms and a supply vessel, with subsea pipelines and wellheads drawn across the water",
       "width": 1672,
