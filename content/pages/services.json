@@ -87,6 +87,24 @@
       ]
     },
     {
+      "type": "linkCards",
+      "id": "backed-by-oil-gas",
+      "heading": "One group, two strengths",
+      "intro": "Sato brings nearly three decades of engineering and infrastructure delivery for governments, development partners and universities. Our consortium brings deep upstream expertise. Clients get one point of contact and one standard of delivery.",
+      "items": [
+        {
+          "label": "Clients",
+          "body": "The oil and gas clients served by our consortium, listed beside Sato's own.",
+          "href": "/clients"
+        },
+        {
+          "label": "Oil & Gas projects",
+          "body": "Our consortium's project record, published results and use cases.",
+          "href": "/projects/oil-gas"
+        }
+      ]
+    },
+    {
       "type": "cta",
       "id": "cta-default",
       "body": "Working on a project in infrastructure, energy or oil and gas? Talk to our team.",
@@ -120,16 +138,16 @@
     {
       "type": "cta",
       "id": "cta-oil-gas",
-      "heading": "For operators and procurement teams",
-      "body": "Discuss your field, asset or procurement requirement with our team.",
+      "heading": "Request a technical briefing",
+      "body": "Full project detail is shared in direct presentations. Tell us about your field, asset or procurement requirement.",
       "ctas": [
         {
           "label": "Contact us",
           "href": "/contact"
         },
         {
-          "label": "Company information",
-          "href": "/about"
+          "label": "Oil & Gas projects",
+          "href": "/projects/oil-gas"
         }
       ]
     }

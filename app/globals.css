@@ -114,3 +114,16 @@
     transition: none;
   }
 }
+
+/*
+ * The small label used by components shared with the NewDesign branch
+ * (diagrams, stat strips, results). In this design it is the same uppercase
+ * label the menus and the data plate already use, not a monospace.
+ */
+@utility eyebrow {
+  font-size: var(--text-2xs);
+  line-height: var(--text-2xs--line-height);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}

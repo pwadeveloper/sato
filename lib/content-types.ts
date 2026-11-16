@@ -594,14 +594,19 @@ export interface SolutionsPyramid {
 
 /**
  * The business value map: business process -> solutions -> improvements ->
- * benefits. Too tangled to rebuild honestly as SVG, so the source image is
- * shown and the same content is carried underneath as a real table inside a
- * disclosure — which is the accessible alternative, not a caption.
+ * benefits, one row per process.
+ *
+ * Drawn as HTML from these rows rather than shown as the deck's raster: the
+ * oil and gas brief asks that no diagram be a screenshot of a slide, and a
+ * row-per-process flow keeps every label at text size on a phone. The same
+ * content is also carried as a real table inside a disclosure, which is the
+ * accessible alternative.
  */
 export interface ValueMap {
   heading: ConfirmableText;
   intro?: ConfirmableText;
-  image: ImageRef;
+  /** Names the diagram for assistive tech; the table carries the detail. */
+  alt: ConfirmableText;
   /** Label on the disclosure that opens the text version. */
   alternativeLabel: ConfirmableText;
   columns: {
@@ -618,6 +623,83 @@ export interface ValueMap {
     improvements: ConfirmableText[];
     benefits: ConfirmableText[];
   }>;
+}
+
+/** One stage of a flow diagram, with what sits inside it. */
+export interface FlowStep {
+  id: string;
+  label: ConfirmableText;
+  /** Shown under the label: the inputs, the outputs, the operator's choices. */
+  items?: ConfirmableText[];
+}
+
+/**
+ * A left-to-right flow of stages, drawn as HTML: the advisory system (field
+ * data to the operator's decision) and asset performance management (plant
+ * and pipeline data to what the model shows). High level by design — the
+ * brief keeps system architecture at the level of stages, so the layer stack
+ * behind them is never content.
+ */
+export interface FlowBlock {
+  heading: ConfirmableText;
+  intro?: ConfirmableText;
+  /** The one line the diagram is about, set as a pull quote. */
+  quote?: ConfirmableText;
+  /** Names the diagram for assistive tech. */
+  label: ConfirmableText;
+  steps: FlowStep[];
+  /** The arrow back from the last stage to the first, where the flow loops. */
+  returnLabel?: ConfirmableText;
+  /** Short lists under the diagram, side by side — office value, field value. */
+  lists?: Array<{ id: string; heading: ConfirmableText; items: ConfirmableText[] }>;
+}
+
+/** A closed loop of numbered steps, drawn as a ring with the steps listed. */
+export interface CycleBlock {
+  heading: ConfirmableText;
+  intro?: ConfirmableText;
+  /** In order, 1 to n. */
+  steps: ConfirmableText[];
+  /** A short inner loop written in the middle of the ring. */
+  centre?: { label: ConfirmableText; steps: ConfirmableText[] };
+  /** Names the diagram for assistive tech. */
+  alt: ConfirmableText;
+}
+
+/** A heading over a paragraph or two — the frameworks statement. */
+export interface ProseBlock {
+  heading: ConfirmableText;
+  body: ConfirmableText[];
+}
+
+/** One documented result, with the papers it is published in. */
+export interface ResultItem {
+  id: string;
+  /** The number to set large, where the result has one. Part of `label`. */
+  value?: ConfirmableText;
+  /** The result, verbatim. */
+  label: ConfirmableText;
+  /** The paper references, e.g. "SPE 165475, SPE 167273". */
+  refs?: ConfirmableText;
+}
+
+export interface ResultsBlock {
+  heading: ConfirmableText;
+  intro?: ConfirmableText;
+  groups: Array<{ id: string; heading: ConfirmableText; items: ResultItem[] }>;
+}
+
+/**
+ * A band between a service's header and its three sections, outside the
+ * sub-nav: Oil & Gas's "Our consortium". The sub-nav on that page is held as
+ * it is by the client, so the opening statement has to sit before it rather
+ * than become a fourth item in it.
+ */
+export interface ServiceOverview {
+  id: string;
+  heading: ConfirmableText;
+  intro: ConfirmableText[];
+  items: ConfirmableText[];
 }
 
 /** One named item in a service list, where a bare phrase needs explaining. */
@@ -711,8 +793,10 @@ export interface PartnerBlock {
   name: ConfirmableText;
   /** Label for the name, e.g. "Technical partner". */
   nameLabel: ConfirmableText;
-  /** Empty while the source figures disagree — the strip is then hidden. */
+  /** Headline figures, under the service page's heading. Empty hides them. */
   figures: PartnerFigure[];
+  /** Whose figures they are, printed over them — "Our consortium". */
+  figuresLabel?: ConfirmableText;
   projectsHeading: ConfirmableText;
   projectColumns: { client: ConfirmableText; project: ConfirmableText; year: ConfirmableText };
   projects: PartnerProject[];
@@ -765,7 +849,11 @@ export type ServiceMedia =
   | ({ type: "list" } & ServiceList)
   | ({ type: "pyramid" } & SolutionsPyramid)
   | ({ type: "valueMap" } & ValueMap)
-  | ({ type: "procurement" } & ProcurementBlock);
+  | ({ type: "procurement" } & ProcurementBlock)
+  | ({ type: "flow" } & FlowBlock)
+  | ({ type: "cycle" } & CycleBlock)
+  | ({ type: "prose" } & ProseBlock)
+  | ({ type: "results" } & ResultsBlock);
 
 /**
  * One of the three sections every service page is built from.
@@ -817,6 +905,8 @@ export interface Service {
   summary: ConfirmableText;
   /** The three sections of the page, in the order they are rendered. */
   sections: ServiceSections;
+  /** An opening band before the sections, outside the sub-nav. */
+  overview?: ServiceOverview;
   /**
    * The record of the partner team's work, where the service has one.
    *

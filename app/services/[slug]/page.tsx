@@ -13,7 +13,9 @@ import { PartnerDetails } from "@/components/PartnerExperience";
 import { RelatedServices } from "@/components/RelatedServices";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
+import { ServiceOverview } from "@/components/ServiceOverview";
 import { ServiceSections } from "@/components/ServiceSections";
+import { StatStrip } from "@/components/StatStrip";
 
 import {
   getPage,
@@ -26,7 +28,7 @@ import {
 } from "@/lib/content";
 import { buildServiceMetadata } from "@/lib/metadata";
 import { isReviewMode } from "@/lib/review-mode";
-import type { CtaSection, Service } from "@/lib/content-types";
+import type { CtaSection, LinkCardsSection, Service } from "@/lib/content-types";
 
 type ServicePageProps = { params: Promise<{ slug: string }> };
 
@@ -66,7 +68,28 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const service = getService(slug);
 
   const labels = servicesPage.labels ?? {};
-  const backedBy = getSection(servicesPage, "backed-by", "linkCards");
+  // A service may replace "Backed by Sato" with its own strip, by id, the
+  // same way it may supply its own CTA. Oil & Gas does ("One group, two
+  // strengths"), and its strip sits inside Partnerships rather than after it.
+  const ownBackedBy = servicesPage.sections.find(
+    (section): section is LinkCardsSection =>
+      section.type === "linkCards" && section.id === `backed-by-${service.slug}`,
+  );
+  const backedBy = ownBackedBy ?? getSection(servicesPage, "backed-by", "linkCards");
+
+  // The partner team's headline figures, under the page's own heading.
+  const figures = service.partner?.figures ?? [];
+  const stats = figures.length ? (
+    <StatStrip
+      groups={[
+        {
+          id: "figures",
+          label: service.partner?.figuresLabel ?? "",
+          stats: figures,
+        },
+      ]}
+    />
+  ) : null;
 
   // A service may supply its own CTA by id; otherwise it uses the shared one.
   // This is how the oil and gas page is addressed to operators without the
@@ -111,7 +134,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   return (
     <>
       {service.headerOverlay && service.image ? (
-        <OverlayHeader service={service} above={above} />
+        <OverlayHeader service={service} above={above} below={stats} />
       ) : (
         <PageHeader
           title={service.name}
@@ -121,6 +144,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
           above={above}
         />
       )}
+
+      {service.overview ? <ServiceOverview overview={service.overview} /> : null}
 
       <ServiceSections
         content={service.sections}
@@ -139,6 +164,17 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 />
               ) : null}
 
+              {ownBackedBy ? (
+                <BackedByStrip
+                  heading={ownBackedBy.heading}
+                  intro={ownBackedBy.intro}
+                  items={ownBackedBy.items}
+                  headingId="backed-by"
+                  headingLevel={3}
+                  className="mt-14"
+                />
+              ) : null}
+
               {relatedServices.length ? (
                 <RelatedServices
                   heading={labels.relatedServices ?? ""}
@@ -152,16 +188,18 @@ export default async function ServicePage({ params }: ServicePageProps) {
         }}
       />
 
-      <Section tone="white" labelledBy="backed-by">
-        <Container>
-          <BackedByStrip
-            heading={backedBy.heading}
-            intro={backedBy.intro}
-            items={backedBy.items}
-            headingId="backed-by"
-          />
-        </Container>
-      </Section>
+      {ownBackedBy ? null : (
+        <Section tone="white" labelledBy="backed-by">
+          <Container>
+            <BackedByStrip
+              heading={backedBy.heading}
+              intro={backedBy.intro}
+              items={backedBy.items}
+              headingId="backed-by"
+            />
+          </Container>
+        </Section>
+      )}
 
       <CtaBand
         heading={cta.heading}
@@ -186,9 +224,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
 function OverlayHeader({
   service,
   above,
+  below,
 }: {
   service: Service;
   above: ReactNode;
+  /** Under the lead: the headline figures, where the service has them. */
+  below?: ReactNode;
 }) {
   if (!service.image) return null;
 
@@ -235,6 +276,11 @@ function OverlayHeader({
             <p className="mt-5 text-lg text-asphalt wdth-body text-pretty">
               <RichText text={service.summary} />
             </p>
+            {below ? (
+              <div data-anim="fade" data-delay={480} className="mt-10">
+                {below}
+              </div>
+            ) : null}
           </div>
         </Container>
       </Section>

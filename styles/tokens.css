@@ -44,6 +44,7 @@
   --color-asphalt: #22272b; /* body text, dark sections, the data plate */
   --color-asphalt-raised: #2e3236; /* card surface inside dark sections        */
   --color-concrete: #e9e6e1; /* page background                          */
+  --color-paper: #ffffff; /* card surface; white in this design, kept as a name for shared components */
   --color-steel: #5a6a73; /* borders, muted UI, rivets                */
   --color-steel-ink: #4e5c64; /* secondary text on light; 5.6:1           */
   --color-steel-light: #9aa2a4; /* secondary text on dark;  5.8:1           */
@@ -60,6 +61,11 @@
 
   /* Type — Archivo, variable, wdth 62-125, wght 100-900. One family. */
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  /*
+   * One family: components shared with the NewDesign branch ask for
+   * `font-mono` on diagram labels, and here that resolves to Archivo.
+   */
+  --font-mono: var(--font-sans);
 
   /* Scale: 1.25 ratio, body 17px. Display steps are fluid 360px -> 1280px. */
   --text-2xs: 0.75rem;
@@ -123,6 +129,7 @@
 
   /* Motion — short, and only on colour. Killed by reduced-motion below. */
   --ease-out-quiet: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-quick: 150ms;
 }
 

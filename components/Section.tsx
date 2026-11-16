@@ -4,6 +4,8 @@ import { cn } from "@/lib/cn";
 const TONES = {
   concrete: "bg-concrete text-asphalt",
   white: "bg-white text-asphalt",
+  /** Alias of `white`, for components shared with the NewDesign branch. */
+  paper: "bg-white text-asphalt",
   asphalt: "bg-asphalt text-concrete",
   brand: "bg-brand text-white",
 } as const;
