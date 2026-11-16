@@ -520,20 +520,15 @@ export interface Page {
 /**
  * Which top-level category a service sits in, in display order.
  *
- * These are the five headings a visitor navigates by, not an internal
- * taxonomy. "Infrastructure Services" is the established practice and holds
- * four disciplines behind a landing page; the other four categories are each
- * a single service and render as that service rather than as a heading above
- * one repeated card. Technology used to hold the last two together — the
- * client split it, because a reader looking for digital twin work should not
- * have to know it was filed under something else.
+ * Two headings a visitor navigates by, mirrored in the Services and Projects
+ * menus: Infrastructure, Sato's established practice, holding four
+ * disciplines behind a landing page; and Energy, holding Oil & Gas, Energy
+ * Services, Digital Twin and Research. The oil and gas brief of 16 November
+ * (approved by the principal) grouped the site this way so that it reads as
+ * one engineering, infrastructure and energy group. It replaced the five
+ * single-service categories that followed the split of Technology.
  */
-export type ServiceGroup =
-  | "infrastructure"
-  | "energy"
-  | "oil-gas"
-  | "digital-twin"
-  | "research-innovation";
+export type ServiceGroup = "infrastructure" | "energy";
 
 /** A category with its resolved copy, assembled by `getServiceBands()`. */
 export interface ServiceBand {

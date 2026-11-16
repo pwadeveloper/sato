@@ -226,13 +226,7 @@ export function getServices(): Service[] {
 }
 
 /** The order categories are presented in, everywhere on the site. */
-const BAND_ORDER: ServiceGroup[] = [
-  "infrastructure",
-  "energy",
-  "oil-gas",
-  "digital-twin",
-  "research-innovation",
-];
+const BAND_ORDER: ServiceGroup[] = ["infrastructure", "energy"];
 
 /** `oil-gas` -> `groupOilGas`, so a category's copy is found by its value. */
 function bandKey(group: ServiceGroup): string {

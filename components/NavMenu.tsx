@@ -9,6 +9,8 @@ import { cn } from "@/lib/cn";
 export interface NavMenuItem {
   label: string;
   href: string;
+  /** Sections of the item's own page, listed beneath it (Oil & Gas only). */
+  items?: NavMenuItem[];
 }
 
 /**
@@ -193,7 +195,9 @@ export function NavMenu({
               "absolute right-0 top-[calc(100%-0.5rem)] z-50 rounded-(--radius-frame) border border-rule-dark bg-asphalt p-8 text-concrete shadow-2xl shadow-black/20",
               groups.length > 3
                 ? "w-[min(60rem,calc(100vw-3rem))]"
-                : "w-[min(24rem,calc(100vw-3rem))]",
+                : groups.length === 2
+                  ? "w-[min(46rem,calc(100vw-3rem))]"
+                  : "w-[min(24rem,calc(100vw-3rem))]",
             )}
           >
             <div
@@ -204,6 +208,9 @@ export function NavMenu({
                 // four lines. Columns let each group take the height it needs
                 // and pack the rest around it.
                 groups.length > 3 && "lg:columns-3 lg:gap-10",
+                // Two groups is the mega-menu: Infrastructure and Energy side by
+                // side, so the two halves of the company read as equals.
+                groups.length === 2 && "lg:columns-2 lg:gap-10",
               )}
             >
               {groups.map((group, index) => {
@@ -254,6 +261,21 @@ export function NavMenu({
                               </span>
                               {arrow}
                             </Link>
+                            {item.items?.length ? (
+                              <ul className="mb-1 ml-1 border-l border-rule-dark/70 pl-3">
+                                {item.items.map((child) => (
+                                  <li key={child.href}>
+                                    <Link
+                                      href={child.href}
+                                      onClick={() => close(false)}
+                                      className="eyebrow block py-1.5 text-steel-light no-underline transition-colors duration-150 hover:text-brand-light"
+                                    >
+                                      <RichText text={child.label} />
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : null}
                           </li>
                         ))}
                       </ul>

@@ -366,7 +366,7 @@
     "slug": "energy",
     "name": "Energy Services",
     "group": "energy",
-    "order": 5,
+    "order": 6,
     "reviewStatus": "approved",
     "shortSummary": "Asset integrity, facility engineering and renewable energy.",
     "summary": "Engineering support for energy assets, from integrity management to renewable generation.",
@@ -434,8 +434,8 @@
   {
     "slug": "oil-gas",
     "name": "Oil & Gas Services",
-    "group": "oil-gas",
-    "order": 6,
+    "group": "energy",
+    "order": 5,
     "reviewStatus": "approved",
     "shortSummary": "Consulting, engineering and digital technology for upstream oil and gas.",
     "summary": "Consulting, engineering and digital technology services for the upstream oil and gas sector, delivered with our technical partners.",
@@ -1010,7 +1010,7 @@
   {
     "slug": "digital-twin",
     "name": "Digitalization & Digital Twin Services",
-    "group": "digital-twin",
+    "group": "energy",
     "order": 7,
     "reviewStatus": "approved",
     "shortSummary": "Asset data, analytics and virtual models of physical infrastructure.",
@@ -1134,7 +1134,7 @@
   {
     "slug": "research-innovation",
     "name": "Research, Technology & Innovation Services",
-    "group": "research-innovation",
+    "group": "energy",
     "order": 8,
     "reviewStatus": "approved",
     "shortSummary": "Applied studies, technical training and new engineering methods.",

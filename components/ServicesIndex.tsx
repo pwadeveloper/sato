@@ -16,6 +16,8 @@ export interface ServicesIndexItem {
   image?: ImageRef;
   /** Destinations inside the item — Infrastructure's four disciplines. */
   links?: LinkContent[];
+  /** An `id` for the row, where the menu points at it (`/services#energy`). */
+  anchor?: string;
 }
 
 export interface ServicesIndexProps {
@@ -74,6 +76,7 @@ export function ServicesIndex({ items, label, className }: ServicesIndexProps) {
         {items.map((item, index) => (
           <li
             key={item.id}
+            id={item.anchor}
             onPointerEnter={() => setActive(item.id)}
             className="group relative border-b border-asphalt/15"
           >

@@ -27,7 +27,8 @@ const whySato = getSection(page, "why-sato", "list");
 export const metadata: Metadata = buildPageMetadata(page, site);
 
 /**
- * The services overview: five categories, each with its photograph.
+ * The services overview: two categories, Infrastructure and Energy, each
+ * with its photograph.
  *
  * Every heading is a live link to the service it names — the client asked
  * for that specifically, having clicked one on the old build and had nothing
@@ -43,7 +44,12 @@ export default function ServicesPage() {
   const bands = getServiceBands();
 
   const items: ServicesIndexItem[] = bands.map((band) => {
-    const href = bandHref(band) ?? "/services";
+    // A band whose landing link is an anchor on this very page (Energy's
+    // `/services#energy`, the menu's way in) links its row to its first
+    // service instead, so the row is never a link to itself.
+    const href = band.href?.startsWith("/services#")
+      ? `/services/${band.services[0].slug}`
+      : bandHref(band) ?? "/services";
     const children = bandItems(band);
     const solo = children.length === 0 ? band.services[0] : undefined;
     // A category of one shows its service's summary; a category of several
@@ -62,6 +68,7 @@ export default function ServicesPage() {
       intro: solo ? solo.summary : band.intro,
       image: band.image,
       links,
+      anchor: band.group,
     };
   });
 

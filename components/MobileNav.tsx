@@ -188,6 +188,21 @@ export function MobileNav({
                                       >
                                         <RichText text={item.label} />
                                       </Link>
+                                      {item.items?.length ? (
+                                        <ul className="mb-2 border-l border-rule-dark pl-4">
+                                          {item.items.map((child) => (
+                                            <li key={child.href}>
+                                              <Link
+                                                href={child.href}
+                                                onClick={closeAll}
+                                                className="eyebrow block py-2 text-steel-light no-underline"
+                                              >
+                                                <RichText text={child.label} />
+                                              </Link>
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      ) : null}
                                     </li>
                                   ))}
                                 </ul>

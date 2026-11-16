@@ -464,20 +464,11 @@
           ]
         },
         {
-          "value": "energy",
-          "label": "Energy Services",
-          "slug": "energy",
-          "serviceSlug": "energy",
-          "group": "energy",
-          "intro": "",
-          "shortLabel": "Energy"
-        },
-        {
           "value": "oil-gas",
           "label": "Oil & Gas Services",
           "slug": "oil-gas",
           "serviceSlug": "oil-gas",
-          "group": "oil-gas",
+          "group": "energy",
           "source": "partner",
           "deliveredBy": "partner",
           "intro": "Reservoir management, field development planning, production optimization and digital oilfield delivery for national and international oil companies.",
@@ -490,11 +481,20 @@
           "shortLabel": "Oil & Gas"
         },
         {
+          "value": "energy",
+          "label": "Energy Services",
+          "slug": "energy",
+          "serviceSlug": "energy",
+          "group": "energy",
+          "intro": "",
+          "shortLabel": "Energy"
+        },
+        {
           "value": "digital-twin",
           "label": "Digitalization & Digital Twin Services",
           "slug": "digital-twin",
           "serviceSlug": "digital-twin",
-          "group": "digital-twin",
+          "group": "energy",
           "intro": "",
           "shortLabel": "Digital Twin"
         },
@@ -503,7 +503,7 @@
           "label": "Research, Technology & Innovation Services",
           "slug": "research-innovation",
           "serviceSlug": "research-innovation",
-          "group": "research-innovation",
+          "group": "energy",
           "intro": "",
           "shortLabel": "Research"
         }

@@ -104,13 +104,18 @@ const menus: HeaderMenu[] = [
         id: band.group,
         label: band.label,
         href: bandHref(band),
-        // A category of several lists its services; a category of one lists
-        // the sections of its own page, where it has asked for them. Oil &
-        // Gas is the only page long enough to.
+        // A category of several lists its services, and a service that has
+        // asked for its sections in the menu carries them beneath it (Oil &
+        // Gas, so its three anchors stay one click from anywhere). A category
+        // of one lists the sections of its own page instead.
         items: items.length
           ? items.map((service) => ({
               label: service.name,
               href: `/services/${service.slug}`,
+              items: onPageSections(service).map((section) => ({
+                label: section.label,
+                href: `/services/${service.slug}#${section.id}`,
+              })),
             }))
           : onPageSections(solo).map((section) => ({
               label: section.label,
@@ -123,15 +128,15 @@ const menus: HeaderMenu[] = [
     href: "/projects",
     overviewLabel: projectsPage.labels?.allProjects ?? projectsPage.title,
     /**
-     * Grouped exactly like Services: "Infrastructure Services" as a heading
-     * with its disciplines indented, then the other categories at the top
-     * level. A band of one is rendered as its own category rather than as a
-     * heading above one repeated name, and a category with no projects is not
-     * in the list at all.
+     * Grouped exactly like Services: Infrastructure and Energy as headings,
+     * each with its categories indented. A category with no projects is not
+     * in the list at all, so Energy holds only Oil & Gas until Energy
+     * Services, Digital Twin or Research has a project of its own; pointing
+     * those at the oil and gas record would present it as their work.
      *
-     * The Infrastructure heading is not a link: there is no
-     * `/projects/infrastructure`, and a heading that looks like a destination
-     * and is not one is worse than a plain heading.
+     * The headings are not links: there is no `/projects/infrastructure`,
+     * and a heading that looks like a destination and is not one is worse
+     * than a plain heading.
      */
     groups: getProjectBands().map((band) => {
       const solo =
