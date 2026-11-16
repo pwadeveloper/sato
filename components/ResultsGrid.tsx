@@ -79,7 +79,7 @@ export function ResultsGrid({
                 {item.value ? (
                   <p
                     aria-hidden="true"
-                    className="font-display text-4xl leading-none tracking-[-0.02em] text-brand-ink tabular"
+                    className="font-bold wdth-heading text-4xl leading-none tracking-[-0.02em] text-brand-ink tabular"
                   >
                     <RichText text={item.value} />
                   </p>

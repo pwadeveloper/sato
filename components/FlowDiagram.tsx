@@ -47,7 +47,7 @@ export function FlowDiagram({
 
       {block.quote ? (
         <blockquote className="mt-6 max-w-[40rem] border-l-[3px] border-brand pl-5">
-          <p className="font-display text-2xl leading-tight tracking-[-0.01em] text-asphalt text-pretty md:text-3xl">
+          <p className="font-bold wdth-heading text-2xl leading-tight tracking-[-0.01em] text-asphalt text-pretty md:text-3xl">
             <RichText text={block.quote} />
           </p>
         </blockquote>

@@ -43,7 +43,7 @@ export function UseCaseCard({
           <span aria-hidden="true"> · </span>
           <RichText text={clientDisplay} />
         </p>
-        <h3 className="mt-4 font-display text-[clamp(2rem,1.5rem+2vw,3.25rem)] leading-[1.02] tracking-[-0.02em] text-balance">
+        <h3 className="mt-4 font-bold wdth-heading text-[clamp(2rem,1.5rem+2vw,3.25rem)] leading-[1.02] tracking-[-0.02em] text-balance">
           <Link href={href} className="text-concrete no-underline after:absolute after:inset-0 after:content-['']">
             <RichText text={title} />
           </Link>
@@ -64,7 +64,7 @@ export function UseCaseCard({
           {results.map((result) => (
             <li key={result.id} className="bg-asphalt p-5">
               {result.value ? (
-                <p aria-hidden="true" className="font-display text-3xl leading-none tracking-[-0.02em] text-brand-light tabular xl:text-4xl">
+                <p aria-hidden="true" className="font-bold wdth-heading text-3xl leading-none tracking-[-0.02em] text-brand-light tabular xl:text-4xl">
                   <RichText text={result.value} />
                 </p>
               ) : null}
