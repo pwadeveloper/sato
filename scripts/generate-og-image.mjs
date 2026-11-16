@@ -2,7 +2,13 @@
 /**
  * Builds the default Open Graph card at public/images/og/default.png.
  *
- *   node scripts/generate-og-image.mjs
+ *   node scripts/generate-og-image.mjs           # the default card
+ *   node scripts/generate-og-image.mjs --pages   # the oil and gas cards too
+ *
+ * `--pages` also writes one card per page that asks for its own: the Oil &
+ * Gas service page and each published Oil & Gas use case. Their words are
+ * read from services.json and use-cases.json, never typed here, and none of
+ * them carries the founding year: Sato's dates stay with Sato's own work.
  *
  * A link preview is often the first thing a recipient of the letters sees, so
  * it carries the mark, the registered name and the founding year rather than a
@@ -88,3 +94,82 @@ console.log(
   `Wrote public/images/og/default.png — ${W}x${H}, ` +
     `logo ${logoMeta.width}x${logoMeta.height}, ${Math.round(size / 1024)}KB`,
 );
+
+/* ------------------------------------------------------------ page cards */
+
+if (process.argv.includes("--pages")) {
+  const services = JSON.parse(await readFile(join(ROOT, "content", "services.json"), "utf8"));
+  const useCases = JSON.parse(await readFile(join(ROOT, "content", "use-cases.json"), "utf8"));
+  const oilGas = services.find((service) => service.slug === "oil-gas");
+  const art = join(ROOT, "public", oilGas.image.src);
+
+  /** Greedy word wrap to a character budget; good enough for two lines. */
+  const wrap = (text, max) => {
+    const lines = [];
+    let line = "";
+    for (const word of clean(text).split(" ")) {
+      if ((line + " " + word).trim().length > max && line) {
+        lines.push(line);
+        line = word;
+      } else {
+        line = (line + " " + word).trim();
+      }
+    }
+    if (line) lines.push(line);
+    return lines;
+  };
+
+  const LEFT = 640;
+
+  async function card(out, eyebrow, title, lead) {
+    const titleLines = wrap(title, 22).slice(0, 4);
+    const leadLines = wrap(lead, 46).slice(0, 3);
+    const titleTop = PAD + 182;
+    const leadTop = titleTop + (titleLines.length - 1) * 52 + 48;
+    const text = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
+  <rect width="${LEFT}" height="${H}" fill="${ASPHALT}"/>
+  <rect x="${LEFT}" y="0" width="4" height="${H}" fill="${BRAND}"/>
+  <text x="${PAD}" y="${PAD + 118}" font-family="Helvetica Neue, Arial, sans-serif"
+        font-size="17" letter-spacing="2.5" fill="${STEEL_LIGHT}">${escape(eyebrow.toUpperCase())}</text>
+  ${titleLines
+    .map(
+      (line, i) => `<text x="${PAD}" y="${titleTop + i * 52}" font-family="Georgia, Times New Roman, serif"
+        font-size="46" letter-spacing="-0.8" fill="${CONCRETE}">${escape(line)}</text>`,
+    )
+    .join("\n  ")}
+  ${leadLines
+    .map(
+      (line, i) => `<text x="${PAD}" y="${leadTop + i * 29}" font-family="Helvetica Neue, Arial, sans-serif"
+        font-size="20" fill="${STEEL_LIGHT}">${escape(line)}</text>`,
+    )
+    .join("\n  ")}
+  <text x="${PAD}" y="${H - PAD + 4}" font-family="Helvetica Neue, Arial, sans-serif"
+        font-size="21" font-weight="500" fill="${CONCRETE}">${escape(name)}</text>
+</svg>`;
+
+    const picture = await sharp(art)
+      .resize({ width: W - LEFT - 4, height: H, fit: "cover", position: "right" })
+      .toBuffer();
+    const target = join(ROOT, "public", "images", "og", out);
+    await sharp(Buffer.from(text))
+      .composite([
+        { input: picture, left: LEFT + 4, top: 0 },
+        { input: logo, left: PAD, top: PAD },
+      ])
+      .png({ compressionLevel: 9 })
+      .toFile(target);
+    const { size: bytes } = await stat(target);
+    console.log(`Wrote public/images/og/${out} — ${W}x${H}, ${Math.round(bytes / 1024)}KB`);
+  }
+
+  await card("oil-gas.png", "Oil & Gas", oilGas.name, oilGas.summary);
+
+  for (const useCase of useCases.filter((entry) => entry.published && entry.serviceSlug === "oil-gas")) {
+    const featured = useCase.featuredResultIds
+      .map((id) => useCase.results.items.find((item) => item.id === id))
+      .filter(Boolean)
+      .map((item) => item.label)
+      .join(" · ");
+    await card(`${useCase.slug}.png`, `Use case · ${useCase.clientDisplay}`, useCase.title, featured);
+  }
+}

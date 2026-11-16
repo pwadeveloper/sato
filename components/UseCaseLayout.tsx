@@ -45,7 +45,7 @@ export function buildUseCaseMetadata(serviceSlug: string, slug: string): Metadat
       title: useCase.title,
       metaTitle: useCase.title,
       metaDescription: useCase.metaDescription,
-      ogImage: page.images?.[`og-${serviceSlug}`] ?? category.image ?? page.ogImage,
+      ogImage: useCase.ogImage ?? category.image ?? page.ogImage,
     },
     getSite(),
   );

@@ -831,6 +831,8 @@ export interface UseCase {
   clientDisplay: ConfirmableText;
   region?: ConfirmableText;
   metaDescription: ConfirmableText;
+  /** Link-preview card (`npm run og -- --pages`). Falls back to the category's. */
+  ogImage?: ImageRef;
   /** Results shown on the card, by id, in order. */
   featuredResultIds: string[];
   context: { heading: ConfirmableText; items: ConfirmableText[] };
@@ -968,6 +970,8 @@ export interface Service {
   registrations?: ConfirmableText[];
   /** The header shot. */
   image: ImageRef | null;
+  /** A link-preview card of its own (1200x630). Falls back to `image`. */
+  ogImage?: ImageRef;
   /**
    * Whether the page sets its `h1` over the header photograph rather than
    * above it.

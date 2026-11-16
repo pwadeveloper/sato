@@ -1235,6 +1235,12 @@
       "width": 1672,
       "height": 941
     },
+    "ogImage": {
+      "src": "/images/og/oil-gas.png",
+      "alt": "Oil & Gas Services — Sato Engineering & Infrastructure Limited",
+      "width": 1200,
+      "height": 630
+    },
     "headerOverlay": true,
     "images": []
   },
