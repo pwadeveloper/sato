@@ -4,7 +4,7 @@
   "shortName": "Sato",
   "registeredName": "Sato Engineering & Infrastructure Limited",
   "tagline": "Quality engineering since 1997",
-  "description": "Sato Engineering & Infrastructure Limited is an engineering and infrastructure company incorporated in 1997, delivering construction and civil, electrical, mechanical, water resources, energy, oil and gas and digital engineering for governments, universities, international development partners and private clients.",
+  "description": "Sato Engineering & Infrastructure Limited is an engineering and infrastructure company incorporated in 1997, delivering building, civil, water resources, electrical and mechanical engineering for governments, universities, international development partners and private clients, and upstream oil and gas engineering and consulting through its consortium.",
   "foundedYear": 1997,
   "anniversaryNote": "30th anniversary in 2027",
   "rcNumber": "317208",
@@ -17,7 +17,8 @@
       "state": "Lagos State",
       "address": "No. 14 Agbaoku Street, Opebi, Ikeja, Lagos",
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=14+Agbaoku+Street%2C+Opebi%2C+Ikeja%2C+Lagos",
-      "note": "Near Awosika bus stop."
+      "note": "Near Awosika bus stop.",
+      "phone": "main"
     },
     {
       "id": "abeokuta",
@@ -27,14 +28,31 @@
       "address": "IBB Boulevard, opposite Southwest Resource Centre, Oke-Mosan, Abeokuta, Ogun State",
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=IBB+Boulevard%2C+Oke-Mosan%2C+Abeokuta%2C+Ogun+State",
       "note": ""
+    },
+    {
+      "id": "canada",
+      "label": "Canada Office",
+      "city": "Milton",
+      "state": "Ontario",
+      "address": "534 – 420 Main St. E., Milton, ON L9T 5G3",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=420+Main+St+E%2C+Milton%2C+ON+L9T+5G3",
+      "note": "",
+      "phone": "canada"
     }
   ],
   "phones": [
     {
       "id": "main",
-      "label": "Telephone",
+      "label": "Telephone (Lagos)",
       "value": "+234 803 330 3278",
       "href": "tel:+2348033303278",
+      "note": ""
+    },
+    {
+      "id": "canada",
+      "label": "Telephone (Canada)",
+      "value": "+1 905 226 6172",
+      "href": "tel:+19052266172",
       "note": ""
     }
   ],
@@ -114,6 +132,10 @@
       {
         "label": "Services",
         "href": "/services"
+      },
+      {
+        "label": "Oil & Gas",
+        "href": "/services/oil-gas"
       },
       {
         "label": "Projects",

@@ -31,6 +31,15 @@
     },
     {
       "type": "prose",
+      "id": "how-we-deliver",
+      "heading": "How we deliver: Sato and our consortium",
+      "body": [
+        "Sato is the single point of contact and accountability for every engagement. In upstream oil and gas, specialist partners with deep international records deliver alongside Sato's engineering and project teams.",
+        "One contract, one team and one standard of delivery."
+      ]
+    },
+    {
+      "type": "prose",
       "id": "motto",
       "heading": "Motto",
       "body": [

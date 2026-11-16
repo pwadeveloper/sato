@@ -65,6 +65,8 @@ export interface Office {
   note?: ConfirmableText;
   /** Google Maps link. Opened in a new tab; never embedded as an iframe. */
   mapUrl?: string;
+  /** The office's line, by `site.phones` id. */
+  phone?: string;
 }
 
 /** A phone number or email address, with the label it is shown under. */

@@ -18,8 +18,8 @@
  *     read as tied to one country, and the former name and registration
  *     number are off the site (see `showRcNumber` in site.json).
  *
- *  2. Contact details. Exactly one email address and one telephone number may
- *     appear anywhere on the site. The source material for the oil and gas
+ *  2. Contact details. Exactly one email address and the two office lines
+ *     (Lagos, Canada) may appear anywhere on the site. The source material for the oil and gas
  *     pages contained personal contact details for the founder, and this is
  *     the check that stops one reaching production by accident.
  *
@@ -44,8 +44,13 @@ const QUIET = process.argv.includes("--quiet");
 const SCANNED = new Set([".html", ".xml", ".txt", ".json"]);
 
 const ALLOWED_EMAIL = "info@satoengineering.com";
-/** The one telephone number, as bare digits, for comparison. */
-const ALLOWED_PHONE_DIGITS = "2348033303278";
+/**
+ * The office lines, as bare digits: Lagos, and the Canada office added with
+ * the oil and gas brief of 16 November. Both are office numbers on the
+ * client's own deck; the rule still exists to stop a personal number
+ * reaching the site.
+ */
+const ALLOWED_PHONE_DIGITS = new Set(["2348033303278", "19052266172"]);
 
 const TERMS = [
   {
@@ -262,12 +267,12 @@ for (const file of files) {
 
   for (const match of [...text.matchAll(PHONE), ...text.matchAll(TEL_HREF)]) {
     const digits = (match[1] ?? match[0]).replace(/\D/g, "");
-    if (digits === ALLOWED_PHONE_DIGITS) continue;
+    if (ALLOWED_PHONE_DIGITS.has(digits)) continue;
     failures.push({
       file: where,
       rule: "phone",
       found: match[0].trim(),
-      why: "only +234 803 330 3278 may appear on the site",
+      why: "only the Lagos and Canada office lines may appear on the site",
       context: context(text, match.index ?? 0, match[0].length),
     });
   }
@@ -279,10 +284,8 @@ if (!failures.length) {
   if (!QUIET) {
     console.log(
       `Banned-terms check passed: ${files.length} exported file(s), no banned ` +
-        `term, no contact detail other than ${ALLOWED_PHONE_DIGITS.replace(
-          /^234(\d{3})(\d{3})(\d{4})$/,
-          "+234 $1 $2 $3",
-        )} and ${ALLOWED_EMAIL}.`,
+        `term, no contact detail other than the office lines ` +
+        `(${[...ALLOWED_PHONE_DIGITS].map((digits) => `+${digits}`).join(", ")}) and ${ALLOWED_EMAIL}.`,
     );
   }
   process.exit(0);

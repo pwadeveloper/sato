@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { DevelopImage } from "@/components/DevelopImage";
 import { Eyebrow } from "@/components/Eyebrow";
+import { Heading } from "@/components/Heading";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { RichText } from "@/components/RichText";
@@ -16,6 +17,7 @@ const site = getSite();
 
 const intro = getSection(page, "intro", "prose");
 const motto = getSection(page, "motto", "prose");
+const howWeDeliver = getSection(page, "how-we-deliver", "prose");
 const mission = getSection(page, "mission", "prose");
 const vision = getSection(page, "vision", "prose");
 
@@ -115,6 +117,25 @@ export default function AboutPage() {
                   </Reveal>
                 ))}
               </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* How the group delivers: Sato as the single point of contact, with
+          its consortium on upstream oil and gas. Partners stay unnamed. */}
+      <Section tone="paper" id={howWeDeliver.id} labelledBy="how-we-deliver-heading">
+        <Container>
+          <div className="lg:grid lg:grid-cols-12 lg:gap-x-12">
+            <div className="lg:col-span-5">
+              <Heading level={2} text={howWeDeliver.heading ?? ""} id="how-we-deliver-heading" split />
+            </div>
+            <div className="mt-8 flex flex-col gap-5 lg:col-span-6 lg:col-start-7 lg:mt-0">
+              {howWeDeliver.body.map((paragraph, index) => (
+                <Reveal key={index} as="p" index={index} className="text-lg text-asphalt text-pretty">
+                  <RichText text={paragraph} />
+                </Reveal>
+              ))}
             </div>
           </div>
         </Container>
