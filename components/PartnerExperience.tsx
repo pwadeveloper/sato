@@ -55,12 +55,18 @@ export function PartnerDetails({ partner, className }: PartProps) {
 }
 
 /**
- * The record: the project table, the wider engagements and the case study.
+ * The record: the project table by region, the patents, the wider
+ * engagements.
+ *
+ * One table with a row group per region, so a screen reader announces the
+ * region as the header of every row under it; newest first inside each
+ * group, as the content holds them. Patents are a table of their own, after
+ * it, because a patent is not a project.
  *
  * `showDates` comes from `showProjectDates` in site.json, the same switch
- * that hides every other project year. Off, the Year column goes entirely —
- * header, cells and the year set under the client on a phone — rather than
- * standing empty. The years stay in the content.
+ * that hides every other project year. Off, the Year column goes entirely,
+ * rather than standing empty; the years stay in the content and still give
+ * the order.
  */
 export function PartnerProjects({
   partner,
@@ -68,72 +74,61 @@ export function PartnerProjects({
   className,
   showDates = true,
 }: PartProps & { showDates?: boolean }) {
-  const visible = partner.projects.slice(0, partner.projectsInitialCount);
-  const overflow = partner.projects.slice(partner.projectsInitialCount);
-  const caseStudy = partner.caseStudy;
+  const columns = showDates ? 3 : 2;
+  const regions = partner.regions
+    .map((region) => ({
+      ...region,
+      rows: partner.projects.filter((row) => row.region === region.id),
+    }))
+    .filter((region) => region.rows.length > 0);
+
+  const head = "py-3 pr-6 eyebrow text-steel-ink";
 
   return (
     <div className={cn(className)}>
       <section aria-labelledby={`${headingId}-projects`}>
-        <h3
-          id={`${headingId}-projects`}
-          className="text-xl font-bold wdth-heading text-balance"
-        >
+        <h3 id={`${headingId}-projects`} className="text-h3 wdth-heading text-balance">
           <RichText text={partner.projectsHeading} />
         </h3>
+        {partner.projectsIntro ? (
+          <p className="mt-2 text-base text-steel-ink wdth-body">
+            <RichText text={partner.projectsIntro} />
+          </p>
+        ) : null}
 
-        {/*
-          Progressive disclosure with no JavaScript. The overflow rows default
-          to visible, and are hidden only by a `:has()` rule in globals.css —
-          so a browser without `:has()` simply shows all 26 rows rather than
-          hiding rows behind a toggle it cannot operate.
-        */}
-        <div data-disclosure="rows" className="mt-5">
-          {/*
-            Below `sm` the year column is dropped and the year is set under
-            the client instead, so the table fits a 360px screen without
-            sideways scrolling. The column is removed rather than squeezed —
-            three columns in 320px leaves the project text unreadable.
-          */}
-          <div className="sm:overflow-x-auto">
-            <table className="w-full border-collapse text-left sm:min-w-[34rem]">
-              <thead>
-                <tr className="border-y border-asphalt">
-                  <th
-                    scope="col"
-                    className="py-3 pr-6 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body"
-                  >
-                    <RichText text={partner.projectColumns.client} />
+        <div className="mt-6 sm:overflow-x-auto">
+          <table className="w-full border-collapse text-left sm:min-w-[34rem]">
+            <thead>
+              <tr className="border-y border-asphalt">
+                <th scope="col" className={head}>
+                  <RichText text={partner.projectColumns.client} />
+                </th>
+                <th scope="col" className={head}>
+                  <RichText text={partner.projectColumns.project} />
+                </th>
+                {showDates ? (
+                  <th scope="col" className={cn(head, "hidden sm:table-cell")}>
+                    <RichText text={partner.projectColumns.year} />
                   </th>
+                ) : null}
+              </tr>
+            </thead>
+            {regions.map((region) => (
+              <tbody key={region.id}>
+                <tr>
                   <th
-                    scope="col"
-                    className="py-3 pr-6 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body"
+                    scope="colgroup"
+                    colSpan={columns}
+                    className="pt-8 pb-2 text-left text-lg font-medium tracking-[-0.01em] text-brand-ink"
                   >
-                    <RichText text={partner.projectColumns.project} />
+                    <RichText text={region.label} />
                   </th>
-                  {showDates ? (
-                    <th
-                      scope="col"
-                      className="hidden py-3 text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body sm:table-cell"
-                    >
-                      <RichText text={partner.projectColumns.year} />
-                    </th>
-                  ) : null}
                 </tr>
-              </thead>
-              <tbody>
-                {[...visible, ...overflow].map((row, index) => (
-                  <tr
-                    key={`${row.client}-${row.project}`}
-                    data-overflow={index >= visible.length ? "" : undefined}
-                    className="border-b border-rule align-baseline"
-                  >
-                    <th
-                      scope="row"
-                      className="py-3 pr-6 text-sm font-semibold wdth-body"
-                    >
+                {region.rows.map((row) => (
+                  <tr key={`${row.client}-${row.project}`} className="border-b border-rule align-baseline">
+                    <th scope="row" className="w-[34%] py-3 pr-6 text-sm font-semibold wdth-body">
                       <RichText text={row.client} />
-                      {showDates ? (
+                      {showDates && row.year ? (
                         <span className="mt-0.5 block text-xs font-normal tabular text-steel-ink sm:hidden">
                           <RichText text={row.year} />
                         </span>
@@ -150,29 +145,52 @@ export function PartnerProjects({
                   </tr>
                 ))}
               </tbody>
-            </table>
-          </div>
-
-          {overflow.length ? (
-            <details className="mt-4">
-              <summary className="inline-flex cursor-pointer list-none items-center gap-2 text-sm font-bold text-brand-ink underline underline-offset-[0.2em] wdth-body">
-                <span data-when="closed">
-                  <RichText text={partner.projectsShowAllLabel} />
-                </span>
-                <span data-when="open">
-                  <RichText text={partner.projectsShowLessLabel} />
-                </span>
-              </summary>
-              {/* The rows this reveals sit above the control, so say so
-                  rather than leaving an expander that appears to open on
-                  nothing. */}
-              <p className="sr-only">
-                <RichText text={partner.projectsDisclosureNote} />
-              </p>
-            </details>
-          ) : null}
+            ))}
+          </table>
         </div>
       </section>
+
+      {partner.patents?.items.length ? (
+        <section aria-labelledby={`${headingId}-patents`} className="mt-14">
+          <h3 id={`${headingId}-patents`} className="text-h3 wdth-heading text-balance">
+            <RichText text={partner.patents.heading} />
+          </h3>
+          <table className="mt-5 w-full border-collapse text-left">
+            <thead>
+              <tr className="border-y border-asphalt">
+                <th scope="col" className={head}>
+                  <RichText text={partner.patents.columns.with} />
+                </th>
+                <th scope="col" className={head}>
+                  <RichText text={partner.patents.columns.patent} />
+                </th>
+                {showDates ? (
+                  <th scope="col" className={head}>
+                    <RichText text={partner.patents.columns.year} />
+                  </th>
+                ) : null}
+              </tr>
+            </thead>
+            <tbody>
+              {partner.patents.items.map((item) => (
+                <tr key={item.patent} className="border-b border-rule align-baseline">
+                  <th scope="row" className="w-[34%] py-3 pr-6 text-sm font-semibold wdth-body">
+                    <RichText text={item.with} />
+                  </th>
+                  <td className="py-3 pr-6 text-sm wdth-body">
+                    <RichText text={item.patent} />
+                  </td>
+                  {showDates ? (
+                    <td className="py-3 text-sm tabular wdth-body">
+                      <RichText text={item.year} />
+                    </td>
+                  ) : null}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      ) : null}
 
       {partner.engagements ? (
         <ServiceListBlock
@@ -180,70 +198,8 @@ export function PartnerProjects({
           headingId={`${headingId}-engagements`}
           headingLevel={3}
           variant="dense"
-          className="mt-12"
+          className="mt-14"
         />
-      ) : null}
-
-      {caseStudy ? (
-        <section
-          aria-labelledby={`${headingId}-case-study`}
-          className="mt-12 border-t-[3px] border-brand bg-white p-6 md:p-10"
-        >
-          <p className="text-2xs font-semibold uppercase tracking-[0.08em] text-brand-ink wdth-body">
-            <RichText text={caseStudy.attribution} />
-          </p>
-
-          <h3
-            id={`${headingId}-case-study`}
-            className="mt-3 text-h3 wdth-heading text-balance"
-          >
-            <RichText text={caseStudy.heading} />
-          </h3>
-
-          <div className="mt-6 grid gap-8 lg:grid-cols-2">
-            <div>
-              <h4 className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
-                <RichText text={caseStudy.challengeHeading} />
-              </h4>
-              <p className="mt-2 text-base wdth-body text-pretty">
-                <RichText text={caseStudy.challenge} />
-              </p>
-            </div>
-            <div>
-              <h4 className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
-                <RichText text={caseStudy.solutionHeading} />
-              </h4>
-              <p className="mt-2 text-base wdth-body text-pretty">
-                <RichText text={caseStudy.solution} />
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h4 className="text-2xs font-semibold uppercase tracking-[0.08em] text-steel-ink wdth-body">
-              <RichText text={caseStudy.resultsHeading} />
-            </h4>
-            <p className="mt-2 max-w-(--container-measure) text-sm text-steel-ink wdth-body">
-              <RichText text={caseStudy.resultsIntro} />
-            </p>
-            <ul className="mt-4 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-4">
-              {caseStudy.results.map((result) => (
-                <li
-                  key={result}
-                  className="bg-white p-4 text-base font-semibold wdth-body"
-                >
-                  <RichText text={result} />
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {caseStudy.note ? (
-            <p className="mt-6 text-xs text-steel-ink wdth-body">
-              <RichText text={caseStudy.note} />
-            </p>
-          ) : null}
-        </section>
       ) : null}
     </div>
   );

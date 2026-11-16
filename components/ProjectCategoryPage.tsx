@@ -8,8 +8,11 @@ import { DraftNotice } from "@/components/DraftNotice";
 import { PageHeader } from "@/components/PageHeader";
 import { PartnerProjects } from "@/components/PartnerExperience";
 import { CategoryGallery, ProjectList } from "@/components/CategoryGallery";
+import { ResultsGrid } from "@/components/ResultsGrid";
+import { Reveal } from "@/components/Reveal";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
+import { UseCaseCard } from "@/components/UseCaseCard";
 
 import {
   getPage,
@@ -19,10 +22,14 @@ import {
   getProjectCategories,
   getProjectCategory,
   getProjectsInCategory,
+  getFeaturedResults,
   getSection,
+  getServiceResults,
   getSite,
+  getUseCases,
   isPartnerCategory,
 } from "@/lib/content";
+import type { CtaSection } from "@/lib/content-types";
 import { buildPageMetadata } from "@/lib/metadata";
 import { isReviewMode } from "@/lib/review-mode";
 
@@ -72,7 +79,10 @@ export function buildCategoryMetadata(slug: string): Metadata {
 export function ProjectCategoryPage({ slug }: { slug: string }) {
   const page = getPage("projects");
   const site = getSite();
-  const cta = getSection(page, "cta-default", "cta");
+  // A category may supply its own CTA by id, as a service may.
+  const cta: CtaSection = page.sections.some((section) => section.id === `cta-${slug}`)
+    ? getSection(page, `cta-${slug}`, "cta")
+    : getSection(page, "cta-default", "cta");
   const labels = page.labels ?? {};
 
   const category = getProjectCategory(slug);
@@ -87,7 +97,20 @@ export function ProjectCategoryPage({ slug }: { slug: string }) {
 
   // A partner-sourced category is only as approved as the service it reads
   // from, so it carries that service's review state with it.
-  const draft = getPartnerCategoryService(category)?.reviewStatus === "draft";
+  const partnerService = getPartnerCategoryService(category);
+  const draft = partnerService?.reviewStatus === "draft";
+
+  // The proof, ahead of the record: the use cases written up in full, and
+  // "Results at a glance" — each use case's headline results, then the
+  // published results the record names, read from the service page so the
+  // two never carry different wording.
+  const useCases = category.serviceSlug ? getUseCases(category.serviceSlug) : [];
+  const glance = [
+    ...useCases.flatMap((useCase) => getFeaturedResults(useCase)),
+    ...(partnerService && partner?.highlightResultIds
+      ? getServiceResults(partnerService, partner.highlightResultIds)
+      : []),
+  ];
 
   return (
     <>
@@ -117,6 +140,43 @@ export function ProjectCategoryPage({ slug }: { slug: string }) {
             <p className="mb-8 max-w-(--container-measure) border-l-[3px] border-brand py-1 pl-5 text-base font-semibold wdth-body">
               <RichText text={attribution} />
             </p>
+          ) : null}
+
+          {glance.length ? (
+            <ResultsGrid
+              heading={labels.resultsAtAGlance ?? ""}
+              groups={[{ id: "glance", items: glance }]}
+              headingId="results-at-a-glance"
+              headingLevel={2}
+              className="mb-16"
+            />
+          ) : null}
+
+          {useCases.length ? (
+            <section aria-labelledby="use-cases-heading" className="mb-20">
+              <h2 id="use-cases-heading" className="eyebrow text-steel-ink">
+                <RichText text={labels.useCases ?? ""} />
+              </h2>
+              <div className="mt-4 flex flex-col gap-6">
+                {useCases.map((useCase) => (
+                  <UseCaseCard
+                    key={useCase.slug}
+                    href={`/projects/${category.slug}/${useCase.slug}`}
+                    eyebrow={labels.useCase ?? ""}
+                    title={useCase.title}
+                    clientDisplay={useCase.clientDisplay}
+                    results={getFeaturedResults(useCase)}
+                    linkLabel={labels.useCaseLink ?? ""}
+                  />
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          {partner && labels.projectRecord ? (
+            <h2 className="eyebrow mb-4 text-steel-ink">
+              <RichText text={labels.projectRecord} />
+            </h2>
           ) : null}
 
           {partner ? (

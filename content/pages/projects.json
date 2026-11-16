@@ -20,10 +20,21 @@
     "categoriesLabel": "Project categories",
     "clientsLink": "Clients we've worked with",
     "allProjects": "All projects",
-    "partnerAttribution": "Delivered by our technical partner team.",
+    "partnerAttribution": "Delivered by our consortium.",
     "alsoIn": "Also in",
     "categoryPhotos": "Other photographs",
-    "projectList": "List of projects"
+    "projectList": "List of projects",
+    "lightboxOpen": "View larger",
+    "lightboxClose": "Close",
+    "lightboxNext": "Next photograph",
+    "lightboxPrevious": "Previous photograph",
+    "lightboxCounter": "Photograph {n} of {total}",
+    "nextProject": "Next project",
+    "resultsAtAGlance": "Results at a glance",
+    "useCases": "Use cases",
+    "useCase": "Use case",
+    "useCaseLink": "Read the use case",
+    "projectRecord": "Project record"
   },
   "images": {
     "header": {
@@ -465,7 +476,7 @@
           "group": "energy",
           "source": "partner",
           "deliveredBy": "partner",
-          "intro": "Reservoir management, field development planning, production optimization and digital oilfield delivery for national and international oil companies.",
+          "intro": "Our consortium's record in upstream oil and gas: published results, use cases and selected projects.",
           "image": {
             "src": "/images/oil-gas/platforms-and-pipelines.webp",
             "alt": "Two offshore platforms and a supply vessel, with subsea pipelines and wellheads drawn across the water",
@@ -517,6 +528,22 @@
         {
           "label": "Our services",
           "href": "/services"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "id": "cta-oil-gas",
+      "heading": "Request a technical briefing",
+      "body": "Full project detail is shared in direct presentations. Tell us about your field, asset or procurement requirement.",
+      "ctas": [
+        {
+          "label": "Contact us",
+          "href": "/contact"
+        },
+        {
+          "label": "Oil & Gas services",
+          "href": "/services/oil-gas"
         }
       ]
     }

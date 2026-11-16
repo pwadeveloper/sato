@@ -9,6 +9,8 @@ import { cn } from "@/lib/cn";
 
 export interface PageHeaderProps {
   title: string;
+  /** A short label above the heading (a use case's "Use case · client"). */
+  eyebrow?: string;
   /** The page's lead paragraphs, on the measure under the heading. */
   intro?: string[];
   image?: ImageRef | null;
@@ -37,6 +39,7 @@ export interface PageHeaderProps {
  */
 export function PageHeader({
   title,
+  eyebrow,
   intro = [],
   image,
   above,
@@ -49,11 +52,16 @@ export function PageHeader({
       <Section tone="concrete" as="div" className="pb-10 md:pb-12">
         <Container>
           {above}
+          {eyebrow ? (
+            <p className={cn("eyebrow text-brand-ink", above ? "mt-6" : undefined)}>
+              <RichText text={eyebrow} />
+            </p>
+          ) : null}
           <Heading
             level={1}
             text={title}
             id={headingId}
-            className={above ? "mt-6" : undefined}
+            className={eyebrow ? "mt-3" : above ? "mt-6" : undefined}
           />
 
           {intro.map((paragraph, index) => (

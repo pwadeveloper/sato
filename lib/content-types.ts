@@ -747,11 +747,17 @@ export interface ProcurementBlock {
   note?: ConfirmableText;
 }
 
-/** One row of the partner track record. Never a Sato project. */
+/** One row of the consortium's track record. Never a Sato project. */
 export interface PartnerProject {
   client: ConfirmableText;
   project: ConfirmableText;
+  /**
+   * Completion year, or empty where the work has no end date. Shown only
+   * while `showProjectDates` is on; it still orders the record, newest first.
+   */
   year: ConfirmableText;
+  /** One of `PartnerBlock.regions`, by id. */
+  region: string;
 }
 
 /** A headline number. Published only once the figure is settled. */
@@ -760,54 +766,80 @@ export interface PartnerFigure {
   label: ConfirmableText;
 }
 
-export interface PartnerCaseStudy {
-  heading: ConfirmableText;
-  /** Marks the whole block as the partner team's work, not Sato's. */
-  attribution: ConfirmableText;
-  challengeHeading: ConfirmableText;
-  challenge: ConfirmableText;
-  solutionHeading: ConfirmableText;
-  solution: ConfirmableText;
-  resultsHeading: ConfirmableText;
-  resultsIntro: ConfirmableText;
-  results: ConfirmableText[];
-  note?: ConfirmableText;
+export interface PartnerPatent {
+  with: ConfirmableText;
+  patent: ConfirmableText;
+  year: ConfirmableText;
 }
 
 /**
- * The record of work delivered by a technical partner, not by Sato.
+ * The record of upstream work delivered by Sato's consortium partners.
  *
- * This block is the *record* — the project table, the wider engagements and
- * the case study — and it is read in one place, `/projects/oil-gas`, under
- * the attribution line that category prints. It carries no heading and no
- * prose of its own: the words that describe the relationship belong to the
- * service page's Partnerships section (`sections.partnerships`), so the
- * sentence a reader meets is edited in the same place as the rest of that
- * page rather than buried in the table's own content.
- *
- * None of it reaches the projects index, the project count or Sato's
- * structured data.
+ * Read on `/projects/oil-gas` (through the category's `source: "partner"`),
+ * under the attribution line that category prints, and the figures under the
+ * Oil & Gas service page's heading. None of it reaches the projects index,
+ * Sato's own project count or the structured data.
  */
 export interface PartnerBlock {
-  /** The collaborator's name. Empty until Sato confirms we may print it. */
+  /** The partners' name. Empty until Sato confirms we may print it. */
   name: ConfirmableText;
-  /** Label for the name, e.g. "Technical partner". */
+  /** Label for the name, e.g. "Consortium partner". */
   nameLabel: ConfirmableText;
   /** Headline figures, under the service page's heading. Empty hides them. */
   figures: PartnerFigure[];
   /** Whose figures they are, printed over them — "Our consortium". */
   figuresLabel?: ConfirmableText;
   projectsHeading: ConfirmableText;
+  projectsIntro?: ConfirmableText;
   projectColumns: { client: ConfirmableText; project: ConfirmableText; year: ConfirmableText };
+  /** The record's groups, in display order. A group with no rows is skipped. */
+  regions: Array<{ id: string; label: ConfirmableText }>;
+  /** Newest first within each region. */
   projects: PartnerProject[];
-  /** Rows shown before the "Show all" disclosure opens. */
-  projectsInitialCount: number;
-  projectsShowAllLabel: ConfirmableText;
-  projectsShowLessLabel: ConfirmableText;
-  /** Read out inside the disclosure, whose rows appear above the control. */
-  projectsDisclosureNote: ConfirmableText;
+  /** Patents, listed apart from the projects: they are not projects. */
+  patents?: {
+    heading: ConfirmableText;
+    columns: { with: ConfirmableText; patent: ConfirmableText; year: ConfirmableText };
+    items: PartnerPatent[];
+  };
   engagements?: ServiceList;
-  caseStudy?: PartnerCaseStudy;
+  /**
+   * Results from the service page's `results` block to repeat in "Results at
+   * a glance" on the projects page, by id — the same records, never a second
+   * copy of their wording.
+   */
+  highlightResultIds?: string[];
+}
+
+/**
+ * One use case: a single engagement written up in full, at
+ * `/projects/<serviceSlug>/<slug>`.
+ *
+ * A collection rather than a field on the service, so that each new use case
+ * from the client is one entry in `content/use-cases.json` and no code. The
+ * client stays anonymised (`clientDisplay`) until naming them is cleared.
+ * `todo` holds notes for editors; nothing renders it.
+ */
+export interface UseCase {
+  slug: string;
+  serviceSlug: string;
+  published: boolean;
+  order: number;
+  title: ConfirmableText;
+  clientDisplay: ConfirmableText;
+  region?: ConfirmableText;
+  metaDescription: ConfirmableText;
+  /** Results shown on the card, by id, in order. */
+  featuredResultIds: string[];
+  context: { heading: ConfirmableText; items: ConfirmableText[] };
+  challenges: {
+    heading: ConfirmableText;
+    items: Array<{ heading: ConfirmableText; body: ConfirmableText }>;
+  };
+  solution: { heading: ConfirmableText; intro: ConfirmableText; capabilities: ConfirmableText[] };
+  results: { heading: ConfirmableText; items: ResultItem[] };
+  impact: { heading: ConfirmableText; intro: ConfirmableText; items: ConfirmableText[] };
+  todo?: string[];
 }
 
 /**
