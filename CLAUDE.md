@@ -32,7 +32,7 @@ banned-terms rule below, which the build enforces.
    - Anything **optional** is stored empty (`""` or `[]`) and its section is hidden when empty. Never placehold optional content. Registrations, certifications, safety record, awards, branch offices, social links and project `year` / `location` / `client` all work this way.
    - A division with `"reviewStatus": "draft"` also fails `npm run build:prod`. Unreviewed capability copy must not reach an oil company's procurement team.
 4. **Names:** use "Sato Engineering & Infrastructure Limited" in full on first mention per page, "Sato" after. **Never** mention the former name, the change of name, or the RC number. `rcNumber` stays in `site.json` behind `"showRcNumber": false` so it can be restored.
-5. **Banned terms, enforced by the build.** `npm run check:banned` scans the exported `/out` and fails on `nigeria` / `nigerian` (any case), `formerly`, and `317208`. It also fails on any email address other than `info@satoengineering.com` and any telephone number other than `+234 803 330 3278` — those two are the only contact details allowed anywhere on the site. Avoid "indigenous" as well; it carries the same implication and the same instruction, even though no pattern catches it. Professional bodies are written as abbreviations (COREN, NSE, NIM) because their full names contain the banned word.
+5. **Banned terms, enforced by the build.** `npm run check:banned` scans the exported `/out` and fails on `nigeria` / `nigerian` (any case), `formerly`, and `317208`. It also fails on any email address other than `info@satoengineering.com` and any telephone number other than the two office lines, `+234 803 330 3278` (Lagos) and `+1 905 226 6172` (Canada, added 16 November) — those are the only contact details allowed anywhere on the site. Avoid "indigenous" as well; it carries the same implication and the same instruction, even though no pattern catches it. Professional bodies are written as abbreviations (COREN, NSE, NIM) because their full names contain the banned word.
 
    **One scoped exception: the founder's bio.** The client asked for his own
    profile to name every institution in full, country included, and that is
@@ -89,6 +89,14 @@ banned-terms rule below, which the build enforces.
    the client wants it gone again, emptying that string is the whole change.
    It is flagged for him in `docs/open-items.md`.
 
+   **16 November (`docs/decisions/oil-gas-integration-2026-11-16.md`):** the
+   oil and gas work is now framed as Sato's **consortium's**, everywhere —
+   "our consortium", never a bare "we". The attribution line reads
+   "Delivered by our consortium."; the consortium's figures (160 upstream
+   projects, 200+ years, 150+ publications) are published in labelled stat
+   strips; a university-partnerships line is back, credited to the
+   consortium; and Sato's own dates never sit beside an oil and gas claim.
+
    What has held throughout:
 
    - Capabilities and solutions are written as Sato's ("We provide…"). That
@@ -97,9 +105,9 @@ banned-terms rule below, which the build enforces.
      source of truth, no duplication into `projects.json`, and no individual
      detail pages. `/projects/oil-gas` reads them through the facet's
      `source: "partner"`.
-   - The partner's **figures** (project counts, patents, countries) stay
-     empty and hidden, because the source numbers contradict each other —
-     that was never an attribution question.
+   - The partner's **figures** were held while the sources contradicted
+     each other; the 16 November register settled three of them (above).
+     Patents and countries stay without a number.
    - The partner's **recognition** — the 2015 SPE award and the university
      partnerships — is **deleted**, on the client's instruction: it is not
      Sato's recognition and a reader cannot tell that from an award line. The
@@ -132,15 +140,19 @@ banned-terms rule below, which the build enforces.
 | `/projects/water-resources-development-management` | Water Resources Development & Management Projects |
 | `/projects/civil-engineering-road` | Civil Engineering & Road Construction Projects |
 | `/projects/electrical-mechanical` | Electrical & Mechanical Engineering Projects |
-| `/projects/oil-gas` | **Oil & Gas Services** — a table, not cards; attributed |
+| `/projects/oil-gas` | **Oil & Gas Services** — results, use cases, the record by region; attributed |
+| `/projects/oil-gas/[slug]` | An Oil & Gas use case, from `content/use-cases.json` |
 | `/projects/[slug]` | Project detail |
 | `/clients` | Clients |
 | `/contact` | Contact |
 
-**Five service categories**, in display order, are the `group` values in
-`services.json`: `infrastructure` (four disciplines, with a landing page),
-`energy`, `oil-gas`, `digital-twin` and `research-innovation`. The Technology
-group that held the last two together was split on the client's instruction.
+**Two service groups** since 16 November, the `group` values in
+`services.json`: `infrastructure` (four disciplines, with a landing page) and
+`energy` (Oil & Gas, Energy Services, Digital Twin, Research — in that order;
+its heading links to `/services#energy`, because `/services/energy` is the
+Energy Services page). The menus are two-column mega-menus, and Oil & Gas
+keeps its three anchors as sub-items. (Before that there were five
+single-service categories; see the oil and gas decision.)
 `getServiceBands()` in `lib/content.ts` resolves each category's label, intro,
 photograph and landing-page link from the `group…` entries in
 `pages/services.json` (`labels` for text, `images` for the picture), and the
@@ -411,7 +423,8 @@ old `/safety-policies/` redirect to `/about`. The rewritten content is kept in
 
 - `site.json` — company name, tagline, founded year, registrations, **ordered** `offices` (no "head office"; the first is the one published in structured data), phones, emails, nav, footer. `rcNumber` is held behind `showRcNumber: false`. **`showLeadership`** (false) hides the Leadership page; see above. **`showProjectDates`** (false since launch-ready) switches every year on the site off in one edit — cards, category pages and project pages all read it through `getProjectYear()`. **`homeShowMissionVision`** puts the mission and the vision back on Home, as a pair below the motto; both are held in `pages/home.json` whether or not they are shown. It is never one without the other — the vision alone was what the client asked us to take off. The phone and the email are **not** in the footer; they are on `/contact` only, and in the structured data.
 - `pages/*.json` — per-page headings and body blocks (home, about, services overview, infrastructure landing, contact, leadership intro, projects, clients, 404). `hse.json` is present but unregistered. A page may carry **`serviceSections`** — the same three-section shape a service has — and only `infrastructure.json` does, because `/services/infrastructure` reads as a service page though it is a category landing page. A page may also carry **`reviewStatus`**, and that same file does: its four infrastructure types and six solution areas are written on the page rather than on any service, so without it they would be the one body of capability copy outside the review gate. `check-placeholders.mjs` reads pages as well as services. `projects.json` also holds the eight project-category facets, and `about.json` carries an `images.aside` — the photograph beside the story. (A page may instead carry `imageSets.aside`, which the About template lays out as a 2×2 grid; the collage was retired because one of its four photographs was only Medium confidence.) Alongside `labels` (short strings the template needs), a page may carry **`images`** — the photographs its template needs that belong to no single section: its `header` shot, and on the services overview one per category, keyed `groupInfrastructure` and so on.
-- `services.json` — array of services: slug, name, **group** (infrastructure / energy / oil-gas / digital-twin / research-innovation), **order**, **reviewStatus** (approved / draft), shortSummary, summary, **`sections`**, relatedProjectSlugs[], relatedServiceSlugs[], image (the header shot) and **`images[]`** (the client's photographs of delivered work, rendered as a gallery at the foot of Capabilities, hidden when empty). Two booleans: **`headerOverlay`** (the `h1` over the header photograph — Oil & Gas only) and **`showSectionsInMenu`** (the Services dropdown lists this page's sections — Oil & Gas only). **`partner`** holds the oil and gas project record and is read by `/projects/oil-gas`, not by the service page; see rule 9.
+- `use-cases.json` — the use cases, one entry each (`serviceSlug`, `published`, context, challenges, solution, results with ids, impact; `clientDisplay` keeps the client anonymous; `todo` is for editors and never rendered). Rendered at `/projects/<category>/<slug>`.
+- `services.json` — array of services: slug, name, **group** (infrastructure / energy), **order**, **reviewStatus** (approved / draft), shortSummary, summary, **`sections`**, relatedProjectSlugs[], relatedServiceSlugs[], image (the header shot) and **`images[]`** (the client's photographs of delivered work, rendered as a gallery at the foot of Capabilities, hidden when empty). Two booleans: **`headerOverlay`** (the `h1` over the header photograph — Oil & Gas only) and **`showSectionsInMenu`** (the Services dropdown lists this page's sections — Oil & Gas only). **`partner`** holds the oil and gas project record (rows with a `region`, `patents`, `engagements`, `highlightResultIds`) and is read by `/projects/oil-gas`; its `figures` sit under the service page's heading. **`overview`** is an opening band before the sub-nav (Oil & Gas's "Our consortium"). `media` also takes `flow`, `cycle`, `prose` and `results`. A service may replace "Backed by Sato" with `backed-by-<slug>` in `pages/services.json`; see rule 9.
 
   **`sections` is the whole page.** It has three optional keys —
   `capabilities`, `solutions`, `partnerships` — and each one takes
@@ -425,7 +438,7 @@ old `/safety-policies/` redirect to `/about`. The rewritten content is kept in
   (`aside`, a `list` media block, `engagements`) is either flat — `items`,
   bare phrases — or grouped, with **`groups[]`** of `{ name, description }`.
 - `projects.json` — array: slug, title, **categories[]**, **deliveredBy**, summary, scope[], images[] (each with the old site's **`caption`**, shown beneath it by `components/ProjectGallery.tsx`), **optional** `subcategory` (unused since launch-ready), and **optional** client, location, year, status. `year` is kept but never shown while `showProjectDates` is false, and no other field may carry a date. `images` empty means the card falls back to its category's `placeholderImages` and the detail page shows no gallery at all. `categories` holds facet values — the same slugs as the services — and more than one is normal. `deliveredBy` is `"sato"` or `"partner"` and drives the attribution line. Empty means hidden, never placeheld. `status` is only ever `"Completed"` or empty — the site never labels work as ongoing.
-- `clients.json` — array: name, category (federal / state / international / education / private / **oil-gas-partner**), logo?. The page shows names only — no logos, no category headings, no agencies nested under a government. `oil-gas-partner` entries render in a separate block under their own attributed heading and sit behind the same review gate as the Oil & Gas page. **This heading is now inconsistent with `/projects/oil-gas`**, which no longer attributes; the client was asked which way to settle it (see `docs/open-items.md`) and nothing changes here until he answers.
+- `clients.json` — array: name, category (federal / state / international / education / private / **oil-gas-partner**), logo?. The page shows names only — no logos, no category headings, no agencies nested under a government. `oil-gas-partner` entries render in a separate block under their own attributed heading and sit behind the same review gate as the Oil & Gas page. Its heading is "Oil and gas clients served by our consortium" (16 November), matching the attribution on `/projects/oil-gas`.
 - `team.json` — array: slug, name, title, isLeadership, **published**, bio, qualifications[], memberships[], photo?. `published: false` keeps a record in the file but off the site, the sitemap and the structured data.
 - `equipment.json` — array: name, category, quantity?, notes?
 
@@ -491,9 +504,9 @@ Three rules follow from it:
   has white copy over a full-bleed photograph, so the observer that drove it
   is gone with it.
 - **The footer is one band**, under 120px on desktop: name and © on the left,
-  five links on the right. The phone number and the email address were taken
+  six links on the right (Oil & Gas was added on 16 November). The phone number and the email address were taken
   out on the client's instruction — they belong on `/contact`, which is one of
-  those five links, and repeating them on fifteen pages was one more thing to
+  those six links, and repeating them on fifteen pages was one more thing to
   keep in step. `site.phones` and `site.emails` are unchanged; the Contact
   page and the structured data still read them.
 
@@ -577,6 +590,12 @@ disagree with this file:
     "Positioning of ductile iron pipe". The lime dosing caption is singular,
     "Lime dosing pump installed"; no extracted photograph shows the pumps
     better, so it stays.
+14. `oil-gas-integration-2026-11-16.md` — **the current one for oil and
+    gas, the menus and the consortium framing.** Two service groups; the
+    Oil & Gas page in deck order in the consortium voice; the record by
+    region; use cases as a collection; the Canada office; Home's two
+    pillars and labelled stat strips. The confidential brief and claims
+    register are in `_brief/` (gitignored) — never commit them.
 
 ## Review deployments
 
