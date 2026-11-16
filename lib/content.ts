@@ -11,6 +11,7 @@ import projectsJson from "@/content/projects.json";
 import clientsJson from "@/content/clients.json";
 import teamJson from "@/content/team.json";
 import equipmentJson from "@/content/equipment.json";
+import useCasesJson from "@/content/use-cases.json";
 
 import aboutPageJson from "@/content/pages/about.json";
 import clientsPageJson from "@/content/pages/clients.json";
@@ -42,6 +43,8 @@ import type {
   ServiceSections,
   Site,
   TeamMember,
+  ResultItem,
+  UseCase,
 } from "./content-types";
 
 /**
@@ -89,6 +92,12 @@ const team = typed<TeamMember[]>(teamJson)
   .sort((a, b) => a.order - b.order);
 
 const equipment = typed<Equipment[]>(equipmentJson);
+
+/** Published use cases only, in their own order. Drafts never reach a page. */
+const useCases = typed<UseCase[]>(useCasesJson)
+  .filter((useCase) => useCase.published)
+  .slice()
+  .sort((a, b) => a.order - b.order);
 
 /**
  * Every routed page's content.
@@ -703,4 +712,45 @@ export function getTeam(): TeamMember[] {
 
 export function getEquipment(): Equipment[] {
   return equipment;
+}
+
+/* ------------------------------------------------------------- use cases */
+
+/** Published use cases, optionally for one service, in display order. */
+export function getUseCases(serviceSlug?: string): UseCase[] {
+  return serviceSlug
+    ? useCases.filter((useCase) => useCase.serviceSlug === serviceSlug)
+    : useCases;
+}
+
+export function getUseCase(serviceSlug: string, slug: string): UseCase {
+  const useCase = useCases.find(
+    (entry) => entry.serviceSlug === serviceSlug && entry.slug === slug,
+  );
+  if (!useCase) {
+    throw new Error(`No published use case "${slug}" for "${serviceSlug}" in /content/use-cases.json.`);
+  }
+  return useCase;
+}
+
+/** A use case's own results, picked out by id for its card. */
+export function getFeaturedResults(useCase: UseCase): ResultItem[] {
+  return useCase.featuredResultIds
+    .map((id) => useCase.results.items.find((item) => item.id === id))
+    .filter((item): item is ResultItem => Boolean(item));
+}
+
+/**
+ * Results from a service page's `results` blocks, by id, in the order asked
+ * for. This is how `/projects/oil-gas` repeats published results without a
+ * second copy of their wording.
+ */
+export function getServiceResults(service: Service, ids: string[]): ResultItem[] {
+  const all = Object.values(service.sections)
+    .flatMap((section) => section?.media ?? [])
+    .flatMap((block) => (block.type === "results" ? block.groups : []))
+    .flatMap((group) => group.items);
+  return ids
+    .map((id) => all.find((item) => item.id === id))
+    .filter((item): item is ResultItem => Boolean(item));
 }

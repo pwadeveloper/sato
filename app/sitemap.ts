@@ -4,6 +4,7 @@ import {
   getProjects,
   getServices,
   getSite,
+  getUseCases,
   isPagePublished,
 } from "@/lib/content";
 
@@ -39,6 +40,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...getProjectCategories().map((category) =>
       entry(`/projects/${category.slug}`, 0.85, "monthly"),
     ),
+    // A use case sits under the category mirroring its service.
+    ...getUseCases().flatMap((useCase) => {
+      const category = getProjectCategories().find(
+        (facet) => facet.serviceSlug === useCase.serviceSlug,
+      );
+      return category
+        ? [entry(`/projects/${category.slug}/${useCase.slug}`, 0.75, "yearly")]
+        : [];
+    }),
     ...getProjects().map((project) => entry(`/projects/${project.slug}`, 0.6, "yearly")),
     entry("/clients", 0.7, "yearly"),
     ...(isPagePublished("leadership") ? [entry("/leadership", 0.7, "yearly")] : []),

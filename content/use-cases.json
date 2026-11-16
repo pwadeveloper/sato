@@ -1,0 +1,93 @@
+[
+  {
+    "slug": "well-intervention",
+    "serviceSlug": "oil-gas",
+    "published": true,
+    "order": 1,
+    "title": "Well Intervention Strategies for Production Enhancement",
+    "clientDisplay": "A national oil company",
+    "region": "",
+    "metaDescription": "Use case: an automated production enhancement system for a national oil company, validated in two giant brownfields, delivering 250,000 BOPD of incremental production with 17% less CAPEX.",
+    "featuredResultIds": [
+      "production",
+      "capex"
+    ],
+    "context": {
+      "heading": "Context and drivers",
+      "items": [
+        "The operator must optimize CAPEX through improved utilization of existing assets",
+        "Increase production from mature brownfields at profitable operating costs",
+        "Accelerate decision-making to maximize production across large asset bases",
+        "Achieving these goals requires a scalable, accurate and fast method for identifying high-value production enhancement opportunities while minimizing risk"
+      ]
+    },
+    "challenges": {
+      "heading": "Key challenges",
+      "items": [
+        {
+          "heading": "Slow candidate identification",
+          "body": "Conventional workflows struggle to identify and rank production enhancement opportunities across thousands of wells quickly enough to support aggressive targets."
+        },
+        {
+          "heading": "Operational readiness",
+          "body": "Workover and intervention teams need continuous, data-driven support to sustain high-frequency campaigns."
+        },
+        {
+          "heading": "Poor predictive accuracy",
+          "body": "Traditional engineering models often fail to reliably predict post-job well productivity, resulting in lower success rates and inefficient resource allocation."
+        }
+      ]
+    },
+    "solution": {
+      "heading": "Solution",
+      "intro": "An Automated Production Enhancement System, deployed to transform the full lifecycle of workover and production optimization, from opportunity identification to post-job evaluation. Core capabilities:",
+      "capabilities": [
+        "Automated ranking and selection of prime candidates with reduced risk",
+        "AI-driven predictions of post-job well performance, enabling investment decisions",
+        "Closed-loop analytics to evaluate job outcomes, strengthen future recommendations and continuously improve field performance"
+      ]
+    },
+    "results": {
+      "heading": "Deployment and field results",
+      "items": [
+        {
+          "id": "validation",
+          "value": "3,000+",
+          "label": "Validated in two giant brownfields with 3,000+ active well strings and 1,400+ workovers executed annually"
+        },
+        {
+          "id": "accuracy",
+          "value": ">80%",
+          "label": ">80% predictive accuracy in blind tests, better than traditional models"
+        },
+        {
+          "id": "opportunities",
+          "value": "5–20×",
+          "label": "5–20× increase in feasible, high-value opportunities compared with manual reviews"
+        },
+        {
+          "id": "production",
+          "value": "250,000 BOPD",
+          "label": "250,000 BOPD incremental production delivered"
+        },
+        {
+          "id": "capex",
+          "value": "17%",
+          "label": "17% reduction in CAPEX required to achieve the production uplift"
+        }
+      ]
+    },
+    "impact": {
+      "heading": "Business impact",
+      "intro": "Supports the operator's strategic production growth targets by:",
+      "items": [
+        "Unlocking large-scale brownfield potential",
+        "Increasing intervention success rates",
+        "Accelerating delivery of sustainable production gains"
+      ]
+    },
+    "todo": [
+      "Naming ADNOC beside these results is HOLD until the client consents (claims register A2)."
+    ]
+  }
+]

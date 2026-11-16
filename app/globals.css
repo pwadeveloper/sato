@@ -202,29 +202,3 @@ html.lenis body {
   }
 }
 
-/*
- * Row disclosure with no JavaScript — the Oil & Gas partner table.
- */
-[data-disclosure="rows"]:has(details:not([open])) [data-overflow] {
-  display: none;
-}
-
-[data-disclosure="rows"] details:not([open]) [data-when="open"],
-[data-disclosure="rows"] details[open] [data-when="closed"] {
-  display: none;
-}
-
-[data-disclosure="rows"] summary::-webkit-details-marker {
-  display: none;
-}
-
-[data-disclosure="rows"] summary::after {
-  content: "\25BC";
-  font-size: 0.6em;
-  line-height: 1;
-  transition: transform 150ms var(--ease-out-quiet);
-}
-
-[data-disclosure="rows"] details[open] summary::after {
-  transform: rotate(180deg);
-}
