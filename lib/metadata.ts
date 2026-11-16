@@ -69,7 +69,7 @@ export function buildServiceMetadata(service: Service, site: Site): Metadata {
       title: service.name,
       metaTitle: service.name,
       metaDescription: service.summary,
-      ogImage: service.image ?? undefined,
+      ogImage: service.ogImage ?? service.image ?? undefined,
       sections: [],
     },
     site,

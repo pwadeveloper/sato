@@ -88,6 +88,12 @@
     },
     "todo": [
       "Naming ADNOC beside these results is HOLD until the client consents (claims register A2)."
-    ]
+    ],
+    "ogImage": {
+      "src": "/images/og/well-intervention.png",
+      "alt": "Use case: Well Intervention Strategies for Production Enhancement — Sato Engineering & Infrastructure Limited",
+      "width": 1200,
+      "height": 630
+    }
   }
 ]
