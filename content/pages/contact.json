@@ -2,7 +2,7 @@
   "slug": "contact",
   "title": "Contact us",
   "metaTitle": "Contact",
-  "metaDescription": "For project enquiries, tenders and vendor verification, contact Sato Engineering & Infrastructure Limited.",
+  "metaDescription": "For infrastructure and oil and gas enquiries, procurement, tenders and vendor verification, contact Sato Engineering & Infrastructure Limited.",
   "labels": {
     "mapLink": "View on map",
     "optional": "optional"
@@ -12,7 +12,7 @@
       "type": "prose",
       "id": "intro",
       "body": [
-        "For project enquiries, tenders and vendor verification, contact our team."
+        "For infrastructure and oil and gas enquiries, procurement, tenders and vendor verification, contact our team."
       ]
     },
     {
@@ -68,13 +68,15 @@
         },
         {
           "name": "subject",
-          "label": "Subject",
+          "label": "Enquiry type",
           "type": "select",
           "required": true,
           "options": [
-            "Project enquiry",
+            "Infrastructure",
+            "Oil & Gas",
+            "Procurement",
             "Tender or vendor registration",
-            "General"
+            "Other"
           ]
         },
         {

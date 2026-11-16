@@ -29,10 +29,21 @@
       "type": "collection",
       "id": "oil-gas-clients",
       "collection": "clients",
-      "heading": "Oil & Gas: clients served through our technical partners",
-      "intro": "These organisations were served by the partner team Sato works with on oil and gas. They are not Sato's own clients.",
+      "heading": "Oil and gas clients served by our consortium",
+      "intro": "In upstream oil and gas, Sato works with a consortium of specialist partners. These organisations were served by our consortium.",
       "facetMode": "group",
-      "facets": [{ "value": "oil-gas-partner", "label": "Oil & Gas: clients served through our technical partners" }]
+      "facets": [
+        {
+          "value": "oil-gas-partner",
+          "label": "Oil and gas clients served by our consortium"
+        }
+      ],
+      "ctas": [
+        {
+          "label": "How we deliver: Sato and our consortium",
+          "href": "/about#how-we-deliver"
+        }
+      ]
     }
   ]
 }

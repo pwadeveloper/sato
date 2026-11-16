@@ -4,6 +4,7 @@ import { Container } from "@/components/Container";
 import { DraftNotice } from "@/components/DraftNotice";
 import { PageHeader } from "@/components/PageHeader";
 import { RichText } from "@/components/RichText";
+import { TextLink } from "@/components/TextLink";
 import { Section } from "@/components/Section";
 import { getClients, getPage, getSection, getService, getSite } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/metadata";
@@ -80,6 +81,12 @@ export default function ClientsPage() {
                 <RichText text={partner.intro} />
               </p>
             ) : null}
+
+            {partner.ctas?.map((link) => (
+              <p key={link.href} className="mt-4">
+                <TextLink label={link.label} href={link.href} />
+              </p>
+            ))}
 
             <ClientList clients={partnerClients} className="mt-8" />
           </Container>

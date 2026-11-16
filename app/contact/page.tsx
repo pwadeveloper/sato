@@ -159,6 +159,17 @@ export default function ContactPage() {
                           <RichText text={office.note} />
                         </p>
                       ) : null}
+
+                      {(() => {
+                        const phone = site.phones.find((entry) => entry.id === office.phone);
+                        return phone ? (
+                          <p className="mt-2 text-base wdth-body">
+                            <a href={phone.href} className="tabular text-asphalt underline-offset-[0.2em] hover:text-brand-ink">
+                              <RichText text={phone.value} />
+                            </a>
+                          </p>
+                        ) : null;
+                      })()}
                     </address>
 
                     {office.mapUrl ? (

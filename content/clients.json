@@ -250,5 +250,12 @@
     "category": "oil-gas-partner",
     "logo": null,
     "featured": false
+  },
+  {
+    "slug": "al-hosn-gas",
+    "name": "Al Hosn Gas",
+    "category": "oil-gas-partner",
+    "logo": null,
+    "featured": false
   }
 ]
