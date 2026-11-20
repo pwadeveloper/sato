@@ -584,18 +584,18 @@ disagree with this file:
     "Positioning of ductile iron pipe". The lime dosing caption is singular,
     "Lime dosing pump installed"; no extracted photograph shows the pumps
     better, so it stays.
-15. `review-2026-11-20.md` — **this branch's own record.** The client
-    kept this design over the NewDesign branch's, and took that branch's
-    content: every content commit from it is on `old-design-content-update`,
-    restyled here; its motion, WebGL and serif are not. Headings lighter
-    (600). Infrastructure and Oil & Gas are linked to each other by
-    `HoldingSwitch` on every page that belongs to one of them.
 14. `oil-gas-integration-2026-11-16.md` — **the current one for oil and
     gas, the menus and the consortium framing.** Two service groups; the
     Oil & Gas page in deck order in the consortium voice; the record by
     region; use cases as a collection; the Canada office; Home's two
     pillars and labelled stat strips. The confidential brief and claims
     register are in `_brief/` (gitignored) — never commit them.
+15. `review-2026-11-20.md` — **this branch's own record.** The client
+    kept this design over the NewDesign branch's, and took that branch's
+    content: every content commit from it is on `old-design-content-update`,
+    restyled here; its motion, WebGL and serif are not. Headings lighter
+    (600). Infrastructure and Oil & Gas are linked to each other by
+    `HoldingSwitch` on every page that belongs to one of them.
 
 ## Review deployments
 
