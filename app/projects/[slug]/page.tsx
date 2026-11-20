@@ -6,6 +6,7 @@ import { CapabilityList } from "@/components/CapabilityList";
 import { Container } from "@/components/Container";
 import { CtaBand } from "@/components/CtaBand";
 import { Heading } from "@/components/Heading";
+import { HoldingSwitch } from "@/components/HoldingSwitch";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
@@ -161,6 +162,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <>
+      {category?.group === "infrastructure" ? (
+        <HoldingSwitch current="infrastructure" kind="projects" />
+      ) : null}
       <Section tone="concrete">
         <Container>
           {/* Projects > Category > Project: the category is a real step in

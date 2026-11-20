@@ -100,6 +100,26 @@ export interface SiteFooter {
   copyright: ConfirmableText;
 }
 
+export type HoldingId = "infrastructure" | "oil-gas";
+
+export interface Holding {
+  id: HoldingId;
+  label: ConfirmableText;
+  /** The holding's services landing page. */
+  servicesHref: string;
+  /** Where its projects are listed. */
+  projectsHref: string;
+}
+
+export interface HoldingsContent {
+  label: ConfirmableText;
+  currentLabel: ConfirmableText;
+  switchLabel: ConfirmableText;
+  servicesLabel: ConfirmableText;
+  projectsLabel: ConfirmableText;
+  items: Holding[];
+}
+
 export interface Site {
   /** Clean trading name, safe for nav, titles and metadata. */
   name: ConfirmableText;
@@ -153,6 +173,13 @@ export interface Site {
    * redirects removed — see docs/decisions/launch-ready.md.
    */
   showLeadership: boolean;
+  /**
+   * The two holdings a reader moves between — Infrastructure and Oil & Gas —
+   * and the labels of the strip that links each to the other
+   * (`components/HoldingSwitch.tsx`). Review of 20 November: moving between
+   * them used to mean going back to Home.
+   */
+  holdings: HoldingsContent;
   registrations: RegistrationGroup[];
   /** Labels for the rows `getCompanyFacts()` assembles. */
   factLabels: {

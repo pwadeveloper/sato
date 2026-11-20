@@ -94,24 +94,27 @@
   /*
    * Display steps. The client asked for bolder, more prominent headings, so
    * display / h1 / h2 each moved up one step of the 1.25 scale at the desktop
-   * end and gained weight. The 360px end is unchanged: a 33px h1 on a phone is
+   * end. Their weight came back down on 20 November: 900 / 800 read as too
+   * bold ("Welcome to Sato Engineering", "About Sato Engineering"), and the
+   * client pointed at the NewDesign branch's lighter headings on mobile as
+   * the reference. All four heading steps are now 600; the size stays. The 360px end is unchanged: a 33px h1 on a phone is
    * already at the limit of a sensible measure, and growing it there would
    * cost line breaks rather than buy presence.
    */
   --text-h3: clamp(1.3125rem, 1.19rem + 0.543vw, 1.625rem);
   --text-h3--line-height: 1.25;
   --text-h3--letter-spacing: -0.01em;
-  --text-h3--font-weight: 700;
+  --text-h3--font-weight: 600;
 
   --text-h2: clamp(1.625rem, 0.989rem + 2.826vw, 3.25rem);
   --text-h2--line-height: 1.1;
   --text-h2--letter-spacing: -0.018em;
-  --text-h2--font-weight: 800;
+  --text-h2--font-weight: 600;
 
   --text-h1: clamp(2.0625rem, 1.28rem + 3.478vw, 4.0625rem);
   --text-h1--line-height: 1.03;
   --text-h1--letter-spacing: -0.02em;
-  --text-h1--font-weight: 900;
+  --text-h1--font-weight: 600;
 
   /*
    * The 360px floor is set by the longest word the hero has to carry
@@ -121,7 +124,7 @@
   --text-display: clamp(2.3125rem, 1.236rem + 4.783vw, 5.0625rem);
   --text-display--line-height: 1;
   --text-display--letter-spacing: -0.025em;
-  --text-display--font-weight: 900;
+  --text-display--font-weight: 600;
 
   /* Layout */
   --container-page: 80rem; /* 1280px */

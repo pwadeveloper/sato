@@ -60,13 +60,13 @@ export default function ProjectsPage() {
    * grid with no heading. It is the same rule the services overview uses for
    * a category of one.
    */
-  const rows = bands.reduce<Array<{ label?: string; categories: CollectionFacet[] }>>(
+  const rows = bands.reduce<Array<{ group?: string; label?: string; categories: CollectionFacet[] }>>(
     (acc, band) => {
       const named =
         band.categories.length > 1 || band.label !== band.categories[0]?.label;
 
       if (named) {
-        acc.push({ label: band.label, categories: band.categories });
+        acc.push({ group: band.group, label: band.label, categories: band.categories });
         return acc;
       }
 
@@ -97,6 +97,8 @@ export default function ProjectsPage() {
             {rows.map((row, index) => (
               <section
                 key={row.label ?? `row-${index}`}
+                id={row.group}
+                className="scroll-mt-(--header-height)"
                 aria-labelledby={row.label ? `row-${index}` : undefined}
               >
                 {row.label ? (

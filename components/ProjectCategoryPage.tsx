@@ -5,11 +5,11 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Container } from "@/components/Container";
 import { CtaBand } from "@/components/CtaBand";
 import { DraftNotice } from "@/components/DraftNotice";
+import { HoldingSwitch } from "@/components/HoldingSwitch";
 import { PageHeader } from "@/components/PageHeader";
 import { PartnerProjects } from "@/components/PartnerExperience";
 import { CategoryGallery, ProjectList } from "@/components/CategoryGallery";
 import { ResultsGrid } from "@/components/ResultsGrid";
-import { Reveal } from "@/components/Reveal";
 import { RichText } from "@/components/RichText";
 import { Section } from "@/components/Section";
 import { UseCaseCard } from "@/components/UseCaseCard";
@@ -112,8 +112,16 @@ export function ProjectCategoryPage({ slug }: { slug: string }) {
       : []),
   ];
 
+  const holding =
+    category.group === "infrastructure"
+      ? "infrastructure"
+      : category.serviceSlug === "oil-gas"
+        ? "oil-gas"
+        : undefined;
+
   return (
     <>
+      {holding ? <HoldingSwitch current={holding} kind="projects" /> : null}
       <PageHeader
         title={category.label}
         intro={category.intro ? [category.intro] : []}

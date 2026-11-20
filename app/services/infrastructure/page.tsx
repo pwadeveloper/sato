@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Container } from "@/components/Container";
 import { CtaBand } from "@/components/CtaBand";
 import { DraftNotice } from "@/components/DraftNotice";
+import { HoldingSwitch } from "@/components/HoldingSwitch";
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
 import { ServiceSections } from "@/components/ServiceSections";
@@ -46,6 +47,7 @@ export default function InfrastructurePage() {
 
   return (
     <>
+      <HoldingSwitch current="infrastructure" kind="services" />
       <PageHeader
         title={page.title}
         intro={intro.body}

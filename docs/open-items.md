@@ -2,7 +2,7 @@
 
 Everything the website still needs, grouped by who has to answer it.
 
-**0 placeholders outstanding** and **0 pages of capability copy awaiting approval.** Generated 2026-11-16 by `npm run check:placeholders`, so the detected items are always current. The rest is kept by hand in `docs/open-items-extra.md`.
+**0 placeholders outstanding** and **0 pages of capability copy awaiting approval.** Generated 2026-11-20 by `npm run check:placeholders`, so the detected items are always current. The rest is kept by hand in `docs/open-items-extra.md`.
 
 A placeholder is text that is visible on the site right now. The production build is blocked until every one is resolved and every service is approved.
 

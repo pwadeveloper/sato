@@ -182,5 +182,26 @@
   "social": [],
   "showProjectDates": false,
   "homeShowMissionVision": false,
-  "showLeadership": false
+  "showLeadership": false,
+  "holdings": {
+    "label": "Our holdings",
+    "currentLabel": "You are in",
+    "switchLabel": "Go to",
+    "servicesLabel": "Services",
+    "projectsLabel": "Projects",
+    "items": [
+      {
+        "id": "infrastructure",
+        "label": "Infrastructure",
+        "servicesHref": "/services/infrastructure",
+        "projectsHref": "/projects#infrastructure"
+      },
+      {
+        "id": "oil-gas",
+        "label": "Oil & Gas",
+        "servicesHref": "/services/oil-gas",
+        "projectsHref": "/projects/oil-gas"
+      }
+    ]
+  }
 }

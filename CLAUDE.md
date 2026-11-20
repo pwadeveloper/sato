@@ -462,9 +462,10 @@ label text on light, 5.8:1), `brand-light` `#80B076` (text on dark) and
 only — never dress an error in the brand colour. Survey yellow stays on focus
 rings, the data plate's top bar and the review-mode banner.
 
-**Type is deliberately heavy.** Display and h1 are weight 900, h2 is 800, and
-display / h1 / h2 each sit one step of the 1.25 scale higher at the desktop
-end than they did. The display floor at 360px is set by the longest word the
+**Type is large, not heavy.** Display, h1, h2 and h3 are all weight 600
+since 20 November (they were 900 / 900 / 800 / 700, and read as too bold);
+display / h1 / h2 each still sit one step of the 1.25 scale higher at the
+desktop end than they did at first. The display floor at 360px is set by the longest word the
 hero carries ("infrastructure"), not by the scale.
 
 **The logo is art-directed by width** (`components/Logo.tsx`). The horizontal
@@ -583,6 +584,12 @@ disagree with this file:
     "Positioning of ductile iron pipe". The lime dosing caption is singular,
     "Lime dosing pump installed"; no extracted photograph shows the pumps
     better, so it stays.
+15. `review-2026-11-20.md` — **this branch's own record.** The client
+    kept this design over the NewDesign branch's, and took that branch's
+    content: every content commit from it is on `old-design-content-update`,
+    restyled here; its motion, WebGL and serif are not. Headings lighter
+    (600). Infrastructure and Oil & Gas are linked to each other by
+    `HoldingSwitch` on every page that belongs to one of them.
 14. `oil-gas-integration-2026-11-16.md` — **the current one for oil and
     gas, the menus and the consortium framing.** Two service groups; the
     Oil & Gas page in deck order in the consortium voice; the record by

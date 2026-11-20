@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Container } from "@/components/Container";
 import { CtaBand } from "@/components/CtaBand";
 import { Heading } from "@/components/Heading";
+import { HoldingSwitch } from "@/components/HoldingSwitch";
 import { PageHeader } from "@/components/PageHeader";
 import { ResultsGrid } from "@/components/ResultsGrid";
 import { RichText } from "@/components/RichText";
@@ -101,6 +102,7 @@ export function UseCasePage({ serviceSlug, slug }: { serviceSlug: string; slug: 
 
   return (
     <>
+      {serviceSlug === "oil-gas" ? <HoldingSwitch current="oil-gas" kind="projects" /> : null}
       <PageHeader
         title={useCase.title}
         eyebrow={`${labels.useCase ?? ""} · ${useCase.clientDisplay}`}

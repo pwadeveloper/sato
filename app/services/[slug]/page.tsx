@@ -8,6 +8,7 @@ import { Container } from "@/components/Container";
 import { DraftNotice } from "@/components/DraftNotice";
 import { CtaBand } from "@/components/CtaBand";
 import { Heading } from "@/components/Heading";
+import { HoldingSwitch } from "@/components/HoldingSwitch";
 import { PageHeader } from "@/components/PageHeader";
 import { PartnerDetails } from "@/components/PartnerExperience";
 import { RelatedServices } from "@/components/RelatedServices";
@@ -131,8 +132,18 @@ export default async function ServicePage({ params }: ServicePageProps) {
     </>
   );
 
+  // Which holding this service belongs to, for the strip that links it to
+  // the other one. Energy, Digital Twin and Research sit in neither.
+  const holding =
+    service.group === "infrastructure"
+      ? "infrastructure"
+      : service.slug === "oil-gas"
+        ? "oil-gas"
+        : undefined;
+
   return (
     <>
+      {holding ? <HoldingSwitch current={holding} kind="services" /> : null}
       {service.headerOverlay && service.image ? (
         <OverlayHeader service={service} above={above} below={stats} />
       ) : (
