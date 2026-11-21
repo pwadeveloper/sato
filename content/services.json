@@ -1230,10 +1230,10 @@
     ],
     "registrations": [],
     "image": {
-      "src": "/images/oil-gas/platform-sunrise.webp",
-      "alt": "Offshore production platform at sunrise, tinted green, with an open pale area to the left",
-      "width": 1672,
-      "height": 941
+      "src": "/images/oil-gas/offshore-production-platform.webp",
+      "alt": "Offshore production platform with drilling derrick and crane, standing in open sea under a clear sky",
+      "width": 2400,
+      "height": 1350
     },
     "ogImage": {
       "src": "/images/og/oil-gas.png",

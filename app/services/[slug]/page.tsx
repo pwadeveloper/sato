@@ -225,8 +225,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
 /**
  * The header for a service whose artwork can carry the copy over it.
  *
- * Only Oil & Gas declares `headerOverlay`, and only because its illustration
- * is drawn with an empty arc on the left for exactly this. Every other page
+ * Only Oil & Gas declares `headerOverlay`. Its photograph is cropped so the
+ * platform sits right of centre, leaving open sky under the copy on the left. Every other page
  * on the site sets its `h1` on the page background with the photograph in a
  * band beneath, because text over a photograph has to be won at each
  * breakpoint and on a header repeated across fifteen pages that fight gets

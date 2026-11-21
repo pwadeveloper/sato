@@ -478,10 +478,10 @@
           "deliveredBy": "partner",
           "intro": "Our consortium's record in upstream oil and gas: published results, use cases and selected projects.",
           "image": {
-            "src": "/images/oil-gas/platforms-and-pipelines.webp",
-            "alt": "Two offshore platforms and a supply vessel, with subsea pipelines and wellheads drawn across the water",
-            "width": 1672,
-            "height": 941
+            "src": "/images/oil-gas/jackup-rig-crane-lift.webp",
+            "alt": "Jack-up drilling rig at sunset, with a crane vessel lifting a load alongside",
+            "width": 1920,
+            "height": 1080
           },
           "shortLabel": "Oil & Gas"
         },
