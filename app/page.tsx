@@ -99,7 +99,12 @@ export default function HomePage() {
       label: labels.statSato ?? "",
       stats: [
         { id: "years", value: getYearsInOperation(), label: labels.statYears ?? "" },
-        { id: "projects", value: getProjects().length, label: labels.statProjects ?? "" },
+        // The count of projects on file. Off while `statProjects` is empty:
+        // the client has done far more than the site lists (21 November),
+        // so the file's count understates the record.
+        ...(labels.statProjects
+          ? [{ id: "projects", value: getProjects().length, label: labels.statProjects }]
+          : []),
       ],
     },
     ...(oilGas.partner?.figures.length
