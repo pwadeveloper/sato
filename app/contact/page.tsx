@@ -172,22 +172,6 @@ export default function ContactPage() {
                       })()}
                     </address>
 
-                    {office.mapUrl ? (
-                      <p className="mt-3">
-                        <a
-                          href={office.mapUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="relative inline-block py-1 text-sm font-medium text-brand-ink underline underline-offset-[0.2em] decoration-1 transition-colors duration-150 hover:text-brand-deep before:absolute before:-inset-2 before:content-['']"
-                        >
-                          <RichText text={labels.mapLink ?? ""} />
-                          <span className="sr-only">
-                            {" — "}
-                            <RichText text={office.label} />
-                          </span>
-                        </a>
-                      </p>
-                    ) : null}
                   </li>
                 ))}
               </ul>

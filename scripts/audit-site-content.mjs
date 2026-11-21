@@ -77,7 +77,7 @@ for (const f of readdirSync(join(ROOT, "content", "pages"))) {
   const page = read(`content/pages/${f}`);
   const slug = f.replace(".json", "");
   for (const [k, img] of Object.entries(page.images ?? {})) add(img.src, k === "header" || k === "hero" ? `page-header:${slug}` : `page-band:${slug}.${k}`, k === "header" || k === "hero" ? "header" : "tile", img);
-  for (const [k, set] of Object.entries(page.imageSets ?? {})) set.forEach((img) => add(img.src, `page-photos:${slug}.${k}`, "gallery", img));
+  for (const [k, set] of Object.entries(page.imageSets ?? {})) set.forEach((img) => add(img.src, `page-photos:${slug}.${k}`, k === "hero" ? "header" : "gallery", img));
   const walk = (n) => { if (Array.isArray(n)) n.forEach(walk); else if (n && typeof n === "object") { if (n.image?.src && n !== page.images) add(n.image.src, `page-section:${slug}`, "section", n.image); Object.values(n).forEach(walk); } };
   walk(page.serviceSections);
   if (slug === "projects") {

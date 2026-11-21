@@ -597,6 +597,10 @@ disagree with this file:
     restyled here; its motion, WebGL and serif are not. Headings lighter
     (600). Infrastructure and Oil & Gas are linked to each other by
     `HoldingSwitch` on every page that belongs to one of them.
+16. `review-2026-11-21.md` — **the newest.** Home buttons above the fold,
+    30 years / 50+ infrastructure projects, the clarifier photograph on the
+    Infrastructure header, a three-photograph Home collage, contact labels
+    without "Office" and no map links.
 
 ## Review deployments
 

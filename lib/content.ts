@@ -138,6 +138,7 @@ export function getSite(): Site {
 
 /** Years in operation, derived from the founding year at build time. */
 export function getYearsInOperation(): number {
+  if (site.yearsInOperation) return site.yearsInOperation;
   return new Date().getFullYear() - site.foundedYear;
 }
 

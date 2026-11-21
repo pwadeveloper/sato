@@ -132,6 +132,8 @@ export interface Site {
   tagline: ConfirmableText;
   description: ConfirmableText;
   foundedYear: number;
+  /** Stated by the client (21 Nov); when set it replaces the computed figure. */
+  yearsInOperation?: number;
   anniversaryNote: ConfirmableText;
   rcNumber: ConfirmableText;
   /**

@@ -42,6 +42,8 @@ const vision = getSection(page, "vision", "prose");
 const cta = getSection(page, "cta", "cta");
 
 const heroImage = hero.image ?? page.images?.hero;
+// A collage of delivered work (21 November): a pipeline, a building, a road.
+const heroSet = page.imageSets?.hero ?? [];
 
 export const metadata: Metadata = {
   ...buildPageMetadata(page, site),
@@ -99,11 +101,17 @@ export default function HomePage() {
       label: labels.statSato ?? "",
       stats: [
         { id: "years", value: getYearsInOperation(), label: labels.statYears ?? "" },
-        // The count of projects on file. Off while `statProjects` is empty:
-        // the client has done far more than the site lists (21 November),
-        // so the file's count understates the record.
+        // The count is the client's own figure (21 November: 50+), held in
+        // `statProjectsValue`, not the number of projects on file, which
+        // understates the record. Off while `statProjects` is empty.
         ...(labels.statProjects
-          ? [{ id: "projects", value: getProjects().length, label: labels.statProjects }]
+          ? [
+              {
+                id: "projects",
+                value: labels.statProjectsValue || getProjects().length,
+                label: labels.statProjects,
+              },
+            ]
           : []),
       ],
     },
@@ -123,7 +131,26 @@ export default function HomePage() {
       */}
       <section aria-labelledby="welcome-heading" className="bg-concrete">
         <div className="lg:grid lg:min-h-[32rem] lg:grid-cols-2 lg:items-stretch">
-          {heroImage ? (
+          {heroSet.length >= 3 ? (
+            <div className="grid aspect-4/3 w-full grid-cols-2 grid-rows-2 gap-1 bg-concrete sm:aspect-16/9 lg:order-last lg:aspect-auto lg:h-full">
+              {heroSet.slice(0, 3).map((image, index) => (
+                <div
+                  key={image.src}
+                  className={`relative overflow-hidden bg-steel/10 ${index === 0 ? "row-span-2" : ""}`}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, 50vw"
+                    priority={index === 0}
+                    className="object-cover"
+                    style={image.focalPoint ? { objectPosition: image.focalPoint } : undefined}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : heroImage ? (
             <div className="relative aspect-4/3 w-full bg-steel/10 sm:aspect-16/9 lg:order-last lg:aspect-auto lg:h-full">
               <Image
                 src={heroImage.src}
@@ -150,17 +177,8 @@ export default function HomePage() {
                 </p>
               ) : null}
 
-              {welcome.body.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="mt-5 max-w-(--container-measure) text-base text-asphalt wdth-body text-pretty"
-                >
-                  <RichText text={paragraph} />
-                </p>
-              ))}
-
               {hero.ctas?.length ? (
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   {hero.ctas.map((link, position) => (
                     <Button
                       key={link.href}
@@ -171,6 +189,15 @@ export default function HomePage() {
                   ))}
                 </div>
               ) : null}
+
+              {welcome.body.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="mt-5 max-w-(--container-measure) text-base text-asphalt wdth-body text-pretty"
+                >
+                  <RichText text={paragraph} />
+                </p>
+              ))}
             </div>
           </Container>
         </div>

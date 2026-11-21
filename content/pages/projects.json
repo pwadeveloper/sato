@@ -99,11 +99,11 @@
           "group": "infrastructure",
           "intro": "Dams, intakes, water supply schemes, boreholes, metering, river works and erosion control.",
           "image": {
-            "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/treatment-tanks.webp",
-            "alt": "Round concrete water treatment tanks, one with a scraper bridge, beside red-railed walkways",
-            "width": 1920,
-            "height": 1440,
-            "focalPoint": "50% 15%"
+            "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/ground-tank.webp",
+            "alt": "Circular concrete ground tank holding water",
+            "width": 1600,
+            "height": 1200,
+            "focalPoint": "50% 50%"
           },
           "shortLabel": "Water",
           "photos": [
