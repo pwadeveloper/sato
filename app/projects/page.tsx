@@ -233,9 +233,16 @@ function CategoryTile({
           </p>
         ) : null}
 
-        <p className="mt-auto pt-2 text-2xs font-semibold uppercase tracking-[0.08em] text-brand-ink tabular wdth-body">
-          <RichText text={countLabel} />
-        </p>
+        {/*
+          Off while countOne / countMany are empty (21 November): the
+          categories list what the old site recorded, which is far less
+          than the company has delivered, so a count understates it.
+        */}
+        {countLabel ? (
+          <p className="mt-auto pt-2 text-2xs font-semibold uppercase tracking-[0.08em] text-brand-ink tabular wdth-body">
+            <RichText text={countLabel} />
+          </p>
+        ) : null}
       </div>
     </article>
   );

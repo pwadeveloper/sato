@@ -5,8 +5,8 @@
   "metaDescription": "Building & construction, water resources development & management, civil engineering & road construction and electrical & mechanical engineering projects delivered by Sato Engineering & Infrastructure Limited, and the upstream oil and gas record of our consortium.",
   "labels": {
     "breadcrumb": "Breadcrumb",
-    "countOne": "1 project",
-    "countMany": "{n} projects",
+    "countOne": "",
+    "countMany": "",
     "client": "Client",
     "location": "Location",
     "sector": "Category",
