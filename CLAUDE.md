@@ -489,9 +489,8 @@ Three rules follow from it:
   `h1` and lead on the page background with the picture in a band beneath, and
   every route uses it. Text over a photograph has to be won at each
   breakpoint, and on a header repeated across fifteen pages that fight gets
-  lost somewhere. **Oil & Gas is the one exception** — its photograph (an
-  Unsplash offshore platform since 21 November, cropped so the platform sits
-  right of the copy) carries two scrims, a horizontal
+  lost somewhere. **Oil & Gas is the one exception** — its artwork is drawn
+  with an empty arc for exactly that, and it carries two scrims, a horizontal
   wash from `md` up where the copy is in the left column and a flat one below
   it where the copy runs full width. Measured worst case is 7.9:1.
 - **The header is one solid bar on every route.** It used to sit transparently
