@@ -136,17 +136,18 @@
   "imageSets": {
     "hero": [
       {
-        "src": "/images/projects/ogere-water-supply-scheme-rehabilitation/pipe-laying-trench.webp",
-        "alt": "Workers laying a large pipe in a deep trench beside a road",
-        "width": 800,
-        "height": 533,
-        "focalPoint": "50% 30%"
+        "src": "/images/home/pipe-laying-crew.webp",
+        "alt": "Crew in high-visibility vests laying a large pipe in a deep trench beside a road",
+        "width": 1200,
+        "height": 896,
+        "focalPoint": "50% 10%"
       },
       {
-        "src": "/images/projects/funaab-colplant-building-phase-ii/building-corner.webp",
-        "alt": "Two-storey university building seen from one corner",
-        "width": 1080,
-        "height": 495
+        "src": "/images/projects/horizon-suites-hotel-complex/hotel-entrance.webp",
+        "alt": "Hotel entrance with a pillared portico and paved forecourt",
+        "width": 1920,
+        "height": 1440,
+        "focalPoint": "60% 50%"
       },
       {
         "src": "/images/projects/asphaltic-concrete-road-and-drainage-ajebo/tandem-roller.webp",

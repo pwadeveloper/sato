@@ -132,17 +132,17 @@ export default function HomePage() {
       <section aria-labelledby="welcome-heading" className="bg-concrete">
         <div className="lg:grid lg:min-h-[32rem] lg:grid-cols-2 lg:items-stretch">
           {heroSet.length >= 3 ? (
-            <div className="grid aspect-4/3 w-full grid-cols-2 grid-rows-2 gap-1 bg-concrete sm:aspect-16/9 lg:order-last lg:aspect-auto lg:h-full">
+            <div className="grid aspect-4/3 w-full grid-cols-2 grid-rows-[3fr_2fr] gap-1 bg-concrete sm:aspect-16/9 lg:order-last lg:aspect-auto lg:h-full">
               {heroSet.slice(0, 3).map((image, index) => (
                 <div
                   key={image.src}
-                  className={`relative overflow-hidden bg-steel/10 ${index === 0 ? "row-span-2" : ""}`}
+                  className={`relative overflow-hidden bg-steel/10 ${index === 0 ? "col-span-2" : ""}`}
                 >
                   <Image
                     src={image.src}
                     alt={image.alt}
                     fill
-                    sizes="(min-width: 1024px) 25vw, 50vw"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     priority={index === 0}
                     className="object-cover"
                     style={image.focalPoint ? { objectPosition: image.focalPoint } : undefined}
